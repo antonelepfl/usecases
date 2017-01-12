@@ -20,7 +20,7 @@ module.exports = {
     assetsPublicPath: '/'
   },
   ghpages: {
-    assetsPublicPath: '/testvue/'
+    assetsPublicPath: '/usecases/'
   },
   dev: {
     env: require('./dev.env'),

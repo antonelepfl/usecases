@@ -1,0 +1,50 @@
+{
+   "Trace Analysis": [
+      {
+         "title": "Feature extraction",
+         "description": "Extracts electrophysiological features; traces can be from NIP or uploaded",
+         "experience": ["End"],
+         "maturity": ["Beta"],
+         "access": [""],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
+         }
+      },
+      {
+         "title": "Feature registration",
+         "description": "Register features of user's traces in NIP",
+         "experience": ["End", "Power"],
+         "maturity": ["Experimental"],
+         "access": ["HPC"],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Free_and_open-source_software_logo_(2009).svg/768px-Free_and_open-source_software_logo_(2009).svg.png",
+            "alt": "Logo of feature Extraction"
+         }
+      }
+   ],
+   "Simulation": [
+      {
+         "title": "Simulation1",
+         "description": "Extracts electrophysiological features; traces can be from NIP or uploaded",
+         "experience": ["End"],
+         "maturity": ["Beta"],
+         "access": [""],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/1/18/Open_Source_and_Free_Open_Source_loom.png",
+            "alt": "Logo of simulation"
+         }
+      },
+      {
+         "title": "Simulation2",
+         "description": "Register features of user's traces in NIP",
+         "experience": ["End"],
+         "maturity": ["Experimental"],
+         "access": [""],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Open_source_power.png",
+            "alt": "Logo of simulation"
+         }
+      }
+   ]
+}

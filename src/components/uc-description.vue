@@ -1,8 +1,7 @@
 <template>
    <div class="uc-description">
       <div class="title">
-         <h4 class="title-text">{{ uc.title }}</h4>
-         <uc-tags class="tags" v-bind:uc="uc"></uc-tags>
+         <h2 class="title-text">{{ uc.title }}</h2>
       </div>
       <div class="description">
          <p>{{ uc.description }}</p>
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-   import ucTags from './uc-tags.vue'
    export default {
       name: 'ucDescription',
       props: {
@@ -20,17 +18,9 @@
          }
       },
       components: {
-         ucTags
       }
    }
 </script>
 
 <style>
-.title {
-}
-.title-text {
-}
-.tags {
-   float: right;
-}
 </style>

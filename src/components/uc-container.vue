@@ -1,10 +1,9 @@
 <template>
    <div class="uc-container">
       <section v-for="(value, key) in usercases">
-         <h2>{{ key }}</h2>
          <div v-for="uc in value">
             <md-whiteframe md-elevation="2" class="item-sections"> 
-               <uc-item v-bind:uc="uc"></uc-item>
+               <uc-item class="uc-item" v-bind:uc="uc"></uc-item>
             </md-whiteframe>
          </div>
       </section> <!-- end categories -->
@@ -36,5 +35,6 @@
    }
    .item-sections {
       margin-top: 20px;
+      padding: 10px;
    }
 </style>

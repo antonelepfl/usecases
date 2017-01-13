@@ -14,36 +14,67 @@
       {
          "title": "Feature registration",
          "description": "Register features of user's traces in NIP",
-         "experience": ["End", "Power"],
-         "maturity": ["Experimental"],
-         "access": ["HPC"],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Free_and_open-source_software_logo_(2009).svg/768px-Free_and_open-source_software_logo_(2009).svg.png",
-            "alt": "Logo of feature Extraction"
-         }
-      }
-   ],
-   "Simulation": [
-      {
-         "title": "Simulation1",
-         "description": "Extracts electrophysiological features; traces can be from NIP or uploaded",
          "experience": ["End"],
-         "maturity": ["Beta"],
+         "maturity": ["Experimental"],
          "access": [""],
          "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/1/18/Open_Source_and_Free_Open_Source_loom.png",
-            "alt": "Logo of simulation"
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
          }
       },
       {
-         "title": "Simulation2",
-         "description": "Register features of user's traces in NIP",
+         "title": "Feature comparison",
+         "description": "Compare electrophysiological features from NIP or uploaded data",
          "experience": ["End"],
          "maturity": ["Experimental"],
          "access": [""],
          "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Open_source_power.png",
-            "alt": "Logo of simulation"
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
+         }
+      },
+      {
+         "title": "Synaptic event fitting",
+         "description": "Fitting synaptic events using data and model in NIP",
+         "experience": ["Power"],
+         "maturity": ["Experimental"],
+         "access": ["HPC"],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
+         }
+      },
+      {
+         "title": "",
+         "description": "Fitting synaptic events using data in NIP and user's model",
+         "experience": ["Experts"],
+         "maturity": ["Experimental"],
+         "access": ["HPC"],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
+         }
+      },
+      {
+         "title": "",
+         "description": "Fitting user's synaptic events data with model from NIP",
+         "experience": ["Experts"],
+         "maturity": ["Experimental"],
+         "access": ["HPC"],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
+         }
+      },
+      {
+         "title": "",
+         "description": "Register user's model and synaptic parameters on NIP",
+         "experience": ["Power", "Experts"],
+         "maturity": ["Experimental"],
+         "access": [""],
+         "picture": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+            "alt": "Logo of feature Extraction"
          }
       }
    ]

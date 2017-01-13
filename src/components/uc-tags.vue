@@ -4,10 +4,10 @@
          <md-chip v-bind:class="classExp(exp)">{{ exp }}</md-chip>
       </b>
       <b v-if="uc.maturity" v-for="(mat, index) in uc.maturity">
-         <md-chip v-bind:class="classMat(mat)">{{ mat }}</md-chip>
+         <div v-if="mat" v-bind:class="classMat(mat)"></div>
       </b>
       <b v-for="(access, index) in uc.access">
-         <md-chip v-if="access" v-bind:class="classAccess(access)">{{ access }}</md-chip>
+         <div v-if="access" v-bind:class="classAccess(access)"></div>
       </b>
    </div>
 </template>
@@ -50,34 +50,39 @@
 .end {
    color: gray;
 }
-
+/* Experiences levels */
 .md-chip.md-theme-default.exp-end {
-   background-color: blue;
+   background-color: #CCFFCC;
 }
 .md-chip.md-theme-default.exp-power {
-   background-color: palevioletred;
+   background-color: #ffffb3;
 }
 .md-chip.md-theme-default.exp-experts {
-   background-color: palevioletred;
+   background-color: #f9cfa1;
 }
 .md-chip.md-theme-default.exp-code {
-   background-color: violet;
+   background-color: #ebc3c3;
 }
-
-.md-chip.md-theme-default.mat-beta {
-   background-color: yellow;
+/* Maturity level */
+.mat-beta {
+   background-image: url('../assets/icons/Maturity_BETA_48x48.png');
+   width: 48px;
+   height: 48px;
 }
-.md-chip.md-theme-default.mat-experimental {
-   background-color: lightcoral;
+.mat-experimental {
+   background-image: url('../assets/icons/Maturity_EXP_48x48.png');
+   width: 48px;
+   height: 48px;
 }
-
-.md-chip.md-theme-default.access-hpc {
-   background-color: lightcoral;
+/* Access level */
+.access-hpc {
+   background-image: url('../assets/icons/Access_HPC_48x48.png');
+   width: 48px;
+   height: 48px;
 }
-.md-chip.md-theme-default.access-byor {
-   background-color: lightgray;
-}
-.md-chip.md-theme-default.exp-end {
-   background-color: red;
+.access-byor {
+   background-image: url('../assets/icons/Access_BYO_48x48.png');
+   width: 48px;
+   height: 48px;
 }
 </style>

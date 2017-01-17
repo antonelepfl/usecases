@@ -3,7 +3,7 @@
       "Trace Analysis": [
          {
             "title": "Feature extraction",
-            "description": "Extracts electrophysiological features; traces can be from NIP or uploaded",
+            "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
             "experience": ["all"],
             "maturity": ["beta"],
             "access": [""],
@@ -14,7 +14,7 @@
          },
          {
             "title": "Feature registration",
-            "description": "Register features of user's traces in NIP",
+            "description": "Register features of user's traces in NeuroInformatics Platform",
             "experience": ["all"],
             "maturity": ["experimental"],
             "access": [""],
@@ -25,7 +25,7 @@
          },
          {
             "title": "Feature comparison",
-            "description": "Compare electrophysiological features from NIP or uploaded data",
+            "description": "Compare electrophysiological features from NeuroInformatics Platform or uploaded data",
             "experience": ["all"],
             "maturity": ["experimental"],
             "access": [""],
@@ -36,7 +36,7 @@
          },
          {
             "title": "Synaptic event fitting",
-            "description": "Fitting synaptic events using data and model in NIP",
+            "description": "Fitting synaptic events using data and model in NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
             "access": ["hpc"],
@@ -47,7 +47,7 @@
          },
          {
             "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "description": "Fitting synaptic events using data in NIP and user's model",
+            "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
             "experience": ["experts"],
             "maturity": ["experimental"],
             "access": ["hpc"],
@@ -58,7 +58,7 @@
          },
          {
             "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "description": "Fitting user's synaptic events data with model from NIP",
+            "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
             "experience": ["experts"],
             "maturity": ["experimental"],
             "access": ["hpc"],
@@ -69,7 +69,7 @@
          },
          {
             "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "description": "Register user's model and synaptic parameters on NIP",
+            "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
             "experience": ["power", "experts"],
             "maturity": ["experimental"],
             "access": [""],

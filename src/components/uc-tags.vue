@@ -11,11 +11,11 @@
       <div class="mat-acc">
          <b v-if="uc.maturity" v-for="(mat, index) in uc.maturity">
             <div v-if="mat" v-bind:class="getClassByPrefix('mat-',mat)" class="image-tag-size"></div>
-            <md-tooltip md-direction="top">{{getTooltipByPrefix('maturity',mat)}}</md-tooltip>
+            <md-tooltip md-direction="left">{{getTooltipByPrefix('maturity',mat)}}</md-tooltip>
          </b>
-         <b v-for="(access, index) in uc.access">
+         <b v-if="uc.access" v-for="(access, index) in uc.access">
             <div v-if="access" v-bind:class="getClassByPrefix('access-',access)" class="image-tag-size"></div>
-            <md-tooltip md-direction="top">{{getTooltipByPrefix('access',access)}}</md-tooltip>
+            <md-tooltip md-direction="left">{{getTooltipByPrefix('access',access)}}</md-tooltip>
          </b>
       </div>
       

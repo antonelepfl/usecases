@@ -1,81 +1,125 @@
-{
-   "Trace Analysis": [
-      {
-         "title": "Feature extraction",
-         "description": "Extracts electrophysiological features; traces can be from NIP or uploaded",
-         "experience": ["End"],
-         "maturity": ["Beta"],
-         "access": [""],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
+[
+   {
+      "Trace Analysis": [
+         {
+            "title": "Feature extraction",
+            "description": "Extracts electrophysiological features; traces can be from NIP or uploaded",
+            "experience": ["all"],
+            "maturity": ["beta"],
+            "access": [""],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
+         },
+         {
+            "title": "Feature registration",
+            "description": "Register features of user's traces in NIP",
+            "experience": ["all"],
+            "maturity": ["experimental"],
+            "access": [""],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
+         },
+         {
+            "title": "Feature comparison",
+            "description": "Compare electrophysiological features from NIP or uploaded data",
+            "experience": ["all"],
+            "maturity": ["experimental"],
+            "access": [""],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
+         },
+         {
+            "title": "Synaptic event fitting",
+            "description": "Fitting synaptic events using data and model in NIP",
+            "experience": ["power"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
+         },
+         {
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "Fitting synaptic events using data in NIP and user's model",
+            "experience": ["experts"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
+         },
+         {
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "Fitting user's synaptic events data with model from NIP",
+            "experience": ["experts"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
+         },
+         {
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "Register user's model and synaptic parameters on NIP",
+            "experience": ["power", "experts"],
+            "maturity": ["experimental"],
+            "access": [""],
+            "picture": {
+               "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
+               "alt": "Logo of feature Extraction"
+            }
          }
-      },
-      {
-         "title": "Feature registration",
-         "description": "Register features of user's traces in NIP",
-         "experience": ["End"],
-         "maturity": ["Experimental"],
-         "access": [""],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
-         }
-      },
-      {
-         "title": "Feature comparison",
-         "description": "Compare electrophysiological features from NIP or uploaded data",
-         "experience": ["End"],
-         "maturity": ["Experimental"],
-         "access": [""],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
-         }
-      },
-      {
-         "title": "Synaptic event fitting",
-         "description": "Fitting synaptic events using data and model in NIP",
-         "experience": ["Power"],
-         "maturity": ["Experimental"],
-         "access": ["HPC"],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
-         }
-      },
-      {
-         "title": "",
-         "description": "Fitting synaptic events using data in NIP and user's model",
-         "experience": ["Experts"],
-         "maturity": ["Experimental"],
-         "access": ["HPC"],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
-         }
-      },
-      {
-         "title": "",
-         "description": "Fitting user's synaptic events data with model from NIP",
-         "experience": ["Experts"],
-         "maturity": ["Experimental"],
-         "access": ["HPC"],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
-         }
-      },
-      {
-         "title": "",
-         "description": "Register user's model and synaptic parameters on NIP",
-         "experience": ["Power", "Experts"],
-         "maturity": ["Experimental"],
-         "access": [""],
-         "picture": {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Open-Source_Judaism.svg/1024px-Open-Source_Judaism.svg.png",
-            "alt": "Logo of feature Extraction"
+      ]
+   }, 
+   {
+      "categories": {
+         "experience" : {
+            "all": {
+               "name": "Everybody",
+               "tooltip": "Modelers and experimentalists interested in using the Platform's infrastructure and facilities in the most user-friendly way, for relatively simple collaborative scientific projects using GUIs and public HPC resources (such as Cloud Computing, or the Neuroscience Gateway) and/or their own data."
+            },
+            "power": {
+               "name": "Power users",
+               "tooltip": "Modelers and/or experimentalists interested in using the Platform infrastructure and facilities for collaborative projects using their own HPC grants (such as PRACE) on one of the supercomputer centers supporting the BSP activities (JSC and CINECA);"
+            },
+            "experts": {
+               "name": "Experts",
+               "tooltip": "Users able to understand the inner working of collabs/apps/webservices and contribute to their development"
+            },
+            "code": {
+               "name": "Code",
+               "tooltip": "Early adopters of initial versions of collabs/apps/webservices"
+            }
+         },
+         "maturity": {
+            "beta": {
+               "name": "Beta",
+               "tooltip": "A service of this maturity level has reached a certain robustness and may be used by early adopters."
+            },
+            "experimental": {
+               "name": "Experimental",
+               "tooltip": "A service of this maturity level is under heavy development and recommended only for specialists’ use or use for co-design partners."
+            }
+         },
+         "access": {
+            "hpc": {
+               "name": "HPC",
+               "tooltip": "Requires high-performance computing resources."
+            },
+            "byor": {
+               "name": "BYOR",
+               "tooltip": "Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility"
+            }
          }
       }
-   ]
-}
+   }
+]

@@ -1,0 +1,16 @@
+{
+   "experience": {
+      "all": "Modelers and experimentalists interested in using the Platform's infrastructure and facilities in the most user-friendly way, for relatively simple collaborative scientific projects using GUIs and public HPC resources (such as Cloud Computing, or the Neuroscience Gateway) and/or their own data.",
+      "power": "Modelers and/or experimentalists interested in using the Platform infrastructure and facilities for collaborative projects using their own HPC grants (such as PRACE) on one of the supercomputer centers supporting the BSP activities (JSC and CINECA);",
+      "experts": "Users able to understand the inner working of collabs/apps/webservices and contribute to their development",
+      "code": "Early adopters of initial versions of collabs/apps/webservices"
+   },
+   "maturity": {
+      "beta": "A service of this maturity level has reached a certain robustness and may be used by early adopters.",
+      "experimental": "A service of this maturity level is under heavy development and recommended only for specialists’ use or use for co-design partners."
+   },
+   "access": {
+      "hpc": "Requires high-performance computing resources.",
+      "byor": "Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility."
+   }
+}

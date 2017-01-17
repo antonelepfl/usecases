@@ -5,7 +5,7 @@
          <img src="../assets/cac.png" v-bind:alt="uc.picture.alt">
       </div>
       <uc-description class="uc-description" v-bind:uc="uc"></uc-description>
-      <uc-tags class="tags" v-bind:uc="uc"></uc-tags>
+      <uc-tags class="tags" v-bind:uc="uc" v-bind:categories="categories"></uc-tags>
    </div>
 </template>
 
@@ -19,6 +19,9 @@
       },
       props: {
          uc: {
+            type: Object
+         },
+         categories: {
             type: Object
          }
       }
@@ -45,7 +48,7 @@
       padding: 10px 0px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-around;
       flex-wrap: wrap;
    }
 </style>

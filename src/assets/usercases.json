@@ -85,19 +85,19 @@
          "experience" : {
             "all": {
                "name": "Everybody",
-               "tooltip": "Users with or without so much experince"
+               "tooltip": "Easily accessible use case"
             },
             "power": {
                "name": "Power users",
-               "tooltip": "Modelers and/or experimentalists"
+               "tooltip": "Advanced use case"
             },
             "experts": {
                "name": "Experts",
-               "tooltip": "Users able to understand collabs/apps/webservices"
+               "tooltip": "Use case for contributors and tools experts"
             },
             "code": {
                "name": "Code",
-               "tooltip": "Early adopter users"
+               "tooltip": "Use case for tools developers"
             }
          },
          "maturity": {
@@ -113,11 +113,11 @@
          "access": {
             "hpc": {
                "name": "HPC",
-               "tooltip": "Requires high-performance computing resources"
+               "tooltip": "Requires high-performance computing resources access"
             },
             "byor": {
                "name": "BYOR",
-               "tooltip": "(Bring Your Own Resources) allow you to delegate the execution"
+               "tooltip": "(Bring Your Own Resources) allow you to use your own compute resources"
             }
          }
       }

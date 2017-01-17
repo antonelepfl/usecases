@@ -2,7 +2,7 @@
    <div class="uc-container">
       <section v-for="(value, key) in usercases">
          <div v-for="uc in value">
-            <md-whiteframe md-elevation="1" class="item-sections"> 
+            <md-whiteframe md-elevation="3" class="item-sections"> 
                <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
             </md-whiteframe>
          </div>

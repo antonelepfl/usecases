@@ -120,4 +120,34 @@
    height: 48px;
    background-size: 100% 100%;
 }
+@media screen and (max-width: 1200px) {
+   .image-tag-size {
+      width: 38px;
+      height: 38px;
+      background-size: 100% 100%;
+   }
+   .mat-acc {
+      width: 44%;
+   }
+   .exp {
+      width: 54%;
+   }
+}
+@media screen and (max-width: 850px) {
+   .tags {
+      display: block;
+   }
+   .divider {
+      display: none;
+   }
+   .md-chip {
+      font-size: 10px;
+   }
+   .mat-acc {
+      width: auto;
+   }
+   .exp {
+      width: auto;
+   }
+}
 </style>

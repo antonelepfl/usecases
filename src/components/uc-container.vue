@@ -1,8 +1,8 @@
 <template>
    <div class="uc-container">
       <section v-for="(value, key) in usercases">
-         <div v-for="uc in value">
-            <md-whiteframe md-elevation="3" class="item-sections"> 
+         <div v-for="uc in value" v-on:click="selected" >
+            <md-whiteframe md-elevation="2" class="item-sections" > 
                <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
             </md-whiteframe>
          </div>
@@ -24,8 +24,10 @@
             categories: usercases[1].categories
          }
       },
-      mounted () {
-         // this.categories = Object.keys(usercases)
+      methods: {
+         selected (event) {
+            event.currentTarget.classList.toggle('selected')
+         }
       }
    }
 </script>
@@ -37,5 +39,9 @@
    .item-sections {
       margin-top: 20px;
       padding: 10px;
+   }
+   .selected {
+      background-color: lightgray;
+      transition: background-color 0.3s ease;
    }
 </style>

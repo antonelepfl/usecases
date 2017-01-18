@@ -51,4 +51,12 @@
       justify-content: space-around;
       flex-wrap: wrap;
    }
+   @media screen and (min-width: 851px) and (max-width: 1200px) {
+      .tags {
+         width: 25%;
+      }
+      .uc-description {
+         width: 75%;
+      }
+   }
 </style>

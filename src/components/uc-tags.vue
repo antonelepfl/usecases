@@ -2,7 +2,7 @@
    <div class="uc-tags">
       <div class="exp">
          <b v-for="(exp, index) in uc.experience">
-            <md-chip v-bind:class="getClassByPrefix('exp-',exp)">{{ fullName('experience',exp) }}</md-chip>
+            <md-chip v-bind:class="getClassByPrefix('exp-',exp)" disabled>{{ fullName('experience',exp) }}</md-chip>
             <md-tooltip md-direction="top">{{getTooltipByPrefix('experience',exp)}}</md-tooltip>
          </b>
       </div>

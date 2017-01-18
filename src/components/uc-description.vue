@@ -16,8 +16,6 @@
          uc: {
             type: Object
          }
-      },
-      components: {
       }
    }
 </script>

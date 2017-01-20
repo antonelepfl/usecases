@@ -13,7 +13,7 @@
 <script>
    import ucItem from './uc-item.vue'
    var usercases = require('../assets/usercases.json')
-   var routes = require('../assets/routes.json')
+   // var routes = require('../assets/routes.json')
    export default {
       name: 'ucContainer',
       components: {
@@ -27,7 +27,11 @@
       },
       methods: {
          selected (event) {
-            this.$router.push(routes.models)
+            this.$el.querySelectorAll('.selected').forEach(function (elem) {
+               elem.classList.remove('selected')
+            })
+            event.currentTarget.classList.toggle('selected')
+            // this.$router.push(routes.models)
          }
       }
    }

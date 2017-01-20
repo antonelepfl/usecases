@@ -1,8 +1,6 @@
 <template>
   <div class="startapp">
-    <transition-group appear name="fade">
-      <uc-container key='container'></uc-container>
-    </transition-group>
+    <uc-container key='container'></uc-container>
   </div>
 </template>
 
@@ -35,11 +33,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
 }
 </style>

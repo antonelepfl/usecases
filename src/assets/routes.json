@@ -1,6 +1,8 @@
 {
    "home": "/",
    "usecases": {
-      "home": "/usecases/"
-   }
+      "home": "/usecases/",
+      "models": "/usecases/models"
+   },
+   "models": "/models"
 }

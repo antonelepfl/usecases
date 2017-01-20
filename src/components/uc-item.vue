@@ -1,8 +1,7 @@
 <template>
    <div class="uc-item">
       <div class="item-picture">
-         <!--<img v-bind:src="uc.picture.src" v-bind:alt="uc.picture.alt">-->
-         <img src="../assets/cac.png" v-bind:alt="uc.picture.alt">
+         <img v-bind:src="uc.picture.src" v-bind:alt="uc.picture.alt">
       </div>
       <uc-description class="uc-description" v-bind:uc="uc"></uc-description>
       <uc-tags class="tags" v-bind:uc="uc" v-bind:categories="categories"></uc-tags>
@@ -31,16 +30,17 @@
 
 <style>
    .item-picture {
-      max-width: 100px;
+      width: 8%;
+      min-height: 50px;
    }
    .uc-item {
       display: flex;
       align-items: center;
    }
    .uc-description {
-      width: 80%;
+      width: 70%;
       text-align: start;
-      padding-left: 5%;
+      padding-left: 10px;
 
    }
    .tags {

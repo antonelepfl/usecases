@@ -1,7 +1,7 @@
 <template>
    <div class="uc-container">
       <section v-for="(value, key) in usercases">
-         <div v-for="uc in value" v-on:click="selected" >
+         <div v-for="uc in value" v-on:click="selected">
             <md-whiteframe md-elevation="2" class="item-sections">
                <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
             </md-whiteframe>
@@ -13,6 +13,7 @@
 <script>
    import ucItem from './uc-item.vue'
    var usercases = require('../assets/usercases.json')
+   var routes = require('../assets/routes.json')
    export default {
       name: 'ucContainer',
       components: {
@@ -26,10 +27,7 @@
       },
       methods: {
          selected (event) {
-            this.$el.querySelectorAll('.selected').forEach(function (elem) {
-               elem.classList.remove('selected')
-            })
-            event.currentTarget.classList.toggle('selected')
+            this.$router.push(routes.models)
          }
       }
    }

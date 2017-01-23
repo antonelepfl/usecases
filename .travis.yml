@@ -6,10 +6,7 @@ branches:
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
 - git config --global user.name "antonelepfl"
-- git remote rm origin
-- git remote add origin https://${GH_TOKEN}@github.com/antonelepfl/usecases.git
-install:
-- npm install
+install: npm install
 script:
 - npm run ghpages
 - git checkout -b gh-pages

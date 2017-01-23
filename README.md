@@ -6,7 +6,8 @@ This app is deployed in:
 ```
 $ npm run ghpages 
 $ git checkout gh-pages
-$ cp -R ./public/* ./ && rm -R public/
-$ ...
+$ cp -R ./docs/* ./ && rm -R docs/
+$ git add --all
+$ git git commit -m "Deploy"
 $ git push origin gh-pages
 ```

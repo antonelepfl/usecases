@@ -6,16 +6,11 @@ branches:
 before_script: 
   - git config --global user.email "stefano.antonel@epfl.ch"
   - git config --global user.name "Stefano Antonel"
-  - git remote rm origin
-  - https://antonelepfl:ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac@github.com/antonelepfl/usecases.git
-
+  - git remote rm origin 
+  - git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
 install: npm install
 script: 
   - npm run ghpages
-  - gem install travis
-  - travis encrypt GH_TOKEN="ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac" --add
-  - git add .
+  - git add --all
   - git commit -m "Deploy"
-env:
-  global:
-    secure: "encrypted-github-token"
+  - git push origin gh-pages

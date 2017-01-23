@@ -7,7 +7,7 @@ before_script:
   - git config --global user.email "stefano.antonel@epfl.ch"
   - git config --global user.name "antonelepfl"
   - git remote rm origin 
-  - git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
+  - git remote add origin https://${GH-TOKEN}@github.com/antonelepfl/usecases.git
 install: 
   - npm install
   - gem install travis

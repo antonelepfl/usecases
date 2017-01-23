@@ -11,7 +11,7 @@ before_script:
 install: npm install
 script: 
   - gem install travis
-  - travis encrypt GH_TOKEN="ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac" --add
+  - travis encrypt GH_TOKEN="ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac" --add --skip-completion-check
   - y
   - npm run ghpages
   - git checkout gh-pages

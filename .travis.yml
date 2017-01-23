@@ -7,14 +7,17 @@ before_script:
   - git config --global user.email "stefano.antonel@epfl.ch"
   - git config --global user.name "Stefano Antonel"
   - git remote rm origin 
-  - git remote add https://antonelepfl:ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac@github.com/antonelepfl/usecases.git
+  - git remote add origin https://antonelepfl:ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac@github.com/antonelepfl/usecases.git
 install: npm install
 script: 
-  - npm run ghpages
   - gem install travis
   - travis encrypt GH_TOKEN="ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac" --add
-  - git add .
+  - npm run ghpages
+  - git checkout gh-pages
+  - cp -R ./docs/* ./ && rm -R docs/
+  - git add --all 
   - git commit -m "Deploy"
+  - git push origin gh-pages
 env:
   global:
     secure: "encrypted-github-token"

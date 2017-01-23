@@ -7,13 +7,13 @@ before_script:
   - git config --global user.email "stefano.antonel@epfl.ch"
   - git config --global user.name "Stefano Antonel"
   - git remote rm origin
-  - https://antonelepfl:b2a2a54f7cc922244ef6442e7163d4a27c615ba6@github.com/antonelepfl/usecases.git
+  - https://antonelepfl:ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac@github.com/antonelepfl/usecases.git
 
 install: npm install
 script: 
   - npm run ghpages
   - gem install travis
-  - travis encrypt GH_TOKEN="b2a2a54f7cc922244ef6442e7163d4a27c615ba6" --add
+  - travis encrypt GH_TOKEN="ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac" --add
   - git add .
   - git commit -m "Deploy"
 env:

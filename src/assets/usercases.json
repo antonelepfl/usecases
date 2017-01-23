@@ -68,7 +68,7 @@
             }
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet.",
             "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
             "experience": ["power", "experts"],
             "maturity": ["experimental"],

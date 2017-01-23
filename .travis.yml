@@ -7,8 +7,7 @@ before_script:
   - git config --global user.name "Stefano Antonel"
   - git remote rm origin
   - https://antonelepfl:${b2a2a54f7cc922244ef6442e7163d4a27c615ba6}@github.com/antonelepfl/usecases.git
-node_js:
-  - "node"
+node_js: "6""
 install: npm install
 script: 
   - npm run ghpages

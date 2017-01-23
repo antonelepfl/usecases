@@ -7,7 +7,7 @@ before_script:
   - git config --global user.email "stefano.antonel@epfl.ch"
   - git config --global user.name "antonelepfl"
   - git remote rm origin 
-  - git remote add origin https://antonelepfl:6c44dcddc445dc09f9970ab2703fb04b7266c6b5@github.com/antonelepfl/usecases.git
+  - git remote add origin https://antonelepfl:${GH-TOKEN}@github.com/antonelepfl/usecases.git
 install: 
   - npm install
   - gem install travis
@@ -20,4 +20,4 @@ script:
   - git push origin gh-pages
 env:
   global:
-    secure: -----BEGIN PUBLIC KEY----- MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvRYMR3WCw90Lw2kU5ZUW RVuqJH+sPknvytL0Tv3GJFU6PtykZeWSNDNeihZdzE0pOV4Xs5vQKvj74YC0iUPc HUNrfxUSll3Z5V0M4DmIxMDch6ok3KaCR71q7yCzt/fhfp5TEtvBdBNN+77WV0BZ KA+AUOpTLxkaYYcG4Y0+dRDLma9jHCQsWkK3uNoI39hxdhmOD0Ecf/EPxRJybqgL PdDOxjVt6attP+AuMtMtJKi0HE52gCrcBmHsWDQh5FNd2wvWhIKK0PEsZrFr26P0 svDIGRUTRc+/ghfc81zzjMxKoifb2fsWQcY48kailcxiLJdhbOKp7G0SgvXsMu0X f6KMJjO1Ru9NI/SJrgBuLGlDGQcxmj1h03rXWhUGZEBBfH6F9oTK5KvoXY7kjfWH /xqwT3Qf7p+5HjF1HwhphI8ErY1NTheE/ozSj09W/UITfDTGdbYAcImtAcRWs0hu ccquohigo/X1IaXTRVKVVWgrr/s7PQtyJQMW7d9oxXj5wXVoewsN9/ERHAPlKJ0v MgRl0StxzG0dRcZYIwmZpPKOmbEgAAzlYvHD3sorincW35O0ok2Pg/I6ik5DMUyB aSn1wtqgMpyJEo6qGyolwJX/23WRCkxvmiN3uqJlRa5M9lgyPUHuF0HNqxWNRrpS 91npIrp+OWLZJQfzmM+VIhcCAwEAAQ== -----END PUBLIC KEY-----
+    secure: ${GH_PUBLIC_KEY}

@@ -3,12 +3,16 @@ node_js: node
 branches:
   only:
   - master
+before_script:
+  - git config --global user.email "stefano.antonel@epfl.ch"
+  - git config --global user.name "antonelepfl"
+
 install: npm install
 script:
-- npm run ghpages
-- git add --all
-- git commit -m "Deploy"
-- git push origin master
+  - npm run ghpages
+  - git add --all
+  - git commit -m "Deploy"
+  - git push origin master
 env:
   global:
   - secure: UWucPyd0JCpFgw0mhxBJyY6Tk17NZiqlDnlMoOe2zMTDmJoSiVh6lWdeOsMBU8vr5SC+54/9s7Ohddv2dYZDdYTPTs0EBAJaD031Qiemq7wLhR3jEsjrH3wY5U6NxoHRGyJoiMmWsCO/WikVL6f1NGqw7MATfLLdKcfcicPLGL/Kdgk+l2ou2QcrtaPhrme2aohP88e7d+awXiE+tVIv/4sNAfD0vn9BGBLhuEuE5SlnGMRzfixpkkINFcGJ61j8agxufAS8cdk0an1NAynGKC9K5is2lbN42ODNDOFCFFXMmsoNOfv/NYQVWN1K3PA6E+xYDZsLiEUgYVjShA99ozOblmDnCCP3GARt3pil+11gXJkid0FknTS5QX5KoyKrZ+B6tKLR0A13sWyG5H7ZiBlWfr3hAiLgLifAOaRrphIq4DsIOWoLzpQDcGqeOOZI7n8AMiPTT9ZtpCq/wEmtI7glhNutl1wm6SdrBVSxCsx7c+qazKAfZtWE1Dbj70zt36X3FDzQjHP/wVggHfQFh8OOf9o9xrXZq8lRnr0peKTfWX+zq4H3HLiBKj2xPx0H3bB6nkP5DSdaI9S2ydS3UpfjZPv7W8yKhITos9TB3yyXMctF72K/GIoJNwFoaMI4+iEk+aDocPWcwsRTs3XhvxK9kmcpLf2+LyyFXeXnUVA=

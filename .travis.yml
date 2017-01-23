@@ -5,9 +5,9 @@ branches:
     - master
 before_script: 
   - git config --global user.email "stefano.antonel@epfl.ch"
-  - git config --global user.name "Stefano Antonel"
+  - git config --global user.name "antonelepfl"
   - git remote rm origin 
-  - git remote add origin https://antonelepfl:ad5afbb57f187aedb337a4f60ca412cb8e2ce2ac@github.com/antonelepfl/usecases.git
+  - git remote add origin https://antonelepfl:${0926254ffb7a5d250fd62010f211df9fa75f5807}@github.com/antonelepfl/usecases.git
 install: 
   - npm install
   - gem install travis
@@ -20,4 +20,4 @@ script:
   - git push origin gh-pages
 env:
   global:
-    secure: IkNSRX66oqJ/2C22zthxkLSMD40jblVVIn5sqD/DFZ46DoCbE+Fqckca/dwbi1YrQ7HxrAnDjC2NpvSkr9A41Pb5v1Ie0Qe7DzWZi+/gFkJFbq2gmFlWBN0+17GouIb0FBXFYkhaUgmiWyEsRAqzIA2I07rx1AZcozStlKvb9SkBvxwJR0BT/MyxicShmhUovqw4uX4Tfv54s3apkVueDLzhlLvYMf/WD+1Yt/CRfi58suWSNfg9txNfTkoGqjb/z9Tp5L63Y3UsjKuRmPx/LvnzFoVRJpwXnfUt0sXqXnTV2JkNgv/C0u32KaoJIGkj5FEKvFiQZWSepSw83m/rEhzB2PiA/H4ELVNHtOBCVsyVVDuEpPjfsknV51w/OjrOhsCHvdgqMhf0D9Y7l681NkMvZcS+qpnJkmtuK0DKJ45Mg0hV1sHawXSOuc3RcW8CIc9INLMoa8rEsVpUC8lCInI7hmPau4QTEIEY9f5BKYfNjmr3C3Iei9wvSST4ORbjFGaTFQd5NPDeMfqvJW1ZaSauqhruQzzNEFzGXjPDa87TEiGy+Px9QpVunLWHxGn9Bzl0nszOKt3G8XRI9MtWCBU8ZFzGK9HfXEni4xKzqXyTk5HQouP1dSaiqDNnVgsEnA41fU30qr4Vcdk1JdJacM4WpmzpSb6Vl+UunW83t/Y=
+    secure: encrypted-github-token

@@ -4,16 +4,14 @@ branches:
   only:
   - master
 before_script:
-  - git config --global user.email "stefano.antonel@epfl.ch"
-  - git config --global user.name "antonelepfl"
-
+- git config --global user.email "stefano.antonel@epfl.ch"
+- git config --global user.name "antonelepfl"
 install: npm install
 script:
-  - npm run ghpages
-  - git add --all
-  - git commit -m "Deploy"
-  - git push origin master
+- npm run ghpages
+- git add --all
+- git commit -m "Deploy"
+- git push origin master
 env:
   global:
-  - secure: UWucPyd0JCpFgw0mhxBJyY6Tk17NZiqlDnlMoOe2zMTDmJoSiVh6lWdeOsMBU8vr5SC+54/9s7Ohddv2dYZDdYTPTs0EBAJaD031Qiemq7wLhR3jEsjrH3wY5U6NxoHRGyJoiMmWsCO/WikVL6f1NGqw7MATfLLdKcfcicPLGL/Kdgk+l2ou2QcrtaPhrme2aohP88e7d+awXiE+tVIv/4sNAfD0vn9BGBLhuEuE5SlnGMRzfixpkkINFcGJ61j8agxufAS8cdk0an1NAynGKC9K5is2lbN42ODNDOFCFFXMmsoNOfv/NYQVWN1K3PA6E+xYDZsLiEUgYVjShA99ozOblmDnCCP3GARt3pil+11gXJkid0FknTS5QX5KoyKrZ+B6tKLR0A13sWyG5H7ZiBlWfr3hAiLgLifAOaRrphIq4DsIOWoLzpQDcGqeOOZI7n8AMiPTT9ZtpCq/wEmtI7glhNutl1wm6SdrBVSxCsx7c+qazKAfZtWE1Dbj70zt36X3FDzQjHP/wVggHfQFh8OOf9o9xrXZq8lRnr0peKTfWX+zq4H3HLiBKj2xPx0H3bB6nkP5DSdaI9S2ydS3UpfjZPv7W8yKhITos9TB3yyXMctF72K/GIoJNwFoaMI4+iEk+aDocPWcwsRTs3XhvxK9kmcpLf2+LyyFXeXnUVA=
-  - secure: PxSECA7XoR9t/LmEMr8FFgCMk7vasqP2/yHVFpXWIQibdS74whDsUC7kcJyvC0Thbjtlk3zYjHxyTzJhoE7urZSn9GQbLXHUqwn8NHseMaNJOJYdOKUfMab+kTGfD6Zf3sWLvRukU4zj3PkLGppv6fG/i97WCq+Ilvxrj8qaUnEOjV276K7wxD1M9y8nPr8bItq0wKlkLlZ625w8X3JfdPaDTYofkglVeIP1n/39dcAn15sevhF/JnT7ZGhWceIFhwzXhGY8nuaOP+uo3FikdcX4gMliNuANPgc9Jwl1CDULHLRQZg2fJsKee75f+0rjjxJ0Iw6YF9NjburGUgmyf2+VH0mx32YPQTrviBn/WwVGEBZhb8+mn57y+4VXBmS4J+9Y2xAJRSvTl1ApKsoXQ+CgbfwSZfiGwG8RY+qz4xuTlJwTf9ITuZBRB+flhu4lXB0orKOKfdZ5V5hOaRiK3gHQKn+mMtdheyg0wLnbp2CT6EPtn7XFaIpiDzHDYmBWFsR0jdXQ83cCG7J7/7lqZXqAuyICiSFhearBwV2K2w4A4kVmH0za1hGNEd2d9/bdh/B8QhGo2P1qeQ+BNNSdXXl7Jg7hXRSa+oNzx3ynjGhuEZ/f8PALHBaQIBIpJh+L+T8D+65bcEFeGqdLqnYNRd8MsREetmqs97VU7EvfF1Y=
+    secure: ucP7ntmJJiW4jASyfqL9vw0GOVlNI4lyEI6aKApOq8BpaQbwPp6pyLg/hsgzr+5+C+5wydlA4ksi3c02PjsvSSEBslIRDglzzzDYdtBKhQAY2P6uqQmh4pd83NjIMah2wSmES4H/xC+vBeJ9nUaLwg47oJJNW49HY94KdkF7rynRupPqpg33fTRoxR+5iwyPEItKgzam54zqhsiBl2+jiAkPIj7oZpzSK+Q3Se+XRsC77cgNGjVjXCKf5bd7wmHennUbyGDcwszm+qsv505LOjTHFWIdR1brJabpr4DvqFxlKxz1vuHBzLClFxbH8A3g0p/b3u+YU7VfFdTAocgFC38euOkDIKNanhQn7EpsOuGscMMMjR0JJXxktf/fQyAyBlwEq2qcXR0UX2nsV3ER8ZpF8q4YN2mHM/iQbHAz62FMeE1VwxnFI/bfgE0yU5cvWx4C9XjJsZmGtzk9VybIAyK8CE5OE4f0GrVmNqolJqYI1JKK1o2Bzs4tDLlGdxdv6K2tALA0sRC/LUAm+KllaK/LDIKfpgn0ukYl+TV/+IoO+j/PyThy7QFAKq1+X1isxpA9AB2db/cWSds09xvvNleKSPbbqdowxJk7BKykH4jjPJIEZQifaSxogm/DZZYWhxPvGtq66MvoBn6VSRNQ45+8XgmNUvLXc9oAHJylBPo=

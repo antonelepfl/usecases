@@ -20,4 +20,4 @@ script:
   - git push origin gh-pages
 env:
   global:
-    secure: encrypted-github-token
+    secure: 0926254ffb7a5d250fd62010f211df9fa75f5807

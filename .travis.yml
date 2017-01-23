@@ -7,7 +7,7 @@ before_script:
   - git config --global user.email "stefano.antonel@epfl.ch"
   - git config --global user.name "Stefano Antonel"
   - git remote rm origin
-  - https://antonelepfl:${b2a2a54f7cc922244ef6442e7163d4a27c615ba6}@github.com/antonelepfl/usecases.git
+  - https://antonelepfl:${b2a2a54f7cc922244ef6442e7163d4a27c615ba6}@github.com/usecases.git
 
 install: npm install
 script: 

@@ -10,9 +10,7 @@ before_script:
 - git remote add origin https://${GH_TOKEN}@github.com/antonelepfl/usecases.git
 install:
 - npm install
-- gem install travis
 script:
-- travis encrypt ${GH_TOKEN} --add
 - npm run ghpages
 - git checkout -b gh-pages
 - cp -R ./docs/* ./ && rm -R docs/

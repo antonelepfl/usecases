@@ -4,14 +4,16 @@ branches:
   only:
   - master
 before_script:
-- git config --global user.email "stefano.antonel@epfl.ch"
-- git config --global user.name "antonelepfl"
+  - git config --global user.email "stefano.antonel@epfl.ch"
+  - git config --global user.name "antonelepfl"
+  - git remote rm origin 
+  - git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
 install: npm install
 script:
-- npm run ghpages
-- git add --all
-- git commit -m "Deploy"
-- git push origin master
+  - npm run ghpages
+  - git add --all
+  - git commit -m "Deploy"
+  - git push origin master
 env:
   global:
     secure: ucP7ntmJJiW4jASyfqL9vw0GOVlNI4lyEI6aKApOq8BpaQbwPp6pyLg/hsgzr+5+C+5wydlA4ksi3c02PjsvSSEBslIRDglzzzDYdtBKhQAY2P6uqQmh4pd83NjIMah2wSmES4H/xC+vBeJ9nUaLwg47oJJNW49HY94KdkF7rynRupPqpg33fTRoxR+5iwyPEItKgzam54zqhsiBl2+jiAkPIj7oZpzSK+Q3Se+XRsC77cgNGjVjXCKf5bd7wmHennUbyGDcwszm+qsv505LOjTHFWIdR1brJabpr4DvqFxlKxz1vuHBzLClFxbH8A3g0p/b3u+YU7VfFdTAocgFC38euOkDIKNanhQn7EpsOuGscMMMjR0JJXxktf/fQyAyBlwEq2qcXR0UX2nsV3ER8ZpF8q4YN2mHM/iQbHAz62FMeE1VwxnFI/bfgE0yU5cvWx4C9XjJsZmGtzk9VybIAyK8CE5OE4f0GrVmNqolJqYI1JKK1o2Bzs4tDLlGdxdv6K2tALA0sRC/LUAm+KllaK/LDIKfpgn0ukYl+TV/+IoO+j/PyThy7QFAKq1+X1isxpA9AB2db/cWSds09xvvNleKSPbbqdowxJk7BKykH4jjPJIEZQifaSxogm/DZZYWhxPvGtq66MvoBn6VSRNQ45+8XgmNUvLXc9oAHJylBPo=

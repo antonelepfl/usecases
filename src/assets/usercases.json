@@ -8,7 +8,7 @@
             "maturity": ["beta"],
             "access": [""],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/cAC.png",
                "alt": "Logo of feature Extraction"
             }
          },
@@ -68,7 +68,7 @@
             }
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet.",
             "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
             "experience": ["power", "experts"],
             "maturity": ["experimental"],

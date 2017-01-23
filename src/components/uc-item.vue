@@ -41,7 +41,6 @@
       width: 70%;
       text-align: start;
       padding-left: 10px;
-
    }
    .tags {
       width: 20%;
@@ -53,10 +52,18 @@
    }
    @media screen and (min-width: 851px) and (max-width: 1200px) {
       .tags {
-         width: 25%;
+         width: 21%;
       }
       .uc-description {
-         width: 75%;
+         width: 71%;
+      }
+   }
+   @media screen and (max-width: 750px) {
+      .item-picture {
+         display: none;
+      }
+      .uc-description {
+         width: 79%;
       }
    }
 </style>

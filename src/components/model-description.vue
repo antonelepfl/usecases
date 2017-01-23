@@ -72,6 +72,29 @@
                               </md-table-body>
                         </md-table>
                   </md-layout>
+
+                  <md-layout class="model-column" md-column md-flex-large="100" md-flex-medium="100">
+                        <md-table v-once>
+                              <md-table-header>
+                                    <md-table-row>
+                                          <md-table-head>Credits:</md-table-head>
+                                    </md-table-row>
+                              </md-table-header>
+                              <md-table-body>
+                                    <md-table-row>
+                                          <md-table-cell class="">Created By: Werner Van Geit (werner.vangeit@epfl.ch)</md-table-cell>
+                                    </md-table-row>
+                                    <md-table-row>
+                                          <md-table-cell class="">
+                                                <div>
+                                                      Paper: Reconstruction and Simulation of Neocortical Microcircuitry. Cell  163:2, 456 - 492. 
+                                                      <a href="http://www.cell.com/cell/abstract/S0092-8674%2815%2901191-5">doi: 10.1016/j.cell.2015.09.029</a>
+                                                </div>
+                                          </md-table-cell>
+                                    </md-table-row>
+                              </md-table-body>
+                        </md-table>
+                  </md-layout>
             </md-layout>
       </div>
 </template>
@@ -88,11 +111,11 @@
    /*text-align: right;*/
 }
 .model-description .md-table-head-text.md-test {
-      padding-left: 0;
+      padding-left: 5px;
 }
 .model-description .md-table .md-table-cell .md-table-cell-container {
-   padding-left: 0;
-   padding-right: 0;
+   padding-left: 5px;
+   padding-right: 5px;
    text-align: left;
 }
 .full {

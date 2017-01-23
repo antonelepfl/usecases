@@ -4,16 +4,17 @@ branches:
   only:
   - master
 before_script:
-  - git config --global user.email "stefano.antonel@epfl.ch"
-  - git config --global user.name "antonelepfl"
-  - git remote rm origin 
-  - git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
+- git config --global user.email "stefano.antonel@epfl.ch"
+- git config --global user.name "antonelepfl"
+- git remote rm origin
+- git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
 install: npm install
 script:
-  - npm run ghpages
-  - git add --all
-  - git commit -m "Deploy"
-  - git push origin master
+- npm run ghpages
+- git add --all
+- git commit -m "Deploy"
+- git push origin master
 env:
   global:
-    secure: ucP7ntmJJiW4jASyfqL9vw0GOVlNI4lyEI6aKApOq8BpaQbwPp6pyLg/hsgzr+5+C+5wydlA4ksi3c02PjsvSSEBslIRDglzzzDYdtBKhQAY2P6uqQmh4pd83NjIMah2wSmES4H/xC+vBeJ9nUaLwg47oJJNW49HY94KdkF7rynRupPqpg33fTRoxR+5iwyPEItKgzam54zqhsiBl2+jiAkPIj7oZpzSK+Q3Se+XRsC77cgNGjVjXCKf5bd7wmHennUbyGDcwszm+qsv505LOjTHFWIdR1brJabpr4DvqFxlKxz1vuHBzLClFxbH8A3g0p/b3u+YU7VfFdTAocgFC38euOkDIKNanhQn7EpsOuGscMMMjR0JJXxktf/fQyAyBlwEq2qcXR0UX2nsV3ER8ZpF8q4YN2mHM/iQbHAz62FMeE1VwxnFI/bfgE0yU5cvWx4C9XjJsZmGtzk9VybIAyK8CE5OE4f0GrVmNqolJqYI1JKK1o2Bzs4tDLlGdxdv6K2tALA0sRC/LUAm+KllaK/LDIKfpgn0ukYl+TV/+IoO+j/PyThy7QFAKq1+X1isxpA9AB2db/cWSds09xvvNleKSPbbqdowxJk7BKykH4jjPJIEZQifaSxogm/DZZYWhxPvGtq66MvoBn6VSRNQ45+8XgmNUvLXc9oAHJylBPo=
+  - secure: ucP7ntmJJiW4jASyfqL9vw0GOVlNI4lyEI6aKApOq8BpaQbwPp6pyLg/hsgzr+5+C+5wydlA4ksi3c02PjsvSSEBslIRDglzzzDYdtBKhQAY2P6uqQmh4pd83NjIMah2wSmES4H/xC+vBeJ9nUaLwg47oJJNW49HY94KdkF7rynRupPqpg33fTRoxR+5iwyPEItKgzam54zqhsiBl2+jiAkPIj7oZpzSK+Q3Se+XRsC77cgNGjVjXCKf5bd7wmHennUbyGDcwszm+qsv505LOjTHFWIdR1brJabpr4DvqFxlKxz1vuHBzLClFxbH8A3g0p/b3u+YU7VfFdTAocgFC38euOkDIKNanhQn7EpsOuGscMMMjR0JJXxktf/fQyAyBlwEq2qcXR0UX2nsV3ER8ZpF8q4YN2mHM/iQbHAz62FMeE1VwxnFI/bfgE0yU5cvWx4C9XjJsZmGtzk9VybIAyK8CE5OE4f0GrVmNqolJqYI1JKK1o2Bzs4tDLlGdxdv6K2tALA0sRC/LUAm+KllaK/LDIKfpgn0ukYl+TV/+IoO+j/PyThy7QFAKq1+X1isxpA9AB2db/cWSds09xvvNleKSPbbqdowxJk7BKykH4jjPJIEZQifaSxogm/DZZYWhxPvGtq66MvoBn6VSRNQ45+8XgmNUvLXc9oAHJylBPo=
+  - secure: Z0xBvNprR5QlBdyNM8rnckvonHEzqgUA8qG9bhxlZayrsvXkkQK/i4dQJIIbWb3hLlieE80rBBz5lcUx5mFq5E7Tv1ux7cyOOBN6cJXtKwVKyNxz0SM9Y8b1erSnWH1YXxV220AHh5khCB/xm9a073LV/khbCZ3fPMsD79PX3W1rcxCEI9ut3CU6jvDDwPmLnDmhvgWuZHGOHgCKuX7G5OvSV0Gpf+L17zT5iffyuMKoIFxAhLkv97IRmhBY9NRvYbHXtyeApH1Y3MxkTetVovijaFeKV0dMQWlBYuRMyxy1vxeZrNQ46KKc6k5uqcRh4de3VxGYXcPPEwi2JtRD+r4uFDW5zDprm7ei5mNSHkvcWoqLH6kedxquYdEGwAm2BA7WJQC/ZWk98O4neUF08E5Pdw2Fv60HGX/UAoPy0fyDtEIWisnsQDtuQWIR9xL2gvhfJumCrD+7x3eWqHV7/gPf6lTikVQACe/pmVbsdu0vKGmnw58tFCGdjH1BfTMp1pLpVlYPtK/wRGiV/Fv+8oIy9quLek20O/Bjr2EGVTb1W71URwG23+djIwYBA8JQHPVwO4/td1LiaN4JWp5QT/aeS7Y4B5SsnuGFP5DTOB6C2uGZY18PCNJBSnDz5GW98wI30co6eAR2ZHlkCjvUQasYzIhvu70PuOPNODEqRlw=

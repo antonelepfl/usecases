@@ -26,7 +26,6 @@
 <script>
    import modelItem from './model-item.vue'
    import modalComponent from './modal-component.vue'
-   // var usercases = require('../assets/usercases.json')
    export default {
       name: 'modelContainer',
       components: {
@@ -45,6 +44,9 @@
             this.path = elem.path
             this.showModal = true
          }
+      },
+      created () {
+         document.querySelector('title').innerHTML = 'Models'
       }
    }
 </script>

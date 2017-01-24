@@ -1,38 +1,7 @@
 <template>
       <div class="model-description">
             <md-layout md-gutter>
-                  <md-layout class="model-column " md-column md-flex-large="33" md-flex-medium="50">
-                        <md-table v-once>
-                              <md-table-header>
-                                    <md-table-row>
-                                          <md-table-head>Anatomy:</md-table-head>
-                                    </md-table-row>
-                              </md-table-header>
-                              <md-table-body>
-                                    <md-table-row>
-                                          <md-table-cell class="compact">Soma diameter:</md-table-cell>
-                                          <md-table-cell class="">8 µm</md-table-cell>
-                                    </md-table-row>
-
-                                    <md-table-row>
-                                          <md-table-cell class="compact">Axon maximum branch order:</md-table-cell>
-                                          <md-table-cell>12</md-table-cell>
-                                    </md-table-row>
-
-                                    <md-table-row>
-                                          <md-table-cell class="compact">Apical maximum branch order:</md-table-cell>
-                                          <md-table-cell>12</md-table-cell>
-                                    </md-table-row>
-
-                                    <md-table-row>
-                                          <md-table-cell class="compact">Basal maximum branch order:</md-table-cell>
-                                          <md-table-cell>8</md-table-cell>
-                                    </md-table-row>
-                              </md-table-body>
-                        </md-table>
-                  </md-layout>
-
-                  <md-layout class="model-column" md-column md-flex-large="33" md-flex-medium="50">
+                  <md-layout class="model-column" md-column md-flex-large="50">
                         <md-table v-once>
                               <md-table-header>
                                     <md-table-row>
@@ -56,7 +25,7 @@
                               </table>
                   </md-layout>
 
-                  <md-layout class="model-column" md-column md-flex-large="33" md-flex-medium="100">
+                  <md-layout class="model-column" md-column md-flex-large="50">
                      <md-table v-once>
                         <md-table-header>
                            <md-table-row>
@@ -75,7 +44,7 @@
                   <md-layout class="model-column" md-column md-flex-large="100" md-flex-medium="100">
                      <div class="credits">
                         <b>Credits:</b>
-                        <div>Created by: author@exmple.com</div>
+                        <div>Created by: author@example.com</div>
                         <div>Reference: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi esse fuga, expedita ullam, vel.</div>
                      </div>
                   </md-layout>

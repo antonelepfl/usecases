@@ -1,8 +1,5 @@
 language: node_js
 node_js: node
-branches:
-  only:
-  - master
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
 - git config --global user.name "antonelepfl"

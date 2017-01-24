@@ -1,6 +1,7 @@
 <template>
    <div class="model-item">
       <div class="path">
+         <md-ink-ripple />
          <div class="inline" v-for="(part, index) in pathParts">
             <span class="square">{{ part }}</span> 
             <span v-show="hasNext(index)"> ></span>
@@ -19,7 +20,7 @@
             </md-layout>
 
             <md-layout md-column  md-flex-large="60" md-flex-medium="80" md-flex-xsmall="100">
-               <model-description class="model-description"></model-description>
+               <model-description class="model-description" v-bind:author="author"></model-description>
             </md-layout>
          </md-layout>
       </div>
@@ -35,9 +36,8 @@
          modelDescription
       },
       props: {
-         path: {
-            type: String
-         }
+         path: String,
+         author: String
       },
       data () {
          return {
@@ -64,11 +64,11 @@
       align-items: center;
    }
    .path {
-      background-color: #f4f4f4;
+      background-color: rgba(0, 12, 152, 0.08);
       font-size: 20px;
       padding: 5px;
       text-shadow: 2px 2px rgba(120, 130, 253, 0.13);
-      text-align: center;
+      text-align: left;
    }
    .inline {
       display: inline-block;
@@ -81,7 +81,6 @@
       background-color: rgba(103, 103, 122, 0.35);
       border-radius: 5px;
    }
-
    @media screen and (min-width: 851px) and (max-width: 1200px) {
    }
 </style>

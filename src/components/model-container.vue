@@ -2,16 +2,22 @@
    <div class="model-container">
       <!--<section v-for="(value, key) in usercases">
          <div v-for="model in value" v-on:click="selected" >-->
-            <md-whiteframe md-elevation="2" class="item-sections">
-               <model-item class="model-item" path="Rat > SSCx > L5_TTPC1 > cAD" v-on:showimage="showimage" ></model-item>
+            <md-whiteframe md-elevation="1" class="item-sections">
+               <model-item class="model-item" 
+                  path="Rat > Somatosensory_Cortex > L5_TTPC1 > cAD" v-on:showimage="showimage" 
+                  author="Werner Van Geit (werner.vangeit@epfl.ch)"></model-item>
             </md-whiteframe>
 
-            <md-whiteframe md-elevation="2" class="item-sections">
-               <model-item class="model-item" path="Rat > Hippocampus > ..." v-on:showimage="showimage"></model-item>
+            <md-whiteframe md-elevation="1" class="item-sections">
+               <model-item class="model-item" 
+                  path="Rat > Hippocampus > SP_PC > cAD" v-on:showimage="showimage"
+                  author="Michele Migliore (michele.migliore@pa.ibf.cnr.it)"></model-item>
             </md-whiteframe>
 
-            <md-whiteframe md-elevation="2" class="item-sections">
-               <model-item class="model-item" path="Rat > Cerebellum > ..." v-on:showimage="showimage"></model-item>
+            <md-whiteframe md-elevation="1" class="item-sections">
+               <model-item class="model-item" 
+                  path="Rat > Cerebellum > Purkinje > cAD" v-on:showimage="showimage"
+                  author="Egidido D’Angelo (dangelo@unipv.it)"></model-item>
             </md-whiteframe>
 
             <modal-component v-if="showModal" v-on:close="showModal = false">
@@ -56,11 +62,17 @@
       padding: 10px;
    }
    .item-sections {
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
       padding: 10px;
+      transition: 0.3s ease;
    }
    .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
+   }
+   .item-sections:hover {
+      transition: 0.3s ease;
+      box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
 </style>

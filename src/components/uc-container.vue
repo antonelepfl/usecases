@@ -30,7 +30,7 @@
             this.$el.querySelectorAll('.selected').forEach(function (elem) {
                elem.classList.remove('selected')
             })
-            event.currentTarget.classList.toggle('selected')
+            event.currentTarget.classList.add('selected')
             // this.$router.push(routes.models)
          }
       }

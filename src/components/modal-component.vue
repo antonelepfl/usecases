@@ -45,7 +45,7 @@
    }
 
    .modal-container {
-      max-width: 65vw;
+      max-width: 55vw;
       margin: 0px auto;
       padding: 20px 30px;
       background-color: #fff;

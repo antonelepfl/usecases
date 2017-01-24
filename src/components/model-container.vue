@@ -3,15 +3,21 @@
       <!--<section v-for="(value, key) in usercases">
          <div v-for="model in value" v-on:click="selected" >-->
             <md-whiteframe md-elevation="2" class="item-sections">
-               <model-item class="model-item" path="Rat > SSCx > L5_TTPC1 > cAD" v-on:showimage="showimage" ></model-item>
+               <model-item class="model-item" 
+                  path="Rat > Somatosensory_Cortex > L5_TTPC1 > cAD" v-on:showimage="showimage" 
+                  author="Werner Van Geit (werner.vangeit@epfl.ch)"></model-item>
             </md-whiteframe>
 
             <md-whiteframe md-elevation="2" class="item-sections">
-               <model-item class="model-item" path="Rat > Hippocampus > ..." v-on:showimage="showimage"></model-item>
+               <model-item class="model-item" 
+                  path="Rat > Hippocampus > SP_PC > cAD" v-on:showimage="showimage"
+                  author="Michele Migliore (michele.migliore@pa.ibf.cnr.it)"></model-item>
             </md-whiteframe>
 
             <md-whiteframe md-elevation="2" class="item-sections">
-               <model-item class="model-item" path="Rat > Cerebellum > ..." v-on:showimage="showimage"></model-item>
+               <model-item class="model-item" 
+                  path="Rat > Cerebellum > Purkinje > cAD" v-on:showimage="showimage"
+                  author="Egidido D’Angelo (dangelo@unipv.it)"></model-item>
             </md-whiteframe>
 
             <modal-component v-if="showModal" v-on:close="showModal = false">
@@ -58,9 +64,16 @@
    .item-sections {
       margin-top: 20px;
       padding: 10px;
+      transition: 0.3s ease;
    }
    .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
+   }
+   .item-sections:hover {
+      -webkit-transform: scale(0.98);
+      -ms-transform: scale(0.98);
+      transform: scale(0.98);
+      transition: 0.3s ease;
    }
 </style>

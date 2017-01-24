@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3f8ac6" />
     <title>Trace Analysis</title>
     <link rel="manifest" href="./manifest.json">
     <!-- Start Single Page Apps for GitHub Pages -->
@@ -27,22 +28,28 @@
       })();
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
+
+    <style>
+      .fade-enter-active, .fade-leave-active {
+        transition: opacity .3s;
+      }
+      .fade-enter, .fade-leave-active {
+        opacity: 0;
+      }
+      .welcome {
+        margin: 20% auto;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <transition appear name="fade">
-        <router-view></router-view>
+        <router-view>
+          <h2 class="welcome">Welcome to the site</h2>
+        </router-view>
       </transition>      
     </div>
     <!-- built files will be auto injected -->
   </body>
-    
-  <style>
-    .fade-enter-active, .fade-leave-active {
-      transition: opacity .3s;
-    }
-    .fade-enter, .fade-leave-active {
-      opacity: 0;
-    }
-  </style>
 </html>

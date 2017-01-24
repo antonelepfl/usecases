@@ -5,13 +5,13 @@
                         <md-table v-once>
                               <md-table-header>
                                     <md-table-row>
-                                          <md-table-head>Anatomy</md-table-head>
+                                          <md-table-head>Anatomy:</md-table-head>
                                     </md-table-row>
                               </md-table-header>
                               <md-table-body>
                                     <md-table-row>
                                           <md-table-cell class="compact">Soma diameter:</md-table-cell>
-                                          <md-table-cell class="">8</md-table-cell>
+                                          <md-table-cell class="">8 µm</md-table-cell>
                                     </md-table-row>
 
                                     <md-table-row>
@@ -36,7 +36,7 @@
                         <md-table v-once>
                               <md-table-header>
                                     <md-table-row>
-                                          <md-table-head>Physiology</md-table-head>
+                                          <md-table-head>Physiology:</md-table-head>
                                     </md-table-row>
                               </md-table-header>
                               <md-table-body>
@@ -72,12 +72,11 @@
                         </md-table-body>
                      </md-table>
                   </md-layout>
-
                   <md-layout class="model-column" md-column md-flex-large="100" md-flex-medium="100">
                      <div class="credits">
                         <b>Credits:</b>
-                        <div>Created by: {{author}}</div>
-                        <div>Paper: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi esse fuga, expedita ullam, vel.</div>
+                        <div>Created by: author@exmple.com</div>
+                        <div>Reference: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi esse fuga, expedita ullam, vel.</div>
                      </div>
                   </md-layout>
             </md-layout>

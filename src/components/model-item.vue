@@ -1,6 +1,6 @@
 <template>
    <div class="model-item">
-      <div class="path" v-on:click="ripple">
+      <div class="path">
          <md-ink-ripple />
          <div class="inline" v-for="(part, index) in pathParts">
             <span class="square">{{ part }}</span> 
@@ -50,22 +50,6 @@
          },
          hasNext (index) {
             return index < (this.pathParts.length - 1)
-         },
-         ripple (event) {
-            // debugger
-            // event.currentTarget.classList.remove('ripple')
-            // var m = document.createElement('span')
-            // m.classList.add('ripple')
-            // m.classList.add('rippleEffect')
-            // event.currentTarget.appendChild(m)
-
-            // event.currentTarget.parentNode.classList.add('active')
-            // event.currentTarget.classList.toggle('active')
-            // if (event.currentTarget.parentNode.className.indexOf('ripple') > -1) {
-            //    event.currentTarget.parentNode.classList.remove('ripple')
-            // } else {
-            //    event.currentTarget.parentNode.classList.add('ripple')
-            // }
          }
       },
       mounted () {
@@ -78,9 +62,6 @@
 <style>
    .model-item-picture {
       align-items: center;
-   }
-   .model-item:hover {
-      /*background-color: blue;*/
    }
    .path {
       background-color: rgba(0, 12, 152, 0.08);

@@ -2,19 +2,19 @@
    <div class="model-container">
       <!--<section v-for="(value, key) in usercases">
          <div v-for="model in value" v-on:click="selected" >-->
-            <md-whiteframe md-elevation="2" class="item-sections">
+            <md-whiteframe md-elevation="1" class="item-sections">
                <model-item class="model-item" 
                   path="Rat > Somatosensory_Cortex > L5_TTPC1 > cAD" v-on:showimage="showimage" 
                   author="Werner Van Geit (werner.vangeit@epfl.ch)"></model-item>
             </md-whiteframe>
 
-            <md-whiteframe md-elevation="2" class="item-sections">
+            <md-whiteframe md-elevation="1" class="item-sections">
                <model-item class="model-item" 
                   path="Rat > Hippocampus > SP_PC > cAD" v-on:showimage="showimage"
                   author="Michele Migliore (michele.migliore@pa.ibf.cnr.it)"></model-item>
             </md-whiteframe>
 
-            <md-whiteframe md-elevation="2" class="item-sections">
+            <md-whiteframe md-elevation="1" class="item-sections">
                <model-item class="model-item" 
                   path="Rat > Cerebellum > Purkinje > cAD" v-on:showimage="showimage"
                   author="Egidido D’Angelo (dangelo@unipv.it)"></model-item>
@@ -62,7 +62,8 @@
       padding: 10px;
    }
    .item-sections {
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
       padding: 10px;
       transition: 0.3s ease;
    }
@@ -71,9 +72,7 @@
       transition: background-color 0.5s ease;
    }
    .item-sections:hover {
-      -webkit-transform: scale(0.98);
-      -ms-transform: scale(0.98);
-      transform: scale(0.98);
       transition: 0.3s ease;
+      box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
 </style>

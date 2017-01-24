@@ -4,19 +4,19 @@
          <div v-for="model in value" v-on:click="selected" >-->
             <md-whiteframe md-elevation="1" class="item-sections">
                <model-item class="model-item" 
-                  path="Rat > Somatosensory_Cortex > L5_TTPC1 > cAD" v-on:showimage="showimage" 
+                  path="Rat>Somatosensory Cortex>L5_TTPC1>cAD>C060114A2" v-on:showimage="showimage" 
                   author="Werner Van Geit (werner.vangeit@epfl.ch)"></model-item>
             </md-whiteframe>
 
             <md-whiteframe md-elevation="1" class="item-sections">
                <model-item class="model-item" 
-                  path="Rat > Hippocampus > SP_PC > cAD" v-on:showimage="showimage"
+                  path="Rat>Hippocampus>SP_PC>cAD>010710HP2" v-on:showimage="showimage"
                   author="Michele Migliore (michele.migliore@pa.ibf.cnr.it)"></model-item>
             </md-whiteframe>
 
             <md-whiteframe md-elevation="1" class="item-sections">
                <model-item class="model-item" 
-                  path="Rat > Cerebellum > Purkinje > cAD" v-on:showimage="showimage"
+                  path="Rat>Cerebellum>Purkinje>cAD>270911C" v-on:showimage="showimage"
                   author="Egidido D’Angelo (dangelo@unipv.it)"></model-item>
             </md-whiteframe>
 

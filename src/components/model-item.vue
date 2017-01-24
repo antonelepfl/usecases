@@ -4,7 +4,7 @@
          <md-ink-ripple />
          <div class="inline" v-for="(part, index) in pathParts">
             <span class="square">{{ part }}</span> 
-            <span v-show="hasNext(index)"> ></span>
+            <span v-show="hasNext(index)"> > </span>
          </div>
       </div>
       <div class="section">
@@ -53,7 +53,7 @@
          }
       },
       mounted () {
-         this.pathParts = this.path.replace(/ /g, '').split('>')
+         this.pathParts = this.path.split('>')
       }
    }
    
@@ -71,10 +71,11 @@
       text-align: left;
    }
    .inline {
+      padding: 4px;
       display: inline-block;
    }
    .inline span {
-      padding-left: 2px;
+      padding-left: 4px;
       padding-right: 2px;
    }
    .square:hover {

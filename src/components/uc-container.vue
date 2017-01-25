@@ -13,7 +13,7 @@
 <script>
    import ucItem from './uc-item.vue'
    var usercases = require('../assets/usercases.json')
-   // var routes = require('../assets/routes.json')
+   var routes = require('../assets/routes.json')
    export default {
       name: 'ucContainer',
       components: {
@@ -31,7 +31,9 @@
                elem.classList.remove('selected')
             })
             event.currentTarget.classList.add('selected')
-            // this.$router.push(routes.models)
+            if (this.$route.fullPath === routes.usecases.usecases) {
+               this.$router.push(routes.usecases.models)
+            }
          }
       }
    }

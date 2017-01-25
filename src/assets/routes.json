@@ -1,8 +1,9 @@
 {
    "home": "/",
+   "models": "/models",
    "usecases": {
       "home": "/usecases/",
-      "models": "/usecases/models"
-   },
-   "models": "/models"
+      "usecases": "/usecases/usecases/",
+      "models": "/usecases/usecases/models"
+   }
 }

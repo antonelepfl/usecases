@@ -1,5 +1,6 @@
 language: node_js
 node_js: node
+cache: yarn
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
 - git config --global user.name "antonelepfl"
@@ -13,7 +14,6 @@ script:
   - git add --all
   - git commit -m "Deploy form travis"
   - git push origin gh-pages --force
-cache: yarn
 env:
   global:
   - secure: PXUNSFqfEAUUmfG78gG7F8MdjV0pVi61lMA9xtKUCAzIBkM7NPKWtzM4oORDEYbIMUIu41HX/KVs0Kweo5c3skLY2yeFrsXFER+c/7tcfr8AKBybIKtl1cs8JUemZ6kJwZqvyY8UGSBotXT2jp2sJw8Q3PZN7plTPdAJVvaSrUmQCMnCXEi/4JzySEudDLiVa/Hvgv7X0OVGmSiIsnL6G+Hzo8fmgG6kjzbgq//FExDDU9K865ef86vj5Pn6IzLwNyNVQgX7sNO8eoym8No9ECxYA8EMT2+wWMMntF+2Fp2MLLgw2NY5ifPXeqpc4Ydlv2gYVtAMDPTswfBsFIKGlhT44g3E93vRVl7mPq/qLsHz5Vab76gduAkmrU4Zf9NXMYJehANBGUDuF48c4d9a/dsJweIkeQl0cqalWuYLYchIhHYa2yTTGXsjk01oly2Ei08o7IAVKeQX33sH0dEEKueHuGmd95dr1VSj0ZV4DnRqUWl+NHASAdzPhST+V1nP0hRfI3LkfzD+VgVXiB9zQiZjKqmDLMEa6lk7VQsHogx428kT2qeliiSuXKV3p3Rnp0Yn1MGvzXGAvAaJU4zs67Vn46g5UV0XlCxsaCB5O2OduEivLlHGIdlIHJ4nHbOZWOoTXJpKESvNcNyhScwSu2Wt4rWQ6mnjMH4r3JS9DVo=

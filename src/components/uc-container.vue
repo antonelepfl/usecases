@@ -1,5 +1,6 @@
 <template>
    <div class="uc-container">
+      <div class="title">Please select one use case</div>
       <section v-for="(value, key) in usercases">
          <div v-for="uc in value" v-on:click="selected">
             <md-whiteframe md-elevation="2" class="item-sections">
@@ -40,8 +41,9 @@
 </script>
 
 <style>
-   .uc-container {
+   .uc-container section {
       padding: 10px;
+      margin-top: 50px;
    }
    .item-sections {
       margin-top: 20px;
@@ -50,5 +52,19 @@
    .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
+   }
+   .uc-container > .title {
+      box-shadow: 0 2px 5px rgba(0,0,0,.26);
+      position: fixed;
+      text-align: left;
+      color: #fff;
+      background-color: #ad1457;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: 600;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
    }
 </style>

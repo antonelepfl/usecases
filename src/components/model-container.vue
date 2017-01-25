@@ -91,17 +91,17 @@
       box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
    .touched {
-      animation: shake 0.5s;
+      animation: shake 0.3s;
       border: 2px solid;
    }
    @keyframes shake {
-      0%, 100% {transform: translateX(0);} 
-      40%, 80% {transform: translateX(-5px);} 
-      20%, 60% {transform: translateX(5px);} 
+      0% {border: 2px solid white;}
+      50% {border: 2px solid gray;}
+      100% {border: 2px solid black;}
    } 
    @-webkit-keyframes shake {
-      0%, 100% {transform: translateX(0);} 
-      40%, 80% {transform: translateX(-5px);} 
-      20%, 60% {transform: translateX(5px);} 
+      0% {border: 2px solid white;}
+      50% {border: 2px solid gray;}
+      100% {border: 2px solid black;}
    } 
 </style>

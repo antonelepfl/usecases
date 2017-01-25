@@ -1,5 +1,5 @@
 <template>
-      <div class="model-description">
+      <div class="model-description" v-on:click="touched">
             <md-layout md-gutter>
                   <md-layout class="model-column" md-column md-flex-large="50">
                         <md-table v-once>
@@ -57,6 +57,11 @@
       name: 'modelDescription',
       props: {
          author: String
+      },
+      methods: {
+         touched (event) {
+            this.$emit('touched', event)
+         }
       }
    }
 </script>

@@ -1,7 +1,6 @@
 <template>
    <div class="model-item">
-      <div class="path">
-         <md-ink-ripple />
+      <div class="path" v-on:click="touched">
          <div class="inline" v-for="(part, index) in pathParts">
             <span class="square">{{ part }}</span> 
             <span v-show="hasNext(index)"> > </span>
@@ -20,7 +19,7 @@
             </md-layout>
 
             <md-layout md-column  md-flex-large="60" md-flex-medium="80" md-flex-xsmall="100">
-               <model-description class="model-description" v-bind:author="author"></model-description>
+               <model-description class="model-description" v-bind:author="author" v-on:touched="touched"></model-description>
             </md-layout>
          </md-layout>
       </div>
@@ -50,6 +49,17 @@
          },
          hasNext (index) {
             return index < (this.pathParts.length - 1)
+         },
+         touched (event) {
+            var el = event.currentTarget
+            var found = true
+            while (el.parentNode && found) {
+               el = el.parentNode
+               if (el.className.indexOf('model-item') > -1) {
+                  this.$emit('touched', el) // return the root component
+                  found = false
+               }
+            }
          }
       },
       mounted () {
@@ -82,6 +92,7 @@
       background-color: rgba(103, 103, 122, 0.35);
       border-radius: 5px;
    }
+
    @media screen and (min-width: 851px) and (max-width: 1200px) {
    }
 </style>

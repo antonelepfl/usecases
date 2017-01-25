@@ -76,13 +76,13 @@
    .model-container {
       padding: 10px;
    }
-   .item-sections {
+   .model-container .item-sections {
       margin-top: 10px;
       margin-bottom: 15px;
       padding: 9px;
       border: 2px solid white;
    }
-   .selected {
+   .model-container .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
    }
@@ -90,7 +90,7 @@
       transition: 0.3s ease;
       box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
-   .touched {
+   .model-container .touched {
       animation: shake 0.3s;
       border: 2px solid;
    }

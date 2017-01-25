@@ -11,18 +11,16 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: configroutes.home,
-      component: App,
-      name: configroutes.home },
-    { path: configroutes.usecases.home,
-      component: App,
-      name: configroutes.usecases.home },
-    { path: configroutes.models,
-      component: ModelContainer,
-      name: configroutes.models },
-    { path: configroutes.usecases.models,
-      component: ModelContainer,
-      name: configroutes.usecases.models }
+    { path: configroutes.home, // /
+      component: App},
+    { path: configroutes.models, // /models
+      component: ModelContainer},
+    { path: configroutes.usecases.home, // /usecases
+      component: App},
+    { path: configroutes.usecases.usecases, // /usecases/usecases
+      component: App},
+    { path: configroutes.usecases.models, // /usecases/usecases/models
+      component: ModelContainer}
   ],
   scrollBehavior (to, from, savedPosition) {
     // to scroll to the top every change of route

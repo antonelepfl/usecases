@@ -1,5 +1,7 @@
 <template>
    <div class="model-container">
+      <div class="title">Please select a model</div>
+      <div class="content">
       <!--<section v-for="(value, key) in usercases">
          <div v-for="model in value" v-on:click="selected" >-->      
             <md-whiteframe md-elevation="1" class="item-sections">
@@ -35,6 +37,7 @@
             </modal-component>
          <!--</div>
       </section>  end categories -->
+      </div>
    </div>
 </template>
 
@@ -74,7 +77,15 @@
 
 <style>
    .model-container {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+   }
+   .model-container .content {
       padding: 10px;
+      margin-top: 50px;
    }
    .model-container .item-sections {
       margin-top: 10px;
@@ -85,6 +96,20 @@
    .model-container .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
+   }
+   .model-container > .title {
+      box-shadow: 0 2px 5px rgba(0,0,0,.26);
+      position: fixed;
+      text-align: left;
+      color: #fff;
+      background-color: rgba(172, 96, 103, 0.95);
+      padding: 20px;
+      font-size: 20px;
+      font-weight: 600;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
    }
    .item-sections:hover {
       transition: 0.3s ease;

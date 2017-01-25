@@ -3,7 +3,7 @@
    "models": "/models",
    "usecases": {
       "home": "/usecases/",
-      "usecases": "/usecases/usecases",
+      "usecases": "/usecases/usecases/",
       "models": "/usecases/usecases/models"
    }
 }

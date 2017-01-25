@@ -1,7 +1,7 @@
 <template>
-   <div class="uc-container">
-      <div class="title">Please select one use case</div>
-      <section v-for="(value, key) in usercases">
+   <div id="uc-container" class="uc-container">
+      <div id="uc-container-title" class="title">Please select one use case</div>
+      <section v-for="(value, key) in usercases" class="uc-item-container">
          <div v-for="uc in value" v-on:click="selected">
             <md-whiteframe md-elevation="2" class="item-sections">
                <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
@@ -23,7 +23,8 @@
       data () {
          return {
             usercases: usercases[0],
-            categories: usercases[1].categories
+            categories: usercases[1].categories,
+            spa: false
          }
       },
       methods: {
@@ -32,22 +33,33 @@
                elem.classList.remove('selected')
             })
             event.currentTarget.classList.add('selected')
-            if (this.$route.fullPath === routes.usecases.usecases) {
+            if (this.spa === true) {
                this.$router.push(routes.usecases.models)
             }
+         }
+      },
+      mounted () {
+         if (this.$route.fullPath === routes.usecases.usecases) {
+            this.spa = true
+         } else {
+            this.$el.querySelector('#uc-container-title').remove()
+            this.$el.querySelector('.uc-item-container').classList.add('no-title')
          }
       }
    }
 </script>
 
 <style>
-   .uc-container section {
+   .uc-container .uc-item-container {
       padding: 10px;
       margin-top: 50px;
    }
    .item-sections {
       margin-top: 20px;
       padding: 10px;
+   }
+   .uc-item-container.no-title {
+      margin-top: 0px;
    }
    .selected {
       background-color: lightgray;

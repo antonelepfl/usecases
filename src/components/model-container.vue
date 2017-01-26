@@ -1,6 +1,6 @@
 <template>
    <div class="model-container">
-      <div class="title">Please select one model</div>
+      <div class="title">Please select a model</div>
       <div class="content">
       <!--<section v-for="(value, key) in usercases">
          <div v-for="model in value" v-on:click="selected" >-->      
@@ -76,6 +76,13 @@
 </script>
 
 <style>
+   .model-container {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+   }
    .model-container .content {
       padding: 10px;
       margin-top: 50px;
@@ -95,7 +102,7 @@
       position: fixed;
       text-align: left;
       color: #fff;
-      background-color: #ad1457;
+      background-color: rgba(172, 96, 103, 0.95);
       padding: 20px;
       font-size: 20px;
       font-weight: 600;

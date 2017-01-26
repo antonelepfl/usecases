@@ -74,7 +74,7 @@
       align-items: center;
    }
    .path {
-      background-color: rgba(2, 156, 177, 0.31);
+      background-color: rgba(130, 180, 195, 0.38);
       font-size: 20px;
       padding: 5px;
       text-shadow: 2px 2px rgba(120, 130, 253, 0.13);

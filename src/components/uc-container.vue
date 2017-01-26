@@ -1,6 +1,6 @@
 <template>
    <div id="uc-container" class="uc-container">
-      <div id="uc-container-title" class="title">Please select one use case</div>
+      <div id="uc-container-title" class="title">Please select a use case</div>
       <section v-for="(value, key) in usercases" class="uc-item-container">
          <div v-for="uc in value" v-on:click="selected">
             <md-whiteframe md-elevation="2" class="item-sections">
@@ -70,7 +70,7 @@
       position: fixed;
       text-align: left;
       color: #fff;
-      background-color: #ad1457;
+      background-color: rgba(172, 96, 103, 0.95);
       padding: 20px;
       font-size: 20px;
       font-weight: 600;

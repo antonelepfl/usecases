@@ -2,7 +2,7 @@
    <div id="uc-container" class="uc-container">
       <div id="uc-container-title" class="title">Please select a use case</div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
-         <div v-if="uc.disabled" class="disabled-tag">Comming Soon</div>
+         <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
             <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
          </md-whiteframe>
@@ -30,11 +30,14 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
+               var next = ''
                if (this.spa) {
-                  this.$router.push(this.$route.path + routes.models.push)
+                  next = this.$route.path + routes.models.push
                } else {
-                  this.$router.push(this.$route.path + routes.collab_form.push)
+                  next = this.$route.path + routes.collab_form.push
                }
+               next = next.replace('//', '/')
+               this.$router.push(next)
             }
          },
          prettyfy (name) {

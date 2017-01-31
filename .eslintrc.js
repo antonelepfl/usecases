@@ -22,6 +22,8 @@ module.exports = {
     "space-before-function-paren": 1,
     "comma-spacing": 1, 
     "space-before-blocks": 1, 
-    "spaced-comment": 1
+    "spaced-comment": 1,
+    "no-extra-semi": 0,
+    "semi": 0
   }
 }

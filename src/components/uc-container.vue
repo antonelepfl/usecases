@@ -2,11 +2,25 @@
    <div id="uc-container" class="uc-container">
       <div id="uc-container-title" class="title">Please select a use case</div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
-         <div v-if="uc.disabled" class="disabled-tag">Comming Soon</div>
+         <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
             <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
          </md-whiteframe>
       </div>
+
+      <!--<nav>
+         <button v-on:click="hbp_hello.login('hbp')" type="button" name="login">Login</button>
+         <button v-on:click="hbp_hello.logout('hbp')" type="button" name="logout">Logout</button>
+         <button v-on:click="hbp_hello.login('hbp', {force: true})" type="button" name="force-login">Force Login</button>
+         <button v-on:click="hbp_hello.logout('hbp', {force: true})" type="button" name="force-logout">Force Logout</button>
+         <button v-on:click="hbp_hello.login('hbp', {display: 'page'})" type="button" name="login">Login Using Page Redirection</button>
+      </nav>
+
+      <h3>Authentication Status</h3>
+      <p id="status">No event triggered</p>
+      <h3>Auth Response</h3>
+      <pre id="auth-response"></pre>-->
+
    </div>
 </template>
 

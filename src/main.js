@@ -4,7 +4,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-
+var hbpHello = require('./assets/hbp.hello.js').hellojs
+// var authenticated = false
 var configroutes = require('./assets/routes.json')
 
 Vue.use(VueMaterial)
@@ -16,8 +17,7 @@ const router = new VueRouter({
     { path: configroutes.single_usecases,
       component: function (resolve) {
         require(['./components/app.vue'], resolve)
-      },
-      params: {'single': 1}
+      }
     },
     { path: configroutes.usecases, // /:usecases/
       component: function (resolve) {
@@ -32,7 +32,8 @@ const router = new VueRouter({
     { path: configroutes.collab_form.path, // /:usecases/form
       component: function (resolve) {
         require(['./components/collab-form.vue'], resolve)
-      }
+      },
+      meta: { requiresAuth: true }
     }
   ],
   base: '/usecases/',
@@ -41,6 +42,35 @@ const router = new VueRouter({
     return { x: 0, y: 0 }
   }
 })
+
+hbpHello.init({
+  hbp: '2bc1364d-1039-495b-b51e-608108cbefce' // Replace with your app id
+})
+
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     if (!authenticated) {
+//       hbpHello.login('hbp', {'redirect_uri': ''}).then(function () {
+//         authenticated = true
+//         console.debug('User Authenticated')
+//         next()
+//       }, function (e) {
+//         console.debug('Authentication Error', e)
+//       });
+//     }
+
+    // if (!auth.loggedIn()) {
+    //   next({
+    //     path: '/login',
+    //     query: { redirect: to.fullPath }
+    //   })
+    // } else {
+    //   next()
+    // }
+//   } else {
+//     next() // make sure to always call next()!
+//   }
+// })
 
 /* eslint-disable no-new */
 new Vue({

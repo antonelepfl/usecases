@@ -77,7 +77,6 @@
                if (event.authResponse.access_token) {
                   that.authenticated = true;
                   console.info('User Authenticated')
-                  console.log(event.authResponse.access_token)
                }
             }, function (e) {
                console.debug('Authentication Error', e)
@@ -95,7 +94,6 @@
          searchCollab (param) {
             if (param.length > 0) {
                this.$http.get(this.collabAPI + param).then(function (response) {
-                  console.log(response.body.results)
                   this.collabResults = response.body.results
                }, function (responseError) {
                   console.error(responseError)

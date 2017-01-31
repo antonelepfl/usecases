@@ -47,31 +47,6 @@ hbpHello.init({
   hbp: '2bc1364d-1039-495b-b51e-608108cbefce' // Replace with your app id
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     if (!authenticated) {
-//       hbpHello.login('hbp', {'redirect_uri': ''}).then(function () {
-//         authenticated = true
-//         console.debug('User Authenticated')
-//         next()
-//       }, function (e) {
-//         console.debug('Authentication Error', e)
-//       });
-//     }
-
-    // if (!auth.loggedIn()) {
-    //   next({
-    //     path: '/login',
-    //     query: { redirect: to.fullPath }
-    //   })
-    // } else {
-    //   next()
-    // }
-//   } else {
-//     next() // make sure to always call next()!
-//   }
-// })
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

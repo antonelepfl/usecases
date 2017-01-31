@@ -9,17 +9,11 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
 import ucContainer from './uc-container.vue'
-var configroutes = require('../assets/routes.json')
 
 Vue.use(VueMaterial)
 
 export default {
   name: 'startapp',
-  data () {
-    return {
-      configroutes: configroutes
-    }
-  },
   components: {
     ucContainer, VueMaterial
   }

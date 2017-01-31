@@ -1,7 +1,7 @@
 <template>
    <div class="uc-description">
       <div class="title">
-         <h2 class="title-text">{{ uc.title }}</h2>
+         <div class="title-text">{{ uc.title }}</div>
       </div>
       <div class="description">
          <p>{{ uc.description }}</p>
@@ -21,4 +21,9 @@
 </script>
 
 <style>
+   .uc-description .title-text {
+      font-size: 20px;
+      font-weight: bold;
+
+   }
 </style>

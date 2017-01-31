@@ -1,9 +1,12 @@
 {
-   "home": "/",
-   "models": "/models",
-   "usecases": {
-      "home": "/usecases/",
-      "usecases": "/usecases/usecases/",
-      "models": "/usecases/usecases/models"
+   "single_usecases": "/single/:list_usecases",
+   "usecases": "/:list_usecases",
+   "models": {
+      "path": "/:list_usecases/models",
+      "push": "/models"
+   },
+   "collab_form": {
+      "path": "/single/:list_usecases/form",
+      "push": "/form"
    }
 }

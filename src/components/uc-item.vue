@@ -31,7 +31,7 @@
 <style>
    .item-picture {
       width: 8%;
-      min-height: 50px;
+      min-height: 80px;
    }
    .uc-item {
       display: flex;

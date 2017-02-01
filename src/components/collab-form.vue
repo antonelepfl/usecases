@@ -1,12 +1,5 @@
 <template>
-   <div class="collab-form">
-       <div class="login-logout">
-         <div v-show="authenticated" class="explanation">Define in which collab you want to work:</div>
-         <div v-show="!authenticated" class="explanation">Please Login with HBP account</div>
-         <md-button class="md-raised md-primary button-medium" v-on:click="login" v-show="!authenticated">Login</md-button>
-         <md-button class="md-raised md-primary button-medium" v-on:click="logout" v-show="authenticated">Logout</md-button>
-      </div>
-      
+   <div class="collab-form">      
       <md-tabs v-if="authenticated" md-fixed class="elevated">
          <md-tab id="search" md-label="Search" md-icon="search" class="container-centered">
             <md-input-container>
@@ -68,12 +61,14 @@
          if (auth) {
             this.authenticated = true
             Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
+         } else {
+           this.login()
          }
       },
       methods: {
          login () {
             var that = this
-            hbpHello.login('hbp').then(function (event) {
+            hbpHello.login('hbp', {'display': 'page'}).then(function (event) {
                if (event.authResponse.access_token) {
                   that.authenticated = true;
                   console.info('User Authenticated')
@@ -84,7 +79,7 @@
          },
          logout () {
             var that = this
-            hbpHello.logout('hbp', {force: true}).then(function (event) {
+            hbpHello.logout('hbp').then(function (event) {
                that.authenticated = false;
                console.info('User Logged Out')
             }, function (e) {

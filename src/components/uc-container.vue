@@ -30,11 +30,14 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
+               var next = ''
                if (this.spa) {
-                  this.$router.push(this.$route.path + routes.models.push)
+                  next = this.$route.path + routes.models.push
                } else {
-                  this.$router.push(this.$route.path + routes.collab_form.push)
+                  next = this.$route.path + routes.collab_form.push
                }
+               next = next.replace('//', '/')
+               this.$router.push(next)
             }
          },
          prettyfy (name) {

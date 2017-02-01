@@ -1,5 +1,6 @@
 <template>
-   <div class="collab-form">      
+   <div class="collab-form">
+      <div v-show="authenticated" class="explanation">Define in which collab you want to work:</div>
       <md-tabs v-if="authenticated" md-fixed class="elevated">
          <md-tab id="search" md-label="Search" md-icon="search" class="container-centered">
             <md-input-container>
@@ -145,6 +146,12 @@
    .collab-form .explanation {
       font-size: 22px;
       font-family: sans-serif;
+      text-align: center;
+      margin-top: 20px;
+      /* background-color: #cbd9e6; */
+      /* border-radius: 15px; */
+      padding: 11px;
+      text-decoration: underline;
    }
    .collab-form .elevated {
       margin-top: 10px;

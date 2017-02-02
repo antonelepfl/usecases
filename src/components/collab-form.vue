@@ -9,8 +9,10 @@
                <label>Collab Name</label>
                <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
             </md-input-container>
-            <div v-for="collab in collabResults" class="collabs-results-container">
-               <div>{{ collab.title }}</div>
+            <div class="collabs-results-container">
+              <div v-for="collab in collabResults" class="collab-result">
+                <a class="nota" href="#">{{ collab.title }}</a>
+              </div>
             </div>
          </md-tab>
 
@@ -167,5 +169,9 @@
    .collab-form .collabs-results-container {
      overflow: scroll;
      max-height: 400px;
+     text-align: center;
+   }
+   .collabs-results-container .collab-result > a.nota {
+     color: #ac6067;
    }
 </style>

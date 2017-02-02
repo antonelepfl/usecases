@@ -59,13 +59,7 @@
          }
       },
       mounted () {
-         // knowing if the token is stil valid
-        //  var auth = hbpHello.getAuthResponse('hbp')
-        //  if (auth) {
-        //     this.saveAuthentication(this, auth)
-        //  } else {
-           this.login()
-        //  }
+        this.login()
       },
       methods: {
          login (displayMethod) {

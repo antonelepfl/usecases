@@ -60,12 +60,12 @@
       },
       mounted () {
          // knowing if the token is stil valid
-         var auth = hbpHello.getAuthResponse('hbp')
-         if (auth) {
-            this.saveAuthentication(this, auth)
-         } else {
+        //  var auth = hbpHello.getAuthResponse('hbp')
+        //  if (auth) {
+        //     this.saveAuthentication(this, auth)
+        //  } else {
            this.login()
-         }
+        //  }
       },
       methods: {
          login (displayMethod) {
@@ -160,7 +160,7 @@
       text-align: center;
       color: #fff;
       background-color: rgb(172, 96, 103);
-      padding: 20px;
+      padding: 25px 20px;
       font-size: 20px;
       font-weight: 600;
       width: 100%;

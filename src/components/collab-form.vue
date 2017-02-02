@@ -21,8 +21,8 @@
                <label>Collab Name</label>
                <md-input placeholder="Create new collab"></md-input>
             </md-input-container>
-            <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub">{{private_public}}</md-switch>
-            <md-button class="md-raised md-primary button-medium">Create</md-button>
+            <div class="centered"><md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub">{{private_public}}</md-switch></div>
+            <div class="centered"><md-button class="md-raised md-primary button-medium">Create</md-button></div>
          </md-tab>
       </md-tabs>     
 
@@ -111,26 +111,18 @@
 </script>
 
 <style>
-   .container-centered {
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-pack: center;
-      align-items: center;
-   }
-   .collab-form {
-      max-width: 600px;
-      margin: auto;
-      border-width: 0 1px 1px 1px;
-      border-style: solid; 
-      border-color: rgba(0, 0, 0, 0.2);
-      margin-top: 60px;
+   .collab-form .centered {
+     margin: 0 15%;
    }
    .button-medium {
       max-width: 150px;
    }
    .collab-form .md-theme-default.md-tabs>.md-tabs-navigation {
       background-color: #ac6067;
+   }
+   .collab-form .md-tabs-content {
+     width: 550px;
+     margin: 0 auto;
    }
    .collab-form .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
       background-color: #ac6067;
@@ -161,11 +153,6 @@
    }
    .collab-form .elevated {
       min-height: 300px;
-   }
-   .collab-form .collabs-results-container {
-     overflow: scroll;
-     max-height: 400px;
-     text-align: center;
    }
    .collabs-results-container .collab-result > a.nota {
      color: #ac6067;

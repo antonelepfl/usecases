@@ -19,7 +19,7 @@ const router = new VueRouter({
         require(['./components/app.vue'], resolve)
       }
     },
-    { path: configroutes.usecases, // /:usecases/
+    { path: configroutes.usecases, // /:usecases
       component: function (resolve) {
         require(['./components/app.vue'], resolve)
       }

@@ -96,6 +96,7 @@
               }
             }, function (responseError) {
                 if (responseError.status === 401) {
+                  this.collabResults.push = 'Getting your collabs ...'
                   this.login('none')
                 }
                 console.error(responseError)
@@ -126,6 +127,10 @@
    .collab-form {
       max-width: 600px;
       margin: auto;
+      border-width: 0 1px 1px 1px;
+      border-style: solid; 
+      border-color: rgba(0, 0, 0, 0.2);
+      margin-top: 60px;
    }
    .button-medium {
       max-width: 150px;
@@ -161,9 +166,6 @@
       width: 100%;
    }
    .collab-form .elevated {
-      border-width: 0 1px 1px 1px;
-      border-style: solid; 
-      border-color: rgba(0, 0, 0, 0.2);
       min-height: 300px;
    }
    .collab-form .collabs-results-container {

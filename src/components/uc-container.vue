@@ -1,19 +1,18 @@
 <template>
    <div id="uc-container" class="uc-container">
       <div id="uc-container-title" class="title">Please select a use case</div>
-      <section v-for="(value, key) in usercases" class="uc-item-container">
-         <div v-for="uc in value" v-on:click="selected">
-            <md-whiteframe md-elevation="2" class="item-sections">
-               <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
-            </md-whiteframe>
-         </div>
-      </section> <!-- end categories -->
+      <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
+         <div v-if="uc.disabled" class="disabled-tag">Comming Soon</div>
+         <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
+            <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
+         </md-whiteframe>
+      </div>
    </div>
 </template>
 
 <script>
    import ucItem from './uc-item.vue'
-   var usercases = require('../assets/usercases.json')
+   var usecases = require('../assets/usecases.json')
    var routes = require('../assets/routes.json')
    export default {
       name: 'ucContainer',
@@ -22,46 +21,59 @@
       },
       data () {
          return {
-            usercases: usercases[0],
-            categories: usercases[1].categories,
-            spa: false
+            usecases: {},
+            categories: usecases[1].categories,
+            spa: false,
+            route: {}
          }
       },
       methods: {
-         selected (event) {
-            this.$el.querySelectorAll('.selected').forEach(function (elem) {
-               elem.classList.remove('selected')
-            })
-            event.currentTarget.classList.add('selected')
-            if (this.spa === true) {
-               this.$router.push(routes.usecases.models)
+         selected (uc) {
+            if (!uc.disabled) {
+               if (this.spa) {
+                  this.$router.push(this.$route.path + routes.models.push)
+               } else {
+                  this.$router.push(this.$route.path + routes.collab_form.push)
+               }
             }
+         },
+         prettyfy (name) {
+            return name.split('_').map(function (word) {
+               return word.charAt(0).toUpperCase() + word.slice(1)
+            }).join(' ')
          }
       },
       mounted () {
-         if (this.$route.fullPath === routes.usecases.usecases) {
-            this.spa = true
-         } else {
+         this.route = this.$route
+         if (this.route.path.indexOf('/single/') > -1) {
+            // it is a plane website and not a SPA
+            this.spa = false
             this.$el.querySelector('#uc-container-title').remove()
-            this.$el.querySelector('.uc-item-container').classList.add('no-title')
+            this.$el.classList.add('no-title')
+         } else {
+            this.spa = true
          }
+         this.usecases = usecases[0][this.route.params.list_usecases]
+         var title = this.route.params.list_usecases
+         document.querySelector('title').innerHTML = this.prettyfy(title)
       }
    }
 </script>
 
 <style>
-   .uc-container .uc-item-container {
+   .uc-container {
       padding: 10px;
       margin-top: 50px;
    }
-   .item-sections {
+   .uc-container.no-title {
+      padding: 10px;
+      margin-top: 0;
+   }
+   .uc-container .item-sections {
       margin-top: 20px;
       padding: 10px;
    }
-   .uc-item-container.no-title {
-      margin-top: 0px;
-   }
-   .selected {
+   .uc-container .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
    }
@@ -77,6 +89,31 @@
       top: 0;
       left: 0;
       width: 100%;
+      z-index: 3;
+   }
+   .uc-container .disabled-tag {
+      position: absolute;
+      top: 15%;
+      left: 45%;
+      font-weight: 700;
+      border: 10px solid #bacfcb;
+      background-color: #bacfcb;
+      border-radius: 5px;
       z-index: 2;
+   }
+   .uc-container .disabled-item {
+      opacity: 0.5;
+      background-color: rgba(63, 58, 58, 0.22);
+   }
+   .uc-container .disabled-item:hover {
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+   }
+   .uc-container .disabled-container {
+      position: relative;
+   }
+   @media screen and (max-width: 751px) {
+      .uc-container .disabled-tag {
+         left: 35%;
+      }
    }
 </style>

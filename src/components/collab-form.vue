@@ -21,8 +21,10 @@
                <label>Collab Name</label>
                <md-input placeholder="Create new collab"></md-input>
             </md-input-container>
-            <div class="centered"><md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub">{{private_public}}</md-switch></div>
-            <div class="centered"><md-button class="md-raised md-primary button-medium">Create</md-button></div>
+            <div class="centered">
+              <md-button class="md-raised md-primary button-medium separated ">Create</md-button>
+              <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
+            </div>
          </md-tab>
       </md-tabs>     
 
@@ -112,7 +114,10 @@
 
 <style>
    .collab-form .centered {
-     margin: 0 15%;
+     margin-left: 150px;
+   }
+   .collab-form .centered .separated {
+     margin-right: 50px;
    }
    .button-medium {
       max-width: 150px;

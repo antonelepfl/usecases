@@ -8,7 +8,7 @@
             "maturity": ["beta"],
             "access": [""],
             "picture": {
-               "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/cAC.png",
+               "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             }
          },
@@ -19,7 +19,7 @@
             "maturity": ["experimental"],
             "access": [""],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
             }
          },
@@ -30,51 +30,51 @@
             "maturity": ["experimental"],
             "access": [""],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
             }
          },
          {
-            "title": "Synaptic event fitting",
+            "title": "Synaptic events fitting",
             "description": "Fitting synaptic events using data and model in NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
             "access": ["hpc"],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             }
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Synaptic events fitting (user's model)",
             "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
             "experience": ["experts"],
             "maturity": ["experimental"],
             "access": ["hpc"],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             }
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Synaptic events fitting (user's data)",
             "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
             "experience": ["experts"],
             "maturity": ["experimental"],
             "access": ["hpc"],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             }
          },
          {
-            "title": "Lorem ipsum dolor sit amet.",
+            "title": "Synaptic events fitting registration",
             "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
             "experience": ["power", "experts"],
             "maturity": ["experimental"],
             "access": [""],
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/cAC.png?raw=true",
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             }
          }
@@ -96,18 +96,18 @@
                "tooltip": "Use case for contributors and tools experts"
             },
             "code": {
-               "name": "Code",
+               "name": "Developers",
                "tooltip": "Use case for tools developers"
             }
          },
          "maturity": {
             "beta": {
                "name": "Beta",
-               "tooltip": "A service with a certain robustness"
+               "tooltip": "A service of this maturity level has reached a certain robustness and may be used by early adopters."
             },
             "experimental": {
                "name": "Experimental",
-               "tooltip": "A service under heavy development"
+               "tooltip": "A service of this maturity level is under heavy development and recommended only for specialists’ use or use for co-design partners."
             }
          },
          "access": {
@@ -117,7 +117,7 @@
             },
             "byor": {
                "name": "BYOR",
-               "tooltip": "(Bring Your Own Resources) allow you to use your own compute resources"
+               "tooltip": "(Bring Your Own Resources) Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility."
             }
          }
       }

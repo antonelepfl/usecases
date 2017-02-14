@@ -45,7 +45,7 @@
     name: 'collabForm',
     data () {
       return {
-        private: false,
+        private: true,
         authenticated: false,
         searchText: '',
         collabAPI: 'https://services.humanbrainproject.eu/collab/v0/',
@@ -105,25 +105,24 @@
       },
       createNew () {
         var collabName = this.$el.querySelector('#collab-create-name').value
-        var isPrivate = true
+        var isPrivate = this.$el.querySelector('#priv_pub').value
         this.createCollab(collabName, isPrivate)
-        // this.createNavEntry(collabName)
       },
       //  createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
-      createNavEntry (collabName) {
-        var collabId = 1854;
+      createNavEntry (entryName, collabId, parentId) {
         var context = this.createGuid()
         var type = 'IT'
         var payload = {
           'app_id': 271,
           'context': context,
-          'name': collabName,
+          'name': entryName,
           'order_index': 0,
-          'parent': 16942,
+          'parent': parentId,
           'type': type,
           'collab': collabId
         }
-        switch (this.$route.param.uc_name) {
+        debugger
+        switch (this.$route.params.uc_name) {
           case 'featureextraction':
             payload.app_id = 271
             break
@@ -143,13 +142,20 @@
       },
       createCollab (collabTitle, isPrivate) {
         var collabReq = this.collabAPI + 'collab/'
+        var that = this
         var payload = {
           'title': collabTitle,
           'private': isPrivate,
           'content': collabTitle
         }
         this.$http.post(collabReq, payload).then(function (response) {
-          console.log('create collab: ', response)
+          var collabId = response.body.id
+          var url = that.collabAPI + 'collab/' + collabId + '/nav/root/'
+          that.$http.get(url).then(function (response) {
+            var parentRoot = response.body.id
+            // var collabId = response.body.collab
+            that.createNavEntry(collabTitle, collabId, parentRoot)
+          })
         })
       },
       createGuid () {
@@ -171,53 +177,53 @@
 </script>
 
 <style>
-.collab-form .centered {
-  margin-left: 150px;
-}
-.collab-form .centered .separated {
-  margin-right: 50px;
-}
-.button-medium {
-  max-width: 150px;
-}
-.collab-form .md-theme-default.md-tabs>.md-tabs-navigation {
-  background-color: #ac6067;
-}
-.collab-form .md-tabs-content {
-  width: 550px;
-  margin: 0 auto;
-}
-.collab-form .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
-  background-color: #ac6067;
-}
-.collab-form button.md-tab-header.md-active {
-  background-color: #884f4d;
-  color: white;
-}
-.collab-form .md-theme-default.md-tabs>.md-tabs-navigation .md-tab-indicator {
-  background-color: #1c287e;
-}
-.collab-form .priv_pub {
-  font-size: 20px;
-}
-.collab-form .login-logout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.collab-form .header {
-  text-align: center;
-  color: #fff;
-  background-color: rgb(172, 96, 103);
-  padding: 25px 20px;
-  font-size: 20px;
-  font-weight: 600;
-  width: 100%;
-}
-.collab-form .elevated {
-  min-height: 300px;
-}
-.collabs-results-container .collab-result > a.nota {
-  color: #ac6067;
-}
+  .collab-form .centered {
+    margin-left: 150px;
+  }
+  .collab-form .centered .separated {
+    margin-right: 50px;
+  }
+  .button-medium {
+    max-width: 150px;
+  }
+  .collab-form .md-theme-default.md-tabs>.md-tabs-navigation {
+    background-color: #ac6067;
+  }
+  .collab-form .md-tabs-content {
+    width: 550px;
+    margin: 0 auto;
+  }
+  .collab-form .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
+    background-color: #ac6067;
+  }
+  .collab-form button.md-tab-header.md-active {
+    background-color: #884f4d;
+    color: white;
+  }
+  .collab-form .md-theme-default.md-tabs>.md-tabs-navigation .md-tab-indicator {
+    background-color: #1c287e;
+  }
+  .collab-form .priv_pub {
+    font-size: 20px;
+  }
+  .collab-form .login-logout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .collab-form .header {
+    text-align: center;
+    color: #fff;
+    background-color: rgb(172, 96, 103);
+    padding: 25px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+  }
+  .collab-form .elevated {
+    min-height: 300px;
+  }
+  .collabs-results-container .collab-result > a.nota {
+    color: #ac6067;
+  }
 </style>

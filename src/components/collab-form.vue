@@ -22,7 +22,7 @@
           <md-input id="collab-create-name" placeholder="Create new collab"></md-input>
         </md-input-container>
         <div class="centered">
-          <md-button class="md-raised md-primary button-medium separated " @click="createNew">Create</md-button>
+          <md-button class="md-raised md-primary button-medium separated" @click="createNew">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
         </div>
       </md-tab>
@@ -121,11 +121,10 @@
           'type': type,
           'collab': collabId
         }
-        debugger
+        console.log(collabReq, payload)
         var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
         this.$http.post(collabReq, payload).then(function (response) {
           console.log(response)
-          debugger
           window.parent.postMessage({
             eventName: 'collab.open',
             data: {

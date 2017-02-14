@@ -39,7 +39,8 @@
                }
                next = next.replace('//', '/')
                console.log(next)
-               this.$router.push({name: 'single_usecase', params: {uc: uc}})
+                this.$router.push({path: next})
+              //  this.$router.push({name: 'single_usecase', params: {uc: uc}})
             }
          },
          prettyfy (name) {

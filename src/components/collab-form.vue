@@ -10,25 +10,20 @@
           <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
         </md-input-container>
         <div class="collabs-results-container">
-          <div v-for="collab in collabResults" class="collab-result" >
-            <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
+          <div v-for="collab in collabResults" class="collab-result">
+            <a class="nota" href="#">{{ collab.title }}</a>
           </div>
         </div>
-        <span class="error-message">{{errorMessage}}</span>
       </md-tab>
 
       <md-tab id="create" md-label="Create"  md-icon="create" class="container-centered" >
         <md-input-container>
           <label>Collab Name</label>
-          <md-input placeholder="Create new collab" v-model.lazy="searchText"></md-input>
+          <md-input id="collab-create-name" placeholder="Create new collab"></md-input>
         </md-input-container>
-        <div v-show="!isLoading" class="centered">
-          <md-button class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
+        <div class="centered">
+          <md-button class="md-raised md-primary button-medium separated " @click="createNew">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
-          <span class="error-message">{{errorMessage}}</span>
-        </div>
-        <div v-show="isLoading" class="progress-bar">
-          <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
       </md-tab>
     </md-tabs>
@@ -37,26 +32,26 @@
 </template>
 
 <script>
-  import collabAuthentication from '../mixins/collabAuthentication.js'
-  import createCollab from '../mixins/createCollab.js'
-  import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
+  var hbpHello = require('../assets/hbp.hello.js').hellojs
+  import Vue from 'vue'
+  import VueResource from 'vue-resource'
+  Vue.use(VueResource)
+
+  hbpHello.init({
+    hbp: '74b1a180-3646-45ac-b53c-ebd905cec418'
+  })
 
   export default {
     name: 'collabForm',
     data () {
       return {
-        private: true,
+        private: false,
+        authenticated: false,
         searchText: '',
-        collabResults: [],
-        isLoading: false,
-        errorMessage: '',
-        isJupyter: false,
-        appId: -1,
-        typesCollabsApps: typesCollabsApps
+        collabAPI: 'https://services.humanbrainproject.eu/collab/v0/',
+        collabResults: []
       }
     },
-    props: ['uc_name'],
-    mixins: [collabAuthentication, createCollab], // use common functions
     computed: {
       private_public () {
         if (this.private) {
@@ -67,101 +62,144 @@
     },
     mounted () {
       this.login()
-      this.appId = this.typesCollabsApps[this.uc_name].appid
     },
     methods: {
-      collabSelected (collab) {
+      login (displayMethod) {
+        if (displayMethod === undefined) { displayMethod = 'page' }
         var that = this
-        this.getNavRoot(collab.id).then(function (parentRoot) {
-          var entryName = that.typesCollabsApps[that.uc_name].entryname
-          that.createNavEntry(entryName, collab.id, parentRoot, that.appId)
+        hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
+          if (event.authResponse.access_token) {
+            that.saveAuthentication(that, event.authResponse)
+          }
+        }, function (e) {
+          console.debug('Authentication Error', e)
+        });
+      },
+      logout () {
+        var that = this
+        hbpHello.logout('hbp').then(function (event) {
+          that.authenticated = false;
+          console.info('User Logged Out')
+        }, function (e) {
+          console.debug('Logout Error', e)
+        });
+      },
+      searchCollab (param) {
+        this.collabResults = []
+        this.$http.get(this.collabAPI + 'mycollabs/?search=' + param).then(function (response) {
+          if (param.length > 0) {
+            this.collabResults = response.body.results
+          }
+        }, function (responseError) {
+          if (responseError.status === 401) {
+            this.collabResults.push = 'Getting your collabs ...'
+            this.login('none')
+          }
+          console.error(responseError)
         })
       },
-      createNewCollab () {
-        var that = this
-        this.isLoading = true
-        var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
-        this.createCollab(this.searchText, isPrivate).then(function (collabId) {
-          that.getNavRoot(collabId).then(function (parentRoot) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collabId, parentRoot, that.appId)
-            that.isLoading = false
-          })
-        }, function (error) {
-          if (error.body.title) {
-            that.isLoading = false
-            that.errorMessage = error.body.title[0]
-          }
+      saveAuthentication (context, auth) {
+        context.authenticated = true;
+        console.info('User Authenticated')
+        Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
+      },
+      createNew () {
+        var collabName = this.$el.querySelector('#collab-create-name').value
+        this.createNavEntry(collabName)
+      },
+      //  createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
+      createNavEntry (collabName) {
+        var collabId = 1854;
+        var context = this.createGuid()
+        var type = 'IT'
+        var payload = {
+          'app_id': 271,
+          'context': context,
+          'name': collabName,
+          'order_index': 0,
+          'parent': 16942,
+          'type': type,
+          'collab': collabId
+        }
+        debugger
+        var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
+        this.$http.post(collabReq, payload).then(function (response) {
+          console.log(response)
+          debugger
+          window.parent.postMessage({
+            eventName: 'collab.open',
+            data: {
+              id: collabId
+            }
+          }, '*');
         })
+      },
+      createGuid () {
+        function s4 () {
+          return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
       }
     },
     watch: {
       'searchText' (newVal) {
-        var that = this
-        this.searchCollab(newVal).then(function (result) {
-          that.collabResults = result
-        })
-        if (this.errorMessage !== '') {
-          this.errorMessage = ''
-        }
+        this.searchCollab(newVal)
       }
     }
   }
 </script>
 
-<style >
-  .collab-form .centered {
-    margin-left: 150px;
-  }
-  .collab-form .centered .separated {
-    margin-right: 50px;
-  }
-  .button-medium {
-    max-width: 150px;
-  }
-  .collab-form .md-theme-default.md-tabs>.md-tabs-navigation {
-    background-color: #ac6067;
-  }
-  .collab-form .md-tabs-content {
-    width: 550px;
-    margin: 0 auto;
-  }
-  .collab-form .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
-    background-color: #ac6067;
-  }
-  .collab-form button.md-tab-header.md-active {
-    background-color: #884f4d;
-    color: white;
-  }
-  .collab-form .md-theme-default.md-tabs>.md-tabs-navigation .md-tab-indicator {
-    background-color: #1c287e;
-  }
-  .collab-form .priv_pub {
-    font-size: 20px;
-  }
-  .collab-form .login-logout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .collab-form .header {
-    text-align: center;
-    color: #fff;
-    background-color: rgb(172, 96, 103);
-    padding: 25px 20px;
-    font-size: 20px;
-    font-weight: 600;
-    width: 100%;
-  }
-  .collab-form .elevated {
-    min-height: 300px;
-  }
-  .collabs-results-container .collab-result > a.nota {
-    color: #ac6067;
-  }
-  .collab-form span.error-message {
-    display: block;
-    color: red;
-    margin-left: 25px;
-  }
+<style>
+.collab-form .centered {
+  margin-left: 150px;
+}
+.collab-form .centered .separated {
+  margin-right: 50px;
+}
+.button-medium {
+  max-width: 150px;
+}
+.collab-form .md-theme-default.md-tabs>.md-tabs-navigation {
+  background-color: #ac6067;
+}
+.collab-form .md-tabs-content {
+  width: 550px;
+  margin: 0 auto;
+}
+.collab-form .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
+  background-color: #ac6067;
+}
+.collab-form button.md-tab-header.md-active {
+  background-color: #884f4d;
+  color: white;
+}
+.collab-form .md-theme-default.md-tabs>.md-tabs-navigation .md-tab-indicator {
+  background-color: #1c287e;
+}
+.collab-form .priv_pub {
+  font-size: 20px;
+}
+.collab-form .login-logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.collab-form .header {
+  text-align: center;
+  color: #fff;
+  background-color: rgb(172, 96, 103);
+  padding: 25px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+}
+.collab-form .elevated {
+  min-height: 300px;
+}
+.collabs-results-container .collab-result > a.nota {
+  color: #ac6067;
+}
 </style>

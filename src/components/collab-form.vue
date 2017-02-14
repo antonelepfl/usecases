@@ -22,7 +22,7 @@
           <md-input id="collab-create-name" placeholder="Create new collab"></md-input>
         </md-input-container>
         <div class="centered">
-          <md-button class="md-raised md-primary button-medium separated" @click="createNew">Create</md-button>
+          <md-button class="md-raised md-primary button-medium separated" v-on:click="createNew">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
         </div>
       </md-tab>

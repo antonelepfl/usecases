@@ -29,15 +29,18 @@
       },
       methods: {
          selected (uc) {
+           // TODO: change this routing because path is not used
             if (!uc.disabled) {
                var next = ''
                if (this.spa) {
                   next = this.$route.path + routes.models.push
                } else {
-                  next = this.$route.path + routes.collab_form.push
+                  next = this.$route.path + '/form/' + uc.title.toLowerCase().replace(/\s/g, '')
                }
                next = next.replace('//', '/')
-               this.$router.push(next)
+               console.log(next)
+                this.$router.push({path: next})
+              //  this.$router.push({name: 'single_usecase', params: {uc: uc}})
             }
          },
          prettyfy (name) {

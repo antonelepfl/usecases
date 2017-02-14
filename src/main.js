@@ -6,7 +6,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 var hbpHello = require('./assets/hbp.hello.js').hellojs
 // var authenticated = false
-var configroutes = require('./assets/routes.json')
+// var configroutes = require('./assets/routes.json')
 
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
@@ -14,25 +14,26 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: configroutes.single_usecases,
+    { path: '/single/:list_usecases',
       component: function (resolve) {
         require(['./components/app.vue'], resolve)
       }
     },
-    { path: configroutes.usecases, // /:usecases
+    { path: '/:list_usecases', // /:usecases
       component: function (resolve) {
         require(['./components/app.vue'], resolve)
       }
     },
-    { path: configroutes.models.path, // /:usecases/models
+    { path: '/:list_usecases/models', // /:usecases/models
       component: function (resolve) {
         require(['./components/model-container.vue'], resolve)
       }
     },
-    { path: configroutes.collab_form.path, // /:usecases/form
+    { path: '/single/:list_usecases/form/:uc_name', // /:usecases/form
       component: function (resolve) {
         require(['./components/collab-form.vue'], resolve)
       },
+      name: 'single_usecase',
       meta: { requiresAuth: true }
     }
   ],

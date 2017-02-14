@@ -32,9 +32,15 @@
          selected (uc) {
            // TODO: change this routing because path is not used
             if (!uc.disabled) {
-              var selection = uc.title.toLowerCase().replace(/\s/g, '')
-              var nextComplete = this.next + selection
-              this.$router.push({path: nextComplete})
+               var next = ''
+               if (this.spa) {
+                  next = this.$route.path + routes.models.push
+               } else {
+                  next = this.$route.path + '/form/' + uc.title.toLowerCase().replace(/\s/g, '')
+               }
+               next = next.replace('//', '/')
+               console.log(next)
+               this.$router.push({name: 'single_usecase', params: {uc: uc}})
             }
          },
          prettyfy (name) {

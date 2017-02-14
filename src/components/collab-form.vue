@@ -105,7 +105,9 @@
       },
       createNew () {
         var collabName = this.$el.querySelector('#collab-create-name').value
-        this.createNavEntry(collabName)
+        var isPrivate = true
+        this.createCollab(collabName, isPrivate)
+        // this.createNavEntry(collabName)
       },
       //  createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
       createNavEntry (collabName) {
@@ -121,16 +123,33 @@
           'type': type,
           'collab': collabId
         }
-        console.log(collabReq, payload)
+        switch (this.$route.param.uc_name) {
+          case 'featureextraction':
+            payload.app_id = 271
+            break
+          case 'synapticeventsfitting':
+            payload.app_id = 169
+            break
+        }
         var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
         this.$http.post(collabReq, payload).then(function (response) {
-          console.log(response)
           window.parent.postMessage({
             eventName: 'collab.open',
             data: {
               id: collabId
             }
           }, '*');
+        })
+      },
+      createCollab (collabTitle, isPrivate) {
+        var collabReq = this.collabAPI + 'collab/'
+        var payload = {
+          'title': collabTitle,
+          'private': isPrivate,
+          'content': collabTitle
+        }
+        this.$http.post(collabReq, payload).then(function (response) {
+          console.log('create collab: ', response)
         })
       },
       createGuid () {

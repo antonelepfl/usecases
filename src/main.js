@@ -4,7 +4,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-import App from './components/app.vue'
+var hbpHello = require('./assets/hbp.hello.js').hellojs
+// var authenticated = false
+// var configroutes = require('./assets/routes.json')
 
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
@@ -12,21 +14,27 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-
-    { path: '/:list_usecases',
-      component: App,
-      props: true // to see in the component as props
+    { path: '/single/:list_usecases',
+      component: function (resolve) {
+        require(['./components/app.vue'], resolve)
+      }
     },
-    { path: '/:list_usecases/models/:model_name', // (everyusecaselist)/models
+    { path: '/:list_usecases', // /:usecases
+      component: function (resolve) {
+        require(['./components/app.vue'], resolve)
+      }
+    },
+    { path: '/:list_usecases/models', // /:usecases/models
       component: function (resolve) {
         require(['./components/model-container.vue'], resolve)
       }
     },
-    { path: '/:list_usecases/form/:uc_name', // (everyusecaselist)/form/
+    { path: '/single/:list_usecases/form/:uc_name', // /:usecases/form
       component: function (resolve) {
         require(['./components/collab-form.vue'], resolve)
       },
-      props: true
+      name: 'single_usecase',
+      meta: { requiresAuth: true }
     }
   ],
   base: '/usecases/',

@@ -10,8 +10,8 @@
           <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
         </md-input-container>
         <div class="collabs-results-container">
-          <div v-for="collab in collabResults" class="collab-result">
-            <a class="nota" href="#">{{ collab.title }}</a>
+          <div v-for="collab in collabResults" class="collab-result" >
+            <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
           </div>
         </div>
       </md-tab>
@@ -105,7 +105,8 @@
       },
       createNew () {
         var collabName = this.$el.querySelector('#collab-create-name').value
-        var isPrivate = this.$el.querySelector('#priv_pub').value
+        var isPrivateString = this.$el.querySelector('#priv_pub').value
+        var isPrivate = (isPrivateString === 'true'); //to convert in bool
         this.createCollab(collabName, isPrivate)
       },
       //  createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
@@ -121,15 +122,7 @@
           'type': type,
           'collab': collabId
         }
-        debugger
-        switch (this.$route.params.uc_name) {
-          case 'featureextraction':
-            payload.app_id = 271
-            break
-          case 'synapticeventsfitting':
-            payload.app_id = 169
-            break
-        }
+        this.setAppId(payload)
         var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
         this.$http.post(collabReq, payload).then(function (response) {
           window.parent.postMessage({
@@ -150,11 +143,18 @@
         }
         this.$http.post(collabReq, payload).then(function (response) {
           var collabId = response.body.id
-          var url = that.collabAPI + 'collab/' + collabId + '/nav/root/'
+          this.getNavRoot(collabId).then(function (parentRoot) {
+            that.createNavEntry(collabTitle, collabId, parentRoot)
+          })
+        })
+      },
+      getNavRoot (collabId) {
+        var url = that.collabAPI + 'collab/' + collabId + '/nav/root/'
+        var that = this
+        return new Promise(function(resolve, reject) {
           that.$http.get(url).then(function (response) {
             var parentRoot = response.body.id
-            // var collabId = response.body.collab
-            that.createNavEntry(collabTitle, collabId, parentRoot)
+            resolve(parentRoot)
           })
         })
       },
@@ -167,6 +167,19 @@
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
       }
+    },
+    setAppId (payload) {
+      switch (this.$route.params.uc_name) {
+        case 'featureextraction':
+          payload.app_id = 271
+          break
+        case 'synapticeventsfitting':
+          payload.app_id = 169
+          break
+      }
+    },
+    collabSelected (collab) {
+      debugger
     },
     watch: {
       'searchText' (newVal) {

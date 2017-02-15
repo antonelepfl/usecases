@@ -124,8 +124,7 @@
           'name': entryName,
           'order_index': 1,
           'parent': parentId,
-          'type': type,
-          'collab': collabId
+          'type': type
         }
         this.setAppId(payload)
         var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
@@ -160,7 +159,6 @@
         this.isLoading = true
         this.$http.post(collabReq, payload).then(function (response) {
           var collabId = response.body.id
-          debugger
           that.getNavRoot(collabId).then(function (parentRoot) {
             that.createNavEntry(collabTitle, collabId, parentRoot)
           })

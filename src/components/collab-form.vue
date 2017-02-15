@@ -131,7 +131,7 @@
         this.$http.post(collabReq, payload).then(function (response) {
           if (that.isJupyter) {
             console.log('response:', response)
-            var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/775888cb-04d8-405b-bf86-7d580899eb32/metadata'
+            var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/b652c8ed-45d2-4ee2-8211-cd90050cf167/metadata'
             var context2 = 'ctx_' + context
             var payload = {}
             payload[context2] = 1

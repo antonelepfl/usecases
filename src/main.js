@@ -24,7 +24,7 @@ const router = new VueRouter({
         require(['./components/model-container.vue'], resolve)
       }
     },
-    { path: '/:list_usecases/form/:uc_name', // /:usecases/form
+    { path: '/:list_usecases/form/:uc_name', // /:usecases/form/
       component: function (resolve) {
         require(['./components/collab-form.vue'], resolve)
       },

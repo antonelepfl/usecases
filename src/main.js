@@ -14,11 +14,6 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/single/:list_usecases',
-      component: function (resolve) {
-        require(['./components/app.vue'], resolve)
-      }
-    },
     { path: '/:list_usecases', // /:usecases
       component: function (resolve) {
         require(['./components/app.vue'], resolve)
@@ -29,7 +24,7 @@ const router = new VueRouter({
         require(['./components/model-container.vue'], resolve)
       }
     },
-    { path: '/single/:list_usecases/form/:uc_name', // /:usecases/form
+    { path: '/:list_usecases/form/:uc_name', // /:usecases/form
       component: function (resolve) {
         require(['./components/collab-form.vue'], resolve)
       },

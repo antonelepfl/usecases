@@ -106,10 +106,10 @@
       createNew () {
         var collabName = this.$el.querySelector('#collab-create-name').value
         var isPrivateString = this.$el.querySelector('#priv_pub').value
-        var isPrivate = (isPrivateString === 'true'); //to convert in bool
+        var isPrivate = (isPrivateString === 'true'); // to convert in bool
         this.createCollab(collabName, isPrivate)
       },
-      //  createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
+      // createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
       createNavEntry (entryName, collabId, parentId) {
         var context = this.createGuid()
         var type = 'IT'
@@ -143,15 +143,15 @@
         }
         this.$http.post(collabReq, payload).then(function (response) {
           var collabId = response.body.id
-          this.getNavRoot(collabId).then(function (parentRoot) {
+          that.getNavRoot(collabId).then(function (parentRoot) {
             that.createNavEntry(collabTitle, collabId, parentRoot)
           })
         })
       },
       getNavRoot (collabId) {
-        var url = that.collabAPI + 'collab/' + collabId + '/nav/root/'
+        var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
         var that = this
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
           that.$http.get(url).then(function (response) {
             var parentRoot = response.body.id
             resolve(parentRoot)
@@ -166,20 +166,19 @@
         }
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
+      },
+      setAppId (payload) {
+        switch (this.$route.params.uc_name) {
+          case 'featureextraction':
+            payload.app_id = 271
+            break
+          case 'synapticeventsfitting':
+            payload.app_id = 169
+            break
+        }
+      },
+      collabSelected (collab) {
       }
-    },
-    setAppId (payload) {
-      switch (this.$route.params.uc_name) {
-        case 'featureextraction':
-          payload.app_id = 271
-          break
-        case 'synapticeventsfitting':
-          payload.app_id = 169
-          break
-      }
-    },
-    collabSelected (collab) {
-      debugger
     },
     watch: {
       'searchText' (newVal) {

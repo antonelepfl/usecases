@@ -135,8 +135,8 @@
               id: collabId
             }
           }, '*');
-          that.isLoading = false
           that.errorMessage = 'Collab created but not redirected (it is not embed)'
+          that.isLoading = false
         })
       },
       createCollab (collabTitle, isPrivate) {

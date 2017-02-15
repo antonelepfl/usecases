@@ -182,7 +182,7 @@
       setAppId (payload) {
         switch (this.$route.params.uc_name) {
           case 'featureextraction':
-            payload.app_id = 321
+            payload.app_id = 301
             break
           case 'synapticeventsfitting':
             payload.app_id = 169

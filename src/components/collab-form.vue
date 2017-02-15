@@ -19,13 +19,14 @@
       <md-tab id="create" md-label="Create"  md-icon="create" class="container-centered" >
         <md-input-container>
           <label>Collab Name</label>
-          <md-input id="collab-create-name" placeholder="Create new collab"></md-input>
+          <md-input placeholder="Create new collab" v-model.lazy="createCollabName"></md-input>
         </md-input-container>
         <div v-show="!isLoading" class="centered">
           <md-button class="md-raised md-primary button-medium separated" @click.native="createNew">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
+          <span class="error-message">{{errorMessage}}</span>
         </div>
-        <div v-if="isLoading" class="progress-bar">
+        <div v-show="isLoading" class="progress-bar">
           <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
       </md-tab>
@@ -53,7 +54,9 @@
         searchText: '',
         collabAPI: 'https://services.humanbrainproject.eu/collab/v0/',
         collabResults: [],
-        isLoading: false
+        isLoading: false,
+        errorMessage: '',
+        createCollabName: ''
       }
     },
     computed: {
@@ -83,7 +86,6 @@
         var that = this
         hbpHello.logout('hbp').then(function (event) {
           that.authenticated = false;
-          console.info('User Logged Out')
         }, function (e) {
           console.debug('Logout Error', e)
         });
@@ -104,18 +106,16 @@
       },
       saveAuthentication (context, auth) {
         context.authenticated = true;
-        console.info('User Authenticated')
         Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
       },
       createNew () {
-        var collabName = this.$el.querySelector('#collab-create-name').value
         var isPrivateString = this.$el.querySelector('#priv_pub').value
         var isPrivate = (isPrivateString === 'true'); // to convert in bool
-        this.createCollab(collabName, isPrivate)
+        this.createCollab(this.createCollabName, isPrivate)
       },
-      // createNavEntry(input_nav, app_id, output_collab_id, oidc, folders_mapping) {
       createNavEntry (entryName, collabId, parentId) {
         var context = this.createGuid()
+        var that = this
         var type = 'IT'
         var payload = {
           'app_id': 271,
@@ -135,6 +135,8 @@
               id: collabId
             }
           }, '*');
+          that.isLoading = false
+          that.errorMessage = 'Collab created but not redirected (it is not embed)'
         })
       },
       createCollab (collabTitle, isPrivate) {
@@ -151,6 +153,11 @@
           that.getNavRoot(collabId).then(function (parentRoot) {
             that.createNavEntry(collabTitle, collabId, parentRoot)
           })
+        }, function (error) {
+          that.isLoading = false
+          if (error.body.title) {
+            that.errorMessage = error.body.title[0]
+          }
         })
       },
       getNavRoot (collabId) {
@@ -188,12 +195,17 @@
     watch: {
       'searchText' (newVal) {
         this.searchCollab(newVal)
+      },
+      'createCollabName' () {
+        if (this.errorMessage !== '') {
+          this.errorMessage = ''
+        }
       }
     }
   }
 </script>
 
-<style>
+<style >
   .collab-form .centered {
     margin-left: 150px;
   }
@@ -242,5 +254,10 @@
   }
   .collabs-results-container .collab-result > a.nota {
     color: #ac6067;
+  }
+  .collab-form span.error-message {
+    display: block;
+    color: red;
+    margin-left: 25px;
   }
 </style>

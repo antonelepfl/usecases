@@ -39,8 +39,7 @@
                   next = this.$route.path + '/form/' + uc.title.toLowerCase().replace(/\s/g, '')
                }
                next = next.replace('//', '/')
-               console.log(next)
-                this.$router.push({path: next})
+               this.$router.push({path: next})
               //  this.$router.push({name: 'single_usecase', params: {uc: uc}})
             }
          },

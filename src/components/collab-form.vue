@@ -14,6 +14,7 @@
             <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
           </div>
         </div>
+        <span class="error-message">{{errorMessage}}</span>
       </md-tab>
 
       <md-tab id="create" md-label="Create"  md-icon="create" class="container-centered" >
@@ -129,14 +130,7 @@
         this.setAppId(payload)
         var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
         this.$http.post(collabReq, payload).then(function (response) {
-          window.parent.postMessage({
-            eventName: 'collab.open',
-            data: {
-              id: collabId
-            }
-          }, '*');
-          that.errorMessage = 'Collab created but not redirected (it is not embed)'
-          that.isLoading = false
+          that.redirectToCollab(collabId)
         })
       },
       createCollab (collabTitle, isPrivate) {
@@ -190,11 +184,29 @@
         }
       },
       collabSelected (collab) {
+        var that = this
+        var collabTitle = this.$route.params.uc_name
+        this.getNavRoot(collab.id).then(function (parentRoot) {
+          that.createNavEntry(collabTitle, collab.id, parentRoot)
+        })
+      },
+      redirectToCollab (collabId) {
+        window.parent.postMessage({
+          eventName: 'collab.open',
+          data: {
+            id: collabId
+          }
+        }, '*');
+        this.errorMessage = 'Collab created but not redirected (it is not embed)'
+        this.isLoading = false
       }
     },
     watch: {
       'searchText' (newVal) {
         this.searchCollab(newVal)
+        if (this.errorMessage !== '') {
+          this.errorMessage = ''
+        }
       },
       'createCollabName' () {
         if (this.errorMessage !== '') {

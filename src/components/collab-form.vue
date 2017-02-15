@@ -135,8 +135,8 @@
               id: collabId
             }
           }, '*');
-          that.isLoading = false
           that.errorMessage = 'Collab created but not redirected (it is not embed)'
+          that.isLoading = false
         })
       },
       createCollab (collabTitle, isPrivate) {
@@ -182,7 +182,7 @@
       setAppId (payload) {
         switch (this.$route.params.uc_name) {
           case 'featureextraction':
-            payload.app_id = 271
+            payload.app_id = 301
             break
           case 'synapticeventsfitting':
             payload.app_id = 169

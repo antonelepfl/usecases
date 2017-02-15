@@ -50,17 +50,19 @@
          }
       },
       mounted () {
-         this.route = this.$route
-         if (this.route.path.indexOf('/single/') > -1) {
-            // it is a plane website and not a SPA
-            this.spa = false
-            this.$el.querySelector('#uc-container-title').remove()
-            this.$el.classList.add('no-title')
-         } else {
-            this.spa = true
+        // TODO: put the routes in a json file so they are not hardcoded
+         var ucSelected = this.$route.params.list_usecases
+         switch (ucSelected) {
+           case 'trace_analysis':
+             this.spa = false
+             this.$el.querySelector('#uc-container-title').remove()
+             this.$el.classList.add('no-title')
+             break
+           case 'single_cell_modeling':
+             this.spa = true
          }
-         this.usecases = usecases[0][this.route.params.list_usecases]
-         var title = this.route.params.list_usecases
+         this.usecases = usecases[0][ucSelected]
+         var title = ucSelected
          document.querySelector('title').innerHTML = this.prettyfy(title)
       }
    }

@@ -20,7 +20,7 @@
       <md-tab id="create" md-label="Create"  md-icon="create" class="container-centered" >
         <md-input-container>
           <label>Collab Name</label>
-          <md-input placeholder="Create new collab" v-model.lazy="createCollabName"></md-input>
+          <md-input placeholder="Create new collab" v-model.lazy="searchText"></md-input>
         </md-input-container>
         <div v-show="!isLoading" class="centered">
           <md-button class="md-raised md-primary button-medium separated" @click.native="createNew">Create</md-button>
@@ -57,7 +57,7 @@
         collabResults: [],
         isLoading: false,
         errorMessage: '',
-        createCollabName: ''
+        isJupyter: false
       }
     },
     computed: {
@@ -112,7 +112,7 @@
       createNew () {
         var isPrivateString = this.$el.querySelector('#priv_pub').value
         var isPrivate = (isPrivateString === 'true'); // to convert in bool
-        this.createCollab(this.createCollabName, isPrivate)
+        this.createCollab(this.searchText, isPrivate)
       },
       createNavEntry (entryName, collabId, parentId) {
         var context = this.createGuid()
@@ -122,7 +122,7 @@
           'app_id': 271,
           'context': context,
           'name': entryName,
-          'order_index': 0,
+          'order_index': 1,
           'parent': parentId,
           'type': type,
           'collab': collabId
@@ -130,7 +130,23 @@
         this.setAppId(payload)
         var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
         this.$http.post(collabReq, payload).then(function (response) {
-          that.redirectToCollab(collabId)
+          if (that.isJupyter) {
+            console.log('response:', response)
+            var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/775888cb-04d8-405b-bf86-7d580899eb32/metadata'
+            var context2 = 'ctx_' + context
+            var payload = {}
+            payload[context2] = 1
+            console.log('payload', payload)
+            that.$http.put(jupyterNotebookUrl, payload).then(function (response) {
+              that.getNavRoot(collabId).then(function (parentRoot) { // to show the lasts added
+                that.redirectToCollab(collabId)
+              })
+            })
+          } else {
+            that.getNavRoot(collabId).then(function (parentRoot) { // to show the lasts added
+              that.redirectToCollab(collabId)
+            })
+          }
         })
       },
       createCollab (collabTitle, isPrivate) {
@@ -144,6 +160,7 @@
         this.isLoading = true
         this.$http.post(collabReq, payload).then(function (response) {
           var collabId = response.body.id
+          debugger
           that.getNavRoot(collabId).then(function (parentRoot) {
             that.createNavEntry(collabTitle, collabId, parentRoot)
           })
@@ -179,7 +196,8 @@
             payload.app_id = 301
             break
           case 'synapticeventsfitting':
-            payload.app_id = 169
+            payload.app_id = 175
+            this.isJupyter = true
             break
         }
       },
@@ -204,11 +222,6 @@
     watch: {
       'searchText' (newVal) {
         this.searchCollab(newVal)
-        if (this.errorMessage !== '') {
-          this.errorMessage = ''
-        }
-      },
-      'createCollabName' () {
         if (this.errorMessage !== '') {
           this.errorMessage = ''
         }

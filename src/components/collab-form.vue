@@ -21,9 +21,12 @@
           <label>Collab Name</label>
           <md-input id="collab-create-name" placeholder="Create new collab"></md-input>
         </md-input-container>
-        <div class="centered">
+        <div v-show="!isLoading" class="centered">
           <md-button class="md-raised md-primary button-medium separated" @click.native="createNew">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
+        </div>
+        <div v-if="isLoading" class="progress-bar">
+          <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
       </md-tab>
     </md-tabs>
@@ -49,7 +52,8 @@
         authenticated: false,
         searchText: '',
         collabAPI: 'https://services.humanbrainproject.eu/collab/v0/',
-        collabResults: []
+        collabResults: [],
+        isLoading: false
       }
     },
     computed: {
@@ -141,6 +145,7 @@
           'private': isPrivate,
           'content': collabTitle
         }
+        this.isLoading = true
         this.$http.post(collabReq, payload).then(function (response) {
           var collabId = response.body.id
           that.getNavRoot(collabId).then(function (parentRoot) {

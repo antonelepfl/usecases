@@ -50,14 +50,20 @@
          }
       },
       mounted () {
-        var ucSelected = this.$route.path.replace('/', '')
-        if (this.single) {
-          this.$el.querySelector('#uc-container-title').remove()
-          this.$el.classList.add('no-title')
-        }
-        this.usecases = usecases[0][ucSelected]
-        var title = ucSelected
-        document.querySelector('title').innerText = this.prettyfy(title)
+        // TODO: put the routes in a json file so they are not hardcoded
+         var ucSelected = this.$route.params.list_usecases
+         switch (ucSelected) {
+           case 'trace_analysis':
+             this.spa = false
+             this.$el.querySelector('#uc-container-title').remove()
+             this.$el.classList.add('no-title')
+             break
+           case 'single_cell_modeling':
+             this.spa = true
+         }
+         this.usecases = usecases[0][ucSelected]
+         var title = ucSelected
+         document.querySelector('title').innerHTML = this.prettyfy(title)
       }
    }
 </script>

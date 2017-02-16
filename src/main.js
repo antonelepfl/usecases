@@ -17,7 +17,7 @@ const router = new VueRouter({
       component: App,
       props: true // to see in the component as props
     },
-    { path: '/:list_usecases/models', // (everyusecaselist)/models
+    { path: '/:list_usecases/models/:model_name', // (everyusecaselist)/models
       component: function (resolve) {
         require(['./components/model-container.vue'], resolve)
       }

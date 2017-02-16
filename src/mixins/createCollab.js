@@ -1,6 +1,4 @@
 import uuid from 'uuid4'
-import jupyterNotebookUrls from '../assets/config_files/jupyter_notebooks_urls.json'
-import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
 
 export default {
   data () {
@@ -8,11 +6,9 @@ export default {
       collabAPI: 'https://services.humanbrainproject.eu/collab/v0/',
       isLoading: false,
       errorMessage: '',
-      isJupyter: false,
-      typesCollabsApps: typesCollabsApps
+      isJupyter: false
     }
   },
-  props: ['uc_name'],
   methods: {
     createNavEntry (entryName, collabId, parentId, appId) {
       var context = uuid()
@@ -28,11 +24,12 @@ export default {
       }
       var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
       this.$http.post(collabReq, payload).then(function (response) {
-        if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
-          var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
+        if (appId === 175) { // is jupyter notebook
+          // TODO: take as a configuration file
+          var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/b652c8ed-45d2-4ee2-8211-cd90050cf167/metadata'
           var context2 = 'ctx_' + context
           var payload = {}
-          payload[context2] = 1 // adding context to the entry
+          payload[context2] = 1
           that.$http.post(jupyterNotebookUrl, payload).then(function (response) {
             that.getNavRoot(collabId).then(function (parentRoot) { // to show the lasts added because cache problem
               that.redirectToCollab(collabId)

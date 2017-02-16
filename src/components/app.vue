@@ -19,12 +19,12 @@ export default {
   },
   data () {
     return {
-      single: false,
+      single: Boolean,
       next: ''
     }
   },
   props: ['list_usecases'],
-  mounted () {
+  created () {
     switch (this.list_usecases) {
       case 'traceanalysis':
         this.single = true

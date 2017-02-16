@@ -44,7 +44,7 @@
       },
       mounted () {
         var ucSelected = this.$route.path.replace('/', '')
-        if (!this.single) {
+        if (this.single) {
           this.$el.querySelector('#uc-container-title').remove()
           this.$el.classList.add('no-title')
         }

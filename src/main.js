@@ -4,9 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-var hbpHello = require('./assets/hbp.hello.js').hellojs
-// var authenticated = false
-// var configroutes = require('./assets/routes.json')
+import App from './components/app.vue'
 
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
@@ -14,22 +12,21 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/:list_usecases', // /:usecases
-      component: function (resolve) {
-        require(['./components/app.vue'], resolve)
-      }
+
+    { path: '/:list_usecases',
+      component: App,
+      props: true // to see in the component as props
     },
-    { path: '/:list_usecases/models', // /:usecases/models
+    { path: '/:list_usecases/models/:model_name', // (everyusecaselist)/models
       component: function (resolve) {
         require(['./components/model-container.vue'], resolve)
       }
     },
-    { path: '/:list_usecases/form/:uc_name', // /:usecases/form/
+    { path: '/:list_usecases/form/:uc_name', // (everyusecaselist)/form/
       component: function (resolve) {
         require(['./components/collab-form.vue'], resolve)
       },
-      name: 'single_usecase',
-      meta: { requiresAuth: true }
+      props: true
     }
   ],
   base: '/usecases/',
@@ -38,20 +35,10 @@ const router = new VueRouter({
     return { x: 0, y: 0 }
   }
 })
-
-hbpHello.init({
-  hbp: '2bc1364d-1039-495b-b51e-608108cbefce' // Replace with your app id
-})
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  // watch: {
-  //   '$route' (to, from) {
-  //     console.log(to) // react to route changes...
-  //   }
-  // },
   data () {
     return {
     }

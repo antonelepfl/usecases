@@ -12,34 +12,28 @@
 
 <script>
    import ucItem from './uc-item.vue'
-   var usecases = require('../assets/usecases.json')
-   var routes = require('../assets/routes.json')
+   import usecases from '../assets/config_files/usecases.json'
+
    export default {
       name: 'ucContainer',
       components: {
          ucItem
       },
+      // props: ['singlePage', 'next'],
+      props: ['next', 'single'],
       data () {
          return {
             usecases: {},
             categories: usecases[1].categories,
-            spa: false,
             route: {}
          }
       },
       methods: {
          selected (uc) {
-           // TODO: change this routing because path is not used
             if (!uc.disabled) {
-               var next = ''
-               if (this.spa) {
-                  next = this.$route.path + routes.models.push
-               } else {
-                  next = this.$route.path + '/form/' + uc.title.toLowerCase().replace(/\s/g, '')
-               }
-               next = next.replace('//', '/')
-               this.$router.push({path: next})
-              //  this.$router.push({name: 'single_usecase', params: {uc: uc}})
+              var selection = uc.title.toLowerCase().replace(/\s/g, '')
+              var nextComplete = this.next + selection
+              this.$router.push({path: nextComplete})
             }
          },
          prettyfy (name) {
@@ -49,20 +43,14 @@
          }
       },
       mounted () {
-        // TODO: put the routes in a json file so they are not hardcoded
-         var ucSelected = this.$route.params.list_usecases
-         switch (ucSelected) {
-           case 'trace_analysis':
-             this.spa = false
-             this.$el.querySelector('#uc-container-title').remove()
-             this.$el.classList.add('no-title')
-             break
-           case 'single_cell_modeling':
-             this.spa = true
-         }
-         this.usecases = usecases[0][ucSelected]
-         var title = ucSelected
-         document.querySelector('title').innerHTML = this.prettyfy(title)
+        var ucSelected = this.$route.path.replace('/', '')
+        if (this.single) {
+          this.$el.querySelector('#uc-container-title').remove()
+          this.$el.classList.add('no-title')
+        }
+        this.usecases = usecases[0][ucSelected]
+        var title = ucSelected
+        document.querySelector('title').innerText = this.prettyfy(title)
       }
    }
 </script>

@@ -1,6 +1,6 @@
 [
    {
-      "trace_analysis": [
+      "traceanalysis": [
          {
             "title": "Feature extraction",
             "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
@@ -88,7 +88,7 @@
             }
          }
       ],
-      "single_cell_modeling": [
+      "singlecellmodeling": [
          {
             "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "description": "Browse and validate existing single cell model in NeuroInformatics Platform / local storage",
@@ -168,7 +168,7 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          }
       ]
-   }, 
+   },
    {
       "categories": {
          "experience" : {

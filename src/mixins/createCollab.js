@@ -1,4 +1,5 @@
 import uuid from 'uuid4'
+import jupyterNotebookUrls from '../assets/config_files/jupyter_notebooks_urls.json'
 
 export default {
   data () {
@@ -9,6 +10,7 @@ export default {
       isJupyter: false
     }
   },
+  props: ['uc_name'],
   methods: {
     createNavEntry (entryName, collabId, parentId, appId) {
       var context = uuid()
@@ -26,7 +28,7 @@ export default {
       this.$http.post(collabReq, payload).then(function (response) {
         if (appId === 175) { // is jupyter notebook
           // TODO: take as a configuration file
-          var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/b652c8ed-45d2-4ee2-8211-cd90050cf167/metadata'
+          var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1

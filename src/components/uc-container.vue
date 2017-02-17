@@ -4,7 +4,7 @@
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
-            <uc-item class="uc-item" v-bind:uc="uc" v-bind:categories="categories"></uc-item>
+            <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
          </md-whiteframe>
       </div>
    </div>

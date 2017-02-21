@@ -30,6 +30,9 @@
         <div v-show="isLoading" class="progress-bar">
           <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
+        <div v-show="isLoading" class="progress-bar">
+          <md-progress class="md-accent" md-indeterminate></md-progress>
+        </div>
       </md-tab>
     </md-tabs>
 

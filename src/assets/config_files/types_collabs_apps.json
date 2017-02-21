@@ -1,4 +1,14 @@
 {
-  "featureextraction": 301,
-  "synapticeventsfitting": 175
+  "featureextraction": {
+    "entryname": "Feature Extraction GUI",
+    "appid": 301
+  },
+  "synapticeventsfitting": {
+    "entryname": "Fitting GUI",
+    "appid": 175
+  },
+  "jupyternotebook": {
+    "entryname": "Jupyter Notebook",
+    "appid": 175
+  }
 }

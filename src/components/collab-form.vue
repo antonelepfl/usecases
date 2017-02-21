@@ -51,7 +51,8 @@
         isLoading: false,
         errorMessage: '',
         isJupyter: false,
-        appId: -1
+        appId: -1,
+        typesCollabsApps: typesCollabsApps
       }
     },
     props: ['uc_name'],
@@ -66,13 +67,14 @@
     },
     mounted () {
       this.login()
-      this.appId = typesCollabsApps[this.uc_name]
+      this.appId = this.typesCollabsApps[this.uc_name].appid
     },
     methods: {
       collabSelected (collab) {
         var that = this
         this.getNavRoot(collab.id).then(function (parentRoot) {
-          that.createNavEntry(that.searchText, collab.id, parentRoot, that.appId)
+          var entryName = that.typesCollabsApps[that.uc_name].entryname
+          that.createNavEntry(entryName, collab.id, parentRoot, that.appId)
         })
       },
       createNewCollab () {
@@ -81,11 +83,11 @@
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
         this.createCollab(this.searchText, isPrivate).then(function (collabId) {
           that.getNavRoot(collabId).then(function (parentRoot) {
-            that.createNavEntry(that.searchText, collabId, parentRoot, that.appId)
+            var entryName = that.typesCollabsApps[that.uc_name].entryname
+            that.createNavEntry(entryName, collabId, parentRoot, that.appId)
             that.isLoading = false
           })
-        })
-        .catch(function (error) {
+        }, function (error) {
           if (error.body.title) {
             that.isLoading = false
             that.errorMessage = error.body.title[0]

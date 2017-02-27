@@ -1,7 +1,7 @@
 {
   "featureextraction": {
     "entryname": "Feature Extraction GUI",
-    "appid": 301
+    "appid": 271
   },
   "synapticeventsfitting": {
     "entryname": "Fitting GUI",

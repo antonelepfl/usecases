@@ -48,6 +48,8 @@ new Vue({
     }
   },
   created () {
-    this.login() // from CollabAuthentication
+    if (!Vue.http.headers.common['Authorization']) {
+      this.login() // from CollabAuthentication
+    }
   }
 })

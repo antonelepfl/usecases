@@ -6,6 +6,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from './components/app.vue'
 import VueResource from 'vue-resource'
+import CollabAuthentication from './mixins/collabAuthentication.js'
 
 Vue.use(VueResource)
 Vue.use(VueMaterial)
@@ -41,8 +42,12 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  mixins: [CollabAuthentication],
   data () {
     return {
     }
+  },
+  created () {
+    this.login() // from CollabAuthentication
   }
 })

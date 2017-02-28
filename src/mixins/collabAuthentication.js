@@ -1,8 +1,4 @@
 var hbpHello = require('../assets/hbp.hello.js').hellojs
-import Vue from 'vue'
-import VueResource from 'vue-resource'
-Vue.use(VueResource)
-
 // replace this with your collab app id
 hbpHello.init({
   hbp: '74b1a180-3646-45ac-b53c-ebd905cec418'
@@ -57,7 +53,7 @@ export default {
     },
     saveAuthentication (context, auth) {
       context.authenticated = true;
-      Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
+      this.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
     }
   }
 }

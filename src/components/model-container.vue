@@ -3,32 +3,13 @@
       <div class="title">Please select a model</div>
       <div class="content">
       <!--<section v-for="(value, key) in usercases">
-         <div v-for="model in value" v-on:click="selected" >-->      
-            <md-whiteframe md-elevation="1" class="item-sections">
-               <model-item 
-                  class="model-item" 
-                  path="Rat>Somatosensory Cortex>L5_TTPC1>cAD>C060114A2" 
-                  v-on:showimage="showimage" 
-                  v-on:touched="touched"
-                  author="Werner Van Geit (werner.vangeit@epfl.ch)"></model-item>
-            </md-whiteframe>
-      
-            <md-whiteframe md-elevation="1" class="item-sections">
-               <model-item 
-                  class="model-item" 
-                  path="Rat>Hippocampus>SP_PC>cAD>010710HP2" 
-                  v-on:showimage="showimage" 
-                  v-on:touched="touched"
-                  author="Michele Migliore (michele.migliore@pa.ibf.cnr.it)"></model-item>
-            </md-whiteframe>
-
-            <md-whiteframe md-elevation="1" class="item-sections">
-               <model-item 
-                  class="model-item" 
-                  path="Rat>Cerebellum>Purkinje>cAD>270911C" 
-                  v-on:showimage="showimage" 
-                  v-on:touched="touched"
-                  author="Egidido D’Angelo (dangelo@unipv.it)"></model-item>
+         <div v-for="model in value" v-on:click="selected" >-->
+            <md-whiteframe md-elevation="1" class="item-sections" v-for="model in models">
+               <model-item
+                  class="model-item"
+                  :model="model"
+                  v-on:showimage="showimage"
+                  v-on:touched="touched"></model-item>
             </md-whiteframe>
 
             <modal-component v-if="showModal" v-on:close="showModal = false">
@@ -44,6 +25,7 @@
 <script>
    import modelItem from './model-item.vue'
    import modalComponent from './modal-component.vue'
+   import ModelsConfig from '../assets/config_files/models.json';
    export default {
       name: 'modelContainer',
       components: {
@@ -52,7 +34,10 @@
       data () {
          return {
             showModal: false,
-            modalSrc: String
+            modalSrc: String,
+            // TODO: change based on the url
+            modelsConfig: ModelsConfig.browse,
+            models: []
          }
       },
       methods: {
@@ -71,6 +56,12 @@
       },
       created () {
          document.querySelector('title').innerHTML = 'Models'
+         var that = this
+         for (var i = 0; i < this.modelsConfig.length; i++) {
+           this.$http.get(this.modelsConfig[i].path).then(function (response) {
+             that.models.push(response.body)
+           })
+         }
       }
    }
 </script>
@@ -111,7 +102,7 @@
       width: 100%;
       z-index: 2;
    }
-   .item-sections:hover {
+   .model-container .item-sections:hover {
       transition: 0.3s ease;
       box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
@@ -123,10 +114,10 @@
       0% {border: 2px solid white;}
       50% {border: 2px solid gray;}
       100% {border: 2px solid black;}
-   } 
+   }
    @-webkit-keyframes shake {
       0% {border: 2px solid white;}
       50% {border: 2px solid gray;}
       100% {border: 2px solid black;}
-   } 
+   }
 </style>

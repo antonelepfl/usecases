@@ -2,8 +2,8 @@
   <div class="collab-form">
     <!--just in case a hidden logout button -->
     <md-button class="md-raised md-primary button-medium" style="display: none" v-on:click="logout">Logout</md-button>
-    <div v-show="authenticated" class="header">Define in which collab you want to work</div>
-    <md-tabs v-if="authenticated" md-fixed class="elevated">
+    <div class="header">Define in which collab you want to work</div>
+    <md-tabs md-fixed class="elevated">
       <md-tab id="search" md-label="Search" md-icon="search" class="container-centered">
         <md-input-container>
           <label>Collab Name</label>
@@ -69,7 +69,6 @@
       }
     },
     mounted () {
-      this.login()
       this.appId = this.typesCollabsApps[this.uc_name].appid
     },
     methods: {

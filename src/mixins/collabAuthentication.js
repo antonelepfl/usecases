@@ -1,3 +1,4 @@
+import Vue from 'vue'
 var hbpHello = require('../assets/hbp.hello.js').hellojs
 import Vue from 'vue'
 import VueResource from 'vue-resource'
@@ -20,9 +21,9 @@ export default {
       if (displayMethod === undefined) { displayMethod = 'page' }
       var that = this
       hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
-        console.debug('User authenticated')
         if (event.authResponse.access_token) {
           that.saveAuthentication(that, event.authResponse)
+          console.debug('User authenticated')
         }
       }, function (e) {
         console.debug('Authentication Error', e)
@@ -32,6 +33,7 @@ export default {
       var that = this
       hbpHello.logout('hbp').then(function (event) {
         that.authenticated = false;
+        console.debug('User Logout OK')
       }, function (e) {
         console.debug('Logout Error', e)
       });
@@ -47,7 +49,7 @@ export default {
         }, function (responseError) {
           if (responseError.status === 401) {
             that.collabResults.push = 'Getting your collabs ...'
-            that.login('none')
+            that.login()
             console.debug('Getting new token')
           } else {
             reject(responseError)

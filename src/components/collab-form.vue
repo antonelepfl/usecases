@@ -77,9 +77,9 @@
         this.getAllNav(collab.id).then(function (parentNav) {
           if (!that.checkExists(parentNav, that.appId)) {
             var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId);
+            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
           } else {
-            console.debug('Existing app in collab found');
+            console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id)
           }
         })
@@ -103,8 +103,8 @@
       },
       checkExists (nav, appId) {
         if (nav.children) {
-          let found = false;
-          let i = 0;
+          let found = false
+          let i = 0
           while (!found && nav.children.length > i) {
             if (nav.children[i].app_id === appId.toString()) {
               found = true

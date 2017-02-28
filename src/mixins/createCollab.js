@@ -72,6 +72,16 @@ export default {
         })
       })
     },
+    getAllNav (collabId) {
+      var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(url).then(function (response) {
+          var nav = response.body
+          resolve(nav)
+        })
+      })
+    },
     redirectToCollab (collabId) {
       window.parent.postMessage({
         eventName: 'collab.open',

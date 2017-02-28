@@ -20,6 +20,7 @@ export default {
       if (displayMethod === undefined) { displayMethod = 'page' }
       var that = this
       hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
+        console.debug('User authenticated')
         if (event.authResponse.access_token) {
           that.saveAuthentication(that, event.authResponse)
         }
@@ -47,6 +48,7 @@ export default {
           if (responseError.status === 401) {
             that.collabResults.push = 'Getting your collabs ...'
             that.login('none')
+            console.debug('Getting new token')
           } else {
             reject(responseError)
           }

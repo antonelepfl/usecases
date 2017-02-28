@@ -28,6 +28,7 @@ export default {
       }
       var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
       this.$http.post(collabReq, payload).then(function (response) {
+        console.debug('Nav entry created')
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
           var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
           var context2 = 'ctx_' + context
@@ -55,6 +56,7 @@ export default {
       }
       return new Promise(function (resolve, reject) {
         that.$http.post(collabReq, payload).then(function (response) {
+          console.debug('Collab created')
           var collabId = response.body.id
           resolve(collabId)
         }, function (error) {
@@ -72,14 +74,26 @@ export default {
         })
       })
     },
+    getAllNav (collabId) {
+      var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(url).then(function (response) {
+          var nav = response.body
+          resolve(nav)
+        })
+      })
+    },
     redirectToCollab (collabId) {
       window.parent.postMessage({
         eventName: 'collab.open',
         data: {
           id: collabId
         }
-      }, '*');
-      this.errorMessage = 'Collab created but not redirected (it is not embed)'
+      }, '*')
+      setTimeout(function () {
+        this.errorMessage = 'Collab created but not redirected (it is not embed)'
+      }.bind(this), 1000)
     }
   }
 }

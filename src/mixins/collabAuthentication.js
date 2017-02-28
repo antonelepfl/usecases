@@ -1,7 +1,7 @@
 import Vue from 'vue'
-var hbpHello = require('../assets/hbp.hello.js').hellojs
-import Vue from 'vue'
 import VueResource from 'vue-resource'
+var hbpHello = require('../assets/hbp.hello.js').hellojs
+
 Vue.use(VueResource)
 
 // replace this with your collab app id

@@ -58,8 +58,11 @@ export default {
       })
     },
     saveAuthentication (context, auth) {
+      // TODO: remove console.log
       context.authenticated = true;
+      console.log('param', auth.access_token)
       Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
+      console.log('header', Vue.http.headers.common['Authorization'])
     }
   }
 }

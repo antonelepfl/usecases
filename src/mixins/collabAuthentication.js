@@ -20,7 +20,7 @@ export default {
     login (displayMethod) {
       if (displayMethod === undefined) { displayMethod = 'page' }
       var that = this
-      hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
+      hbpHello.login('hbp', {'display': displayMethod, force: true}).then(function (event) {
         if (event.authResponse.access_token) {
           that.saveAuthentication(that, event.authResponse)
         }

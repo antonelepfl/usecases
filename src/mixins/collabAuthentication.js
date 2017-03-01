@@ -20,7 +20,7 @@ export default {
     login (displayMethod) {
       if (displayMethod === undefined) { displayMethod = 'page' }
       var that = this
-      hbpHello.login('hbp', {'display': displayMethod, force: true}).then(function (event) {
+      hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
         if (event.authResponse.access_token) {
           that.saveAuthentication(that, event.authResponse)
         }
@@ -29,13 +29,17 @@ export default {
       });
     },
     logout () {
-      var that = this
-      hbpHello.logout('hbp').then(function (event) {
-        that.authenticated = false;
-        console.debug('User Logout OK')
-      }, function (e) {
-        console.debug('Logout Error', e)
-      });
+      return new Promise(function (resolve, reject) {
+        var that = this
+        hbpHello.logout('hbp').then(function (event) {
+          that.authenticated = false;
+          console.debug('User Logout OK')
+          resolve();
+        }, function (e) {
+          console.debug('Logout Error', e)
+          reject();
+        });
+      })
     },
     searchCollab (param) {
       this.collabResults = []
@@ -48,8 +52,10 @@ export default {
         }, function (responseError) {
           if (responseError.status === 401) {
             that.collabResults.push = 'Getting your collabs ...'
-            that.login()
-            console.debug('Getting new token')
+            that.logout().then(function () {
+              console.debug('Getting new token')
+              that.login();
+            })
           } else {
             reject(responseError)
           }

@@ -92,7 +92,10 @@ export default {
         }
       }, '*')
       window.parent.postMessage({
-        eventName: 'navigation.reload'
+        eventName: 'location',
+        data: {
+          url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId
+        }
       }, '*')
       setTimeout(function () {
         this.errorMessage = 'Collab created but not redirected (it is not embed)'

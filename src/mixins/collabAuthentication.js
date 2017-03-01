@@ -23,7 +23,6 @@ export default {
       hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
         if (event.authResponse.access_token) {
           that.saveAuthentication(that, event.authResponse)
-          console.debug('User authenticated')
         }
       }, function (e) {
         console.debug('Authentication Error', e)
@@ -58,11 +57,9 @@ export default {
       })
     },
     saveAuthentication (context, auth) {
-      // TODO: remove console.log
       context.authenticated = true;
-      console.log('param', auth.access_token)
       Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
-      console.log('header', Vue.http.headers.common['Authorization'])
+      console.debug('User authenticated')
     }
   }
 }

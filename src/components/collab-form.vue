@@ -178,6 +178,7 @@
   }
   .collabs-results-container .collab-result > a.nota {
     color: #ac6067;
+    cursor: pointer;
   }
   .collab-form span.error-message {
     display: block;

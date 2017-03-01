@@ -91,6 +91,9 @@ export default {
           id: collabId
         }
       }, '*')
+      window.parent.postMessage({
+        eventName: 'navigation.reload'
+      }, '*')
       setTimeout(function () {
         this.errorMessage = 'Collab created but not redirected (it is not embed)'
       }.bind(this), 1000)

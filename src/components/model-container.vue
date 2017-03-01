@@ -57,9 +57,12 @@
       created () {
          document.querySelector('title').innerHTML = 'Models'
          var that = this
+         debugger
          for (var i = 0; i < this.modelsConfig.length; i++) {
            this.$http.get(this.modelsConfig[i].path).then(function (response) {
              that.models.push(response.body)
+           }, function (error) {
+             console.log(error)
            })
          }
       }

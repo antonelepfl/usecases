@@ -16,8 +16,8 @@ export default {
       return new Promise(function (resolve, reject) {
         hbpHello.login('hbp', {'display': displayMethod, force: false})
         .then(function (event) {
-          resolve()
           console.debug('Login user OK')
+          resolve()
         }, function (e) {
           console.debug('Login Error', e)
         });
@@ -50,7 +50,6 @@ export default {
               if (responseError.status === 401) {
                 that.getToken(true) // force renew token
                 reject(responseError)
-                console.log('reject 401')
               } else {
                 reject(responseError)
               }

@@ -119,11 +119,13 @@
       'searchText' (newVal) {
         var that = this
         this.searchCollab(newVal).then(function (result) {
+          if (that.errorMessage !== '') {
+            that.errorMessage = ''
+          }
           that.collabResults = result
+        }, function (reject) {
+          that.errorMessage = 'Getting your collabs ...'
         })
-        if (this.errorMessage !== '') {
-          this.errorMessage = ''
-        }
       }
     }
   }

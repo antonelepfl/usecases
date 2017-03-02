@@ -7,27 +7,26 @@ hbpHello.init({
 export default {
   data () {
     return {
-      authenticated: false,
       collabAPI: 'https://services.humanbrainproject.eu/collab/v0/'
     }
   },
   methods: {
     login (displayMethod) {
       if (displayMethod === undefined) { displayMethod = 'page' }
-      var that = this
-      hbpHello.login('hbp', {'display': displayMethod, force: false}).then(function (event) {
-        if (event.authResponse.access_token) {
-          that.saveAuthentication(that, event.authResponse)
-        }
-      }, function (e) {
-        console.debug('Authentication Error', e)
-      });
+      return new Promise(function (resolve, reject) {
+        hbpHello.login('hbp', {'display': displayMethod, force: false})
+        .then(function (event) {
+          console.debug('Login user OK')
+          resolve()
+        }, function (e) {
+          console.debug('Login Error', e)
+        });
+      })
     },
     logout () {
       return new Promise(function (resolve, reject) {
-        var that = this
-        hbpHello.logout('hbp').then(function (event) {
-          that.authenticated = false;
+        hbpHello.logout('hbp', {force: false})
+        .then(function (event) {
           console.debug('User Logout OK')
           resolve();
         }, function (e) {
@@ -40,21 +39,51 @@ export default {
       this.collabResults = []
       var that = this
       return new Promise(function (resolve, reject) {
-        that.$http.get(that.collabAPI + 'mycollabs/?search=' + param).then(function (response) {
-          if (param.length > 0) {
-            resolve(response.body.results)
+        that.getToken().then(function (token) {
+          that.$http.get(that.collabAPI + 'mycollabs/?search=' + param, {headers: {'Authorization': token}}).then(
+            function (response) {
+              if (param.length > 0) {
+                resolve(response.body.results)
+              }
+            },
+            function (responseError) {
+              if (responseError.status === 401) {
+                that.getToken(true) // force renew token
+                reject(responseError)
+              } else {
+                reject(responseError)
+              }
+          })
+        }) // end getToken
+      })
+    },
+    getToken (renew) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        var localToken = that.getLocalToken()
+        if (localToken) { // token exists
+          if (renew) {
+            localToken.expires = 1 // to force logout and login
+            console.log('Renew token forced')
           }
-        }, function (responseError) {
-          if (responseError.status === 401) {
-            that.collabResults.push = 'Getting your collabs ...'
+          var currentTime = (new Date()).getTime() / 1000;
+          if (localToken.expires > currentTime) { // token is not expired and valid
+            var token = 'Bearer ' + localToken.access_token
+            resolve(token)
+          } else { // token is expired
             that.logout().then(function () {
-              console.debug('Getting new token')
-              that.login();
+              that.login().then(function () {
+                var token = 'Bearer ' + that.getLocalToken().access_token
+                resolve(token)
+              })
             })
-          } else {
-            reject(responseError)
           }
-        })
+        } else { // token does not exist
+          that.login().then(function () {
+            var token = 'Bearer ' + that.getLocalToken().access_token
+            resolve(token)
+          })
+        }
       })
     },
     getLocalToken () {

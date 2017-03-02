@@ -90,7 +90,9 @@ export default {
     getLocalToken () {
       // TODO: test without hello {}
       var helloStorage = window.localStorage.hello
-      var hbpStorage = JSON.parse(helloStorage).hbp
+      if (helloStorage) {
+        var hbpStorage = JSON.parse(helloStorage).hbp
+      }
       return hbpStorage
     }
   }

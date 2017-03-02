@@ -90,7 +90,7 @@
       ],
       "singlecellmodeling": [
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
             "description": "Browse and validate existing single cell model in NeuroInformatics Platform / local storage",
             "experience": ["all"],
             "maturity": ["experimental"],
@@ -103,7 +103,7 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
             "description": "Rebuild an existing single cell model",
             "experience": ["all", "power"],
             "maturity": ["experimental"],
@@ -116,7 +116,7 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
             "description": "Create your own Single Cell Model with data from NeuroInformatics Platform",
             "experience": ["experts", "code"],
             "maturity": ["experimental"],
@@ -129,7 +129,7 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
             "description": "Release your single cell model to the NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
@@ -142,7 +142,7 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
             "description": "Release your validated single cell building process",
             "experience": ["code"],
             "maturity": [""],
@@ -155,7 +155,7 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          },
          {
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
             "description": "Export single cell model into ML (Open Souce Brain)",
             "experience": ["code"],
             "maturity": [""],

@@ -48,6 +48,9 @@ new Vue({
     }
   },
   created () {
-    this.login() // from CollabAuthentication
+    var helloLocal = window.localStorage.hello
+    if (!helloLocal || helloLocal.length === 2) { // is empty {}
+      this.login() // from CollabAuthentication
+    }
   }
 })

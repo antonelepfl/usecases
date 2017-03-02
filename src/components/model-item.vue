@@ -50,7 +50,8 @@
         // TODO: change this species from the json file when the field is added
         this.pathParts.push('Rat')
         this.pathParts.push(this.model.brain_structure)
-        this.pathParts.push(this.model.cell_soma_location + '-' + this.model.cell_type)
+        this.pathParts.push(this.model.cell_soma_location)
+        this.pathParts.push(this.model.cell_type)
         this.pathParts.push(this.model['e-type'])
         this.pathParts.push(this.model.morphology)
       }

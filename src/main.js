@@ -48,7 +48,7 @@ new Vue({
     }
   },
   created () {
-    if (!Vue.http.headers.common['Authorization']) {
+    if (!window.localStorage.hello.length > 2) { // is empty {}
       this.login() // from CollabAuthentication
     }
   }

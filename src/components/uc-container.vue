@@ -30,7 +30,6 @@
       },
       methods: {
          selected (uc) {
-           // TODO: change this routing because path is not used
             if (!uc.disabled) {
               var selection = uc.title.toLowerCase().replace(/\s/g, '')
               var nextComplete = this.next + selection

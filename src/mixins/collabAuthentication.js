@@ -1,4 +1,3 @@
-import Vue from 'vue'
 var hbpHello = require('../assets/hbp.hello.js').hellojs
 // replace this with your collab app id
 hbpHello.init({
@@ -53,9 +52,12 @@ export default {
         })
       })
     },
-    saveAuthentication (context, auth) {
-      context.authenticated = true;
-      Vue.http.headers.common['Authorization'] = 'Bearer ' + auth.access_token;
+    getLocalToken () {
+      var helloStorage = window.localStorage.hello
+      if (helloStorage) {
+        var hbpStorage = JSON.parse(helloStorage).hbp
+      }
+      return hbpStorage
     }
   }
 }

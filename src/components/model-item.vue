@@ -56,9 +56,7 @@
       }
     },
     mounted () {
-      this.model
       this.getPath()
-      debugger
     }
   }
 </script>

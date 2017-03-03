@@ -93,12 +93,6 @@ export default {
     },
     redirectToCollab (collabId, navitemId) {
       window.parent.postMessage({
-        eventName: 'collab.open',
-        data: {
-          id: collabId
-        }
-      }, '*')
-      window.parent.postMessage({
         eventName: 'location',
         data: {
           url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId + '/nav/' + navitemId

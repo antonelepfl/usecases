@@ -38,6 +38,7 @@ export default {
       var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
 
       this.$http.post(collabReq, payload, this.header).then(function (response) {
+        let navitemId = response.body.id
         console.debug('Nav entry created')
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
           var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
@@ -45,10 +46,10 @@ export default {
           var payload = {}
           payload[context2] = 1 // adding context to the entry
           that.$http.post(jupyterNotebookUrl, payload, that.header).then(function (response) {
-            that.redirectToCollab(collabId)
+            that.redirectToCollab(collabId, navitemId)
           })
         } else {
-          that.redirectToCollab(collabId)
+          that.redirectToCollab(collabId, navitemId)
         }
       })
     },
@@ -90,7 +91,7 @@ export default {
         })
       })
     },
-    redirectToCollab (collabId) {
+    redirectToCollab (collabId, navitemId) {
       window.parent.postMessage({
         eventName: 'collab.open',
         data: {
@@ -100,7 +101,7 @@ export default {
       window.parent.postMessage({
         eventName: 'location',
         data: {
-          url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId
+          url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId + '/' + navitemId
         }
       }, '*')
       setTimeout(function () {

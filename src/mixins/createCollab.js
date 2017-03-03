@@ -17,10 +17,10 @@ export default {
   props: ['uc_name'],
   mixins: [CollabAuthentication],
   created () {
-    var token = this.getToken() // from CollabAuthentication
-    if (token) {
-      this.header = {headers: {'Authorization': token}}
-    }
+    let that = this
+    this.getToken().then(function (token) {
+      that.header = {headers: {'Authorization': token}}
+    }) // from CollabAuthentication
   },
   methods: {
     createNavEntry (entryName, collabId, parentId, appId) {
@@ -84,7 +84,7 @@ export default {
       var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
       var that = this
       return new Promise(function (resolve, reject) {
-        that.$http.get(url, this.header).then(function (response) {
+        that.$http.get(url, that.header).then(function (response) {
           var nav = response.body
           resolve(nav)
         })

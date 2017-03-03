@@ -44,7 +44,7 @@ export default {
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1 // adding context to the entry
-          that.$http.post(jupyterNotebookUrl, payload, this.header).then(function (response) {
+          that.$http.post(jupyterNotebookUrl, payload, that.header).then(function (response) {
             that.redirectToCollab(collabId)
           })
         } else {
@@ -61,7 +61,7 @@ export default {
         'content': collabTitle
       }
       return new Promise(function (resolve, reject) {
-        that.$http.post(collabReq, payload, this.header).then(function (response) {
+        that.$http.post(collabReq, payload, that.header).then(function (response) {
           console.debug('Collab created')
           var collabId = response.body.id
           resolve(collabId)
@@ -74,7 +74,7 @@ export default {
       var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
       var that = this
       return new Promise(function (resolve, reject) {
-        that.$http.get(url, this.header).then(function (response) {
+        that.$http.get(url, that.header).then(function (response) {
           var parentRoot = response.body.id
           resolve(parentRoot)
         })

@@ -95,7 +95,7 @@
             that.isLoading = false
           })
         }, function (error) {
-          if (error.body.title) {
+          if (error.body.title) { // to catch the collab already exists
             that.isLoading = false
             that.errorMessage = error.body.title[0]
           }

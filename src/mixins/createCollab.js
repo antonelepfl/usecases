@@ -98,12 +98,12 @@ export default {
           id: collabId
         }
       }, '*')
-      // window.parent.postMessage({
-      //   eventName: 'location',
-      //   data: {
-      //     url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId + '/' + navitemId
-      //   }
-      // }, '*')
+      window.parent.postMessage({
+        eventName: 'location',
+        data: {
+          url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId + '/nav/' + navitemId
+        }
+      }, '*')
       setTimeout(function () {
         this.errorMessage = 'Collab created but not redirected (it is not embed)'
       }.bind(this), 1000)

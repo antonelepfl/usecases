@@ -67,15 +67,17 @@ export default {
             localToken.expires = 1 // to force logout and login
             console.log('Renew token forced')
           }
-        }, function (responseError) {
-          if (responseError.status === 401) {
-            that.collabResults.push = 'Getting your collabs ...'
+          var currentTime = (new Date()).getTime() / 1000;
+          if (localToken.expires > currentTime) { // token is not expired and valid
+            var token = 'Bearer ' + localToken.access_token
+            resolve(token)
+          } else { // token is expired
             that.logout().then(function () {
-              console.debug('Getting new token')
-              that.login();
+              that.login().then(function () {
+                var token = 'Bearer ' + that.getLocalToken().access_token
+                resolve(token)
+              })
             })
-          } else {
-            reject(responseError)
           }
         } else { // token does not exist
           that.login().then(function () {

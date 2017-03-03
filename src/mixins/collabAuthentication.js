@@ -25,9 +25,8 @@ export default {
     },
     logout () {
       return new Promise(function (resolve, reject) {
-        var that = this
-        hbpHello.logout('hbp').then(function (event) {
-          that.authenticated = false;
+        hbpHello.logout('hbp', {force: false})
+        .then(function (event) {
           console.debug('User Logout OK')
           resolve();
         }, function (e) {
@@ -88,7 +87,6 @@ export default {
       })
     },
     getLocalToken () {
-      // TODO: test without hello {}
       var helloStorage = window.localStorage.hello
       if (helloStorage) {
         var hbpStorage = JSON.parse(helloStorage).hbp

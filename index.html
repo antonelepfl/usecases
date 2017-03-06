@@ -10,15 +10,26 @@
     <script type="text/javascript">
       /* Single Page Apps for GitHub Pages
       https://github.com/rafrex/spa-github-pages */
-      (function(){
+      (function (){
       var redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
       if (redirect && redirect != location.href) {
         history.replaceState(null, null, redirect);
       }
       })();
+      // End Single Page Apps for GitHub Pages
+
+      // Google analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91794319-3', 'auto');
+      ga('send', 'pageview');
+      // End Gogle analytics
     </script>
-    <!-- End Single Page Apps for GitHub Pages -->
+
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <style>
       .fade-enter-active, .fade-leave-active {
@@ -39,7 +50,7 @@
         <router-view>
           <h2 class="welcome">Please wait ...</h2>
         </router-view>
-      </transition>      
+      </transition>
     </div>
     <!-- built files will be auto injected -->
   </body>

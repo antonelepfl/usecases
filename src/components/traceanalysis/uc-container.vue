@@ -67,6 +67,7 @@
    .uc-container .item-sections {
       margin-top: 20px;
       padding: 10px;
+      cursor: pointer;
    }
    .uc-container .selected {
       background-color: lightgray;
@@ -99,6 +100,7 @@
    .uc-container .disabled-item {
       opacity: 0.5;
       background-color: rgba(63, 58, 58, 0.22);
+      cursor: not-allowed;
    }
    .uc-container .disabled-item:hover {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);

@@ -36,7 +36,6 @@
    .uc-item {
       display: flex;
       align-items: center;
-      cursor: pointer;
    }
    .uc-description {
       width: 70%;

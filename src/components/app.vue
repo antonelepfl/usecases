@@ -8,7 +8,7 @@
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
-import ucContainer from './uc-container.vue'
+import ucContainer from './traceanalysis/uc-container.vue'
 
 Vue.use(VueMaterial)
 

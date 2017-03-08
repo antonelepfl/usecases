@@ -24,8 +24,8 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import modalComponent from './modal-component.vue'
-   import ModelsConfig from '../assets/config_files/models.json';
+   import modalComponent from '../modal-component.vue'
+   import ModelsConfig from 'assets/config_files/models.json';
    export default {
       name: 'modelContainer',
       components: {

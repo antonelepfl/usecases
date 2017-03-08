@@ -4,9 +4,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-import App from './components/app.vue'
+import App from 'components/app.vue'
 import VueResource from 'vue-resource'
-import CollabAuthentication from './mixins/collabAuthentication.js'
+import CollabAuthentication from 'mixins/collabAuthentication.js'
 
 Vue.use(VueResource)
 Vue.use(VueMaterial)
@@ -22,12 +22,12 @@ const router = new VueRouter({
     },
     { path: '/:list_usecases/models/:model_name', // (everyusecaselist)/models
       component: function (resolve) {
-        require(['./components/model-container.vue'], resolve)
+        require(['components/singlecellmodeling/model-container.vue'], resolve)
       }
     },
     { path: '/:list_usecases/form/:uc_name', // (everyusecaselist)/form/
       component: function (resolve) {
-        require(['./components/collab-form.vue'], resolve)
+        require(['components/collab-form.vue'], resolve)
       },
       props: true
     }

@@ -12,7 +12,7 @@
 
 <script>
    import ucItem from './uc-item.vue'
-   import usecases from '../assets/config_files/usecases.json'
+   import usecases from 'assets/config_files/usecases.json'
 
    export default {
       name: 'ucContainer',

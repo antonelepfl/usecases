@@ -55,6 +55,7 @@
         errorMessage: '',
         isJupyter: false,
         appId: -1,
+        appName: '',
         typesCollabsApps: typesCollabsApps
       }
     },
@@ -69,16 +70,30 @@
       }
     },
     mounted () {
-      this.appId = this.typesCollabsApps[this.uc_name].appid
+      // TODO: improve this param from route
+      var newEntry = this.typesCollabsApps[this.$route.params.uc_name]
+      this.appId = newEntry.appid
+      this.appName = newEntry.entryname
     },
     methods: {
       collabSelected (collab) {
         var that = this
         this.getAllNav(collab.id).then(function (parentNav) {
-          var exists = that.checkExists(parentNav, that.appId)
+          var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+            that.getCollabStorage(collab.id).then(function (projectStorage) {
+              var parent = projectStorage.results[0].uuid
+              var contentType = 'x-ipynb+json'
+              var name = 'file test 1'
+              that.createFile(name, contentType, parent).then(function (file) {
+                debugger
+                that.copyFileContent('dcb142a0-68e5-4881-ad61-345d463207ef', file.uuid).then(function (copy) {
+                  debugger
+                  var entryName = that.typesCollabsApps[that.uc_name].entryname
+                  that.createNavEntry(entryName, collab.id, parentNav.id, that.appId, file.uuid)
+                })
+              })
+            })
           } else {
             console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id, exists.navitemId)
@@ -102,12 +117,13 @@
           }
         })
       },
-      checkExists (nav, appId) {
+      checkExists (nav, appId, appName) {
         if (nav.children) {
           let item = {'found': false, 'navitemId': 0}
           let i = 0
           while (!item.found && nav.children.length > i) {
-            if (nav.children[i].app_id === appId.toString()) {
+            if (nav.children[i].app_id === appId.toString() &&
+              nav.children[i].name === appName) {
               item.found = true
               item.navitemId = nav.children[i].id
             }

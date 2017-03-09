@@ -23,7 +23,7 @@ export default {
     }) // from CollabAuthentication
   },
   methods: {
-    createNavEntry (entryName, collabId, parentId, appId) {
+    createNavEntry (entryName, collabId, parentId, appId, fileId) {
       var context = uuid()
       var that = this
       var type = 'IT'
@@ -41,7 +41,9 @@ export default {
         let navitemId = response.body.id
         console.debug('Nav entry created')
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
+          // TODO: check this url and put in CONST
           var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
+          jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1 // adding context to the entry
@@ -101,6 +103,51 @@ export default {
       setTimeout(function () {
         this.errorMessage = 'Collab created but not redirected (it is not embed)'
       }.bind(this), 1000)
+    },
+    getCollabStorage (collabId) {
+      var url = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id=' + collabId
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(url, that.header).then(function (response) {
+          console.debug('Collab storage obtained')
+          resolve(response.body)
+        })
+      })
+    },
+    createFile (name, contentType, parent) {
+      var url = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
+      var that = this
+      var payload = {
+        'name': name,
+        'content_type': contentType,
+        'parent': parent
+      }
+      return new Promise(function (resolve, reject) {
+        that.$http.post(url, payload, that.header).then(function (response) {
+          console.debug('File created')
+          resolve(response.body)
+        }, function (error) {
+          reject(error)
+        })
+      })
+    },
+    copyFileContent (originFileId, newFileId) {
+      var url = 'https://services.humanbrainproject.eu/storage/v1/api/file/' + newFileId + '/content/'
+      var that = this
+      var newHeader = {headers: {
+        'Authorization': this.header.headers.Authorization,
+        'X-Copy-From': originFileId
+      }}
+      debugger
+      return new Promise(function (resolve, reject) {
+        that.$http.put(url, {}, newHeader).then(function (response) {
+          console.debug('File copied')
+          debugger
+          resolve(response.body)
+        }, function (error) {
+          reject(error)
+        })
+      })
     }
   }
 }

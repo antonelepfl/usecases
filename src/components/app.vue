@@ -1,6 +1,6 @@
 <template>
   <div class="startapp">
-    <uc-container key="container" :next="next" :single="single"></uc-container>
+    <uc-container v-if="!loading" key="container" :next="next" :single="single"></uc-container>
   </div>
 </template>
 
@@ -8,7 +8,8 @@
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
-import ucContainer from './uc-container.vue'
+import ucContainer from './traceanalysis/uc-container.vue'
+import CollabAuthentication from '../mixins/collabAuthentication.js'
 
 Vue.use(VueMaterial)
 
@@ -20,11 +21,22 @@ export default {
   data () {
     return {
       single: Boolean,
-      next: ''
+      next: '',
+      loading: true
     }
   },
   props: ['list_usecases'],
+  mixins: [CollabAuthentication],
   created () {
+    var that = this
+    var helloLocal = window.localStorage.hello
+    if (!helloLocal || helloLocal.length === 2) { // is empty {}
+      this.login().then(function () {  // from CollabAuthentication
+        that.loading = false
+      })
+    } else {
+      this.loading = false
+    }
     switch (this.list_usecases) {
       case 'traceanalysis':
         this.single = true
@@ -32,7 +44,11 @@ export default {
         break
       case 'singlecellmodeling':
         this.single = false
-        this.next = this.$route.path + '/models/'
+        this.next = this.$route.path + '/smmodels/'
+        break
+      case 'circuitbuilding':
+        this.single = false
+        this.next = this.$route.path + '/cbmodels/'
         break
     }
   }

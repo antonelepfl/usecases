@@ -43,7 +43,8 @@ export default {
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
           // TODO: check this url and put in CONST
           var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
-          jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
+          // TODO replace this above with this below.
+          // jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1 // adding context to the entry
@@ -108,7 +109,12 @@ export default {
       var url = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id=' + collabId
       var that = this
       return new Promise(function (resolve, reject) {
-        that.$http.get(url, that.header).then(function (response) {
+        var newHeader = {headers: {
+          'Authorization': that.header.headers.Authorization,
+          'Accept': 'application/json'
+        }}
+        console.log(newHeader)
+        that.$http.get(url, newHeader).then(function (response) {
           console.debug('Collab storage obtained')
           resolve(response.body)
         })
@@ -118,12 +124,17 @@ export default {
       var url = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
       var that = this
       var payload = {
-        'name': name,
+        'name': uuid() + '.ipynb',
         'content_type': contentType,
         'parent': parent
       }
       return new Promise(function (resolve, reject) {
-        that.$http.post(url, payload, that.header).then(function (response) {
+        var newHeader = {headers: {
+          'Authorization': that.header.headers.Authorization,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }}
+        that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
           resolve(response.body)
         }, function (error) {
@@ -136,13 +147,12 @@ export default {
       var that = this
       var newHeader = {headers: {
         'Authorization': this.header.headers.Authorization,
-        'X-Copy-From': originFileId
+        'X-Copy-From': originFileId,
+        'Accept': 'application/json'
       }}
-      debugger
       return new Promise(function (resolve, reject) {
-        that.$http.put(url, {}, newHeader).then(function (response) {
-          console.debug('File copied')
-          debugger
+        that.$http.put(url, null, newHeader).then(function (response) {
+          console.debug('File content copied')
           resolve(response.body)
         }, function (error) {
           reject(error)

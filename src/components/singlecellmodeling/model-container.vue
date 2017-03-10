@@ -24,8 +24,8 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import modalComponent from './modal-component.vue'
-   import ModelsConfig from '../assets/config_files/models.json';
+   import modalComponent from '../modal-component.vue'
+   import ModelsConfig from 'assets/config_files/models.json';
    export default {
       name: 'modelContainer',
       components: {
@@ -57,7 +57,8 @@
       created () {
          document.querySelector('title').innerHTML = 'Models'
          var that = this
-         for (var i = 0; i < this.modelsConfig.length; i++) {
+         // TODO: change the model based on the url
+         for (var i = 0; i < this.modelsConfig.browse.length; i++) {
            this.$http.get(this.modelsConfig[i].path).then(function (response) {
              that.models.push(response.body)
            }, function (error) {

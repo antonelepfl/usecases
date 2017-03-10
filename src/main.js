@@ -4,9 +4,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-import App from './components/app.vue'
+import App from 'components/app.vue'
 import VueResource from 'vue-resource'
-import CollabAuthentication from './mixins/collabAuthentication.js'
 
 Vue.use(VueResource)
 Vue.use(VueMaterial)
@@ -20,16 +19,28 @@ const router = new VueRouter({
       component: App,
       props: true // to see in the component as props
     },
-    { path: '/:list_usecases/models/:model_name', // (everyusecaselist)/models
+    { path: '/:list_usecases/smmodels/:model_name', // (everyusecaselist)/models
       component: function (resolve) {
-        require(['./components/model-container.vue'], resolve)
+        require(['components/singlecellmodeling/model-container.vue'], resolve)
       }
     },
     { path: '/:list_usecases/form/:uc_name', // (everyusecaselist)/form/
       component: function (resolve) {
-        require(['./components/collab-form.vue'], resolve)
+        require(['components/collab-form.vue'], resolve)
       },
       props: true
+    },
+    { path: '/:list_usecases/cbmodels/:model_name', // (everyusecaselist)/models
+      component: function (resolve) {
+        require(['components/circuitbuilding/model-container.vue'], resolve)
+      }
+    },
+    { path: '/:list_usecases/cbmodels/:model_name/:uc_name/form', // to search crete collab for the circuitbuilding models
+      component: function (resolve) {
+        require(['components/collab-form.vue'], resolve)
+      },
+      props: true,
+      name: 'circuitbuildingform'
     }
   ],
   base: '/usecases/',
@@ -38,19 +49,9 @@ const router = new VueRouter({
     return { x: 0, y: 0 }
   }
 })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
-  mixins: [CollabAuthentication],
-  data () {
-    return {
-    }
-  },
-  created () {
-    var helloLocal = window.localStorage.hello
-    if (!helloLocal || helloLocal.length === 2) { // is empty {}
-      this.login() // from CollabAuthentication
-    }
-  }
+  router
 })

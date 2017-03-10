@@ -6,6 +6,13 @@
       <div class="description">
          <p>{{ uc.description }}</p>
       </div>
+      <div class="contributors" v-if="uc.contributors">
+        <b>Credits:</b>
+        <div class="">
+          Contributor(s): <span v-for="person in uc.contributors"> <i>{{person.name}}</i> - {{person.email}}. </span>
+        </div>
+
+      </div>
    </div>
 </template>
 
@@ -24,6 +31,5 @@
    .uc-description .title-text {
       font-size: 20px;
       font-weight: bold;
-
    }
 </style>

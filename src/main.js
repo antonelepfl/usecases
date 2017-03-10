@@ -19,7 +19,7 @@ const router = new VueRouter({
       component: App,
       props: true // to see in the component as props
     },
-    { path: '/:list_usecases/models/:model_name', // (everyusecaselist)/models
+    { path: '/:list_usecases/smmodels/:model_name', // (everyusecaselist)/models
       component: function (resolve) {
         require(['components/singlecellmodeling/model-container.vue'], resolve)
       }
@@ -29,6 +29,18 @@ const router = new VueRouter({
         require(['components/collab-form.vue'], resolve)
       },
       props: true
+    },
+    { path: '/:list_usecases/cbmodels/:model_name', // (everyusecaselist)/models
+      component: function (resolve) {
+        require(['components/circuitbuilding/model-container.vue'], resolve)
+      }
+    },
+    { path: '/:list_usecases/cbmodels/:model_name/:uc_name/form', // to search crete collab for the circuitbuilding models
+      component: function (resolve) {
+        require(['components/collab-form.vue'], resolve)
+      },
+      props: true,
+      name: 'circuitbuildingform'
     }
   ],
   base: '/usecases/',

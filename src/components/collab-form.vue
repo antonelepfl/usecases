@@ -72,8 +72,12 @@
     mounted () {
       // TODO: improve this param from route
       var newEntry = this.typesCollabsApps[this.$route.params.uc_name]
-      this.appId = newEntry.appid
-      this.appName = newEntry.entryname
+      if (newEntry) {
+        this.appId = newEntry.appid
+        this.appName = newEntry.entryname
+      } else {
+        console.error('No entry in collabs apps json')
+      }
     },
     methods: {
       collabSelected (collab) {
@@ -81,19 +85,21 @@
         this.getAllNav(collab.id).then(function (parentNav) {
           var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
-            that.getCollabStorage(collab.id).then(function (projectStorage) {
-              var parent = projectStorage.results[0].uuid
-              var contentType = 'x-ipynb+json'
-              var name = 'file test 1'
-              that.createFile(name, contentType, parent).then(function (file) {
-                debugger
-                that.copyFileContent('dcb142a0-68e5-4881-ad61-345d463207ef', file.uuid).then(function (copy) {
-                  debugger
-                  var entryName = that.typesCollabsApps[that.uc_name].entryname
-                  that.createNavEntry(entryName, collab.id, parentNav.id, that.appId, file.uuid)
-                })
-              })
-            })
+            var entryName = that.typesCollabsApps[that.uc_name].entryname
+            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+            // TODO replace first two lines for all below to COPY the elemement instead of pointing
+            // that.getCollabStorage(collab.id).then(function (projectStorage) {
+            //   var parent = projectStorage.results[0].uuid
+            //   var contentType = 'x-ipynb+json'
+            //   var name = 'file test 1'
+            //   that.createFile(name, contentType, parent).then(function (file) {
+            //     that.copyFileContent('c761b11d-f08d-42a0-a98e-cc97b6ce9278', file.uuid).then(function (copy) {
+            //       debugger
+            //       var entryName = that.typesCollabsApps[that.uc_name].entryname
+            //       that.createNavEntry(entryName, collab.id, parentNav.id, that.appId, file.uuid)
+            //     })
+            //   })
+            // })
           } else {
             console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id, exists.navitemId)

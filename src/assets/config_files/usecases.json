@@ -167,6 +167,60 @@
             },
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          }
+      ],
+      "circuitbuilding": [
+         {
+            "title": "Cells placement",
+            "description": "Define the properties and the location of the neurons for a brain region of detailed neuron models",
+            "experience": ["power"],
+            "maturity": ["experimental"],
+            "access": [""],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/cellprop1.png",
+               "alt": "Logo of feature Extraction"
+            },
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+         },
+         {
+            "title": "Connectome",
+            "description": "Define the connectome for a brain region of detailed neuron models",
+            "experience": ["power"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
+               "alt": "Logo of feature Extraction"
+            },
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+         },
+         {
+            "title": "Circuit building use case 3",
+            "description": "Circuit building description 3",
+            "experience": ["experts", "code"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "disabled": true,
+            "picture": {
+               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
+               "alt": "Logo of feature Extraction"
+            },
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+         },
+         {
+            "title": "Circuit building use case 4",
+            "description": "Circuit building description 4",
+            "experience": ["experts", "code"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "disabled": true,
+            "picture": {
+               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
+               "alt": "Logo of feature Extraction"
+            },
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+         }
       ]
    },
    {

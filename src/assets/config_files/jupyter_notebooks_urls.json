@@ -1,3 +1,5 @@
 {
-  "synapticeventsfitting": "https://services.humanbrainproject.eu/document/v0/api/file/c761b11d-f08d-42a0-a98e-cc97b6ce9278/metadata"
+  "synapticeventsfitting": "https://services.humanbrainproject.eu/document/v0/api/file/c761b11d-f08d-42a0-a98e-cc97b6ce9278/metadata",
+  "connectomerathippocampusca1": "https://services.humanbrainproject.eu/document/v0/api/file/dcb142a0-68e5-4881-ad61-345d463207ef/metadata",
+  "connectomeratcerebellumvolume": "https://services.humanbrainproject.eu/document/v0/api/file/da13e6d5-69c1-41a6-912e-2a8ab4d30469/metadata"
 }

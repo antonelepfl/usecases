@@ -8,7 +8,7 @@
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
-import ucContainer from './uc-container.vue'
+import ucContainer from './traceanalysis/uc-container.vue'
 import CollabAuthentication from '../mixins/collabAuthentication.js'
 
 Vue.use(VueMaterial)
@@ -44,7 +44,11 @@ export default {
         break
       case 'singlecellmodeling':
         this.single = false
-        this.next = this.$route.path + '/models/'
+        this.next = this.$route.path + '/smmodels/'
+        break
+      case 'circuitbuilding':
+        this.single = false
+        this.next = this.$route.path + '/cbmodels/'
         break
     }
   }

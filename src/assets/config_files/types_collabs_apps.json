@@ -10,5 +10,13 @@
   "jupyternotebook": {
     "entryname": "Jupyter Notebook",
     "appid": 175
+  },
+  "connectomerathippocampusca1": {
+    "entryname": "Connectome Hippocampus",
+    "appid": 175
+  },
+  "connectomeratcerebellumvolume": {
+    "entryname": "Connectome Cerebellum",
+    "appid": 175
   }
 }

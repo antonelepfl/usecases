@@ -36,7 +36,7 @@
 
 <style scoped>
    .item-picture {
-      width: 12%;
+      width: 18%;
       min-height: 80px;
       margin-right: 3%;
    }
@@ -45,7 +45,7 @@
       align-items: center;
    }
    .uc-description {
-      width: 70%;
+      width: 85%;
       text-align: start;
       padding-left: 10px;
    }

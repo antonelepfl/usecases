@@ -32,6 +32,7 @@
    .item-picture {
       width: 8%;
       min-height: 80px;
+      min-width: 100px;
    }
    .uc-item {
       display: flex;
@@ -58,7 +59,7 @@
          width: 71%;
       }
    }
-   @media screen and (max-width: 750px) {
+   @media screen and (max-width: 450px) {
       .item-picture {
          display: none;
       }

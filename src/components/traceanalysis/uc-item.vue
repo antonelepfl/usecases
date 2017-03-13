@@ -28,7 +28,7 @@
 
 </script>
 
-<style>
+<style scoped>
    .item-picture {
       width: 8%;
       min-height: 80px;

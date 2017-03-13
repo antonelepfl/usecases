@@ -58,7 +58,7 @@
          document.querySelector('title').innerHTML = 'Models'
          var that = this
          // TODO: change the model based on the url
-         for (var i = 0; i < this.modelsConfig.browse.length; i++) {
+         for (var i = 0; i < this.modelsConfig.length; i++) {
            this.$http.get(this.modelsConfig[i].path).then(function (response) {
              that.models.push(response.body)
            }, function (error) {
@@ -69,7 +69,7 @@
    }
 </script>
 
-<style>
+<style scoped>
    .model-container {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;

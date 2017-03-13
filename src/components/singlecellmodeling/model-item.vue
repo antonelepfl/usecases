@@ -66,7 +66,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .model-item {
     cursor: pointer;
   }

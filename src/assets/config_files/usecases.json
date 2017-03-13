@@ -121,7 +121,7 @@
             "experience": ["experts", "code"],
             "maturity": [""],
             "access": [""],
-            "disabled": true,
+            "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"

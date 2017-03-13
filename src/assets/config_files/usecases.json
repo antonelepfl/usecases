@@ -90,8 +90,8 @@
       ],
       "singlecellmodeling": [
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-            "description": "Browse and validate existing single cell model in NeuroInformatics Platform / local storage",
+            "title": "Build your own single cell model using HBP data",
+            "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
             "experience": ["all"],
             "maturity": ["experimental"],
             "access": [""],
@@ -103,12 +103,25 @@
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-            "description": "Rebuild an existing single cell model",
+            "title": "Rebuild an existing single cell model",
+            "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
             "experience": ["all", "power"],
             "maturity": ["experimental"],
             "access": ["hpc"],
             "disabled": false,
+            "picture": {
+               "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
+               "alt": "Logo of feature Extraction"
+            },
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+         },
+         {
+            "title": "Build your own single cell model using HBP and your own data",
+            "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",
+            "experience": ["experts", "code"],
+            "maturity": [""],
+            "access": [""],
+            "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"

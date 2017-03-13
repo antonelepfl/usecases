@@ -7,21 +7,7 @@
       </div>
     </div>
     <div class="section">
-      <md-layout md-gutter>
-        <md-layout class="model-item-picture"  md-flex-large="40" md-flex-medium="20" md-hide-xsmall>
-          <md-layout md-column md-flex-large="50" md-flex-medium="100">
-            <img src="../assets/traces.png" v-on:click="showImage">
-          </md-layout>
-
-          <md-layout md-column md-flex-large="50" md-flex-medium="100">
-            <img src="../assets/morphology.png" v-on:click="showImage">
-          </md-layout>
-        </md-layout>
-
-        <md-layout md-column  md-flex-large="60" md-flex-medium="80" md-flex-xsmall="100">
-          <model-description class="model-description" v-bind:author="author" v-on:touched="touched"></model-description>
-        </md-layout>
-      </md-layout>
+      <model-description class="model-description" :model="model" v-on:touched="touched"></model-description>
     </div>
   </div>
 </template>
@@ -35,8 +21,7 @@
       modelDescription
     },
     props: {
-      path: String,
-      author: String
+      model: Object
     },
     data () {
       return {
@@ -60,10 +45,19 @@
             found = false
           }
         }
+      },
+      getPath () {
+        // TODO: change this species from the json file when the field is added
+        this.pathParts.push('Rat')
+        this.pathParts.push(this.model.brain_structure)
+        this.pathParts.push(this.model.cell_soma_location)
+        this.pathParts.push(this.model.cell_type)
+        this.pathParts.push(this.model['e-type'])
+        this.pathParts.push(this.model.morphology)
       }
     },
     mounted () {
-      this.pathParts = this.path.split('>')
+      this.getPath()
     }
   }
 </script>

@@ -2,8 +2,8 @@
   <div class="collab-form">
     <!--just in case a hidden logout button -->
     <md-button class="md-raised md-primary button-medium" style="display: none" v-on:click="logout">Logout</md-button>
-    <div v-show="authenticated" class="header">Define in which collab you want to work</div>
-    <md-tabs v-if="authenticated" md-fixed class="elevated">
+    <div class="header">Define in which collab you want to work</div>
+    <md-tabs md-fixed class="elevated">
       <md-tab id="search" md-label="Search" md-icon="search" class="container-centered">
         <md-input-container>
           <label>Collab Name</label>
@@ -69,15 +69,19 @@
       }
     },
     mounted () {
-      this.login()
       this.appId = this.typesCollabsApps[this.uc_name].appid
     },
     methods: {
       collabSelected (collab) {
         var that = this
-        this.getNavRoot(collab.id).then(function (parentRoot) {
-          var entryName = that.typesCollabsApps[that.uc_name].entryname
-          that.createNavEntry(entryName, collab.id, parentRoot, that.appId)
+        this.getAllNav(collab.id).then(function (parentNav) {
+          if (!that.checkExists(parentNav, that.appId)) {
+            var entryName = that.typesCollabsApps[that.uc_name].entryname
+            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+          } else {
+            console.debug('Existing app in collab found')
+            that.redirectToCollab(collab.id)
+          }
         })
       },
       createNewCollab () {
@@ -91,22 +95,37 @@
             that.isLoading = false
           })
         }, function (error) {
-          if (error.body.title) {
+          if (error.body.title) { // to catch the collab already exists
             that.isLoading = false
             that.errorMessage = error.body.title[0]
           }
         })
+      },
+      checkExists (nav, appId) {
+        if (nav.children) {
+          let found = false
+          let i = 0
+          while (!found && nav.children.length > i) {
+            if (nav.children[i].app_id === appId.toString()) {
+              found = true
+            }
+            i = i + 1
+          }
+          return found
+        }
       }
     },
     watch: {
       'searchText' (newVal) {
         var that = this
         this.searchCollab(newVal).then(function (result) {
+          if (that.errorMessage !== '') {
+            that.errorMessage = ''
+          }
           that.collabResults = result
+        }, function (reject) {
+          that.errorMessage = 'Getting your collabs ...'
         })
-        if (this.errorMessage !== '') {
-          this.errorMessage = ''
-        }
       }
     }
   }
@@ -161,6 +180,7 @@
   }
   .collabs-results-container .collab-result > a.nota {
     color: #ac6067;
+    cursor: pointer;
   }
   .collab-form span.error-message {
     display: block;

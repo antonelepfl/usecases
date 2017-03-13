@@ -1,6 +1,7 @@
 import uuid from 'uuid4'
 import jupyterNotebookUrls from '../assets/config_files/jupyter_notebooks_urls.json'
 import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
+import CollabAuthentication from './collabAuthentication.js'
 
 export default {
   data () {
@@ -9,10 +10,18 @@ export default {
       isLoading: false,
       errorMessage: '',
       isJupyter: false,
-      typesCollabsApps: typesCollabsApps
+      typesCollabsApps: typesCollabsApps,
+      header: {}
     }
   },
   props: ['uc_name'],
+  mixins: [CollabAuthentication],
+  created () {
+    let that = this
+    this.getToken().then(function (token) {
+      that.header = {headers: {'Authorization': token}}
+    }) // from CollabAuthentication
+  },
   methods: {
     createNavEntry (entryName, collabId, parentId, appId) {
       var context = uuid()
@@ -27,21 +36,20 @@ export default {
         'type': type
       }
       var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
-      this.$http.post(collabReq, payload).then(function (response) {
+
+      this.$http.post(collabReq, payload, this.header).then(function (response) {
+        let navitemId = response.body.id
+        console.debug('Nav entry created')
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
           var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1 // adding context to the entry
-          that.$http.post(jupyterNotebookUrl, payload).then(function (response) {
-            that.getNavRoot(collabId).then(function (parentRoot) { // to show the lasts added because cache problem
-              that.redirectToCollab(collabId)
-            })
+          that.$http.post(jupyterNotebookUrl, payload, that.header).then(function (response) {
+            that.redirectToCollab(collabId, navitemId)
           })
         } else {
-          that.getNavRoot(collabId).then(function (parentRoot) { // to show the lasts added because cache problem
-            that.redirectToCollab(collabId)
-          })
+          that.redirectToCollab(collabId, navitemId)
         }
       })
     },
@@ -54,7 +62,8 @@ export default {
         'content': collabTitle
       }
       return new Promise(function (resolve, reject) {
-        that.$http.post(collabReq, payload).then(function (response) {
+        that.$http.post(collabReq, payload, that.header).then(function (response) {
+          console.debug('Collab created')
           var collabId = response.body.id
           resolve(collabId)
         }, function (error) {
@@ -66,20 +75,32 @@ export default {
       var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
       var that = this
       return new Promise(function (resolve, reject) {
-        that.$http.get(url).then(function (response) {
+        that.$http.get(url, that.header).then(function (response) {
           var parentRoot = response.body.id
           resolve(parentRoot)
         })
       })
     },
-    redirectToCollab (collabId) {
+    getAllNav (collabId) {
+      var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(url, that.header).then(function (response) {
+          var nav = response.body
+          resolve(nav)
+        })
+      })
+    },
+    redirectToCollab (collabId, navitemId) {
       window.parent.postMessage({
-        eventName: 'collab.open',
+        eventName: 'location',
         data: {
-          id: collabId
+          url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId + '/nav/' + navitemId
         }
-      }, '*');
-      this.errorMessage = 'Collab created but not redirected (it is not embed)'
+      }, '*')
+      setTimeout(function () {
+        this.errorMessage = 'Collab created but not redirected (it is not embed)'
+      }.bind(this), 1000)
     }
   }
 }

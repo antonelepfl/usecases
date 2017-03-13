@@ -130,11 +130,8 @@
    .md-chip {
       font-size: 10px;
    }
-   .mat-acc {
-      width: auto;
-   }
-   .exp {
-      width: auto;
+   .mat-acc, .exp {
+      width: 100%;
    }
 }
 </style>

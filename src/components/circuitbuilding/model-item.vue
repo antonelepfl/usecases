@@ -38,6 +38,7 @@
    .item-picture {
       width: 18%;
       min-height: 80px;
+      min-width: 140px;
       margin-right: 3%;
    }
    .uc-item {

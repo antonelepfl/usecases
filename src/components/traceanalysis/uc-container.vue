@@ -20,7 +20,7 @@
          ucItem
       },
       // props: ['singlePage', 'next'],
-      props: ['next', 'single'],
+      props: ['next'],
       data () {
          return {
             usecases: {},
@@ -44,10 +44,6 @@
       },
       mounted () {
         var ucSelected = this.$route.path.replace('/', '')
-        if (this.single) {
-          this.$el.querySelector('#uc-container-title').remove()
-          this.$el.classList.add('no-title')
-        }
         this.usecases = usecases[0][ucSelected]
         var title = ucSelected
         document.querySelector('title').innerText = this.prettyfy(title)

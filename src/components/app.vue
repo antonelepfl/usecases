@@ -1,6 +1,6 @@
 <template>
-  <div class="startapp">
-    <uc-container v-if="!loading" key="container" :next="next" :single="single"></uc-container>
+  <div class="startapp" v-if="!loading">
+    <uc-container key="container" :next="next"></uc-container>
   </div>
 </template>
 
@@ -39,15 +39,12 @@ export default {
     }
     switch (this.list_usecases) {
       case 'traceanalysis':
-        this.single = true
         this.next = this.$route.path + '/form/'
         break
       case 'singlecellmodeling':
-        this.single = false
         this.next = this.$route.path + '/smmodels/'
         break
       case 'circuitbuilding':
-        this.single = false
         this.next = this.$route.path + '/cbmodels/'
         break
     }

@@ -85,21 +85,20 @@
         this.getAllNav(collab.id).then(function (parentNav) {
           var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+            // var entryName = that.typesCollabsApps[that.uc_name].entryname
+            // that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
             // TODO replace first two lines for all below to COPY the elemement instead of pointing
-            // that.getCollabStorage(collab.id).then(function (projectStorage) {
-            //   var parent = projectStorage.results[0].uuid
-            //   var contentType = 'x-ipynb+json'
-            //   var name = 'file test 1'
-            //   that.createFile(name, contentType, parent).then(function (file) {
-            //     that.copyFileContent('c761b11d-f08d-42a0-a98e-cc97b6ce9278', file.uuid).then(function (copy) {
-            //       debugger
-            //       var entryName = that.typesCollabsApps[that.uc_name].entryname
-            //       that.createNavEntry(entryName, collab.id, parentNav.id, that.appId, file.uuid)
-            //     })
-            //   })
-            // })
+            that.getCollabStorage(collab.id).then(function (projectStorage) {
+              var parent = projectStorage.results[0].uuid
+              var contentType = 'x-ipynb+json'
+              var name = 'file test 1'
+              that.createFile(name, contentType, parent).then(function (file) {
+                that.copyFileContent('c761b11d-f08d-42a0-a98e-cc97b6ce9278', file.uuid).then(function (copy) {
+                  var entryName = that.typesCollabsApps[that.uc_name].entryname
+                  that.createNavEntry(entryName, collab.id, parentNav.id, that.appId, file.uuid)
+                })
+              })
+            })
           } else {
             console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id, exists.navitemId)

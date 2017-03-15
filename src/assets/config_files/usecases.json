@@ -89,25 +89,25 @@
          }
       ],
       "singlecellmodeling": [
+        {
+           "title": "Rebuild an existing single cell model",
+           "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
+           "experience": ["all", "power"],
+           "maturity": ["experimental"],
+           "access": ["hpc"],
+           "disabled": false,
+           "picture": {
+              "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
+              "alt": "Logo of Single cell model"
+           },
+           "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+        },
          {
             "title": "Build your own single cell model using HBP data",
             "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
             "experience": ["all"],
             "maturity": ["experimental"],
             "access": [""],
-            "disabled": false,
-            "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
-               "alt": "Logo of Single cell model"
-            },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
-         },
-         {
-            "title": "Rebuild an existing single cell model",
-            "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
-            "experience": ["all", "power"],
-            "maturity": ["experimental"],
-            "access": ["hpc"],
             "disabled": false,
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",

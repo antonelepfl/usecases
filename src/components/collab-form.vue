@@ -56,6 +56,7 @@
         isJupyter: false,
         appId: -1,
         appName: '',
+        contentType: '',
         typesCollabsApps: typesCollabsApps
       }
     },
@@ -71,10 +72,12 @@
     },
     mounted () {
       // TODO: improve this param from route
-      var newEntry = this.typesCollabsApps[this.$route.params.uc_name]
+      var newEntry = this.typesCollabsApps[this.uc_name]
       if (newEntry) {
         this.appId = newEntry.appid
         this.appName = newEntry.entryname
+        this.contentType = newEntry.contenttype
+        this.extension = newEntry.extension
       } else {
         console.error('No entry in collabs apps json')
       }
@@ -85,21 +88,15 @@
         this.getAllNav(collab.id).then(function (parentNav) {
           var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
-            // var entryName = that.typesCollabsApps[that.uc_name].entryname
-            // that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
-            // TODO replace first two lines for all below to COPY the elemement instead of pointing
-            that.getCollabStorage(collab.id).then(function (projectStorage) {
-              var parent = projectStorage.results[0].uuid
-              var contentType = 'x-ipynb+json'
-              var name = 'file test 1'
-              that.createFile(name, contentType, parent).then(function (file) {
-                that.copyFileContent('c761b11d-f08d-42a0-a98e-cc97b6ce9278', file.uuid).then(function (copy) {
-                  var entryName = that.typesCollabsApps[that.uc_name].entryname
-                  that.createNavEntry(entryName, collab.id, parentNav.id, that.appId, file.uuid)
-                })
-              })
-            })
-          } else {
+            var entryName = that.typesCollabsApps[that.uc_name].entryname
+            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+            // TODO: replace first two lines for all below to COPY the elemement instead of pointing
+            // if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+            //   that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
+            // } else { // is not jupyter notebok just connect to the original file
+            //   that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
+            // }
+          } else { // not found
             console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id, exists.navitemId)
           }

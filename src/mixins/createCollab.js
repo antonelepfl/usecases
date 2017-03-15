@@ -39,21 +39,23 @@ export default {
 
       this.$http.post(collabReq, payload, this.header).then(function (response) {
         let navitemId = response.body.id
-        console.debug('Nav entry created')
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
           // TODO: check this url and put in CONST
-          var jupyterNotebookUrl = jupyterNotebookUrls[that.uc_name]
+          var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/'
+          jupyterNotebookUrl += jupyterNotebookUrls[that.uc_name]
+          jupyterNotebookUrl += '/metadata'
           // TODO replace this above with this below.
           // jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1 // adding context to the entry
-          that.$http.post(jupyterNotebookUrl, payload, that.header).then(function (response) {
+          that.$http.put(jupyterNotebookUrl, payload, that.header).then(function (response) {
             that.redirectToCollab(collabId, navitemId)
           })
         } else {
           that.redirectToCollab(collabId, navitemId)
         }
+        console.debug('Nav entry created')
       })
     },
     createCollab (collabTitle, isPrivate) {
@@ -113,18 +115,17 @@ export default {
           'Authorization': that.header.headers.Authorization,
           'Accept': 'application/json'
         }}
-        console.log(newHeader)
         that.$http.get(url, newHeader).then(function (response) {
           console.debug('Collab storage obtained')
           resolve(response.body)
         })
       })
     },
-    createFile (name, contentType, parent) {
+    createFile (name, contentType, extension, parent) {
       var url = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
       var that = this
       var payload = {
-        'name': uuid() + '.ipynb',
+        'name': name + uuid() + extension,
         'content_type': contentType,
         'parent': parent
       }
@@ -156,6 +157,20 @@ export default {
           resolve(response.body)
         }, function (error) {
           reject(error)
+        })
+      })
+    },
+    generateNotebook (collab, collabApp, parentNav) {
+      var that = this
+      that.getCollabStorage(collab.id).then(function (projectStorage) {
+        var parent = projectStorage.results[0].uuid
+        var name = 'test-'
+        that.createFile(name, collabApp.contenttype, collabApp.extension, parent).then(function (file) {
+          var oldFileId = jupyterNotebookUrls[that.uc_name]
+          that.copyFileContent(oldFileId, file.uuid).then(function (copy) {
+            var entryName = collabApp.entryname
+            that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, file.uuid)
+          })
         })
       })
     }

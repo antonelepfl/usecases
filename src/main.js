@@ -22,25 +22,37 @@ const router = new VueRouter({
     { path: '/:list_usecases/smmodels/:model_name', // (everyusecaselist)/models
       component: function (resolve) {
         require(['components/singlecellmodeling/model-container.vue'], resolve)
-      }
+      },
+      props: true,
+      name: 'singlecellmodeling_models'
     },
     { path: '/:list_usecases/form/:uc_name', // (everyusecaselist)/form/
       component: function (resolve) {
         require(['components/collab-form.vue'], resolve)
       },
-      props: true
+      props: true,
+      name: 'uc_form'
     },
-    { path: '/:list_usecases/cbmodels/:model_name', // (everyusecaselist)/models
-      component: function (resolve) {
-        require(['components/circuitbuilding/model-container.vue'], resolve)
-      }
-    },
-    { path: '/:list_usecases/cbmodels/:model_name/:uc_name/form', // to search crete collab for the circuitbuilding models
+    { path: '/:list_usecases/smmodels/:model_name/form/:morphology', // (everyusecaselist)/form/
       component: function (resolve) {
         require(['components/collab-form.vue'], resolve)
       },
       props: true,
-      name: 'circuitbuildingform'
+      name: 'sm_form'
+    },
+    { path: '/:list_usecases/cbmodels/:model_name', // (everyusecaselist)/models
+      component: function (resolve) {
+        require(['components/circuitbuilding/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'cb_models'
+    },
+    { path: '/:list_usecases/cbmodels/:model_name/form/:uc_name', // to search crete collab for the circuitbuilding models
+      component: function (resolve) {
+        require(['components/collab-form.vue'], resolve)
+      },
+      props: true,
+      name: 'cb_form'
     }
   ],
   base: '/usecases/',

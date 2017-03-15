@@ -12,7 +12,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting",
@@ -25,7 +26,8 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://collab.humanbrainproject.eu/#/collab/1655/nav/15474"
+            "link": "https://collab.humanbrainproject.eu/#/collab/1655/nav/15474",
+            "next": "uc_form"
          },
          {
             "title": "Feature registration",
@@ -37,7 +39,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Feature comparison",
@@ -49,7 +52,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting (user's model)",
@@ -61,7 +65,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting (user's data)",
@@ -73,7 +78,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting registration",
@@ -85,7 +91,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          }
       ],
       "singlecellmodeling": [
@@ -100,7 +107,8 @@
               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
               "alt": "Logo of Single cell model"
            },
-           "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+           "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+           "next": "singlecellmodeling_models"
         },
          {
             "title": "Build your own single cell model using HBP data",
@@ -113,7 +121,8 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          },
          {
             "title": "Build your own single cell model using HBP and your own data",
@@ -126,7 +135,8 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          },
          {
             "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
@@ -139,7 +149,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          },
          {
             "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
@@ -152,7 +163,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          },
          {
             "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
@@ -165,7 +177,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          },
          {
             "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
@@ -178,7 +191,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "uc_form"
          }
       ],
       "circuitbuilding": [
@@ -193,7 +207,8 @@
                "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/cellprop1.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "cb_models"
          },
          {
             "title": "Connectome",
@@ -206,7 +221,8 @@
                "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
+            "next": "cb_models"
          }
       ]
    },

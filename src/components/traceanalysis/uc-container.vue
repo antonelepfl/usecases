@@ -19,8 +19,6 @@
       components: {
          ucItem
       },
-      // props: ['singlePage', 'next'],
-      props: ['next'],
       data () {
          return {
             usecases: {},
@@ -31,9 +29,25 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
-              var selection = uc.title.toLowerCase().replace(/\s/g, '')
-              var nextComplete = this.next + selection
-              this.$router.push({path: nextComplete})
+              var ucName = uc.title.toLowerCase().replace(/\s/g, '')
+              switch (uc.next) {
+                case 'uc_form': {
+                  this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+                  break
+                }
+                case 'cb_form': {
+                  this.$router.push({name: uc.next, params: {'uc_name': ucName, 'model_name': ucName}})
+                  break
+                }
+                case 'cb_models': {
+                  this.$router.push({name: uc.next, params: {'model_name': ucName}})
+                  break
+                }
+                case 'singlecellmodeling_models': {
+                  this.$router.push({name: uc.next, params: {'model_name': ucName}})
+                  break
+                }
+              }
             }
          },
          prettyfy (name) {

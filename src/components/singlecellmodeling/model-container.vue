@@ -9,7 +9,7 @@
                   class="model-item"
                   :model="model"
                   v-on:showimage="showimage"
-                  v-on:touched="touched"></model-item>
+                  v-on:touched="touched(model)"></model-item>
             </md-whiteframe>
 
             <modal-component v-if="showModal" v-on:close="showModal = false">
@@ -31,6 +31,7 @@
       components: {
          modelItem, modalComponent
       },
+      props: ['list_usecases', 'model_name'],
       data () {
          return {
             showModal: false,
@@ -48,10 +49,13 @@
             this.showModal = true
          },
          touched (modelItem) {
-            this.$el.querySelectorAll('.touched').forEach(function (elem) {
-               elem.classList.remove('touched')
+            this.$router.push({name: 'sm_form',
+              params: {
+                'morphology': modelItem.morphology,
+                'list_usecases': this.list_usecases,
+                'model_name': this.model_name
+              }
             })
-            modelItem.parentNode.classList.add('touched')
          }
       },
       created () {

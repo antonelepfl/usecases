@@ -1,6 +1,6 @@
 <template>
   <div class="startapp" v-if="!loading">
-    <uc-container key="container" :next="next"></uc-container>
+    <uc-container key="container"></uc-container>
   </div>
 </template>
 
@@ -20,8 +20,6 @@ export default {
   },
   data () {
     return {
-      single: Boolean,
-      next: '',
       loading: true
     }
   },
@@ -36,17 +34,6 @@ export default {
       })
     } else {
       this.loading = false
-    }
-    switch (this.list_usecases) {
-      case 'traceanalysis':
-        this.next = this.$route.path + '/form/'
-        break
-      case 'singlecellmodeling':
-        this.next = this.$route.path + '/smmodels/'
-        break
-      case 'circuitbuilding':
-        this.next = this.$route.path + '/cbmodels/'
-        break
     }
   }
 }

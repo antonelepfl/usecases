@@ -33,7 +33,7 @@
            pathName = pathName + model.brain_structure
            pathName = pathName + model.cell_soma_location
            pathName = pathName.toLowerCase()
-           this.$router.push({name: 'circuitbuildingform', params: {'uc_name': pathName}})
+           this.$router.push({name: 'cb_form', params: {'uc_name': pathName}})
          },
          prettyfy (name) {
             return name.split('_').map(function (word) {

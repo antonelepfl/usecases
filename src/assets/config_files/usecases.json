@@ -139,7 +139,7 @@
             "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "title": "Create a single cell model",
             "description": "Create your own Single Cell Model with data from NeuroInformatics Platform",
             "experience": ["experts", "code"],
             "maturity": ["experimental"],
@@ -153,7 +153,7 @@
             "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "title": "Release single cell",
             "description": "Release your single cell model to the NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
@@ -167,7 +167,7 @@
             "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "title": "Release single cell building process",
             "description": "Release your validated single cell building process",
             "experience": ["code"],
             "maturity": [""],
@@ -181,8 +181,8 @@
             "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-            "description": "Export single cell model into ML (Open Souce Brain)",
+            "title": "Export single cell model to NeuroML",
+            "description": "Export single cell model into NeuroML (Open Souce Brain)",
             "experience": ["code"],
             "maturity": [""],
             "access": [""],
@@ -205,7 +205,7 @@
             "disabled": false,
             "picture": {
                "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/cellprop1.png",
-               "alt": "Logo of feature Extraction"
+               "alt": "Cells Placement"
             },
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "cb_models"
@@ -219,12 +219,27 @@
             "disabled": false,
             "picture": {
                "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
-               "alt": "Logo of feature Extraction"
+               "alt": "Connectome"
             },
             "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "cb_models"
          }
-      ]
+      ],
+       "morphology": [
+           {
+            "title": "Morphology Analysis",
+            "description": "Performs analysis on a morphology with NeuroM.",
+            "experience": ["power"],
+            "maturity": ["beta"],
+            "access": [""],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/morphology.png",
+               "alt": "Morphology Analysis "
+            },
+            "next": null
+           }
+       ]
    },
    {
       "categories": {

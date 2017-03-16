@@ -234,7 +234,7 @@
             "access": [""],
             "disabled": false,
             "picture": {
-               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/morphology.png",
+               "src": "https://github.com/antonelepfl/usecases/raw/master/src/assets/morphology.png",
                "alt": "Morphology Analysis "
             },
             "next": null

@@ -50,12 +50,16 @@ export default {
           var payload = {}
           payload[context2] = 1 // adding context to the entry
           that.$http.put(jupyterNotebookUrl, payload, that.header).then(function (response) {
+            console.debug('Nav entry created')
             that.redirectToCollab(collabId, navitemId)
+          }, function (error) {
+            console.error('Error changing the metadata to the file:', fileId)
+            console.error(error)
           })
         } else {
+          console.debug('Nav entry created')
           that.redirectToCollab(collabId, navitemId)
         }
-        console.debug('Nav entry created')
       })
     },
     createCollab (collabTitle, isPrivate) {

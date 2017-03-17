@@ -88,14 +88,14 @@
         this.getAllNav(collab.id).then(function (parentNav) {
           var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+            // var entryName = that.typesCollabsApps[that.uc_name].entryname
+            // that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
             // TODO: replace first two lines for all below to COPY the elemement instead of pointing
-            // if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-            //   that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
-            // } else { // is not jupyter notebok just connect to the original file
-            //   that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
-            // }
+            if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
+            } else { // is not jupyter notebok just connect to the original file
+              that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
+            }
           } else { // not found
             console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id, exists.navitemId)

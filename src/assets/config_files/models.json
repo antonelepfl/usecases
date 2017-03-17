@@ -13,12 +13,12 @@
   ],
   "circuitbuilding": [
     {
-      "path": "https://raw.githubusercontent.com/antonelepfl/testvue/master/public/circuitbuilding/cbcerebellum.json",
-      "img": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Cerebellum.png"
+      "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbcerebellum.json",
+      "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
     },
     {
-      "path": "https://raw.githubusercontent.com/antonelepfl/testvue/master/public/circuitbuilding/cbhippocampus.json",
-      "img": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/HippocampusConnections.png"
+      "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbhippocampus.json",
+      "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
     }
   ]
 }

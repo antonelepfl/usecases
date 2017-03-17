@@ -79,7 +79,7 @@
         this.contentType = newEntry.contenttype
         this.extension = newEntry.extension
       } else {
-        console.error('No entry in collabs apps json')
+        console.error('No entry in type_collabs_apps.json')
       }
     },
     methods: {

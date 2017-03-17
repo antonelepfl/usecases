@@ -195,7 +195,7 @@
             "access": [""],
             "disabled": false,
             "picture": {
-               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/cellprop1.png",
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cellprop1.png",
                "alt": "Cells Placement"
             },
             "next": "cb_models"
@@ -208,7 +208,7 @@
             "access": ["hpc"],
             "disabled": false,
             "picture": {
-               "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/connectome.png",
                "alt": "Connectome"
             },
             "next": "cb_models"

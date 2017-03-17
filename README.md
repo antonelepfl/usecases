@@ -1,13 +1,8 @@
 # Use cases with VUE.JS
-This app is deployed in: 
-* https://antonelepfl.github.io/usecases/
+This app is deployed in:
+* https://antonelepfl.github.io/usecases/<usecase name in usecases.json>
 
-# To build for Github Pages 
-```
-$ npm run ghpages 
-$ git checkout gh-pages
-$ cp -R ./docs/* ./ && rm -R docs/
-$ git add --all
-$ git git commit -m "Deploy"
-$ git push origin gh-pages
-```
+# To run locally
+``` $ npm run dev ```
+
+# To deploy just commit and it will start a travis process

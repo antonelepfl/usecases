@@ -12,15 +12,13 @@
 
 <script>
    import ucItem from './uc-item.vue'
-   import usecases from '../assets/config_files/usecases.json'
+   import usecases from 'assets/config_files/usecases.json'
 
    export default {
       name: 'ucContainer',
       components: {
          ucItem
       },
-      // props: ['singlePage', 'next'],
-      props: ['next', 'single'],
       data () {
          return {
             usecases: {},
@@ -31,9 +29,25 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
-              var selection = uc.title.toLowerCase().replace(/\s/g, '')
-              var nextComplete = this.next + selection
-              this.$router.push({path: nextComplete})
+              var ucName = uc.title.toLowerCase().replace(/\s/g, '')
+              switch (uc.next) {
+                case 'uc_form': {
+                  this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+                  break
+                }
+                case 'cb_form': {
+                  this.$router.push({name: uc.next, params: {'uc_name': ucName, 'model_name': ucName}})
+                  break
+                }
+                case 'cb_models': {
+                  this.$router.push({name: uc.next, params: {'model_name': ucName}})
+                  break
+                }
+                case 'singlecellmodeling_models': {
+                  this.$router.push({name: uc.next, params: {'model_name': ucName}})
+                  break
+                }
+              }
             }
          },
          prettyfy (name) {
@@ -44,10 +58,6 @@
       },
       mounted () {
         var ucSelected = this.$route.path.replace('/', '')
-        if (this.single) {
-          this.$el.querySelector('#uc-container-title').remove()
-          this.$el.classList.add('no-title')
-        }
         this.usecases = usecases[0][ucSelected]
         var title = ucSelected
         document.querySelector('title').innerText = this.prettyfy(title)
@@ -67,6 +77,7 @@
    .uc-container .item-sections {
       margin-top: 20px;
       padding: 10px;
+      cursor: pointer;
    }
    .uc-container .selected {
       background-color: lightgray;
@@ -99,6 +110,7 @@
    .uc-container .disabled-item {
       opacity: 0.5;
       background-color: rgba(63, 58, 58, 0.22);
+      cursor: not-allowed;
    }
    .uc-container .disabled-item:hover {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);

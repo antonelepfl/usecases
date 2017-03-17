@@ -1,14 +1,32 @@
 {
   "featureextraction": {
     "entryname": "Feature Extraction GUI",
-    "appid": 271
+    "appid": 271,
+    "contenttype": "text/html",
+    "extension": ".html"
   },
   "synapticeventsfitting": {
     "entryname": "Fitting GUI",
-    "appid": 175
+    "appid": 175,
+    "contenttype": "x-ipynb+json",
+    "extension": ".ipynb"
   },
   "jupyternotebook": {
     "entryname": "Jupyter Notebook",
-    "appid": 175
+    "appid": 175,
+    "contenttype": "x-ipynb+json",
+    "extension": ".ipynb"
+  },
+  "connectomerathippocampusca1": {
+    "entryname": "Connectome Hippocampus",
+    "appid": 175,
+    "contenttype": "x-ipynb+json",
+    "extension": ".ipynb"
+  },
+  "connectomeratcerebellumvolume": {
+    "entryname": "Connectome Cerebellum",
+    "appid": 175,
+    "contenttype": "x-ipynb+json",
+    "extension": ".ipynb"
   }
 }

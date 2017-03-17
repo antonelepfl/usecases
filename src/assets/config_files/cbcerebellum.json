@@ -1,0 +1,10 @@
+{
+  "species": "Rat",
+  "brain_structure": "Cerebellum",
+  "cell_soma_location": "volume",
+  "description": "A volume of the cerebellum with detailed neuron models.",
+  "contributors": [
+    {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+    {"name": "Stefano Casali", "email": "stefano.casali01@universitadipavia.it"}
+  ]
+}

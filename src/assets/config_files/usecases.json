@@ -12,7 +12,7 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting",
@@ -25,7 +25,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://collab.humanbrainproject.eu/#/collab/1655/nav/15474"
+            "next": "uc_form"
          },
          {
             "title": "Feature registration",
@@ -37,7 +37,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Feature comparison",
@@ -49,7 +50,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting (user's model)",
@@ -61,7 +63,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting (user's data)",
@@ -73,7 +76,8 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          },
          {
             "title": "Synaptic events fitting registration",
@@ -85,10 +89,24 @@
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
-            }
+            },
+            "next": "uc_form"
          }
       ],
       "singlecellmodeling": [
+        {
+           "title": "Rebuild an existing single cell model",
+           "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
+           "experience": ["all", "power"],
+           "maturity": ["experimental"],
+           "access": ["hpc"],
+           "disabled": false,
+           "picture": {
+              "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
+              "alt": "Logo of Single cell model"
+           },
+           "next": "singlecellmodeling_models"
+        },
          {
             "title": "Build your own single cell model using HBP data",
             "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
@@ -100,20 +118,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
-         },
-         {
-            "title": "Rebuild an existing single cell model",
-            "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
-            "experience": ["all", "power"],
-            "maturity": ["experimental"],
-            "access": ["hpc"],
-            "disabled": false,
-            "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
-               "alt": "Logo of Single cell model"
-            },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          },
          {
             "title": "Build your own single cell model using HBP and your own data",
@@ -126,10 +131,10 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "title": "Create a single cell model",
             "description": "Create your own Single Cell Model with data from NeuroInformatics Platform",
             "experience": ["experts", "code"],
             "maturity": ["experimental"],
@@ -139,10 +144,10 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "title": "Release single cell",
             "description": "Release your single cell model to the NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
@@ -152,10 +157,10 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "title": "Release single cell building process",
             "description": "Release your validated single cell building process",
             "experience": ["code"],
             "maturity": [""],
@@ -165,11 +170,11 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          },
          {
-            "title": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-            "description": "Export single cell model into ML (Open Souce Brain)",
+            "title": "Export single cell model to NeuroML",
+            "description": "Export single cell model into NeuroML (Open Souce Brain)",
             "experience": ["code"],
             "maturity": [""],
             "access": [""],
@@ -178,9 +183,52 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25"
+            "next": "uc_form"
          }
-      ]
+      ],
+      "circuitbuilding": [
+         {
+            "title": "Cells placement",
+            "description": "Define the properties and the location of the neurons for a brain region of detailed neuron models",
+            "experience": ["power"],
+            "maturity": ["experimental"],
+            "access": [""],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cellprop1.png",
+               "alt": "Cells Placement"
+            },
+            "next": "cb_models"
+         },
+         {
+            "title": "Connectome",
+            "description": "Define the connectome for a brain region of detailed neuron models",
+            "experience": ["power"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/connectome.png",
+               "alt": "Connectome"
+            },
+            "next": "cb_models"
+         }
+      ],
+       "morphology": [
+           {
+            "title": "Morphology Analysis",
+            "description": "Performs analysis on a morphology with NeuroM.",
+            "experience": ["power"],
+            "maturity": ["beta"],
+            "access": [""],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/usecases/raw/master/src/assets/morphology.png",
+               "alt": "Morphology Analysis "
+            },
+            "next": null
+           }
+       ]
    },
    {
       "categories": {

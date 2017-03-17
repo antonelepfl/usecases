@@ -1,6 +1,6 @@
 <template>
-  <div class="startapp">
-    <uc-container key="container" :next="next" :single="single"></uc-container>
+  <div class="startapp" v-if="!loading">
+    <uc-container key="container"></uc-container>
   </div>
 </template>
 
@@ -8,7 +8,8 @@
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
-import ucContainer from './uc-container.vue'
+import ucContainer from './traceanalysis/uc-container.vue'
+import CollabAuthentication from '../mixins/collabAuthentication.js'
 
 Vue.use(VueMaterial)
 
@@ -19,21 +20,20 @@ export default {
   },
   data () {
     return {
-      single: Boolean,
-      next: ''
+      loading: true
     }
   },
   props: ['list_usecases'],
+  mixins: [CollabAuthentication],
   created () {
-    switch (this.list_usecases) {
-      case 'traceanalysis':
-        this.single = true
-        this.next = this.$route.path + '/form/'
-        break
-      case 'singlecellmodeling':
-        this.single = false
-        this.next = this.$route.path + '/models/'
-        break
+    var that = this
+    var helloLocal = window.localStorage.hello
+    if (!helloLocal || helloLocal.length === 2) { // is empty {}
+      this.login().then(function () {  // from CollabAuthentication
+        that.loading = false
+      })
+    } else {
+      this.loading = false
     }
   }
 }

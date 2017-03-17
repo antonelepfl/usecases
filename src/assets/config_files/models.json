@@ -10,5 +10,15 @@
     {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_12AUG16_meta.json"},
     {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_13AUG16_meta.json"},
     {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_16AUG16_meta.json"}
+  ],
+  "circuitbuilding": [
+    {
+      "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbcerebellum.json",
+      "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+    },
+    {
+      "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbhippocampus.json",
+      "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+    }
   ]
 }

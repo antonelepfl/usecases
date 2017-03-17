@@ -55,6 +55,8 @@
         errorMessage: '',
         isJupyter: false,
         appId: -1,
+        appName: '',
+        contentType: '',
         typesCollabsApps: typesCollabsApps
       }
     },
@@ -69,18 +71,34 @@
       }
     },
     mounted () {
-      this.appId = this.typesCollabsApps[this.uc_name].appid
+      // TODO: improve this param from route
+      var newEntry = this.typesCollabsApps[this.uc_name]
+      if (newEntry) {
+        this.appId = newEntry.appid
+        this.appName = newEntry.entryname
+        this.contentType = newEntry.contenttype
+        this.extension = newEntry.extension
+      } else {
+        console.error('No entry in type_collabs_apps.json')
+      }
     },
     methods: {
       collabSelected (collab) {
         var that = this
         this.getAllNav(collab.id).then(function (parentNav) {
-          if (!that.checkExists(parentNav, that.appId)) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
-          } else {
+          var exists = that.checkExists(parentNav, that.appId, that.appName)
+          if (!exists.found) {
+            // var entryName = that.typesCollabsApps[that.uc_name].entryname
+            // that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
+            // TODO: replace first two lines for all below to COPY the elemement instead of pointing
+            if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
+            } else { // is not jupyter notebok just connect to the original file
+              that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
+            }
+          } else { // not found
             console.debug('Existing app in collab found')
-            that.redirectToCollab(collab.id)
+            that.redirectToCollab(collab.id, exists.navitemId)
           }
         })
       },
@@ -90,9 +108,18 @@
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
         this.createCollab(this.searchText, isPrivate).then(function (collabId) {
           that.getNavRoot(collabId).then(function (parentRoot) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collabId, parentRoot, that.appId)
-            that.isLoading = false
+            if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              let gen = that.generateNotebook({'id': collabId}, that.typesCollabsApps[that.uc_name], {'id': parentRoot})
+              gen.then(function () {
+                that.isLoading = false
+              })
+            } else { // is not jupyter notebok just connect to the original file
+              var entryName = that.typesCollabsApps[that.uc_name].entryname
+              let nav = that.createNavEntry(entryName, collabId, parentRoot, that.appId)
+              nav.then(function () {
+                that.isLoading = false
+              })
+            }
           })
         }, function (error) {
           if (error.body.title) { // to catch the collab already exists
@@ -101,17 +128,19 @@
           }
         })
       },
-      checkExists (nav, appId) {
+      checkExists (nav, appId, appName) {
         if (nav.children) {
-          let found = false
+          let item = {'found': false, 'navitemId': 0}
           let i = 0
-          while (!found && nav.children.length > i) {
-            if (nav.children[i].app_id === appId.toString()) {
-              found = true
+          while (!item.found && nav.children.length > i) {
+            if (nav.children[i].app_id === appId.toString() &&
+              nav.children[i].name === appName) {
+              item.found = true
+              item.navitemId = nav.children[i].id
             }
             i = i + 1
           }
-          return found
+          return item
         }
       }
     },

@@ -1,17 +1,18 @@
 <template>
-  <div class="model-description" v-on:click="touched">
+  <div class="model-description">
     <md-layout md-gutter>
       <md-layout class="model-column" md-column md-flex-large="100" md-flex-medium="100">
         <div class="credits">
-          <b>Channel Models:</b>
+          <b>Mod files:</b>
           <div>{{ model.channels }}</div>
         </div>
       </md-layout>
       <md-layout class="model-column" md-column md-flex-large="100" md-flex-medium="100">
         <div class="credits">
           <b>Credits:</b>
-          <div>Contributors: {{ model.contributors }} - {{ model.email }}</div>
-          <div>Reference: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi esse fuga, expedita ullam, vel.</div>
+          <!-- TODO: make it for multiple contributors -->
+          <div>Contributor(s): {{ model.contributors }} - {{ model.email }}</div>
+          <div>Reference:</div>
         </div>
       </md-layout>
     </md-layout>
@@ -22,13 +23,7 @@
   export default {
     name: 'modelDescription',
     props: {
-      author: String,
       model: Object
-    },
-    methods: {
-      touched (event) {
-        this.$emit('touched', event)
-      }
     }
   }
 </script>

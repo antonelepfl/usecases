@@ -28,15 +28,15 @@
 
 </script>
 
-<style>
+<style scoped>
    .item-picture {
       width: 8%;
       min-height: 80px;
+      min-width: 100px;
    }
    .uc-item {
       display: flex;
       align-items: center;
-      cursor: pointer;
    }
    .uc-description {
       width: 70%;
@@ -59,7 +59,7 @@
          width: 71%;
       }
    }
-   @media screen and (max-width: 750px) {
+   @media screen and (max-width: 450px) {
       .item-picture {
          display: none;
       }

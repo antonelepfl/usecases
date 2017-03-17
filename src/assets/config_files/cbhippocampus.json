@@ -1,0 +1,9 @@
+{
+  "species": "Rat",
+  "brain_structure": "hippocampus",
+  "cell_soma_location": "CA1",
+  "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+  "contributors": [
+    {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+  ]
+}

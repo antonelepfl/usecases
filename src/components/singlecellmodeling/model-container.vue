@@ -9,7 +9,7 @@
                   class="model-item"
                   :model="model"
                   v-on:showimage="showimage"
-                  v-on:touched="touched"></model-item>
+                  v-on:touched="touched(model)"></model-item>
             </md-whiteframe>
 
             <modal-component v-if="showModal" v-on:close="showModal = false">
@@ -24,13 +24,14 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import modalComponent from './modal-component.vue'
-   import ModelsConfig from '../assets/config_files/models.json';
+   import modalComponent from '../modal-component.vue'
+   import ModelsConfig from 'assets/config_files/models.json';
    export default {
       name: 'modelContainer',
       components: {
          modelItem, modalComponent
       },
+      props: ['list_usecases', 'model_name'],
       data () {
          return {
             showModal: false,
@@ -48,15 +49,19 @@
             this.showModal = true
          },
          touched (modelItem) {
-            this.$el.querySelectorAll('.touched').forEach(function (elem) {
-               elem.classList.remove('touched')
+            this.$router.push({name: 'sm_form',
+              params: {
+                'morphology': modelItem.morphology,
+                'list_usecases': this.list_usecases,
+                'model_name': this.model_name
+              }
             })
-            modelItem.parentNode.classList.add('touched')
          }
       },
       created () {
          document.querySelector('title').innerHTML = 'Models'
          var that = this
+         // TODO: change the model based on the url
          for (var i = 0; i < this.modelsConfig.length; i++) {
            this.$http.get(this.modelsConfig[i].path).then(function (response) {
              that.models.push(response.body)
@@ -68,7 +73,7 @@
    }
 </script>
 
-<style>
+<style scoped>
    .model-container {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -84,7 +89,7 @@
       margin-top: 10px;
       margin-bottom: 15px;
       padding: 9px;
-      border: 2px solid white;
+      border: 3px solid white;
    }
    .model-container .selected {
       background-color: lightgray;
@@ -109,17 +114,17 @@
       box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
    .model-container .touched {
-      animation: shake 0.3s;
-      border: 2px solid;
+      animation: shake 0.5s;
+      border: 3px solid;
    }
    @keyframes shake {
-      0% {border: 2px solid white;}
-      50% {border: 2px solid gray;}
-      100% {border: 2px solid black;}
+      0% {border: 3px solid white;}
+      50% {border: 3px solid gray;}
+      100% {border: 3px solid black;}
    }
    @-webkit-keyframes shake {
-      0% {border: 2px solid white;}
-      50% {border: 2px solid gray;}
-      100% {border: 2px solid black;}
+      0% {border: 3px solid white;}
+      50% {border: 3px solid gray;}
+      100% {border: 3px solid black;}
    }
 </style>

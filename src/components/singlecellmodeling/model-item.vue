@@ -1,13 +1,17 @@
 <template>
   <div class="model-item">
-    <div class="path" v-on:click="touched">
+    <div class="path" @click="touched">
       <div class="inline" v-for="(part, index) in pathParts">
         <span class="square">{{ part }}</span>
         <span v-show="hasNext(index)"> > </span>
       </div>
+      <!-- TODO: change this with the real images in pdf -->
+      <!-- <object :data="model.pdf1" width="100%" height="400" type='application/pdf'>
+        <p>Sorry, the PDF couldn't be displayed :(</p>
+      </object> -->
     </div>
     <div class="section">
-      <model-description class="model-description" :model="model" v-on:touched="touched"></model-description>
+      <model-description class="model-description" :model="model" @click.native="touched"></model-description>
     </div>
   </div>
 </template>
@@ -62,7 +66,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .model-item {
     cursor: pointer;
   }

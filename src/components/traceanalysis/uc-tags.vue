@@ -6,7 +6,7 @@
             <md-tooltip md-direction="left">{{getTooltipByPrefix('experience',exp)}}</md-tooltip>
          </b>
       </div>
-      <div class="divider"></div>  
+      <div class="divider"></div>
       <!--<md-divider class="md-inset"></md-divider>-->
       <div class="mat-acc">
          <b v-if="uc.maturity" v-for="(mat, index) in uc.maturity">
@@ -18,8 +18,8 @@
             <md-tooltip md-direction="left">{{getTooltipByPrefix('access',access)}}</md-tooltip>
          </b>
       </div>
-      
-      
+
+
    </div>
 </template>
 
@@ -78,24 +78,24 @@
 }
 /* Maturity level */
 .mat-beta {
-   background-image: url('../assets/icons/Maturity_BETA_48x48.png');
+   background-image: url('../../assets/icons/Maturity_BETA_48x48.png');
    width: 48px;
    height: 48px;
    margin-bottom: 5px;
 }
 .mat-experimental {
-   background-image: url('../assets/icons/Maturity_EXP_48x48.png');
+   background-image: url('../../assets/icons/Maturity_EXP_48x48.png');
    width: 48px;
    height: 48px;
 }
 /* Access level */
 .access-hpc {
-   background-image: url('../assets/icons/Access_HPC_48x48.png');
+   background-image: url('../../assets/icons/Access_HPC_48x48.png');
    width: 48px;
    height: 48px;
 }
 .access-byor {
-   background-image: url('../assets/icons/Access_BYO_48x48.png');
+   background-image: url('../../assets/icons/Access_BYO_48x48.png');
    width: 48px;
    height: 48px;
 }
@@ -120,20 +120,7 @@
    height: 48px;
    background-size: 100% 100%;
 }
-@media screen and (max-width: 1200px) {
-   .image-tag-size {
-      width: 38px;
-      height: 38px;
-      background-size: 100% 100%;
-   }
-   .mat-acc {
-      width: 44%;
-   }
-   .exp {
-      width: 54%;
-   }
-}
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
    .tags {
       display: block;
    }
@@ -143,11 +130,8 @@
    .md-chip {
       font-size: 10px;
    }
-   .mat-acc {
-      width: auto;
-   }
-   .exp {
-      width: auto;
+   .mat-acc, .exp {
+      width: 100%;
    }
 }
 </style>

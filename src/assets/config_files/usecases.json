@@ -12,7 +12,6 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          },
          {
@@ -26,7 +25,6 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://collab.humanbrainproject.eu/#/collab/1655/nav/15474",
             "next": "uc_form"
          },
          {
@@ -107,7 +105,6 @@
               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
               "alt": "Logo of Single cell model"
            },
-           "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
            "next": "singlecellmodeling_models"
         },
          {
@@ -121,7 +118,6 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          },
          {
@@ -135,7 +131,6 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          },
          {
@@ -149,7 +144,6 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          },
          {
@@ -163,7 +157,6 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          },
          {
@@ -177,7 +170,6 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          },
          {
@@ -191,7 +183,6 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "uc_form"
          }
       ],
@@ -207,7 +198,6 @@
                "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/cellprop1.png",
                "alt": "Cells Placement"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "cb_models"
          },
          {
@@ -221,7 +211,6 @@
                "src": "https://github.com/antonelepfl/testvue/raw/master/public/circuitbuilding/Connectome.png",
                "alt": "Connectome"
             },
-            "link": "https://bspg.humanbrainproject.eu/?ctx=ec3cefd2-660b-492a-b06e-88297a918c25",
             "next": "cb_models"
          }
       ],

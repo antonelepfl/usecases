@@ -41,11 +41,11 @@ export default {
         let navitemId = response.body.id
         if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
           // TODO: check this url and put in CONST
-          var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/'
-          jupyterNotebookUrl += jupyterNotebookUrls[that.uc_name]
-          jupyterNotebookUrl += '/metadata'
+          // var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/'
+          // jupyterNotebookUrl += jupyterNotebookUrls[that.uc_name]
+          // jupyterNotebookUrl += '/metadata'
           // TODO replace this above with this below.
-          // jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
+          let jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
           var context2 = 'ctx_' + context
           var payload = {}
           payload[context2] = 1 // adding context to the entry

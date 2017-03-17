@@ -108,9 +108,18 @@
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
         this.createCollab(this.searchText, isPrivate).then(function (collabId) {
           that.getNavRoot(collabId).then(function (parentRoot) {
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            that.createNavEntry(entryName, collabId, parentRoot, that.appId)
-            that.isLoading = false
+            if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              let gen = that.generateNotebook({'id': collabId}, that.typesCollabsApps[that.uc_name], {'id': parentRoot})
+              gen.then(function () {
+                that.isLoading = false
+              })
+            } else { // is not jupyter notebok just connect to the original file
+              var entryName = that.typesCollabsApps[that.uc_name].entryname
+              let nav = that.createNavEntry(entryName, collabId, parentRoot, that.appId)
+              nav.then(function () {
+                that.isLoading = false
+              })
+            }
           })
         }, function (error) {
           if (error.body.title) { // to catch the collab already exists

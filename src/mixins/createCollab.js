@@ -24,42 +24,47 @@ export default {
   },
   methods: {
     createNavEntry (entryName, collabId, parentId, appId, fileId) {
-      var context = uuid()
       var that = this
-      var type = 'IT'
-      var payload = {
-        'app_id': appId,
-        'context': context,
-        'name': entryName,
-        'order_index': 1,
-        'parent': parentId,
-        'type': type
-      }
-      var collabReq = this.collabAPI + 'collab/' + collabId + '/nav/'
+      return new Promise(function (resolve, reject) {
+        var context = uuid()
+        var type = 'IT'
+        var payload = {
+          'app_id': appId,
+          'context': context,
+          'name': entryName,
+          'order_index': 1,
+          'parent': parentId,
+          'type': type
+        }
+        var collabReq = that.collabAPI + 'collab/' + collabId + '/nav/'
 
-      this.$http.post(collabReq, payload, this.header).then(function (response) {
-        let navitemId = response.body.id
-        if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
-          // TODO: check this url and put in CONST
-          // var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/'
-          // jupyterNotebookUrl += jupyterNotebookUrls[that.uc_name]
-          // jupyterNotebookUrl += '/metadata'
-          // TODO replace this above with this below.
-          let jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
-          var context2 = 'ctx_' + context
-          var payload = {}
-          payload[context2] = 1 // adding context to the entry
-          that.$http.put(jupyterNotebookUrl, payload, that.header).then(function (response) {
+        that.$http.post(collabReq, payload, that.header).then(function (response) {
+          let navitemId = response.body.id
+          if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
+            // TODO: check this url and put in CONST
+            // var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/'
+            // jupyterNotebookUrl += jupyterNotebookUrls[that.uc_name]
+            // jupyterNotebookUrl += '/metadata'
+            // TODO replace this above with this below.
+            let jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
+            var context2 = 'ctx_' + context
+            var payload = {}
+            payload[context2] = 1 // adding context to the entry
+            that.$http.put(jupyterNotebookUrl, payload, that.header).then(function (response) {
+              console.debug('Nav entry created')
+              that.redirectToCollab(collabId, navitemId)
+              resolve();
+            }, function (error) {
+              console.error('Error changing the metadata to the file:', fileId)
+              console.error(error)
+              reject()
+            })
+          } else {
             console.debug('Nav entry created')
             that.redirectToCollab(collabId, navitemId)
-          }, function (error) {
-            console.error('Error changing the metadata to the file:', fileId)
-            console.error(error)
-          })
-        } else {
-          console.debug('Nav entry created')
-          that.redirectToCollab(collabId, navitemId)
-        }
+            resolve()
+          }
+        })
       })
     },
     createCollab (collabTitle, isPrivate) {
@@ -166,14 +171,20 @@ export default {
     },
     generateNotebook (collab, collabApp, parentNav) {
       var that = this
-      that.getCollabStorage(collab.id).then(function (projectStorage) {
-        var parent = projectStorage.results[0].uuid
-        var name = 'test-'
-        that.createFile(name, collabApp.contenttype, collabApp.extension, parent).then(function (file) {
-          var oldFileId = jupyterNotebookUrls[that.uc_name]
-          that.copyFileContent(oldFileId, file.uuid).then(function (copy) {
-            var entryName = collabApp.entryname
-            that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, file.uuid)
+      return new Promise(function (resolve, reject) {
+        that.getCollabStorage(collab.id).then(function (projectStorage) {
+          var parent = projectStorage.results[0].uuid
+          var name = 'test-'
+          that.createFile(name, collabApp.contenttype, collabApp.extension, parent).then(function (file) {
+            var oldFileId = jupyterNotebookUrls[that.uc_name]
+            that.copyFileContent(oldFileId, file.uuid).then(function (copy) {
+              var entryName = collabApp.entryname
+              that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, file.uuid).then(function () {
+                resolve()
+              }, function (error) {
+                reject(error)
+              })
+            })
           })
         })
       })

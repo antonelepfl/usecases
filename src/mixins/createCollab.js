@@ -2,6 +2,7 @@ import uuid from 'uuid4'
 import jupyterNotebookUrls from '../assets/config_files/jupyter_notebooks_urls.json'
 import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
 import CollabAuthentication from './collabAuthentication.js'
+const FILE_URL = 'https://services.humanbrainproject.eu/document/v0/api/file/'
 
 export default {
   data () {
@@ -41,12 +42,7 @@ export default {
         that.$http.post(collabReq, payload, that.header).then(function (response) {
           let navitemId = response.body.id
           if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
-            // TODO: check this url and put in CONST
-            // var jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/'
-            // jupyterNotebookUrl += jupyterNotebookUrls[that.uc_name]
-            // jupyterNotebookUrl += '/metadata'
-            // TODO replace this above with this below.
-            let jupyterNotebookUrl = 'https://services.humanbrainproject.eu/document/v0/api/file/' + fileId + '/metadata'
+            let jupyterNotebookUrl = FILE_URL + fileId + '/metadata'
             var context2 = 'ctx_' + context
             var payload = {}
             payload[context2] = 1 // adding context to the entry

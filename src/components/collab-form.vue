@@ -71,7 +71,6 @@
       }
     },
     mounted () {
-      // TODO: improve this param from route
       var newEntry = this.typesCollabsApps[this.uc_name]
       if (newEntry) {
         this.appId = newEntry.appid
@@ -89,9 +88,6 @@
         this.getAllNav(collab.id).then(function (parentNav) {
           var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
-            // var entryName = that.typesCollabsApps[that.uc_name].entryname
-            // that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
-            // TODO: replace first two lines for all below to COPY the elemement instead of pointing
             if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
               let gen = that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
               gen.then(function () {

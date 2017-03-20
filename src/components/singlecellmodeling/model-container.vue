@@ -36,8 +36,7 @@
          return {
             showModal: false,
             modalSrc: String,
-            // TODO: change based on the url
-            modelsConfig: ModelsConfig.browse,
+            modelsConfig: {},
             models: []
          }
       },
@@ -59,12 +58,12 @@
          }
       },
       created () {
+        this.modelsConfig = ModelsConfig[this.model_name]
          document.querySelector('title').innerHTML = 'Models'
          var that = this
-         // TODO: change the model based on the url
          for (var i = 0; i < this.modelsConfig.length; i++) {
            this.$http.get(this.modelsConfig[i].path).then(function (response) {
-             that.models.push(response.body)
+             that.models.push(JSON.parse(response.body))
            }, function (error) {
              console.log(error)
            })

@@ -1,11 +1,5 @@
 {
-  "browse": [
-    {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_int_cNAC_18AUG16_meta.json"},
-    {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_12AUG16_meta.json"},
-    {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_13AUG16_meta.json"},
-    {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_16AUG16_meta.json"}
-  ],
-  "rebuild": [
+  "rebuildanexistingsinglecellmodel": [
     {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_int_cNAC_18AUG16_meta.json"},
     {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_12AUG16_meta.json"},
     {"path": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/CA1_pyr_cAC_13AUG16_meta.json"},

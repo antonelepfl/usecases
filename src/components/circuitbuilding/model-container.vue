@@ -19,7 +19,7 @@
          'model-item': modelItem
       },
       // props: ['singlePage', 'next'],
-      props: ['next', 'single', 'model_name'],
+      props: ['next', 'single', 'model_name', 'list_usecases'],
       data () {
          return {
             modelsConfig: ModelsConfig,
@@ -44,8 +44,7 @@
       mounted () {
         document.querySelector('title').innerHTML = 'Models'
         var that = this
-        // TODO: change the model based on the url
-        var currentModel = this.modelsConfig.circuitbuilding;
+        var currentModel = this.modelsConfig[this.list_usecases];
         var tempIndex = 0;
         for (var i = 0; i < currentModel.length; i++) {
           this.$http.get(currentModel[i].path).then(function (response) {

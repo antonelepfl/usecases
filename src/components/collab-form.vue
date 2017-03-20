@@ -9,10 +9,13 @@
           <label>Collab Name</label>
           <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
         </md-input-container>
-        <div class="collabs-results-container">
+        <div v-if="!isLoading" class="collabs-results-container">
           <div v-for="collab in collabResults" class="collab-result" >
             <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
           </div>
+        </div>
+        <div v-show="isLoading" class="progress-bar">
+          <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
         <span class="error-message">{{errorMessage}}</span>
       </md-tab>
@@ -26,9 +29,6 @@
           <md-button class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
           <span class="error-message">{{errorMessage}}</span>
-        </div>
-        <div v-show="isLoading" class="progress-bar">
-          <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
         <div v-show="isLoading" class="progress-bar">
           <md-progress class="md-accent" md-indeterminate></md-progress>
@@ -85,6 +85,7 @@
     methods: {
       collabSelected (collab) {
         var that = this
+        this.isLoading = true
         this.getAllNav(collab.id).then(function (parentNav) {
           var exists = that.checkExists(parentNav, that.appId, that.appName)
           if (!exists.found) {
@@ -92,12 +93,17 @@
             // that.createNavEntry(entryName, collab.id, parentNav.id, that.appId)
             // TODO: replace first two lines for all below to COPY the elemement instead of pointing
             if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-              that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
+              let gen = that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
+              gen.then(function () {
+                  that.isLoading = false
+              })
             } else { // is not jupyter notebok just connect to the original file
               that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
+              that.isLoading = false
             }
           } else { // not found
             console.debug('Existing app in collab found')
+            that.isLoading = false
             that.redirectToCollab(collab.id, exists.navitemId)
           }
         })
@@ -106,25 +112,29 @@
         var that = this
         this.isLoading = true
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
-        this.createCollab(this.searchText, isPrivate).then(function (collabId) {
-          that.getNavRoot(collabId).then(function (parentRoot) {
-            if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-              let gen = that.generateNotebook({'id': collabId}, that.typesCollabsApps[that.uc_name], {'id': parentRoot})
-              gen.then(function () {
-                that.isLoading = false
-              })
-            } else { // is not jupyter notebok just connect to the original file
-              var entryName = that.typesCollabsApps[that.uc_name].entryname
-              let nav = that.createNavEntry(entryName, collabId, parentRoot, that.appId)
-              nav.then(function () {
-                that.isLoading = false
-              })
-            }
-          })
+        this.createCollab(this.searchText, isPrivate)
+        .then(function (collabId) {
+          return that.getNavRoot(collabId)
         }, function (error) {
           if (error.body.title) { // to catch the collab already exists
             that.isLoading = false
             that.errorMessage = error.body.title[0]
+          }
+        })
+        .then(function (navObj) {
+          let parentRoot = navObj.root
+          let collabId = navObj.collabId
+          if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+            let gen = that.generateNotebook({'id': collabId}, that.typesCollabsApps[that.uc_name], {'id': parentRoot})
+            gen.then(function () {
+              that.isLoading = false
+            })
+          } else { // is not jupyter notebok just connect to the original file
+            var entryName = that.typesCollabsApps[that.uc_name].entryname
+            let nav = that.createNavEntry(entryName, collabId, parentRoot, that.appId)
+            nav.then(function () {
+              that.isLoading = false
+            })
           }
         })
       },

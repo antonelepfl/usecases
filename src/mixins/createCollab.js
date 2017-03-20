@@ -91,7 +91,7 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
           var parentRoot = response.body.id
-          resolve(parentRoot)
+          resolve({'root': parentRoot, 'collabId': collabId})
         })
       })
     },
@@ -163,7 +163,7 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.put(url, null, newHeader).then(function (response) {
           console.debug('File content copied')
-          resolve(response.body)
+          resolve(newFileId)
         }, function (error) {
           reject(error)
         })
@@ -172,20 +172,24 @@ export default {
     generateNotebook (collab, collabApp, parentNav) {
       var that = this
       return new Promise(function (resolve, reject) {
-        that.getCollabStorage(collab.id).then(function (projectStorage) {
+        that.getCollabStorage(collab.id)
+        .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
           var name = 'test-'
-          that.createFile(name, collabApp.contenttype, collabApp.extension, parent).then(function (file) {
-            var oldFileId = jupyterNotebookUrls[that.uc_name]
-            that.copyFileContent(oldFileId, file.uuid).then(function (copy) {
-              var entryName = collabApp.entryname
-              that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, file.uuid).then(function () {
-                resolve()
-              }, function (error) {
-                reject(error)
-              })
-            })
-          })
+          return that.createFile(name, collabApp.contenttype, collabApp.extension, parent)
+        })
+        .then(function (file) {
+          var oldFileId = jupyterNotebookUrls[that.uc_name]
+          return that.copyFileContent(oldFileId, file.uuid)
+        })
+        .then(function (newFileId) {
+          var entryName = collabApp.entryname
+          return that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, newFileId)
+        })
+        .then(function () {
+          resolve()
+        }, function (error) {
+          reject(error)
         })
       })
     }

@@ -12,9 +12,7 @@ Vue.use(VueMaterial)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  mode: 'history',
   routes: [
-
     { path: '/:list_usecases',
       component: App,
       props: true // to see in the component as props

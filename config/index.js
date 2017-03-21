@@ -17,7 +17,7 @@ module.exports = {
     productionGzipExtensions: ['js', 'css']
   },
   firebase: {
-    assetsPublicPath: '/'
+    assetsPublicPath: ''
   },
   ghpages: {
     assetsPublicPath: '/usecases/'

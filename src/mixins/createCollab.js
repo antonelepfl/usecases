@@ -175,8 +175,11 @@ export default {
           return that.createFile(name, collabApp.contenttype, collabApp.extension, parent)
         })
         .then(function (file) {
-          var oldFileId = jupyterNotebookUrls[that.uc_name]
-          return that.copyFileContent(oldFileId, file.uuid)
+          var originalFileId = jupyterNotebookUrls[that.uc_name]
+          if (!originalFileId) {
+            console.error('No entry in jupyter_notebooks_url.json')
+          }
+          return that.copyFileContent(originalFileId, file.uuid)
         })
         .then(function (newFileId) {
           var entryName = collabApp.entryname

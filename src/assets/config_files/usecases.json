@@ -97,9 +97,9 @@
         {
            "title": "Rebuild an existing single cell model",
            "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
-           "experience": ["all", "power"],
-           "maturity": ["experimental"],
-           "access": ["hpc"],
+           "experience": ["all"],
+           "maturity": [""],
+           "access": ["hpc", "byor"],
            "disabled": false,
            "picture": {
               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
@@ -110,9 +110,9 @@
          {
             "title": "Build your own single cell model using HBP data",
             "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
-            "experience": ["all"],
-            "maturity": ["experimental"],
-            "access": [""],
+            "experience": ["all", "power"],
+            "maturity": ["beta"],
+            "access": ["hpc", "byor"],
             "disabled": false,
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
@@ -123,9 +123,9 @@
          {
             "title": "Build your own single cell model using HBP and your own data",
             "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",
-            "experience": ["experts", "code"],
-            "maturity": [""],
-            "access": [""],
+            "experience": ["power","experts"],
+            "maturity": ["experimental"],
+            "access": ["hpc", "byor"],
             "disabled": false,
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",

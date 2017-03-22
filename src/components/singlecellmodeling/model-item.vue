@@ -103,6 +103,7 @@
   .images-container {
     width: 45%;
     align-self: center;
+    padding: 10px 10px 0 10px;
   }
   .description-container {
     width: 55%;

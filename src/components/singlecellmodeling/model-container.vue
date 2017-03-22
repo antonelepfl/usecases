@@ -42,14 +42,10 @@
          }
       },
       methods: {
-         showimage () {
+         showimage (obj) {
             /* eslint no-undef: 0 */
-            this.modalSrc = event.currentTarget.src
-            this.path = ''
-            let parentRoot = event.target.offsetParent
-            if (parentRoot) {
-              this.path = parentRoot.querySelector('.path').innerText
-            }
+            this.modalSrc = obj.src
+            this.path = obj.path
             this.showModal = true
          },
          touched (modelItem) {

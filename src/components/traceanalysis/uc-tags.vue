@@ -120,7 +120,7 @@
    height: 48px;
    background-size: 100% 100%;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1500px) {
    .tags {
       display: block;
    }
@@ -128,10 +128,25 @@
       display: none;
    }
    .md-chip {
-      font-size: 10px;
+      font-size: 12px;
    }
    .mat-acc, .exp {
       width: 100%;
    }
+}
+@media screen and (max-width: 500px) {
+  .image-tag-size {
+    width: 30px;
+    height: 30px;
+  }
+  .md-chip {
+    font-size: 8px;
+    border-radius: 13px;
+    padding: 10px 5px;
+  }
+  .mat-acc {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

@@ -79,6 +79,7 @@
         this.extension = newEntry.extension
       } else {
         console.error('No entry in type_collabs_apps.json')
+        this.errorMessage = 'No defined app to copy in type_collabs_apps.json'
       }
     },
     methods: {
@@ -92,17 +93,25 @@
               let gen = that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
               gen.then(function () {
                   that.isLoading = false
+              }, function (error) {
+                that.errorMessage = error
+                that.isLoading = false
               })
             } else { // is not jupyter notebok just connect to the original file
-              that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
-              that.isLoading = false
+              let nav = that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
+              nav.then(function () {
+                that.isLoading = false
+              }, function (error) {
+                that.errorMessage = error
+                that.isLoading = false
+              })
             }
           } else { // not found
             console.debug('Existing app in collab found')
             that.isLoading = false
             that.redirectToCollab(collab.id, exists.navitemId)
           }
-        })
+        }, function (error) { console.error(error) })
       },
       createNewCollab () {
         var that = this
@@ -124,15 +133,15 @@
             let gen = that.generateNotebook({'id': collabId}, that.typesCollabsApps[that.uc_name], {'id': parentRoot})
             gen.then(function () {
               that.isLoading = false
-            })
+            }, function (error) { console.error(error) })
           } else { // is not jupyter notebok just connect to the original file
             var entryName = that.typesCollabsApps[that.uc_name].entryname
             let nav = that.createNavEntry(entryName, collabId, parentRoot, that.appId)
             nav.then(function () {
               that.isLoading = false
-            })
+            }, function (error) { console.error(error) })
           }
-        })
+        }, function (error) { console.error(error) })
       },
       checkExists (nav, appId, appName) {
         if (nav.children) {

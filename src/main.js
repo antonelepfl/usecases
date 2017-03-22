@@ -24,6 +24,13 @@ const router = new VueRouter({
       props: true,
       name: 'singlecellmodeling_models'
     },
+    { path: '/:list_usecases/smmodels/:model_name', // /:view/smmodels/:viewanexistingsinglecellmodel
+      component: function (resolve) {
+        require(['components/singlecellmodeling/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'singlecellmodeling_models_uc'
+    },
     { path: '/:list_usecases/form/:uc_name', // (everyusecaselist)/form/
       component: function (resolve) {
         require(['components/collab-form.vue'], resolve)

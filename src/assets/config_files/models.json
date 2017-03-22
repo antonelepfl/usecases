@@ -2,6 +2,9 @@
   "rebuildanexistingsinglecellmodel": {
     "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
   },
+  "viewanexistingsinglecellmodel": {
+    "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
+  },
   "circuitbuilding": [
     {
       "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbcerebellum.json",

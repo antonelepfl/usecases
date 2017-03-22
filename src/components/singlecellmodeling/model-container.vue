@@ -25,7 +25,8 @@
 <script>
    import modelItem from './model-item.vue'
    import modalComponent from '../modal-component.vue'
-   import ModelsConfig from 'assets/config_files/models.json';
+   import ModelsConfig from 'assets/config_files/models.json'
+   import ModelsArray from 'assets/config_files/singlecellmodeling_structure.json'
    export default {
       name: 'modelContainer',
       components: {
@@ -41,10 +42,14 @@
          }
       },
       methods: {
-         showimage (elem) {
-            // src comes from the native element in model-item
-            this.modalSrc = elem.src
-            this.path = elem.path
+         showimage () {
+            /* eslint no-undef: 0 */
+            this.modalSrc = event.currentTarget.src
+            this.path = ''
+            let parentRoot = event.target.offsetParent
+            if (parentRoot) {
+              this.path = parentRoot.querySelector('.path').innerText
+            }
             this.showModal = true
          },
          touched (modelItem) {
@@ -55,19 +60,25 @@
                 'model_name': this.model_name
               }
             })
+         },
+         getMetadata: function (folderContent) {
+           let that = this;
+           for (let i = 0; i < folderContent.length; i++) {
+             let elem = folderContent[i]
+             let fileName = Object.keys(elem)[0]
+             let modelInfo = elem[fileName].meta
+             let morphPath = that.modelsConfig.raw + fileName + '/' + elem[fileName].morph
+             modelInfo.morphImg = morphPath
+             let responsePath = that.modelsConfig.raw + fileName + '/' + elem[fileName].responses
+             modelInfo.reponsesImg = responsePath
+             that.models.push(modelInfo)
+           }
          }
       },
       created () {
         this.modelsConfig = ModelsConfig[this.model_name]
-         document.querySelector('title').innerHTML = 'Models'
-         var that = this
-         for (var i = 0; i < this.modelsConfig.length; i++) {
-           this.$http.get(this.modelsConfig[i].path).then(function (response) {
-             that.models.push(JSON.parse(response.body))
-           }, function (error) {
-             console.log(error)
-           })
-         }
+        document.querySelector('title').innerHTML = 'Models'
+        this.getMetadata(ModelsArray)
       }
    }
 </script>

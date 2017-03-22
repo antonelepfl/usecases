@@ -33,7 +33,7 @@ export default {
           'app_id': appId,
           'context': context,
           'name': entryName,
-          'order_index': 1,
+          'order_index': '-1',
           'parent': parentId,
           'type': type
         }

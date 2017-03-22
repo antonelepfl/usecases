@@ -1,6 +1,5 @@
 {
   "rebuildanexistingsinglecellmodel": {
-    "api": "https://api.github.com/repos/lbologna/bsp_data_repository/contents/optimizations/",
     "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
   },
   "circuitbuilding": [

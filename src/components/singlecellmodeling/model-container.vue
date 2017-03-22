@@ -27,6 +27,7 @@
    import modalComponent from '../modal-component.vue'
    import ModelsConfig from 'assets/config_files/models.json'
    import ModelsArray from 'assets/config_files/singlecellmodeling_structure.json'
+   const VIEWER_URL = 'http://morph-view-bsp.apps.bbp.epfl.ch/'
    export default {
       name: 'modelContainer',
       components: {
@@ -48,14 +49,19 @@
             this.path = obj.path
             this.showModal = true
          },
-         touched (modelItem) {
-            this.$router.push({name: 'sm_form',
-              params: {
-                'morphology': modelItem.morphology,
-                'list_usecases': this.list_usecases,
-                'model_name': this.model_name
-              }
-            })
+         touched (modelItem) { // open the viewer or continue with the collab search
+           if (this.list_usecases === 'view') {
+             let viewUrl = VIEWER_URL + modelItem.folderName + '.html'
+             window.open(viewUrl, '_blank');
+           } else {
+             this.$router.push({name: 'sm_form',
+               params: {
+                 'morphology': modelItem.morphology,
+                 'list_usecases': this.list_usecases,
+                 'model_name': this.model_name
+               }
+             })
+           }
          },
          getMetadata: function (folderContent) {
            let that = this;
@@ -67,6 +73,7 @@
              modelInfo.morphImg = morphPath
              let responsePath = that.modelsConfig.raw + fileName + '/' + elem[fileName].responses
              modelInfo.reponsesImg = responsePath
+             modelInfo.folderName = fileName
              that.models.push(modelInfo)
            }
          }

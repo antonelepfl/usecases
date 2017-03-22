@@ -39,7 +39,7 @@
       align-items: center;
    }
    .uc-description {
-      width: 70%;
+      width: 72%;
       text-align: start;
       padding-left: 10px;
    }

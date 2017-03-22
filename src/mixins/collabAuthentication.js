@@ -20,6 +20,7 @@ export default {
           resolve()
         }, function (e) {
           console.debug('Login Error', e)
+          reject()
         });
       })
     },
@@ -28,10 +29,10 @@ export default {
         hbpHello.logout('hbp', {force: false})
         .then(function (event) {
           console.debug('User Logout OK')
-          resolve();
+          resolve()
         }, function (e) {
           console.debug('Logout Error', e)
-          reject();
+          reject()
         });
       })
     },

@@ -38,29 +38,26 @@ export default {
           'type': type
         }
         var collabReq = that.collabAPI + 'collab/' + collabId + '/nav/'
-
-        that.$http.post(collabReq, payload, that.header).then(function (response) {
+        that.$http.post(collabReq, payload, that.header) // create navitem
+        .then(function (response) {
           let navitemId = response.body.id
           if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
             let jupyterNotebookUrl = FILE_URL + fileId + '/metadata'
             var context2 = 'ctx_' + context
             var payload = {}
             payload[context2] = 1 // adding context to the entry
-            that.$http.put(jupyterNotebookUrl, payload, that.header).then(function (response) {
+            that.$http.put(jupyterNotebookUrl, payload, that.header)
+            .then(function (response) { // change the metadata jupyter file
               console.debug('Nav entry created')
               that.redirectToCollab(collabId, navitemId)
               resolve();
-            }, function (error) {
-              console.error('Error changing the metadata to the file:', fileId)
-              console.error(error)
-              reject()
-            })
+            }, function (error) { reject('Error changing the metadata:', error) })
           } else {
             console.debug('Nav entry created')
             that.redirectToCollab(collabId, navitemId)
             resolve()
           }
-        })
+        }, function (error) { reject('Error to create NavItem:', error) })
       })
     },
     createCollab (collabTitle, isPrivate) {
@@ -88,7 +85,7 @@ export default {
         that.$http.get(url, that.header).then(function (response) {
           var parentRoot = response.body.id
           resolve({'root': parentRoot, 'collabId': collabId})
-        })
+        }, function () { reject('Error obtaining the nav root') })
       })
     },
     getAllNav (collabId) {
@@ -98,7 +95,7 @@ export default {
         that.$http.get(url, that.header).then(function (response) {
           var nav = response.body
           resolve(nav)
-        })
+        }, function (error) { reject(error) })
       })
     },
     redirectToCollab (collabId, navitemId) {
@@ -161,6 +158,7 @@ export default {
           console.debug('File content copied')
           resolve(newFileId)
         }, function (error) {
+          console.error('Error copying the file content')
           reject(error)
         })
       })
@@ -180,10 +178,14 @@ export default {
             console.error('No entry in jupyter_notebooks_url.json')
           }
           return that.copyFileContent(originalFileId, file.uuid)
+        }, function (error) {
+          reject(error)
         })
         .then(function (newFileId) {
           var entryName = collabApp.entryname
           return that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, newFileId)
+        }, function (error) {
+          reject(error)
         })
         .then(function () {
           resolve()

@@ -10,8 +10,8 @@
 
     <div class="item-body">
       <div class="images-container">
-        <img :src="model.morphImg" class="half" alt="image of morphology" @click="$emit('showimage')">
-        <img :src="model.reponsesImg" class="half" alt="image of reponses traces" @click="$emit('showimage')">
+        <img :src="model.morphImg" class="half" alt="image of morphology" @click="showImage">
+        <img :src="model.reponsesImg" class="half" alt="image of reponses traces" @click="showImage">
       </div>
       <div class="description-container">
         <model-description class="model-description" :model="model" @click.native="touched"></model-description>
@@ -101,10 +101,11 @@
     width: 49%;
   }
   .images-container {
-    width: 40%;
+    width: 45%;
+    align-self: center;
   }
   .description-container {
-    width: 60%;
+    width: 55%;
   }
   .item-body {
     display: flex;

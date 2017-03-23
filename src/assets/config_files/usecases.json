@@ -241,6 +241,34 @@
             },
             "next": "singlecellmodeling_models"
          }
+       ],
+       "singlecellinsilicoexperiments": [
+          {
+             "title": "",
+             "description": "Single cell in silico experiments under current/voltage clamp",
+             "experience": ["all"],
+             "maturity": ["beta"],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png",
+                "alt": "single cell in silico under current or voltage clamp"
+             },
+             "next": null
+          },
+          {
+             "title": "",
+             "description": "Single cell in silico experiments with synaptic inputs preconfigured ",
+             "experience": ["all"],
+             "maturity": ["beta"],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png",
+                "alt": "single cell in silico experiments with synaptic inputs preconfigured"
+             },
+             "next": null
+          }
        ]
    },
    {

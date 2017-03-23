@@ -215,19 +215,32 @@
          }
       ],
        "morphology": [
-           {
+         {
             "title": "Morphology Analysis",
-            "description": "Performs analysis on a morphology with NeuroM.",
+            "description": "Performs analysis on a morphology with NeuroM",
             "experience": ["power"],
             "maturity": ["beta"],
             "access": [""],
             "disabled": false,
             "picture": {
-               "src": "https://github.com/antonelepfl/usecases/raw/master/src/assets/morphology.png",
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/morphology.png",
                "alt": "Morphology Analysis "
             },
             "next": null
-           }
+         },
+         {
+            "title": "Morphology Visualization",
+            "description": "Display neuron morphology in 3D",
+            "experience": ["all"],
+            "maturity": ["beta"],
+            "access": [""],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/morphology_3d.png",
+               "alt": "Morphology Analysis "
+            },
+            "next": "singlecellmodeling_models"
+         }
        ]
    },
    {

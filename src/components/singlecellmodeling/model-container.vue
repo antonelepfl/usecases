@@ -44,12 +44,16 @@
       },
       methods: {
          showimage (obj) {
-            /* eslint no-undef: 0 */
+           if (this.model_name === 'morphologyvisualization') {
+             let viewUrl = VIEWER_URL + obj.folderName + '.html'
+             window.open(viewUrl, '_blank');
+           } else {
             this.modalSrc = obj.src
             this.path = obj.path
             this.showModal = true
+          }
          },
-         touched (modelItem) { // open the viewer or continue with the collab search
+         touched (modelItem) { // open the 3D viewer or continue with the collab search
            if (this.model_name === 'morphologyvisualization') {
              let viewUrl = VIEWER_URL + modelItem.folderName + '.html'
              window.open(viewUrl, '_blank');

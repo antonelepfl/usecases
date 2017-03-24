@@ -34,7 +34,8 @@
     },
     data () {
       return {
-        pathParts: []
+        pathParts: [],
+        path: ''
       }
     },
     methods: {
@@ -50,15 +51,7 @@
         return index < (this.pathParts.length - 1)
       },
       touched (event) {
-        var el = event.currentTarget
-        var found = true
-        while (el.parentNode && found) {
-          el = el.parentNode
-          if (el.className.indexOf('model-item') > -1) {
-            this.$emit('touched', el) // return the root component
-            found = false
-          }
-        }
+        this.$emit('touched')
       },
       getPath () {
         // TODO: change this species from the json file when the field is added
@@ -68,6 +61,7 @@
         this.pathParts.push(this.model.cell_type)
         this.pathParts.push(this.model['e-type'])
         this.pathParts.push(this.model.morphology)
+        this.path = this.pathParts.join(' > ')
       }
     },
     mounted () {

@@ -39,7 +39,12 @@
     },
     methods: {
       showImage (event) {
-        this.$emit('showimage', {'src': event.target.src, 'path': this.path})
+        this.$emit('showimage', {
+          'src': event.target.src,
+          'path': this.path,
+          'folderName': this.model.folderName
+        })
+        // send the folder name for 3D viewer because the modal is disabled
       },
       hasNext (index) {
         return index < (this.pathParts.length - 1)

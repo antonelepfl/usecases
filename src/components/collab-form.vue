@@ -1,7 +1,5 @@
 <template>
   <div class="collab-form">
-    <!--just in case a hidden logout button -->
-    <md-button class="md-raised md-primary button-medium" style="display: none" v-on:click="logout">Logout</md-button>
     <div class="header">Define in which collab you want to work</div>
     <md-tabs md-fixed class="elevated">
       <md-tab id="search" md-label="Search" md-icon="search" class="container-centered">
@@ -9,11 +7,13 @@
           <label>Collab Name</label>
           <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
         </md-input-container>
+
         <div v-if="!isLoading" class="collabs-results-container">
           <div v-for="collab in collabResults" class="collab-result" >
             <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
           </div>
         </div>
+
         <div v-show="isLoading" class="progress-bar">
           <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
@@ -25,11 +25,13 @@
           <label>Collab Name</label>
           <md-input placeholder="Create new collab" v-model.lazy="searchText"></md-input>
         </md-input-container>
+
         <div v-show="!isLoading" class="centered">
           <md-button class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
           <md-switch v-model="private" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
           <span class="error-message">{{errorMessage}}</span>
         </div>
+
         <div v-show="isLoading" class="progress-bar">
           <md-progress class="md-accent" md-indeterminate></md-progress>
         </div>
@@ -40,9 +42,7 @@
 </template>
 
 <script>
-  import collabAuthentication from '../mixins/collabAuthentication.js'
   import createCollab from '../mixins/createCollab.js'
-  import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
 
   export default {
     name: 'collabForm',
@@ -53,15 +53,11 @@
         collabResults: [],
         isLoading: false,
         errorMessage: '',
-        isJupyter: false,
-        appId: -1,
-        appName: '',
-        contentType: '',
-        typesCollabsApps: typesCollabsApps
+        hasChildren: false
       }
     },
     props: ['uc_name'],
-    mixins: [collabAuthentication, createCollab], // use common functions
+    mixins: [createCollab], // use common functions
     computed: {
       private_public () {
         if (this.private) {
@@ -71,92 +67,29 @@
       }
     },
     mounted () {
-      var newEntry = this.typesCollabsApps[this.uc_name]
-      if (newEntry) {
-        this.appId = newEntry.appid
-        this.appName = newEntry.entryname
-        this.contentType = newEntry.contenttype
-        this.extension = newEntry.extension
-      } else {
-        console.error('No entry in type_collabs_apps.json')
-        this.errorMessage = 'No defined app to copy in type_collabs_apps.json'
-      }
+      // this.getApplicationInfo(this.uc_name)
     },
     methods: {
-      collabSelected (collab) {
-        var that = this
+      collabSelected: function (collab) {
         this.isLoading = true
-        this.getAllNav(collab.id).then(function (parentNav) {
-          var exists = that.checkExists(parentNav, that.appId, that.appName)
-          if (!exists.found) {
-            if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-              let gen = that.generateNotebook(collab, that.typesCollabsApps[that.uc_name], parentNav)
-              gen.then(function () {
-                  that.isLoading = false
-              }, function (error) {
-                that.errorMessage = error
-                that.isLoading = false
-              })
-            } else { // is not jupyter notebok just connect to the original file
-              let nav = that.createNavEntry(that.appName, collab.id, parentNav.id, that.appId)
-              nav.then(function () {
-                that.isLoading = false
-              }, function (error) {
-                that.errorMessage = error
-                that.isLoading = false
-              })
-            }
-          } else { // not found
-            console.debug('Existing app in collab found')
-            that.isLoading = false
-            that.redirectToCollab(collab.id, exists.navitemId)
-          }
-        }, function (error) { console.error(error) })
+        var that = this
+        this.createItemInExistingCollab(collab, this.uc_name)
+        .then(function () {
+          that.isLoading = false
+        }, function (error) { that.errorMessage = error })
       },
       createNewCollab () {
         var that = this
         this.isLoading = true
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
-        this.createCollab(this.searchText, isPrivate)
-        .then(function (collabId) {
-          return that.getNavRoot(collabId)
-        }, function (error) {
-          if (error.body.title) { // to catch the collab already exists
-            that.isLoading = false
-            that.errorMessage = error.body.title[0]
-          }
+        this.createItemInNewCollab(isPrivate, this.searchText, this.uc_name)
+        .then(function () {
+          that.isLoading = false
+        },
+        function (error) {
+          that.isLoading = false
+          that.errorMessage = error
         })
-        .then(function (navObj) {
-          let parentRoot = navObj.root
-          let collabId = navObj.collabId
-          if (that.appId === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-            let gen = that.generateNotebook({'id': collabId}, that.typesCollabsApps[that.uc_name], {'id': parentRoot})
-            gen.then(function () {
-              that.isLoading = false
-            }, function (error) { console.error(error) })
-          } else { // is not jupyter notebok just connect to the original file
-            var entryName = that.typesCollabsApps[that.uc_name].entryname
-            let nav = that.createNavEntry(entryName, collabId, parentRoot, that.appId)
-            nav.then(function () {
-              that.isLoading = false
-            }, function (error) { console.error(error) })
-          }
-        }, function (error) { console.error(error) })
-      },
-      checkExists (nav, appId, appName) {
-        if (nav.children) {
-          let item = {'found': false, 'navitemId': 0}
-          let i = 0
-          while (!item.found && nav.children.length > i) {
-            if (nav.children[i].app_id === appId.toString() &&
-              nav.children[i].name === appName) {
-              item.found = true
-              item.navitemId = nav.children[i].id
-            }
-            i = i + 1
-          }
-          return item
-        }
       }
     },
     watch: {

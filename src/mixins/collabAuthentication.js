@@ -36,28 +36,6 @@ export default {
         });
       })
     },
-    searchCollab (param) {
-      this.collabResults = []
-      var that = this
-      return new Promise(function (resolve, reject) {
-        that.getToken().then(function (token) {
-          that.$http.get(that.collabAPI + 'mycollabs/?search=' + param, {headers: {'Authorization': token}}).then(
-            function (response) {
-              if (param.length > 0) {
-                resolve(response.body.results)
-              }
-            },
-            function (responseError) {
-              if (responseError.status === 401) {
-                that.getToken(true) // force renew token
-                reject(responseError)
-              } else {
-                reject(responseError)
-              }
-          })
-        }) // end getToken
-      })
-    },
     getToken (renew) {
       var that = this
       return new Promise(function (resolve, reject) {

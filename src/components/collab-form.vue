@@ -67,7 +67,7 @@
       }
     },
     mounted () {
-      if (!typesCollabsApps[this.uc_name]) {
+      if (typesCollabsApps[this.uc_name] === undefined) {
         this.errorMessage = 'No defined application for ' + this.uc_name + ' in typesCollabsApps.json'
       }
     },

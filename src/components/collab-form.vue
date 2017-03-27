@@ -43,6 +43,7 @@
 
 <script>
   import createCollab from '../mixins/createCollab.js'
+  import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 
   export default {
     name: 'collabForm',
@@ -52,8 +53,7 @@
         searchText: '',
         collabResults: [],
         isLoading: false,
-        errorMessage: '',
-        hasChildren: false
+        errorMessage: ''
       }
     },
     props: ['uc_name'],
@@ -67,7 +67,9 @@
       }
     },
     mounted () {
-      // this.getApplicationInfo(this.uc_name)
+      if (!typesCollabsApps[this.uc_name]) {
+        this.errorMessage = 'No entry in typesCollabsApps.json'
+      }
     },
     methods: {
       collabSelected: function (collab) {

@@ -89,8 +89,8 @@
           that.isLoading = false
         },
         function (error) {
-          that.isLoading = false
           that.errorMessage = error
+          that.isLoading = false
         })
       }
     },

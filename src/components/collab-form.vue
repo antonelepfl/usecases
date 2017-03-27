@@ -67,8 +67,8 @@
       }
     },
     mounted () {
-      if (!typesCollabsApps[this.uc_name]) {
-        this.errorMessage = 'No entry in typesCollabsApps.json'
+      if (typesCollabsApps[this.uc_name] === undefined) {
+        this.errorMessage = 'No defined application for ' + this.uc_name + ' in typesCollabsApps.json'
       }
     },
     methods: {
@@ -89,8 +89,8 @@
           that.isLoading = false
         },
         function (error) {
-          that.isLoading = false
           that.errorMessage = error
+          that.isLoading = false
         })
       }
     },

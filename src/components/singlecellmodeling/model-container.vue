@@ -60,7 +60,7 @@
            } else {
              this.$router.push({name: 'sm_form',
                params: {
-                 'morphology': modelItem.morphology,
+                 'folder_name': modelItem.folderName,
                  'list_usecases': this.list_usecases,
                  'model_name': this.model_name
                }

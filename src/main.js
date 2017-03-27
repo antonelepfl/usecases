@@ -31,7 +31,7 @@ const router = new VueRouter({
       props: true,
       name: 'uc_form'
     },
-    { path: '/:list_usecases/smmodels/:model_name/form/:morphology', // form to search / crate collabs
+    { path: '/:list_usecases/smmodels/:model_name/form/:folder_name', // form to search / crate collabs
       component: function (resolve) {
         require(['components/collab-form.vue'], resolve)
       },

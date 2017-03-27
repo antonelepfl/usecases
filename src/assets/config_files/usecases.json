@@ -28,6 +28,32 @@
             "next": "uc_form"
          },
          {
+            "title": "Synaptic events fitting (user's model)",
+            "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
+            "experience": ["experts"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
+               "alt": "Logo of feature Extraction"
+            },
+            "next": "uc_form"
+         },
+         {
+            "title": "Synaptic events fitting (user's data)",
+            "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
+            "experience": ["experts"],
+            "maturity": ["experimental"],
+            "access": ["hpc"],
+            "disabled": false,
+            "picture": {
+               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
+               "alt": "Logo of feature Extraction"
+            },
+            "next": "uc_form"
+         },
+         {
             "title": "Feature registration",
             "description": "Register features of user's traces in NeuroInformatics Platform",
             "experience": ["all"],
@@ -49,32 +75,6 @@
             "disabled": true,
             "picture": {
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
-               "alt": "Logo of feature Extraction"
-            },
-            "next": "uc_form"
-         },
-         {
-            "title": "Synaptic events fitting (user's model)",
-            "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
-            "experience": ["experts"],
-            "maturity": ["experimental"],
-            "access": ["hpc"],
-            "disabled": true,
-            "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
-               "alt": "Logo of feature Extraction"
-            },
-            "next": "uc_form"
-         },
-         {
-            "title": "Synaptic events fitting (user's data)",
-            "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
-            "experience": ["experts"],
-            "maturity": ["experimental"],
-            "access": ["hpc"],
-            "disabled": true,
-            "picture": {
-               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
             "next": "uc_form"

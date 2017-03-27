@@ -1,29 +1,48 @@
 import uuid from 'uuid4'
-import jupyterNotebookUrls from '../assets/config_files/jupyter_notebooks_urls.json'
 import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
-import CollabAuthentication from './collabAuthentication.js'
-const FILE_URL = 'https://services.humanbrainproject.eu/document/v0/api/file/'
+import collabAuthentication from './collabAuthentication.js'
+const FILE_API_URL = 'https://services.humanbrainproject.eu/document/v0/api/file/'
+const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
+const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
+const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
+const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
 
 export default {
   data () {
     return {
-      collabAPI: 'https://services.humanbrainproject.eu/collab/v0/',
       isLoading: false,
       errorMessage: '',
-      isJupyter: false,
       typesCollabsApps: typesCollabsApps,
       header: {}
     }
   },
-  props: ['uc_name'],
-  mixins: [CollabAuthentication],
+  mixins: [collabAuthentication],
   created () {
     let that = this
     this.getToken().then(function (token) {
       that.header = {headers: {'Authorization': token}}
-    }) // from CollabAuthentication
+    }) // from collabAuthentication
   },
   methods: {
+    searchCollab (param) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header)
+        .then(function (response) {
+          if (param.length > 0) {
+            resolve(response.body.results)
+          }
+        },
+        function (responseError) {
+          if (responseError.status === 401) {
+            that.getToken(true) // force renew token
+            reject(responseError)
+          } else {
+            reject(responseError)
+          }
+        })
+      })
+    },
     createNavEntry (entryName, collabId, parentId, appId, fileId) {
       var that = this
       return new Promise(function (resolve, reject) {
@@ -37,31 +56,38 @@ export default {
           'parent': parentId,
           'type': type
         }
-        var collabReq = that.collabAPI + 'collab/' + collabId + '/nav/'
+        var collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
         that.$http.post(collabReq, payload, that.header) // create navitem
         .then(function (response) {
           let navitemId = response.body.id
           if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
-            let jupyterNotebookUrl = FILE_URL + fileId + '/metadata'
-            var context2 = 'ctx_' + context
-            var payload = {}
-            payload[context2] = 1 // adding context to the entry
-            that.$http.put(jupyterNotebookUrl, payload, that.header)
-            .then(function (response) { // change the metadata jupyter file
+            that.fillJupyterNavItem(fileId, navitemId, collabId, context)
+            .then(function () {
               console.debug('Nav entry created')
-              that.redirectToCollab(collabId, navitemId)
-              resolve();
-            }, function (error) { reject('Error changing the metadata:', error) })
+              resolve({'collabId': collabId, 'navitemId': navitemId})
+            }, function (e) { console.error('Error in fillJupyterNavItem', e) })
           } else {
             console.debug('Nav entry created')
-            that.redirectToCollab(collabId, navitemId)
-            resolve()
+            resolve({'collabId': collabId, 'navitemId': navitemId})
           }
         }, function (error) { reject('Error to create NavItem:', error) })
       })
     },
+    fillJupyterNavItem: function (fileId, navitemId, collabId, context) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        let jupyterNotebookUrl = FILE_API_URL + fileId + '/metadata'
+        var context2 = 'ctx_' + context
+        var payload = {}
+        payload[context2] = 1 // adding context to the entry
+        that.$http.put(jupyterNotebookUrl, payload, that.header)
+        .then(function (response) { // change the metadata jupyter file
+          resolve();
+        }, function (error) { reject('Error changing the metadata:', error) })
+      })
+    },
     createCollab (collabTitle, isPrivate) {
-      var collabReq = this.collabAPI + 'collab/'
+      var collabReq = COLLAB_API + 'collab/'
       var that = this
       var payload = {
         'title': collabTitle,
@@ -79,7 +105,7 @@ export default {
       })
     },
     getNavRoot (collabId) {
-      var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
+      var url = COLLAB_API + 'collab/' + collabId + '/nav/root/'
       var that = this
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
@@ -89,7 +115,7 @@ export default {
       })
     },
     getAllNav (collabId) {
-      var url = this.collabAPI + 'collab/' + collabId + '/nav/root/'
+      var url = COLLAB_API + 'collab/' + collabId + '/nav/root/'
       var that = this
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
@@ -102,7 +128,7 @@ export default {
       window.parent.postMessage({
         eventName: 'location',
         data: {
-          url: 'https://collab.humanbrainproject.eu/#/collab/' + collabId + '/nav/' + navitemId
+          url: COLLAB_HOME + collabId + '/nav/' + navitemId
         }
       }, '*')
       setTimeout(function () {
@@ -110,7 +136,7 @@ export default {
       }.bind(this), 1000)
     },
     getCollabStorage (collabId) {
-      var url = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id=' + collabId
+      var url = COLLAB_STORAGE_API + collabId
       var that = this
       return new Promise(function (resolve, reject) {
         var newHeader = {headers: {
@@ -124,7 +150,7 @@ export default {
       })
     },
     createFile (name, contentType, extension, parent) {
-      var url = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
+      var url = STORAGE_FILE_API
       var that = this
       var payload = {
         'name': name + uuid() + extension,
@@ -146,7 +172,7 @@ export default {
       })
     },
     copyFileContent (originFileId, newFileId) {
-      var url = 'https://services.humanbrainproject.eu/storage/v1/api/file/' + newFileId + '/content/'
+      var url = STORAGE_FILE_API + newFileId + '/content/'
       var that = this
       var newHeader = {headers: {
         'Authorization': this.header.headers.Authorization,
@@ -163,34 +189,116 @@ export default {
         })
       })
     },
-    generateNotebook (collab, collabApp, parentNav) {
+    generateNotebook (collabId, appInfo, parentNav) {
       var that = this
       return new Promise(function (resolve, reject) {
-        that.getCollabStorage(collab.id)
+        that.getCollabStorage(collabId)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
-          var name = 'test-'
-          return that.createFile(name, collabApp.contenttype, collabApp.extension, parent)
+          var name = 'copied-'
+          return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
         })
         .then(function (file) {
-          var originalFileId = jupyterNotebookUrls[that.uc_name]
+          var originalFileId = appInfo.file
           if (!originalFileId) {
-            console.error('No entry in jupyter_notebooks_url.json')
+            console.error('No entry in typesCollabsApps.json')
+            reject()
           }
           return that.copyFileContent(originalFileId, file.uuid)
         }, function (error) {
           reject(error)
         })
         .then(function (newFileId) {
-          var entryName = collabApp.entryname
-          return that.createNavEntry(entryName, collab.id, parentNav.id, collabApp.appid, newFileId)
+          var entryName = appInfo.entryname
+          return that.createNavEntry(entryName, collabId, parentNav.id, appInfo.appid, newFileId)
         }, function (error) {
           reject(error)
         })
-        .then(function () {
-          resolve()
+        .then(function (obj) {
+          resolve(obj)
         }, function (error) {
           reject(error)
+        })
+      })
+    },
+    createItemInExistingCollab (collab, uc) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.getAllNav(collab.id).then(function (parentNav) {
+          var ucInfo = that.typesCollabsApps[uc]
+          var exists = {};
+          if (ucInfo.children) {
+            exists = that.checkExists(parentNav, ucInfo.children[0].appid, ucInfo.children[0].entryname)
+          } else {
+            exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
+          }
+          if (!exists.found) {
+            var promises = []
+            if (ucInfo.children) {
+              for (let i = 0; i < ucInfo.children.length; i++) {
+                var item = ucInfo.children[i]
+                if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                  promises.push(that.generateNotebook(collab.id, item, parentNav))
+                } else { // is not jupyter notebok just connect to the original file
+                  promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                }
+              }
+            } else { // is only one navitem
+              if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                promises.push(that.generateNotebook(collab.id, ucInfo, parentNav))
+              } else { // is not jupyter notebok just connect to the original file
+                promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
+              }
+            }
+            Promise.all(promises).then(function (generatedNotebooks) {
+              let obj = generatedNotebooks[0]
+              if (obj.collabId) {
+                that.redirectToCollab(obj.collabId, obj.navitemId)
+                resolve()
+              }
+            }, function (e) {
+              console.error('Error creating multiple files in existing collab', e)
+              reject(e)
+            })
+          } else { // found
+            console.debug('Existing app in collab found')
+            that.redirectToCollab(collab.id, exists.navitemId)
+            resolve()
+          }
+        }, function (error) {
+          console.error(error)
+          reject(error)
+        })
+      })
+    },
+    checkExists (nav, appId, appName) {
+      if (nav.children) {
+        let item = {'found': false, 'navitemId': 0}
+        let i = 0
+        while (!item.found && nav.children.length > i) {
+          if (nav.children[i].app_id === appId.toString() &&
+            nav.children[i].name === appName) {
+            item.found = true
+            item.navitemId = nav.children[i].id
+          }
+          i = i + 1
+        }
+        return item
+      }
+    },
+    createItemInNewCollab (isPrivate, searchText, uc) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.createCollab(searchText, isPrivate)
+        .then(function (collabId) {
+          that.createItemInExistingCollab({'id': collabId}, uc)
+          .then(function () {
+            resolve()
+          }, function (error) {
+            reject(error)
+          })
+        }, function (error) { // probably the already exist error
+          reject(error.body.title[0])
         })
       })
     }

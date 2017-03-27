@@ -68,7 +68,7 @@
     },
     mounted () {
       if (!typesCollabsApps[this.uc_name]) {
-        this.errorMessage = 'No entry in typesCollabsApps.json'
+        this.errorMessage = 'No defined application for ' + this.uc_name + ' in typesCollabsApps.json'
       }
     },
     methods: {

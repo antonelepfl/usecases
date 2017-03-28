@@ -228,20 +228,21 @@ export default {
         that.getAllNav(collab.id).then(function (parentNav) {
           var ucInfo = that.typesCollabsApps[uc]
           var exists = {};
-          if (ucInfo.children) {
-            exists = that.checkExists(parentNav, ucInfo.children[0].appid, ucInfo.children[0].entryname)
-          } else {
+          if (ucInfo.appid) { // is only one item
             exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
           }
-          if (!exists.found) {
+          if (!exists.found) { // does not exist or has children
             var promises = []
             if (ucInfo.children) {
               for (let i = 0; i < ucInfo.children.length; i++) {
                 var item = ucInfo.children[i]
-                if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                  promises.push(that.generateNotebook(collab.id, item, parentNav))
-                } else { // is not jupyter notebok just connect to the original file
-                  promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                exists = that.checkExists(parentNav, item.appid, item.entryname)
+                if (!exists.found) {
+                  if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                    promises.push(that.generateNotebook(collab.id, item, parentNav))
+                  } else { // is not jupyter notebok just connect to the original file
+                    promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                  }
                 }
               }
             } else { // is only one navitem

@@ -36,7 +36,7 @@ const router = new VueRouter({
         require(['components/collab-form-replacing.vue'], resolve)
       },
       props: true,
-      name: 'sm_form'
+      name: 'sm_replacing_form'
     },
     { path: '/:list_usecases/cbmodels/:model_name', // circuit building models
       component: function (resolve) {

@@ -54,16 +54,28 @@
           }
          },
          touched (modelItem) { // open the 3D viewer or continue with the collab search
-           if (this.model_name === 'morphologyvisualization') {
-             let viewUrl = VIEWER_URL + modelItem.folderName + '.html'
-             window.open(viewUrl, '_blank');
-           } else {
-             this.$router.push({name: 'uc_form',
-               params: {
-                 'uc_name': this.model_name
-               }
-             })
-           }
+           let viewUrl = ''
+           switch (this.model_name) {
+             case 'morphologyvisualization':
+               viewUrl = VIEWER_URL + modelItem.folderName + '.html'
+               window.open(viewUrl, '_blank');
+               break;
+             case 'morphologyanalysis':
+               this.$router.push({name: 'sm_replacing_form',
+                 params: {
+                   'folder_name': modelItem.folderName,
+                   'list_usecases': this.list_usecases,
+                   'model_name': this.model_name
+                 }
+               })
+               break;
+             default:
+              this.$router.push({name: 'uc_form',
+                params: {
+                  'uc_name': this.model_name
+                }
+              })
+            }
          },
          getMetadata: function (folderContent) {
            let that = this;

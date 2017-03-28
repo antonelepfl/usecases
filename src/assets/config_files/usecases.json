@@ -226,7 +226,7 @@
                "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/morphology.png",
                "alt": "Morphology Analysis "
             },
-            "next": null
+            "next": "singlecellmodeling_models"
          },
          {
             "title": "Morphology Visualization",
@@ -251,7 +251,7 @@
              "access": [""],
              "disabled": true,
              "picture": {
-                "src": "http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png",
+                "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/l5pc_release_responses-eps.jpg",
                 "alt": "single cell in silico under current or voltage clamp"
              },
              "next": null
@@ -264,7 +264,7 @@
              "access": [""],
              "disabled": true,
              "picture": {
-                "src": "http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png",
+                "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/l5pc_release_responses-eps.jpg",
                 "alt": "single cell in silico experiments with synaptic inputs preconfigured"
              },
              "next": null

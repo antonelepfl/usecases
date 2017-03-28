@@ -33,7 +33,7 @@ const router = new VueRouter({
     },
     { path: '/:list_usecases/smmodels/:model_name/form/:folder_name', // form to search / crate collabs
       component: function (resolve) {
-        require(['components/collab-form.vue'], resolve)
+        require(['components/collab-form-replacing.vue'], resolve)
       },
       props: true,
       name: 'sm_form'

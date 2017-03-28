@@ -6,6 +6,7 @@ const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
 const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
+const BSP_PUBLIC_REPO = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/'
 
 export default {
   data () {
@@ -297,6 +298,136 @@ export default {
           }, function (error) {
             reject(error)
           })
+        }, function (error) { // probably the already exist error
+          reject(error.body.title[0])
+        })
+      })
+    },
+    getFileContent (fileId) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(STORAGE_FILE_API + fileId + '/content/', that.header)
+        .then(function (response) {
+          resolve(response.body)
+        },
+        function (responseError) {
+          reject(responseError)
+        })
+      })
+    },
+    setFileContent (fileId, content) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.post(STORAGE_FILE_API + fileId + '/content/upload/', content, that.header)
+        .then(function (response) {
+          resolve(fileId)
+        },
+        function (responseError) {
+          reject(responseError)
+        })
+      })
+    },
+    replaceJupyterContentAndCopy (findString, replaceString, collabId, appInfo, parentNav) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        var originalFileId = appInfo.file
+        var replacedFileContent = ''
+        if (!originalFileId) {
+          console.error('No entry in typesCollabsApps.json')
+          reject()
+        }
+        that.getFileContent(originalFileId)
+        .then(function (fileContent) {
+          replacedFileContent = fileContent.replace(findString, replaceString)
+          return that.getCollabStorage(collabId)
+        }, function (error) {
+          reject(error)
+        })
+        .then(function (projectStorage) {
+          var parent = projectStorage.results[0].uuid
+          var name = 'replaced-'
+          return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
+        })
+        .then(function (file) {
+          return that.setFileContent(file.uuid, replacedFileContent)
+        }, function (error) {
+          reject(error)
+        })
+        .then(function (newFileId) {
+          var entryName = appInfo.entryname
+          return that.createNavEntry(entryName, collabId, parentNav.id, appInfo.appid, newFileId)
+        }, function (error) {
+          reject(error)
+        })
+        .then(function (obj) {
+          resolve(obj)
+        }, function (error) {
+          reject(error)
+        })
+      })
+    },
+    createItemInExistingCollabWithReplace (collab, uc, morphology) {
+      var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
+      var replaceString = BSP_PUBLIC_REPO + morphology + '/' + morphology + '.zip'
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.getAllNav(collab.id).then(function (parentNav) {
+          var ucInfo = that.typesCollabsApps[uc]
+          var exists = {};
+          if (ucInfo.children) {
+            exists = that.checkExists(parentNav, ucInfo.children[0].appid, ucInfo.children[0].entryname + morphology)
+          } else {
+            ucInfo.entryname = ucInfo.entryname + ' - ' + morphology
+            exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
+          }
+          if (!exists.found) {
+            var promises = []
+            if (ucInfo.children) {
+              for (let i = 0; i < ucInfo.children.length; i++) {
+                var item = ucInfo.children[i]
+                if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                  promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, item, parentNav))
+                } else { // is not jupyter notebok just connect to the original file
+                  promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                }
+              }
+            } else { // is only one navitem
+              if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, ucInfo, parentNav))
+              } else { // is not jupyter notebok just connect to the original file
+                promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
+              }
+            }
+            Promise.all(promises).then(function (generatedNotebooks) {
+              let obj = generatedNotebooks[0]
+              if (obj.collabId) {
+                that.redirectToCollab(obj.collabId, obj.navitemId)
+                resolve()
+              }
+            }, function (e) {
+              console.error('Error creating multiple files in existing collab', e)
+              reject(e)
+            })
+          } else { // found
+            console.debug('Existing app in collab found')
+            that.redirectToCollab(collab.id, exists.navitemId)
+            resolve()
+          }
+        }, function (error) {
+          console.error(error)
+          reject(error)
+        })
+      })
+    },
+    createItemInNewCollabWithReplace (isPrivate, searchText, uc, morphology) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.createCollab(searchText, isPrivate)
+        .then(function (collabId) {
+          that.createItemInExistingCollabWithReplace({'id': collabId}, uc, morphology)
+          .then(function () {
+            resolve()
+          }, reject)
         }, function (error) { // probably the already exist error
           reject(error.body.title[0])
         })

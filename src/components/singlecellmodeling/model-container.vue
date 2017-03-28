@@ -58,11 +58,9 @@
              let viewUrl = VIEWER_URL + modelItem.folderName + '.html'
              window.open(viewUrl, '_blank');
            } else {
-             this.$router.push({name: 'sm_form',
+             this.$router.push({name: 'uc_form',
                params: {
-                 'folder_name': modelItem.folderName,
-                 'list_usecases': this.list_usecases,
-                 'model_name': this.model_name
+                 'uc_name': this.model_name
                }
              })
            }

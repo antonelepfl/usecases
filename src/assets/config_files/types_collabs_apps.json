@@ -78,6 +78,31 @@
       }
     ]
   },
+  "rebuildanexistingsinglecellmodel": {
+    "children": [
+      {
+        "entryname": "BluePyOpt One",
+        "appid": 175,
+        "contenttype": "x-ipynb+json",
+        "extension": ".ipynb",
+        "file": "5d4869bb-d525-4f7e-a504-8c6421545043"
+      },
+      {
+        "entryname": "BluePyOpt Analysis",
+        "appid": 175,
+        "contenttype": "x-ipynb+json",
+        "extension": ".ipynb",
+        "file": "22f851ce-f667-4b59-8750-1f06a16d0a0f"
+      },
+      {
+        "entryname": "NSG Job Manager",
+        "appid": 175,
+        "contenttype": "x-ipynb+json",
+        "extension": ".ipynb",
+        "file": "7860e2ae-a4e7-439a-a640-856729e52bce"
+      }
+    ]
+  },
   "morphologyanalysis": {
     "entryname": "Morphology Analysis",
     "appid": 175,

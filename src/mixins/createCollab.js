@@ -59,8 +59,8 @@ export default {
         }
         var collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
         that.$http.post(collabReq, payload, that.header) // create navitem
-        .then(function (response) {
-          let navitemId = response.body.id
+        .then(function (navItem) {
+          let navitemId = navItem.body.id
           if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
             that.fillJupyterNavItem(fileId, navitemId, collabId, context)
             .then(function () {
@@ -154,7 +154,7 @@ export default {
       var url = STORAGE_FILE_API
       var that = this
       var payload = {
-        'name': name + uuid() + extension,
+        'name': name + extension,
         'content_type': contentType,
         'parent': parent
       }
@@ -218,6 +218,7 @@ export default {
         .then(function (obj) {
           resolve(obj)
         }, function (error) {
+          console.error('Error copying the file content')
           reject(error)
         })
       })
@@ -385,10 +386,14 @@ export default {
             if (ucInfo.children) {
               for (let i = 0; i < ucInfo.children.length; i++) {
                 var item = ucInfo.children[i]
-                if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                  promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, item, parentNav))
-                } else { // is not jupyter notebok just connect to the original file
-                  promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                item.entryname = item.entryname + ' - ' + morphology
+                exists = that.checkExists(parentNav, item.appid, item.entryname)
+                if (!exists.found) {
+                  if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                    promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, item, parentNav))
+                  } else { // is not jupyter notebok just connect to the original file
+                    promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                  }
                 }
               }
             } else { // is only one navitem

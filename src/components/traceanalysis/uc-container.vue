@@ -47,6 +47,10 @@
                   this.$router.push({name: uc.next, params: {'model_name': ucName}})
                   break
                 }
+                case 'mooc_form': {
+                  this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+                  break
+                }
               }
             }
          },

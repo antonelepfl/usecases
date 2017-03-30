@@ -2,81 +2,58 @@
    <div class="model-container">
       <div class="title">Please select a model</div>
       <div class="content">
-      <!--<section v-for="(value, key) in usercases">
-         <div v-for="model in value" v-on:click="selected" >-->
-            <md-whiteframe md-elevation="1" class="item-sections" v-for="model in models">
-               <model-item
-                  class="model-item"
-                  :model="model"
-                  v-on:showimage="showimage"
-                  v-on:touched="touched(model)"></model-item>
-            </md-whiteframe>
-
-            <modal-component v-if="showModal" v-on:close="showModal = false">
-               <img slot="image" v-bind:src="modalSrc"/>
-               <h3 slot="header"> {{ path }}</h3>
-            </modal-component>
-         <!--</div>
-      </section>  end categories -->
+        <md-whiteframe md-elevation="1" class="item-sections" v-for="model in models">
+           <model-item
+              class="model-item"
+              :model="model"
+              v-on:touched="touched(model)"></model-item>
+        </md-whiteframe>
       </div>
    </div>
 </template>
 
 <script>
    import modelItem from './model-item.vue'
-   import modalComponent from '../modal-component.vue'
    import ModelsConfig from 'assets/config_files/models.json'
    import ModelsArray from 'assets/config_files/singlecellmodeling_structure.json'
    const VIEWER_URL = 'http://morph-view-bsp.apps.bbp.epfl.ch/'
    export default {
       name: 'modelContainer',
       components: {
-         modelItem, modalComponent
+         'model-item': modelItem
       },
       props: ['list_usecases', 'model_name'],
       data () {
          return {
-            showModal: false,
-            modalSrc: String,
             modelsConfig: {},
             models: []
          }
       },
       methods: {
-         showimage (obj) {
-           if (this.model_name === 'morphologyvisualization') {
-             let viewUrl = VIEWER_URL + obj.folderName + '.html'
-             window.open(viewUrl, '_blank');
-           } else {
-            this.modalSrc = obj.src
-            this.path = obj.path
-            this.showModal = true
-          }
-         },
-         touched (modelItem) { // open the 3D viewer or continue with the collab search
-           let viewUrl = ''
-           switch (this.model_name) {
-             case 'morphologyvisualization':
-               viewUrl = VIEWER_URL + modelItem.folderName + '.html'
-               window.open(viewUrl, '_blank');
-               break;
-             case 'morphologyanalysis':
-               this.$router.push({name: 'sm_replacing_form',
-                 params: {
-                   'folder_name': modelItem.folderName,
-                   'list_usecases': this.list_usecases,
-                   'model_name': this.model_name
-                 }
-               })
-               break;
-             default:
+        touched (modelItem) { // open the 3D viewer or continue with the collab search
+          let viewUrl = ''
+          switch (this.model_name) {
+            case 'morphologyvisualization':
+              viewUrl = VIEWER_URL + modelItem.folderName + '.html'
+              window.open(viewUrl, '_blank');
+              break;
+            case 'morphologyanalysis':
+              this.$router.push({name: 'sm_replacing_form',
+                params: {
+                  'folder_name': modelItem.folderName,
+                  'list_usecases': this.list_usecases,
+                  'model_name': this.model_name
+                }
+              })
+              break;
+            default:
               this.$router.push({name: 'uc_form',
                 params: {
                   'uc_name': this.model_name
                 }
               })
-            }
-         },
+          }
+        },
          getMetadata: function (folderContent) {
            let that = this;
            for (let i = 0; i < folderContent.length; i++) {

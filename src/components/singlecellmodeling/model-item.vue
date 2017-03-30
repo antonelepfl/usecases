@@ -8,12 +8,12 @@
       </div>
     </div>
 
-    <div class="item-body">
+    <div class="item-body" @click="touched">
       <div class="images-container">
-        <img :src="model.morphImg" class="half" alt="image of morphology" @click="showImage">
-        <img :src="model.reponsesImg" class="half" alt="image of reponses traces" @click="showImage">
+        <img :src="model.morphImg" class="half" alt="image of morphology">
+        <img :src="model.reponsesImg" class="half" alt="image of reponses traces">
       </div>
-      <div class="description-container" @click="touched">
+      <div class="description-container">
         <model-description class="model-description" :model="model"></model-description>
       </div>
     </div>
@@ -39,14 +39,6 @@
       }
     },
     methods: {
-      showImage (event) {
-        this.$emit('showimage', {
-          'src': event.target.src,
-          'path': this.path,
-          'folderName': this.model.folderName
-        })
-        // send the folder name for 3D viewer because the modal is disabled
-      },
       hasNext (index) {
         return index < (this.pathParts.length - 1)
       },
@@ -54,7 +46,6 @@
         this.$emit('touched')
       },
       getPath () {
-        // TODO: change this species from the json file when the field is added
         this.pathParts.push(this.model.species)
         this.pathParts.push(this.model.brain_structure)
         this.pathParts.push(this.model.cell_soma_location)

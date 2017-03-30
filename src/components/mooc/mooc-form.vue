@@ -1,5 +1,8 @@
 <template>
   <div class="mooc-form">
+    <h3>
+      Welcome! Please initialize your collabs pressing the button
+    </h3>
     <button type="button" @click="initializeCollab">Initialize Collab</button>
     <div v-show="isLoading" class="progress-bar">
       <md-progress class="md-accent" md-indeterminate></md-progress>
@@ -59,8 +62,14 @@
   }
 </script>
 
-<style >
+<style scoped>
   .error {
     color: red;
+  }
+  .mooc-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
   }
 </style>

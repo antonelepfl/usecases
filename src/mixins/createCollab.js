@@ -153,8 +153,10 @@ export default {
     createFile (name, contentType, extension, parent) {
       var url = STORAGE_FILE_API
       var that = this
+      var t = new Date() // to avoid conflicts with fileNames in collab storage
+      var time = t.getHours().toString() + t.getSeconds().toString()
       var payload = {
-        'name': name + extension,
+        'name': name + time + extension,
         'content_type': contentType,
         'parent': parent
       }
@@ -167,8 +169,6 @@ export default {
         that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
           resolve(response.body)
-        }, function (error) {
-          reject(error)
         })
       })
     },

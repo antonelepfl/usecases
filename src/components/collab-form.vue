@@ -73,8 +73,9 @@
     },
     methods: {
       collabSelected: function (collab) {
-        this.isLoading = true
         var that = this
+        this.isLoading = true
+        that.errorMessage = ''
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false
@@ -83,6 +84,7 @@
       createNewCollab () {
         var that = this
         this.isLoading = true
+        that.errorMessage = ''
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
         this.createItemInNewCollab(isPrivate, this.searchText, this.uc_name)
         .then(function () {

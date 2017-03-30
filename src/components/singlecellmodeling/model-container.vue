@@ -12,10 +12,6 @@
                   v-on:touched="touched(model)"></model-item>
             </md-whiteframe>
 
-            <modal-component v-if="showModal" v-on:close="showModal = false">
-               <img slot="image" v-bind:src="modalSrc"/>
-               <h3 slot="header"> {{ path }}</h3>
-            </modal-component>
          <!--</div>
       </section>  end categories -->
       </div>
@@ -24,20 +20,17 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import modalComponent from '../modal-component.vue'
    import ModelsConfig from 'assets/config_files/models.json'
    import ModelsArray from 'assets/config_files/singlecellmodeling_structure.json'
    const VIEWER_URL = 'http://morph-view-bsp.apps.bbp.epfl.ch/'
    export default {
       name: 'modelContainer',
       components: {
-         modelItem, modalComponent
+         modelItem
       },
       props: ['list_usecases', 'model_name'],
       data () {
          return {
-            showModal: false,
-            modalSrc: String,
             modelsConfig: {},
             models: []
          }

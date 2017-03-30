@@ -8,12 +8,12 @@
       </div>
     </div>
 
-    <div class="item-body"@click="touched">
+    <div class="item-body">
       <div class="images-container">
         <img :src="model.morphImg" class="half" alt="image of morphology" @click="showImage">
         <img :src="model.reponsesImg" class="half" alt="image of reponses traces" @click="showImage">
       </div>
-      <div class="description-container"> 
+      <div class="description-container" @click="touched">
         <model-description class="model-description" :model="model"></model-description>
       </div>
     </div>

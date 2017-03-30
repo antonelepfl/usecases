@@ -7,11 +7,11 @@ const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
 const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
 const BSP_PUBLIC_REPO = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/'
+const USER_API = 'https://services.humanbrainproject.eu/idm/v1/api/user/me'
 
 export default {
   data () {
     return {
-      isLoading: false,
       errorMessage: '',
       typesCollabsApps: typesCollabsApps,
       header: {}
@@ -98,10 +98,12 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.post(collabReq, payload, that.header).then(function (response) {
           console.debug('Collab created')
-          var collabId = response.body.id
+          var collabId = response.body
           resolve(collabId)
         }, function (error) {
-          reject(error)
+          if (error.body.title[0] === 'collab with this title already exists.') {
+            reject('Collab already exist')
+          } else { reject(error) }
         })
       })
     },
@@ -154,7 +156,7 @@ export default {
       var url = STORAGE_FILE_API
       var that = this
       var t = new Date() // to avoid conflicts with fileNames in collab storage
-      var time = t.getHours().toString() + t.getSeconds().toString()
+      var time = t.getMilliseconds().toString()
       var payload = {
         'name': name + time + extension,
         'content_type': contentType,
@@ -285,22 +287,6 @@ export default {
         return item
       }
     },
-    createItemInNewCollab (isPrivate, searchText, uc) {
-      var that = this
-      return new Promise(function (resolve, reject) {
-        that.createCollab(searchText, isPrivate)
-        .then(function (collabId) {
-          that.createItemInExistingCollab({'id': collabId}, uc)
-          .then(function () {
-            resolve()
-          }, function (error) {
-            reject(error)
-          })
-        }, function (error) { // probably the already exist error
-          reject(error.body.title[0])
-        })
-      })
-    },
     getFileContent (fileId) {
       var that = this
       return new Promise(function (resolve, reject) {
@@ -319,6 +305,18 @@ export default {
         that.$http.post(STORAGE_FILE_API + fileId + '/content/upload/', content, that.header)
         .then(function (response) {
           resolve(fileId)
+        },
+        function (responseError) {
+          reject(responseError)
+        })
+      })
+    },
+    getUserInfo () {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(USER_API, that.header)
+        .then(function (response) {
+          resolve(response.body)
         },
         function (responseError) {
           reject(responseError)
@@ -372,8 +370,8 @@ export default {
         that.getAllNav(collab.id).then(function (parentNav) {
           var ucInfo = that.typesCollabsApps[uc]
           var exists = {};
+          ucInfo.entryname = ucInfo.entryname + ' - ' + morphology
           if (ucInfo.appid) { // is only one item
-            ucInfo.entryname = ucInfo.entryname + ' - ' + morphology
             exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
           }
           if (!exists.found) {
@@ -381,13 +379,13 @@ export default {
             if (ucInfo.children) {
               for (let i = 0; i < ucInfo.children.length; i++) {
                 var item = ucInfo.children[i]
-                item.entryname = item.entryname + ' - ' + morphology
-                exists = that.checkExists(parentNav, item.appid, item.entryname)
+                ucInfo.entryname = item.entryname + ' - ' + morphology
+                exists = that.checkExists(parentNav, item.appid, ucInfo.entryname)
                 if (!exists.found) {
                   if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
                     promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, item, parentNav))
                   } else { // is not jupyter notebok just connect to the original file
-                    promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+                    promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, item.appid))
                   }
                 }
               }
@@ -416,20 +414,6 @@ export default {
         }, function (error) {
           console.error(error)
           reject(error)
-        })
-      })
-    },
-    createItemInNewCollabWithReplace (isPrivate, searchText, uc, morphology) {
-      var that = this
-      return new Promise(function (resolve, reject) {
-        that.createCollab(searchText, isPrivate)
-        .then(function (collabId) {
-          that.createItemInExistingCollabWithReplace({'id': collabId}, uc, morphology)
-          .then(function () {
-            resolve()
-          }, reject)
-        }, function (error) { // probably the already exist error
-          reject(error.body.title[0])
         })
       })
     }

@@ -1,7 +1,6 @@
 import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 import createCollab from 'mixins/createCollab.js'
 import collabAuthentication from 'mixins/collabAuthentication.js'
-
 export default {
   data () {
     return {
@@ -46,10 +45,15 @@ export default {
     createMoocCollab (isPrivate, searchText, uc) {
       var that = this
       return new Promise(function (resolve, reject) {
-        that.createCollab(searchText, isPrivate)
-        .then(function (collabId) {
-          that.createItemInExistingCollab({'id': collabId}, uc)
-          .then(resolve)
+        that.getUserInfo().then(function (user) {
+          let d = new Date()
+          d = d.toLocaleDateString() + '-' + d.toLocaleTimeString()
+          let collabName = searchText + ' ' + user.displayName + ' ' + d
+          return that.createCollab(collabName, isPrivate)
+        })
+        .then(function (collab) {
+          that.createItemInExistingCollab(collab, uc)
+          .then(resolve, reject)
         }, function (error) { // probably the collab already exist error
           reject(error.body.title[0])
         })

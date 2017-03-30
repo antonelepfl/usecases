@@ -269,6 +269,21 @@
              },
              "next": null
           }
+       ],
+       "mooc": [
+         {
+            "title": "Initialize Mooc in collab",
+            "description": "",
+            "experience": ["all"],
+            "maturity": [""],
+            "access": [""],
+            "disabled": false,
+            "picture": {
+               "src": "https://collab.humanbrainproject.eu/assets/hbp_diamond_120.png",
+               "alt": "Collab logo "
+            },
+            "next": "mooc_form"
+         }
        ]
    },
    {

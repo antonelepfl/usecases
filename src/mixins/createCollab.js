@@ -59,8 +59,8 @@ export default {
         }
         var collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
         that.$http.post(collabReq, payload, that.header) // create navitem
-        .then(function (response) {
-          let navitemId = response.body.id
+        .then(function (navItem) {
+          let navitemId = navItem.body.id
           if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
             that.fillJupyterNavItem(fileId, navitemId, collabId, context)
             .then(function () {
@@ -154,7 +154,7 @@ export default {
       var url = STORAGE_FILE_API
       var that = this
       var payload = {
-        'name': name + uuid() + extension,
+        'name': name + extension,
         'content_type': contentType,
         'parent': parent
       }
@@ -206,20 +206,14 @@ export default {
             reject()
           }
           return that.copyFileContent(originalFileId, file.uuid)
-        }, function (error) {
-          reject(error)
-        })
+        }, reject)
         .then(function (newFileId) {
           var entryName = appInfo.entryname
           return that.createNavEntry(entryName, collabId, parentNav.id, appInfo.appid, newFileId)
-        }, function (error) {
-          reject(error)
-        })
+        }, reject)
         .then(function (obj) {
           resolve(obj)
-        }, function (error) {
-          reject(error)
-        })
+        }, reject)
       })
     },
     createItemInExistingCollab (collab, uc) {
@@ -252,25 +246,28 @@ export default {
                 promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
               }
             }
-            Promise.all(promises).then(function (generatedNotebooks) {
-              let obj = generatedNotebooks[0]
-              if (obj.collabId) {
-                that.redirectToCollab(obj.collabId, obj.navitemId)
-                resolve()
-              }
-            }, function (e) {
-              console.error('Error creating multiple files in existing collab', e)
-              reject(e)
-            })
+            if (promises.length === 0) {
+              console.debug('Existing apps in collab found')
+              that.redirectToCollab(collab.id, exists.navitemId)
+              resolve()
+            } else {
+              Promise.all(promises).then(function (generatedNotebooks) {
+                let obj = generatedNotebooks[0]
+                if (obj.collabId) {
+                  that.redirectToCollab(obj.collabId, obj.navitemId)
+                  resolve()
+                }
+              }, function (e) {
+                console.error('Error creating multiple files in existing collab', e)
+                reject(e)
+              })
+            }
           } else { // found
             console.debug('Existing app in collab found')
             that.redirectToCollab(collab.id, exists.navitemId)
             resolve()
           }
-        }, function (error) {
-          console.error(error)
-          reject(error)
-        })
+        }, reject)
       })
     },
     checkExists (nav, appId, appName) {

@@ -51,6 +51,13 @@ const router = new VueRouter({
       },
       props: true,
       name: 'cb_form'
+    },
+    { path: '/:list_usecases/:uc_name', // form for the circuitbuilding models
+      component: function (resolve) {
+        require(['components/mooc/mooc-form.vue'], resolve)
+      },
+      props: true,
+      name: 'mooc_form'
     }
   ],
   base: '/usecases/',

@@ -109,5 +109,24 @@
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
     "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d"
+  },
+  "initializemoocincollab": {
+    "children": [
+      {
+        "entryname": "Ball and Stick",
+        "appid": 175,
+        "contenttype": "x-ipynb+json",
+        "extension": ".ipynb",
+        "file": "96ef97ec-370b-401d-9e20-1aa72066b8f4"
+      },
+      {
+        "entryname": "segments",
+        "appid": 175,
+        "contenttype": "image/jpeg",
+        "extension": ".jpg",
+        "file": "22f851ce-f667-4b59-8750-1f06a16d0a0f",
+        "justcopy": true
+      }
+    ]
   }
 }

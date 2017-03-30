@@ -3,7 +3,7 @@
     <h3>
       Welcome! Please initialize your collabs pressing the button
     </h3>
-    <button type="button" @click="initializeCollab">Initialize Collab</button>
+    <button type="button" @click="createNewCollab">Initialize Collab</button>
     <div v-show="isLoading" class="progress-bar">
       <md-progress class="md-accent" md-indeterminate></md-progress>
     </div>
@@ -39,6 +39,7 @@
         var that = this
         var isPrivate = true
         this.isLoading = true
+        this.errorMessage = ''
         let name = this.searchText + ' ' + Math.trunc(Math.random() * 10000)
         this.createMoocCollab(isPrivate, name, this.uc_name)
         .then(function () {
@@ -54,9 +55,6 @@
             that.isLoading = false
           }
         })
-      },
-      initializeCollab () {
-        this.createNewCollab()
       }
     }
   }
@@ -71,5 +69,9 @@
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+  }
+  .progress-bar {
+    margin-top: 20px;
+    width: 40%;
   }
 </style>

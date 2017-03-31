@@ -13,12 +13,12 @@
       },
       props: ['list_usecases', 'uc_name'],
       methods: {
-        touched (modelItem) { // open the 3D viewer or continue with the collab search
-          this.$router.push({name: 'cb_models_form',
-            params: {
-              'uc_name': this.uc_name
-            }
-          })
+        touched (modelItem) {
+          // this.$router.push({name: 'sc_models_form',
+          //   params: {
+          //     'folder_name': modelItem.folderName
+          //   }
+          // })
         }
       }
    }

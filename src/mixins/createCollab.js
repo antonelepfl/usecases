@@ -6,7 +6,6 @@ const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
 const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
-const BSP_PUBLIC_REPO = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/'
 const USER_API = 'https://services.humanbrainproject.eu/idm/v1/api/user/me'
 
 export default {
@@ -134,9 +133,6 @@ export default {
           url: COLLAB_HOME + collabId + '/nav/' + navitemId
         }
       }, '*')
-      setTimeout(function () {
-        this.errorMessage = 'Collab created but not redirected (it is not embed)'
-      }.bind(this), 1000)
     },
     getCollabStorage (collabId) {
       var url = COLLAB_STORAGE_API + collabId
@@ -193,6 +189,8 @@ export default {
       })
     },
     generateNotebook (collabId, appInfo, parentNav) {
+      /* this function creates a file, copy the content of the file
+      into new app and create a navitem for that file */
       var that = this
       return new Promise(function (resolve, reject) {
         that.getCollabStorage(collabId)
@@ -202,16 +200,10 @@ export default {
           return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
         })
         .then(function (file) {
-          var originalFileId = appInfo.file
-          if (!originalFileId) {
-            console.error('No entry in typesCollabsApps.json')
-            reject()
-          }
-          return that.copyFileContent(originalFileId, file.uuid)
+          return that.copyFileContent(appInfo.file, file.uuid)
         }, reject)
         .then(function (newFileId) {
-          var entryName = appInfo.entryname
-          return that.createNavEntry(entryName, collabId, parentNav.id, appInfo.appid, newFileId)
+          return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)
         }, reject)
         .then(function (obj) {
           resolve(obj)
@@ -219,61 +211,78 @@ export default {
       })
     },
     createItemInExistingCollab (collab, uc) {
+      var ucInfo = this.typesCollabsApps[uc]
       var that = this
       return new Promise(function (resolve, reject) {
-        var ucInfo = that.typesCollabsApps[uc]
         if (ucInfo === undefined) {
           reject('No item in typesCollabsApps.json')
         } else {
-          that.getAllNav(collab.id).then(function (parentNav) {
-            var exists = {};
-            if (ucInfo.appid) { // is only one item
-              exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
-            }
-            if (!exists.found) { // does not exist or has children
-              var promises = []
-              if (ucInfo.children) {
-                for (let i = 0; i < ucInfo.children.length; i++) {
-                  var item = ucInfo.children[i]
-                  exists = that.checkExists(parentNav, item.appid, item.entryname)
-                  if (!exists.found) {
-                    if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                      promises.push(that.generateNotebook(collab.id, item, parentNav))
-                    } else { // is not jupyter notebok just connect to the original file
-                      promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
-                    }
-                  }
-                }
-              } else { // is only one navitem
-                if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                  promises.push(that.generateNotebook(collab.id, ucInfo, parentNav))
-                } else { // is not jupyter notebok just connect to the original file
-                  promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
-                }
-              }
-              if (promises.length === 0) {
-                console.debug('Existing apps in collab found')
-                that.redirectToCollab(collab.id, exists.navitemId)
+          var tempPromise = null // to avoid code duplication
+          if (ucInfo.children) {
+            tempPromise = that.createMultipleItemsInExistingCollab(collab, uc)
+          } else {
+            tempPromise = that.createSingleItemInExistingCollab(collab, uc)
+          }
+          tempPromise.then(function (promises) {
+            Promise.all(promises)
+            .then(function (elements) {
+              let obj = elements[0]
+              if (obj.collabId) {
+                that.redirectToCollab(obj.collabId, obj.navitemId)
                 resolve()
-              } else {
-                Promise.all(promises).then(function (generatedNotebooks) {
-                  let obj = generatedNotebooks[0]
-                  if (obj.collabId) {
-                    that.redirectToCollab(obj.collabId, obj.navitemId)
-                    resolve()
-                  }
-                }, function (e) {
-                  console.error('Error creating multiple files in existing collab', e)
-                  reject(e)
-                })
               }
-            } else { // found
-              console.debug('Existing app in collab found')
-              that.redirectToCollab(collab.id, exists.navitemId)
-              resolve()
-            }
-          }, reject)
+            }, reject)
+          })
         }
+      })
+    },
+    createSingleItemInExistingCollab (collab, uc) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        var ucInfo = that.typesCollabsApps[uc]
+        that.getAllNav(collab.id).then(function (parentNav) {
+          var exists = {};
+          var promises = []
+          exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
+          if (!exists.found) { // does not exist or has children
+            if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              promises.push(that.generateNotebook(collab.id, ucInfo, parentNav))
+            } else { // is not jupyter notebok just connect to the original file
+              promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
+            }
+            resolve(promises)
+          } else {
+            exists['collabId'] = collab.id
+            resolve([exists])
+          }
+        }, reject)
+      })
+    },
+    createMultipleItemsInExistingCollab (collab, uc) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        var ucInfo = that.typesCollabsApps[uc]
+        that.getAllNav(collab.id).then(function (parentNav) {
+          var exists = {};
+          var promises = []
+          for (let i = 0; i < ucInfo.children.length; i++) {
+            var item = ucInfo.children[i]
+            exists = that.checkExists(parentNav, item.appid, item.entryname)
+            if (!exists.found) {
+              if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                promises.push(that.generateNotebook(collab.id, item, parentNav))
+              } else { // is not jupyter notebok just connect to the original file
+                promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
+              }
+            }
+          }
+          if (promises.length === 0) {
+            exists['collabId'] = collab.id
+            resolve([exists])
+          } else {
+            resolve(promises)
+          }
+        }, reject)
       })
     },
     checkExists (nav, appId, appName) {
@@ -327,22 +336,17 @@ export default {
         })
       })
     },
-    replaceJupyterContentAndCopy (findString, replaceString, collabId, appInfo, parentNav) {
+    replaceContentAndCopy (findString, replaceString, collabId, appInfo, parentNav) {
+      /* this function takes a string and replace for another inside a file the content of the app
+      into new app and create a navitem for that file */
       var that = this
       return new Promise(function (resolve, reject) {
-        var originalFileId = appInfo.file
         var replacedFileContent = ''
-        if (!originalFileId) {
-          console.error('No entry in typesCollabsApps.json')
-          reject()
-        }
-        that.getFileContent(originalFileId)
+        that.getFileContent(appInfo.file)
         .then(function (fileContent) {
           replacedFileContent = fileContent.replace(findString, replaceString)
           return that.getCollabStorage(collabId)
-        }, function (error) {
-          reject(error)
-        })
+        }, reject)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
           var name = 'replaced-'
@@ -350,74 +354,14 @@ export default {
         })
         .then(function (file) {
           return that.setFileContent(file.uuid, replacedFileContent)
-        }, function (error) {
-          reject(error)
-        })
+        }, reject)
         .then(function (newFileId) {
           var entryName = appInfo.entryname
           return that.createNavEntry(entryName, collabId, parentNav.id, appInfo.appid, newFileId)
-        }, function (error) {
-          reject(error)
-        })
+        }, reject)
         .then(function (obj) {
           resolve(obj)
-        }, function (error) {
-          reject(error)
-        })
-      })
-    },
-    createItemInExistingCollabWithReplace (collab, uc, morphology, findString) {
-      var replaceString = BSP_PUBLIC_REPO + morphology + '/' + morphology + '.zip'
-      var that = this
-      return new Promise(function (resolve, reject) {
-        that.getAllNav(collab.id).then(function (parentNav) {
-          var ucInfo = that.typesCollabsApps[uc]
-          var exists = {};
-          ucInfo.entryname = ucInfo.entryname + ' - ' + morphology
-          if (ucInfo.appid) { // is only one item
-            exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
-          }
-          if (!exists.found) {
-            var promises = []
-            if (ucInfo.children) {
-              for (let i = 0; i < ucInfo.children.length; i++) {
-                var item = ucInfo.children[i]
-                ucInfo.entryname = item.entryname + ' - ' + morphology
-                exists = that.checkExists(parentNav, item.appid, ucInfo.entryname)
-                if (!exists.found) {
-                  if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                    promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, item, parentNav))
-                  } else { // is not jupyter notebok just connect to the original file
-                    promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, item.appid))
-                  }
-                }
-              }
-            } else { // is only one navitem
-              if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                promises.push(that.replaceJupyterContentAndCopy(findString, replaceString, collab.id, ucInfo, parentNav))
-              } else { // is not jupyter notebok just connect to the original file
-                promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
-              }
-            }
-            Promise.all(promises).then(function (generatedNotebooks) {
-              let obj = generatedNotebooks[0]
-              if (obj.collabId) {
-                that.redirectToCollab(obj.collabId, obj.navitemId)
-                resolve()
-              }
-            }, function (e) {
-              console.error('Error creating multiple files in existing collab')
-              reject(e)
-            })
-          } else { // found
-            console.debug('Existing app in collab found')
-            that.redirectToCollab(collab.id, exists.navitemId)
-            resolve()
-          }
-        }, function (error) {
-          console.error(error)
-          reject(error)
-        })
+        }, reject)
       })
     }
   }

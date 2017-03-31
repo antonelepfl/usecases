@@ -1,5 +1,5 @@
 <template>
-  <div class="morph-form-replacing">
+  <div class="model-form">
     <collab-form-component
       v-on:collabSelected="collabSelected"
       v-on:collabCreated="createNewCollab"
@@ -26,7 +26,7 @@
     components: {
       'collab-form-component': collabFormComponent
     },
-    props: ['model_name', 'folder_name'],
+    props: ['uc_name', 'folder_name'],
     mixins: [createCollab, morphology], // use common functions
     methods: {
       collabSelected: function (collab) {
@@ -34,7 +34,7 @@
         this.error = ''
         this.isLoading = true
         var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
-        this.createItemInExistingCollabWithReplace(collab, this.model_name, this.folder_name, findString)
+        this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .then(function () {
           that.isLoading = false
         }, function (error) {

@@ -55,6 +55,13 @@ const router = new VueRouter({
       props: true,
       name: 'sc_models'
     },
+    { path: '/singlecellmodeling/:uc_name/:folder_name',
+      component: function (resolve) {
+        require(['components/singlecellmodeling/model-form.vue'], resolve)
+      },
+      props: true,
+      name: 'sc_models_form'
+    },
     // ============================ moprhology ============================
     { path: '/morphology/:uc_name',
       component: function (resolve) {

@@ -5,6 +5,9 @@
       v-on:collabCreated="createNewCollab"
       :isLoading="isLoading">
     </cb-form-component>
+    <div class="error">
+      {{error}}
+    </div>
   </div>
 </template>
 
@@ -28,14 +31,19 @@
       collabSelected: function (collab) {
         var that = this
         this.isLoading = true
+        this.error = ''
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false
-        }, function (error) { that.errorMessage = error })
+        }, function (error) {
+          that.isLoading = false
+          that.error = error
+        })
       },
       createNewCollab (collab) {
         var that = this
         this.isLoading = true
+        this.error = ''
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false
@@ -46,5 +54,8 @@
 </script>
 
 <style scoped>
-
+.error {
+  color: red;
+  text-align: center;
+}
 </style>

@@ -6,14 +6,13 @@
       <md-progress class="md-accent" md-indeterminate></md-progress>
     </div>
     <div class="error">
-      {{this.errorMessage}}
+      {{errorMessage}}
     </div>
   </div>
 </template>
 
 <script>
   import mooc from './mooc.js'
-  import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 
   export default {
     name: 'moocForm',
@@ -27,11 +26,6 @@
     },
     props: ['uc_name'],
     mixins: [mooc], // use common functions
-    mounted () {
-      if (typesCollabsApps[this.uc_name] === undefined) {
-        this.errorMessage = 'No defined application for ' + this.uc_name + ' in typesCollabsApps.json'
-      }
-    },
     methods: {
       createNewCollab () {
         var that = this
@@ -49,7 +43,6 @@
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {
-            that.errorMessage = error
             that.isLoading = false
           }
         })
@@ -59,9 +52,6 @@
 </script>
 
 <style scoped>
-  .error {
-    color: red;
-  }
   .mooc-form {
     display: flex;
     flex-direction: column;
@@ -71,5 +61,9 @@
   .progress-bar {
     margin-top: 20px;
     width: 40%;
+  }
+  .error {
+    color: red;
+    text-align: center;
   }
 </style>

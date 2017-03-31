@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import createCollab from '../mixins/createCollab.js'
+  import createCollab from 'mixins/createCollab.js'
 
   export default {
     name: 'collabFormComponent',

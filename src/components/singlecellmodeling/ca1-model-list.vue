@@ -2,11 +2,18 @@
    <div class="ca1-model-list">
       <div class="title">Please select a model</div>
       <div class="content">
+        <md-whiteframe md-elevation="1">
+          <div class="search-container">
+            <i class="material-icons">search</i>
+            <input class="searchbox" type="text" v-model="filter" placeholder="Search synthesis">
+          </div>
+        </md-whiteframe>
+
         <md-whiteframe md-elevation="1" class="item-sections" v-for="model in models">
-           <model-item
-              class="model-item"
-              :model="model"
-              @click.native="touched(model)"></model-item>
+          <model-item
+            class="model-item"
+            :model="model"
+            @click.native="touched(model)"></model-item>
         </md-whiteframe>
       </div>
    </div>
@@ -24,14 +31,15 @@
       data () {
          return {
             modelsConfig: {},
-            models: []
+            models: [],
+            filter: ''
          }
       },
       methods: {
         touched (modelItem) {
           this.$emit('selected', modelItem)
         },
-        getMetadata: function (folderContent) {
+        getMetadata (folderContent) {
           let that = this;
           for (let i = 0; i < folderContent.length; i++) {
             let elem = folderContent[i]
@@ -44,12 +52,40 @@
             modelInfo.folderName = fileName
             that.models.push(modelInfo)
           }
+        },
+        search (text) {
+          var paths = this.$el.querySelectorAll('.path')
+          var textParts = text.split(' ')
+          // Loop through all table rows, and hide those who don't match the search query
+          for (let i = 0; i < paths.length; i++) {
+            let j = 0
+            let partsFound = 0
+            while (j < textParts.length) {
+              let filter = textParts[j]
+              filter = filter.toUpperCase()
+              let path = paths[i].innerText.toUpperCase()
+              if (path.indexOf(filter) >= 0) {
+                partsFound = partsFound + 1
+              }
+              j++;
+            }
+            if (partsFound === textParts.length) { // it is the last element in the row and found all
+              paths[i].parentElement.parentElement.style.display = '';
+            } else {
+              paths[i].parentElement.parentElement.style.display = 'none';
+            }
+          }
         }
       },
       created () {
         this.modelsConfig = ModelsConfig['ca1models']
         document.querySelector('title').innerHTML = 'Models'
         this.getMetadata(ModelsArray)
+      },
+      watch: {
+        'filter': function (newVal) {
+          this.search(newVal)
+        }
       }
    }
 </script>
@@ -108,4 +144,19 @@
       50% {border: 3px solid gray;}
       100% {border: 3px solid black;}
    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #cfe2e8;
+    }
+    .searchbox {
+      font-size: 22px;
+      padding-left: 30px;
+      border: 1px solid #ddd;
+      margin-bottom: 0;
+      margin-left: 12px;
+      width: 100%;
+    }
 </style>

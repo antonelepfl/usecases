@@ -8,8 +8,8 @@
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
-import ucContainer from './traceanalysis/uc-container.vue'
-import CollabAuthentication from '../mixins/collabAuthentication.js'
+import ucContainer from 'components/uc/uc-container.vue'
+import CollabAuthentication from 'mixins/collabAuthentication.js'
 
 Vue.use(VueMaterial)
 

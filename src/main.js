@@ -17,42 +17,61 @@ const router = new VueRouter({
       component: App,
       props: true // to see in the component as props
     },
-    { path: '/:list_usecases/smmodels/:model_name', // models for singlecellmodeling
+    // ============================ trace analysis ============================
+    { path: '/traceanalysis/:uc_name',
       component: function (resolve) {
-        require(['components/singlecellmodeling/model-container.vue'], resolve)
+        require(['components/traceanalysis/ta-form.vue'], resolve)
       },
       props: true,
-      name: 'singlecellmodeling_models'
+      name: 'ta_form'
     },
-    { path: '/:list_usecases/form/:uc_name', // form to search / crate collabs
-      component: function (resolve) {
-        require(['components/collab-form.vue'], resolve)
-      },
-      props: true,
-      name: 'uc_form'
-    },
-    { path: '/:list_usecases/smmodels/:model_name/form/:folder_name', // form to search / crate collabs
-      component: function (resolve) {
-        require(['components/collab-form-replacing.vue'], resolve)
-      },
-      props: true,
-      name: 'sm_replacing_form'
-    },
-    { path: '/:list_usecases/cbmodels/:model_name', // circuit building models
+    // ============================ circuit building ============================
+    { path: '/circuitbuilding/:uc_name',
       component: function (resolve) {
         require(['components/circuitbuilding/model-container.vue'], resolve)
       },
       props: true,
       name: 'cb_models'
     },
-    { path: '/:list_usecases/cbmodels/:model_name/form/:uc_name', // form for the circuitbuilding models
+    { path: '/circuitbuilding/:uc_name/:model_name',
       component: function (resolve) {
-        require(['components/collab-form.vue'], resolve)
+        require(['components/circuitbuilding/cb-form.vue'], resolve)
       },
       props: true,
       name: 'cb_form'
     },
-    { path: '/:list_usecases/:uc_name', // form for the circuitbuilding models
+    // ============================ singlecellmodeling ============================
+    { path: '/singlecellmodeling/:uc_name',
+      component: function (resolve) {
+        require(['components/traceanalysis/ta-form.vue'], resolve)
+      },
+      props: true,
+      name: 'sc_form'
+    },
+    { path: '/singlecellmodeling/:uc_name',
+      component: function (resolve) {
+        require(['components/singlecellmodeling/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'sc_models'
+    },
+    // ============================ moprhology ============================
+    { path: '/morphology/:uc_name',
+      component: function (resolve) {
+        require(['components/morphology/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'morph_models'
+    },
+    { path: '/morphology/:uc_name/:folder_name',
+      component: function (resolve) {
+        require(['components/morphology/form-replacing.vue'], resolve)
+      },
+      props: true,
+      name: 'morph_form_replacing'
+    },
+    // ============================ mooc ============================
+    { path: '/mooc/:uc_name',
       component: function (resolve) {
         require(['components/mooc/mooc-form.vue'], resolve)
       },

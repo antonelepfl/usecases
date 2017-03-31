@@ -12,7 +12,7 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          },
          {
             "title": "Synaptic events fitting",
@@ -25,7 +25,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          },
          {
             "title": "Synaptic events fitting (user's model)",
@@ -38,7 +38,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          },
          {
             "title": "Synaptic events fitting (user's data)",
@@ -51,7 +51,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          },
          {
             "title": "Feature registration",
@@ -64,7 +64,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          },
          {
             "title": "Feature comparison",
@@ -77,7 +77,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/features.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          },
          {
             "title": "Synaptic events fitting registration",
@@ -90,7 +90,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/bestfit.png?raw=true",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": "ta_form"
          }
       ],
       "singlecellmodeling": [
@@ -105,7 +105,7 @@
               "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
               "alt": "Logo of Single cell model"
            },
-           "next": "singlecellmodeling_models"
+           "next": "sc_models"
         },
          {
             "title": "Build your own single cell model using HBP data",
@@ -118,7 +118,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "next": "uc_form"
+            "next": "sc_form"
          },
          {
             "title": "Build your own single cell model using HBP and your own data",
@@ -131,7 +131,7 @@
                "src": "https://github.com/antonelepfl/usecases/blob/master/src/assets/objectives.png?raw=true",
                "alt": "Logo of Single cell model"
             },
-            "next": "uc_form"
+            "next": null
          },
          {
             "title": "Create a single cell model",
@@ -144,7 +144,7 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": null
          },
          {
             "title": "Release single cell",
@@ -157,7 +157,7 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": null
          },
          {
             "title": "Release single cell building process",
@@ -170,7 +170,7 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": null
          },
          {
             "title": "Export single cell model to NeuroML",
@@ -183,7 +183,7 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "uc_form"
+            "next": null
          }
       ],
       "circuitbuilding": [
@@ -226,7 +226,7 @@
                "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/morphology.png",
                "alt": "Morphology Analysis "
             },
-            "next": "singlecellmodeling_models"
+            "next": "morph_models"
          },
          {
             "title": "Morphology Visualization",
@@ -239,7 +239,7 @@
                "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/morphology_3d.png",
                "alt": "Morphology Analysis "
             },
-            "next": "singlecellmodeling_models"
+            "next": "morph_models"
          }
        ],
        "singlecellinsilicoexperiments": [

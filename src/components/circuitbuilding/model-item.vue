@@ -8,7 +8,7 @@
 </template>
 
 <script>
-   import ucDescription from '../traceanalysis/uc-description.vue'
+   import ucDescription from 'components/uc/uc-description.vue'
    export default {
       name: 'modelItem',
       components: {

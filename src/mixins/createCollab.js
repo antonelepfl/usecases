@@ -362,8 +362,7 @@ export default {
         })
       })
     },
-    createItemInExistingCollabWithReplace (collab, uc, morphology) {
-      var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
+    createItemInExistingCollabWithReplace (collab, uc, morphology, findString) {
       var replaceString = BSP_PUBLIC_REPO + morphology + '/' + morphology + '.zip'
       var that = this
       return new Promise(function (resolve, reject) {
@@ -403,7 +402,7 @@ export default {
                 resolve()
               }
             }, function (e) {
-              console.error('Error creating multiple files in existing collab', e)
+              console.error('Error creating multiple files in existing collab')
               reject(e)
             })
           } else { // found

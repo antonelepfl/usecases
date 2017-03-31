@@ -1,134 +1,29 @@
 <template>
    <div class="model-container">
-      <div class="title">Please select a model</div>
-      <div class="content">
-        <md-whiteframe md-elevation="1" class="item-sections" v-for="model in models">
-           <model-item
-              class="model-item"
-              :model="model"
-              v-on:touched="touched(model)"></model-item>
-        </md-whiteframe>
-      </div>
+      <ca1-model-list v-on:selected="touched"></ca1-model-list>
    </div>
 </template>
 
 <script>
-   import modelItem from './model-item.vue'
-   import ModelsConfig from 'assets/config_files/models.json'
-   import ModelsArray from 'assets/config_files/singlecellmodeling_structure.json'
-   const VIEWER_URL = 'http://morph-view-bsp.apps.bbp.epfl.ch/'
+   import ca1ModelList from './ca1-model-list.vue'
    export default {
       name: 'modelContainer',
       components: {
-         'model-item': modelItem
+         'ca1-model-list': ca1ModelList
       },
-      props: ['list_usecases', 'model_name'],
-      data () {
-         return {
-            modelsConfig: {},
-            models: []
-         }
-      },
+      props: ['list_usecases', 'uc_name'],
       methods: {
         touched (modelItem) { // open the 3D viewer or continue with the collab search
-          let viewUrl = ''
-          switch (this.model_name) {
-            case 'morphologyvisualization':
-              viewUrl = VIEWER_URL + modelItem.folderName + '.html'
-              window.open(viewUrl, '_blank');
-              break;
-            case 'morphologyanalysis':
-              this.$router.push({name: 'sm_replacing_form',
-                params: {
-                  'folder_name': modelItem.folderName,
-                  'list_usecases': this.list_usecases,
-                  'model_name': this.model_name
-                }
-              })
-              break;
-            default:
-              this.$router.push({name: 'uc_form',
-                params: {
-                  'uc_name': this.model_name
-                }
-              })
-          }
-        },
-         getMetadata: function (folderContent) {
-           let that = this;
-           for (let i = 0; i < folderContent.length; i++) {
-             let elem = folderContent[i]
-             let fileName = Object.keys(elem)[0]
-             let modelInfo = elem[fileName].meta
-             let morphPath = that.modelsConfig.raw + fileName + '/' + elem[fileName].morph
-             modelInfo.morphImg = morphPath
-             let responsePath = that.modelsConfig.raw + fileName + '/' + elem[fileName].responses
-             modelInfo.reponsesImg = responsePath
-             modelInfo.folderName = fileName
-             that.models.push(modelInfo)
-           }
-         }
-      },
-      created () {
-        this.modelsConfig = ModelsConfig[this.model_name]
-        document.querySelector('title').innerHTML = 'Models'
-        this.getMetadata(ModelsArray)
+          this.$router.push({name: 'cb_models_form',
+            params: {
+              'uc_name': this.uc_name
+            }
+          })
+        }
       }
    }
 </script>
 
 <style scoped>
-   .model-container {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-   }
-   .model-container .content {
-      padding: 10px;
-      margin-top: 50px;
-   }
-   .model-container .item-sections {
-      margin-top: 10px;
-      margin-bottom: 15px;
-      padding: 9px;
-      border: 3px solid white;
-   }
-   .model-container .selected {
-      background-color: lightgray;
-      transition: background-color 0.5s ease;
-   }
-   .model-container > .title {
-      box-shadow: 0 2px 5px rgba(0,0,0,.26);
-      position: fixed;
-      text-align: left;
-      color: #fff;
-      background-color: rgba(172, 96, 103, 0.95);
-      padding: 20px;
-      font-size: 20px;
-      font-weight: 600;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 2;
-   }
-   .model-container .item-sections:hover {
-      transition: 0.3s ease;
-      box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
-   }
-   .model-container .touched {
-      animation: shake 0.5s;
-      border: 3px solid;
-   }
-   @keyframes shake {
-      0% {border: 3px solid white;}
-      50% {border: 3px solid gray;}
-      100% {border: 3px solid black;}
-   }
-   @-webkit-keyframes shake {
-      0% {border: 3px solid white;}
-      50% {border: 3px solid gray;}
-      100% {border: 3px solid black;}
-   }
+
 </style>

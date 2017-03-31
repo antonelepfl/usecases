@@ -30,28 +30,7 @@
          selected (uc) {
             if (!uc.disabled) {
               var ucName = uc.title.toLowerCase().replace(/\s/g, '')
-              switch (uc.next) {
-                case 'uc_form': {
-                  this.$router.push({name: uc.next, params: {'uc_name': ucName}})
-                  break
-                }
-                case 'cb_form': {
-                  this.$router.push({name: uc.next, params: {'uc_name': ucName, 'model_name': ucName}})
-                  break
-                }
-                case 'cb_models': {
-                  this.$router.push({name: uc.next, params: {'model_name': ucName}})
-                  break
-                }
-                case 'singlecellmodeling_models': {
-                  this.$router.push({name: uc.next, params: {'model_name': ucName}})
-                  break
-                }
-                case 'mooc_form': {
-                  this.$router.push({name: uc.next, params: {'uc_name': ucName}})
-                  break
-                }
-              }
+              this.$router.push({name: uc.next, params: {'uc_name': ucName}})
             }
          },
          prettyfy (name) {
@@ -61,7 +40,7 @@
          }
       },
       mounted () {
-        var ucSelected = this.$route.path.replace('/', '')
+        var ucSelected = this.$route.path.replace(/\//g, '')
         this.usecases = usecases[0][ucSelected]
         var title = ucSelected
         document.querySelector('title').innerText = this.prettyfy(title)

@@ -18,22 +18,22 @@
       components: {
          'model-item': modelItem
       },
-      // props: ['singlePage', 'next'],
-      props: ['next', 'single', 'model_name', 'list_usecases'],
+      props: ['uc_name'],
       data () {
          return {
             modelsConfig: ModelsConfig,
-            models: []
+            models: [],
+            list_usecases: 'circuitbuilding'
          }
       },
       methods: {
          selected (model) {
-           var pathName = this.$route.params.model_name
+           var pathName = this.uc_name
            pathName = pathName + model.species
            pathName = pathName + model.brain_structure
            pathName = pathName + model.cell_soma_location
            pathName = pathName.toLowerCase()
-           this.$router.push({name: 'cb_form', params: {'uc_name': pathName}})
+           this.$router.push({name: 'cb_form', params: {'model_name': pathName}})
          },
          prettyfy (name) {
             return name.split('_').map(function (word) {

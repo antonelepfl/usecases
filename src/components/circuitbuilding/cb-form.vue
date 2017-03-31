@@ -1,10 +1,10 @@
 <template>
-  <div class="collab-form">
-    <collab-form-component
+  <div class="cb-form">
+    <cb-form-component
       v-on:collabSelected="collabSelected"
       v-on:collabCreated="createNewCollab"
       :isLoading="isLoading">
-    </collab-form-component>
+    </cb-form-component>
     <div class="error">
       {{error}}
     </div>
@@ -12,9 +12,8 @@
 </template>
 
 <script>
-  import collabFormComponent from './collab-form-component.vue'
-  import createCollab from '../mixins/createCollab.js'
-  import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
+  import collabFormComponent from 'components/collab-form-component.vue'
+  import createCollab from 'mixins/createCollab.js'
   export default {
     name: 'collabForm',
     data () {
@@ -23,29 +22,29 @@
         error: ''
       }
     },
-    props: ['uc_name'],
+    props: ['model_name'],
     mixins: [createCollab], // use common functions
     components: {
-      'collab-form-component': collabFormComponent
-    },
-    mounted () {
-      if (!typesCollabsApps[this.uc_name]) {
-        this.error = 'No file defined in typesCollabsApps.json'
-      }
+      'cb-form-component': collabFormComponent
     },
     methods: {
       collabSelected: function (collab) {
         var that = this
         this.isLoading = true
-        this.createItemInExistingCollab(collab, this.uc_name)
+        this.error = ''
+        this.createItemInExistingCollab(collab, this.model_name)
         .then(function () {
           that.isLoading = false
-        }, function (error) { that.errorMessage = error })
+        }, function (error) {
+          that.isLoading = false
+          that.error = error
+        })
       },
       createNewCollab (collab) {
         var that = this
+        this.error = ''
         this.isLoading = true
-        this.createItemInExistingCollab(collab, this.uc_name)
+        this.createItemInExistingCollab(collab, this.model_name)
         .then(function () {
           that.isLoading = false
         })
@@ -55,8 +54,8 @@
 </script>
 
 <style scoped>
-  .error {
-    color: red;
-    text-align: center;
-  }
+.error {
+  color: red;
+  text-align: center;
+}
 </style>

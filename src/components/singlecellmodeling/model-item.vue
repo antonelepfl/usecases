@@ -1,7 +1,7 @@
 <template>
   <div class="model-item">
 
-    <div class="path" @click="touched">
+    <div class="path" @click="search">
       <div class="inline" v-for="(part, index) in pathParts">
         <span class="square">{{ part }}</span>
         <span v-show="hasNext(index)"> > </span>
@@ -45,6 +45,14 @@
       touched (event) {
         this.$emit('touched')
       },
+      search (event) {
+        let searchText = event.target.innerText
+        if (searchText !== '>') {
+          this.$emit('addSearch', {
+            'text': searchText
+          })
+        }
+      },
       getPath () {
         this.pathParts.push(this.model.species)
         this.pathParts.push(this.model.brain_structure)
@@ -62,7 +70,7 @@
 </script>
 
 <style scoped>
-  .model-item {
+  .item-body {
     cursor: pointer;
   }
   .model-item-picture {
@@ -74,6 +82,7 @@
     padding: 5px;
     text-shadow: 2px 2px rgba(120, 130, 253, 0.13);
     text-align: left;
+    cursor: default;
   }
   .inline {
     padding: 4px;

@@ -13,7 +13,8 @@
           <model-item
             class="model-item"
             :model="model"
-            @click.native="touched(model)"></model-item>
+            v-on:touched="touched(model)"
+            v-on:addSearch="addSearch"></model-item>
         </md-whiteframe>
       </div>
    </div>
@@ -52,6 +53,9 @@
             modelInfo.folderName = fileName
             that.models.push(modelInfo)
           }
+        },
+        addSearch (obj) {
+          this.filter += ' ' + obj.text
         },
         search (text) {
           var paths = this.$el.querySelectorAll('.path')

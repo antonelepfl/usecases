@@ -12,6 +12,7 @@ Vue.use(VueMaterial)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json
       component: App,

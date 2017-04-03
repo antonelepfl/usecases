@@ -12,9 +12,10 @@ export default {
   },
   methods: {
     login (displayMethod) {
+      // var that = this
       if (displayMethod === undefined) { displayMethod = 'page' }
       return new Promise(function (resolve, reject) {
-        hbpHello.login('hbp', {'display': displayMethod, force: false})
+        hbpHello.login('hbp', {'display': displayMethod, force: false, redirect_uri: window.location.href})
         .then(function (event) {
           console.debug('Login user OK')
           resolve()

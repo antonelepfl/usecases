@@ -5,7 +5,7 @@
         <md-whiteframe md-elevation="1">
           <div class="search-container">
             <i class="material-icons">search</i>
-            <input class="searchbox" type="text" v-model="filter" placeholder="Search synthesis">
+            <input class="searchbox" type="text" v-model="filter" placeholder="Search e.g 'Hippocampus' or click on the item's title to filter">
           </div>
         </md-whiteframe>
 

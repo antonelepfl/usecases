@@ -27,14 +27,12 @@ export default {
   mixins: [CollabAuthentication],
   created () {
     var that = this
-    var helloLocal = window.localStorage.hello
-    if (!helloLocal || helloLocal.length === 2) { // is empty {}
-      this.login().then(function () {  // from CollabAuthentication
-        that.loading = false
-      })
-    } else {
-      this.loading = false
-    }
+    this.login().then(function () {  // from CollabAuthentication
+      that.loading = false
+    }, function (error) {
+      console.error(error)
+      that.isLoading = false
+    })
   }
 }
 </script>

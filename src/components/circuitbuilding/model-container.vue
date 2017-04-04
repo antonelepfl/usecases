@@ -1,8 +1,9 @@
 <template>
    <div class="model-container">
       <div class="title">Please select a model</div>
-      <div v-for="model in models" v-on:click="selected(model)">
-         <md-whiteframe md-elevation="2" class="item-sections">
+      <div v-for="model in models" v-on:click="selected(model)" v-bind:class="{ 'disabled-container': model.disabled }">
+      <div v-if="model.disabled" class="disabled-tag">Coming Soon</div>
+         <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': model.disabled }">
             <model-item v-bind:model="model"></model-item>
          </md-whiteframe>
       </div>
@@ -28,12 +29,14 @@
       },
       methods: {
          selected (model) {
-           var pathName = this.uc_name
-           pathName = pathName + model.species
-           pathName = pathName + model.brain_structure
-           pathName = pathName + model.cell_soma_location
-           pathName = pathName.toLowerCase()
-           this.$router.push({name: 'cb_form', params: {'model_name': pathName}})
+           if (!model.disabled) {
+             var pathName = this.uc_name
+             pathName = pathName + model.species
+             pathName = pathName + model.brain_structure
+             pathName = pathName + model.cell_soma_location
+             pathName = pathName.toLowerCase()
+             this.$router.push({name: 'cb_form', params: {'model_name': pathName}})
+           }
          },
          prettyfy (name) {
             return name.split('_').map(function (word) {
@@ -41,21 +44,10 @@
             }).join(' ')
          }
       },
-      mounted () {
+      created () {
         document.querySelector('title').innerHTML = 'Models'
-        var that = this
-        var currentModel = this.modelsConfig[this.list_usecases];
-        var tempIndex = 0;
-        for (var i = 0; i < currentModel.length; i++) {
-          this.$http.get(currentModel[i].path).then(function (response) {
-            var a = JSON.parse(response.body)
-            a['img'] = currentModel[tempIndex].img
-            tempIndex = tempIndex + 1
-            that.models.push(a)
-          }, function (error) {
-            console.log(error)
-          })
-        }
+        var currentModelList = this.modelsConfig[this.list_usecases];
+        this.models = currentModelList[this.uc_name]
       }
    }
 </script>

@@ -8,14 +8,53 @@
   "morphologyanalysis": {
     "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
   },
-  "circuitbuilding": [
-    {
-      "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbcerebellum.json",
-      "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
-    },
-    {
-      "path": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/config_files/cbhippocampus.json",
-      "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
-    }
-  ]
+  "circuitbuilding": {
+    "cellsplacement": [
+      {
+        "species": "Rat",
+        "brain_structure": "Cerebellum",
+        "cell_soma_location": "volume",
+        "description": "A volume of the cerebellum with detailed neuron models.",
+        "contributors": [
+          {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+          {"name": "Stefano Casali", "email": "stefano.casali01@universitadipavia.it"}
+        ],
+        "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+      },
+      {
+        "species": "Rat",
+        "brain_structure": "hippocampus",
+        "cell_soma_location": "CA1",
+        "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+        "contributors": [
+          {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+        ],
+        "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+      }
+    ],
+    "connectome": [
+      {
+        "species": "Rat",
+        "brain_structure": "Cerebellum",
+        "cell_soma_location": "volume",
+        "description": "A volume of the cerebellum with detailed neuron models.",
+        "contributors": [
+          {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+          {"name": "Stefano Casali", "email": "stefano.casali01@universitadipavia.it"}
+        ],
+        "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+      },
+      {
+        "species": "Rat",
+        "brain_structure": "hippocampus",
+        "cell_soma_location": "CA1",
+        "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+        "contributors": [
+          {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+        ],
+        "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png",
+        "disabled": true
+      }
+    ]
+  }
 }

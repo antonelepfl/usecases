@@ -357,12 +357,15 @@ export default {
         var replacedFileContent = ''
         that.getFileContent(appInfo.file)
         .then(function (fileContent) {
-          replacedFileContent = fileContent.replace(findString, replaceString)
+          replacedFileContent = fileContent
+          if (typeof fileContent === 'string') {
+            replacedFileContent = fileContent.replace(findString, replaceString)
+          }
           return that.getCollabStorage(collabId)
         }, reject)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
-          var name = 'replaced-'
+          var name = 'replaced-' + appInfo.entryname
           return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
         })
         .then(function (file) {

@@ -14,7 +14,7 @@
 <script>
   import createCollab from 'mixins/createCollab.js'
   import collabFormComponent from 'components/collab-form-component.vue'
-  import morphology from 'components/morphology/morphology.js'
+  import singlecellmodelingMixin from 'components/singlecellmodeling/singlecellmodeling.js'
   export default {
     name: 'collabFormReplacing',
     data () {
@@ -27,13 +27,13 @@
       'collab-form-component': collabFormComponent
     },
     props: ['uc_name', 'folder_name'],
-    mixins: [createCollab, morphology], // use common functions
+    mixins: [createCollab, singlecellmodelingMixin], // use common functions
     methods: {
       collabSelected: function (collab) {
         var that = this
         this.error = ''
         this.isLoading = true
-        var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
+        var findString = 'REPLACE_MODEL_HERE'
         this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .then(function () {
           that.isLoading = false
@@ -46,7 +46,8 @@
         var that = this
         this.error = ''
         this.isLoading = true
-        this.createItemInExistingCollabWithReplace(collab, this.model_name, this.folder_name)
+        var findString = 'REPLACE_MODEL_HERE'
+        this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .then(function () {
           that.isLoading = false
         })

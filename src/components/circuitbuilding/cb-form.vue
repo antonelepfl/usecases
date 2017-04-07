@@ -14,6 +14,7 @@
 <script>
   import collabFormComponent from 'components/collab-form-component.vue'
   import createCollab from 'mixins/createCollab.js'
+  import circuitbuilding from './circuitbuilding.js'
   export default {
     name: 'collabForm',
     data () {
@@ -23,7 +24,7 @@
       }
     },
     props: ['model_name'],
-    mixins: [createCollab], // use common functions
+    mixins: [createCollab, circuitbuilding], // use common functions
     components: {
       'cb-form-component': collabFormComponent
     },
@@ -33,6 +34,7 @@
         this.isLoading = true
         this.error = ''
         this.createItemInExistingCollab(collab, this.model_name)
+        // some of the functions here are overwritten in the circuitbuilding.js
         .then(function () {
           that.isLoading = false
         }, function (error) {

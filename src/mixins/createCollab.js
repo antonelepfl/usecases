@@ -7,6 +7,7 @@ const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
 const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
 const USER_API = 'https://services.humanbrainproject.eu/idm/v1/api/user/me'
+const FOLDER_ENDPOINT = 'https://services.humanbrainproject.eu/storage/v1/api/folder/'
 
 export default {
   data () {
@@ -151,10 +152,8 @@ export default {
     createFile (name, contentType, extension, parent) {
       var url = STORAGE_FILE_API
       var that = this
-      var t = new Date() // to avoid conflicts with fileNames in collab storage
-      var time = t.getMilliseconds().toString()
       var payload = {
-        'name': name + time + extension,
+        'name': name + extension,
         'content_type': contentType,
         'parent': parent
       }
@@ -167,7 +166,7 @@ export default {
         that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
           resolve(response.body)
-        })
+        }, reject('File already exists?'))
       })
     },
     copyFileContent (originFileId, newFileId) {
@@ -196,7 +195,9 @@ export default {
         that.getCollabStorage(collabId)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
-          var name = 'copy-' + appInfo.entryname
+          var t = new Date() // to avoid conflicts with fileNames in collab storage
+          var time = t.getMilliseconds().toString()
+          var name = appInfo.entryname + time
           return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
         })
         .then(function (file) {
@@ -332,6 +333,24 @@ export default {
           resolve(response.body)
         },
         function (responseError) {
+          reject(responseError)
+        })
+      })
+    },
+    createFolder (name, parent) {
+      var that = this
+      var payload = {
+        'name': name,
+        'parent': parent
+      }
+      return new Promise(function (resolve, reject) {
+        that.$http.post(FOLDER_ENDPOINT, payload, that.header)
+        .then(function (folder) {
+          console.debug('Folder created')
+          resolve(folder.body)
+        },
+        function (responseError) {
+          console.error('Error creating folder. Folder already exists?')
           reject(responseError)
         })
       })

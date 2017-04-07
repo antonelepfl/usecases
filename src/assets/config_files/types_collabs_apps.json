@@ -47,11 +47,23 @@
     "file": "67555a8f-70f6-4b81-9f2b-c343deb0779c"
   },
   "connectomeratcerebellumvolume": {
-    "entryname": "Connectome Cerebellum",
-    "appid": 175,
-    "contenttype": "x-ipynb+json",
-    "extension": ".ipynb",
-    "file": "5f395bc1-7b31-4393-b64f-76d8e76b3851"
+    "children": [
+      {
+        "entryname": "Connectome Cerebellum",
+        "appid": 175,
+        "contenttype": "x-ipynb+json",
+        "extension": ".ipynb",
+        "file": "5f395bc1-7b31-4393-b64f-76d8e76b3851"
+      },
+      {
+        "entryname": "800_800_150_gocconv50_June2014",
+        "appid": 175,
+        "contenttype": "x-npy",
+        "extension": ".npy",
+        "file": "122e22a6-d4cc-4d94-aef5-cfb9a48afcc9",
+        "justcopy": true
+      }
+    ]
   },
   "buildyourownsinglecellmodelusinghbpdata": {
     "children": [

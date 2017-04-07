@@ -124,7 +124,7 @@ export default {
         that.$http.get(url, that.header).then(function (response) {
           var nav = response.body
           resolve(nav)
-        }, function (error) { reject(error) })
+        }, function () { reject('Error get nav root') })
       })
     },
     redirectToCollab (collabId, navitemId) {
@@ -166,7 +166,7 @@ export default {
         that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
           resolve(response.body)
-        }, reject('File already exists?'))
+        }, function () { reject('File already exists?') })
       })
     },
     copyFileContent (originFileId, newFileId) {
@@ -181,10 +181,7 @@ export default {
         that.$http.put(url, null, newHeader).then(function (response) {
           console.debug('File content copied')
           resolve(newFileId)
-        }, function (error) {
-          console.error('Error copying the file content')
-          reject(error)
-        })
+        }, function () { reject('Error copying the file content') })
       })
     },
     generateNotebook (collabId, appInfo, parentNav) {
@@ -349,10 +346,7 @@ export default {
           console.debug('Folder created')
           resolve(folder.body)
         },
-        function (responseError) {
-          console.error('Error creating folder. Folder already exists?')
-          reject(responseError)
-        })
+        function () { reject('Error creating folder. Folder already exists?') })
       })
     },
     replaceContentAndCopy (findString, replaceString, collabId, appInfo, parentNav) {

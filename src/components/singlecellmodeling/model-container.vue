@@ -14,11 +14,11 @@
       props: ['list_usecases', 'uc_name'],
       methods: {
         touched (modelItem) {
-          // this.$router.push({name: 'sc_models_form',
-          //   params: {
-          //     'folder_name': modelItem.folderName
-          //   }
-          // })
+          this.$router.push({name: 'sc_models_form',
+            params: {
+              'folder_name': modelItem.folderName
+            }
+          })
         }
       }
    }

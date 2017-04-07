@@ -6,7 +6,7 @@
 
 <script>
    import ca1ModelList from 'components/singlecellmodeling/ca1-model-list.vue'
-   const VIEWER_URL = 'http://morph-view-bsp.apps.bbp.epfl.ch/'
+   const VIEWER_URL = 'https://morph-view-bsp.humanbrainproject.eu/'
    export default {
       name: 'modelContainer',
       components: {

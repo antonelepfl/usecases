@@ -46,7 +46,8 @@
         var that = this
         this.error = ''
         this.isLoading = true
-        this.createItemInExistingCollabWithReplace(collab, this.model_name, this.folder_name)
+        var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
+        this.createItemInExistingCollabWithReplace(collab, this.model_name, this.folder_name, findString)
         .then(function () {
           that.isLoading = false
         })

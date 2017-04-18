@@ -1,20 +1,8 @@
-import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 import createCollab from 'mixins/createCollab.js'
 import collabAuthentication from 'mixins/collabAuthentication.js'
+const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 export default {
-  data () {
-    return {
-      typesCollabsApps: typesCollabsApps,
-      header: {}
-    }
-  },
   mixins: [collabAuthentication, createCollab],
-  created () {
-    let that = this
-    this.getToken().then(function (token) {
-      that.header = {headers: {'Authorization': token}}
-    }) // from collabAuthentication
-  },
   methods: {
     generateNotebook (collabId, appInfo, parentNav) {
       var that = this
@@ -56,6 +44,38 @@ export default {
           .then(resolve, reject)
         }, function (error) { // probably the collab already exist error
           reject(error.body.title[0])
+        })
+      })
+    },
+    addMoocExistingCollab (collab, uc) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.createItemInExistingCollab(collab, uc).then(resolve, function (error) { // probably the collab already exist error
+          if (error.body) {
+            reject(error.body.title[0])
+          } else {
+            reject(error)
+          }
+        })
+      })
+    },
+    searchCollab (param) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.getUserInfo().then(function (user) {
+          param = 'Mooc ' + param + ' ' + user.displayName
+          that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header) // header from CreateCollab
+          .then(function (response) {
+            resolve(response.body.results)
+          },
+          function (responseError) {
+            if (responseError.status === 401) {
+              that.getToken(true) // force renew token
+              reject(responseError)
+            } else {
+              reject(responseError)
+            }
+          })
         })
       })
     }

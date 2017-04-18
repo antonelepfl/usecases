@@ -272,14 +272,14 @@
        ],
        "mooc": [
          {
-            "title": "Initialize Mooc in collab",
+            "title": "Reconstruction and simulation of neural tissue I: Neurons and Synapses",
             "description": "",
             "experience": ["all"],
             "maturity": [""],
             "access": [""],
             "disabled": false,
             "picture": {
-               "src": "https://collab.humanbrainproject.eu/assets/hbp_diamond_120.png",
+               "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/mooc1-image.gif",
                "alt": "Collab logo "
             },
             "next": "mooc_form"

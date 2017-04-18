@@ -112,7 +112,7 @@
     margin: 50px auto 0 auto;
     max-width: 500px;
     padding: 10px;
-    background-color: rgba(214, 233, 250, 0.37);
+    background-color: rgba(214, 233, 250, 0.2);
   }
   .progress-bar {
     margin-top: 20px;
@@ -121,6 +121,13 @@
   .error {
     color: red;
     text-align: center;
+  }
+  .md-theme-default a:not(.md-button):hover {
+    color: #1c1c47;
+    cursor: pointer;
+  }
+  .md-theme-default a:not(.md-button) {
+    color: #8888cb;
   }
   h2 {
     text-align: center;

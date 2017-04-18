@@ -1,4 +1,5 @@
 <template>
+  <!-- This component emits 'collabSelected' and 'collabCreated' events to the parent-->
   <div class="collab-form-component">
     <div class="header">Define in which collab you want to work</div>
     <md-tabs md-fixed class="elevated">
@@ -43,7 +44,7 @@
 
 <script>
   import createCollab from 'mixins/createCollab.js'
-
+  
   export default {
     name: 'collabFormComponent',
     props: ['isLoading'],

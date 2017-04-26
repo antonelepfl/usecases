@@ -8,7 +8,7 @@ pages:
     - npm install
   stage: deploy
   script:
-  - rm -rd docs
+  - rm -rdf docs
   - npm run firebase
   artifacts:
     paths:

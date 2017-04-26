@@ -1,7 +1,13 @@
+image: node:latest
+
 pages:
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - npm install
   stage: deploy
   script:
-  - npm install
   - npm run ghpages
   - git checkout -b gh-pages
   artifacts:

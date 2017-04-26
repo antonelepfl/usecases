@@ -12,6 +12,6 @@ pages:
   - npm run firebase
   artifacts:
     paths:
-    - public
+    - public # must be in public 
   only:
     - dev

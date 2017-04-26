@@ -1,0 +1,10 @@
+pages:
+  stage: deploy
+  script:
+  - npm run ghpages
+  - git checkout -b gh-pages
+  artifacts:
+    paths:
+    - docs
+  only:
+    - dev

@@ -1,6 +1,12 @@
 language: node_js
 node_js: "node"
-cache: yarn
+branches:
+  only:
+  - master
+cache:
+  directories:
+    - "$HOME/.nvm"
+    - "$HOME/.npm"
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
 - git config --global user.name "antonelepfl"

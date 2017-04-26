@@ -8,8 +8,8 @@ pages:
     - npm install
   stage: deploy
   script:
-  - npm run ghpages
-  - git checkout -b gh-pages
+  - rm -rd docs
+  - npm run firebase
   artifacts:
     paths:
     - docs

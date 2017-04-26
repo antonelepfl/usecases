@@ -17,6 +17,9 @@ module.exports = {
     productionGzipExtensions: ['js', 'css']
   },
   firebase: {
+    assetsSubDirectory: 'static',
+    index: path.resolve(__dirname, '../public/index.html'),
+    assetsRoot: path.resolve(__dirname, '../public'),
     assetsPublicPath: ''
   },
   ghpages: {

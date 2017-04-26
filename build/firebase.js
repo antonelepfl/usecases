@@ -7,7 +7,7 @@ var path = require('path')
 var config = require('../config')
 var ora = require('ora')
 var webpack = require('webpack')
-var webpackConfig = require('./webpack.prod.conf')
+var webpackConfig = require('./webpack.firebase.conf')
 
 console.log(
   '  Tip:\n' +
@@ -20,7 +20,7 @@ spinner.start()
 
 webpackConfig.output.publicPath = config.firebase.assetsPublicPath
 
-var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
+var assetsPath = path.join(config.firebase.assetsRoot, config.firebase.assetsSubDirectory)
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 cp('-R', 'static/*', assetsPath)

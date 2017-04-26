@@ -8,10 +8,10 @@ pages:
     - npm install
   stage: deploy
   script:
-  - rm -rdf docs
+  - rm -rdf public
   - npm run firebase
   artifacts:
     paths:
-    - docs
+    - public
   only:
     - dev

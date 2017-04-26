@@ -1,6 +1,7 @@
 pages:
   stage: deploy
   script:
+  - npm install
   - npm run ghpages
   - git checkout -b gh-pages
   artifacts:

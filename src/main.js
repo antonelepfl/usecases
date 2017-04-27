@@ -41,7 +41,7 @@ const router = new VueRouter({
       name: 'cb_form'
     },
     // ============================ singlecellmodeling ============================
-    { path: '/singlecellmodeling/:uc_name',
+    { path: '/singlecellmodeling/form/:uc_name',
       component: function (resolve) {
         require(['components/traceanalysis/ta-form.vue'], resolve)
       },

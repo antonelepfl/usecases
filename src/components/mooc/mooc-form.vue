@@ -3,7 +3,7 @@
     <div class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
-      <md-button class="md-raised md-primary" @click="createNewCollab">Create a colab</md-button>
+      <md-button class="md-raised md-primary" @click.native="createNewCollab">Create a colab</md-button>
       <div v-show="isLoading" class="progress-bar">
         <md-progress class="md-accent" md-indeterminate></md-progress>
       </div>

@@ -55,7 +55,7 @@
    }
 </script>
 
-<style>
+<style scoped>
 .all {
    color: gray;
 }

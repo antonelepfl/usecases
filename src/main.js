@@ -13,10 +13,6 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
-    { path: '/:list_usecases', // display the UC bases on the key of usecases.json
-      component: App,
-      props: true // to see in the component as props
-    },
     // ============================ trace analysis ============================
     { path: '/traceanalysis/:uc_name',
       component: function (resolve) {
@@ -78,12 +74,24 @@ const router = new VueRouter({
       name: 'morph_form_replacing'
     },
     // ============================ mooc ============================
+    { path: '/mooc/',
+      component: function (resolve) {
+        require(['components/mooc/course-container.vue'], resolve)
+      },
+      props: true,
+      name: 'mooc_container'
+    },
     { path: '/mooc/:uc_name',
       component: function (resolve) {
         require(['components/mooc/mooc-form.vue'], resolve)
       },
       props: true,
       name: 'mooc_form'
+    },
+    // ============================ rest of UC ============================
+    { path: '/:list_usecases', // display the UC bases on the key of usecases.json
+      component: App,
+      props: true // to see in the component as props
     }
   ],
   base: '/usecases/',

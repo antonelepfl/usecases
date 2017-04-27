@@ -35,7 +35,7 @@ export default {
       return new Promise(function (resolve, reject) {
         that.getUserInfo().then(function (user) {
           let d = new Date()
-          d = d.toLocaleDateString() + '-' + d.toLocaleTimeString()
+          d = d.toLocaleString()
           let collabName = searchText + ' ' + user.displayName + ' ' + d
           return that.createCollab(collabName, isPrivate)
         })

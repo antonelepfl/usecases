@@ -1,6 +1,6 @@
 <template>
-   <div id="uc-container" class="uc-container">
-      <div id="uc-container-title" class="title">Please select a use case</div>
+   <div id="course-container" class="course-container">
+      <div id="course-container-title" class="title">Please select a course to initialize</div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-   import ucItem from './uc-item.vue'
+   import ucItem from 'components/uc/uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
 
    export default {
@@ -49,24 +49,24 @@
 </script>
 
 <style scoped>
-   .uc-container {
+   .course-container {
       padding: 10px;
       margin-top: 50px;
    }
-   .uc-container.no-title {
+   .course-container.no-title {
       padding: 10px;
       margin-top: 0;
    }
-   .uc-container .item-sections {
+   .course-container .item-sections {
       margin-top: 20px;
       padding: 10px;
       cursor: pointer;
    }
-   .uc-container .selected {
+   .course-container .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
    }
-   .uc-container > .title {
+   .course-container > .title {
       box-shadow: 0 2px 5px rgba(0,0,0,.26);
       position: fixed;
       text-align: left;
@@ -80,7 +80,7 @@
       width: 100%;
       z-index: 3;
    }
-   .uc-container .disabled-tag {
+   .course-container .disabled-tag {
       position: absolute;
       top: 15%;
       left: 45%;
@@ -90,19 +90,19 @@
       border-radius: 5px;
       z-index: 2;
    }
-   .uc-container .disabled-item {
+   .course-container .disabled-item {
       opacity: 0.5;
       background-color: rgba(63, 58, 58, 0.22);
       cursor: not-allowed;
    }
-   .uc-container .disabled-item:hover {
+   .course-container .disabled-item:hover {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
    }
-   .uc-container .disabled-container {
+   .course-container .disabled-container {
       position: relative;
    }
    @media screen and (max-width: 751px) {
-      .uc-container .disabled-tag {
+      .course-container .disabled-tag {
          left: 35%;
       }
    }

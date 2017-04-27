@@ -27,7 +27,7 @@
    }
 </script>
 
-<style>
+<style scoped>
    .uc-description .title-text {
       font-size: 20px;
       font-weight: bold;

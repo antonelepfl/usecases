@@ -70,11 +70,12 @@
       },
       collabSelected (collab) {
         var that = this
+        that.isLoadingLocal = true
         this.addMoocExistingCollab(collab, this.uc_name).then(function () {
-          that.isLoading = false
+          that.isLoadingLocal = false
         }, function (error) {
           that.errorMessage = error
-          that.isLoading = false
+          that.isLoadingLocal = false
         })
       }
     },
@@ -134,7 +135,7 @@
   .progress-bar {
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 40%;
+    width: 60%;
   }
   .error {
     color: red;

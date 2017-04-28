@@ -19,7 +19,9 @@ export default {
             reject()
           }
           return that.copyFileContent(originalFileId, file.uuid)
-        }, reject)
+        }, function (error) {
+          console.error(error)
+        })
         .then(function (newFileId) {
           if (!appInfo.justcopy) {
             return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)

@@ -21,6 +21,7 @@ export default {
           return that.copyFileContent(originalFileId, file.uuid)
         }, function (error) {
           console.error(error)
+          resolve({'collabId': collabId})
         })
         .then(function (newFileId) {
           if (!appInfo.justcopy) {

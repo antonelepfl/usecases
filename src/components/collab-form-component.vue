@@ -87,14 +87,19 @@
     watch: {
       'searchText' (newVal) {
         var that = this
-        this.searchCollab(newVal).then(function (result) {
-          if (that.errorMessage !== '') {
-            that.errorMessage = ''
-          }
-          that.collabResults = result
-        }, function (reject) {
-          that.errorMessage = 'Getting your collabs ...'
-        })
+        if (newVal === '') {
+          that.collabResults = []
+          that.errorMessage = ''
+        } else {
+          this.searchCollab(newVal).then(function (result) {
+            if (that.errorMessage !== '') {
+              that.errorMessage = ''
+            }
+            that.collabResults = result
+          }, function (reject) {
+            that.errorMessage = 'Getting your collabs ...'
+          })
+        }
       },
       'isLoading' (newVal) {
         this.isLoadingLocal = newVal

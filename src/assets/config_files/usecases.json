@@ -134,8 +134,8 @@
             "next": null
          },
          {
-            "title": "Create a single cell model",
-            "description": "Create your own Single Cell Model with data from NeuroInformatics Platform",
+            "title": "Create a single hippocampal cell model",
+            "description": "Create your own single hippocampal cell Model with data from NeuroInformatics Platform",
             "experience": ["experts", "code"],
             "maturity": ["experimental"],
             "access": ["hpc"],
@@ -147,8 +147,8 @@
             "next": null
          },
          {
-            "title": "Release single cell",
-            "description": "Release your single cell model to the NeuroInformatics Platform",
+            "title": "Release single hippocampal cell",
+            "description": "Release your single hippocampal cell model to the NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
             "access": [""],
@@ -160,8 +160,8 @@
             "next": null
          },
          {
-            "title": "Release single cell building process",
-            "description": "Release your validated single cell building process",
+            "title": "Release single hippocampal cell building process",
+            "description": "Release your validated single hippocampal cell building process",
             "experience": ["code"],
             "maturity": [""],
             "access": [""],
@@ -173,8 +173,8 @@
             "next": null
          },
          {
-            "title": "Export single cell model to NeuroML",
-            "description": "Export single cell model into NeuroML (Open Souce Brain)",
+            "title": "Export single hippocampal cell model to NeuroML",
+            "description": "Export single hippocampal cell model into NeuroML (Open Souce Brain)",
             "experience": ["code"],
             "maturity": [""],
             "access": [""],

@@ -95,7 +95,7 @@
       ],
       "singlecellmodeling": [
         {
-           "title": "Rebuild an existing single cell model",
+           "title": "Rebuild an existing single hippocampal cell model",
            "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
            "experience": ["all"],
            "maturity": [""],
@@ -103,12 +103,12 @@
            "disabled": false,
            "picture": {
               "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-              "alt": "Logo of Single cell model"
+              "alt": "Logo of Single hippocampal cell model"
            },
            "next": "sc_models"
         },
          {
-            "title": "Build your own single cell model using HBP data",
+            "title": "Build your own single hippocampal cell model using HBP data",
             "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
             "experience": ["all", "power"],
             "maturity": ["beta"],
@@ -116,12 +116,12 @@
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-               "alt": "Logo of Single cell model"
+               "alt": "Logo of Single hippocampal cell model"
             },
             "next": "sc_form"
          },
          {
-            "title": "Build your own single cell model using HBP and your own data",
+            "title": "Build your own single hippocampal cell model using HBP and your own data",
             "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",
             "experience": ["power","experts"],
             "maturity": ["experimental"],
@@ -129,7 +129,7 @@
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-               "alt": "Logo of Single cell model"
+               "alt": "Logo of Single hippocampal cell model"
             },
             "next": null
          },

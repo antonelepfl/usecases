@@ -128,10 +128,16 @@ export default {
       })
     },
     redirectToCollab (collabId, navitemId) {
+      var path = ''
+      if (navitemId !== undefined) {
+        path = COLLAB_HOME + collabId + '/nav/' + navitemId
+      } else {
+        path = COLLAB_HOME + collabId
+      }
       window.parent.postMessage({
         eventName: 'location',
         data: {
-          url: COLLAB_HOME + collabId + '/nav/' + navitemId
+          url: path
         }
       }, '*')
     },

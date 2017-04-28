@@ -9,7 +9,7 @@
       </div>
 
       <div class="separator"><label>OR</label></div>
-      <b @click="createNewCollab">Search for an existing collab</b>
+      <b>Search for an existing collab</b>
 
       <md-input-container>
         <label>Collab Name</label>
@@ -49,7 +49,6 @@
     mixins: [mooc], // use common functions
     methods: {
       createNewCollab () {
-        debugger;
         var that = this
         var isPrivate = true
         this.isLoading = true

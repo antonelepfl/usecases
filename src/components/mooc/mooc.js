@@ -9,10 +9,12 @@ export default {
       return new Promise(function (resolve, reject) {
         that.getCollabStorage(collabId)
         .then(function (projectStorage) {
+          that.collabCreationProgress = 30
           var parent = projectStorage.results[0].uuid
           return that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, parent)
         })
         .then(function (file) {
+          that.collabCreationProgress = 50
           var originalFileId = appInfo.file
           if (!originalFileId) {
             console.error('No entry in typesCollabsApps.json')
@@ -24,6 +26,7 @@ export default {
           return Promise.resolve({'collabId': collabId})
         })
         .then(function (newFileId) {
+          that.collabCreationProgress = 80
           if (!appInfo.justcopy) {
             return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)
           } else { return Promise.resolve({'collabId': collabId}) }
@@ -33,20 +36,20 @@ export default {
         }, reject)
       })
     },
-    createMoocCollab (isPrivate, searchText, uc) {
+    createMoocCollab (isPrivate, fullCollabName, uc) {
       var that = this
       return new Promise(function (resolve, reject) {
         that.getUserInfo().then(function (user) {
-          let d = new Date()
-          d = d.toLocaleString()
-          let collabName = searchText + ' ' + user.displayName + ' ' + d
-          return that.createCollab(collabName, isPrivate)
+          that.collabCreationProgress = 20
+          return that.createCollab(fullCollabName, isPrivate)
         })
         .then(function (collab) {
           that.createItemInExistingCollab(collab, uc)
           .then(resolve, reject)
         }, function (error) { // probably the collab already exist error
-          reject(error.body.title[0])
+          if (error.body && error.body.title) {
+            reject(error.body.title[0])
+          } else { reject(error) }
         })
       })
     },
@@ -62,11 +65,11 @@ export default {
         })
       })
     },
-    searchCollab (param) {
+    searchCollab (param, moocName) {
       var that = this
       return new Promise(function (resolve, reject) {
         that.getUserInfo().then(function (user) {
-          param = 'Mooc ' + param + ' ' + user.displayName
+          param = param + ' ' + moocName + ' ' + user.displayName
           that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header) // header from CreateCollab
           .then(function (response) {
             resolve(response.body.results)
@@ -80,6 +83,16 @@ export default {
             }
           })
         })
+      })
+    },
+    updateFullCollabName (searchText, moocName) {
+      let that = this
+      this.getUserInfo().then(function (user) {
+        let d = new Date().toLocaleString()
+        if (searchText === '') {
+          searchText = 'Mooc'
+        }
+        that.fullCollabName = searchText + ' - ' + moocName + ' - ' + user.displayName + ' ' + d
       })
     }
   }

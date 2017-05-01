@@ -14,7 +14,8 @@ export default {
     return {
       errorMessage: '',
       typesCollabsApps: typesCollabsApps,
-      header: {}
+      header: {},
+      userInfo: null
     }
   },
   mixins: [collabAuthentication],
@@ -331,13 +332,18 @@ export default {
     getUserInfo () {
       var that = this
       return new Promise(function (resolve, reject) {
-        that.$http.get(USER_API, that.header)
-        .then(function (response) {
-          resolve(response.body)
-        },
-        function (responseError) {
-          reject(responseError)
-        })
+        if (that.userInfo !== null) {
+          resolve(that.userInfo)
+        } else {
+          that.$http.get(USER_API, that.header)
+          .then(function (response) {
+            that.userInfo = response.body
+            resolve(response.body)
+          },
+          function (responseError) {
+            reject(responseError)
+          })
+        }
       })
     },
     createFolder (name, parent) {

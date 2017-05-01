@@ -3,9 +3,10 @@
     <div class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
-      <md-button class="md-raised md-primary" @click.native="createNewCollab">Create a colab</md-button>
+      <md-button class="md-raised md-primary" @click.native="createNewCollab">Create a collab</md-button>
+      <div class="small-label">{{fullCollabName}}</div>
       <div v-show="isLoading" class="progress-bar">
-        <md-progress class="md-accent" md-indeterminate></md-progress>
+        <md-progress class="md-accent" :md-progress="collabCreationProgress"></md-progress>
       </div>
 
       <div class="separator"><label>OR</label></div>
@@ -13,7 +14,7 @@
 
       <md-input-container>
         <label>Collab Name</label>
-        <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
+        <md-input placeholder="Mooc" v-model.lazy="searchText"></md-input>
       </md-input-container>
       <div v-show="!isLoadingLocal" class="collabs-results-container">
         <div v-for="collab in collabResults" class="collab-result" >
@@ -39,10 +40,13 @@
       return {
         private: true,
         searchText: '',
+        moocName: 'Neuron and Synapse',
         isLoading: false,
         errorMessage: '',
         isLoadingLocal: false,
-        collabResults: []
+        collabResults: [],
+        collabCreationProgress: 0,
+        fullCollabName: ''
       }
     },
     props: ['uc_name'],
@@ -53,9 +57,10 @@
         var isPrivate = true
         this.isLoading = true
         this.errorMessage = ''
-        let name = 'Mooc ' + this.searchText
-        this.createMoocCollab(isPrivate, name, this.uc_name)
+        this.collabCreationProgress = 10;
+        this.createMoocCollab(isPrivate, this.fullCollabName, this.uc_name)
         .then(function () {
+          that.collabCreationProgress = 100;
           that.isLoading = false
         },
         function (error) {
@@ -64,6 +69,7 @@
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {
+            that.errorMessage = 'There was an error during the collab creation'
             that.isLoading = false
           }
         })
@@ -79,9 +85,16 @@
         })
       }
     },
+    mounted () {
+      let that = this
+      this.$nextTick(function () { // waits until token is saved in mixins headers
+        that.updateFullCollabName(this.searchText, this.moocName)
+      })
+    },
     watch: {
       'searchText' (newVal) {
         var that = this
+        this.updateFullCollabName(this.searchText, this.moocName)
         this.isLoadingLocal = true
         if (newVal === '') {
           that.collabResults = []
@@ -89,7 +102,7 @@
           that.isLoadingLocal = false
           return;
         }
-        this.searchCollab(newVal).then(function (result) {
+        this.searchCollab(newVal, this.moocName).then(function (result) {
           if (that.errorMessage !== '') {
             that.errorMessage = ''
           }
@@ -175,5 +188,8 @@
     top: 50%;
     width: 100%;
     border-color:black;
+  }
+  .small-label {
+    font-size: 11px;
   }
 </style>

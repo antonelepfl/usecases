@@ -73,6 +73,14 @@ const router = new VueRouter({
       props: true,
       name: 'morph_form_replacing'
     },
+    // ================= singlecellinsilicoexperiments ================
+    { path: '/singlecellinsilicoexperiments/:uc_name',
+      component: function (resolve) {
+        require(['components/singlecellinsilicoexperiments/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'insilico_exp'
+    },
     // ============================ mooc ============================
     { path: '/mooc/',
       component: function (resolve) {

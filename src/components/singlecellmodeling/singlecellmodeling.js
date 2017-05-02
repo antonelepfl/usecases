@@ -24,6 +24,9 @@ export default {
         that.getAllNav(collab.id).then(function (parentNav) {
           var ucInfo = that.typesCollabsApps[uc]
           var exists = {};
+          if (ucInfo === undefined) {
+            reject('No entry in typesCollabsApps.json')
+          }
           ucInfo.entryname = ucInfo.entryname + ' - ' + morphology
           if (ucInfo.appid) { // is only one item
             exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)

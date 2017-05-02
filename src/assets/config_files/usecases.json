@@ -244,21 +244,21 @@
        ],
        "singlecellinsilicoexperiments": [
           {
-             "title": "",
-             "description": "Single cell in silico experiments under current/voltage clamp",
+             "title": "Single cell in silico experiments under current/voltage clamp",
+             "description": "",
              "experience": ["all"],
              "maturity": ["beta"],
              "access": [""],
-             "disabled": true,
+             "disabled": false,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
                 "alt": "single cell in silico under current or voltage clamp"
              },
-             "next": null
+             "next": "insilico_exp"
           },
           {
-             "title": "",
-             "description": "Single cell in silico experiments with synaptic inputs preconfigured ",
+             "title": "Single cell in silico experiments with synaptic inputs preconfigured",
+             "description": " ",
              "experience": ["all"],
              "maturity": ["beta"],
              "access": [""],

@@ -68,7 +68,7 @@ export default {
               if (obj.collabId) {
                 // TODO: get collab and navitem
               }
-              that.redirectToCollab(collab)
+              that.redirectToCollab(collab.id)
               resolve()
           }, function (error) { // probably the collab already exist error
             if (error.body && error.body.title) {

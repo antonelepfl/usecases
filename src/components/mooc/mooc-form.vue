@@ -22,7 +22,7 @@
         </div>
       </div>
       <div v-show="isLoadingLocal" class="progress-bar">
-        <md-progress class="md-accent" md-indeterminate></md-progress>
+        <md-progress class="md-accent" :md-progress="collabCreationProgress"></md-progress>
       </div>
 
       <div class="error">
@@ -77,6 +77,7 @@
       collabSelected (collab) {
         var that = this
         that.isLoadingLocal = true
+        this.collabCreationProgress = 10;
         this.addMoocExistingCollab(collab, this.uc_name).then(function () {
           that.isLoadingLocal = false
         }, function (error) {

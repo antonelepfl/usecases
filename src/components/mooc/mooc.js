@@ -1,5 +1,6 @@
 import createCollab from 'mixins/createCollab.js'
 import collabAuthentication from 'mixins/collabAuthentication.js'
+import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 export default {
   mixins: [collabAuthentication, createCollab],
@@ -44,25 +45,69 @@ export default {
           return that.createCollab(fullCollabName, isPrivate)
         })
         .then(function (collab) {
-          that.createItemInExistingCollab(collab, uc)
-          .then(resolve, reject)
-        }, function (error) { // probably the collab already exist error
-          if (error.body && error.body.title) {
-            reject(error.body.title[0])
-          } else { reject(error) }
+          return that.createCoursesMooc(collab, uc).then(resolve, reject)
         })
       })
     },
     addMoocExistingCollab (collab, uc) {
+      return this.createCoursesMooc(collab, uc)
+    },
+    createCoursesMooc (collab, uc) { // cretes mooc -> weeks
       var that = this
       return new Promise(function (resolve, reject) {
-        that.createItemInExistingCollab(collab, uc).then(resolve, function (error) { // probably the collab already exist error
-          if (error.body) {
-            reject(error.body.title[0])
-          } else {
-            reject(error)
+        let moocUc = typesCollabsApps[uc]
+        let coursesPromises = []
+        if (moocUc && moocUc.children) {
+          for (let i = 0; i < moocUc.children.length; i++) {
+            let creat = that.createItemInExistingCollab(collab, moocUc.children[i])
+            coursesPromises.push(creat)
           }
-        })
+          Promise.all(coursesPromises)
+          .then(function (elements) {
+            let obj = elements[0]
+              if (obj.collabId) {
+                // TODO: get collab and navitem
+              }
+              that.redirectToCollab(collab)
+              resolve()
+          }, function (error) { // probably the collab already exist error
+            if (error.body && error.body.title) {
+              reject(error.body.title[0])
+            } else {
+              reject(error)
+            }
+          })
+        }
+      })
+    },
+    createItemInExistingCollab (collab, uc) { // creates weeks -> files
+      var ucInfo = uc
+      var that = this
+      return new Promise(function (resolve, reject) {
+        if (ucInfo === undefined) {
+          reject('No item in typesCollabsApps.json')
+        } else {
+          that.getAllNav(collab.id).then(function (parentNav) {
+            var exists = {};
+            var promises = []
+            for (let i = 0; i < ucInfo.length; i++) {
+              var item = ucInfo[i]
+              exists = that.checkExists(parentNav, item.appid, item.entryname)
+              if (!exists.found) {
+                promises.push(that.generateNotebook(collab.id, item, parentNav))
+              }
+            }
+            if (promises.length === 0) {
+              exists['collabId'] = collab.id
+              resolve([exists])
+            } else {
+              Promise.all(promises)
+              .then(function (elements) {
+                resolve(promises)
+              }, reject)
+            }
+          }, reject)
+        }
       })
     },
     searchCollab (param, moocName) {

@@ -69,7 +69,7 @@
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {
-            that.errorMessage = 'There was an error during the collab creation'
+            that.errorMessage = 'Error during creation: ' + error
             that.isLoading = false
           }
         })

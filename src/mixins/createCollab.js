@@ -188,7 +188,9 @@ export default {
         that.$http.put(url, null, newHeader).then(function (response) {
           console.debug('File content copied')
           resolve(newFileId)
-        }, function () { reject('Error copying the file content') })
+        }, function () {
+          reject('Error copying the file content')
+        })
       })
     },
     generateNotebook (collabId, appInfo, parentNav) {

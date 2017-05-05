@@ -124,21 +124,65 @@
   },
   "reconstructionandsimulationofneuraltissuei:neuronsandsynapses": {
     "children": [
-      {
-        "entryname": "Ball and Stick",
-        "appid": 175,
-        "contenttype": "x-ipynb+json",
-        "extension": ".ipynb",
-        "file": "96ef97ec-370b-401d-9e20-1aa72066b8f4"
-      },
-      {
-        "entryname": "segments",
-        "appid": 175,
-        "contenttype": "image/jpeg",
-        "extension": ".jpg",
-        "file": "22f851ce-f667-4b59-8750-1f06a16d0a0f",
-        "justcopy": true
-      }
+      [
+        {
+          "entryname": "Modeling Neurons",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "289b535b-ec6b-4eb0-b3aa-94a2090abde9"
+        },
+        {
+          "entryname": "ballandstick_circuit",
+          "appid": 175,
+          "contenttype": "application/postscript",
+          "extension": ".ai",
+          "file": "3e2e71b4-9ed5-44e9-b4a6-625275a36c0d",
+          "justcopy": true
+        },
+        {
+          "entryname": "ballandstick_circuit",
+          "appid": 175,
+          "contenttype": "image/jpeg",
+          "extension": ".jpg",
+          "file": "a477d31d-ae27-46df-aed6-82ee3ecdb194",
+          "justcopy": true
+        },
+        {
+          "entryname": "segments",
+          "appid": 175,
+          "contenttype": "application/postscript",
+          "extension": ".ai",
+          "file": "38ccc322-248f-45ef-b155-cba7911ab123",
+          "justcopy": true
+        },
+        {
+          "entryname": "segments",
+          "appid": 175,
+          "contenttype": "image/jpeg",
+          "extension": ".jpg",
+          "file": "35b672e2-07fb-472f-9936-aac1a40100e5",
+          "justcopy": true
+        }
+      ],
+      [
+        {
+          "entryname": "Constraining models",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "86483ca9-ecc9-4b94-8f87-ee9d38132cb2"
+        }
+      ],
+      [
+        {
+          "entryname": "Graded",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "3e530ee2-8c1b-4ab1-8a8f-a6a2269f7691"
+        }
+      ]
     ]
   }
 }

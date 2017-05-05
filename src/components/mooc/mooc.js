@@ -10,12 +10,10 @@ export default {
       return new Promise(function (resolve, reject) {
         that.getCollabStorage(collabId)
         .then(function (projectStorage) {
-          that.collabCreationProgress = 30
           var parent = projectStorage.results[0].uuid
           return that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, parent)
         })
         .then(function (file) {
-          that.collabCreationProgress = 50
           var originalFileId = appInfo.file
           if (!originalFileId) {
             console.error('No entry in typesCollabsApps.json')
@@ -27,7 +25,6 @@ export default {
           return Promise.resolve({'collabId': collabId})
         })
         .then(function (newFileId) {
-          that.collabCreationProgress = 80
           if (!appInfo.justcopy) {
             return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)
           } else { return Promise.resolve({'collabId': collabId}) }
@@ -68,6 +65,7 @@ export default {
               if (obj.collabId) {
                 // TODO: get collab and navitem
               }
+              that.collabCreationProgress = that.collabCreationProgress + 20
               that.redirectToCollab(collab.id)
               resolve()
           }, function (error) { // probably the collab already exist error
@@ -103,6 +101,7 @@ export default {
             } else {
               Promise.all(promises)
               .then(function (elements) {
+                that.collabCreationProgress = that.collabCreationProgress + 15
                 resolve(promises)
               }, reject)
             }

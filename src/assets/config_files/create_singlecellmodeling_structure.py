@@ -14,7 +14,7 @@ for root, subFolders, files in os.walk(rootdir):
          if 'meta.json' in file:
             filePath = root + '/' + file
             f = open( filePath, 'r' )
-            obj[file] = json.loads(f.read())
+            obj['meta'] = json.loads(f.read())
             f.close()
             # print 'into meta'
          elif 'responses' in file:

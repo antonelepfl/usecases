@@ -103,6 +103,8 @@ export default {
               exists = that.checkExists(parentNav, item.appid, item.entryname)
               if (!exists.found) {
                 promises.push(that.generateNotebook(collab.id, item, parentNav))
+              } else if (that.navitemId === undefined) {
+                that.navitemId = exists.navitemId
               }
             }
             if (promises.length === 0) {

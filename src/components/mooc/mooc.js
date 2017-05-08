@@ -36,7 +36,7 @@ export default {
           } else { return Promise.resolve({'collabId': collabId}) }
         }, reject)
         .then(function (obj) {
-          if (obj.navitemId && that.navitemId === undefined) {
+          if (obj.navitemId && that.navitemId === undefined && appInfo.initial) {
             that.navitemId = obj.navitemId
           }
           resolve(obj)
@@ -103,7 +103,7 @@ export default {
               exists = that.checkExists(parentNav, item.appid, item.entryname)
               if (!exists.found) {
                 promises.push(that.generateNotebook(collab.id, item, parentNav))
-              } else if (that.navitemId === undefined) {
+              } else if (that.navitemId === undefined && item.initial) {
                 that.navitemId = exists.navitemId
               }
             }

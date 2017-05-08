@@ -130,7 +130,8 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "289b535b-ec6b-4eb0-b3aa-94a2090abde9"
+          "file": "289b535b-ec6b-4eb0-b3aa-94a2090abde9",
+          "initial": true
         },
         {
           "entryname": "ballandstick_circuit",

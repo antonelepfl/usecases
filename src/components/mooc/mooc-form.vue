@@ -46,7 +46,8 @@
         isLoadingLocal: false,
         collabResults: [],
         collabCreationProgress: 0,
-        fullCollabName: ''
+        fullCollabName: '',
+        timeoutId: 0
       }
     },
     props: ['uc_name'],
@@ -96,26 +97,29 @@
       'searchText' (newVal) {
         var that = this
         this.updateFullCollabName(this.searchText, this.moocName)
-        this.isLoadingLocal = true
         if (newVal === '') {
           that.collabResults = []
           that.errorMessage = ''
           that.isLoadingLocal = false
           return;
         }
-        this.searchCollab(newVal, this.moocName).then(function (result) {
-          if (that.errorMessage !== '') {
-            that.errorMessage = ''
-          }
-          if (result.length === 0) {
-            that.collabResults = [{'title': 'No found'}]
-          } else {
-            that.collabResults = result
-          }
-          that.isLoadingLocal = false
-        }, function (reject) {
-          that.errorMessage = 'Getting your collabs ...'
-        })
+        clearTimeout(this.timeoutId)
+        this.timeoutId = setTimeout(function () {
+          that.isLoadingLocal = true
+          that.searchCollab(newVal, that.moocName).then(function (result) {
+            if (that.errorMessage !== '') {
+              that.errorMessage = ''
+            }
+            if (result.length === 0) {
+              that.collabResults = [{'title': 'No found'}]
+            } else {
+              that.collabResults = result
+            }
+            that.isLoadingLocal = false
+          }, function (reject) {
+            that.errorMessage = 'Getting your collabs ...'
+          })
+        }, 500)
       }
     }
   }

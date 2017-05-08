@@ -67,7 +67,7 @@ export default {
               }
               that.collabCreationProgress = that.collabCreationProgress + 20
               that.redirectToCollab(collab.id)
-              resolve()
+              setTimeout(resolve, 1500)
           }, function (error) { // probably the collab already exist error
             if (error.body && error.body.title) {
               reject(error.body.title[0])

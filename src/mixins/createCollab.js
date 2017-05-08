@@ -294,7 +294,7 @@ export default {
     },
     checkExists (nav, appId, appName) {
       if (nav.children) {
-        let item = {'found': false, 'navitemId': 0}
+        let item = {'found': false, 'navitemId': undefined}
         let i = 0
         while (!item.found && nav.children.length > i) {
           if (nav.children[i].app_id === appId.toString() &&

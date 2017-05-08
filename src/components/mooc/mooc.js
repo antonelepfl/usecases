@@ -4,6 +4,12 @@ import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 export default {
   mixins: [collabAuthentication, createCollab],
+  data: function () {
+    return {
+      collabId: undefined,
+      navitemId: undefined
+    }
+  },
   methods: {
     generateNotebook (collabId, appInfo, parentNav) {
       var that = this
@@ -30,6 +36,9 @@ export default {
           } else { return Promise.resolve({'collabId': collabId}) }
         }, reject)
         .then(function (obj) {
+          if (obj.navitemId && that.navitemId === undefined && appInfo.initial) {
+            that.navitemId = obj.navitemId
+          }
           resolve(obj)
         }, reject)
       })
@@ -61,13 +70,14 @@ export default {
           }
           Promise.all(coursesPromises)
           .then(function (elements) {
-            let obj = elements[0]
-              if (obj.collabId) {
-                // TODO: get collab and navitem
-              }
-              that.collabCreationProgress = that.collabCreationProgress + 20
-              that.redirectToCollab(collab.id)
+            that.collabCreationProgress = that.collabCreationProgress + 20
+            if (that.navitemId) {
+              that.redirectToCollab(collab.id, that.navitemId)
               setTimeout(resolve, 1500)
+              return
+            }
+            that.redirectToCollab(collab.id)
+            setTimeout(resolve, 1500)
           }, function (error) { // probably the collab already exist error
             if (error.body && error.body.title) {
               reject(error.body.title[0])
@@ -93,6 +103,8 @@ export default {
               exists = that.checkExists(parentNav, item.appid, item.entryname)
               if (!exists.found) {
                 promises.push(that.generateNotebook(collab.id, item, parentNav))
+              } else if (that.navitemId === undefined && item.initial) {
+                that.navitemId = exists.navitemId
               }
             }
             if (promises.length === 0) {

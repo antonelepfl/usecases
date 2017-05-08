@@ -54,7 +54,8 @@
         searchText: '',
         collabResults: [],
         errorMessage: '',
-        isLoadingLocal: this.isLoading
+        isLoadingLocal: this.isLoading,
+        timeoutId: 0 // to delay the collab search
       }
     },
     mixins: [createCollab], // use common functions
@@ -82,10 +83,8 @@
           that.errorMessage = error
           that.isLoadingLocal = false
         })
-      }
-    },
-    watch: {
-      'searchText' (newVal) {
+      },
+      search (newVal) {
         var that = this
         if (newVal === '') {
           that.collabResults = []
@@ -100,6 +99,15 @@
             that.errorMessage = 'Getting your collabs ...'
           })
         }
+      }
+    },
+    watch: {
+      'searchText' (newVal) {
+        var that = this
+        clearTimeout(this.timeoutId)
+        this.timeoutId = setTimeout(function () {
+          that.search(newVal)
+        }, 500)
       },
       'isLoading' (newVal) {
         this.isLoadingLocal = newVal

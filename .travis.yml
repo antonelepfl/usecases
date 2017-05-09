@@ -1,12 +1,12 @@
 language: node_js
-node_js: "node"
+node_js: node
 branches:
   only:
   - master
 cache:
   directories:
-    - "$HOME/.nvm"
-    - "$HOME/.npm"
+  - $HOME/.nvm
+  - $HOME/.npm
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
 - git config --global user.name "antonelepfl"
@@ -15,12 +15,12 @@ before_script:
 before_install: npm cache clean
 install: npm install
 script:
-  - npm run ghpages
-  - git checkout -b gh-pages
-  - cp -R ./docs/* ./ && rm -R docs/
-  - git add --all
-  - git commit -m "Deploy form travis"
-  - git push origin gh-pages --force
+- npm run ghpages
+- git checkout -b gh-pages
+- cp -R ./docs/* ./ && rm -R docs/
+- git add --all
+- git commit -m "Deploy form travis"
+- git push origin gh-pages --force
 env:
   global:
-  - secure: PXUNSFqfEAUUmfG78gG7F8MdjV0pVi61lMA9xtKUCAzIBkM7NPKWtzM4oORDEYbIMUIu41HX/KVs0Kweo5c3skLY2yeFrsXFER+c/7tcfr8AKBybIKtl1cs8JUemZ6kJwZqvyY8UGSBotXT2jp2sJw8Q3PZN7plTPdAJVvaSrUmQCMnCXEi/4JzySEudDLiVa/Hvgv7X0OVGmSiIsnL6G+Hzo8fmgG6kjzbgq//FExDDU9K865ef86vj5Pn6IzLwNyNVQgX7sNO8eoym8No9ECxYA8EMT2+wWMMntF+2Fp2MLLgw2NY5ifPXeqpc4Ydlv2gYVtAMDPTswfBsFIKGlhT44g3E93vRVl7mPq/qLsHz5Vab76gduAkmrU4Zf9NXMYJehANBGUDuF48c4d9a/dsJweIkeQl0cqalWuYLYchIhHYa2yTTGXsjk01oly2Ei08o7IAVKeQX33sH0dEEKueHuGmd95dr1VSj0ZV4DnRqUWl+NHASAdzPhST+V1nP0hRfI3LkfzD+VgVXiB9zQiZjKqmDLMEa6lk7VQsHogx428kT2qeliiSuXKV3p3Rnp0Yn1MGvzXGAvAaJU4zs67Vn46g5UV0XlCxsaCB5O2OduEivLlHGIdlIHJ4nHbOZWOoTXJpKESvNcNyhScwSu2Wt4rWQ6mnjMH4r3JS9DVo=
+    secure: FV9h4HWlFMJesz2fPb6z4D+BcHAjRR+zjH0pib94uyqy/t7N6zCKzuSAZwQPhNn68xD1u1ozTWGSvocjJd4T6jf4uLwwDjH9R1cwQY9K1wOQozU79bTp2tixcF9JXpx8cSrw419aFzBdpCeUWG79DDRGJS9zLGdDb1tz4PTCqjKeSFO3GHEG5yGNyhNQiv7WhSh0Co4xEHrrEMLKZPW0Qf3yqYdv5ErrGTRKO2fXorHkB89wh38Y9ViNDPQN/BXKPRkq2AolZr6KLqt69w4uYmF9XPVBf5772xmbHkIrgP1VzDl9bDQh4ErEVznD6ZhgSlDKPDcSnAp++33QI6Qcb977kU72b8ec227Key/o/lofd0aRlPtsS43CcUtcOpVFKNR/gNZyQLrliKU1w1TDaMDYaYywmk12QN9Ck3XOFsywH7iG/aNrY4WRPYAS0mT8Gz/L04r/PvGSYEf/bzeVKqBMop2qt7p4eBJbri9LD/ltZR2gY6yUrYKabGqRzkMk5gzcKgNpiXAnuBKpJ4focpBh3vN0Uc8wzvK2G5QkxDcceiH4lT9eAYbg9zqk+N5+Up4EJKOEBjtwBYwceKnUMVS7XvoZhyqA8oNRokV7dt2XSMB6u2BqTXSyq/TwH5eiYqGmo307uso0YzHyFuNrJSaK4Lx7Ezu2FaVApciC2yI=

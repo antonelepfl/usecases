@@ -10,8 +10,8 @@
 
     <div class="item-body" @click="touched">
       <div class="images-container">
-        <img :src="model.morphImg" class="half" alt="image of morphology">
-        <img :src="model.reponsesImg" class="half" alt="image of reponses traces">
+        <img v-lazy="model.morphImg" class="half" alt="image of morphology">
+        <img v-lazy="model.reponsesImg" class="half" alt="image of reponses traces">
       </div>
       <div class="description-container">
         <model-description class="model-description" :model="model"></model-description>
@@ -23,6 +23,13 @@
 
 <script>
   import modelDescription from './model-description.vue'
+  import placeholder from 'images/placeholder.jpg'
+  import Vue from 'vue'
+  import VueLazyload from 'vue-lazyload'
+
+  Vue.use(VueLazyload, {
+    loading: placeholder
+  })
 
   export default {
     name: 'modelItem',

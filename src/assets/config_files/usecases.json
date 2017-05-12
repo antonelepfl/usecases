@@ -126,7 +126,7 @@
             "experience": ["power","experts"],
             "maturity": ["experimental"],
             "access": ["hpc", "byor"],
-            "disabled": false,
+            "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
                "alt": "Logo of Single hippocampal cell model"
@@ -284,6 +284,101 @@
             },
             "next": "mooc_form"
          }
+       ],
+       "smallcircuitinsilicoexperiments": [
+          {
+             "title": "Configure and run a small circuit using preconfigured HBP model and data",
+             "description": "",
+             "experience": ["all", "power"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Configure and run a small circuit using preconfigured HBP model and data"
+             },
+             "next": null
+          },
+          {
+             "title": "Configure and run a small circuit using HBP model and data",
+             "description": "",
+             "experience": ["power"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Configure and run a small circuit using HBP model and data"
+             },
+             "next": null
+          },
+          {
+             "title": "Configure and run your own small circuit using HBP model and data",
+             "description": "",
+             "experience": ["power", "experts"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Configure and run your own small circuit using HBP model and data"
+             },
+             "next": null
+          },
+          {
+             "title": "Configure and run your own small circuit using HBP and your own model and data",
+             "description": "",
+             "experience": ["experts", "code"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Configure and run your own small circuit using HBP and your own model and data"
+             },
+             "next": null
+          }
+       ],
+       "brainareacircuitinsilicoexperiments": [
+          {
+             "title": "Configure and run a brain region using preconfigured HBP model and data",
+             "description": "",
+             "experience": ["experts", "code"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Configure and run a brain region using preconfigured HBP model and data"
+             },
+             "next": null
+          },
+          {
+             "title": "Configure and run a brain region using HBP model and data",
+             "description": "",
+             "experience": ["code"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Configure and run a brain region using HBP model and data"
+             },
+             "next": null
+          },
+          {
+             "title": "Build, configure, and run a brain region using HBP model and your own configuration rules",
+             "description": "",
+             "experience": ["code"],
+             "maturity": [""],
+             "access": [""],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Build, configure, and run a brain region using HBP model and your own configuration rules"
+             },
+             "next": null
+          }
        ]
    },
    {

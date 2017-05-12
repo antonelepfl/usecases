@@ -102,7 +102,8 @@ export default {
           var collabId = response.body
           resolve(collabId)
         }, function (error) {
-          if (error.body.title[0] === 'collab with this title already exists.') {
+          if (error.body && error.body.title &&
+            error.body.title[0] === 'collab with this title already exists.') {
             reject('Collab already exist')
           } else { reject(error) }
         })

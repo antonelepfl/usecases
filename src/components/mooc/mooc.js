@@ -17,7 +17,7 @@ export default {
         that.getCollabStorage(collabId)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
-          return that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, parent)
+          return that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, parent, collabId)
         })
         .then(function (file) {
           var originalFileId = appInfo.file

@@ -8,6 +8,7 @@ const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api
 const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/file/'
 const USER_API = 'https://services.humanbrainproject.eu/idm/v1/api/user/me'
 const FOLDER_ENDPOINT = 'https://services.humanbrainproject.eu/storage/v1/api/folder/'
+const STORAGE_BY_QUERY_PARAM = 'https://services.humanbrainproject.eu/storage/v1/api/entity/'
 
 export default {
   data () {
@@ -136,6 +137,7 @@ export default {
       } else {
         path = COLLAB_HOME + collabId
       }
+      console.debug('Redirecting to ', path)
       window.parent.postMessage({
         eventName: 'location',
         data: {
@@ -157,7 +159,21 @@ export default {
         })
       })
     },
-    createFile (name, contentType, extension, parent) {
+    getFileByName (collabId, fileName) {
+      var url = STORAGE_BY_QUERY_PARAM + '?path=/' + collabId + '/' + fileName
+      var that = this
+      return new Promise(function (resolve, reject) {
+        var newHeader = {headers: {
+          'Authorization': that.header.headers.Authorization,
+          'Accept': 'application/json'
+        }}
+        that.$http.get(url, newHeader).then(function (response) {
+          console.debug('File by name retrieved')
+          resolve(response.body)
+        })
+      })
+    },
+    createFile (name, contentType, extension, parent, collabId) {
       var url = STORAGE_FILE_API
       var that = this
       var payload = {
@@ -174,7 +190,17 @@ export default {
         that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
           resolve(response.body)
-        }, function () { reject('File already exists?') })
+        }, function () {
+          console.error('File already exists?')
+          if (collabId) {
+            that.getFileByName(collabId, name + extension)
+            .then(function (file) {
+              resolve(file)
+            }, function () {
+              reject('Error creating a file')
+            })
+          }
+        })
       })
     },
     copyFileContent (originFileId, newFileId) {
@@ -189,8 +215,9 @@ export default {
         that.$http.put(url, null, newHeader).then(function (response) {
           console.debug('File content copied')
           resolve(newFileId)
-        }, function () {
-          reject('Error copying the file content')
+        }, function (e) {
+          console.error('Error copying the file content', e);
+          reject(newFileId)
         })
       })
     },
@@ -205,7 +232,7 @@ export default {
           var t = new Date() // to avoid conflicts with fileNames in collab storage
           var time = t.getMilliseconds().toString()
           var name = appInfo.entryname + time
-          return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
+          return that.createFile(name, appInfo.contenttype, appInfo.extension, parent, collabId)
         })
         .then(function (file) {
           return that.copyFileContent(appInfo.file, file.uuid)
@@ -381,7 +408,7 @@ export default {
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
           var name = 'replaced-' + appInfo.entryname
-          return that.createFile(name, appInfo.contenttype, appInfo.extension, parent)
+          return that.createFile(name, appInfo.contenttype, appInfo.extension, parent, collabId)
         })
         .then(function (file) {
           return that.setFileContent(file.uuid, replacedFileContent)

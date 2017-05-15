@@ -14,7 +14,6 @@
 <script>
   import createCollab from 'mixins/createCollab.js'
   import collabFormComponent from 'components/collab-form-component.vue'
-  import morphology from 'components/morphology/morphology.js'
   export default {
     name: 'collabFormReplacing',
     data () {
@@ -26,15 +25,16 @@
     components: {
       'collab-form-component': collabFormComponent
     },
-    props: ['model_name', 'folder_name'],
-    mixins: [createCollab, morphology], // use common functions
+    props: ['folder_name', 'uc_name'],
+    mixins: [createCollab], // use common functions
     methods: {
       collabSelected: function (collab) {
         var that = this
         this.error = ''
         this.isLoading = true
         var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
-        this.createItemInExistingCollabWithReplace(collab, this.model_name, this.folder_name, findString)
+        let replaceText = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/' + this.folder_name + '/' + this.folder_name + '.zip'
+        this.createItemInExistingCollabWithReplace(collab, this.uc_name, replaceText, findString)
         .then(function () {
           that.isLoading = false
         }, function (error) {
@@ -47,7 +47,8 @@
         this.error = ''
         this.isLoading = true
         var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
-        this.createItemInExistingCollabWithReplace(collab, this.model_name, this.folder_name, findString)
+        let replaceText = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/' + this.folder_name + '/' + this.folder_name + '.zip'
+        this.createItemInExistingCollabWithReplace(collab, this.uc_name, replaceText, findString)
         .then(function () {
           that.isLoading = false
         })

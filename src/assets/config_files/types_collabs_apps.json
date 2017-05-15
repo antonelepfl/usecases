@@ -126,7 +126,7 @@
     "children": [
       [
         {
-          "entryname": "Modeling Neurons",
+          "entryname": "First practice assignment",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
@@ -168,7 +168,7 @@
       ],
       [
         {
-          "entryname": "Constraining models",
+          "entryname": "Second practice assignment",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
@@ -177,7 +177,7 @@
       ],
       [
         {
-          "entryname": "Graded",
+          "entryname": "Graded exercise",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",

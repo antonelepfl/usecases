@@ -90,11 +90,13 @@
           that.collabResults = []
           that.errorMessage = ''
         } else {
+          that.isLoadingLocal = true
           this.searchCollab(newVal).then(function (result) {
             if (that.errorMessage !== '') {
               that.errorMessage = ''
             }
             that.collabResults = result
+            that.isLoadingLocal = false
           }, function (reject) {
             that.errorMessage = 'Getting your collabs ...'
           })

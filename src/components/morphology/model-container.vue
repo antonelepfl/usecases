@@ -24,9 +24,7 @@
             case 'morphologyanalysis':
               this.$router.push({name: 'morph_form_replacing',
                 params: {
-                  'folder_name': modelItem.folderName,
-                  'list_usecases': 'morphology',
-                  'model_name': this.uc_name
+                  'folder_name': modelItem.folderName
                 }
               })
               break;

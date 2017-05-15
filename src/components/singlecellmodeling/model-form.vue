@@ -14,7 +14,6 @@
 <script>
   import createCollab from 'mixins/createCollab.js'
   import collabFormComponent from 'components/collab-form-component.vue'
-  import singlecellmodelingMixin from 'components/singlecellmodeling/singlecellmodeling.js'
   export default {
     name: 'collabFormReplacing',
     data () {
@@ -27,7 +26,7 @@
       'collab-form-component': collabFormComponent
     },
     props: ['uc_name', 'folder_name'],
-    mixins: [createCollab, singlecellmodelingMixin], // use common functions
+    mixins: [createCollab], // use common functions
     methods: {
       collabSelected: function (collab) {
         var that = this

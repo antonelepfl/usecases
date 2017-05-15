@@ -399,10 +399,8 @@ export default {
         var replacedFileContent = ''
         that.getFileContent(appInfo.file)
         .then(function (fileContent) {
-          replacedFileContent = fileContent
-          if (typeof fileContent === 'string') {
-            replacedFileContent = fileContent.replace(findString, replaceString)
-          }
+          replacedFileContent = JSON.stringify(fileContent)
+          replacedFileContent = replacedFileContent.replace(findString, replaceString)
           return that.getCollabStorage(collabId)
         }, reject)
         .then(function (projectStorage) {
@@ -420,6 +418,52 @@ export default {
         .then(function (obj) {
           resolve(obj)
         }, reject)
+      })
+    },
+    createItemInExistingCollabWithReplace (collab, uc, morphology, findString) {
+      var that = this
+      return new Promise(function (resolve, reject) {
+        that.getAllNav(collab.id).then(function (parentNav) {
+          var ucInfo = that.typesCollabsApps[uc]
+          var promises = []
+          var exists = {};
+          if (ucInfo === undefined) {
+            return reject('No entry in typesCollabsApps.json')
+          }
+          if (ucInfo.children) {
+            for (let i = 0; i < ucInfo.children.length; i++) {
+              var item = ucInfo.children[i]
+              item.entryname = item.entryname + ' - ' + morphology
+              exists = that.checkExists(parentNav, item.appid, item.entryname)
+              if (!exists.found) {
+                if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+                  promises.push(that.replaceContentAndCopy(findString, morphology, collab.id, item, parentNav))
+                } else { // is not jupyter notebok just connect to the original file
+                  promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, item.appid))
+                }
+              }
+            }
+          } else { // is only one navitem
+            if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              promises.push(that.replaceContentAndCopy(findString, morphology, collab.id, ucInfo, parentNav))
+            } else { // is not jupyter notebok just connect to the original file
+              promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
+            }
+          }
+          Promise.all(promises).then(function (generatedNotebooks) {
+            let obj = generatedNotebooks[0]
+            if (obj === undefined) {
+              that.redirectToCollab(collab.id)
+              resolve('Apps already in the collab')
+            } else if (obj && obj.collabId) {
+              that.redirectToCollab(obj.collabId, obj.navitemId)
+              resolve()
+            }
+          }, function (e) {
+            console.error('Error creating multiple files in existing collab')
+            reject(e)
+          })
+        })
       })
     }
   }

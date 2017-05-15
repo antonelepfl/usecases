@@ -62,13 +62,21 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         let moocUc = typesCollabsApps[uc]
-        let coursesPromises = []
+        // let coursesPromises = []
         if (moocUc && moocUc.children) {
-          for (let i = 0; i < moocUc.children.length; i++) {
-            let creat = that.createItemInExistingCollab(collab, moocUc.children[i])
-            coursesPromises.push(creat)
-          }
-          Promise.all(coursesPromises)
+          // for (let i = 0; i < moocUc.children.length; i++) {
+          //   let creat = that.createItemInExistingCollab(collab, moocUc.children[i])
+          //   coursesPromises.push(creat)
+          // }
+          // Promise.all(coursesPromises)
+          // TODO make it loop in order
+          that.createItemInExistingCollab(collab, moocUc.children[0])
+          .then(function () {
+            return that.createItemInExistingCollab(collab, moocUc.children[1])
+          })
+          .then(function () {
+            return that.createItemInExistingCollab(collab, moocUc.children[2])
+          })
           .then(function (elements) {
             that.collabCreationProgress = that.collabCreationProgress + 20
             if (that.navitemId) {

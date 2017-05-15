@@ -126,62 +126,91 @@
     "children": [
       [
         {
-          "entryname": "First practice assignment",
+          "entryname": "Week 3. Modeling neurons",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "289b535b-ec6b-4eb0-b3aa-94a2090abde9",
-          "initial": true
+          "file": "846b4ebb-2d15-4d07-b7e8-bdd86d01c827",
+          "initial": true,
+          "justcopy": false
         },
         {
           "entryname": "ballandstick_circuit",
           "appid": 175,
           "contenttype": "application/postscript",
           "extension": ".ai",
-          "file": "3e2e71b4-9ed5-44e9-b4a6-625275a36c0d",
-          "justcopy": true
+          "file": "e80c0100-0bd8-4f04-bb5d-2af0a4fd09da",
+          "justcopy": true,
+          "initial": false
         },
         {
           "entryname": "ballandstick_circuit",
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".jpg",
-          "file": "a477d31d-ae27-46df-aed6-82ee3ecdb194",
-          "justcopy": true
+          "file": "84ab297b-e84f-4157-84d0-c7b64f324670",
+          "justcopy": true,
+          "initial": false
         },
         {
           "entryname": "segments",
           "appid": 175,
           "contenttype": "application/postscript",
           "extension": ".ai",
-          "file": "38ccc322-248f-45ef-b155-cba7911ab123",
-          "justcopy": true
+          "file": "1d96bfb0-2b9f-4af9-aae2-0871de64acb2",
+          "justcopy": true,
+          "initial": false
         },
         {
           "entryname": "segments",
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".jpg",
-          "file": "35b672e2-07fb-472f-9936-aac1a40100e5",
+          "file": "f65f7272-a2b6-45f1-afa4-b765e35744e0",
+          "justcopy": true,
+          "initial": false
+        }
+      ],
+      [
+        {
+          "entryname": "Week 5. Constraining models",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "ab3bf6e2-c871-4215-af76-57422bee9ed1",
+          "initial": true,
+          "justcopy": false
+        }
+      ],
+      [
+        {
+          "entryname": "Week 5. Graded exercise",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "cd35de89-8aa4-4f99-9664-38859b86ecd6",
+          "initial": true,
+          "justcopy": false
+        }
+      ],
+      [
+        {
+          "entryname": "Week 6. NMC portal",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "7eb9a566-6de8-4524-a955-cd021b54fa5a",
+          "initial": true,
+          "justcopy": false
+        },
+        {
+          "entryname": "NMCWeb",
+          "appid": 175,
+          "contenttype": "image/jpeg",
+          "extension": ".png",
+          "file": "a0edca7a-6f29-47f9-bdf9-37b3c1422c2c",
+          "initial": false,
           "justcopy": true
-        }
-      ],
-      [
-        {
-          "entryname": "Second practice assignment",
-          "appid": 175,
-          "contenttype": "x-ipynb+json",
-          "extension": ".ipynb",
-          "file": "86483ca9-ecc9-4b94-8f87-ee9d38132cb2"
-        }
-      ],
-      [
-        {
-          "entryname": "Graded exercise",
-          "appid": 175,
-          "contenttype": "x-ipynb+json",
-          "extension": ".ipynb",
-          "file": "3e530ee2-8c1b-4ab1-8a8f-a6a2269f7691"
         }
       ]
     ]

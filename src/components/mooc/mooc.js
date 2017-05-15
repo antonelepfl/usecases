@@ -77,6 +77,9 @@ export default {
           .then(function () {
             return that.createItemInExistingCollab(collab, moocUc.children[2])
           })
+          .then(function () {
+            return that.createItemInExistingCollab(collab, moocUc.children[3])
+          })
           .then(function (elements) {
             that.collabCreationProgress = that.collabCreationProgress + 20
             if (that.navitemId) {

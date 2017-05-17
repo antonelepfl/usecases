@@ -379,6 +379,47 @@
              },
              "next": null
           }
+       ],
+       "analysisandvisualization": [
+          {
+             "title": "Single Cell",
+             "description": "",
+             "experience": null,
+             "maturity": null,
+             "access": null,
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Single Cell"
+             },
+             "next": null
+          },
+          {
+             "title": "Small Circuit",
+             "description": "",
+             "experience": null,
+             "maturity": null,
+             "access": null,
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Small Circuit"
+             },
+             "next": null
+          },
+          {
+             "title": "Region Circuit",
+             "description": "",
+             "experience": null,
+             "maturity": null,
+             "access": null,
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Region Circuit"
+             },
+             "next": null
+          }
        ]
    },
    {

@@ -103,7 +103,7 @@
    }
    @media screen and (max-width: 751px) {
       .uc-container .disabled-tag {
-         left: 35%;
+         left: 45%;
       }
    }
 </style>

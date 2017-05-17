@@ -6,7 +6,7 @@
             "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
             "experience": ["all"],
             "maturity": ["beta"],
-            "access": [""],
+            "access": null,
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
@@ -58,7 +58,7 @@
             "description": "Register features of user's traces in NeuroInformatics Platform",
             "experience": ["all"],
             "maturity": ["experimental"],
-            "access": [""],
+            "access": null,
             "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
@@ -71,7 +71,7 @@
             "description": "Compare electrophysiological features from NeuroInformatics Platform or uploaded data",
             "experience": ["all"],
             "maturity": ["experimental"],
-            "access": [""],
+            "access": null,
             "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
@@ -84,7 +84,7 @@
             "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
             "experience": ["power", "experts"],
             "maturity": ["experimental"],
-            "access": [""],
+            "access": null,
             "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
@@ -98,7 +98,7 @@
            "title": "Rebuild an existing single hippocampal cell model",
            "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
            "experience": ["all"],
-           "maturity": [""],
+           "maturity": null,
            "access": ["hpc", "byor"],
            "disabled": false,
            "picture": {
@@ -151,7 +151,7 @@
             "description": "Release your single hippocampal cell model to the NeuroInformatics Platform",
             "experience": ["power"],
             "maturity": ["experimental"],
-            "access": [""],
+            "access": null,
             "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
@@ -163,8 +163,8 @@
             "title": "Release single hippocampal cell building process",
             "description": "Release your validated single hippocampal cell building process",
             "experience": ["code"],
-            "maturity": [""],
-            "access": [""],
+            "maturity": null,
+            "access": null,
             "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
@@ -176,8 +176,8 @@
             "title": "Export single hippocampal cell model to NeuroML",
             "description": "Export single hippocampal cell model into NeuroML (Open Souce Brain)",
             "experience": ["code"],
-            "maturity": [""],
-            "access": [""],
+            "maturity": null,
+            "access": null,
             "disabled": true,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
@@ -192,7 +192,7 @@
             "description": "Define the properties and the location of the neurons for a brain region of detailed neuron models",
             "experience": ["power"],
             "maturity": ["experimental"],
-            "access": [""],
+            "access": null,
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png",
@@ -220,7 +220,7 @@
             "description": "Performs analysis on a morphology with NeuroM",
             "experience": ["power"],
             "maturity": ["beta"],
-            "access": [""],
+            "access": null,
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png",
@@ -233,7 +233,7 @@
             "description": "Display neuron morphology in 3D",
             "experience": ["all"],
             "maturity": ["beta"],
-            "access": [""],
+            "access": null,
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png",
@@ -248,7 +248,7 @@
              "description": "",
              "experience": ["all"],
              "maturity": ["beta"],
-             "access": [""],
+             "access": null,
              "disabled": false,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
@@ -261,7 +261,7 @@
              "description": " ",
              "experience": ["all"],
              "maturity": ["beta"],
-             "access": [""],
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
@@ -275,8 +275,8 @@
             "title": "Reconstruction and simulation of neural tissue I: Neurons and Synapses",
             "description": "",
             "experience": ["all"],
-            "maturity": [""],
-            "access": [""],
+            "maturity": null,
+            "access": null,
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
@@ -290,8 +290,8 @@
              "title": "Configure and run a small circuit using preconfigured HBP model and data",
              "description": "",
              "experience": ["all", "power"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
@@ -303,8 +303,8 @@
              "title": "Configure and run a small circuit using HBP model and data",
              "description": "",
              "experience": ["power"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
@@ -316,8 +316,8 @@
              "title": "Configure and run your own small circuit using HBP model and data",
              "description": "",
              "experience": ["power", "experts"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
@@ -329,8 +329,8 @@
              "title": "Configure and run your own small circuit using HBP and your own model and data",
              "description": "",
              "experience": ["experts", "code"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
@@ -344,8 +344,8 @@
              "title": "Configure and run a brain region using preconfigured HBP model and data",
              "description": "",
              "experience": ["experts", "code"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
@@ -357,8 +357,8 @@
              "title": "Configure and run a brain region using HBP model and data",
              "description": "",
              "experience": ["code"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
@@ -370,8 +370,8 @@
              "title": "Build, configure, and run a brain region using HBP model and your own configuration rules",
              "description": "",
              "experience": ["code"],
-             "maturity": [""],
-             "access": [""],
+             "maturity": null,
+             "access": null,
              "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",

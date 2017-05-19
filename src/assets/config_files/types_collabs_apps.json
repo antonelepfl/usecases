@@ -10,21 +10,21 @@
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "776c0ac0-f597-4751-b18c-fb1a306c1a44"
+    "file": "4bae83ab-3a40-40dc-91f2-9b24c19d5fe7"
   },
   "synapticeventsfitting(user'smodel)": {
     "entryname": "Fitting GUI with user's model",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "9e2a7cf4-9402-4146-91d1-aa74802dbf24"
+    "file": "e7edd9de-a59c-4980-acb8-6aa6de3cf24b"
   },
   "synapticeventsfitting(user'sdata)": {
     "entryname": "Fitting GUI with user's data",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "097ad30c-9c7d-4d6a-aa2b-b1a2387f928b"
+    "file": "01b98fe7-1c5b-4036-9b90-f67cd842eb70"
   },
   "jupyternotebook": {
     "entryname": "Jupyter Notebook",

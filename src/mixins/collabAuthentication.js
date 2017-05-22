@@ -72,5 +72,17 @@ export default {
       }
       return hbpStorage
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      // checks the authentication for each page that use this mixins
+      let that = vm
+      that.login().then(function () {
+        that.authenticated = true
+        next()
+      }, function (error) {
+        console.error(error)
+      })
+    })
   }
 }

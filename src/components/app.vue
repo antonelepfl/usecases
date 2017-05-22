@@ -1,6 +1,6 @@
 <template>
-  <div class="startapp" v-if="!loading">
-    <uc-container key="container"></uc-container>
+  <div class="startapp">
+    <uc-container key="container" v-if="authenticated"></uc-container>
   </div>
 </template>
 
@@ -16,24 +16,15 @@ Vue.use(VueMaterial)
 export default {
   name: 'startapp',
   components: {
-    ucContainer, VueMaterial
+    'uc-container': ucContainer
   },
   data () {
     return {
-      loading: true
+      authenticated: false
     }
   },
   props: ['list_usecases'],
-  mixins: [CollabAuthentication],
-  created () {
-    var that = this
-    this.login().then(function () {  // from CollabAuthentication
-      that.loading = false
-    }, function (error) {
-      console.error(error)
-      that.isLoading = false
-    })
-  }
+  mixins: [CollabAuthentication]
 }
 </script>
 

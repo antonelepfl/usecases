@@ -1,17 +1,24 @@
 <template>
-   <div class="model-container">
+   <div class="model-container" v-if="authenticated">
       <ca1-model-list v-on:selected="touched"></ca1-model-list>
    </div>
 </template>
 
 <script>
    import ca1ModelList from './ca1-model-list.vue'
+   import collabAuthentication from 'mixins/collabAuthentication.js'
    export default {
       name: 'modelContainer',
       components: {
          'ca1-model-list': ca1ModelList
       },
+      data: function () {
+        return {
+          authenticated: true
+        }
+      },
       props: ['list_usecases', 'uc_name'],
+      mixins: [collabAuthentication],
       methods: {
         touched (modelItem) {
           this.$router.push({name: 'sc_models_form',

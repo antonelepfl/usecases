@@ -17,7 +17,7 @@
    export default {
       name: 'ucContainer',
       components: {
-         ucItem
+         'uc-item': ucItem
       },
       data () {
          return {

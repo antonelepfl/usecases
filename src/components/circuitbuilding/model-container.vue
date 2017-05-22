@@ -1,5 +1,5 @@
 <template>
-   <div class="model-container">
+   <div class="model-container" v-if="authenticated">
       <div class="title">Please select a model</div>
       <div v-for="model in models" v-on:click="selected(model)" v-bind:class="{ 'disabled-container': model.disabled }">
       <div v-if="model.disabled" class="disabled-tag">Coming Soon</div>
@@ -12,7 +12,8 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import ModelsConfig from 'assets/config_files/models.json';
+   import ModelsConfig from 'assets/config_files/models.json'
+   import CollabAuthentication from 'mixins/collabAuthentication.js'
 
    export default {
       name: 'modelContainer',
@@ -20,11 +21,13 @@
          'model-item': modelItem
       },
       props: ['uc_name'],
+      mixins: [CollabAuthentication],
       data () {
          return {
             modelsConfig: ModelsConfig,
             models: [],
-            list_usecases: 'circuitbuilding'
+            list_usecases: 'circuitbuilding',
+            authenticated: false
          }
       },
       methods: {

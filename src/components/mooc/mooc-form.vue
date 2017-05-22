@@ -1,5 +1,5 @@
 <template>
-  <div class="mooc-form">
+  <div class="mooc-form" v-if="authenticated">
     <div class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
@@ -34,6 +34,7 @@
 
 <script>
   import mooc from './mooc.js'
+  import collabAuthentication from 'mixins/collabAuthentication.js'
   export default {
     name: 'moocForm',
     data () {
@@ -47,11 +48,12 @@
         collabResults: [],
         collabCreationProgress: 0,
         fullCollabName: '',
-        timeoutId: 0
+        timeoutId: 0,
+        authenticated: false
       }
     },
     props: ['uc_name'],
-    mixins: [mooc], // use common functions
+    mixins: [mooc, collabAuthentication], // use common functions
     methods: {
       createNewCollab () {
         var that = this

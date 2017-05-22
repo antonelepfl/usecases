@@ -1,5 +1,5 @@
 <template>
-  <div class="cb-form">
+  <div class="cb-form" v-if="authenticated">
     <cb-form-component
       v-on:collabSelected="collabSelected"
       v-on:collabCreated="createNewCollab"
@@ -15,16 +15,18 @@
   import collabFormComponent from 'components/collab-form-component.vue'
   import createCollab from 'mixins/createCollab.js'
   import circuitbuilding from './circuitbuilding.js'
+  import collabAuthentication from 'mixins/collabAuthentication.js'
   export default {
     name: 'collabForm',
     data () {
       return {
         isLoading: false,
-        error: ''
+        error: '',
+        authenticated: false
       }
     },
     props: ['model_name'],
-    mixins: [createCollab, circuitbuilding], // use common functions
+    mixins: [createCollab, circuitbuilding, collabAuthentication], // use common functions
     components: {
       'cb-form-component': collabFormComponent
     },

@@ -1,5 +1,5 @@
 <template>
-   <div id="uc-container" class="uc-container">
+   <div id="uc-container" class="uc-container" v-show="authenticated">
       <div id="uc-container-title" class="title">Please select a use case</div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
@@ -13,17 +13,20 @@
 <script>
    import ucItem from './uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
+   import collabAuthentication from 'mixins/collabAuthentication.js'
 
    export default {
       name: 'ucContainer',
       components: {
-         ucItem
+         'uc-item': ucItem
       },
+      mixins: [collabAuthentication],
       data () {
          return {
             usecases: {},
             categories: usecases[1].categories,
-            route: {}
+            route: {},
+            authenticated: false
          }
       },
       methods: {

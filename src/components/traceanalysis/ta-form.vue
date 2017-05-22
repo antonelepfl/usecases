@@ -1,5 +1,5 @@
 <template>
-  <div class="ta-form">
+  <div class="ta-form" v-if="authenticated">
     <cb-form-component
       v-on:collabSelected="collabSelected"
       v-on:collabCreated="createNewCollab"
@@ -14,16 +14,18 @@
 <script>
   import collabFormComponent from 'components/collab-form-component.vue'
   import createCollab from 'mixins/createCollab.js'
+  import collabAuthentication from 'mixins/collabAuthentication.js'
   export default {
     name: 'taForm',
     data () {
       return {
         isLoading: false,
-        error: ''
+        error: '',
+        authenticated: true
       }
     },
     props: ['uc_name'],
-    mixins: [createCollab], // use common functions
+    mixins: [createCollab, collabAuthentication], // use common functions
     components: {
       'cb-form-component': collabFormComponent
     },

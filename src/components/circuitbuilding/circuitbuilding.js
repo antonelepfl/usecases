@@ -25,13 +25,18 @@ export default {
               } else {
                 promises.push(that.generateNotebook(collab.id, item, parentNav))
               }
+            } else {
+              // navitem found
+              promises.push(Promise.resolve({'collabId': collab.id, 'navitemId': exists.navitemId}))
             }
           }
           if (promises.length === 0) {
             exists['collabId'] = collab.id
             resolve([exists])
           } else {
-            resolve(promises)
+            Promise.all(promises).then(function (elem) {
+              resolve(promises);
+            })
           }
         }, reject)
       })
@@ -44,7 +49,7 @@ export default {
         that.getCollabStorage(collabId)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
-          return that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, parent)
+          return that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, parent, collabId)
         })
         .then(function (file) {
           return that.copyFileContent(appInfo.file, file.uuid)
@@ -61,10 +66,10 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         that.getCollabStorage(collab.id).then(function (projectStorage) {
-          return that.createFolder('notebooks', projectStorage.results[0].uuid)
+          return that.createFolder('notebooks', projectStorage.results[0].uuid, collab.id)
         }, reject)
         .then(function (folder) {
-          return that.createFile(item.entryname, item.contenttype, item.extension, folder.uuid)
+          return that.createFile(item.entryname, item.contenttype, item.extension, folder.uuid, collab.id + '/notebooks')
         }, reject)
         .then(function (file) {
           return that.copyFileContent(item.file, file.uuid)

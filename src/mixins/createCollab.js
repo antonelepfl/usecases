@@ -170,7 +170,7 @@ export default {
         that.$http.get(url, newHeader).then(function (response) {
           console.debug('File by name retrieved')
           resolve(response.body)
-        })
+        }, reject)
       })
     },
     createFile (name, contentType, extension, parent, collabId) {
@@ -376,11 +376,11 @@ export default {
         }
       })
     },
-    createFolder (name, parent) {
+    createFolder (name, parentId, collabId) {
       var that = this
       var payload = {
         'name': name,
-        'parent': parent
+        'parent': parentId
       }
       return new Promise(function (resolve, reject) {
         that.$http.post(FOLDER_ENDPOINT, payload, that.header)
@@ -388,7 +388,17 @@ export default {
           console.debug('Folder created')
           resolve(folder.body)
         },
-        function () { reject('Error creating folder. Folder already exists?') })
+        function (e) {
+          console.error('Error creating folder. Folder already exists?')
+          if (collabId) {
+            that.getFileByName(collabId, name)
+            .then(function (file) {
+              resolve(file)
+            }, function () {
+              reject('Error creating a file')
+            })
+          }
+        })
       })
     },
     replaceContentAndCopy (findString, replaceString, collabId, appInfo, parentNav) {

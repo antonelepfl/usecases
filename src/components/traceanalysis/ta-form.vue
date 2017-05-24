@@ -21,7 +21,7 @@
       return {
         isLoading: false,
         error: '',
-        authenticated: true
+        authenticated: false
       }
     },
     props: ['uc_name'],

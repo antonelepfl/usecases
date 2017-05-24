@@ -120,6 +120,45 @@
             },
             "next": "sc_form"
          },
+        {
+           "title": "Optimize a cerebellar granule cell model composed by a single section",
+           "description": "Using BluePyOpt to optimize a single compartmental cerebellar granule cell. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
+           "experience": ["all", "power"],
+           "maturity": null,
+           "access": null,
+           "disabled": false,
+           "picture": {
+              "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
+              "alt": "cerebellar granule cell"
+           },
+           "next": "sc_form"
+        },
+        {
+           "title": "Optimize a cerebellar granule cell multicompartmental model",
+           "description": "Using BluePyOpt to optimize a multcompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
+           "experience": ["all", "power"],
+           "maturity": null,
+           "access": null,
+           "disabled": false,
+           "picture": {
+              "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
+              "alt": "cerebellar granule cell"
+           },
+           "next": "sc_form"
+        },
+                {
+           "title": "Optimize a cerebellar granule cell multicompartmental model with BluePyOpt running on Neuro Science Gateway (NSG)",
+           "description": "Using BluePyOpt to optimize a multicompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. This version runs on the NeuroscienceGateway (NSG) - Account required on it to run it.",
+           "experience": ["experts"],
+           "maturity": null,
+           "access": null,
+           "disabled": false,
+           "picture": {
+              "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
+              "alt": "cerebellar granule cell"
+           },
+           "next": "sc_form"
+        },
          {
             "title": "Build your own single hippocampal cell model using HBP and your own data",
             "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",

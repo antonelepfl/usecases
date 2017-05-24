@@ -68,7 +68,7 @@ export default {
             .then(function () {
               console.debug('Nav entry created')
               resolve({'collabId': collabId, 'navitemId': navitemId})
-            }, function (e) { console.error('Error in fillJupyterNavItem', e) })
+            }, function (e) { console.error('Error in fillJupyterNavItem') })
           } else {
             console.debug('Nav entry created')
             resolve({'collabId': collabId, 'navitemId': navitemId})
@@ -196,7 +196,7 @@ export default {
             that.getFileByName(collabId, name + extension)
             .then(function (file) {
               resolve(file)
-            }, function () {
+            }, function (e) {
               reject('Error creating a file')
             })
           }
@@ -216,8 +216,8 @@ export default {
           console.debug('File content copied')
           resolve(newFileId)
         }, function (e) {
-          console.error('Error copying the file content', e);
-          reject(newFileId)
+          console.error('Error copying the file content');
+          reject('Error copying the file: ' + newFileId)
         })
       })
     },
@@ -229,16 +229,16 @@ export default {
         that.getCollabStorage(collabId)
         .then(function (projectStorage) {
           var parent = projectStorage.results[0].uuid
-          var t = new Date() // to avoid conflicts with fileNames in collab storage
-          var time = t.getMilliseconds().toString()
-          var name = appInfo.entryname + time
+          var name = appInfo.entryname
           return that.createFile(name, appInfo.contenttype, appInfo.extension, parent, collabId)
         })
         .then(function (file) {
           return that.copyFileContent(appInfo.file, file.uuid)
         }, reject)
         .then(function (newFileId) {
-          return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)
+          if (!appInfo.justcopy) {
+            return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)
+          } else { return Promise.resolve({'collabId': collabId}) }
         }, reject)
         .then(function (obj) {
           resolve(obj)

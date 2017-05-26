@@ -309,6 +309,8 @@ export default {
               } else { // is not jupyter notebok just connect to the original file
                 promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
               }
+            } else if (item.initial) {
+              promises.push(Promise.resolve({'collabId': collab.id, 'navitemId': exists.navitemId}))
             }
           }
           if (promises.length === 0) {

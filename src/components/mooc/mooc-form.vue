@@ -41,7 +41,7 @@
       return {
         private: true,
         searchText: '',
-        moocName: 'Neuron and Synapse',
+        moocName: 'Neurons and Synapses',
         isLoading: false,
         errorMessage: '',
         isLoadingLocal: false,

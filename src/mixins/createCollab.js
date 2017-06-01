@@ -89,7 +89,6 @@ export default {
         .then(function (response) { // change the metadata jupyter file
           resolve();
         }, function (error) {
-          debugger
           reject('Error changing the metadata:', error)
         })
       })

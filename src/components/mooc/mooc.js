@@ -36,7 +36,7 @@ export default {
           } else { return Promise.resolve({'collabId': collabId}) }
         }, reject)
         .then(function (obj) {
-          if (obj.navitemId && that.navitemId === undefined && appInfo.initial) {
+          if (obj && obj.navitemId && that.navitemId === undefined && appInfo.initial) {
             that.navitemId = obj.navitemId
           }
           resolve(obj)

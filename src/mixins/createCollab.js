@@ -190,15 +190,20 @@ export default {
         that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
           resolve(response.body)
-        }, function () {
-          console.error('File already exists?')
-          if (collabId) {
-            that.getFileByName(collabId, name + extension)
-            .then(function (file) {
-              resolve(file)
-            }, function (e) {
-              reject('Error creating a file')
-            })
+        }, function (error) {
+          let errorMessage = error.body[0]
+          if (errorMessage && errorMessage.startsWith('File with the same name')) {
+            // get the id of the existing file
+            if (collabId) {
+              that.getFileByName(collabId, name + extension)
+              .then(function (file) {
+                resolve(file)
+              }, function (e) {
+                reject('Error creating a file')
+              })
+            }
+          } else {
+            reject('Error creating a file', error)
           }
         })
       })
@@ -217,7 +222,7 @@ export default {
           resolve(newFileId)
         }, function (e) {
           console.error('Error copying the file content');
-          reject('Error copying the file: ' + newFileId)
+          reject('Error copying the file: ' + originFileId)
         })
       })
     },

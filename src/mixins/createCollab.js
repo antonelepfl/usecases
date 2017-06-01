@@ -1,7 +1,6 @@
 import uuid from 'uuid4'
 import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
 import collabAuthentication from './collabAuthentication.js'
-const FILE_API_URL = 'https://services.humanbrainproject.eu/document/v0/api/file/'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
@@ -68,7 +67,10 @@ export default {
             .then(function () {
               console.debug('Nav entry created')
               resolve({'collabId': collabId, 'navitemId': navitemId})
-            }, function (e) { console.error('Error in fillJupyterNavItem') })
+            }, function (e) {
+              console.error('Error in fillJupyterNavItem')
+              reject(e)
+            })
           } else {
             console.debug('Nav entry created')
             resolve({'collabId': collabId, 'navitemId': navitemId})
@@ -79,14 +81,17 @@ export default {
     fillJupyterNavItem: function (fileId, navitemId, collabId, context) {
       var that = this
       return new Promise(function (resolve, reject) {
-        let jupyterNotebookUrl = FILE_API_URL + fileId + '/metadata'
+        let jupyterNotebookUrl = STORAGE_FILE_API + fileId + '/metadata/'
         var context2 = 'ctx_' + context
         var payload = {}
         payload[context2] = 1 // adding context to the entry
         that.$http.put(jupyterNotebookUrl, payload, that.header)
         .then(function (response) { // change the metadata jupyter file
           resolve();
-        }, function (error) { reject('Error changing the metadata:', error) })
+        }, function (error) {
+          debugger
+          reject('Error changing the metadata:', error)
+        })
       })
     },
     createCollab (collabTitle, isPrivate) {
@@ -378,7 +383,12 @@ export default {
             resolve(response.body)
           },
           function (responseError) {
-            reject(responseError)
+            if (responseError.status === 401) {
+              that.getToken(true) // force renew token
+              reject(responseError)
+            } else {
+              reject(responseError)
+            }
           })
         }
       })

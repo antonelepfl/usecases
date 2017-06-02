@@ -140,8 +140,7 @@
           "contenttype": "application/postscript",
           "extension": ".ai",
           "file": "e80c0100-0bd8-4f04-bb5d-2af0a4fd09da",
-          "justcopy": true,
-          "initial": false
+          "justcopy": true
         },
         {
           "entryname": "ballandstick_circuit",
@@ -149,8 +148,7 @@
           "contenttype": "image/jpeg",
           "extension": ".jpg",
           "file": "84ab297b-e84f-4157-84d0-c7b64f324670",
-          "justcopy": true,
-          "initial": false
+          "justcopy": true
         },
         {
           "entryname": "segments",
@@ -158,8 +156,7 @@
           "contenttype": "application/postscript",
           "extension": ".ai",
           "file": "1d96bfb0-2b9f-4af9-aae2-0871de64acb2",
-          "justcopy": true,
-          "initial": false
+          "justcopy": true
         },
         {
           "entryname": "segments",
@@ -167,8 +164,7 @@
           "contenttype": "image/jpeg",
           "extension": ".jpg",
           "file": "f65f7272-a2b6-45f1-afa4-b765e35744e0",
-          "justcopy": true,
-          "initial": false
+          "justcopy": true
         }
       ],
       [
@@ -178,7 +174,6 @@
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
           "file": "ab3bf6e2-c871-4215-af76-57422bee9ed1",
-          "initial": true,
           "justcopy": false
         }
       ],
@@ -189,7 +184,6 @@
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
           "file": "bc7a7d98-46b3-4b52-b293-1c80c54d061f",
-          "initial": true,
           "justcopy": false
         }
       ],
@@ -200,7 +194,6 @@
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
           "file": "7eb9a566-6de8-4524-a955-cd021b54fa5a",
-          "initial": true,
           "justcopy": false
         },
         {
@@ -209,7 +202,6 @@
           "contenttype": "image/jpeg",
           "extension": ".png",
           "file": "a0edca7a-6f29-47f9-bdf9-37b3c1422c2c",
-          "initial": false,
           "justcopy": true
         }
       ]

@@ -6,12 +6,14 @@ export default {
   mixins: [collabAuthentication, createCollab],
   data: function () {
     return {
-      collabId: undefined,
-      navitemId: undefined
+      navitemId: null,
+      moocUc: null,
+      initialEntryName: null
     }
   },
   methods: {
-    generateNotebook (collabId, appInfo, parentNav) {
+    generateFiles (collabId, appInfo, parentNav) { // modified version.
+      // it returns objects that has to be created in the navitem
       var that = this
       return new Promise(function (resolve, reject) {
         that.getCollabStorage(collabId)
@@ -23,7 +25,7 @@ export default {
           var originalFileId = appInfo.file
           if (!originalFileId) {
             console.error('No entry in typesCollabsApps.json')
-            reject()
+            return reject('No entry in typesCollabsApps.json')
           }
           return that.copyFileContent(originalFileId, file.uuid)
         }, function (error) {
@@ -32,14 +34,18 @@ export default {
         })
         .then(function (newFileId) {
           if (!appInfo.justcopy) {
-            return that.createNavEntry(appInfo.entryname, collabId, parentNav.id, appInfo.appid, newFileId)
-          } else { return Promise.resolve({'collabId': collabId}) }
-        }, reject)
-        .then(function (obj) {
-          if (obj && obj.navitemId && that.navitemId === undefined && appInfo.initial) {
-            that.navitemId = obj.navitemId
-          }
-          resolve(obj)
+            that.collabCreationProgress = that.collabCreationProgress + 15
+            if (appInfo.initial) {
+              that.initialEntryName = appInfo.entryname
+            }
+            return resolve({
+              'entryname': appInfo.entryname,
+              'collabId': collabId,
+              'parentId': parentNav.id,
+              'appId': appInfo.appid,
+              'newFileId': newFileId
+            })
+          } else { return resolve({'collabId': collabId, 'entryname': appInfo.entryname}) }
         }, reject)
       })
     },
@@ -61,26 +67,23 @@ export default {
     createCoursesMooc (collab, uc) { // cretes mooc -> weeks
       var that = this
       return new Promise(function (resolve, reject) {
-        let moocUc = typesCollabsApps[uc]
-        // let coursesPromises = []
-        if (moocUc && moocUc.children) {
-          // for (let i = 0; i < moocUc.children.length; i++) {
-          //   let creat = that.createItemInExistingCollab(collab, moocUc.children[i])
-          //   coursesPromises.push(creat)
-          // }
-          // Promise.all(coursesPromises)
-          // TODO make it loop in order
-          that.createItemInExistingCollab(collab, moocUc.children[0])
-          .then(function () {
-            return that.createItemInExistingCollab(collab, moocUc.children[1])
+        that.moocUc = typesCollabsApps[uc]
+        let coursesPromises = []
+        if (that.moocUc && that.moocUc.children) {
+          for (let i = 0; i < that.moocUc.children.length; i++) {
+            let creat = that.createItemInExistingCollab(collab, that.moocUc.children[i])
+            coursesPromises.push(creat)
+          }
+          Promise.all(coursesPromises).then(function (elements) {
+            return that.generateNavItems(elements)
+          }, function (error) { // probably the collab already exist error
+            if (error.body && error.body.title) {
+              reject(error.body.title[0])
+            } else {
+              reject(error)
+            }
           })
           .then(function () {
-            return that.createItemInExistingCollab(collab, moocUc.children[2])
-          })
-          .then(function () {
-            return that.createItemInExistingCollab(collab, moocUc.children[3])
-          })
-          .then(function (elements) {
             that.collabCreationProgress = that.collabCreationProgress + 20
             if (that.navitemId) {
               that.redirectToCollab(collab.id, that.navitemId)
@@ -89,17 +92,12 @@ export default {
             }
             that.redirectToCollab(collab.id)
             setTimeout(resolve, 1500)
-          }, function (error) { // probably the collab already exist error
-            if (error.body && error.body.title) {
-              reject(error.body.title[0])
-            } else {
-              reject(error)
-            }
           })
         }
       })
     },
-    createItemInExistingCollab (collab, uc) { // creates weeks -> files
+    createItemInExistingCollab (collab, uc) { // creates weeks -> files. Modified.
+      // returns the info to generate entry
       var ucInfo = uc
       var that = this
       return new Promise(function (resolve, reject) {
@@ -113,8 +111,8 @@ export default {
               var item = ucInfo[i]
               exists = that.checkExists(parentNav, item.appid, item.entryname)
               if (!exists.found) {
-                promises.push(that.generateNotebook(collab.id, item, parentNav))
-              } else if (that.navitemId === undefined && item.initial) {
+                promises.push(that.generateFiles(collab.id, item, parentNav))
+              } else if (that.navitemId === null && item.initial) {
                 that.navitemId = exists.navitemId
               }
             }
@@ -122,11 +120,7 @@ export default {
               exists['collabId'] = collab.id
               resolve([exists])
             } else {
-              Promise.all(promises)
-              .then(function (elements) {
-                that.collabCreationProgress = that.collabCreationProgress + 15
-                resolve(promises)
-              }, reject)
+              Promise.all(promises).then(resolve)
             }
           }, reject)
         }
@@ -160,6 +154,107 @@ export default {
           searchText = 'Mooc'
         }
         that.fullCollabName = searchText + ' - ' + moocName + ' - ' + user.displayName + ' ' + d
+      })
+    },
+    findInitialEntry (entry, queryName) {
+      return entry.entryName === queryName
+    },
+    findNotebook (entry) {
+      return entry.justcopy === false
+    },
+    findEntryInStructure (unsortedCourses, entryName) {
+      // will find an element in the courses -> children structure
+      for (let i = 0; i < unsortedCourses.length; i++) {
+        let unsortedItems = unsortedCourses[i]
+        for (let j = 0; j < unsortedItems.length; j++) {
+          let item = unsortedItems[j]
+          if (item.entryname === entryName) {
+            return item;
+          }
+        }
+      }
+    },
+    setInitialNavItem (elem) {
+      if (this.navitemId == null && this.initialEntryName === elem.entryName) {
+        this.navitemId = elem.navitemId
+      }
+    },
+    generateNavItems (unsortedCourses) {
+      let that = this
+      return new Promise(function (resolve, reject) {
+        // let promiseArray = []
+        // for (let i = 0; i < unsortedCourses.length; i++) {
+        //   let notebook = that.moocUc.children[i].find(that.findNotebook)
+        //   if (notebook) {
+        //     let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
+        //     promiseArray.push(that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId))
+        //   }
+        // }
+        // Promise.mapSeries(promiseArray, function (elem) {
+        //   console.log(elem)
+        //   if (that.navitemId == null && that.initialEntryName === elem.entryName) {
+        //     that.navitemId = elem.navitemId
+        //   }
+        // })
+
+        // TOOD convert this in parallel when collab order works
+        let notebook = that.moocUc.children[0].find(that.findNotebook)
+        if (notebook) {
+          let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
+          let p = null
+          if (item) {
+            p = that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
+          } else {
+            console.debug(notebook.entryname + ' already exists')
+            p = Promise.resolve()
+          }
+          p.then(function (elem) {
+            that.setInitialNavItem(elem)
+            let notebook = that.moocUc.children[1].find(that.findNotebook)
+            if (notebook) {
+              let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
+              let p = null // temp promise usage for create or return resolve
+              if (item) {
+                p = that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
+              } else {
+                console.debug(notebook.entryname + ' already exists')
+                p = Promise.resolve()
+              }
+              p.then(function (elem) {
+                that.setInitialNavItem(elem)
+                let notebook = that.moocUc.children[2].find(that.findNotebook)
+                if (notebook) {
+                  let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
+                  let p = null // temp promise usage for create or return resolve
+                  if (item) {
+                    p = that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
+                  } else {
+                    console.debug(notebook.entryname + ' already exists')
+                    p = Promise.resolve()
+                  }
+                  p.then(function (elem) {
+                    that.setInitialNavItem(elem)
+                    let notebook = that.moocUc.children[3].find(that.findNotebook)
+                    if (notebook) {
+                      let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
+                      let p = null // temp promise usage for create or return resolve
+                      if (item) {
+                        p = that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
+                      } else {
+                        console.debug(notebook.entryname + ' already exists')
+                        p = Promise.resolve()
+                      }
+                      p.then(function (elem) {
+                        that.setInitialNavItem(elem)
+                        resolve()
+                      }, reject)
+                    }
+                  }, reject)
+                }
+              }, reject)
+            }
+          }, reject)
+        } // end of the callbacks
       })
     }
   }

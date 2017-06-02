@@ -66,7 +66,7 @@ export default {
             that.fillJupyterNavItem(fileId, navitemId, collabId, context)
             .then(function () {
               console.debug('Nav entry created')
-              resolve({'collabId': collabId, 'navitemId': navitemId})
+              resolve({'collabId': collabId, 'navitemId': navitemId, 'entryName': entryName})
             }, function (e) {
               console.error('Error in fillJupyterNavItem')
               reject(e)

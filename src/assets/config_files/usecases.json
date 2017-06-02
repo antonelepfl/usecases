@@ -159,6 +159,19 @@
            },
            "next": "sc_form"
         },
+        {
+          "title": "Optimise a fast spiking interneuron in the Basal Ganglia",
+          "description": "Optimise parameters for a striatal fast spiking interneuron using BluePyOpt based on experimental data",
+          "experience": ["code"],
+          "maturity": ["experimental"],
+          "access": null,
+          "disabled": false,
+          "picture": {
+            "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+            "alt": "spiking internuron"
+          },
+          "next": "sc_form"
+         },
          {
             "title": "Build your own single hippocampal cell model using HBP and your own data",
             "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",

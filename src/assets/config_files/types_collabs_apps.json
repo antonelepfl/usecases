@@ -557,5 +557,25 @@
         "justcopy": true
       }
     ]
+  },
+  "optimiseafastspikinginterneuroninthebasalganglia": {
+    "children": [
+      {
+        "file":"c2dc86e0-298e-4b13-8772-0989de0c51b5",
+        "appid":175,
+        "entryname":"FS-notebook",
+        "extension": ".ipynb",
+        "contenttype":"application/x-ipynb+json",
+        "justcopy": false
+      },
+      {
+        "file":"1db33b78-df8a-4fa7-aca8-6a751590a921",
+        "appid":175,
+        "entryname":"FS-use-case.tar",
+        "extension": ".bz2",
+        "contenttype":"application/x-bzip2",
+        "justcopy": true
+      }
+    ]
   }
 }

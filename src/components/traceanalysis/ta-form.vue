@@ -34,6 +34,7 @@
         var that = this
         this.isLoading = true
         this.error = ''
+        this.sendStatistics(collab.id, this.uc_name, false)
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false
@@ -46,6 +47,7 @@
         var that = this
         this.isLoading = true
         this.error = ''
+        this.sendStatistics(collab.id, this.uc_name, true)
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false

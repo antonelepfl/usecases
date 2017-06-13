@@ -60,11 +60,14 @@
         var isPrivate = true
         this.isLoading = true
         this.errorMessage = ''
-        this.collabCreationProgress = 10;
+        this.collabCreationProgress = 10
         this.createMoocCollab(isPrivate, this.fullCollabName, this.uc_name)
-        .then(function () {
-          that.collabCreationProgress = 100;
-          that.isLoading = false
+        .then(function (collab) {
+          that.sendStatistics(collab.id, that.uc_name, true)
+          that.createCoursesMooc(collab, that.uc_name).then(function () {
+            that.collabCreationProgress = 100
+            that.isLoading = false
+          })
         },
         function (error) {
           if (error === 'collab with this title already exists.') {
@@ -80,7 +83,8 @@
       collabSelected (collab) {
         var that = this
         that.isLoadingLocal = true
-        this.collabCreationProgress = 10;
+        this.collabCreationProgress = 10
+        this.sendStatistics(collab.id, this.uc_name, false)
         this.addMoocExistingCollab(collab, this.uc_name).then(function () {
           that.isLoadingLocal = false
         }, function (error) {
@@ -168,6 +172,7 @@
   }
   .md-theme-default a:not(.md-button) {
     color: #8888cb;
+    padding: 10px;
   }
   .body-mooc button {
     margin: 20px;

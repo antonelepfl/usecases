@@ -1,6 +1,7 @@
 import uuid from 'uuid4'
 import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
 import collabAuthentication from './collabAuthentication.js'
+import usecases from 'assets/config_files/usecases.json'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
@@ -14,6 +15,7 @@ export default {
     return {
       errorMessage: '',
       typesCollabsApps: typesCollabsApps,
+      usecases: usecases[0],
       header: {},
       userInfo: null
     }
@@ -120,7 +122,9 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
           var parentRoot = response.body.id
-          resolve({'root': parentRoot, 'collabId': collabId})
+          let nav = {'root': parentRoot, 'collabId': collabId}
+          console.debug('Get nav root obtained')
+          resolve(nav)
         }, function () { reject('Error obtaining the nav root') })
       })
     },
@@ -130,6 +134,7 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
           var nav = response.body
+          console.debug('Get all nav obtained')
           resolve(nav)
         }, function () { reject('Error get nav root') })
       })
@@ -491,6 +496,51 @@ export default {
           })
         })
       })
+    },
+    sendStatistics (collabId, ucName, isNew) {
+      let that = this
+      let fullTitle = null
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function () {
+          searchPath(ucName)
+          send()
+        }, { timeout: 1000 });
+      } else {
+        searchPath(ucName)
+        send()
+      }
+      function send () {
+        /* eslint no-undef: 0 */
+        // let formData = new FormData()
+        let formData = new URLSearchParams()
+        let collabCreated = (isNew) ? 'Create' : 'Add'
+        formData.append('entry.724323063', collabCreated)
+        formData.append('entry.1219332324', fullTitle)
+        formData.append('entry.748800890', collabId)
+        console.debug('Send statistic to form')
+        let url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse'
+        let options = {
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }
+        that.$http.post(url, formData.toString(), options)
+        .then(function () {
+          console.log('ok')
+        }, function () {
+          console.log('bad')
+        })
+      }
+      function searchPath (ucName) {
+        for (let i in that.usecases) {
+          for (let j in that.usecases[i]) {
+            let title = that.usecases[i][j].title
+            let titleCompressed = title.replace(/ /g, '').toLowerCase()
+            if (titleCompressed === ucName) {
+              fullTitle = title
+              return;
+            }
+          }
+        }
+      }
     }
   }
 }

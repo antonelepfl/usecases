@@ -35,6 +35,7 @@
         var that = this
         this.isLoading = true
         this.error = ''
+        this.sendStatistics(collab.id, this.model_name, false)
         this.createItemInExistingCollab(collab, this.model_name)
         // some of the functions here are overwritten in the circuitbuilding.js
         .then(function () {
@@ -48,6 +49,7 @@
         var that = this
         this.error = ''
         this.isLoading = true
+        this.sendStatistics(collab.id, this.model_name, true)
         this.createItemInExistingCollab(collab, this.model_name)
         .then(function () {
           that.isLoading = false

@@ -69,7 +69,10 @@
     },
     methods: {
       collabSelected: function (collab) {
-        this.$emit('collabSelected', collab)
+        let that = this
+        this.getCollabStorage(collab.id).then(function () {
+          that.$emit('collabSelected', collab)
+        })
       },
       createNewCollab () {
         var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
@@ -78,7 +81,9 @@
         that.isLoadingLocal = true
         this.createCollab(this.searchText, isPrivate)
         .then(function (collab) {
-          that.$emit('collabCreated', collab)
+          that.getCollabStorage(collab.id).then(function () {
+            that.$emit('collabCreated', collab)
+          })
         }, function (error) {
           that.errorMessage = error
           that.isLoadingLocal = false
@@ -175,6 +180,7 @@
   .collabs-results-container .collab-result > a.nota {
     color: #ac6067;
     cursor: pointer;
+    padding: 10px;
   }
   .collab-form-component span.error-message {
     display: block;

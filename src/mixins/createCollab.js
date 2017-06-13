@@ -47,16 +47,17 @@ export default {
         })
       })
     },
-    createNavEntry (entryName, collabId, parentId, appId, fileId) {
+    createNavEntry (entryName, collabId, parentId, appId, fileId, order) {
       var that = this
       return new Promise(function (resolve, reject) {
         var context = uuid()
+        var navOrder = order || '-1'
         var type = 'IT'
         var payload = {
           'app_id': appId,
           'context': context,
           'name': entryName,
-          'order_index': '-1',
+          'order_index': navOrder,
           'parent': parentId,
           'type': type
         }
@@ -206,6 +207,7 @@ export default {
             if (collabId) {
               that.getFileByName(collabId, name + extension)
               .then(function (file) {
+                file.exists = true
                 resolve(file)
               }, function (e) {
                 reject('Error creating a file')
@@ -344,6 +346,7 @@ export default {
           if (nav.children[i].app_id === appId.toString() &&
             nav.children[i].name === appName) {
             item.found = true
+            item.entryname = appName
             item.navitemId = nav.children[i].id
           }
           i = i + 1
@@ -523,11 +526,7 @@ export default {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         }
         that.$http.post(url, formData.toString(), options)
-        .then(function () {
-          console.log('ok')
-        }, function () {
-          console.log('bad')
-        })
+        .then(function () {}, function () {})
       }
       function searchPath (ucName) {
         for (let i in that.usecases) {

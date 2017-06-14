@@ -57,7 +57,7 @@
     methods: {
       createNewCollab () {
         var that = this
-        var isPrivate = true
+        var isPrivate = false
         this.isLoading = true
         this.errorMessage = ''
         this.collabCreationProgress = 10

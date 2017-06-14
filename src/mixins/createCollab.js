@@ -506,11 +506,15 @@ export default {
       if ('requestIdleCallback' in window) {
         requestIdleCallback(function () {
           searchPath(ucName)
-          send()
+          if (process.env.SEND_STATISTICS) {
+            send()
+          }
         }, { timeout: 1000 });
       } else {
         searchPath(ucName)
-        send()
+        if (process.env.SEND_STATISTICS) {
+          send()
+        }
       }
       function send () {
         /* eslint no-undef: 0 */

@@ -55,42 +55,42 @@
     props: ['uc_name'],
     mixins: [mooc, collabAuthentication], // use common functions
     methods: {
-      createNewCollab () {
+      async createNewCollab () {
         var that = this
-        var isPrivate = false
+        var isPrivate = true
         this.isLoading = true
         this.errorMessage = ''
         this.collabCreationProgress = 10
-        this.createMoocCollab(isPrivate, this.fullCollabName, this.uc_name)
-        .then(function (collab) {
+        try {
+          let collab = await this.createMoocCollab(isPrivate, this.fullCollabName)
           that.sendStatistics(collab.id, that.uc_name, true)
-          that.createCoursesMooc(collab, that.uc_name).then(function () {
-            that.collabCreationProgress = 100
-            that.isLoading = false
-          })
-        },
-        function (error) {
+          await that.createCoursesMooc(collab, that.uc_name)
+          that.collabCreationProgress = 100
+          that.isLoading = false
+        } catch (error) {
           if (error === 'collab with this title already exists.') {
             console.debug('Collab name already exist')
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {
-            that.errorMessage = 'Error during creation: ' + error
+            let message = error.body.detail || error
+            that.errorMessage = 'Error during collab creation: ' + message
             that.isLoading = false
           }
-        })
+        }
       },
-      collabSelected (collab) {
+      async collabSelected (collab) {
         var that = this
         that.isLoadingLocal = true
         this.collabCreationProgress = 10
-        this.sendStatistics(collab.id, this.uc_name, false)
-        this.addMoocExistingCollab(collab, this.uc_name).then(function () {
+        try {
+          this.sendStatistics(collab.id, this.uc_name, false)
+          await this.addMoocExistingCollab(collab, this.uc_name)
           that.isLoadingLocal = false
-        }, function (error) {
+        } catch (error) {
           that.errorMessage = error
           that.isLoadingLocal = false
-        })
+        }
       }
     },
     mounted () {

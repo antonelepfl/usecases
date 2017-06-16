@@ -539,10 +539,11 @@ export default {
             let titleCompressed = title.replace(/ /g, '').toLowerCase()
             if (titleCompressed === ucName) {
               fullTitle = title
-              return;
+              return
             }
           }
         }
+        fullTitle = ucName
       }
     }
   }

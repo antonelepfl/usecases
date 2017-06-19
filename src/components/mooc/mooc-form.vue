@@ -63,7 +63,7 @@
         this.collabCreationProgress = 10
         try {
           let collab = await this.createMoocCollab(isPrivate, this.fullCollabName)
-          that.sendStatistics(collab.id, that.uc_name, true)
+          that.sendStatistics(collab.id, that.uc_name, null, true)
           await that.createCoursesMooc(collab, that.uc_name)
           that.collabCreationProgress = 100
           that.isLoading = false
@@ -84,7 +84,7 @@
         that.isLoadingLocal = true
         this.collabCreationProgress = 10
         try {
-          this.sendStatistics(collab.id, this.uc_name, false)
+          that.sendStatistics(collab.id, that.uc_name, null, false)
           await this.addMoocExistingCollab(collab, this.uc_name)
           that.isLoadingLocal = false
         } catch (error) {

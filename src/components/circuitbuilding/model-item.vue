@@ -26,7 +26,7 @@
       },
       created () {
         // converting to reuse the uc description
-        this.uc.title = this.model.species + ' ' + this.model.brain_structure + ' ' + this.model.cell_soma_location
+        this.uc.title = this.model.title
         this.uc.description = this.model.description
         this.uc.contributors = this.model.contributors
       }

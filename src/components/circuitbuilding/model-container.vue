@@ -14,6 +14,7 @@
    import modelItem from './model-item.vue'
    import ModelsConfig from 'assets/config_files/models.json'
    import CollabAuthentication from 'mixins/collabAuthentication.js'
+   import circuitbuilding from './circuitbuilding.js'
 
    export default {
       name: 'modelContainer',
@@ -21,7 +22,7 @@
          'model-item': modelItem
       },
       props: ['uc_name'],
-      mixins: [CollabAuthentication],
+      mixins: [CollabAuthentication, circuitbuilding],
       data () {
          return {
             modelsConfig: ModelsConfig,
@@ -33,18 +34,12 @@
       methods: {
          selected (model) {
            if (!model.disabled) {
-             var pathName = this.uc_name
-             pathName = pathName + model.species
-             pathName = pathName + model.brain_structure
-             pathName = pathName + model.cell_soma_location
-             pathName = pathName.toLowerCase()
-             this.$router.push({name: 'cb_form', params: {'model_name': pathName}})
+             var pathName = this.uglyfy(model.title)
+             this.$router.push({
+               name: 'cb_form',
+               params: {'model_name': pathName}
+            })
            }
-         },
-         prettyfy (name) {
-            return name.split('_').map(function (word) {
-               return word.charAt(0).toUpperCase() + word.slice(1)
-            }).join(' ')
          }
       },
       created () {

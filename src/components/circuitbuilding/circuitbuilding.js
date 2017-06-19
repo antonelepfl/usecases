@@ -1,10 +1,13 @@
 import typesCollabsApps from 'assets/config_files/types_collabs_apps.json'
 import createCollab from 'mixins/createCollab.js'
 import collabAuthentication from 'mixins/collabAuthentication.js'
+import models from 'assets/config_files/models.json'
+
 export default {
   data () {
     return {
-      typesCollabsApps: typesCollabsApps
+      typesCollabsApps: typesCollabsApps,
+      models: models
     }
   },
   mixins: [collabAuthentication, createCollab],
@@ -78,6 +81,22 @@ export default {
           resolve(obj)
         }, reject)
       })
+    },
+    uglyfy (name) {
+      return name.split(' ').map(function (word) {
+        return word.toLowerCase()
+      }).join('')
+    },
+    getModelName (modelName) {
+      if (modelName) {
+        let modelBasedOnUC = this.models.circuitbuilding[this.uc_name]
+        for (let elem in modelBasedOnUC) {
+          let title = modelBasedOnUC[elem].title
+          if (this.uglyfy(title) === modelName) {
+            return title
+          }
+        }
+      }
     }
   }
 }

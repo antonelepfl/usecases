@@ -35,7 +35,7 @@
         this.error = ''
         this.isLoading = true
         var findString = 'REPLACE_MODEL_HERE'
-        this.sendStatistics(collab.id, this.uc_name, false)
+        this.sendStatistics(collab.id, this.uc_name, this.folder_name, false)
         this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .then(function () {
           that.isLoading = false
@@ -49,7 +49,7 @@
         this.error = ''
         this.isLoading = true
         var findString = 'REPLACE_MODEL_HERE'
-        this.sendStatistics(collab.id, this.uc_name, true)
+        this.sendStatistics(collab.id, this.uc_name, this.folder_name, true)
         this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .then(function () {
           that.isLoading = false

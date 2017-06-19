@@ -25,7 +25,7 @@
         authenticated: false
       }
     },
-    props: ['model_name'],
+    props: ['uc_name', 'model_name'],
     mixins: [createCollab, circuitbuilding, collabAuthentication], // use common functions
     components: {
       'cb-form-component': collabFormComponent
@@ -35,8 +35,9 @@
         var that = this
         this.isLoading = true
         this.error = ''
-        this.sendStatistics(collab.id, this.model_name, false)
-        this.createItemInExistingCollab(collab, this.model_name)
+        let modelPrettyName = this.getModelName(this.model_name)
+        this.sendStatistics(collab.id, this.uc_name, modelPrettyName, false)
+        this.createItemInExistingCollab(collab, this.uc_name + this.model_name)
         // some of the functions here are overwritten in the circuitbuilding.js
         .then(function () {
           that.isLoading = false
@@ -49,8 +50,9 @@
         var that = this
         this.error = ''
         this.isLoading = true
-        this.sendStatistics(collab.id, this.model_name, true)
-        this.createItemInExistingCollab(collab, this.model_name)
+        let modelPrettyName = this.getModelName(this.model_name)
+        this.sendStatistics(collab.id, this.uc_name, modelPrettyName, true)
+        this.createItemInExistingCollab(collab, this.uc_name + this.model_name)
         .then(function () {
           that.isLoading = false
         })

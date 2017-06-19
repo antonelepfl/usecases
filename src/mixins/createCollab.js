@@ -500,18 +500,18 @@ export default {
         })
       })
     },
-    sendStatistics (collabId, ucName, isNew) {
+    sendStatistics (collabId, ucName, fullModelName, isNew) {
       let that = this
-      let fullTitle = null
+      let fullUCName = null
       if ('requestIdleCallback' in window) {
         requestIdleCallback(function () {
-          searchPath(ucName)
+          fullUCName = searchPath(ucName)
           if (process.env.SEND_STATISTICS) {
             send()
           }
         }, { timeout: 1000 });
       } else {
-        searchPath(ucName)
+        fullUCName = searchPath(ucName)
         if (process.env.SEND_STATISTICS) {
           send()
         }
@@ -522,7 +522,8 @@ export default {
         let formData = new URLSearchParams()
         let collabCreated = (isNew) ? 'Create' : 'Add'
         formData.append('entry.724323063', collabCreated)
-        formData.append('entry.1219332324', fullTitle)
+        formData.append('entry.1219332324', fullUCName)
+        formData.append('entry.2088231351', fullModelName)
         formData.append('entry.748800890', collabId)
         console.debug('Send statistic to form')
         let url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse'
@@ -538,12 +539,11 @@ export default {
             let title = that.usecases[i][j].title
             let titleCompressed = title.replace(/ /g, '').toLowerCase()
             if (titleCompressed === ucName) {
-              fullTitle = title
-              return
+              return title
             }
           }
         }
-        fullTitle = ucName
+        return ucName
       }
     }
   }

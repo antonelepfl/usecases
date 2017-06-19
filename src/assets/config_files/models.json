@@ -11,6 +11,7 @@
   "circuitbuilding": {
     "cellsplacement": [
       {
+        "title": "Rat Cerebellum volume",
         "species": "Rat",
         "brain_structure": "Cerebellum",
         "cell_soma_location": "volume",
@@ -22,6 +23,7 @@
         "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
       },
       {
+        "title": "Rat hippocampus CA1",
         "species": "Rat",
         "brain_structure": "hippocampus",
         "cell_soma_location": "CA1",
@@ -34,6 +36,7 @@
     ],
     "connectome": [
       {
+        "title": "Rat Cerebellum volume",
         "species": "Rat",
         "brain_structure": "Cerebellum",
         "cell_soma_location": "volume",
@@ -45,6 +48,7 @@
         "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
       },
       {
+        "title": "Rat hippocampus CA1",
         "species": "Rat",
         "brain_structure": "hippocampus",
         "cell_soma_location": "CA1",

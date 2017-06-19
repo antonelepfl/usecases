@@ -28,7 +28,7 @@
             "next": "ta_form"
          },
          {
-            "title": "Synaptic events fitting (user's model)",
+            "title": "Synaptic events fitting with user model",
             "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
             "experience": ["experts"],
             "maturity": ["experimental"],
@@ -41,7 +41,7 @@
             "next": "ta_form"
          },
          {
-            "title": "Synaptic events fitting (user's data)",
+            "title": "Synaptic events fitting with user data",
             "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
             "experience": ["experts"],
             "maturity": ["experimental"],

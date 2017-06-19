@@ -12,14 +12,14 @@
     "extension": ".ipynb",
     "file": "c2417ce5-c267-465a-8109-583969741038"
   },
-  "synapticeventsfitting(user'smodel)": {
+  "synapticeventsfittingwithusermodel": {
     "entryname": "Fitting GUI with user's model",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
     "file": "782abfb4-ff45-4fa1-9ff0-afeb62311da2"
   },
-  "synapticeventsfitting(user'sdata)": {
+  "synapticeventsfittingwithuserdata": {
     "entryname": "Fitting GUI with user's data",
     "appid": 175,
     "contenttype": "x-ipynb+json",

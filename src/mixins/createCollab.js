@@ -503,36 +503,25 @@ export default {
     sendStatistics (collabId, ucName, fullModelName, isNew) {
       let that = this
       let fullUCName = null
+      let userId = null
       if ('requestIdleCallback' in window) {
         requestIdleCallback(function () {
-          fullUCName = searchPath(ucName)
+          getInfoAndSend()
+        }, { timeout: 1000 });
+      } else {
+        getInfoAndSend()
+      }
+
+      function getInfoAndSend () {
+        fullUCName = searchPath(ucName)
+        that.getUserInfo().then(function (user) {
+          userId = user.id
           if (process.env.SEND_STATISTICS) {
             send()
           }
-        }, { timeout: 1000 });
-      } else {
-        fullUCName = searchPath(ucName)
-        if (process.env.SEND_STATISTICS) {
-          send()
-        }
+        })
       }
-      function send () {
-        /* eslint no-undef: 0 */
-        // let formData = new FormData()
-        let formData = new URLSearchParams()
-        let collabCreated = (isNew) ? 'Create' : 'Add'
-        formData.append('entry.724323063', collabCreated)
-        formData.append('entry.1219332324', fullUCName)
-        formData.append('entry.2088231351', fullModelName)
-        formData.append('entry.748800890', collabId)
-        console.debug('Send statistic to form')
-        let url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse'
-        let options = {
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        }
-        that.$http.post(url, formData.toString(), options)
-        .then(function () {}, function () {})
-      }
+
       function searchPath (ucName) {
         for (let i in that.usecases) {
           for (let j in that.usecases[i]) {
@@ -544,6 +533,25 @@ export default {
           }
         }
         return ucName
+      }
+
+      function send () {
+        /* eslint no-undef: 0 */
+        // let formData = new FormData()
+        let formData = new URLSearchParams()
+        let collabCreated = (isNew) ? 'Create' : 'Add'
+        formData.append('entry.724323063', collabCreated)
+        formData.append('entry.1219332324', fullUCName)
+        formData.append('entry.2088231351', fullModelName)
+        formData.append('entry.748800890', collabId)
+        formData.append('entry.1933333390', userId)
+        console.debug('Send statistic to form')
+        let url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse'
+        let options = {
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }
+        that.$http.post(url, formData.toString(), options)
+        .then(function () {}, function () {})
       }
     }
   }

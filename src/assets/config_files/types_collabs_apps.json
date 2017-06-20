@@ -10,21 +10,21 @@
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "c2417ce5-c267-465a-8109-583969741038"
+    "file": "17b62ad0-6e32-402d-b5c8-6805e965a0a6"
   },
   "synapticeventsfittingwithusermodel": {
     "entryname": "Fitting GUI with user model",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "782abfb4-ff45-4fa1-9ff0-afeb62311da2"
+    "file": "be475ea1-f8de-4f96-bb6b-85f31a2cb9a8"
   },
   "synapticeventsfittingwithuserdata": {
     "entryname": "Fitting GUI with user data",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "7aa42ec4-4418-4166-91e5-553b62247a2c"
+    "file": "d2769b24-4288-4932-8f8b-f5ec9686d669"
   },
   "jupyternotebook": {
     "entryname": "Jupyter Notebook",
@@ -72,21 +72,21 @@
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "3550b259-0ca9-40e8-8aa7-70f38c103809"
+        "file": "2dc5f80b-3754-4b3f-a075-d0475683a487"
       },
       {
         "entryname": "BluePyOpt Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "a33ac0f8-93aa-41a2-b583-fec21c85876a"
+        "file": "1fedd0cb-c3f0-417f-9440-adaa3a2647d6"
       },
       {
         "entryname": "NSG Job Manager",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "b03ab6d2-449e-44d5-8bc6-d2579022726f"
+        "file": "2b2e8d0c-80f5-4dc2-8f0b-4bcfa91b9bee"
       }
     ]
   },
@@ -97,21 +97,21 @@
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "fd4f4405-3854-4b66-a7ef-26a1dc863a83"
+        "file": "fff74599-704e-4785-a611-20d983b3e5f5"
       },
       {
         "entryname": "BluePyOpt Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "a33ac0f8-93aa-41a2-b583-fec21c85876a"
+        "file": "1fedd0cb-c3f0-417f-9440-adaa3a2647d6"
       },
       {
         "entryname": "NSG Job Manager",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "b03ab6d2-449e-44d5-8bc6-d2579022726f"
+        "file": "2b2e8d0c-80f5-4dc2-8f0b-4bcfa91b9bee"
       }
     ]
   },

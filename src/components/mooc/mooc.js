@@ -94,19 +94,14 @@ export default {
       let newFileId = null
       try {
         let file = await that.createFile(appInfo.entryname, appInfo.contenttype, appInfo.extension, that.parent, collabId)
-        try {
-          var originalFileId = appInfo.file
-          if (!originalFileId) {
-            return Promise.reject('No entry in typesCollabsApps.json')
-          }
-          if (file.exists) {
-            newFileId = file.uuid
-          } else {
-            newFileId = await that.copyFileContent(originalFileId, file.uuid)
-          }
-        } catch (error) {
-          console.error(error)
-          return {'collabId': collabId}
+        var originalFileId = appInfo.file
+        if (!originalFileId) {
+          return Promise.reject('No entry in typesCollabsApps.json')
+        }
+        if (file.exists) {
+          newFileId = file.uuid
+        } else {
+          newFileId = await that.copyFileContent(originalFileId, file.uuid)
         }
         if (!appInfo.justcopy) {
           that.collabCreationProgress = that.collabCreationProgress + 15

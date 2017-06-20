@@ -73,8 +73,7 @@
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {
-            let message = error.body.detail || error
-            that.errorMessage = 'Error during collab creation: ' + message
+            that.errorMessage = 'Error during collab creation: ' + error
             that.isLoading = false
           }
         }

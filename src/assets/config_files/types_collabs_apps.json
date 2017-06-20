@@ -13,14 +13,14 @@
     "file": "c2417ce5-c267-465a-8109-583969741038"
   },
   "synapticeventsfittingwithusermodel": {
-    "entryname": "Fitting GUI with user's model",
+    "entryname": "Fitting GUI with user model",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
     "file": "782abfb4-ff45-4fa1-9ff0-afeb62311da2"
   },
   "synapticeventsfittingwithuserdata": {
-    "entryname": "Fitting GUI with user's data",
+    "entryname": "Fitting GUI with user data",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
@@ -211,7 +211,7 @@
     "children": [
       {
         "file":"252ddf18-c422-441d-abc2-31562b79524b",
-        "entryname":"grcmonoopt",
+        "entryname":"Granule cell mono compartmental optimization",
         "extension": ".ipynb",
         "appid": 175,
         "contenttype":"application/x-ipynb+json",
@@ -329,7 +329,7 @@
       {
         "file":"c60a4b49-644e-4c1d-a6c0-db9aeb5d1fe2",
         "appid":175,
-        "entryname":"GrCmultiopt",
+        "entryname":"Granule cell multi compartmental optimization",
         "extension": ".ipynb",
         "contenttype":"application/x-ipynb+json",
         "justcopy": false,
@@ -446,7 +446,7 @@
       {
         "file":"fd24c30c-df9d-4eec-b865-de884b29bca6",
         "appid":175,
-        "entryname":"GrCmultiNSG",
+        "entryname":"Granule cell multi compartmental optimization on NSG",
         "extension": ".ipynb",
         "contenttype":"application/x-ipynb+json",
         "justcopy": false,

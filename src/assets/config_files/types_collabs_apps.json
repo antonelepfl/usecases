@@ -141,7 +141,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "846b4ebb-2d15-4d07-b7e8-bdd86d01c827",
+          "file": "ac9f7591-6e41-45bb-b77b-01bb90da1221",
           "justcopy": false
         },
         {
@@ -149,7 +149,7 @@
           "appid": 175,
           "contenttype": "application/postscript",
           "extension": ".ai",
-          "file": "e80c0100-0bd8-4f04-bb5d-2af0a4fd09da",
+          "file": "ba7bb54e-6c46-4194-9eaf-4edd3f49fb95",
           "justcopy": true
         },
         {
@@ -157,7 +157,7 @@
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".jpg",
-          "file": "84ab297b-e84f-4157-84d0-c7b64f324670",
+          "file": "26aa0aa6-4fad-486d-b7d8-7a0a90b9480b",
           "justcopy": true
         },
         {
@@ -165,7 +165,7 @@
           "appid": 175,
           "contenttype": "application/postscript",
           "extension": ".ai",
-          "file": "1d96bfb0-2b9f-4af9-aae2-0871de64acb2",
+          "file": "92067f6f-17d3-46aa-946a-4a7083622164",
           "justcopy": true
         },
         {
@@ -173,8 +173,18 @@
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".jpg",
-          "file": "f65f7272-a2b6-45f1-afa4-b765e35744e0",
+          "file": "4e6a104a-3b06-466c-a599-8f28857eecad",
           "justcopy": true
+        }
+      ],
+      [
+        {
+          "entryname": "Week 3. Graded exercise",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "cc1c7ace-e7b8-4aaf-989a-5e0ac40d4ee9",
+          "justcopy": false
         }
       ],
       [
@@ -183,7 +193,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "ab3bf6e2-c871-4215-af76-57422bee9ed1",
+          "file": "ebdff5eb-7346-4991-970b-8a946562900f",
           "justcopy": false
         }
       ],
@@ -193,7 +203,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "bc7a7d98-46b3-4b52-b293-1c80c54d061f",
+          "file": "571e6c45-67db-40e0-82b1-cab232f49dc2",
           "justcopy": false
         }
       ],
@@ -203,7 +213,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "7eb9a566-6de8-4524-a955-cd021b54fa5a",
+          "file": "84c3d87d-3662-4363-9af5-a836191b50f5",
           "justcopy": false
         },
         {
@@ -211,7 +221,7 @@
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".png",
-          "file": "a0edca7a-6f29-47f9-bdf9-37b3c1422c2c",
+          "file": "aed2767c-0e32-4c68-be87-51fb48c0243c",
           "justcopy": true
         }
       ]

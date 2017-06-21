@@ -126,11 +126,11 @@
     "children": [
       [
         {
-          "entryname": "Week 2. Graded exercise ",
+          "entryname": "Week 2. Graded exercise",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "3fecb63b-4bb5-4c6a-be94-fd11cb65a407",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/Neuroinformatics/Neuroinformatics.ipynb",
           "initial": true,
           "justcopy": false
         }
@@ -141,7 +141,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "23c777ba-1a3d-4cbe-a215-ece18ed1a47c",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/ballandstick.ipynb",
           "justcopy": false
         },
         {
@@ -149,7 +149,7 @@
           "appid": 175,
           "contenttype": "application/postscript",
           "extension": ".ai",
-          "file": "62ed5a4e-0afd-442d-a405-35d572f56a35",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/ballandstick_circuit.ai",
           "justcopy": true
         },
         {
@@ -157,7 +157,7 @@
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".jpg",
-          "file": "b84050ec-3b9b-4b11-9fad-0c2d2f3ee19d",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/ballandstick_circuit.jpg",
           "justcopy": true
         },
         {
@@ -165,7 +165,7 @@
           "appid": 175,
           "contenttype": "application/postscript",
           "extension": ".ai",
-          "file": "955b5f0a-bc0f-47f8-b1d2-5ff98e78cf4f",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/segments.ai",
           "justcopy": true
         },
         {
@@ -173,7 +173,7 @@
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".jpg",
-          "file": "baad05aa-3714-41fe-8d34-00accc38c481",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/segments.jpg",
           "justcopy": true
         }
       ],
@@ -183,7 +183,47 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "bc2117ec-f1f0-41ab-b0c4-94ce4473cb3c",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/GradedExercise.ipynb",
+          "justcopy": false
+        }
+      ],
+      [
+        {
+          "entryname": "Week 4. Exercise 1",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingSynapses/Week4_Exercises/Week%204.%20Exercise%201.ipynb",
+          "justcopy": false
+        }
+      ],
+      [
+        {
+          "entryname": "Week 4. Exercise 2",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingSynapses/Week4_Exercises/Week%204.%20Exercise%202.ipynb",
+          "justcopy": false
+        }
+      ],
+      [ 
+        {
+          "entryname": "Week 4. Exercise 3",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingSynapses/Week4_Exercises/Week%204.%20Exercise%203.ipynb",
+          "justcopy": false
+        }
+      ],
+      [
+        {
+          "entryname": "Week 4. Graded exercise",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingSynapses/Week4_Exercises/Week%204.%20Graded%20exercise.ipynb",
           "justcopy": false
         }
       ],
@@ -193,7 +233,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "5de32dd6-7e0b-495f-b2f1-71c75dcd4d09",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ConstrModels/TutBallStickOpt/ballandstickopt.ipynb",
           "justcopy": false
         }
       ],
@@ -203,7 +243,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "1f6bc277-e8c8-408d-a81e-0a455c97b7cf",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ConstrModels/TutBallStickOpt/GradedExercise.ipynb",
           "justcopy": false
         }
       ],
@@ -213,7 +253,7 @@
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "6e3f862b-dce8-4cb8-8c06-e4f897793dc7",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/NMCPortal/NMCPortal.ipynb",
           "justcopy": false
         },
         {
@@ -221,7 +261,7 @@
           "appid": 175,
           "contenttype": "image/jpeg",
           "extension": ".png",
-          "file": "aed2767c-0e32-4c68-be87-51fb48c0243c",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/NMCPortal/NMCWeb.png",
           "justcopy": true
         }
       ]

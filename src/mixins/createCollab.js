@@ -553,6 +553,14 @@ export default {
         that.$http.post(url, formData.toString(), options)
         .then(function () {}, function () {})
       }
+    },
+    getDataRepo (url) {
+      let that = this
+      return new Promise(function (resolve, reject) {
+        that.$http.get(url).then(function (content) {
+          resolve(content.body)
+        }, reject)
+      })
     }
   }
 }

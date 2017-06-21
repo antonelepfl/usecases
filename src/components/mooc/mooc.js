@@ -98,13 +98,13 @@ export default {
         if (!originalFileId) {
           return Promise.reject('No entry in typesCollabsApps.json')
         }
-        if (file.exists) {
-          newFileId = file.uuid
-        } else {
-          newFileId = await that.copyFileContent(originalFileId, file.uuid)
+        if (!file.exists) {
+          let content = await that.getDataRepo(originalFileId)
+          await that.setFileContent(file.uuid, JSON.stringify(content))
         }
+        newFileId = file.uuid
         if (!appInfo.justcopy) {
-          that.collabCreationProgress = that.collabCreationProgress + 15
+          that.collabCreationProgress = that.collabCreationProgress + 10
           if (appInfo.initial) {
             that.initialEntryName = appInfo.entryname
           }
@@ -179,7 +179,6 @@ export default {
           if (notebook) {
             let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
             let elem = null
-            // let p = null
             if (item && !item.found) {
               elem = await that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
             } else {

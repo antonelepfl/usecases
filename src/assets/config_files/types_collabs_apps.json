@@ -126,12 +126,22 @@
     "children": [
       [
         {
+          "entryname": "Week 2. Graded exercise ",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "457d7a13-5677-4fd5-b331-e2d6f59cf171",
+          "initial": true,
+          "justcopy": false
+        }
+      ],
+      [
+        {
           "entryname": "Week 3. Modeling neurons",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
           "file": "846b4ebb-2d15-4d07-b7e8-bdd86d01c827",
-          "initial": true,
           "justcopy": false
         },
         {

@@ -561,6 +561,16 @@ export default {
           resolve(content.body)
         }, reject)
       })
+    },
+    addCollabMemeber (collabId, userId) {
+      let that = this
+      return new Promise(function (resolve, reject) {
+        let url = COLLAB_API + 'collab/' + collabId + '/team/'
+        let payload = {'users': [userId]}
+        that.$http.put(url, payload, that.header).then(function (team) {
+          resolve(team)
+        }, reject)
+      })
     }
   }
 }

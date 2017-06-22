@@ -19,8 +19,9 @@ export default {
       var that = this
       try {
         await that.getUserInfo()
-        that.collabCreationProgress = 20
+        that.collabCreationProgress = 10
         let collab = await that.createCollab(fullCollabName, isPrivate)
+        that.addCollabMemeber(collab.id, '303700')
         return collab
       } catch (e) { return Promise.reject(e) }
     },
@@ -47,7 +48,7 @@ export default {
             prom.push(that.copyContentToNav(emptyNavItemsId[item]))
           }
           await Promise.all(prom)// populate navitem parallel
-          that.collabCreationProgress = that.collabCreationProgress + 20
+          that.collabCreationProgress = that.collabCreationProgress + 5
 
           that.redirectToCollab(collab.id, that.navitemId)
           await setTimeout(1500) // if it does not redirect stop loading
@@ -104,7 +105,7 @@ export default {
         }
         newFileId = file.uuid
         if (!appInfo.justcopy) {
-          that.collabCreationProgress = that.collabCreationProgress + 10
+          that.collabCreationProgress = that.collabCreationProgress + 5
           if (appInfo.initial) {
             that.initialEntryName = appInfo.entryname
           }

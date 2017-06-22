@@ -50,7 +50,6 @@
       mounted () {
         var ucSelected = this.$route.path.replace(/\//g, '')
         this.usecases = usecases[0]['mooc'][0]['children']
-        console.log(usecases[0])
         var title = ucSelected
         document.querySelector('title').innerText = this.prettyfy(title)
       }

@@ -1,6 +1,6 @@
 <template>
    <div id="course-container" class="course-container" v-if="authenticated">
-      <div id="course-container-title" class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
+      <div id="course-container-title" class="title">Please select a course to initialize</div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">

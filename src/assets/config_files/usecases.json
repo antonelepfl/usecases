@@ -355,7 +355,7 @@
                   "experience": ["all"],
                   "maturity": null,
                   "access": null,
-                  "disabled": false,
+                  "disabled": true,
                   "picture": {
                     "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
                     "alt": "Collab logo "
@@ -368,7 +368,7 @@
                   "experience": ["all"],
                   "maturity": null,
                   "access": null,
-                  "disabled": false,
+                  "disabled": true,
                   "picture": {
                     "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
                     "alt": "Collab logo "
@@ -381,7 +381,7 @@
                   "experience": ["all"],
                   "maturity": null,
                   "access": null,
-                  "disabled": false,
+                  "disabled": true,
                   "picture": {
                     "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
                     "alt": "Collab logo "
@@ -394,7 +394,7 @@
                   "experience": ["all"],
                   "maturity": null,
                   "access": null,
-                  "disabled": false,
+                  "disabled": true,
                   "picture": {
                     "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
                     "alt": "Collab logo "

@@ -8,6 +8,7 @@
    import ca1ModelList from 'components/singlecellmodeling/ca1-model-list.vue'
    const VIEWER_URL = 'https://blue-naas.humanbrainproject.eu/#/model/'
    import collabAuthentication from 'mixins/collabAuthentication.js'
+   import createCollab from 'mixins/createCollab.js'
    
    export default {
       name: 'modelContainer',
@@ -19,10 +20,11 @@
           authenticated: false
         }
       },
-      mixins: [collabAuthentication],
+      mixins: [collabAuthentication, createCollab],
       props: ['list_usecases', 'uc_name'],
       methods: {
-        touched (modelItem) { // open the 3D viewer or continue with the collab search
+        touched (modelItem) { // open Neuron as a service
+          this.sendStatistics(null, this.uc_name, modelItem.folderName, null)
           let viewUrl = VIEWER_URL + modelItem.folderName
           window.open(viewUrl, '_blank');
         }

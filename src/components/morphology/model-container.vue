@@ -7,6 +7,7 @@
 <script>
    import ca1ModelList from 'components/singlecellmodeling/ca1-model-list.vue'
    import collabAuthentication from 'mixins/collabAuthentication.js'
+   import createCollab from 'mixins/createCollab.js'
    const VIEWER_URL = 'https://morph-view-bsp.humanbrainproject.eu/'
    export default {
       name: 'modelContainer',
@@ -18,13 +19,14 @@
           authenticated: false
         }
       },
-      mixins: [collabAuthentication],
+      mixins: [collabAuthentication, createCollab],
       props: ['list_usecases', 'uc_name'],
       methods: {
         touched (modelItem) { // open the 3D viewer or continue with the collab search
           let viewUrl = ''
           switch (this.uc_name) {
             case 'morphologyvisualization':
+              this.sendStatistics(null, this.uc_name, null, null)
               viewUrl = VIEWER_URL + modelItem.folderName + '.html'
               window.open(viewUrl, '_blank');
               break;

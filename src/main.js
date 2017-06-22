@@ -89,12 +89,19 @@ const router = new VueRouter({
       props: true,
       name: 'mooc_container'
     },
-    { path: '/mooc/:uc_name',
+    { path: '/mooc/:uc_name/:week',
       component: function (resolve) {
         require(['components/mooc/mooc-form.vue'], resolve)
       },
       props: true,
       name: 'mooc_form'
+    },
+    { path: '/mooc/:uc_name/',
+      component: function (resolve) {
+        require(['components/mooc/weeks-container.vue'], resolve)
+      },
+      props: true,
+      name: 'weeks_container'
     },
     // ============================ rest of UC ============================
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json

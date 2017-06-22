@@ -32,8 +32,13 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
-              let title = uc.title.toLowerCase().replace(/\s/g, '')
-              this.$router.push({name: uc.next, params: {'uc_name': title}})
+              var weekName = uc.title.toLowerCase().replace(/\s/g, '')
+              this.$router.push({
+                name: uc.next,
+                params: {
+                  'week': weekName
+                }
+              })
             }
          },
          prettyfy (name) {
@@ -44,7 +49,8 @@
       },
       mounted () {
         var ucSelected = this.$route.path.replace(/\//g, '')
-        this.usecases = usecases[0][ucSelected]
+        this.usecases = usecases[0]['mooc'][0]['children']
+        console.log(usecases[0])
         var title = ucSelected
         document.querySelector('title').innerText = this.prettyfy(title)
       }

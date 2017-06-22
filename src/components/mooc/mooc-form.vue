@@ -49,10 +49,11 @@
         collabCreationProgress: 0,
         fullCollabName: '',
         timeoutId: 0,
-        authenticated: false
+        authenticated: false,
+        weekNumber: null
       }
     },
-    props: ['uc_name'],
+    props: ['uc_name', 'week'],
     mixins: [mooc, collabAuthentication], // use common functions
     methods: {
       async createNewCollab () {
@@ -63,8 +64,9 @@
         this.collabCreationProgress = 10
         try {
           let collab = await this.createMoocCollab(isPrivate, this.fullCollabName)
-          that.sendStatistics(collab.id, that.uc_name, null, true)
-          await that.createCoursesMooc(collab, that.uc_name)
+          let prettyWeek = 'Week ' + this.weekNumber
+          that.sendStatistics(collab.id, that.uc_name, prettyWeek, true)
+          await that.createCoursesMooc(collab, that.uc_name, this.week)
           that.collabCreationProgress = 100
           that.isLoading = false
         } catch (error) {
@@ -83,8 +85,9 @@
         that.isLoadingLocal = true
         this.collabCreationProgress = 10
         try {
-          that.sendStatistics(collab.id, that.uc_name, null, false)
-          await this.addMoocExistingCollab(collab, this.uc_name)
+          let prettyWeek = 'Week ' + this.weekNumber
+          that.sendStatistics(collab.id, that.uc_name, prettyWeek, false)
+          await this.addMoocExistingCollab(collab, this.uc_name, this.week)
           that.isLoadingLocal = false
         } catch (error) {
           that.errorMessage = error
@@ -95,13 +98,14 @@
     mounted () {
       let that = this
       this.$nextTick(function () { // waits until token is saved in mixins headers
-        that.updateFullCollabName(this.searchText, this.moocName)
+        this.weekNumber = this.week.match(/\d+/)[0];
+        that.updateFullCollabName(this.searchText, this.moocName, this.weekNumber)
       })
     },
     watch: {
       'searchText' (newVal) {
         var that = this
-        this.updateFullCollabName(this.searchText, this.moocName)
+        this.updateFullCollabName(this.searchText, this.moocName, this.weekNumber)
         if (newVal === '') {
           that.collabResults = []
           that.errorMessage = ''

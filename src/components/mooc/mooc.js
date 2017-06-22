@@ -11,7 +11,8 @@ export default {
       moocUc: null,
       initialEntryName: null,
       parent: null,
-      parentNav: null
+      parentNav: null,
+      moocWeek: null
     }
   },
   methods: {
@@ -25,20 +26,21 @@ export default {
         return collab
       } catch (e) { return Promise.reject(e) }
     },
-    addMoocExistingCollab (collab, uc) {
+    addMoocExistingCollab (collab, uc, week) {
       try {
-        return this.createCoursesMooc(collab, uc)
+        return this.createCoursesMooc(collab, uc, week)
       } catch (e) { return Promise.reject(e) }
     },
-    async createCoursesMooc (collab, uc) { // cretes mooc -> weeks
+    async createCoursesMooc (collab, uc, week) { // cretes mooc -> weeks
       var that = this
       that.moocUc = typesCollabsApps[uc]
       let coursesPromises = []
       try {
         await that.getNavElement(collab.id)
-        if (that.moocUc && that.moocUc.children) {
-          for (let i = 0; i < that.moocUc.children.length; i++) {
-            let creat = that.createItemInExistingCollab(collab, that.moocUc.children[i])
+        that.moocWeek = that.moocUc[week]
+        if (that.moocWeek && that.moocWeek.children) {
+          for (let i = 0; i < that.moocWeek.children.length; i++) {
+            let creat = that.createItemInExistingCollab(collab, that.moocWeek.children[i])
             coursesPromises.push(creat)
           }
           let elements = await Promise.all(coursesPromises)
@@ -58,18 +60,15 @@ export default {
         return Promise.reject(e)
       }
     },
-    async createItemInExistingCollab (collab, uc) { // creates weeks -> files. Modified.
+    async createItemInExistingCollab (collab, item) { // creates weeks -> files. Modified.
       // returns the info to generate entry
-      var ucInfo = uc
       var that = this
       try {
-        if (ucInfo === undefined) {
+        if (item === undefined) {
           return Promise.reject('No item in typesCollabsApps.json')
         } else {
           var exists = {};
           var promises = []
-          for (let i = 0; i < ucInfo.length; i++) {
-            var item = ucInfo[i]
             exists = that.checkExists(that.parentNav, item.appid, item.entryname)
             if (!exists.found) {
               promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav))
@@ -79,7 +78,6 @@ export default {
               }
               promises.push(Promise.resolve(exists))
             }
-          }
           if (promises.length === 0) {
             exists['collabId'] = collab.id
             return exists
@@ -137,14 +135,14 @@ export default {
         }
       }
     },
-    async updateFullCollabName (searchText, moocName) {
+    async updateFullCollabName (searchText, moocName, week) {
       try {
         let user = await this.getUserInfo()
         let d = new Date().toLocaleString()
         if (searchText === '') {
           searchText = 'Mooc'
         }
-        this.fullCollabName = searchText + ' - ' + moocName + ' - ' + user.displayName + ' ' + d
+        this.fullCollabName = searchText + ' - ' + moocName + ' - Week ' + week + ' - ' + user.displayName + ' ' + d
       } catch (e) { return Promise.reject(e) }
     },
     findInitialEntry (entry, queryName) {
@@ -175,15 +173,15 @@ export default {
        // TOOD convert this in parallel when collab order works
       let navItemsIdOrdered = []
       try {
-        for (let i = 0; i < that.moocUc.children.length; i++) {
-          let notebook = that.moocUc.children[i].find(that.findNotebook)
-          if (notebook) {
-            let item = that.findEntryInStructure(unsortedCourses, notebook.entryname)
+        for (let i = 0; i < that.moocWeek.children.length; i++) {
+          let element = that.moocWeek.children[i]
+          if (!element.justcopy) {
+            let item = that.findEntryInStructure(unsortedCourses, element.entryname)
             let elem = null
             if (item && !item.found) {
               elem = await that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
             } else {
-              console.debug(notebook.entryname + ' already exists')
+              console.debug(element.entryname + ' already exists')
             }
             that.setInitialNavItem(elem)
             if (elem) { navItemsIdOrdered.push(elem) }

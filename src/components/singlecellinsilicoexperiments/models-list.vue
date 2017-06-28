@@ -1,5 +1,5 @@
 <template>
-   <div class="ca1-model-list">
+   <div class="models-list">
       <div class="title">Please select a model</div>
       <div class="content">
         <md-whiteframe md-elevation="1">
@@ -21,12 +21,13 @@
 </template>
 
 <script>
-   import modelItem from './model-item.vue'
+   import modelItem from 'components/singlecellmodeling/model-item.vue'
    import ModelsConfig from 'assets/config_files/models.json'
    import ModelsBSP from 'assets/config_files/singlecellmodeling_structure.json'
+   import ModelsNMC from 'assets/config_files/nmcportalmodels_structure.json'
 
    export default {
-      name: 'ca1ModelList',
+      name: 'modelsList',
       components: {
          'model-item': modelItem
       },
@@ -49,6 +50,20 @@
             let morphPath = path + fileName + '/' + elem[fileName].morph
             modelInfo.morphImg = morphPath
             let responsePath = path + fileName + '/' + elem[fileName].responses
+            modelInfo.reponsesImg = responsePath
+            modelInfo.folderName = fileName
+            that.models.push(modelInfo)
+          }
+        },
+        getNMCMetadata (folderContent, path) {
+          let that = this;
+          for (let i = 0; i < folderContent.length; i++) {
+            let elem = folderContent[i]
+            let fileName = Object.keys(elem)[0]
+            let modelInfo = elem[fileName].meta
+            let morphPath = path + elem[fileName].morph
+            modelInfo.morphImg = morphPath
+            let responsePath = path + elem[fileName].responses
             modelInfo.reponsesImg = responsePath
             modelInfo.folderName = fileName
             that.models.push(modelInfo)
@@ -83,8 +98,10 @@
       },
       created () {
         let modelsConfigBSP = ModelsConfig['ca1models']
+        let modelsConfigNMC = ModelsConfig['nmcportal']
         document.querySelector('title').innerHTML = 'Models'
         this.getBSPMetadata(ModelsBSP, modelsConfigBSP.raw)
+        this.getNMCMetadata(ModelsNMC, modelsConfigNMC.raw)
       },
       watch: {
         'filter': function (newVal) {
@@ -95,28 +112,28 @@
 </script>
 
 <style scoped>
-   .ca1-model-list {
+   .models-list {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-align: center;
       color: #2c3e50;
    }
-   .ca1-model-list .content {
+   .models-list .content {
       padding: 10px;
       margin-top: 50px;
    }
-   .ca1-model-list .item-sections {
+   .models-list .item-sections {
       margin-top: 10px;
       margin-bottom: 15px;
       padding: 9px;
       border: 3px solid white;
    }
-   .ca1-model-list .selected {
+   .models-list .selected {
       background-color: lightgray;
       transition: background-color 0.5s ease;
    }
-   .ca1-model-list > .title {
+   .models-list > .title {
       box-shadow: 0 2px 5px rgba(0,0,0,.26);
       position: fixed;
       text-align: left;
@@ -130,11 +147,11 @@
       width: 100%;
       z-index: 2;
    }
-   .ca1-model-list .item-sections:hover {
+   .models-list .item-sections:hover {
       transition: 0.3s ease;
       box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
    }
-   .ca1-model-list .touched {
+   .models-list .touched {
       animation: shake 0.5s;
       border: 3px solid;
    }

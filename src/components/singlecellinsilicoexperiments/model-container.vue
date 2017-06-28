@@ -1,11 +1,11 @@
 <template>
    <div class="single-cell-insilico-experiments" v-if="authenticated">
-      <ca1-model-list v-on:selected="touched"></ca1-model-list>
+      <models-list v-on:selected="touched"></models-list>
    </div>
 </template>
 
 <script>
-   import ca1ModelList from 'components/singlecellmodeling/ca1-model-list.vue'
+   import BspNmcModelList from 'components/singlecellinsilicoexperiments/models-list.vue'
    const VIEWER_URL = 'https://blue-naas.humanbrainproject.eu/#/model/'
    import collabAuthentication from 'mixins/collabAuthentication.js'
    import createCollab from 'mixins/createCollab.js'
@@ -13,9 +13,9 @@
    export default {
       name: 'modelContainer',
       components: {
-         'ca1-model-list': ca1ModelList
+         'models-list': BspNmcModelList
       },
-      data: function () {
+      data () {
         return {
           authenticated: false
         }

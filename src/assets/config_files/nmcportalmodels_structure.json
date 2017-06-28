@@ -1,0 +1,68 @@
+[
+    {
+        "cADpyr230_L4_SP_4_dend-C170898A-P4_axon-C271097A-P3_-_Clone_10": {
+            "meta": {
+                "cell_soma_location": "L4",
+                "cell_type": "cell_type",
+                "species": "Rat",
+                "channels": "CaDynamics_E2, Ca_HVA, Ca_LVAst, Ih, Im, K_Pst, K_Tst, Nap_Et2, NaTa_t, NaTs2_t, pas, SK_E2, SKv3_1",
+                "brain_structure": "Somatosensory Cortex",
+                "e-type": "L4PC",
+                "contributors": "BBP",
+                "morphology": "dend-C170898A-P4_axon-C271097A-P3_-_Clone_10"
+            },
+            "responses": "cADpyr230_L4_SP_4_dend-C170898A-P4_axon-C271097A-P3_-_Clone_10_responses.jpeg",
+            "morph": "cADpyr230_L4_SP_4_dend-C170898A-P4_axon-C271097A-P3_-_Clone_10.jpeg"
+        }
+    },
+    {
+        "cNAC187_L23_LBC_3_C230300D1_-_Clone_5": {
+            "meta": {
+                "cell_soma_location": "L3",
+                "cell_type": "cell_type",
+                "species": "Rat",
+                "channels": "Ca, CaDynamics_E2, Ca_LVAst, Ih, Im, K_Pst, K_Tst, Nap_Et2, NaTa_t, NaTs2_t, pas, SK_E2, SKv3_1",
+                "brain_structure": "Somatosensory Cortex",
+                "e-type": "cNAC",
+                "contributors": "BBP",
+                "morphology": "C230300D1_-_Clone_5"
+            },
+            "responses": "cNAC187_L23_LBC_3_C230300D1_-_Clone_5_responses.jpeg",
+            "morph": "cNAC187_L23_LBC_3_C230300D1_-_Clone_5.jpeg"
+        }
+    },
+    {
+        "cNAC187_L23_BTC_2_C210797A-I_cor_-_Scale_x1.000_y1.050_z1.000_-_Clone_2": {
+            "meta": {
+                "cell_soma_location": "L2",
+                "cell_type": "cell_type",
+                "species": "Rat",
+                "channels": "Ca, CaDynamics_E2, Ca_LVAst, Ih, Im, K_Pst, K_Tst, Nap_Et2, NaTa_t, NaTs2_t, pas, SK_E2, SKv3_1",
+                "brain_structure": "Somatosensory Cortex",
+                "e-type": "cNAC",
+                "contributors": "BBP",
+                "morphology": "C210797A-I_cor_-_Scale_x1.000_y1.050_z1.000_-_Clone_2"
+            },
+            "responses": "cNAC187_L23_BTC_2_C210797A-I_cor_-_Scale_x1.000_y1.050_z1.000_-_Clone_2_responses.jpeg",
+            "morph": "cNAC187_L23_BTC_2_C210797A-I_cor_-_Scale_x1.000_y1.050_z1.000_-_Clone_2.jpeg"
+        }
+    },
+    {
+        "bNAC219_L23_MC_3_sm101020a1-6_INT_idA": {
+            "meta": {
+                "cell_soma_location": "L3",
+                "cell_type": "cell_type",
+                "species": "Rat",
+                "channels": "Ca, CaDynamics_E2, Ca_LVAst, Ih, Im, K_Pst, K_Tst, Nap_Et2, NaTa_t, NaTs2_t, pas, SK_E2, SKv3_1",
+                "brain_structure": "Somatosensory Cortex",
+                "e-type": "bNAC",
+                "contributors": "BBP",
+                "morphology": "sm101020a1-6_INT_idA"
+            },
+            "responses": "bNAC219_L23_MC_3_sm101020a1-6_INT_idA_responses.jpeg",
+            "morph": "bNAC219_L23_MC_3_sm101020a1-6_INT_idA.jpeg"
+        }
+    }
+]
+   
+  

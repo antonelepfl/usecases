@@ -148,6 +148,14 @@
           "initial": true
         },
         {
+          "entryname": "Week 3. Graded Exercise",
+          "appid": 175,
+          "contenttype": "x-ipynb+json",
+          "extension": ".ipynb",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingNeurons/TutBallStick/GradedExercise.ipynb",
+          "justcopy": false
+        },
+        {
           "entryname": "ballandstick_circuit",
           "appid": 175,
           "contenttype": "application/postscript",

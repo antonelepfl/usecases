@@ -1,6 +1,6 @@
 # Online Use cases with VUE.JS
 This app is deployed in:
-* https://antonelepfl.github.io/usecases/#/<usecase name in usecases.json>
+* https://antonelepfl.github.io/usecases/#/{ usecase name in usecases.json }
 * e.g: https://antonelepfl.github.io/usecases/#/traceanalysis
 
 # To run locally

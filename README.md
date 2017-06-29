@@ -8,7 +8,7 @@ This app is deployed in:
 
 ### To deploy in production: 
 Merge to the master branch and commit. Travis process will start.
-It will deploy in githubpages.
+It will deploy in github pages
 
 ### To deploy in a dev environment:
 * Go to gitlab and mirror the repo: https://antonelepfl.github.io/usecases

@@ -17,11 +17,30 @@ export default {
       return models
     },
     search (text, originalModels) {
-      text = text.toLowerCase().replace(/\s+/g, '')
-      let matches = originalModels.filter(function (v) {
-        let title = v.modelTitle.toLowerCase().replace(/\s+/g, '')
-        return title.search(text) !== -1
-      });
+      let that = this
+      return new Promise(function (resolve, reject) {
+        let idleAPI = window.requestIdleCallback
+        if (idleAPI) {
+          idleAPI(function () {
+            resolve(that.searchPerformance(text, originalModels))
+          })
+        } else {
+          resolve(that.searchPerformance(text, originalModels))
+        }
+      })
+    },
+    searchPerformance (text, originalModels) {
+      let attributes = text.split(' ')
+      let attributesSize = attributes.length
+      let matches = originalModels
+      for (let i = 0; i < attributesSize; i++) {
+        text = attributes[i].toLowerCase().replace(/\s+/g, '')
+        let matchesTemp = matches.filter(function (v) {
+          let title = v.modelTitle.toLowerCase().replace(/\s+/g, '')
+          return title.search(text) !== -1
+        })
+        matches = matchesTemp
+      }
       return matches
     },
     getModelTitle (modelInfo) {

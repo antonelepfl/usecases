@@ -80,8 +80,8 @@
         }
       },
       watch: {
-        'filter': function (newVal) {
-          this.models = this.search(newVal, this.originalModels)
+        'filter': async function (newVal) {
+          this.models = await this.search(newVal, this.originalModels)
         }
       }
    }

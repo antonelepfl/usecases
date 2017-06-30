@@ -113,6 +113,8 @@ export default {
           if (error.body && error.body.title &&
             error.body.title[0] === 'collab with this title already exists.') {
             reject('Collab already exist')
+          } else if (error.body && error.body.detail) {
+            reject(error.body.detail)
           } else { reject(error) }
         })
       })

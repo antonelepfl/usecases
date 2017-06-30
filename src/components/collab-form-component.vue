@@ -50,7 +50,7 @@
     props: ['isLoading'],
     data () {
       return {
-        private: true,
+        private: false,
         searchText: '',
         collabResults: [],
         errorMessage: '',

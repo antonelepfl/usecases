@@ -1,6 +1,5 @@
 <template>
-  <div class="model-item">
-
+  <div class="model-item" v-if="model">
     <div class="path" @click="search">
       <div class="inline" v-for="(part, index) in pathParts">
         <span class="square">{{ part }}</span>
@@ -10,8 +9,8 @@
 
     <div class="item-body" @click="touched">
       <div class="images-container">
-        <img v-lazy="model.morphImg" class="half" alt="image of morphology">
-        <img v-lazy="model.reponsesImg" class="half" alt="image of reponses traces">
+        <img :src="model.morphImg" class="half" alt="image of morphology">
+        <img :src="model.reponsesImg" class="half" alt="image of reponses traces">
       </div>
       <div class="description-container">
         <model-description class="model-description" :model="model"></model-description>
@@ -24,12 +23,6 @@
 <script>
   import modelDescription from './model-description.vue'
   import placeholder from 'images/placeholder.jpg'
-  import Vue from 'vue'
-  import VueLazyload from 'vue-lazyload'
-
-  Vue.use(VueLazyload, {
-    loading: placeholder
-  })
 
   export default {
     name: 'modelItem',
@@ -42,7 +35,8 @@
     data () {
       return {
         pathParts: [],
-        path: ''
+        path: '',
+        placeholder: placeholder
       }
     },
     methods: {
@@ -59,19 +53,11 @@
             'text': searchText
           })
         }
-      },
-      getPath () {
-        this.pathParts.push(this.model.species)
-        this.pathParts.push(this.model.brain_structure)
-        this.pathParts.push(this.model.cell_soma_location)
-        this.pathParts.push(this.model.cell_type)
-        this.pathParts.push(this.model['e-type'])
-        this.pathParts.push(this.model.morphology)
-        this.path = this.pathParts.join(' > ')
       }
     },
     mounted () {
-      this.getPath()
+      this.pathParts = this.model.modelTitle.split(' ')
+      this.path = this.pathParts.join(' > ')
     }
   }
 </script>

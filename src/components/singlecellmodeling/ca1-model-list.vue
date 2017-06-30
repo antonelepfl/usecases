@@ -8,87 +8,47 @@
             <input class="searchbox" type="text" v-model="filter" placeholder="Search e.g 'Hippocampus' or click on the item's title to filter">
           </div>
         </md-whiteframe>
-
-        <md-whiteframe md-elevation="1" class="item-sections" v-for="model in models">
-          <model-item
-            class="model-item"
-            :model="model"
-            v-on:touched="touched(model)"
-            v-on:addSearch="addSearch"></model-item>
-        </md-whiteframe>
+        <models-list :models="models" v-on:selected="touched" v-on:tagfilter="addSearch"></models-list>
       </div>
    </div>
 </template>
 
 <script>
-   import modelItem from './model-item.vue'
+   import modelItem from 'components/singlecellinsilicoexperiments/models-list.vue'
+   import modelsMixins from 'mixins/models.js'
    import ModelsConfig from 'assets/config_files/models.json'
    import ModelsBSP from 'assets/config_files/singlecellmodeling_structure.json'
 
    export default {
       name: 'ca1ModelList',
       components: {
-         'model-item': modelItem
+         'models-list': modelItem
       },
       data () {
          return {
             models: [],
+            originalModels: [],
             filter: ''
          }
       },
+      mixins: [modelsMixins],
       methods: {
         touched (modelItem) {
           this.$emit('selected', modelItem)
         },
-        getBSPMetadata (folderContent, path) {
-          let that = this;
-          for (let i = 0; i < folderContent.length; i++) {
-            let elem = folderContent[i]
-            let fileName = Object.keys(elem)[0]
-            let modelInfo = elem[fileName].meta
-            let morphPath = path + fileName + '/' + elem[fileName].morph
-            modelInfo.morphImg = morphPath
-            let responsePath = path + fileName + '/' + elem[fileName].responses
-            modelInfo.reponsesImg = responsePath
-            modelInfo.folderName = fileName
-            that.models.push(modelInfo)
-          }
-        },
         addSearch (obj) {
           this.filter += ' ' + obj.text
-        },
-        search (text) {
-          var paths = this.$el.querySelectorAll('.path')
-          var textParts = text.split(' ')
-          // Loop through all table rows, and hide those who don't match the search query
-          for (let i = 0; i < paths.length; i++) {
-            let j = 0
-            let partsFound = 0
-            while (j < textParts.length) {
-              let filter = textParts[j]
-              filter = filter.toUpperCase()
-              let path = paths[i].innerText.toUpperCase()
-              if (path.indexOf(filter) >= 0) {
-                partsFound = partsFound + 1
-              }
-              j++;
-            }
-            if (partsFound === textParts.length) { // it is the last element in the row and found all
-              paths[i].parentElement.parentElement.style.display = '';
-            } else {
-              paths[i].parentElement.parentElement.style.display = 'none';
-            }
-          }
         }
       },
       created () {
         let modelsConfigBSP = ModelsConfig['ca1models']
         document.querySelector('title').innerHTML = 'Models'
-        this.getBSPMetadata(ModelsBSP, modelsConfigBSP.raw)
+        this.originalModels = this.getBSPMetadata(ModelsBSP, modelsConfigBSP.raw)
+        this.models = this.originalModels
       },
       watch: {
         'filter': function (newVal) {
-          this.search(newVal)
+          this.models = this.search(newVal, this.originalModels)
         }
       }
    }
@@ -137,16 +97,6 @@
    .ca1-model-list .touched {
       animation: shake 0.5s;
       border: 3px solid;
-   }
-   @keyframes shake {
-      0% {border: 3px solid white;}
-      50% {border: 3px solid gray;}
-      100% {border: 3px solid black;}
-   }
-   @-webkit-keyframes shake {
-      0% {border: 3px solid white;}
-      50% {border: 3px solid gray;}
-      100% {border: 3px solid black;}
    }
     .search-container {
       display: flex;

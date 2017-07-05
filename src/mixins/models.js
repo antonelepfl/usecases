@@ -37,7 +37,8 @@ export default {
         text = attributes[i].toLowerCase().replace(/\s+/g, '')
         let matchesTemp = matches.filter(function (v) {
           let title = v.modelTitle.toLowerCase().replace(/\s+/g, '')
-          return title.search(text) !== -1
+          let channels = v.channels.toLowerCase()
+          return (title.search(text) !== -1) || (channels.search(text) !== -1)
         })
         matches = matchesTemp
       }

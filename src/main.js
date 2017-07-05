@@ -61,10 +61,17 @@ const router = new VueRouter({
     // ============================ moprhology ============================
     { path: '/morphology/:uc_name',
       component: function (resolve) {
-        require(['components/morphology/model-container.vue'], resolve)
+        require(['components/morphology/analysis-model-container.vue'], resolve)
       },
       props: true,
-      name: 'morph_models'
+      name: 'morph_analysis_models'
+    },
+    { path: '/morphology/:uc_name/view',
+      component: function (resolve) {
+        require(['components/morphology/viewer-model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'morph_viewer_models'
     },
     { path: '/morphology/:uc_name/:folder_name',
       component: function (resolve) {

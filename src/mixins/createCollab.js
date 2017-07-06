@@ -149,7 +149,7 @@ export default {
       } else {
         path = COLLAB_HOME + collabId
       }
-      console.debug('Redirecting to ', path)
+      console.log('Redirecting to ', path)
       window.parent.postMessage({
         eventName: 'location',
         data: {

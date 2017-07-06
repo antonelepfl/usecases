@@ -217,11 +217,11 @@
           "justcopy": false
         },
         {
-          "entryname": "Week 4. Graded exercise",
+          "entryname": "Week 4. Graded assignment",
           "appid": 175,
           "contenttype": "x-ipynb+json",
           "extension": ".ipynb",
-          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingSynapses/Week4_Exercises/Week%204.%20Graded%20exercise.ipynb",
+          "file": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/ModelingSynapses/Week4_Exercises/Week%204.%20Graded%20assignment.ipynb",
           "justcopy": false
         }
       ]

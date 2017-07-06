@@ -368,7 +368,7 @@
                   "experience": ["all"],
                   "maturity": null,
                   "access": null,
-                  "disabled": true,
+                  "disabled": false,
                   "picture": {
                     "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
                     "alt": "Collab logo "

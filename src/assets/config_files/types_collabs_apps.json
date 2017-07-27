@@ -68,18 +68,18 @@
   "buildyourownsinglehippocampalcellmodelusinghbpdata": {
     "children": [
       {
-        "entryname": "BluPyOpt Browse All",
+        "entryname": "BluePyOpt Browse All",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "e38818a3-1d5d-41e9-9a77-eabfea7cc61c"
+        "file": "0bffc294-6685-463a-9ce1-ecb867490c4d"
       },
       {
         "entryname": "BluePyOpt Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "95c60b64-7398-4ec6-ab8c-81dc4be9f25e"
+        "file": "84a0d26c-0ea4-4bbe-8bf0-c80cc6de8f94"
       },
       {
         "entryname": "NSG Job Manager",
@@ -97,14 +97,14 @@
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "9aff784c-1f21-4e8b-bc29-6ce683dc7251"
+        "file": "1c10ec2e-86de-4d77-ac01-242b295ed791"
       },
       {
         "entryname": "BluePyOpt Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "95c60b64-7398-4ec6-ab8c-81dc4be9f25e"
+        "file": "84a0d26c-0ea4-4bbe-8bf0-c80cc6de8f94"
       },
       {
         "entryname": "NSG Job Manager",

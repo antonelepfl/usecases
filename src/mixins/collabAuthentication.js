@@ -15,7 +15,7 @@ export default {
       // var that = this
       if (displayMethod === undefined) { displayMethod = 'page' }
       return new Promise(function (resolve, reject) {
-        hbpHello.login('hbp', {'display': displayMethod, force: false, page_uri: window.location.href})
+        hbpHello.login('hbp', {'display': displayMethod, 'force': false, 'page_uri': window.location.href})
         .then(function () {
           resolve()
         }, function (e) {

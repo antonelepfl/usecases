@@ -1,5 +1,5 @@
 <template>
-  <div class="mooc-form" v-if="authenticated">
+  <div class="mooc-form">
     <div class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
@@ -49,7 +49,6 @@
         collabCreationProgress: 0,
         fullCollabName: '',
         timeoutId: 0,
-        authenticated: false,
         weekNumber: null
       }
     },

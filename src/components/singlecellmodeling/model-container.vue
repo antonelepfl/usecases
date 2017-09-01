@@ -1,5 +1,5 @@
 <template>
-   <div class="model-container" v-if="authenticated">
+   <div class="model-container">
       <ca1-model-list v-on:selected="touched"></ca1-model-list>
    </div>
 </template>
@@ -11,11 +11,6 @@
       name: 'modelContainer',
       components: {
          'ca1-model-list': ca1ModelList
-      },
-      data: function () {
-        return {
-          authenticated: true
-        }
       },
       props: ['list_usecases', 'uc_name'],
       mixins: [collabAuthentication],

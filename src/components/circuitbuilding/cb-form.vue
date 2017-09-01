@@ -1,5 +1,5 @@
 <template>
-  <div class="cb-form" v-if="authenticated">
+  <div class="cb-form">
     <cb-form-component
       v-on:collabSelected="collabSelected"
       v-on:collabCreated="createNewCollab"
@@ -21,8 +21,7 @@
     data () {
       return {
         isLoading: false,
-        error: '',
-        authenticated: false
+        error: ''
       }
     },
     props: ['uc_name', 'model_name'],

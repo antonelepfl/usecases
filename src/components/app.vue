@@ -1,6 +1,6 @@
 <template>
   <div class="startapp">
-    <uc-container key="container" v-if="authenticated"></uc-container>
+    <uc-container key="container"></uc-container>
   </div>
 </template>
 
@@ -9,7 +9,6 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import Vue from 'vue'
 import ucContainer from 'components/uc/uc-container.vue'
-import CollabAuthentication from 'mixins/collabAuthentication.js'
 
 Vue.use(VueMaterial)
 
@@ -18,13 +17,7 @@ export default {
   components: {
     'uc-container': ucContainer
   },
-  data () {
-    return {
-      authenticated: false
-    }
-  },
-  props: ['list_usecases'],
-  mixins: [CollabAuthentication]
+  props: ['list_usecases']
 }
 </script>
 

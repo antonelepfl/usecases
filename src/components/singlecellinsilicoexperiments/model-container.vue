@@ -1,5 +1,5 @@
 <template>
-   <div class="single-cell-insilico-experiments" v-if="authenticated">
+   <div class="single-cell-insilico-experiments">
     <div class="title">Please select a model</div>
     <div class="content">
       <md-whiteframe md-elevation="1">
@@ -30,7 +30,6 @@
       },
       data () {
         return {
-          authenticated: false,
           models: [],
           originalModels: [],
           filter: ''

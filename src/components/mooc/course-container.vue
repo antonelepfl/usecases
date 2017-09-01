@@ -1,5 +1,5 @@
 <template>
-   <div id="course-container" class="course-container" v-if="authenticated">
+   <div id="course-container" class="course-container">
       <div id="course-container-title" class="title">Please select a course to initialize</div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
@@ -24,8 +24,7 @@
          return {
             usecases: {},
             categories: usecases[1].categories,
-            route: {},
-            authenticated: false
+            route: {}
          }
       },
       mixins: [collabAuthentication],

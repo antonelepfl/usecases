@@ -1,5 +1,5 @@
 <template>
-  <div class="morph-form-replacing" v-if="authenticated">
+  <div class="morph-form-replacing">
     <collab-form-component
       v-on:collabSelected="collabSelected"
       v-on:collabCreated="createNewCollab"
@@ -20,8 +20,7 @@
     data () {
       return {
         isLoading: false,
-        error: '',
-        authenticated: false
+        error: ''
       }
     },
     components: {

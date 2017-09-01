@@ -11,6 +11,21 @@
   "morphologyanalysis": {
     "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
   },
+  "smallcircuitinsilicoexperiments": {
+    "configureandrunasmallcircuitusingpreconfiguredhbpmodelanddata": [
+      {
+        "title": "Rat hippocampus CA1",
+        "species": "Rat",
+        "brain_structure": "hippocampus",
+        "cell_soma_location": "CA1",
+        "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+        "contributors": [
+          {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+        ],
+        "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+      }
+    ]
+  },
   "circuitbuilding": {
     "cellsplacement": [
       {

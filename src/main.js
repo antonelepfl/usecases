@@ -6,6 +6,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from 'components/app.vue'
 import VueResource from 'vue-resource'
+import CollabAuthentication from 'mixins/collabAuthentication'
 
 Vue.use(VueResource)
 Vue.use(VueMaterial)
@@ -88,6 +89,14 @@ const router = new VueRouter({
       props: true,
       name: 'insilico_exp'
     },
+    // ================= smallcircuitinsilicoexperiments ================
+    { path: '/smallcircuitinsilicoexperiments/:uc_name',
+      component: function (resolve) {
+        require(['components/smallcircuitinsilicoexperiments/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'small_circuits'
+    },
     // ============================ mooc ============================
     { path: '/mooc/',
       component: function (resolve) {
@@ -122,6 +131,14 @@ const router = new VueRouter({
     return { x: 0, y: 0 }
   }
 })
+
+// check the authentication for each page
+router.beforeEach((to, from, next) => {
+    let auth = CollabAuthentication;
+    auth.methods.login().then(function () {
+      next();
+    });
+});
 
 /* eslint-disable no-new */
 new Vue({

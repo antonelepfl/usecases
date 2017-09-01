@@ -13,8 +13,6 @@
 <script>
    import modelItem from './model-item.vue'
    import ModelsConfig from 'assets/config_files/models.json'
-   import CollabAuthentication from 'mixins/collabAuthentication.js'
-   import circuitbuilding from './circuitbuilding.js'
 
    export default {
       name: 'modelContainer',
@@ -22,22 +20,17 @@
          'model-item': modelItem
       },
       props: ['uc_name'],
-      mixins: [CollabAuthentication, circuitbuilding],
       data () {
          return {
             modelsConfig: ModelsConfig,
             models: [],
-            list_usecases: 'circuitbuilding'
+            list_usecases: 'smallcircuitinsilicoexperiments'
          }
       },
       methods: {
          selected (model) {
-           if (!model.disabled) {
-             var pathName = this.uglyfy(model.title)
-             this.$router.push({
-               name: 'cb_form',
-               params: {'model_name': pathName}
-            })
+            if (!model.disabled) {
+              window.open('https://bbp.epfl.ch/public/simulationapp/index.html', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
            }
          }
       },

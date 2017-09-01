@@ -7,6 +7,12 @@
             <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
          </md-whiteframe>
       </div>
+      <!-- if the url is not correct show index of UCs -->
+      <div v-if="!usecases">
+         <div v-for="index in indexes">
+            <router-link :to="index">{{ index }}</router-link>
+         </div>
+      </div>
    </div>
 </template>
 
@@ -22,6 +28,7 @@
       data () {
          return {
             usecases: {},
+            indexes: [],
             categories: usecases[1].categories,
             route: {}
          }
@@ -42,6 +49,9 @@
       mounted () {
         var ucSelected = this.$route.path.replace(/\//g, '')
         this.usecases = usecases[0][ucSelected]
+        if (!this.usecases) {
+         this.indexes = Object.keys(usecases[0]);
+        }
         var title = ucSelected
         document.querySelector('title').innerText = this.prettyfy(title)
       }

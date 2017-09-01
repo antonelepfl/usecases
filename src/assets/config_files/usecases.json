@@ -411,12 +411,12 @@
              "experience": ["all", "power"],
              "maturity": null,
              "access": null,
-             "disabled": true,
+             "disabled": false,
              "picture": {
-                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png",
                 "alt": "Configure and run a small circuit using preconfigured HBP model and data"
              },
-             "next": null
+             "next": "small_circuits"
           },
           {
              "title": "Configure and run a small circuit using HBP model and data",

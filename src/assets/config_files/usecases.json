@@ -539,6 +539,21 @@
              },
              "next": null
           }
+       ],
+      "highlyintegratedworkflows": [
+          {
+             "title": "Hodgkin-Huxley Neuron Builder - CDP2 Product 1",
+             "description": "",
+             "experience": ["power"],
+             "maturity": ["beta"],
+             "access": ["HPC"],
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+                "alt": "Hodgkin-Huxley Neuron Builder"
+             },
+             "next": "ta_form"
+          }
        ]
    },
    {

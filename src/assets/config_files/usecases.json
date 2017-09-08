@@ -546,7 +546,7 @@
              "description": "",
              "experience": ["power"],
              "maturity": ["beta"],
-             "access": ["HPC"],
+             "access": ["hpc"],
              "disabled": false,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",

@@ -547,7 +547,7 @@
              "experience": ["power"],
              "maturity": ["beta"],
              "access": ["HPC"],
-             "disabled": true,
+             "disabled": false,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
                 "alt": "Hodgkin-Huxley Neuron Builder"

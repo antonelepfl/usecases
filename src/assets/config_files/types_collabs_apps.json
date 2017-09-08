@@ -1,4 +1,10 @@
 {
+   "hodgkin-huxleyneuronbuilder-cdp2product1": {
+    "entryname": "Hodgkin-Huxely Neuron Builder",
+    "appid": 332,
+    "contenttype": "text/html",
+    "extension": ".html"
+  },
   "featureextraction": {
     "entryname": "Feature Extraction GUI",
     "appid": 271,

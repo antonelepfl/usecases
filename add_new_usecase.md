@@ -22,6 +22,8 @@ Create a new entry (json) to the usecases.json (src/assets/config_files) inside 
 [
   {
     "<existing_domain>": [
+      {<existing_usecase>},
+      ...
       {
         "title": title of the usecase,
         "description": description of the usecase,
@@ -35,6 +37,7 @@ Create a new entry (json) to the usecases.json (src/assets/config_files) inside 
         },
         "next": name the route that you want to open when the uc is clicked
       },
+      ...
     ],
   }
 ]

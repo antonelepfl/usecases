@@ -411,7 +411,7 @@
              "experience": ["all", "power"],
              "maturity": null,
              "access": null,
-             "disabled": false,
+             "disabled": true,
              "picture": {
                 "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png",
                 "alt": "Configure and run a small circuit using preconfigured HBP model and data"

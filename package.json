@@ -1,8 +1,14 @@
 {
-  "name": "mi",
+  "name": "bsp-usecase-wizard",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "antonel stefano <stefano.antonel@epfl.ch>",
+  "description": "",
+  "author": "Antonel Stefano <stefano.antonel@epfl.ch>",
+  "contributors": [
+    "michael.gevaert@epfl.ch",
+    "stefano.antonel@epfl.ch",
+    "jean-denis.courcol@epfl.ch",
+    "michele.migliore@yale.edu"
+  ],
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

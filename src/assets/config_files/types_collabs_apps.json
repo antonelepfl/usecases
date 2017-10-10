@@ -1,6 +1,6 @@
 {
    "hodgkin-huxleyneuronbuilder-cdp2product1": {
-    "entryname": "Hodgkin-Huxely Neuron Builder",
+    "entryname": "Hodgkin-Huxley Neuron Builder",
     "appid": 351,
     "contenttype": "text/html",
     "extension": ".html"
@@ -12,21 +12,21 @@
     "extension": ".html"
   },
   "synapticeventsfitting": {
-    "entryname": "Fitting GUI",
+    "entryname": "Synaptic events fitting",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
     "file": "bcbb5b42-894d-4875-87d9-91763fcc8ab7"
   },
   "synapticeventsfittingwithusermodel": {
-    "entryname": "Fitting GUI with user model",
+    "entryname": "Synaptic events fitting with user model",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
     "file": "be475ea1-f8de-4f96-bb6b-85f31a2cb9a8"
   },
   "synapticeventsfittingwithuserdata": {
-    "entryname": "Fitting GUI with user data",
+    "entryname": "Synaptic events fitting with user data",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",

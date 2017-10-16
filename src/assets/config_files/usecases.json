@@ -549,7 +549,7 @@
              "access": ["hpc"],
              "disabled": false,
              "picture": {
-                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/hhnb.png",
+                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png",
                 "alt": "Hodgkin-Huxley Neuron Builder"
              },
              "next": "ta_form"

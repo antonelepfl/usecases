@@ -154,6 +154,28 @@
     }
   }, 
   {
+    "CA1_int_cAC_010710HP2_20170824135718": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "010710HP2", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_010710HP2_20170824135718_responses.png", 
+      "morph": "010710HP2_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_int_cAC_011017HP2_20170325154633": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -172,6 +194,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_int_cAC_011017HP2_20170325154633_responses.png", 
+      "morph": "011017HP2_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_int_cAC_011017HP2_20171010141433": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "011017HP2", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_011017HP2_20171010141433_responses.png", 
       "morph": "011017HP2_morph.jpeg"
     }
   }, 
@@ -198,6 +242,28 @@
     }
   }, 
   {
+    "CA1_int_cAC_970627BHP1_20170824150354": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "970627BHP1", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_970627BHP1_20170824150354_responses.png", 
+      "morph": "970627BHP1_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_int_cAC_980120A_20170325161209": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -216,6 +282,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_int_cAC_980120A_20170325161209_responses.png", 
+      "morph": "980120A_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_int_cAC_980120A_20170824115829": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "980120A", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_980120A_20170824115829_responses.png", 
       "morph": "980120A_morph.jpeg"
     }
   }, 
@@ -242,6 +330,28 @@
     }
   }, 
   {
+    "CA1_int_cAC_980513B_20170824140652": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "980513B", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_980513B_20170824140652_responses.png", 
+      "morph": "980513B_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_int_cAC_990611HP2_20170503111625": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -264,6 +374,28 @@
     }
   }, 
   {
+    "CA1_int_cAC_990611HP2_20170927115554": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "990611HP2", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_990611HP2_20170927115554_responses.png", 
+      "morph": "990611HP2_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_int_cAC_990827IN5HP3_20170503112138": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -282,6 +414,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_int_cAC_990827IN5HP3_20170503112138_responses.png", 
+      "morph": "990827IN5HP3_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_int_cAC_990827IN5HP3_20170927115213": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, km, kap, hd, can, cal, cat, kd, cagk, cacum, KahpM95", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "990827IN5HP3", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_990827IN5HP3_20170927115213_responses.png", 
       "morph": "990827IN5HP3_morph.jpeg"
     }
   }, 
@@ -594,6 +748,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "dend-050921AM2_axon-051208AM2", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830_responses.png", 
+      "morph": "dend-050921AM2_axon-051208AM2_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170516114312": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -612,6 +788,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170516114312_responses.png", 
+      "morph": "dend-990803_axon-051208AM2_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "dend-990803_axon-051208AM2", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002_responses.png", 
       "morph": "dend-990803_axon-051208AM2_morph.jpeg"
     }
   }, 
@@ -638,6 +836,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_mpg141017_a1-2_idC_20170918151638": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141017_a1-2_idC", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141017_a1-2_idC_20170918151638_responses.png", 
+      "morph": "mpg141017_a1-2_idC_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_mpg141208_B_idA_20170512163148": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -656,6 +876,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_mpg141208_B_idA_20170512163148_responses.png", 
+      "morph": "mpg141208_B_idA_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141208_B_idA", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855_responses.png", 
       "morph": "mpg141208_B_idA_morph.jpeg"
     }
   }, 
@@ -682,6 +924,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141209_A_idA", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008_responses.png", 
+      "morph": "mpg141209_A_idA_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_mpg141209_B_idA_20170512143921": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -700,6 +964,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_mpg141209_B_idA_20170512143921_responses.png", 
+      "morph": "mpg141209_B_idA_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_mpg141209_B_idA_20170915152336": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141209_B_idA", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141209_B_idA_20170915152336_responses.png", 
       "morph": "mpg141209_B_idA_morph.jpeg"
     }
   }, 
@@ -726,6 +1012,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_mpg141215_A_idA_20170915152442": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad, kd", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141215_A_idA.ASC", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141215_A_idA_20170915152442_responses.png", 
+      "morph": "mpg141215_A_idA_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_mpg141216_A_idA_20170513114900": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -744,6 +1052,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_mpg141216_A_idA_20170513114900_responses.png", 
+      "morph": "mpg141216_A_idA_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_mpg141216_A_idA_20171003152605": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad, kd", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141216_A_idA.ASC", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141216_A_idA_20171003152605_responses.png", 
       "morph": "mpg141216_A_idA_morph.jpeg"
     }
   }, 
@@ -770,6 +1100,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_mpg141217_A_idB_20170915111538": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg141217_A_idB", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg141217_A_idB_20170915111538_responses.png", 
+      "morph": "mpg141217_A_idB_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_mpg150305_A_idB_20170515153825": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -788,6 +1140,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_mpg150305_A_idB_20170515153825_responses.png", 
+      "morph": "mpg150305_A_idB_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_mpg150305_A_idB_20170915111718": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "mpg150305_A_idB", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_mpg150305_A_idB_20170915111718_responses.png", 
       "morph": "mpg150305_A_idB_morph.jpeg"
     }
   }, 
@@ -814,6 +1188,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_oh140521_B0_Rat_idA_20170915111955": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140521_B0_Rat_idA", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140521_B0_Rat_idA_20170915111955_responses.png", 
+      "morph": "oh140521_B0_Rat_idA_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170516140043": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -832,6 +1228,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170516140043_responses.png", 
+      "morph": "oh140521_B0_Rat_idC_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170915112201": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140521_B0_Rat_idC", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170915112201_responses.png", 
       "morph": "oh140521_B0_Rat_idC_morph.jpeg"
     }
   }, 
@@ -858,6 +1276,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_oh140807_A0_idA_20170915112548": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140807_A0_idA", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idA_20170915112548_responses.png", 
+      "morph": "oh140807_A0_idA_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_oh140807_A0_idB_20170515160552": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -876,6 +1316,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_oh140807_A0_idB_20170515160552_responses.png", 
+      "morph": "oh140807_A0_idB_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_oh140807_A0_idB_20170915112605": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140807_A0_idB", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idB_20170915112605_responses.png", 
       "morph": "oh140807_A0_idB_morph.jpeg"
     }
   }, 
@@ -902,6 +1364,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_oh140807_A0_idC_20170912112759": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140521_B0_Rat_idC", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idC_20170912112759_responses.png", 
+      "morph": "oh140807_A0_idC_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_oh140807_A0_idF_20170516142610": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -920,6 +1404,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_oh140807_A0_idF_20170516142610_responses.png", 
+      "morph": "oh140807_A0_idF_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_oh140807_A0_idF_20171003112912": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad, kd", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140807_A0_idF", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idF_20171003112912_responses.png", 
       "morph": "oh140807_A0_idF_morph.jpeg"
     }
   }, 
@@ -946,6 +1452,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_oh140807_A0_idG_20170915113354": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140807_A0_idG", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idG_20170915113354_responses.png", 
+      "morph": "oh140807_A0_idG_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_oh140807_A0_idH_20170516134220": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -968,6 +1496,28 @@
     }
   }, 
   {
+    "CA1_pyr_cACpyr_oh140807_A0_idH_20170915113422": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140807_A0_idH", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idH_20170915113422_responses.png", 
+      "morph": "oh140807_A0_idH_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_pyr_cACpyr_oh140807_A0_idJ_20170516173219": {
       "meta": {
         "cell_soma_location": "CA1", 
@@ -986,6 +1536,28 @@
         "email": "rosanna.migliore@cnr.it"
       }, 
       "responses": "CA1_pyr_cACpyr_oh140807_A0_idJ_20170516173219_responses.png", 
+      "morph": "oh140807_A0_idJ_morph.jpeg"
+    }
+  }, 
+  {
+    "CA1_pyr_cACpyr_oh140807_A0_idJ_20170915113621": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "pyramidal", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "CA1_PC_cACnoljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax,  km, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cACpyr", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "oh140807_A0_idJ", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_pyr_cACpyr_oh140807_A0_idJ_20170915113621_responses.png", 
       "morph": "oh140807_A0_idJ_morph.jpeg"
     }
   }

@@ -146,19 +146,6 @@
            },
            "next": "sc_form"
         },
-                {
-           "title": "Optimize a cerebellar granule cell multicompartmental model with BluePyOpt running on Neuro Science Gateway (NSG)",
-           "description": "Using BluePyOpt to optimize a multicompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. This version runs on the NeuroscienceGateway (NSG) - Account required on it to run it.",
-           "experience": ["experts"],
-           "maturity": ["beta"],
-           "access": ["hpc"],
-           "disabled": false,
-           "picture": {
-              "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-              "alt": "cerebellar granule cell"
-           },
-           "next": "sc_form"
-        },
         {
           "title": "Optimise a fast spiking interneuron in the Basal Ganglia",
           "description": "Optimise parameters for a striatal fast spiking interneuron using BluePyOpt based on experimental data",

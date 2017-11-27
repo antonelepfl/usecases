@@ -1,20 +1,46 @@
-# Add a new Usecase
-#### 1) Add the Usecase information
-Create a new entry (json) to the usecases.json (src/assets/config_files) with the following information:
+# Add a new Domain
+
+(optional) Like (Trace analysis, Morphology, Circuit building, etc)
+Create a new entry (json) to the usecases.json (src/assets/config_files):
 ```
-{
-    "title": title of the usecase,
-    "description": description of the usecase,
-    "experience": (array) possible values ['all', 'power', 'experts', 'code'],
-    "maturity":  (array) ['beta', 'experimental',
-    "access": (array) possible values ['hpc', 'byor'],
-    "disabled": boolean if the usecases is accessible or not,
-    "picture": {
+[
+   {
+      "traceanalysis": [{<usecase_information_see_above>}],
+      "singlecellmodeling": [{<usecase_information_see_above>}],
+      ...
+      "<your_new_domain>: [{<usecase_information_see_above>}],
+      ...
+   }
+]
+```
+Remember that `your_new_domain` should be in lowercase and no spaces.
+# Add new Usecase in an existing domain
+
+#### 1) Add the Usecase information
+Create a new entry (json) to the usecases.json (src/assets/config_files) inside an existing domain with the following information:
+```
+[
+  {
+    "<existing_domain>": [
+      {<existing_usecase>},
+      ...
+      {
+        "title": title of the usecase,
+        "description": description of the usecase,
+        "experience": (array) possible values ['all', 'power', 'experts', 'code'],
+        "maturity":  (array) ['beta', 'experimental',
+        "access": (array) possible values ['hpc', 'byor'],
+        "disabled": boolean if the usecases is accessible or not,
+        "picture": {
         "src": url of the image,
         "alt": description of the image (for accessibility)
         },
-    "next": name the route that you want to open when the uc is clicked. Use the default "ta_form" to show the form or See the 'routes' object in main.js for custom steps.
-},
+        "next": name the route that you want to open when the uc is clicked
+      },
+      ...
+    ],
+  }
+]
 ```
 
 // Explanation of the values of experience, maturity and access:
@@ -30,6 +56,8 @@ Create a new entry (json) to the usecases.json (src/assets/config_files) with th
 ###### "access":
 * `"hpc"` ("HPC") - Requires high-performance computing resources access
 * `"byor"` ("BYOR") - (Bring Your Own Resources) Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility.
+###### "next":
+Use the default `ta_form` to show the form or create / reuse one of the existing routes in the 'routes' object in main.js for custom steps.
 
 #### 2) Add the files that are going to be copy
 In src/assets/config_files/types_collabs_apps.json add a new entry like:
@@ -54,3 +82,8 @@ For example in github just look for the file and click on the button to visualiz
     `https://collab.humanbrainproject.eu/#/collab/<collab_number>/nav/<nav_number>?state=uuid%3D915417d1-359f-4eab-bcb1-a0881dea8d7d`
     so now we have to take the last part `after` "state=uuid%3D" from the URL. Like:
     `915417d1-359f-4eab-bcb1-a0881dea8d7d`
+
+#### 3) Add to the collab
+If you added a uc inside an existing domain the usecase should appear in the list.
+If you created a new domain you just need to pull request the changes in the usecases.json and types_collabs_apps.json and then create a new Markdown item in the collab with the link of the domain name. 
+Example: https://antonelepfl.github.io/usecases/#/your_new_domain

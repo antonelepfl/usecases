@@ -16,21 +16,21 @@
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "c27b1623-eea6-4fc5-bfa9-92ea50c8e759"
+    "file": "591b39da-5364-40fa-8ef6-a9a659a9e25f"
   },
   "synapticeventsfittingwithusermodel": {
     "entryname": "Synaptic events fitting with user model",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "bdad2972-a917-4cb1-b81d-60468e7f3036"
+    "file": "7f73aaac-9175-45d2-8931-03be77418ef1"
   },
   "synapticeventsfittingwithuserdata": {
     "entryname": "Synaptic events fitting with user data",
     "appid": 175,
     "contenttype": "x-ipynb+json",
     "extension": ".ipynb",
-    "file": "e124cb0d-ee3a-41bf-9977-ff424badea74"
+    "file": "b1939eec-ae3d-4b0e-9089-6cd41fd9a08c"
   },
   "jupyternotebook": {
     "entryname": "Jupyter Notebook",

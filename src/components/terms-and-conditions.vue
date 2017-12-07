@@ -28,17 +28,18 @@
         this.sendAcceptTerms(choice)
         if (choice === 'Yes') {
           /* eslint no-undef: 0 */
-          let termsLocally = localStorage.getItem('bsp-terms-accepted')
-          try {
-            let parsed = JSON.parse(termsLocally) || []
-            let ucName = this.$route.params.uc_name
-            if (!parsed.includes(ucName)) {
-              parsed.push(ucName)
-              localStorage.setItem('bsp-terms-accepted', JSON.stringify(parsed))
-            }
-          } catch (e) {
-            console.error('Error updating accepted terms locally')
-          }
+          localStorage.setItem('bsp-terms-accepted', choice)
+          // let termsLocally = localStorage.getItem('bsp-terms-accepted')
+          // try {
+          //   let parsed = JSON.parse(termsLocally) || []
+          //   let ucName = this.$route.params.uc_name
+          //   if (!parsed.includes(ucName)) {
+          //     parsed.push(ucName)
+          //     localStorage.setItem('bsp-terms-accepted', JSON.stringify(parsed))
+          //   }
+          // } catch (e) {
+          //   console.error('Error updating accepted terms locally')
+          // }
           // go to the page to create / add collabs
           this.$router.replace({
             path: `/${this.$route.params.list_usecases}/${this.$route.params.uc_name}`

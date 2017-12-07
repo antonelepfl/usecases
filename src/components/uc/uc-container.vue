@@ -57,14 +57,18 @@
          },
          termsAcceptedLocally (ucname) {
             /* eslint no-undef: 0 */
-              let termsStore = localStorage.getItem('bsp-terms-accepted')
-              try {
-                let parsed = JSON.parse(termsStore)
-                if (parsed.includes(ucname)) return true
-                return false
-              } catch (e) {
-                return false
-              }
+            let termsStored = localStorage.getItem('bsp-terms-accepted')
+            // try {
+            //   let parsed = JSON.parse(termsStore)
+            //   if (parsed.includes(ucname)) return true
+            //   return false
+            // } catch (e) {
+            //   return false
+            // }
+            if (termsStored === 'Yes') {
+              return true
+            }
+            return false
          }
       },
       mounted () {

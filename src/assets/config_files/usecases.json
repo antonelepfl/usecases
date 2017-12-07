@@ -12,7 +12,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "ta_form"
+            "next": "ta_form",
+            "dataprotected": true
          },
          {
             "title": "Synaptic events fitting",
@@ -25,7 +26,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "ta_form"
+            "next": "ta_form",
+            "dataprotected": true
          },
          {
             "title": "Synaptic events fitting with user model",

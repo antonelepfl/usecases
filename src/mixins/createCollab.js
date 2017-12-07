@@ -504,26 +504,6 @@ export default {
     },
     sendStatistics (collabId, ucName, fullModelName, isNew) {
       let that = this
-      let fullUCName = null
-      let userId = null
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(function () {
-          getInfoAndSend()
-        }, { timeout: 1000 });
-      } else {
-        getInfoAndSend()
-      }
-
-      function getInfoAndSend () {
-        fullUCName = searchPath(ucName)
-        that.getUserInfo().then(function (user) {
-          userId = user.id
-          if (process.env.SEND_STATISTICS) {
-            send()
-          }
-        })
-      }
-
       function searchPath (ucName) {
         for (let i in that.usecases) {
           for (let j in that.usecases[i]) {
@@ -537,24 +517,55 @@ export default {
         return ucName
       }
 
+      let fullUCName = searchPath(ucName)
+      let userEntry = 'entry.1933333390'
+      /* eslint no-undef: 0 */
+      let formData = new URLSearchParams()
+      let url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse'
+      let collabCreated = (isNew) ? 'Create' : 'Add'
+      formData.append('entry.724323063', collabCreated)
+      formData.append('entry.1219332324', fullUCName)
+      formData.append('entry.2088231351', fullModelName)
+      formData.append('entry.748800890', collabId)
+      console.debug('Send usage statistic to form')
+      this.sendToForm(formData, url, userEntry)
+    },
+    sendToForm (formData, url, userEntry) {
+      let that = this
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function () {
+          getInfoAndSend()
+        }, { timeout: 1000 });
+      } else {
+        getInfoAndSend()
+      }
+
+      function getInfoAndSend () {
+        that.getUserInfo().then(function (user) {
+          formData.append(userEntry, user.id)
+          if (process.env.SEND_STATISTICS) {
+            send()
+          }
+        })
+      }
+
       function send () {
-        /* eslint no-undef: 0 */
-        // let formData = new FormData()
-        let formData = new URLSearchParams()
-        let collabCreated = (isNew) ? 'Create' : 'Add'
-        formData.append('entry.724323063', collabCreated)
-        formData.append('entry.1219332324', fullUCName)
-        formData.append('entry.2088231351', fullModelName)
-        formData.append('entry.748800890', collabId)
-        formData.append('entry.1933333390', userId)
-        console.debug('Send statistic to form')
-        let url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse'
         let options = {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         }
         that.$http.post(url, formData.toString(), options)
         .then(function () {}, function () {})
       }
+    },
+    sendAcceptTerms (choice) {
+      /* eslint no-undef: 0 */
+      let formData = new URLSearchParams()
+      let url = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSdd8gMoS5Ki-3o9cdqwmqU9-wgtzMGNKusamSoK-L3wsQPWnA/formResponse'
+      let userEntry = 'entry.974372560'
+      formData.append('entry.1853154584', choice)
+      console.debug('Send acceptance Terms & Conditions to form')
+      this.sendToForm(formData, url, userEntry)
     },
     getDataRepo (url) {
       let that = this

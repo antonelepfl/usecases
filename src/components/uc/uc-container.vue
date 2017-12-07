@@ -37,13 +37,34 @@
          selected (uc) {
             if (!uc.disabled) {
               var ucName = uc.title.toLowerCase().replace(/\s/g, '')
-              this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+              if (uc.dataprotected && !this.termsAcceptedLocally(ucName)) {
+                this.$router.push({
+                  name: 'termsandconditions',
+                  params: {
+                    'list_usecases': this.$route.params.list_usecases,
+                    'uc_name': ucName
+                  }
+                });
+              } else {
+                this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+              }
             }
          },
          prettyfy (name) {
             return name.split('_').map(function (word) {
                return word.charAt(0).toUpperCase() + word.slice(1)
             }).join(' ')
+         },
+         termsAcceptedLocally (ucname) {
+            /* eslint no-undef: 0 */
+              let termsStore = localStorage.getItem('bsp-terms-accepted')
+              try {
+                let parsed = JSON.parse(termsStore)
+                if (parsed.includes(ucname)) return true
+                return false
+              } catch (e) {
+                return false
+              }
          }
       },
       mounted () {

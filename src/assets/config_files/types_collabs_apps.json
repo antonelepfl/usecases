@@ -74,50 +74,50 @@
   "buildyourownsinglehippocampalcellmodelusinghbpdata": {
     "children": [
       {
-        "entryname": "BluePyOpt Browse All",
+        "entryname": "BuildOwn Single HippoCell - Config",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "f815db86-6b86-4716-86e8-c1889a8783c9"
+        "file": "51fcc890-e729-464d-885f-45fa6c91121c"
       },
       {
-        "entryname": "BluePyOpt Analysis",
+        "entryname": "BuildOwn Single HippoCell - Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "ac4acba5-915c-4f34-b558-82fd8bf7f57d"
+        "file": "b88d6966-3dd3-41c1-82c3-81c0ef96b312"
       },
       {
-        "entryname": "NSG Job Manager",
+        "entryname": "BuildOwn Single HippoCell - NSG Job Manager",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "6625d53f-9874-4b1f-81b0-e3051f909dc1"
+        "file": "e71a4a0e-e874-4a1b-97a9-16a5db54a20d"
       }
     ]
   },
   "rebuildanexistingsinglehippocampalcellmodel": {
     "children": [
       {
-        "entryname": "BluePyOpt One",
+        "entryname": "Rebuild Single HippoCell - Config",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "8f1610a7-d0f9-4fa9-8a86-fc61b0ffb9fc"
+        "file": "940219db-76d5-44f8-867f-bd26eea03f9e"
       },
       {
-        "entryname": "BluePyOpt Analysis",
+        "entryname": "Rebuild Single HippoCell - Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "ac4acba5-915c-4f34-b558-82fd8bf7f57d"
+        "file": "b88d6966-3dd3-41c1-82c3-81c0ef96b312"
       },
       {
-        "entryname": "NSG Job Manager",
+        "entryname": "Rebuild Single HippoCell - NSG Job Manager",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "6625d53f-9874-4b1f-81b0-e3051f909dc1"
+        "file": "e71a4a0e-e874-4a1b-97a9-16a5db54a20d"
       }
     ]
   },

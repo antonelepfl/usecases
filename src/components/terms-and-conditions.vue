@@ -14,6 +14,7 @@
 <script>
   import collabAuthentication from 'mixins/createCollab.js'
   import termsAndConditions from 'assets/config_files/terms_and_conditions.md'
+  import storageManager from 'mixins/storageManager.js'
   export default {
     mixins: [collabAuthentication],
     data () {
@@ -27,19 +28,8 @@
         // from mixin collabAuthentication
         this.sendAcceptTerms(choice)
         if (choice === 'Yes') {
-          /* eslint no-undef: 0 */
-          localStorage.setItem('bsp-terms-accepted', choice)
-          // let termsLocally = localStorage.getItem('bsp-terms-accepted')
-          // try {
-          //   let parsed = JSON.parse(termsLocally) || []
-          //   let ucName = this.$route.params.uc_name
-          //   if (!parsed.includes(ucName)) {
-          //     parsed.push(ucName)
-          //     localStorage.setItem('bsp-terms-accepted', JSON.stringify(parsed))
-          //   }
-          // } catch (e) {
-          //   console.error('Error updating accepted terms locally')
-          // }
+          let category = this.$route.params.list_usecases
+          storageManager.saveTermsAccept(category)
           // go to the page to create / add collabs
           this.$router.replace({
             path: `/${this.$route.params.list_usecases}/${this.$route.params.uc_name}`

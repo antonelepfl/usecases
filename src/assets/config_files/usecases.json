@@ -267,7 +267,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png",
                "alt": "Morphology Analysis "
             },
-            "next": "morph_analysis_models"
+            "next": "morph_analysis_models",
+            "dataprotected": true
          },
          {
             "title": "Morphology Visualization",
@@ -280,7 +281,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png",
                "alt": "Morphology Analysis "
             },
-            "next": "morph_viewer_models"
+            "next": "morph_viewer_models",
+            "dataprotected": true
          }
        ],
        "singlecellinsilicoexperiments": [

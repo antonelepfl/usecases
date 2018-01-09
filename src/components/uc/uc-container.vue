@@ -19,6 +19,7 @@
 <script>
    import ucItem from './uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
+   import storageManager from 'mixins/storageManager.js'
 
    export default {
       name: 'ucContainer',
@@ -36,12 +37,14 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
-              var ucName = uc.title.toLowerCase().replace(/\s/g, '')
-              if (uc.dataprotected && !this.termsAcceptedLocally(ucName)) {
+              let ucName = uc.title.toLowerCase().replace(/\s/g, '')
+              let category = this.$route.params.list_usecases
+              if (uc.dataprotected &&
+                !storageManager.termsAcceptedLocally(category)) {
                 this.$router.push({
                   name: 'termsandconditions',
                   params: {
-                    'list_usecases': this.$route.params.list_usecases,
+                    'list_usecases': category,
                     'uc_name': ucName
                   }
                 });
@@ -54,21 +57,6 @@
             return name.split('_').map(function (word) {
                return word.charAt(0).toUpperCase() + word.slice(1)
             }).join(' ')
-         },
-         termsAcceptedLocally (ucname) {
-            /* eslint no-undef: 0 */
-            let termsStored = localStorage.getItem('bsp-terms-accepted')
-            // try {
-            //   let parsed = JSON.parse(termsStore)
-            //   if (parsed.includes(ucname)) return true
-            //   return false
-            // } catch (e) {
-            //   return false
-            // }
-            if (termsStored === 'Yes') {
-              return true
-            }
-            return false
          }
       },
       mounted () {

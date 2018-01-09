@@ -319,7 +319,7 @@
   "optimizeacerebellargranulecellmodelcomposedbyasinglesection": {
     "children": [
       {
-        "file":"252ddf18-c422-441d-abc2-31562b79524b",
+        "file":"332a6933-5b82-464a-8618-3caf5764d935",
         "entryname":"Granule cell mono compartmental optimization",
         "extension": ".ipynb",
         "appid": 175,
@@ -436,7 +436,7 @@
   "optimizeacerebellargranulecellmulticompartmentalmodel": {
     "children": [
       {
-        "file":"c60a4b49-644e-4c1d-a6c0-db9aeb5d1fe2",
+        "file":"04c96448-784c-40ae-9bc8-240e85c4c068",
         "appid":175,
         "entryname":"Granule cell multi compartmental optimization",
         "extension": ".ipynb",

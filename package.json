@@ -15,7 +15,8 @@
     "build": "node build/build.js",
     "ghpages": "node build/ghpages.js",
     "firebase": "node build/firebase.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
     "vue": "^2.1.0"
@@ -49,6 +50,7 @@
     "hellojs": "^1.14.0",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
+    "jsdoc": "^3.5.5",
     "json-loader": "^0.5.4",
     "opn": "^4.0.2",
     "ora": "^0.3.0",

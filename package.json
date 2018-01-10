@@ -9,7 +9,13 @@
     "jean-denis.courcol@epfl.ch",
     "michele.migliore@yale.edu"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonelepfl/usecases/releases",
+    "issuesurl": "https://github.com/antonelepfl/usecases/issues"
+  },
   "private": true,
+  "license": "GPL",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",

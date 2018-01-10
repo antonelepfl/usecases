@@ -35,6 +35,7 @@ Create a new entry (json) to the usecases.json (src/assets/config_files) inside 
         "src": url of the image,
         "alt": description of the image (for accessibility)
         },
+        "dataprotected": if the user should accept terms and conditions [true, false]
         "next": name the route that you want to open when the uc is clicked
       },
       ...

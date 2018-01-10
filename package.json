@@ -1,7 +1,7 @@
 {
-  "name": "bsp-usecase-wizard",
+  "name": "bbp-usecase-wizard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Blue Brain Usecase Wizard",
   "author": "Antonel Stefano <stefano.antonel@epfl.ch>",
   "contributors": [
     "michael.gevaert@epfl.ch",

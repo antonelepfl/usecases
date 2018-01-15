@@ -11,9 +11,11 @@ Merge to the master branch and commit. Travis process will start.
 It will deploy in github pages
 
 ### To deploy in a dev environment:
-* Go to gitlab and mirror the repo: https://antonelepfl.github.io/usecases
-* In gitlab got to commits and update the repo
-* Then, go to pipeline and run the pipeline. It will deploy the page into https://antonelepfl.gitlab.io/usecases/#/<usecase name in usecases.json>
+* In the other branches that are not Master, a travis plan will be triggered
+* The deployment will on Firebase
+* If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after firebase login)
+
+* The deployed page will appear in https://dev-usecases.firebaseapp.com/#/<usecase name in usecases.json>
 
 ### If Single cell models change:
 * Download the optimizations models locally.

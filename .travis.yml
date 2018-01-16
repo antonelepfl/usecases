@@ -16,10 +16,10 @@ install: npm install
 script:
 - npm run firebase
 - git checkout -b gh-pages
-- mkdir dev
+- rm -dfr ./dev && mkdir dev
 - cp -R ./public/* ./dev && rm -R ./public
 - git add --all
-- git commit -m "Deploy form travis"
+- git commit -m "Deploy DEV form travis"
 - git push origin gh-pages --force
 env:
   global:

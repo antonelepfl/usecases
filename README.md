@@ -1,19 +1,24 @@
 # Blue Brain Project - Usecase Wizard
-This app is deployed in:
+This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
+All the titles, images, descriptions, etc are described in [usecases.json](https://github.com/antonelepfl/usecases/blob/add-more-documentation/src/assets/config_files/usecases.json).
+All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](https://github.com/antonelepfl/usecases/blob/add-more-documentation/src/assets/config_files/types_collabs_apps.json)
+
+#### This app is deployed in:
 * https://antonelepfl.github.io/usecases/#/{ usecase name in usecases.json }
 * https://antonelepfl.github.io/usecases/#/traceanalysis (e.g)
 
 # To run locally
-``` $ npm run dev ```
+``` $ npm install ``` (install dependencies)
+
+``` $ npm run dev ``` (run server)
 
 ### To deploy in production: 
 Merge to the master branch and commit. Travis process will start.
 It will deploy in github pages
 
 ### To deploy in a dev environment:
-* Go to gitlab and mirror the repo: https://antonelepfl.github.io/usecases
-* In gitlab got to commits and update the repo
-* Then, go to pipeline and run the pipeline. It will deploy the page into https://antonelepfl.gitlab.io/usecases/#/<usecase name in usecases.json>
+For the *dev* branch a specific plan in this branch will be triggered adding a `dev` subfolder in the **gh-pages** branch. You can see the result under:
+* https://antonelepfl.github.io/usecases/dev/#/traceanalysis (e.g)
 
 ### If Single cell models change:
 * Download the optimizations models locally.
@@ -37,21 +42,23 @@ You will see all the use cases related to this domain. Each of them containing:
 #### 2. Select one *Use Case* [Feature extraction, Synaptic event fitting, ... ]
 After you select one use case you will have 2 possibilities:
 
-A. Search in your collabs and add this use case as a new entry (navigation item)
-You just type one of your collabs name in the search field and then click on the name from the list
+#### A). Search
+Search in your Collabs and add this use case as a new entry (navigation item)
+You just type one of your Collabs name in the search field and then click on the name from the list
 
 ![search](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/search.png)
 
-B. Create a new collab that will contain this use case
+#### B). Create
+Create a new Collab that will contain this use case
 You just choose a name and click *Create* button.
-Private or public collabs could be created depending on the user credentials.
+Private or public Collabs could be created depending on the user credentials.
 
 ![create](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/create.png)
 
-#### 2.B. Your are redirected to your collab with the use case ready to be run
+#### 2.B. You are redirected to your Collab with the use case ready to be run
 In some cases you need to choose different models for example to see a morphology you should select which morpphology you want to see (the image below)
 ![models](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/models.png)
 
-#### 3. Your are redirected to your collab with the use case ready to be run
+#### 3. Your are redirected to your Collab with the use case ready to be run
 
 ### To [Add new use case(s)](https://github.com/antonelepfl/usecases/blob/master/add_new_usecase.md)

@@ -4,7 +4,8 @@ branches:
   except:
   - master
 cache:
-  npm: true
+  directories:
+  - node_modules # NPM packages
 install: npm install
 script:
 - npm run firebase

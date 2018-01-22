@@ -15,7 +15,7 @@ before_script:
 install: npm install
 script:
 - npm run firebase
-- git checkout -b gh-pages
+- git checkout gh-pages
 - rm -dfr ./dev && mkdir dev
 - cp -R ./public/* ./dev && rm -R ./public
 - git add --all

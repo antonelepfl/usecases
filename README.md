@@ -61,4 +61,4 @@ In some cases you need to choose different models for example to see a morpholog
 
 #### 3. You are redirected to your Collab with the use case ready to be run
 
-### To [Add new use case(s)](https://github.com/antonelepfl/usecases/blob/master/add_new_usecase.md)
+### To [Add new use case(s)](https://github.com/antonelepfl/usecases/blob/master/documentation/add_new_usecase.md)

@@ -1,7 +1,7 @@
 language: node_js
 node_js: node
 branches:
-  except:
+  only:
   - master
 cache:
   directories:
@@ -9,17 +9,16 @@ cache:
   - $HOME/.npm
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
-- git config --global user.name "antonelepfl"
+- git config --global user.name "Stefano Antonel"
 - git remote rm origin
 - git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
 install: npm install
 script:
-- npm run firebase
+- npm run ghpages
 - git checkout -b gh-pages
-- rm -dfr ./dev && mkdir dev
-- cp -R ./public/* ./dev && rm -R ./public
+- cp -R ./docs/* ./ && rm -R docs/
 - git add --all
-- git commit -m "Deploy DEV form travis"
+- git commit -m "Deploy form travis"
 - git push origin gh-pages --force
 env:
   global:

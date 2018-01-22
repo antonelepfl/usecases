@@ -18,7 +18,7 @@ It will deploy in github pages
 
 ### To deploy in a dev environment:
 For the *dev* branch a specific plan in this branch will be triggered adding a `dev` subfolder in the **gh-pages** branch. You can see the result under:
-* https://antonelepfl.github.io/usecases/dev/#/traceanalysis (e.g)
+* https://antonelepfl.github.io/usecases/dev/#/traceanalysis (example)
 
 ### If Single cell models change:
 * Download the optimizations models locally.
@@ -59,6 +59,6 @@ Private or public Collabs could be created depending on the user credentials.
 In some cases you need to choose different models for example to see a morphology you should select which morpphology you want to see (the image below)
 ![models](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/models.png)
 
-#### 3. Your are redirected to your Collab with the use case ready to be run
+#### 3. You are redirected to your Collab with the use case ready to be run
 
 ### To [Add new use case(s)](https://github.com/antonelepfl/usecases/blob/master/add_new_usecase.md)

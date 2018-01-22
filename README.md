@@ -17,8 +17,11 @@ Merge to the master branch and commit. Travis process will start.
 It will deploy in github pages
 
 ### To deploy in a dev environment:
-For the *dev* branch a specific plan in this branch will be triggered adding a `dev` subfolder in the **gh-pages** branch. You can see the result under:
-* https://antonelepfl.github.io/usecases/dev/#/traceanalysis (example)
+* In the other branches that are not `master`, a travis plan will be triggered
+* The deployment will on Firebase
+* If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after firebase login)
+
+* The deployed page will appear in https://dev-usecases.firebaseapp.com/#/<usecase name in usecases.json>
 
 ### If Single cell models change:
 * Download the optimizations models locally.

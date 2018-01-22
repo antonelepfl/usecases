@@ -257,7 +257,7 @@
       ],
        "morphology": [
          {
-            "title": "Morphology Analysis",
+            "title": "Morphology analysis",
             "description": "Performs analysis on a morphology with NeuroM",
             "experience": ["power"],
             "maturity": ["beta"],
@@ -271,7 +271,7 @@
             "dataprotected": true
          },
          {
-            "title": "Morphology Visualization",
+            "title": "Morphology visualization",
             "description": "Display neuron morphology in 3D",
             "experience": ["all"],
             "maturity": ["beta"],
@@ -492,7 +492,7 @@
        ],
        "analysisandvisualization": [
           {
-             "title": "Single Cell",
+             "title": "Single cell",
              "description": "",
              "experience": null,
              "maturity": null,
@@ -505,7 +505,7 @@
              "next": null
           },
           {
-             "title": "Small Circuit",
+             "title": "Small circuit",
              "description": "",
              "experience": null,
              "maturity": null,
@@ -518,7 +518,7 @@
              "next": null
           },
           {
-             "title": "Region Circuit",
+             "title": "Region circuit",
              "description": "",
              "experience": null,
              "maturity": null,

@@ -39,7 +39,8 @@
       props: ['list_usecases', 'uc_name'],
       methods: {
         touched (modelItem) { // open Neuron as a service
-          this.sendStatistics(null, this.uc_name, modelItem.folderName, null)
+          var category = this.$route.path.split('/')[1]
+          this.sendStatistics(null, this.uc_name, category, modelItem.folderName, null)
           let viewUrl = VIEWER_URL + modelItem.folderName
           window.open(viewUrl, '_blank');
         },

@@ -35,7 +35,8 @@
         this.isLoading = true
         var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
         let replaceText = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/' + this.folder_name + '/' + this.folder_name + '.zip'
-        this.sendStatistics(collab.id, this.uc_name, this.folder_name, false);
+        var category = this.$route.path.split('/')[1]
+        this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, false);
         this.createItemInExistingCollabWithReplace(collab, this.uc_name, replaceText, findString)
         .then(function () {
           that.isLoading = false
@@ -50,7 +51,8 @@
         this.isLoading = true
         var findString = 'REPLACE_MORPHOLOGY_FILE_HERE'
         let replaceText = 'https://github.com/lbologna/bsp_data_repository/raw/master/optimizations/' + this.folder_name + '/' + this.folder_name + '.zip'
-        this.sendStatistics(collab.id, this.uc_name, this.folder_name, true);
+        var category = this.$route.path.split('/')[1]
+        this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, true);
         this.createItemInExistingCollabWithReplace(collab, this.uc_name, replaceText, findString)
         .then(function () {
           that.isLoading = false

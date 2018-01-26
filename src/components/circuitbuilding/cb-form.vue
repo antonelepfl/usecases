@@ -34,8 +34,9 @@
         var that = this
         this.isLoading = true
         this.error = ''
-        let modelPrettyName = this.getModelName(this.model_name)
-        this.sendStatistics(collab.id, this.uc_name, modelPrettyName, false)
+        var modelPrettyName = this.getModelName(this.model_name)
+        var category = this.$route.path.split('/')[1]
+        this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, false)
         this.createItemInExistingCollab(collab, this.uc_name + this.model_name)
         // some of the functions here are overwritten in the circuitbuilding.js
         .then(function () {
@@ -49,8 +50,9 @@
         var that = this
         this.error = ''
         this.isLoading = true
-        let modelPrettyName = this.getModelName(this.model_name)
-        this.sendStatistics(collab.id, this.uc_name, modelPrettyName, true)
+        var modelPrettyName = this.getModelName(this.model_name)
+        var category = this.$route.path.split('/')[1]
+        this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, true)
         this.createItemInExistingCollab(collab, this.uc_name + this.model_name)
         .then(function () {
           that.isLoading = false

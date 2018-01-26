@@ -502,7 +502,7 @@ export default {
         })
       })
     },
-    sendStatistics (collabId, ucName, fullModelName, isNew) {
+    sendStatistics (collabId, ucName, category, fullModelName, isNew) {
       let that = this
       function searchPath (ucName) {
         for (let i in that.usecases) {
@@ -516,7 +516,6 @@ export default {
         }
         return ucName
       }
-
       let fullUCName = searchPath(ucName)
       let userEntry = 'entry.1933333390'
       /* eslint no-undef: 0 */
@@ -527,6 +526,7 @@ export default {
       formData.append('entry.1219332324', fullUCName)
       formData.append('entry.2088231351', fullModelName)
       formData.append('entry.748800890', collabId)
+      formData.append('entry.2065854000', category)
       console.debug('Send usage statistic to form')
       this.sendToForm(formData, url, userEntry)
     },

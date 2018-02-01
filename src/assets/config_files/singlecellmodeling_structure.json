@@ -192,6 +192,30 @@
     }
   }, 
   {
+    "CA1_int_cAC_031031AM1_20180201104443": {
+      "meta": {
+        "cell_soma_location": "CA1", 
+        "cell_type": "interneuron", 
+        "best_run": "seed3.pkl", 
+        "description": "", 
+        "offspring_size": 128, 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "fitting_name": "INT_cAC_noljp", 
+        "species": "Rat", 
+        "channels": "kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "cAC", 
+        "contributors": "Rosanna Migliore", 
+        "morphology": "031031AM1", 
+        "best_cell": "cell_seed3_0.hoc", 
+        "email": "rosanna.migliore@cnr.it"
+      }, 
+      "responses": "CA1_int_cAC_031031AM1_20180201104443_responses.png", 
+      "morph": "031031AM1_morph.jpeg"
+    }
+  }, 
+  {
     "CA1_int_cAC_970627BHP1_20180120160112": {
       "meta": {
         "cell_soma_location": "CA1", 

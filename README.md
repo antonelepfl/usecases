@@ -24,11 +24,15 @@ It will deploy in github pages
 * The deployed page will appear in https://dev-usecases.firebaseapp.com/#/<usecase name in usecases.json>
 
 ### If Single cell models change:
+This [jenkins plan](https://bbpcode.epfl.ch/ci/job/platform.lbologna_update_data/) is executed when there is a change in the repo.
+
+Otherwise, for manual step:
+
 * Download the optimizations models locally.
 * Copy the script located into config_files/**create_singlecellmodeling_structure.py** to this new local respository.
 * ``` $ python create_singlecellmodeling_structure.py ```
 * Copy back the created file **singlecellmodeling_structure.json** to config_files/ in the usecases repo.
-This [jenkins plan](https://bbpcode.epfl.ch/ci/job/platform.lbologna_update_data/) is executed when there is a change in the repo 
+
 
 ## The usual path that the user should follow is:
 #### 1. Go to the *domain* [Trace Analysis, Morphology Analysis, Single Cell Building ... ]

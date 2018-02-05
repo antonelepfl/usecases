@@ -11,7 +11,11 @@
     <infinite-loading
       :on-infinite="onInfinite" 
       ref="infiniteLoading"
-      spinner="spiral"></infinite-loading>
+      spinner="spiral"
+    >
+      <span slot="no-more"></span>
+      <span slot="no-results"></span>
+    </infinite-loading>
    </div>
 </template>
 

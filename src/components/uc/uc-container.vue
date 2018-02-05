@@ -19,6 +19,7 @@
 <script>
    import ucItem from './uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
+   import storageManager from 'mixins/storageManager.js'
 
    export default {
       name: 'ucContainer',
@@ -36,8 +37,20 @@
       methods: {
          selected (uc) {
             if (!uc.disabled) {
-              var ucName = uc.title.toLowerCase().replace(/\s/g, '')
-              this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+              let ucName = uc.title.toLowerCase().replace(/\s/g, '')
+              let category = this.$route.params.list_usecases
+              if (uc.dataprotected &&
+                !storageManager.termsAcceptedLocally(category)) {
+                this.$router.push({
+                  name: 'termsandconditions',
+                  params: {
+                    'list_usecases': category,
+                    'uc_name': ucName
+                  }
+                });
+              } else {
+                this.$router.push({name: uc.next, params: {'uc_name': ucName}})
+              }
             }
          },
          prettyfy (name) {

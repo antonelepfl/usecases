@@ -9,7 +9,7 @@ cache:
   - $HOME/.npm
 before_script:
 - git config --global user.email "stefano.antonel@epfl.ch"
-- git config --global user.name "antonelepfl"
+- git config --global user.name "Stefano Antonel"
 - git remote rm origin
 - git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
 install: npm install

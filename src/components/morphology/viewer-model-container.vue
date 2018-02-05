@@ -41,7 +41,8 @@
         touched (modelItem) {
           let viewUrl = VIEWER_URL + modelItem.folderName + '.html'
           window.open(viewUrl, '_blank');
-          this.sendStatistics(null, this.uc_name, modelItem.folderName, null)
+          var category = this.$route.path.split('/')[1]
+          this.sendStatistics(null, this.uc_name, category, modelItem.folderName, null)
         },
         getNMCMetadata (modelsJson, path) {
           for (let i = 0; i < modelsJson.length; i++) {

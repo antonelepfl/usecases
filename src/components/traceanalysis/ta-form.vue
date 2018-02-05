@@ -33,7 +33,8 @@
         var that = this
         this.isLoading = true
         this.error = ''
-        this.sendStatistics(collab.id, this.uc_name, null, false)
+        var category = this.$route.path.split('/')[1]
+        this.sendStatistics(collab.id, this.uc_name, category, null, false)
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false
@@ -46,7 +47,8 @@
         var that = this
         this.isLoading = true
         this.error = ''
-        this.sendStatistics(collab.id, this.uc_name, null, true)
+        var category = this.$route.path.split('/')[1]
+        this.sendStatistics(collab.id, this.uc_name, category, null, true)
         this.createItemInExistingCollab(collab, this.uc_name)
         .then(function () {
           that.isLoading = false

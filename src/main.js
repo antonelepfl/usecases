@@ -119,6 +119,14 @@ const router = new VueRouter({
       props: true,
       name: 'weeks_container'
     },
+    // ================= terms and conditions ================
+    { path: '/termsandconditions/:list_usecases/:uc_name',
+      component: function (resolve) {
+        require(['components/terms-and-conditions.vue'], resolve)
+      },
+      props: true,
+      name: 'termsandconditions'
+    },
     // ============================ rest of UC ============================
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json
       component: App,

@@ -12,25 +12,58 @@
     "extension": ".html"
   },
   "synapticeventsfitting": {
-    "entryname": "Synaptic events fitting",
-    "appid": 175,
-    "contenttype": "x-ipynb+json",
-    "extension": ".ipynb",
-    "file": "817605e1-2a6a-43fa-b4f4-a4052a402a98"
+    "children": [
+      {
+        "entryname": "Synaptic events fitting",
+         "appid": 175,
+         "contenttype": "x-ipynb+json",
+         "extension": ".ipynb",
+         "file": "2077af87-a7a4-4ca1-b0f9-ba5db0760351"
+      },
+      {
+        "entryname": "Synaptic events fitting with analysis",
+         "appid": 175,
+         "contenttype": "x-ipynb+json",
+         "extension": ".ipynb",
+         "file": "8ca874b4-80dd-47fa-91ac-87f3173de778" 
+      }
+    ]
   },
   "synapticeventsfittingwithusermodel": {
-    "entryname": "Synaptic events fitting with user model",
-    "appid": 175,
-    "contenttype": "x-ipynb+json",
-    "extension": ".ipynb",
-    "file": "9a2c58c3-c83c-4b91-89c8-cdbc6c6aa2cc"
+    "children": [
+      {
+        "entryname": "Synaptic events fitting with user model",
+         "appid": 175,
+         "contenttype": "x-ipynb+json",
+         "extension": ".ipynb",
+         "file": "38936115-b923-41a0-8158-d5a242e8d1fc"
+      },
+      {
+        "entryname": "Synaptic events fitting with user model analysis",
+         "appid": 175,
+         "contenttype": "x-ipynb+json",
+         "extension": ".ipynb",
+         "file": "8ca874b4-80dd-47fa-91ac-87f3173de778" 
+      }
+    ]
   },
   "synapticeventsfittingwithuserdata": {
-    "entryname": "Synaptic events fitting with user data",
-    "appid": 175,
-    "contenttype": "x-ipynb+json",
-    "extension": ".ipynb",
-    "file": "6bec2dc6-ae0e-4ae2-ab23-398f194c82b9"
+    "children": [
+      {
+        "entryname": "Synaptic events fitting with user data",
+         "appid": 175,
+         "contenttype": "x-ipynb+json",
+         "extension": ".ipynb",
+         "file": "af6efa83-9cea-4172-bb55-a01ad96358d0"
+      },
+      {
+        "entryname": "Synaptic events fitting with user data analysis",
+         "appid": 175,
+         "contenttype": "x-ipynb+json",
+         "extension": ".ipynb",
+         "file": "8ca874b4-80dd-47fa-91ac-87f3173de778" 
+      }
+    ]
   },
   "jupyternotebook": {
     "entryname": "Jupyter Notebook",
@@ -74,50 +107,50 @@
   "buildyourownsinglehippocampalcellmodelusinghbpdata": {
     "children": [
       {
-        "entryname": "BluePyOpt Browse All",
+        "entryname": "BuildOwn Single HippoCell - Config",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "f815db86-6b86-4716-86e8-c1889a8783c9"
+        "file": "46c6a73c-ac69-4898-9ba7-9a153a06ed8e"
       },
       {
-        "entryname": "BluePyOpt Analysis",
+        "entryname": "BuildOwn Single HippoCell - Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "ac4acba5-915c-4f34-b558-82fd8bf7f57d"
+        "file": "b88d6966-3dd3-41c1-82c3-81c0ef96b312"
       },
       {
-        "entryname": "NSG Job Manager",
+        "entryname": "BuildOwn Single HippoCell - NSG Job Manager",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "6625d53f-9874-4b1f-81b0-e3051f909dc1"
+        "file": "e71a4a0e-e874-4a1b-97a9-16a5db54a20d"
       }
     ]
   },
   "rebuildanexistingsinglehippocampalcellmodel": {
     "children": [
       {
-        "entryname": "BluePyOpt One",
+        "entryname": "Rebuild Single HippoCell - Config",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "8f1610a7-d0f9-4fa9-8a86-fc61b0ffb9fc"
+        "file": "940219db-76d5-44f8-867f-bd26eea03f9e"
       },
       {
-        "entryname": "BluePyOpt Analysis",
+        "entryname": "Rebuild Single HippoCell - Analysis",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "ac4acba5-915c-4f34-b558-82fd8bf7f57d"
+        "file": "b88d6966-3dd3-41c1-82c3-81c0ef96b312"
       },
       {
-        "entryname": "NSG Job Manager",
+        "entryname": "Rebuild Single HippoCell - NSG Job Manager",
         "appid": 175,
         "contenttype": "x-ipynb+json",
         "extension": ".ipynb",
-        "file": "6625d53f-9874-4b1f-81b0-e3051f909dc1"
+        "file": "e71a4a0e-e874-4a1b-97a9-16a5db54a20d"
       }
     ]
   },
@@ -286,7 +319,7 @@
   "optimizeacerebellargranulecellmodelcomposedbyasinglesection": {
     "children": [
       {
-        "file":"252ddf18-c422-441d-abc2-31562b79524b",
+        "file":"332a6933-5b82-464a-8618-3caf5764d935",
         "entryname":"Granule cell mono compartmental optimization",
         "extension": ".ipynb",
         "appid": 175,
@@ -403,7 +436,7 @@
   "optimizeacerebellargranulecellmulticompartmentalmodel": {
     "children": [
       {
-        "file":"c60a4b49-644e-4c1d-a6c0-db9aeb5d1fe2",
+        "file":"04c96448-784c-40ae-9bc8-240e85c4c068",
         "appid":175,
         "entryname":"Granule cell multi compartmental optimization",
         "extension": ".ipynb",

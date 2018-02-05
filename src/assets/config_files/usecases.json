@@ -12,7 +12,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "ta_form"
+            "next": "ta_form",
+            "dataprotected": true
          },
          {
             "title": "Synaptic events fitting",
@@ -25,7 +26,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
                "alt": "Logo of feature Extraction"
             },
-            "next": "ta_form"
+            "next": "ta_form",
+            "dataprotected": true
          },
          {
             "title": "Synaptic events fitting with user model",
@@ -255,7 +257,7 @@
       ],
        "morphology": [
          {
-            "title": "Morphology Analysis",
+            "title": "Morphology analysis",
             "description": "Performs analysis on a morphology with NeuroM",
             "experience": ["power"],
             "maturity": ["beta"],
@@ -265,10 +267,11 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png",
                "alt": "Morphology Analysis "
             },
-            "next": "morph_analysis_models"
+            "next": "morph_analysis_models",
+            "dataprotected": true
          },
          {
-            "title": "Morphology Visualization",
+            "title": "Morphology visualization",
             "description": "Display neuron morphology in 3D",
             "experience": ["all"],
             "maturity": ["beta"],
@@ -278,7 +281,8 @@
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png",
                "alt": "Morphology Analysis "
             },
-            "next": "morph_viewer_models"
+            "next": "morph_viewer_models",
+            "dataprotected": true
          }
        ],
        "singlecellinsilicoexperiments": [
@@ -488,7 +492,7 @@
        ],
        "analysisandvisualization": [
           {
-             "title": "Single Cell",
+             "title": "Single cell",
              "description": "",
              "experience": null,
              "maturity": null,
@@ -501,7 +505,7 @@
              "next": null
           },
           {
-             "title": "Small Circuit",
+             "title": "Small circuit",
              "description": "",
              "experience": null,
              "maturity": null,
@@ -514,7 +518,7 @@
              "next": null
           },
           {
-             "title": "Region Circuit",
+             "title": "Region circuit",
              "description": "",
              "experience": null,
              "maturity": null,

@@ -28,13 +28,14 @@ Create a new entry (json) to the usecases.json (src/assets/config_files) inside 
         "title": title of the usecase,
         "description": description of the usecase,
         "experience": (array) possible values ['all', 'power', 'experts', 'code'],
-        "maturity":  (array) ['beta', 'experimental',
+        "maturity":  (array) ['beta', 'experimental']
         "access": (array) possible values ['hpc', 'byor'],
         "disabled": boolean if the usecases is accessible or not,
         "picture": {
         "src": url of the image,
         "alt": description of the image (for accessibility)
         },
+        "dataprotected": if the user should accept terms and conditions [true, false]
         "next": name the route that you want to open when the uc is clicked
       },
       ...

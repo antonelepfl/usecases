@@ -1,7 +1,7 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
-All the titles, images, descriptions, etc are described in [usecases.json](add-more-documentation/src/assets/config_files/usecases.json).
-All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](add-more-documentation/src/assets/config_files/types_collabs_apps.json)
+All the titles, images, descriptions, etc are described in [usecases.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/usecases.json).
+All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/types_collabs_apps.json)
 
 #### This app is deployed in:
 * https://antonelepfl.github.io/usecases/#/ { usecase name in usecases.json }

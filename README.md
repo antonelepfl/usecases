@@ -1,10 +1,10 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
-All the titles, images, descriptions, etc are described in [usecases.json](https://github.com/antonelepfl/usecases/blob/add-more-documentation/src/assets/config_files/usecases.json).
-All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](https://github.com/antonelepfl/usecases/blob/add-more-documentation/src/assets/config_files/types_collabs_apps.json)
+All the titles, images, descriptions, etc are described in [usecases.json](add-more-documentation/src/assets/config_files/usecases.json).
+All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](add-more-documentation/src/assets/config_files/types_collabs_apps.json)
 
 #### This app is deployed in:
-* https://antonelepfl.github.io/usecases/#/{ usecase name in usecases.json }
+* https://antonelepfl.github.io/usecases/#/ { usecase name in usecases.json }
 * https://antonelepfl.github.io/usecases/#/traceanalysis (example)
 
 # To run locally
@@ -21,7 +21,7 @@ It will deploy in github pages
 * The deployment will on Firebase
 * If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after firebase login)
 
-* The deployed page will appear in https://dev-usecases.firebaseapp.com/#/<usecase name in usecases.json>
+* The deployed page will appear in https://dev-usecases.firebaseapp.com/#/traceanalysis (example)
 
 ### If Single cell models change:
 This [jenkins plan](https://bbpcode.epfl.ch/ci/job/platform.lbologna_update_data/) is executed when there is a change in the repo.
@@ -34,7 +34,7 @@ Otherwise, for manual step:
 * Copy back the created file **singlecellmodeling_structure.json** to config_files/ in the usecases repo.
 
 
-## The usual path that the user should follow is:
+# The usual path that the user should follow is:
 #### 1. Go to the *domain* [Trace Analysis, Morphology Analysis, Single Cell Building ... ]
 You will see all the use cases related to this domain. Each of them containing:
 - Image: representative representation of what you are able to achieve

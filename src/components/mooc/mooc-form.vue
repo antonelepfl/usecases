@@ -65,8 +65,8 @@
           let collab = await this.createMoocCollab(isPrivate, this.fullCollabName)
           let prettyWeek = 'Week ' + this.weekNumber
           var category = this.$route.path.split('/')[1]
-          that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, true)
           await that.createCoursesMooc(collab, that.uc_name, this.week)
+          that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, true)
           that.collabCreationProgress = 100
           that.isLoading = false
         } catch (error) {
@@ -87,8 +87,8 @@
         try {
           let prettyWeek = 'Week ' + this.weekNumber
           var category = this.$route.path.split('/')[1]
-          that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, false)
           await this.addMoocExistingCollab(collab, this.uc_name, this.week)
+          that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, false)
           that.isLoadingLocal = false
         } catch (error) {
           that.errorMessage = error

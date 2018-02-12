@@ -436,7 +436,7 @@
   "optimizeacerebellargranulecellmulticompartmentalmodel": {
     "children": [
       {
-        "file":"c60a4b49-644e-4c1d-a6c0-db9aeb5d1fe2",
+        "file":"9dea71b0-e091-47ba-8db9-1eaa12ec9c46",
         "appid":175,
         "entryname":"Granule cell multi compartmental optimization",
         "extension": ".ipynb",

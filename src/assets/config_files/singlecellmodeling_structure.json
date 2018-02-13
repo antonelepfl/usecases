@@ -648,54 +648,6 @@
     }
   }, 
   {
-    "CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830": {
-      "meta": {
-        "cell_soma_location": "CA1", 
-        "cell_type": "pyramidal", 
-        "best_run": "seed6.pkl", 
-        "description": "", 
-        "offspring_size": 128, 
-        "affiliations": "CNR", 
-        "max_ngen": 60, 
-        "fitting_name": "CA1_PC_cAC_sig", 
-        "species": "Rat", 
-        "channels": "kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
-        "brain_structure": "Hippocampus", 
-        "e-type": "cACpyr", 
-        "contributors": "Rosanna Migliore", 
-        "morphology": "dend-050921AM2_axon-051208AM2", 
-        "best_cell": "cell_seed6_0.hoc", 
-        "email": "rosanna.migliore@cnr.it"
-      }, 
-      "responses": "CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830_responses.png", 
-      "morph": "dend-050921AM2_axon-051208AM2_morph.jpeg"
-    }
-  }, 
-  {
-    "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002": {
-      "meta": {
-        "cell_soma_location": "CA1", 
-        "cell_type": "pyramidal", 
-        "best_run": "seed5.pkl", 
-        "description": "", 
-        "offspring_size": 128, 
-        "affiliations": "CNR", 
-        "max_ngen": 60, 
-        "fitting_name": "CA1_PC_cAC_sig", 
-        "species": "Rat", 
-        "channels": "kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad", 
-        "brain_structure": "Hippocampus", 
-        "e-type": "cACpyr", 
-        "contributors": "Rosanna Migliore", 
-        "morphology": "dend-990803_axon-051208AM2", 
-        "best_cell": "cell_seed5_0.hoc", 
-        "email": "rosanna.migliore@cnr.it"
-      }, 
-      "responses": "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002_responses.png", 
-      "morph": "dend-990803_axon-051208AM2_morph.jpeg"
-    }
-  }, 
-  {
     "CA1_pyr_cACpyr_mpg141017_a1-2_idC_20170918151638": {
       "meta": {
         "cell_soma_location": "CA1", 

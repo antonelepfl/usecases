@@ -1,6 +1,6 @@
 <template>
    <div class="models-list">
-    <md-whiteframe md-elevation="1" class="item-sections" v-for="model in showingModels" v-bind:key="model">
+    <md-whiteframe md-elevation="1" class="item-sections" v-for="model in showingModels" v-bind:key="model.title">
       <model-item
         class="model-item"
         :model="model"

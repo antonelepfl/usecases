@@ -46,6 +46,20 @@ const router = new VueRouter({
       props: true,
       name: 'sc_form'
     },
+    { path: '/singlecellmodeling/optimizeastriatalfast-spikinginterneuron',
+      component: function (resolve) {
+        require(['components/singlecellmodeling/striatal/striatal-container.vue'], resolve)
+      },
+      props: true,
+      name: 'sc_striatal_models'
+    },
+    { path: '/singlecellmodeling/optimizeastriatalfast-spikinginterneuron/:folder_name',
+      component: function (resolve) {
+        require(['components/singlecellmodeling/striatal/form-replacing.vue'], resolve)
+      },
+      props: true,
+      name: 'sc_striatal_form_replacing'
+    },
     { path: '/singlecellmodeling/:uc_name',
       component: function (resolve) {
         require(['components/singlecellmodeling/model-container.vue'], resolve)

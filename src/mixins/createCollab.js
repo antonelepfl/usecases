@@ -456,7 +456,7 @@ export default {
         }, reject)
       })
     },
-    createItemInExistingCollabWithReplace (collab, uc, morphology, findString) {
+    createItemInExistingCollabWithReplace (collab, uc, modelName, findString) {
       var that = this
       return new Promise(function (resolve, reject) {
         that.getAllNav(collab.id).then(function (parentNav) {
@@ -469,11 +469,11 @@ export default {
           if (ucInfo.children) {
             for (let i = 0; i < ucInfo.children.length; i++) {
               var item = ucInfo.children[i]
-              item.entryname = item.entryname + ' - ' + morphology
+              item.entryname = item.entryname + ' - ' + modelName
               exists = that.checkExists(parentNav, item.appid, item.entryname)
               if (!exists.found) {
                 if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                  promises.push(that.replaceContentAndCopy(findString, morphology, collab.id, item, parentNav))
+                  promises.push(that.replaceContentAndCopy(findString, modelName, collab.id, item, parentNav))
                 } else { // is not jupyter notebok just connect to the original file
                   promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, item.appid))
                 }
@@ -481,7 +481,7 @@ export default {
             }
           } else { // is only one navitem
             if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-              promises.push(that.replaceContentAndCopy(findString, morphology, collab.id, ucInfo, parentNav))
+              promises.push(that.replaceContentAndCopy(findString, modelName, collab.id, ucInfo, parentNav))
             } else { // is not jupyter notebok just connect to the original file
               promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
             }

@@ -78,5 +78,18 @@
         "disabled": true
       }
     ]
+  },
+  "singlecellmodeling": {
+    "optimizeastriatalfast-spikinginterneuron": [
+      {
+        "title": "str-fs-161205_FS1-BE37A-20180212",
+        "modelName": "str-fs-161205_FS1-BE37A-20180212",
+        "description": "{{Description of the model}}",
+        "contributors": [
+          {"name": "Alexandre Kozlov", "email": "https://github.com/a1eko"}
+        ],
+        "img": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
+      }
+    ]
   }
 }

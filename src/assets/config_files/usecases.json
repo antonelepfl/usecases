@@ -161,6 +161,20 @@
           },
           "next": "sc_form"
          },
+         
+         {
+          "title": "Optimize a striatal fast-spiking interneuron",
+          "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
+          "experience": ["code"],
+          "maturity": ["experimental"],
+          "access": null,
+          "disabled": false,
+          "picture": {
+            "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png",
+            "alt": "spiking internuron"
+          },
+          "next": "sc_striatal_models"
+         },
          {
             "title": "Build your own single hippocampal cell model using HBP and your own data",
             "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",

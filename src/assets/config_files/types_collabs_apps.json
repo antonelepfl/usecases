@@ -414,5 +414,12 @@
         "justcopy": true
       }
     ]
+  },
+  "optimizeastriatalfast-spikinginterneuron": {
+    "entryname": "Optimization of FS cell",
+    "appid": 175,
+    "contenttype": "x-ipynb+json",
+    "extension": ".ipynb",
+    "file": "f25d7301-eea6-4318-bcb0-683e2131a2e8"
   }
 }

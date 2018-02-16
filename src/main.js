@@ -119,14 +119,6 @@ const router = new VueRouter({
       props: true,
       name: 'weeks_container'
     },
-    // ====================== model validation ======================
-    { path: '/modelvalidation/:uc_name',
-      component: function (resolve) {
-        require(['components/modelvalidation/mv-form.vue'], resolve)
-      },
-      props: true,
-      name: 'mv_form'
-    },
     // ================= terms and conditions ================
     { path: '/termsandconditions/:list_usecases/:uc_name',
       component: function (resolve) {

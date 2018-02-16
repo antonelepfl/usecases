@@ -558,7 +558,7 @@
                 "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
                 "alt": "Logo of model validation: BluePyOpt to eFEL"
              },
-             "next": "mv_form",
+             "next": "ta_form",
              "dataprotected": true
           },
           {
@@ -572,7 +572,7 @@
                 "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
                 "alt": "Logo of model validation: BluePyOpt to eFEL"
              },
-             "next": "mv_form",
+             "next": "ta_form",
              "dataprotected": true
           }
        ]

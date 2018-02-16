@@ -327,8 +327,8 @@
             },
             "next": "weeks_container",
             "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/cca8453405084f5e94fedeb83ea2773be4b13c38/weeks_config.json"
-         }
-          {
+         },
+         {
             "title": "In Silico Neuroscience Course 2018",
             "description": "Study of the nervous system using data, analysis, classification, prediction, modelling, simulation, theory and computing technology",
             "experience": ["all"],

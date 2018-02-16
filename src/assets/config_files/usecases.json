@@ -545,6 +545,36 @@
              },
              "next": "ta_form"
           }
+       ],
+       "modelvalidation": [
+          {
+             "title": "Basal Ganglia - BluePyOpt Optimized Model Validation - Multiple HOF",
+             "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
+             "experience": ["all"],
+             "maturity": ["beta"],
+             "access": null,
+             "disabled": false,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
+                "alt": "Logo of model validation: BluePyOpt to eFEL"
+             },
+             "next": "ta_form",
+             "dataprotected": true
+          },
+          {
+             "title": "Generic - BluePyOpt Optimized Model Validation",
+             "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
+             "experience": ["all"],
+             "maturity": ["beta"],
+             "access": null,
+             "disabled": true,
+             "picture": {
+                "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
+                "alt": "Logo of model validation: BluePyOpt to eFEL"
+             },
+             "next": "ta_form",
+             "dataprotected": true
+          }
        ]
    },
    {

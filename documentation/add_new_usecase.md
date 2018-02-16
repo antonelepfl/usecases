@@ -65,13 +65,14 @@ In src/assets/config_files/types_collabs_apps.json add a new entry like:
 ```
 "title of the UC in lowercase and together": {
     "entryname": name to be added in the navigation item when the usecase is created/added ,
-    "appid": (number) possible values [69 (ipython notebboks), 6 (external html)],
+    "appid": (number) possible values [175 (ipython notebboks), 6 (external html)],
     "contenttype": (string) possible values ["x-ipynb+json", "text/html"],
     "extension": (string) extension with "." like ".ipynb",
     "file": UUID of the file in collab storage (more information see below) OR raw file URL
 },
 ```
- 
+**Note:** if the title of the use case in step 1 (Add the Usecase information) was set to, e.g, `This is a UseCase - Type 1`, then here in step 2 this would be specified as: `thisisausecase-type1`. Remove all spaces, and have everything in lowercase.
+
 ##### To get the raw file url
 For example in github just look for the file and click on the button to visualize it RAW and copy that URL to the "file" attribute
  

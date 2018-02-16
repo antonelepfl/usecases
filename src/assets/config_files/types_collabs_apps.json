@@ -569,5 +569,12 @@
         "justcopy": true
       }
     ]
+  },
+  "basalganglia-bluepyoptoptimizedmodelvalidation-multiplehof": {
+        "entryname":"Optimized BG model validation",
+        "appid":175,
+        "contenttype":"application/x-ipynb+json",
+        "extension": ".ipynb",
+        "file":"e62f67fa-7831-496b-8b44-8bd16aaabc81"
   }
 }

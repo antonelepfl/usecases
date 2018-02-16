@@ -84,7 +84,7 @@
       {
         "title": "FS_CELL",
         "modelName": "str-fs-161205_FS1-BE37A-20180212",
-        "description": "Striatal fast-spiking interneuron.",
+        "description": "Striatal fast-spiking interneuron",
         "contributors": [
           {"name": "Alexander Kozlov", "email": "akozlov@kth.se"}
         ],

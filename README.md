@@ -19,7 +19,7 @@ It will deploy in github pages
 ### To deploy in a dev environment:
 * In the other branches that are not `master`, a travis plan will be triggered
 * The deployment will on Firebase
-* If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after firebase login)
+* If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after `firebase login:ci`)
 
 * The deployed page will appear in https://dev-usecases.firebaseapp.com/#/traceanalysis (example)
 

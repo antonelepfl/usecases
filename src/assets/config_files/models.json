@@ -82,9 +82,9 @@
   "singlecellmodeling": {
     "optimizeastriatalfast-spikinginterneuron": [
       {
-        "title": "Optimisation of a striatal fast-spiking cell",
+        "title": "FS_CELL",
         "modelName": "str-fs-161205_FS1-BE37A-20180212",
-        "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
+        "description": "Striatal fast-spiking interneuron.",
         "contributors": [
           {"name": "Alexander Kozlov", "email": "akozlov@kth.se"}
         ],

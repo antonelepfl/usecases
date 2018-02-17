@@ -25,6 +25,7 @@
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "vue": "^2.1.0"
   },
   "devDependencies": {

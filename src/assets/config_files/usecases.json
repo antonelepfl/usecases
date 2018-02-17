@@ -323,76 +323,24 @@
             "disabled": false,
             "picture": {
                "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-               "alt": "Collab logo "
+               "alt": "Collab logo"
             },
             "next": "weeks_container",
-            "children": [
-              {
-                  "title": "Week 2: Neuroinformatics",
-                  "description": "",
-                  "experience": ["all"],
-                  "maturity": null,
-                  "access": null,
-                  "disabled": false,
-                  "picture": {
-                    "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-                    "alt": "Collab logo "
-                  },
-                  "next": "mooc_form"
-              },
-              {
-                  "title": "Week 3: Modeling neurons",
-                  "description": "",
-                  "experience": ["all"],
-                  "maturity": null,
-                  "access": null,
-                  "disabled": false,
-                  "picture": {
-                    "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-                    "alt": "Collab logo "
-                  },
-                  "next": "mooc_form"
-              },
-              {
-                  "title": "Week 4: Modeling Synapses",
-                  "description": "",
-                  "experience": ["all"],
-                  "maturity": null,
-                  "access": null,
-                  "disabled": false,
-                  "picture": {
-                    "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-                    "alt": "Collab logo "
-                  },
-                  "next": "mooc_form"
-              },
-              {
-                  "title": "Week 5: Constraining models",
-                  "description": "",
-                  "experience": ["all"],
-                  "maturity": null,
-                  "access": null,
-                  "disabled": false,
-                  "picture": {
-                    "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-                    "alt": "Collab logo "
-                  },
-                  "next": "mooc_form"
-              },
-              {
-                  "title": "Week 6: NMC portal",
-                  "description": "",
-                  "experience": ["all"],
-                  "maturity": null,
-                  "access": null,
-                  "disabled": false,
-                  "picture": {
-                    "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-                    "alt": "Collab logo "
-                  },
-                  "next": "mooc_form"
-              }
-            ]
+            "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/weeks_config.json"
+         },
+         {
+            "title": "In Silico Neuroscience Course 2018",
+            "description": "Study of the nervous system using data, analysis, classification, prediction, modelling, simulation, theory and computing technology",
+            "experience": ["all"],
+            "maturity": null,
+            "access": null,
+            "disabled": false,
+            "picture": {
+               "src": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/Course_picture.png",
+               "alt": "Collab logo"
+            },
+            "next": "weeks_container",
+            "config_url": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/courseWeeks_config.json"
          }
        ],
        "smallcircuitinsilicoexperiments": [

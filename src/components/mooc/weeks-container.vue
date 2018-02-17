@@ -1,7 +1,7 @@
 <template>
    <div id="course-container" class="course-container">
       <div id="course-container-title" class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
-      <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
+      <div v-for="uc in weeks" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
             <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
@@ -14,6 +14,7 @@
    import ucItem from 'components/uc/uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
    import collabAuthentication from 'mixins/collabAuthentication.js'
+   import mooc from './mooc.js'
 
    export default {
       name: 'ucContainer',
@@ -22,12 +23,12 @@
       },
       data () {
          return {
-            usecases: {},
+            weeks: [],
             categories: usecases[1].categories,
             route: {}
          }
       },
-      mixins: [collabAuthentication],
+      mixins: [collabAuthentication, mooc],
       methods: {
          selected (uc) {
             if (!uc.disabled) {
@@ -35,7 +36,8 @@
               this.$router.push({
                 name: uc.next,
                 params: {
-                  'week': weekName
+                  'week': weekName,
+                  'moocFullWeeks': this.weeks
                 }
               })
             }
@@ -47,10 +49,12 @@
          }
       },
       mounted () {
-        var ucSelected = this.$route.path.replace(/\//g, '')
-        this.usecases = usecases[0]['mooc'][0]['children']
-        var title = ucSelected
-        document.querySelector('title').innerText = this.prettyfy(title)
+        var ucSelected = this.compact(this.$route.params.uc_name)
+        this.getMoocFullConfig(ucSelected)
+        .then((config) => {
+          this.weeks = config
+          document.querySelector('title').innerText = this.prettyfy(ucSelected)
+        })
       }
    }
 </script>

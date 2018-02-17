@@ -34,7 +34,7 @@ export default {
         that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header)
         .then(function (response) {
           if (param.length > 0) {
-            resolve(response.body.results)
+            resolve(response.data.results)
           }
         },
         function (responseError) {
@@ -64,7 +64,7 @@ export default {
         var collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
         that.$http.post(collabReq, payload, that.header) // create navitem
         .then(function (navItem) {
-          let navitemId = navItem.body.id
+          let navitemId = navItem.data.id
           if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
             that.fillJupyterNavItem(fileId, navitemId, collabId, context)
             .then(function () {
@@ -107,14 +107,14 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.post(collabReq, payload, that.header).then(function (response) {
           console.debug('Collab created')
-          var collabId = response.body
+          var collabId = response.data
           resolve(collabId)
         }, function (error) {
-          if (error.body && error.body.title &&
-            error.body.title[0] === 'collab with this title already exists.') {
+          if (error.response.data && error.response.data.title &&
+            error.response.data.title[0] === 'collab with this title already exists.') {
             reject('Collab already exist')
-          } else if (error.body && error.body.detail) {
-            reject(error.body.detail)
+          } else if (error.response.data && error.response.data.detail) {
+            reject(error.response.data.detail)
           } else { reject(error) }
         })
       })
@@ -124,7 +124,7 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
-          var parentRoot = response.body.id
+          var parentRoot = response.data.id
           let nav = {'root': parentRoot, 'collabId': collabId}
           console.debug('Get nav root obtained')
           resolve(nav)
@@ -136,7 +136,7 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         that.$http.get(url, that.header).then(function (response) {
-          var nav = response.body
+          var nav = response.data
           console.debug('Get all nav obtained')
           resolve(nav)
         }, function () { reject('Error get nav root') })
@@ -167,7 +167,7 @@ export default {
         }}
         that.$http.get(url, newHeader).then(function (response) {
           console.debug('Collab storage obtained')
-          resolve(response.body)
+          resolve(response.data)
         })
       })
     },
@@ -181,7 +181,7 @@ export default {
         }}
         that.$http.get(url, newHeader).then(function (response) {
           console.debug('File by name retrieved')
-          resolve(response.body)
+          resolve(response.data)
         }, reject)
       })
     },
@@ -201,9 +201,9 @@ export default {
         }}
         that.$http.post(url, payload, newHeader).then(function (response) {
           console.debug('File created')
-          resolve(response.body)
+          resolve(response.data)
         }, function (error) {
-          let errorMessage = error.body[0]
+          let errorMessage = error.response.data[0]
           if (errorMessage && errorMessage.startsWith('File with the same name')) {
             // get the id of the existing file
             if (collabId) {
@@ -361,7 +361,7 @@ export default {
       return new Promise(function (resolve, reject) {
         that.$http.get(STORAGE_FILE_API + fileId + '/content/', that.header)
         .then(function (response) {
-          resolve(response.body)
+          resolve(response.data)
         },
         function (responseError) {
           reject(responseError)
@@ -388,8 +388,8 @@ export default {
         } else {
           that.$http.get(USER_API, that.header)
           .then(function (response) {
-            that.userInfo = response.body
-            resolve(response.body)
+            that.userInfo = response.data
+            resolve(response.data)
           },
           function (responseError) {
             if (responseError.status === 401) {
@@ -412,7 +412,7 @@ export default {
         that.$http.post(FOLDER_ENDPOINT, payload, that.header)
         .then(function (folder) {
           console.debug('Folder created')
-          resolve(folder.body)
+          resolve(folder.data)
         },
         function (e) {
           console.error('Error creating folder. Folder already exists?')
@@ -571,7 +571,7 @@ export default {
       let that = this
       return new Promise(function (resolve, reject) {
         that.$http.get(url).then(function (content) {
-          resolve(content.body)
+          resolve(content.data)
         }, reject)
       })
     },

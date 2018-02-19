@@ -1,6 +1,6 @@
 <template>
    <div id="course-container" class="course-container">
-      <div id="course-container-title" class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
+      <div id="course-container-title" class="title">{{moocInfo.title}}</div>
       <div v-for="uc in weeks" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
@@ -25,7 +25,8 @@
          return {
             weeks: [],
             categories: usecases[1].categories,
-            route: {}
+            route: {},
+            moocInfo: {}
          }
       },
       mixins: [collabAuthentication, mooc],
@@ -33,11 +34,13 @@
          selected (uc) {
             if (!uc.disabled) {
               var weekName = uc.title.toLowerCase().replace(/\s/g, '')
+
               this.$router.push({
                 name: uc.next,
                 params: {
                   'week': weekName,
-                  'moocFullWeeks': this.weeks
+                  'moocFullWeeks': this.weeks,
+                  'moocFullName': this.moocInfo.title
                 }
               })
             }
@@ -50,10 +53,15 @@
       },
       mounted () {
         var ucSelected = this.compact(this.$route.params.uc_name)
+        // get the overall mooc info (title, url, etc)
+        this.moocInfo = usecases[0].mooc.find((mooc) => {
+          return this.compact(mooc.title) === ucSelected
+        })
+        document.querySelector('title').innerText = this.prettyfy(this.moocInfo.title)
+        // get the external config for the weeks
         this.getMoocFullConfig(ucSelected)
         .then((config) => {
           this.weeks = config
-          document.querySelector('title').innerText = this.prettyfy(ucSelected)
         })
       }
    }

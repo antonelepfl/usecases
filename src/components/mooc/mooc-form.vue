@@ -1,6 +1,6 @@
 <template>
   <div class="mooc-form">
-    <div class="title">Reconstruction and simulation of neural tissue I: Neurons and Synapses</div>
+    <div class="title">{{moocName}}</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
       <md-button class="md-raised md-primary" @click.native="createNewCollab">Create a collab</md-button>
@@ -41,7 +41,7 @@
       return {
         private: true,
         searchText: '',
-        moocName: 'Neurons and Synapses',
+        moocName: this.$route.params.moocFullName,
         isLoading: false,
         errorMessage: '',
         isLoadingLocal: false,
@@ -107,16 +107,16 @@
       'searchText' (newVal) {
         var that = this
         this.updateFullCollabName(this.searchText, this.moocName, this.weekNumber)
+        clearTimeout(this.timeoutId)
         if (newVal === '') {
           that.collabResults = []
           that.errorMessage = ''
           that.isLoadingLocal = false
           return;
         }
-        clearTimeout(this.timeoutId)
         this.timeoutId = setTimeout(function () {
           that.isLoadingLocal = true
-          that.searchCollab(newVal, that.moocName).then(function (result) {
+          that.searchCollab(newVal).then(function (result) {
             if (that.errorMessage !== '') {
               that.errorMessage = ''
             }

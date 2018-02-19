@@ -128,10 +128,8 @@ export default {
         }
       } catch (e) { return Promise.reject(e) }
     },
-    async searchCollab (param, moocName) {
+    async searchCollab (param) {
       var that = this
-      let user = await that.getUserInfo()
-      param = param + ' ' + moocName + ' ' + user.displayName
       try {
         // header from CreateCollab
         let response = await that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header)

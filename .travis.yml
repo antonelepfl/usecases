@@ -8,8 +8,8 @@ cache:
   - node_modules
 install: npm install
 script:
-- npm run firebase
 - npm i firebase-tools
+- npm run firebase
 - firebase deploy --public="public" --project="dev-usecases" --token=$FIREBASE_TOKEN
 env:
   global:

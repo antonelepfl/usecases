@@ -27,7 +27,7 @@ To add a new one just create a new json object in that array. The structure shou
 ### The week configuration file
 This file is an array [] of objects {} that (ideally) should be in your own repository placed where
 you have all the ipython notebooks. Each object represents a `week`and it will
-contain information about the week and the files that are going to be copied to the collab
+contain information about the week and the files that are going to be copied to the Collab.
 The structure should be like:
 ```
 [
@@ -56,13 +56,13 @@ The structure should be like:
       },
       { ... week 1 exercise 2 ... }
     ]
-	},
+  },
   { ... week 2 ... },
   ...
 ]
 ```
 
-### When this configuration is retrieved?
+### When is this configuration retrieved?
 Each time that the student selects the mooc, the weeks are rendered allowing the users to
 get the latest version of this configuration file so if the creator enable a week the student will
 see that change.

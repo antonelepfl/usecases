@@ -148,6 +148,19 @@
            },
            "next": "sc_form"
         },
+		{
+           "title": "Simulation and validation of a mouse Purkinje cell multicompartmental model",
+           "description": "Simulation and validation of a mouse Purkinje cell multicompartmental model obtained from BluePyOpt optimizer. The purpose of this usecase it to extract, simulate and validated a series of physiologically correct Purkinje cells. This notebook runs directly on the Collab and does not require HPC resources",
+           "experience": ["power"],
+           "maturity": null,
+           "access": ["hpc"],
+           "disabled": false,
+           "picture": {
+              "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
+              "alt": "Mouse Purkinje cell"
+           },
+           "next": "sc_form"
+        },
         {
           "title": "Optimise a fast spiking interneuron in the Basal Ganglia",
           "description": "Optimise parameters for a striatal fast spiking interneuron using BluePyOpt based on experimental data",

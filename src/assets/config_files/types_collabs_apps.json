@@ -395,6 +395,195 @@
       }
     ]
   },
+  "simulationandvalidationofacerebellarmulticompartmentalpurkinjecellmodel": {
+    "children": [
+      {
+        "file":"f3d66ad4-d646-42b8-ad5c-b3d6e67508bc",
+        "entryname":"Purkinje cell simulation and validation",
+        "extension": ".ipynb",
+        "appid": 175,
+        "contenttype":"application/x-ipynb+json",
+        "justcopy": false,
+        "initial": true
+      },
+      {
+        "file":"fef633e5-f243-410c-b921-db6b2576682d",
+        "entryname":"Cav2_1",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"5c86d104-c44b-4507-8d5d-5e6e1ddf08e6",
+        "entryname":"grc_ca",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"018ac41b-70ba-4b16-be40-fe84fe33a5b9",
+        "entryname":"Cav3_1",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"d8c7f0bf-36b7-47ad-9f46-6ddf1d17eb77",
+        "entryname":"Cav3_2",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"2bd8126c-99d1-4a1f-9138-73e09faafa01",
+        "entryname":"Cav3_3",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"f94d9a66-598a-4263-84ea-31c714ad17b9",
+        "entryname":"cdp5",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"8294ca68-baed-4e27-9bbc-8fd8bb0c1e43",
+        "entryname":"Grc_lkg2",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"8c55ff4a-231e-4c1d-8d3f-0da3a4eeeb52",
+        "entryname":"final_pop",
+        "extension": ".txt",
+        "appid": 175,
+        "contenttype":"text/plain",
+        "justcopy": true
+      },
+      {
+        "file":"6e21dae0-a99f-4b7e-a31a-036486daff17",
+        "entryname":"HCN1_Angeloetal2007",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"4cc7844e-f72a-43dd-9d01-c10fa17f4af7",
+        "entryname":"Kca11",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"011d64fb-ccbe-4578-9d1c-7f52667ccbf6",
+        "entryname":"Kca22",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"7e2f58c1-6198-42e9-a5d8-ce37d561f38a",
+        "entryname":"Kca31",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"afecd9bd-0121-4d88-909c-c0f4abcb4942",
+        "entryname":"Kir23",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"92b7dc0a-be21-4d3c-8d0d-edc19d3a8169",
+        "entryname":"Kv11",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"b2d4f7f4-20ca-41d4-a02f-05062d233986",
+        "entryname":"Kv15",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"9f67e039-145c-4987-9a8f-bf75c433888e",
+        "entryname":"Kv33",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"770fd1cc-e83f-47df-beca-ce54ad86c8fa",
+        "entryname":"Kv34",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"6d75cac6-11ea-4009-98a8-a0b46686e693",
+        "entryname":"Kv43",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"ca65e1dd-f9de-4770-a0de-d6f0e8ae8f6f",
+        "entryname":"Leak",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"dc01632f-0418-4c7c-bbea-d9c5027d7f10",
+        "entryname":"Nav16",
+        "extension": ".mod",
+        "appid": 175,
+        "contenttype":"audio/x-mod",
+        "justcopy": true
+      },
+      {
+        "file":"47147a18-b1d4-46f7-8afe-2afbbce4062d",
+        "entryname":"Notebook_hbp",
+        "extension": ".zip",
+        "appid": 175,
+        "contenttype":"application/x-compressed",
+        "justcopy": true
+      },
+      {
+        "file":"4bd306fa-6981-4ef1-90f6-10ce3a892015",
+        "entryname":"purkinje_mouse",
+        "extension": ".swc",
+        "appid": 175,
+        "contenttype":"text/plain",
+        "justcopy": true
+      }
+    ]
+  },
   "optimiseafastspikinginterneuroninthebasalganglia": {
     "children": [
       {

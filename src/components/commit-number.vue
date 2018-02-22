@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
+  // const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
 
   export default {
     name: 'commit-number',

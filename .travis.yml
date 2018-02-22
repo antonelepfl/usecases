@@ -6,9 +6,9 @@ branches:
 cache:
   directories:
   - node_modules
-# install: npm install
+install: npm install
 script:
-# - npm run firebase
+- npm run firebase
 - echo $TRAVIS_PULL_REQUEST
 - echo $TRAVIS_COMMIT
 # - npm i firebase-tools

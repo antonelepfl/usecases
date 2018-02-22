@@ -5,13 +5,14 @@ branches:
   - master
 cache:
   directories:
-  - $HOME/.nvm
-  - $HOME/.npm
-install: npm install
+  - node_modules
+# install: npm install
 script:
-- npm run firebase
-- npm i firebase-tools
-- firebase deploy --public="public" --project="dev-usecases" --token=$FIREBASE_TOKEN
+# - npm run firebase
+- echo $TRAVIS_PULL_REQUEST
+- echo $TRAVIS_COMMIT
+# - npm i firebase-tools
+# - firebase deploy --public="public" --project="dev-usecases" --token=$FIREBASE_TOKEN
 env:
   global:
     secure: ZUg8N+5/kdMQzkC3/d68uamQg8aXyWFt0f2Y35kdSvU/RZj0Yh4QJkAgMHwWX+27tiSoH0LPymzytWJBd3WoO0kgeGD894gOGkjzr9UwIVjtL9wdeQ40oj7O2HhJ2kU+Pich+a1OKQ0dYog3dDtlPxp3ct2mswRTc3zyDzPwTQhkF8XTnWC3UA+eC+aPjfMLDG3t2d1PJUbwTW3xf7itf6yznzBdnP/QL9yxXkehJqiVIJIvaKl4rnKQanei+vOwSNjPPhSg4LtnmE0TfXv2apWbusBgyin1zM+8p+WkoV22xIzmUSfO8U+0tKvbmw01UgHl+eTsJClVvt7+Y9BY+ywZzelfBHzWoEQ6JkS5LyTLFsgNo+jgY8537C9QH60XhIt8c2CJ5jeWVtv7bMxf8ZcPdxDnVz45nEMi2lRs2NgkabLWlAlvKvuB1Y36JpMkVcbAu3EL1UOrKmEE2Dw83Xl/yyrTmmZ6KVD+Ux0ij3s7kjWXlCCkrnMYneuVw2DTHAh3Kchl5c8ETnZiEi8aeRT3tM1ROhNkhhVcEk+wP1GAEx94Xlz3xAG0dnnuah/0dzeh3DmtQc8/I0fSY+mL109rAcCcyWLOW6lFoptMVKr6uMXN3NxscBfc85LTT720gHwhNx6oN8srZ2JnvF+uyPEp6fqcbAyPzqJT69hx/+g=

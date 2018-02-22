@@ -8,10 +8,7 @@
 
 <script>
   const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
-  console.log('commit-number', process.env.TRAVIS_COMMIT)
-  console.log('dev', process.env.DEV)
-  console.log('process', process.env)
-  console.log('-------')
+
   export default {
     name: 'commit-number',
     data () {

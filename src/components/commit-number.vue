@@ -1,0 +1,36 @@
+
+<template>
+  <span v-if="isDev" class="commit">
+    Website based on commit:
+    <a class="no-link" :href="commitLink">{{}}</a>
+  </span>
+</template>
+
+<script>
+  const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
+  console.log('commit-number', process.env.TRAVIS_COMMIT)
+  console.log('dev', process.env.DEV)
+  console.log('process', process.env)
+  console.log('-------')
+  export default {
+    name: 'commit-number',
+    data () {
+      return {
+        commitLink: REPO_URL + process.env.TRAVIS_COMMIT,
+        isDev: process.env.DEV_WEBSITE
+        // commitMessage: '"process.env.TRAVIS_COMMIT_MESSAGE"'
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .commit {
+    color: white;
+    float: right;
+  }
+  .commit a.no-link {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

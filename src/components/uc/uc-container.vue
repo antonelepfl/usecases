@@ -1,9 +1,22 @@
 <template>
    <div id="uc-container" class="uc-container">
-      <div id="uc-container-title" class="title">Please select a use case</div>
-      <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
+      <div
+         id="uc-container-title"
+         class="title"
+      >
+        Please select a use case
+        <commit-number></commit-number>
+      </div>
+      <div
+         v-for="uc in usecases"
+         v-bind:class="{ 'disabled-container': uc.disabled }"
+         v-on:click="selected(uc)"
+      >
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
-         <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
+         <md-whiteframe
+            md-elevation="2"
+            v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }"
+         >
             <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
          </md-whiteframe>
       </div>
@@ -20,12 +33,13 @@
    import ucItem from './uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
    import storageManager from 'mixins/storageManager.js'
-   console.log('TRAVIS_PULL_REQUEST', process.env.TRAVIS_PULL_REQUEST)
-   console.log('TRAVIS_COMMIT', process.env.TRAVIS_COMMIT)
+   import commitNumer from 'components/commit-number.vue'
+
    export default {
       name: 'ucContainer',
       components: {
-         'uc-item': ucItem
+         'uc-item': ucItem,
+         'commit-number': commitNumer
       },
       data () {
          return {

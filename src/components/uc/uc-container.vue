@@ -20,7 +20,8 @@
    import ucItem from './uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
    import storageManager from 'mixins/storageManager.js'
-
+   console.log('TRAVIS_PULL_REQUEST', process.env.TRAVIS_PULL_REQUEST)
+   console.log('TRAVIS_COMMIT', process.env.TRAVIS_COMMIT)
    export default {
       name: 'ucContainer',
       components: {

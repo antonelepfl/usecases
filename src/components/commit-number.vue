@@ -2,7 +2,7 @@
 <template>
   <span v-if="isDev" class="commit">
     Website based on commit:
-    <a class="no-link" :href="commitLink">{{}}</a>
+    <a class="no-link" :href="commitLink">{{commitMessage}}</a>
   </span>
 </template>
 
@@ -18,7 +18,7 @@
       return {
         commitLink: REPO_URL + process.env.TRAVIS_COMMIT,
         isDev: process.env.DEV_WEBSITE
-        // commitMessage: '"process.env.TRAVIS_COMMIT_MESSAGE"'
+        commitMessage: process.env.TRAVIS_COMMIT_MESSAGE
       }
     }
   }

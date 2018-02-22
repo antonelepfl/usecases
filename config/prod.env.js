@@ -4,5 +4,5 @@ module.exports = {
   SEND_STATISTICS: true,
   DEV_WEBSITE: process.env.TRAVIS_BRANCH !== 'master',
   TRAVIS_COMMIT: process.env.TRAVIS_COMMIT
-  // TRAVIS_COMMIT_MESSAGE: process.env.TRAVIS_COMMIT_MESSAGE
+  TRAVIS_COMMIT_MESSAGE: process.env.TRAVIS_COMMIT_MESSAGE
 }

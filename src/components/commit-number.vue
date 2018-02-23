@@ -1,8 +1,10 @@
 
 <template>
   <span v-if="isDev" class="commit blink_me">
-    Website builed based on commit2:
-    <a class="no-link" :href="commitLink">{{commitMessage}}</a>
+    Website builed based on commit3:
+    <a class="no-link" :href="commitLink">
+      <span class="shorter">{{commitMessage}}</span>
+    </a>
   </span>
 </template>
 

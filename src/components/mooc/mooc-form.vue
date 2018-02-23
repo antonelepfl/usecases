@@ -3,7 +3,13 @@
     <div class="title">{{moocName}}</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
-      <md-button class="md-raised md-primary" @click.native="createNewCollab">Create a collab</md-button>
+      <md-button
+        class="md-raised md-primary"
+        @click.native="createNewCollab"
+        :disabled="fullCollabName === ''"
+      >
+        Create a collab
+      </md-button>
       <div class="small-label">{{fullCollabName}}</div>
       <div v-show="isLoading" class="progress-bar">
         <md-progress class="md-accent" :md-progress="collabCreationProgress"></md-progress>
@@ -33,7 +39,7 @@
 </template>
 
 <script>
-  import mooc from './mooc.js'
+  import mooc from 'mixins/mooc.js'
   import collabAuthentication from 'mixins/collabAuthentication.js'
   export default {
     name: 'moocForm',

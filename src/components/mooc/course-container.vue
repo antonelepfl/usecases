@@ -1,6 +1,9 @@
 <template>
    <div id="course-container" class="course-container">
-      <div id="course-container-title" class="title">Please select a course to initialize</div>
+      <div id="course-container-title" class="title">
+        Please select a course to initialize
+        <commit-numer></commit-numer>
+      </div>
       <div v-for="uc in usecases" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
@@ -14,11 +17,13 @@
    import ucItem from 'components/uc/uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
    import collabAuthentication from 'mixins/collabAuthentication.js'
+   import commitNumer from 'components/commit-number.vue'
 
    export default {
       name: 'ucContainer',
       components: {
-         ucItem
+         ucItem,
+         commitNumer
       },
       data () {
          return {

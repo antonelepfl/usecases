@@ -14,7 +14,7 @@
    import ucItem from 'components/uc/uc-item.vue'
    import usecases from 'assets/config_files/usecases.json'
    import collabAuthentication from 'mixins/collabAuthentication.js'
-   import mooc from './mooc.js'
+   import mooc from 'mixins/mooc.js'
 
    export default {
       name: 'ucContainer',

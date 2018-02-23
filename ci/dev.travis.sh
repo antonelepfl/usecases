@@ -1,3 +1,4 @@
+echo "Building for Development"
 npm install
 set -e
 npm run lint

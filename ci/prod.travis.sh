@@ -1,3 +1,4 @@
+echo "Building for Production"
 git config --global user.email "stefano.antonel@epfl.ch"
 git config --global user.name "Stefano Antonel"
 git remote rm origin

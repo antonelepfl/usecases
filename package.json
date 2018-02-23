@@ -21,7 +21,7 @@
     "build": "node build/build.js",
     "ghpages": "node build/ghpages.js",
     "firebase": "node build/firebase.js",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue,.json src",
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
@@ -46,6 +46,7 @@
     "eslint-friendly-formatter": "^2.0.5",
     "eslint-loader": "^1.5.0",
     "eslint-plugin-html": "^1.3.0",
+    "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "eventsource-polyfill": "^0.9.6",

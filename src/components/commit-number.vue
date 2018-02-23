@@ -2,7 +2,9 @@
 <template>
   <span v-if="isDev" class="commit blink_me">
     Website builed based on commit::::::
-    <a class="no-link" :href="commitLink">{{commitMessage}}</a>
+    <a class="no-link" :href="commitLink">
+      <span class="shorter">{{commitMessage}}</span>
+    </a>
   </span>
 </template>
 

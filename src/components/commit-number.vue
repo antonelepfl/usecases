@@ -1,11 +1,11 @@
 
 <template>
-  <span v-if="isDev" class="commit blink_me">
-    Website builed based on commit::::::
-    <a class="no-link" :href="commitLink">
-      <span class="shorter">{{commitMessage}}</span>
+  <div v-if="isDev" class="commit blink_me">
+    Website builed using commit:
+    <a class="no-link shorter" :href="commitLink">
+      {{commitMessage}}
     </a>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -27,6 +27,12 @@
   .commit {
     color: yellow;
     float: right;
+    display: inline;
+    max-width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
   }
   .commit a.no-link {
     text-decoration: none;

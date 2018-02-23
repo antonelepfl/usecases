@@ -24,7 +24,7 @@ To add a new one just create a new json object in that array. The structure shou
 ]
 ```
 
-### The week configuration file
+### The week configuration file:
 This file is an array [] of objects {} that (ideally) should be in your own repository placed where
 you have all the ipython notebooks. Each object represents a `week`and it will
 contain information about the week and the files that are going to be copied to the Collab.

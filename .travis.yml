@@ -9,6 +9,7 @@ cache:
 install: npm install
 script:
 - set -e
+- npm run lint
 - export TEST_DEV=$TRAVIS_COMMIT
 - npm run firebase
 - npm i firebase-tools

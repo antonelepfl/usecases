@@ -8,13 +8,14 @@
 
 <script>
   // const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
+  console.log('process.env', process.env)
 
   export default {
     name: 'commit-number',
     data () {
       return {
-        // test: process.env.TRAVIS_BRANCH
-        // commitLink: REPO_URL + process.env.TRAVIS_COMMIT,
+        test: process.env.TRAVIS_BRANCH
+        commitLink: REPO_URL + process.env.TRAVIS_COMMIT,
         // isDev: process.env.DEV_WEBSITE,
         // commitMessage: process.env.TRAVIS_COMMIT_MESSAGE
       }

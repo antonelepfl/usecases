@@ -14,7 +14,7 @@
     data () {
       return {
         commitLink: REPO_URL + process.env.TRAVIS_COMMIT,
-        isDev: process.env.DEV_WEBSITE
+        isDev: process.env.DEV_WEBSITE,
         commitMessage: process.env.TRAVIS_COMMIT_MESSAGE
       }
     }

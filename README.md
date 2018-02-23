@@ -71,4 +71,4 @@ In some cases you need to choose different models for example to see a morpholog
 
 ### To [Add new use case(s)](https://github.com/antonelepfl/usecases/blob/master/documentation/add_new_usecase.md)
 
-### To [Add new use MOOC(s)](https://github.com/antonelepfl/usecases/blob/master/documentation/add_new_mooc.md)
+### To [Add new MOOC(s)](https://github.com/antonelepfl/usecases/blob/master/documentation/add_new_mooc.md)

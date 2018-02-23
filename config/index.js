@@ -18,8 +18,8 @@ module.exports = {
   },
   firebase: {
     assetsSubDirectory: 'static',
-    index: path.resolve(__dirname, '../public/index.html'),
-    assetsRoot: path.resolve(__dirname, '../public'),
+    index: path.resolve(__dirname, '../dist/index.html'),
+    assetsRoot: path.resolve(__dirname, '../dist'),
     assetsPublicPath: ''
   },
   ghpages: {

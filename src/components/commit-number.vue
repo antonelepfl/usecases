@@ -28,11 +28,10 @@
     color: yellow;
     float: right;
     display: inline;
-    max-width: 500px;
+    max-width: 50%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-
   }
   .commit a.no-link {
     text-decoration: none;

@@ -1,7 +1,7 @@
 <template>
   <!-- This component emits 'collabSelected' and 'collabCreated' events to the parent-->
   <div class="collab-form-component">
-    <div class="header">Define in which collab you want to work</div>
+    <div class="header">Define in which collab you want to work:</div>
     <md-tabs md-fixed class="elevated">
       <md-tab id="search" md-label="Search" md-icon="search" class="container-centered">
         <md-input-container>

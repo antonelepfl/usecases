@@ -9,8 +9,6 @@ All the jupyter notebooks, applications and files related to the use case are de
 
 
 
-
-
 # To run locally
 ``` $ npm install ``` (install dependencies)
 

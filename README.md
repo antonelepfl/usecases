@@ -21,7 +21,8 @@ All the jupyter notebooks, applications and files related to the use case are de
 * The new changes appear in [Online Use Cases DEV](https://collab.humanbrainproject.eu/#/collab/8444/nav/64015)
 
 ### To deploy in production: 
-* The user create a pull request from `dev` environment (previously tested) to `master`.
+* The owner receives the confirmation from the tests and the user that everything works correctly.
+* The owner create a pull request from `dev` environment to `master`.
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
 * The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
 

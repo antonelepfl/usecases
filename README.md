@@ -1,7 +1,7 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
 
-All the titles, images, descriptions, etc are described in [usecases.json](/src/assets/config_files/usecases.json).
+All the titles, images, descriptions, etc are described in [usecases.json](/src/assets/config_files/usecases.json)
 
 All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](/src/assets/config_files/types_collabs_apps.json)
 
@@ -28,6 +28,6 @@ All the jupyter notebooks, applications and files related to the use case are de
 
 ### [Add new MOOC](/documentation/add_new_mooc.md)
 
-#### [If Single cell models change](/documentation/single_cell_model_change.md)
+### If Single cell models [change](/documentation/single_cell_model_change.md)
 
-#### [The usual path](/documentation/usual_path.md) the user follows
+### The usual [path](/documentation/usual_path.md) the user follows

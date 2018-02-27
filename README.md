@@ -5,7 +5,7 @@ All the titles, images, descriptions, etc are described in [usecases.json](/src/
 
 All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](/src/assets/config_files/types_collabs_apps.json)
 
-### This app is deployed in [Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
+### This app is deployed in [HBP Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
 ### To run locally
 ``` npm install ``` (install dependencies)

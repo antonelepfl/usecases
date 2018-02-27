@@ -1,26 +1,13 @@
 language: node_js
 node_js: node
-branches:
-  only:
-  - master
+
 cache:
   directories:
   - $HOME/.nvm
   - $HOME/.npm
   - node_modules
-before_script:
-- git config --global user.email "stefano.antonel@epfl.ch"
-- git config --global user.name "Stefano Antonel"
-- git remote rm origin
-- git remote add origin https://antonelepfl:${GH_TOKEN}@github.com/antonelepfl/usecases.git
-install: npm install
+
 script:
-- npm run ghpages
-- git checkout -b gh-pages
-- cp -R ./docs/* ./ && rm -R docs/
-- git add --all
-- git commit -m "Deploy form travis"
-- git push origin gh-pages --force
-env:
-  global:
-    secure: FV9h4HWlFMJesz2fPb6z4D+BcHAjRR+zjH0pib94uyqy/t7N6zCKzuSAZwQPhNn68xD1u1ozTWGSvocjJd4T6jf4uLwwDjH9R1cwQY9K1wOQozU79bTp2tixcF9JXpx8cSrw419aFzBdpCeUWG79DDRGJS9zLGdDb1tz4PTCqjKeSFO3GHEG5yGNyhNQiv7WhSh0Co4xEHrrEMLKZPW0Qf3yqYdv5ErrGTRKO2fXorHkB89wh38Y9ViNDPQN/BXKPRkq2AolZr6KLqt69w4uYmF9XPVBf5772xmbHkIrgP1VzDl9bDQh4ErEVznD6ZhgSlDKPDcSnAp++33QI6Qcb977kU72b8ec227Key/o/lofd0aRlPtsS43CcUtcOpVFKNR/gNZyQLrliKU1w1TDaMDYaYywmk12QN9Ck3XOFsywH7iG/aNrY4WRPYAS0mT8Gz/L04r/PvGSYEf/bzeVKqBMop2qt7p4eBJbri9LD/ltZR2gY6yUrYKabGqRzkMk5gzcKgNpiXAnuBKpJ4focpBh3vN0Uc8wzvK2G5QkxDcceiH4lT9eAYbg9zqk+N5+Up4EJKOEBjtwBYwceKnUMVS7XvoZhyqA8oNRokV7dt2XSMB6u2BqTXSyq/TwH5eiYqGmo307uso0YzHyFuNrJSaK4Lx7Ezu2FaVApciC2yI=
+- npm install
+- set -e
+- npm run lint

@@ -69,6 +69,6 @@ In some cases you need to choose different models for example to see a morpholog
 
 #### 3. You are redirected to your Collab with the use case ready to be run
 
-### To [Add new use case(s)](/documentation/add_new_usecase.md)
+### To [Add new use case](/documentation/add_new_usecase.md)
 
-### To [Add new use MOOC(s)](/documentation/add_new_mooc.md)
+### To [Add new MOOC](/documentation/add_new_mooc.md)

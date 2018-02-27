@@ -1,6 +1,8 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
+
 All the titles, images, descriptions, etc are described in [usecases.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/usecases.json).
+
 All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/types_collabs_apps.json)
 
 #### This app is deployed in:
@@ -12,17 +14,18 @@ All the jupyter notebooks, applications and files related to the use case are de
 
 ``` $ npm run dev ``` (run server)
 
-### To deploy in production: 
-Merge to the master branch and commit. Travis process will start.
-It will deploy in github pages
-
 ### To deploy in a dev environment:
-* In the other branches that are not `master`, a travis plan will be triggered
-* The deployment will on Firebase
-* If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after `firebase login:ci`, `travis encrypt FIREBASE_TOKEN=TOKEN --add`)
-This will add the the variable FIREBASE_TOKEN in travis file
+* The user make a pull request to the dev branch
+* A travis plan is triggered to look for any error in the files.
+* When the plan finishes, you can merge to dev.
+* A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard.github/) is triggered.
+* The new changes appear in [Online Use Cases DEV](https://collab.humanbrainproject.eu/#/collab/8444/nav/64015)
 
-* The deployed page will appear in https://dev-usecases.firebaseapp.com/#/traceanalysis (example)
+### To deploy in production: 
+* The user create a pull request from `dev` environment (previously tested) to `master`.
+* A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
+* The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
+
 
 ### If Single cell models change:
 This [jenkins plan](https://bbpcode.epfl.ch/ci/job/platform.lbologna_update_data/) is executed when there is a change in the repo.
@@ -34,6 +37,10 @@ Otherwise, for manual step:
 * ``` $ python create_singlecellmodeling_structure.py ```
 * Copy back the created file **singlecellmodeling_structure.json** to config_files/ in the usecases repo.
 
+
+### To [Add new use case](/documentation/add_new_usecase.md)
+
+### To [Add new MOOC](/documentation/add_new_mooc.md)
 
 # The usual path that the user should follow is:
 #### 1. Go to the *domain* [Trace Analysis, Morphology Analysis, Single Cell Building ... ]
@@ -69,6 +76,3 @@ In some cases you need to choose different models for example to see a morpholog
 
 #### 3. You are redirected to your Collab with the use case ready to be run
 
-### To [Add new use case](/documentation/add_new_usecase.md)
-
-### To [Add new MOOC](/documentation/add_new_mooc.md)

@@ -8,7 +8,6 @@ All the jupyter notebooks, applications and files related to the use case are de
 * https://antonelepfl.github.io/usecases/#/traceanalysis (example)
 
 
-
 # To run locally
 ``` $ npm install ``` (install dependencies)
 

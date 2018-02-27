@@ -29,6 +29,6 @@ All the jupyter notebooks, applications and files related to the use case are de
 
 ### [Add new MOOC](/documentation/add_new_mooc.md)
 
-### If Single cell models [change](/documentation/single_cell_model_change.md)
+### If single cell models [change](/documentation/single_cell_model_change.md)
 
 ### The usual [path](/documentation/usual_path.md) the user follows

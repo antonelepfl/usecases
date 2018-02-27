@@ -15,7 +15,8 @@ All the jupyter notebooks, applications and files related to the use case are de
 ### To deploy in a dev environment:
 * The user make a pull request to the `dev` branch
 * A travis plan is triggered to look for any error in the files.
-* When the plan finishes, the user can merge his/her pull request to `dev`.
+* When the plan finishes, the owners of the repo can merge the new pull request to `dev`.
+* The user receives the notification that his/her pull request was merged.
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard.github/) is triggered.
 * The new changes appear in [Online Use Cases DEV](https://collab.humanbrainproject.eu/#/collab/8444/nav/64015)
 

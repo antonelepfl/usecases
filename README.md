@@ -45,7 +45,7 @@ You will see all the use cases related to this domain. Each of them containing:
 - Target User: which type of user is this use case recomended to be used by
 - If the use case is not available yet it will have the Coming Soon label
 
-![main page](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/main.png)
+![main page](documentation/main.png)
 
 #### 2. Select one *Use Case* [Feature extraction, Synaptic event fitting, ... ]
 After you select one use case you will have 2 possibilities:

@@ -3,7 +3,7 @@
   <div v-if="isDev" class="commit blink_me">
     Website builed using commit:
     <a class="no-link shorter" :href="commitLink">
-      {{commitMessage}}
+      {{commitNumber}}
     </a>
   </div>
 </template>
@@ -15,9 +15,9 @@
     name: 'commit-number',
     data () {
       return {
-        commitLink: REPO_URL + process.env.TRAVIS_COMMIT,
+        commitLink: REPO_URL + process.env.COMMIT_NUMBER,
         isDev: process.env.DEV_WEBSITE,
-        commitMessage: process.env.TRAVIS_COMMIT_MESSAGE
+        commitNumber: process.env.COMMIT_NUMBER
       }
     }
   }

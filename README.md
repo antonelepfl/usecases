@@ -1,18 +1,16 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
 
-All the titles, images, descriptions, etc are described in [usecases.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/usecases.json).
+All the titles, images, descriptions, etc are described in [usecases.json](/src/assets/config_files/usecases.json).
 
-All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/types_collabs_apps.json)
+All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](/src/assets/config_files/types_collabs_apps.json)
 
-#### This app is deployed in:
-* https://antonelepfl.github.io/usecases/#/ { usecase name in usecases.json }
-* https://antonelepfl.github.io/usecases/#/traceanalysis (example)
+### This app is deployed in [Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
 # To run locally
-``` $ npm install ``` (install dependencies)
+``` npm install ``` (install dependencies)
 
-``` $ npm run dev ``` (run server)
+``` npm run dev ``` (run server)
 
 ### To deploy in a dev environment:
 * The user make a pull request to the dev branch

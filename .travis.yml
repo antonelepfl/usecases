@@ -11,3 +11,5 @@ script:
 - npm install
 - set -e
 - npm run lint
+
+

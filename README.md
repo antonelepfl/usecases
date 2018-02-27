@@ -1,76 +1,35 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
 
-All the titles, images, descriptions, etc are described in [usecases.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/usecases.json).
+All the titles, images, descriptions, etc are described in [usecases.json](/src/assets/config_files/usecases.json)
 
-All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](https://github.com/antonelepfl/usecases/blob/master/src/assets/config_files/types_collabs_apps.json)
+All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](/src/assets/config_files/types_collabs_apps.json)
 
-#### This app is deployed in:
-* https://antonelepfl.github.io/usecases/#/ { usecase name in usecases.json }
-* https://antonelepfl.github.io/usecases/#/traceanalysis (example)
+### This app is deployed in [Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
-# To run locally
-``` $ npm install ``` (install dependencies)
+### To run locally
+``` npm install ``` (install dependencies)
 
-``` $ npm run dev ``` (run server)
-
-### To deploy in production: 
-Merge to the master branch and commit. Travis process will start.
-It will deploy in github pages
+``` npm run dev ``` (run server)
 
 ### To deploy in a dev environment:
-* In the other branches that are not `master`, a travis plan will be triggered
-* The deployment will on Firebase
-* If you want to change the user to deploy in another place, just replace the FIREBASE_TOKEN in Travis Environment Variables by yours (after `firebase login:ci`, `travis encrypt FIREBASE_TOKEN=TOKEN --add`)
-This will add the the variable FIREBASE_TOKEN in travis file
+* The user make a pull request to the `dev` branch
+* A travis plan is triggered to look for any error in the files.
+* When the plan finishes, the owners of the repo can merge the new pull request to `dev`.
+* The user receives the notification that his/her pull request was merged.
+* A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard.github/) is triggered.
+* The new changes appear in [Online Use Cases DEV](https://collab.humanbrainproject.eu/#/collab/8444/nav/64015)
 
-* The deployed page will appear in https://dev-usecases.firebaseapp.com/#/traceanalysis (example)
+### To deploy in production: 
+* The owner receives the confirmation from the tests and the user that everything works correctly.
+* The owner create a pull request from `dev` environment to `master`.
+* A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
+* The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
 
-### If Single cell models change:
-This [jenkins plan](https://bbpcode.epfl.ch/ci/job/platform.lbologna_update_data/) is executed when there is a change in the repo.
+### Add new [use case](/documentation/add_new_usecase.md)
 
-Otherwise, for manual step:
+### Add new [MOOC](/documentation/add_new_mooc.md)
 
-* Download the optimizations models locally.
-* Copy the script located into config_files/**create_singlecellmodeling_structure.py** to this new local respository.
-* ``` $ python create_singlecellmodeling_structure.py ```
-* Copy back the created file **singlecellmodeling_structure.json** to config_files/ in the usecases repo.
+### If single cell models [change](/documentation/single_cell_model_change.md)
 
-
-# The usual path that the user should follow is:
-#### 1. Go to the *domain* [Trace Analysis, Morphology Analysis, Single Cell Building ... ]
-You will see all the use cases related to this domain. Each of them containing:
-- Image: representative representation of what you are able to achieve
-- Title: Definition of the use case
-- Description: detail information about what the use case does
-- Maturity: the state of the use case such as Beta, Experimental, 
-- Target User: which type of user is this use case recomended to be used by
-- If the use case is not available yet it will have the Coming Soon label
-
-![main page](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/main.png)
-
-#### 2. Select one *Use Case* [Feature extraction, Synaptic event fitting, ... ]
-After you select one use case you will have 2 possibilities:
-
-#### A). Search
-Search in your Collabs and add this use case as a new entry (navigation item)
-You just type one of your Collabs name in the search field and then click on the name from the list
-
-![search](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/search.png)
-
-#### B). Create
-Create a new Collab that will contain this use case
-You just choose a name and click *Create* button.
-Private or public Collabs could be created depending on the user credentials.
-
-![create](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/create.png)
-
-#### 2.B. You are redirected to your Collab with the use case ready to be run
-In some cases you need to choose different models for example to see a morphology you should select which morpphology you want to see (the image below)
-![models](https://raw.githubusercontent.com/antonelepfl/usecases/master/documentation/models.png)
-
-#### 3. You are redirected to your Collab with the use case ready to be run
-
-### To [Add new use case(s)](https://github.com/antonelepfl/usecases/blob/master/documentation/add_new_usecase.md)
-
-### To [Add new use MOOC(s)](https://github.com/antonelepfl/usecases/blob/master/documentation/add_new_mooc.md)
+### The usual [path](/documentation/usual_path.md) the user follows

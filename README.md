@@ -7,7 +7,7 @@ All the jupyter notebooks, applications and files related to the use case are de
 
 ### This app is deployed in [Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
-# To run locally
+### To run locally
 ``` npm install ``` (install dependencies)
 
 ``` npm run dev ``` (run server)
@@ -26,9 +26,9 @@ All the jupyter notebooks, applications and files related to the use case are de
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
 * The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
 
-### [Add new use case](/documentation/add_new_usecase.md)
+### Add new [use case](/documentation/add_new_usecase.md)
 
-### [Add new MOOC](/documentation/add_new_mooc.md)
+### Add new [MOOC](/documentation/add_new_mooc.md)
 
 ### If single cell models [change](/documentation/single_cell_model_change.md)
 

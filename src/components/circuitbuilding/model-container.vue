@@ -14,7 +14,7 @@
    import modelItem from './model-item.vue'
    import ModelsConfig from 'assets/config_files/models.json'
    import CollabAuthentication from 'mixins/collabAuthentication.js'
-   import circuitbuilding from './circuitbuilding.js'
+   import circuitbuilding from 'mixins/circuitbuilding.js'
 
    export default {
       name: 'modelContainer',

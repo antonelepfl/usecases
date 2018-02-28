@@ -39,7 +39,7 @@
         "access": [
           "hpc"
         ],
-        "disabled": false,
+        "disabled": true,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
           "alt": "Logo of feature Extraction"

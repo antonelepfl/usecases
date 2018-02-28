@@ -4,17 +4,11 @@
       {
         "title": "Feature extraction",
         "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
         "next": "ta_form",
         "dataprotected": true,
@@ -30,19 +24,12 @@
       {
         "title": "Synaptic events fitting",
         "description": "Fitting synaptic events using data and model in NeuroInformatics Platform",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
         "dataprotected": true,
@@ -66,19 +53,12 @@
       {
         "title": "Synaptic events fitting with user model",
         "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
-        "experience": [
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["experts"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
         "files": [
@@ -101,19 +81,12 @@
       {
         "title": "Synaptic events fitting with user data",
         "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
-        "experience": [
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["experts"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
         "files": [
@@ -136,52 +109,33 @@
       {
         "title": "Feature registration",
         "description": "Register features of user's traces in NeuroInformatics Platform",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
         "next": "ta_form"
       },
       {
         "title": "Feature comparison",
         "description": "Compare electrophysiological features from NeuroInformatics Platform or uploaded data",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
         "next": "ta_form"
       },
       {
         "title": "Synaptic events fitting registration",
         "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
-        "experience": [
-          "power",
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["power", "experts"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form"
       }
@@ -190,18 +144,11 @@
       {
         "title": "Rebuild an existing single hippocampal cell model",
         "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
-        "experience": [
-          "all"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc",
-          "byor"
-        ],
+        "experience": ["all"],
+        "access": ["hpc", "byor"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-          "alt": "Logo of Single hippocampal cell model"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_models",
         "files": [
@@ -231,21 +178,12 @@
       {
         "title": "Build your own single hippocampal cell model using HBP data",
         "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": [
-          "hpc",
-          "byor"
-        ],
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "access": ["hpc", "byor"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-          "alt": "Logo of Single hippocampal cell model"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_form",
         "files": [
@@ -275,18 +213,11 @@
       {
         "title": "Optimize a cerebellar granule cell model composed by a single section",
         "description": "Using BluePyOpt to optimize a single compartmental cerebellar granule cell. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc"
-        ],
+        "experience": ["all", "power"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-          "alt": "cerebellar granule cell"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
         "files": [
@@ -408,18 +339,11 @@
       {
         "title": "Optimize a cerebellar granule cell multicompartmental model",
         "description": "Using BluePyOpt to optimize a multcompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc"
-        ],
+        "experience": ["all", "power"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-          "alt": "cerebellar granule cell"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
         "files": [
@@ -541,17 +465,11 @@
       {
         "title": "Simulation and validation of a mouse Purkinje cell multicompartmental model",
         "description": "Simulation and validation of a mouse Purkinje cell multicompartmental model obtained from BluePyOpt optimizer. The purpose of this usecase it to extract, simulate and validated a series of physiologically correct Purkinje cells. This notebook runs directly on the Collab and does not require HPC resources",
-        "experience": [
-          "power"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-          "alt": "Mouse Purkinje cell"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
         "files": [
@@ -745,17 +663,11 @@
       {
         "title": "Optimise a fast spiking interneuron in the Basal Ganglia",
         "description": "Optimise parameters for a striatal fast spiking interneuron using BluePyOpt based on experimental data",
-        "experience": [
-          "code"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["code"],
+        "maturity": ["experimental"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "spiking internuron"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
         },
         "next": "sc_form",
         "files": [
@@ -780,17 +692,11 @@
       {
         "title": "Optimize a striatal fast-spiking interneuron",
         "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
-        "experience": [
-          "code"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["code"],
+        "maturity": ["experimental"],
         "disabled": false,
         "picture": {
-          "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png",
-          "alt": "spiking internuron"
+          "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
         },
         "next": "sc_striatal_models",
         "files": [
@@ -806,107 +712,63 @@
       {
         "title": "Build your own single hippocampal cell model using HBP and your own data",
         "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",
-        "experience": [
-          "power",
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc",
-          "byor"
-        ],
+        "experience": ["power", "experts"],
+        "maturity": ["experimental"],
+        "access": ["hpc", "byor"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-          "alt": "Logo of Single hippocampal cell model"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
+        }
       },
       {
         "title": "Create a single hippocampal cell model",
         "description": "Create your own single hippocampal cell Model with data from NeuroInformatics Platform",
-        "experience": [
-          "experts",
-          "code"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["experts", "code"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       },
       {
         "title": "Release single hippocampal cell",
         "description": "Release your single hippocampal cell model to the NeuroInformatics Platform",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["power"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       },
       {
         "title": "Release single hippocampal cell building process",
         "description": "Release your validated single hippocampal cell building process",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       },
       {
         "title": "Export single hippocampal cell model to NeuroML",
         "description": "Export single hippocampal cell model into NeuroML (Open Souce Brain)",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       }
     ],
     "circuitbuilding": [
       {
         "title": "Cells placement",
         "description": "Define the properties and the location of the neurons for a brain region of detailed neuron models",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["power"],
+        "maturity": ["experimental"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png",
-          "alt": "Cells Placement"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png"
         },
         "next": "cb_models",
         "models": [
@@ -939,19 +801,12 @@
       {
         "title": "Connectome",
         "description": "Define the connectome for a brain region of detailed neuron models",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/connectome.png",
-          "alt": "Connectome"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/connectome.png"
         },
         "next": "cb_models",
         "models": [
@@ -977,17 +832,11 @@
       {
         "title": "Morphology analysis",
         "description": "Performs analysis on a morphology with NeuroM",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["power"],
+        "maturity": ["beta"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png",
-          "alt": "Morphology Analysis "
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png"
         },
         "next": "morph_analysis_models",
         "dataprotected": true,
@@ -1004,17 +853,11 @@
       {
         "title": "Morphology visualization",
         "description": "Display neuron morphology in 3D",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png",
-          "alt": "Morphology Analysis "
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
         "dataprotected": true
@@ -1024,51 +867,33 @@
       {
         "title": "Single cell in silico experiments under current/voltage clamp",
         "description": "",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
-          "alt": "single cell in silico under current or voltage clamp"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg"
         },
         "next": "insilico_exp"
       },
       {
         "title": "Single cell in silico experiments with synaptic inputs preconfigured",
         "description": " ",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
-          "alt": "single cell in silico experiments with synaptic inputs preconfigured"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg"
+        }
       }
     ],
     "mooc": [
       {
         "title": "Reconstruction and simulation of neural tissue I: Neurons and Synapses",
         "description": "",
-        "experience": [
-          "all"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["all"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-          "alt": "Collab logo"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif"
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/weeks_config.json"
@@ -1076,15 +901,10 @@
       {
         "title": "In Silico Neuroscience Course 2018",
         "description": "Study of the nervous system using data, analysis, classification, prediction, modelling, simulation, theory and computing technology",
-        "experience": [
-          "all"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["all"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/Course_picture.png",
-          "alt": "Collab logo"
+          "src": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/Course_picture.png"
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/courseWeeks_config.json"
@@ -1094,173 +914,106 @@
       {
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["all", "power"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png",
-          "alt": "Configure and run a small circuit using preconfigured HBP model and data"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png"
         },
         "next": "small_circuits"
       },
       {
         "title": "Configure and run a small circuit using HBP model and data",
         "description": "",
-        "experience": [
-          "power"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["power"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run a small circuit using HBP model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Configure and run your own small circuit using HBP model and data",
         "description": "",
-        "experience": [
-          "power",
-          "experts"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["power", "experts"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run your own small circuit using HBP model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Configure and run your own small circuit using HBP and your own model and data",
         "description": "",
-        "experience": [
-          "experts",
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["experts", "code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run your own small circuit using HBP and your own model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       }
     ],
     "brainareacircuitinsilicoexperiments": [
       {
         "title": "Configure and run a brain region using preconfigured HBP model and data",
         "description": "",
-        "experience": [
-          "experts",
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["experts", "code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run a brain region using preconfigured HBP model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Configure and run a brain region using HBP model and data",
         "description": "",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run a brain region using HBP model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Build, configure, and run a brain region using HBP model and your own configuration rules",
         "description": "",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Build, configure, and run a brain region using HBP model and your own configuration rules"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       }
     ],
     "analysisandvisualization": [
       {
         "title": "Single cell",
         "description": "",
-        "experience": null,
-        "maturity": null,
-        "access": null,
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Single Cell"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Small circuit",
         "description": "",
-        "experience": null,
-        "maturity": null,
-        "access": null,
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Small Circuit"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Region circuit",
         "description": "",
-        "experience": null,
-        "maturity": null,
-        "access": null,
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Region Circuit"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       }
     ],
     "highlyintegratedworkflows": [
       {
         "title": "Hodgkin-Huxley Neuron Builder - CDP2 Product 1",
         "description": "",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "maturity": ["beta"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png",
-          "alt": "Hodgkin-Huxley Neuron Builder"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
         "next": "ta_form",
         "files": [
@@ -1277,17 +1030,11 @@
       {
         "title": "Basal Ganglia - BluePyOpt Optimized Model Validation - Multiple HOF",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
-          "alt": "Logo of model validation: BluePyOpt to eFEL"
+          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png"
         },
         "next": "ta_form",
         "dataprotected": true,
@@ -1304,17 +1051,11 @@
       {
         "title": "Generic - BluePyOpt Optimized Model Validation",
         "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
-          "alt": "Logo of model validation: BluePyOpt to eFEL"
+          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png"
         },
         "next": "ta_form",
         "dataprotected": true

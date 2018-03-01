@@ -73,7 +73,8 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
       "appid": (number) possible values [175 (ipython notebboks), 6 (external html)],
       "contenttype": (string) possible values ["x-ipynb+json", "text/html"],
       "extension": (string) extension with "." like ".ipynb",
-      "file": UUID of the file in collab storage (more information see below) OR raw file URL
+      "file": UUID of the file in collab storage (more information see below) OR raw file URL,
+      "justcopy": (boolean) if true, it will avoid creating a nav item,
    }
    ```
 

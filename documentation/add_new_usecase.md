@@ -32,8 +32,8 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         "access": [<access_choice>, ...],
         "disabled": boolean if the usecases is accessible or not,
         "picture": {
-        "src": url of the image,
-        "alt": description of the image (for accessibility)
+           "src": url of the image,
+           "alt": description of the image (for accessibility)
         },
         "dataprotected": if the user should accept terms and conditions [true, false]
         "next": <next_choice>,

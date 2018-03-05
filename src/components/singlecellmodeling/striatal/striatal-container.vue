@@ -25,7 +25,8 @@
     },
     data () {
       return {
-        models: []
+        models: [],
+        ucName: 'optimizeastriatalfast-spikinginterneuron'
       }
     },
     mixins: [createCollab],
@@ -33,14 +34,13 @@
       touched (modelItem) { // open Neuron as a service
         this.$router.push({name: 'sc_striatal_form_replacing',
           params: {
-            'folder_name': modelItem.modelName,
-            'uc_name': this.ucName
+            'folder_name': modelItem.modelName
           }
         })
       }
     },
     created () {
-      this.models = modelsMixins.getModelByUc(this.uc_name)
+      this.models = modelsMixins.getModelByUc(this.ucName)
       document.querySelector('title').innerHTML = 'Striatal Models'
     }
   }

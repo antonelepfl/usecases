@@ -50,7 +50,6 @@ const router = new VueRouter({
       component: function (resolve) {
         require(['components/singlecellmodeling/striatal/striatal-container.vue'], resolve)
       },
-      props: {'uc_name': 'optimizeastriatalfast-spikinginterneuron'},
       name: 'sc_striatal_models'
     },
     { path: '/singlecellmodeling/optimizeastriatalfast-spikinginterneuron/:folder_name',

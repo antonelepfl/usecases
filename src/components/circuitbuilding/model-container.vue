@@ -12,9 +12,9 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import ModelsConfig from 'assets/config_files/models.json'
    import CollabAuthentication from 'mixins/collabAuthentication.js'
    import circuitbuilding from 'mixins/circuitbuilding.js'
+   import modelsMixins from 'mixins/models.js'
 
    export default {
       name: 'modelContainer',
@@ -25,7 +25,6 @@
       mixins: [CollabAuthentication, circuitbuilding],
       data () {
          return {
-            modelsConfig: ModelsConfig,
             models: [],
             list_usecases: 'circuitbuilding'
          }
@@ -43,8 +42,7 @@
       },
       created () {
         document.querySelector('title').innerHTML = 'Models'
-        var currentModelList = this.modelsConfig[this.list_usecases];
-        this.models = currentModelList[this.uc_name]
+        this.models = modelsMixins.getModelByUc(this.uc_name)
       }
    }
 </script>

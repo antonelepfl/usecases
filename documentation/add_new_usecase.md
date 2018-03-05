@@ -37,7 +37,8 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         },
         "dataprotected": if the user should accept terms and conditions [true, false]
         "next": <next_choice>,
-        "files": [<file_usecase>, ...]
+        "files": [<file_usecase>, ...],
+        "models": [<model_item>, ...],
       },
       ...
     ],
@@ -77,6 +78,21 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
       "justcopy": (boolean) if true, it will avoid creating a nav item,
    }
    ```
+* #### model_item:
+  ```
+  {
+    "title": (string) title of the model
+    "modelName": (string) text that is going to replace the placeholder in the notebook,
+    "description": (string) description of the model,
+    "contributors": [
+      {
+        "name": name of the contributor,
+        "email": email of the contributor
+      }
+    ],
+    "img": (url) link to the image for that model
+  }
+  ```
 
 ##### To get the raw file url
 For example in github just look for the file and click on the button to visualize it RAW and copy that URL to the "file" attribute

@@ -18,9 +18,6 @@
    const VIEWER_URL = 'https://bbp.epfl.ch/public/morph-view/'
    import collabAuthentication from 'mixins/collabAuthentication.js'
    import createCollab from 'mixins/createCollab.js'
-   import ModelsConfig from 'assets/config_files/models.json'
-   import ModelsBSP from 'assets/config_files/singlecellmodeling_structure.json'
-   import ModelsNMC from 'assets/config_files/nmcportalmodels_structure.json'
    import modelsMixins from 'mixins/models.js'
    
    export default {
@@ -35,7 +32,7 @@
           filter: ''
         }
       },
-      mixins: [collabAuthentication, createCollab, modelsMixins],
+      mixins: [collabAuthentication, createCollab],
       props: ['list_usecases', 'uc_name'],
       methods: {
         touched (modelItem) {
@@ -44,35 +41,19 @@
           var category = this.$route.path.split('/')[1]
           this.sendStatistics(null, this.uc_name, category, modelItem.folderName, null)
         },
-        getNMCMetadata (modelsJson, path) {
-          for (let i = 0; i < modelsJson.length; i++) {
-            let elem = modelsJson[i]
-            let fileName = Object.keys(elem)[0]
-            let modelInfo = elem[fileName].meta
-            let morphPath = path + elem[fileName].morph
-            modelInfo.morphImg = morphPath
-            let responsePath = path + elem[fileName].responses
-            modelInfo.reponsesImg = responsePath
-            modelInfo.folderName = fileName
-            modelInfo.modelTitle = this.getModelTitle(modelInfo)
-            this.models.push(modelInfo)
-            this.originalModels = this.models // save all the models
-          }
-        },
         addSearch (obj) {
           this.filter += ' ' + obj.text
         },
         performNMC () {
-          let modelConfigNMC = ModelsConfig['nmcportal']
-          this.getNMCMetadata(ModelsNMC, modelConfigNMC.raw)
-          this.searchedModels = this.models
+          let fullList = modelsMixins.getNMCMetadata()
+          this.models = this.models.concat(fullList)
+          this.originalModels = this.models
         }
       },
       created () {
         let that = this
-        let modelConfigBSP = ModelsConfig['ca1models']
         document.querySelector('title').innerHTML = 'Models'
-        this.models = this.getBSPMetadata(ModelsBSP, modelConfigBSP.raw)
+        this.models = modelsMixins.getBSPMetadata()
         if (window.requestIdleCallback) {
           window.requestIdleCallback(that.performNMC)
         } else {
@@ -81,7 +62,7 @@
       },
       watch: {
         'filter': async function (newVal) {
-          this.models = await this.search(newVal, this.originalModels)
+          this.models = await modelsMixins.search(newVal, this.originalModels)
         }
       }
    }

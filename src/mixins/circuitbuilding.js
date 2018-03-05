@@ -1,7 +1,6 @@
 
 import createCollab from 'mixins/createCollab.js'
 import collabAuthentication from 'mixins/collabAuthentication.js'
-import models from 'assets/config_files/models.json'
 import findIndex from 'lodash/findIndex'
 import find from 'lodash/find'
 import usecases from 'assets/config_files/usecases.json'
@@ -9,7 +8,6 @@ import usecases from 'assets/config_files/usecases.json'
 export default {
   data () {
     return {
-      models: models,
       circuitBuilding: usecases[0].circuitbuilding
     }
   },
@@ -44,13 +42,10 @@ export default {
     },
     getModelName (modelName) {
       if (modelName) {
-        let modelBasedOnUC = this.models.circuitbuilding[this.uc_name]
-        for (let elem in modelBasedOnUC) {
-          let title = modelBasedOnUC[elem].title
-          if (this.uglyfy(title) === modelName) {
-            return title
-          }
-        }
+        let modelInfo = find(this.circuitBuilding, (elem) => {
+          return this.uglyfy(elem.title) === this.uc_name
+        })
+        return modelInfo.title
       }
     },
     getCBUsecaseInfo (uc, model) {

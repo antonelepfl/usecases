@@ -50,7 +50,7 @@ const router = new VueRouter({
       component: function (resolve) {
         require(['components/singlecellmodeling/striatal/striatal-container.vue'], resolve)
       },
-      props: true,
+      props: {'uc_name': 'optimizeastriatalfast-spikinginterneuron'},
       name: 'sc_striatal_models'
     },
     { path: '/singlecellmodeling/optimizeastriatalfast-spikinginterneuron/:folder_name',
@@ -146,6 +146,12 @@ const router = new VueRouter({
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json
       component: App,
       props: true // to see in the component as props
+    },
+    { path: '/:list_usecases/:uc_name',
+      component: function (resolve) {
+        require(['components/traceanalysis/ta-form.vue'], resolve)
+      },
+      props: true
     }
   ],
   base: '/usecases/',

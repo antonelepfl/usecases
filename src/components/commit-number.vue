@@ -1,7 +1,7 @@
 
 <template>
   <div v-if="isDev" class="commit blink_me">
-    Website builed using commit:
+    Website build using commit:
     <a class="no-link shorter" :href="commitLink">
       {{commitNumber}}
     </a>

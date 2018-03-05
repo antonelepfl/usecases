@@ -1093,13 +1093,34 @@
     ],
     "modelvalidation": [
       {
+        "title": "Validation Framework Demo (Walkthrough)",
+        "description": "Demonstrates the use of the validation framework",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Validation Framework Demo",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "729be6a8-a4d3-4a05-888a-0466a82bdde6"
+          }
+        ]
+      },
+      {
         "title": "Basal Ganglia - BluePyOpt Optimized Model Validation - Multiple HOF",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
         "next": "ta_form",
         "dataprotected": true,
@@ -1120,10 +1141,40 @@
         "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
         "next": "ta_form",
-        "dataprotected": true
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "BluePyOpt optimized model validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "9b915d4d-c1d0-4d1a-9be9-a614ac305014"
+          }
+        ]
+      },
+      {
+        "title": "Hippocampus Single Cell - BluePyOpt Optimized Model Validation",
+        "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Hippocampus single cell validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "acb94529-a85c-4a79-bcf5-920612c17d91"
+          }
+        ]
       }
     ]
   },

@@ -178,9 +178,9 @@
       {
         "title": "Build your own single hippocampal cell model using HBP data",
         "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
-        "experience": ["all", "power"],
+        "experience": ["power"],
         "maturity": ["beta"],
-        "access": ["hpc", "byor"],
+        "access": ["hpc"],
         "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"

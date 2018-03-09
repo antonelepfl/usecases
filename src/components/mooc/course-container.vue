@@ -37,7 +37,11 @@
          selected (uc) {
             if (!uc.disabled) {
               let title = uc.title.toLowerCase().replace(/\s/g, '')
-              this.$router.push({name: uc.next, params: {'uc_name': title}})
+              this.$router.push({
+               name: uc.next,
+               params: {'uc_name': title},
+               query: this.$route.query
+              })
             }
          },
          prettyfy (name) {

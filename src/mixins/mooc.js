@@ -35,6 +35,20 @@ export default {
         return this.createCoursesMooc(collab, uc, week)
       } catch (e) { return Promise.reject(e) }
     },
+    addSetUserCell (content) {
+      let parsed = content
+      let userid = null
+      if (typeof (content) === 'string') {
+        parsed = JSON.parse(content)
+      }
+      let queryParam = window.location.href.match(/state=([^&]+)/)
+      if (queryParam) {
+        userid = queryParam[1]
+        parsed.metadata['userid'] = userid
+      }
+
+      return JSON.stringify(parsed)
+    },
     async createCoursesMooc (collab, uc, week) { // cretes mooc -> weeks
       var that = this
       this.moocWeek = await this.getWeekInfo(uc, week)
@@ -108,6 +122,10 @@ export default {
         }
         if (!file.exists) {
           let content = await that.getDataRepo(originalFileId)
+          if (!appInfo.justcopy) {
+            console.debug('Add metadata to file', appInfo.entryname)
+            content = that.addSetUserCell(content)
+          }
           await that.setFileContent(file.uuid, JSON.stringify(content))
         }
         newFileId = file.uuid

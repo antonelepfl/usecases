@@ -41,8 +41,7 @@
                   'week': weekName,
                   'moocFullWeeks': this.weeks,
                   'moocFullName': this.moocInfo.title
-                },
-                query: this.$route.query
+                }
               })
             }
          },

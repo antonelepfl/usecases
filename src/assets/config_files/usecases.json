@@ -960,18 +960,6 @@
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/courseWeeks_config.json"
-      },
-      {
-        "title": "The Multi-scale brain",
-        "description": "",
-        "experience": ["all"],
-        "disabled": false,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/Extra/MultiBrain-MOOC-small.jpg"
-        },
-        "next": "weeks_container",
-        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/weeks_config.json",
-        "course_url": "https://courseware.epfl.ch/courses/course-v1:EPFL+Multi-BrainX+2018_T1/about"
       }
     ],
     "smallcircuitinsilicoexperiments": [

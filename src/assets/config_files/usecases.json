@@ -39,14 +39,14 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "6345ec54-7247-488c-bbca-77ff97a31dcb"
+            "file": "6c6c7956-c391-4981-ba7c-e1988e9c7e0c"
           },
           {
             "entryname": "Synaptic events fitting with analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "fa3cac2f-7f11-4252-b05c-f9e458ba52e3"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02"
           }
         ]
       },
@@ -67,14 +67,14 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "44d62cdc-eddb-41ba-b7f9-122714ad236b"
+            "file": "edecb7f3-2a14-469a-abb0-40001c4152ab"
           },
           {
             "entryname": "Synaptic events fitting with user model analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "e8088522-8a7a-4797-94cc-82f53b16b702"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02"
           }
         ]
       },
@@ -95,14 +95,14 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "cbec3cd3-7bbd-40b5-b39d-64ed78c09df5"
+            "file": "8ee1a349-fea9-4444-94fd-9d2dda45a828"
           },
           {
             "entryname": "Synaptic events fitting with user data analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "e8088522-8a7a-4797-94cc-82f53b16b702"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02"
           }
         ]
       },
@@ -157,21 +157,21 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "819f50bf-b801-4d5c-94a0-d006d15151bf"
+            "file": "71260306-28bb-4613-b5c8-03554810df05"
           },
           {
             "entryname": "Rebuild Single HippoCell - Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "bf5cb907-c3d5-4155-a79c-255066224570"
+            "file": "66970e4e-8879-4f05-b669-d37c7bb69788"
           },
           {
             "entryname": "Rebuild Single HippoCell - NSG Job Manager",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "c51bf9b1-beee-48f5-9f78-c33a5bf2f706"
+            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7"
           }
         ]
       },
@@ -192,21 +192,21 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "48990742-d0aa-47ac-8e0d-5c7b783eb2ca"
+            "file": "f0889ca5-735d-4857-98e7-fb2e5630d503"
           },
           {
             "entryname": "BuildOwn Single HippoCell - Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "bf5cb907-c3d5-4155-a79c-255066224570"
+            "file": "66970e4e-8879-4f05-b669-d37c7bb69788"
           },
           {
             "entryname": "BuildOwn Single HippoCell - NSG Job Manager",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "c51bf9b1-beee-48f5-9f78-c33a5bf2f706"
+            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7"
           }
         ]
       },

@@ -1151,7 +1151,7 @@
         "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1172,7 +1172,7 @@
         "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },

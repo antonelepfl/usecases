@@ -124,7 +124,9 @@ export default {
           let content = await that.getDataRepo(originalFileId)
           if (!appInfo.justcopy) {
             console.debug('Add metadata to file', appInfo.entryname)
-            content = that.addSetUserCell(content)
+            if (appInfo.contenttype === 'x-ipynb+json'){
+              content = that.addSetUserCell(content)
+            }
           }
           await that.setFileContent(file.uuid, JSON.stringify(content))
         }

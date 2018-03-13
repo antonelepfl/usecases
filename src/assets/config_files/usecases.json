@@ -791,7 +791,7 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-				"file": "b0509c3f-3330-435d-87d2-d0940e98766c"
+                "file": "b0509c3f-3330-435d-87d2-d0940e98766c"
               }
             ],
             "species": "Rat",
@@ -801,8 +801,8 @@
             "contributors": [
               {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
               {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
-			  {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
-			  {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           },
@@ -848,7 +848,7 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-				"file": "85354cea-5f47-4852-8c8f-8cacf5d38333"
+                "file": "85354cea-5f47-4852-8c8f-8cacf5d38333"
               }
             ],
             "species": "Rat",
@@ -858,8 +858,8 @@
             "contributors": [
               {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
               {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
-			  {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
-			  {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           },
@@ -977,15 +977,15 @@
         },
         "next": "small_circuits",
         "models": [
-		  {
+          {
             "title": "Cerebellum microcircuit",
-			"files": [
+            "files": [
               {
                 "entryname": "Cerebellum microcircuit",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-				"file": "da012b41-4a6b-4b5d-9b71-869c1c68d731"
+                "file": "da012b41-4a6b-4b5d-9b71-869c1c68d731"
               }
             ],
             "species": "Rat",
@@ -995,8 +995,8 @@
             "contributors": [
               {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
               {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
-			  {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
-			  {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           },
@@ -1011,8 +1011,6 @@
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
           }
-        ]
-          
         ]
       },
       {

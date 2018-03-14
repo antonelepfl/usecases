@@ -15,9 +15,7 @@
 
 <script>
    import modelItem from 'components/singlecellinsilicoexperiments/models-list.vue'
-   import modelsMixins from 'mixins/models.js'
-   import ModelsConfig from 'assets/config_files/models.json'
-   import ModelsBSP from 'assets/config_files/singlecellmodeling_structure.json'
+   import modelsUtils from 'mixins/models.js'
 
    export default {
       name: 'ca1ModelList',
@@ -31,7 +29,6 @@
             filter: ''
          }
       },
-      mixins: [modelsMixins],
       methods: {
         touched (modelItem) {
           this.$emit('selected', modelItem)
@@ -41,14 +38,13 @@
         }
       },
       created () {
-        let modelsConfigBSP = ModelsConfig['ca1models']
         document.querySelector('title').innerHTML = 'Models'
-        this.originalModels = this.getBSPMetadata(ModelsBSP, modelsConfigBSP.raw)
+        this.originalModels = modelsUtils.getBSPMetadata()
         this.models = this.originalModels
       },
       watch: {
         'filter': async function (newVal) {
-          this.models = await this.search(newVal, this.originalModels)
+          this.models = await modelsUtils.search(newVal, this.originalModels)
         }
       }
    }

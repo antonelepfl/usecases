@@ -1,9 +1,7 @@
 # Blue Brain Project - Usecase Wizard
 This repository contains all the information related to the use cases that are shown in the Brain Simulation Platform.
 
-All the titles, images, descriptions, etc are described in [usecases.json](/src/assets/config_files/usecases.json)
-
-All the jupyter notebooks, applications and files related to the use case are described in [types_collabs_apps.json](/src/assets/config_files/types_collabs_apps.json)
+All the titles, images, descriptions, files, etc are described in [usecases.json](/src/assets/config_files/usecases.json)
 
 ### This app is deployed in [HBP Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
@@ -26,10 +24,13 @@ All the jupyter notebooks, applications and files related to the use case are de
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
 * The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
 
-### Add new [use case](/documentation/add_new_usecase.md)
+### How to:
+* Add new [use case](/documentation/add_new_usecase.md)
 
-### Add new [MOOC](/documentation/add_new_mooc.md)
+* Add new [MOOC](/documentation/add_new_mooc.md)
 
-### If single cell models [change](/documentation/single_cell_model_change.md)
+* Add [models](/documentation/add_new_model.md)
 
-### The usual [path](/documentation/usual_path.md) the user follows
+* If single cell models [change](/documentation/single_cell_model_change.md)
+
+* The usual [path](/documentation/usual_path.md) the user follows

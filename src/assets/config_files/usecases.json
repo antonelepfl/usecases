@@ -952,7 +952,8 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif"
         },
         "next": "weeks_container",
-        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/weeks_config.json"
+        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/weeks_config.json",
+        "course_url": "https://www.edx.org/course/simulation-neuroscience-epflx-simneurox"
       },
       {
         "title": "In Silico Neuroscience Course 2018",

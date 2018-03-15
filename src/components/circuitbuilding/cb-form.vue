@@ -14,7 +14,7 @@
 <script>
   import collabFormComponent from 'components/collab-form-component.vue'
   import createCollab from 'mixins/createCollab.js'
-  import circuitbuilding from 'mixins/circuitbuilding.js'
+  import circuitbuilding from 'mixins/deepModel.js'
   import collabAuthentication from 'mixins/collabAuthentication.js'
   export default {
     name: 'collabForm',
@@ -37,7 +37,7 @@
         var modelPrettyName = this.getModelName(this.model_name)
         var category = this.$route.path.split('/')[1]
         this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, false)
-        this.createItemInExistingCollabCircuitBuilding(collab, this.uc_name, this.model_name)
+        this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
         // some of the functions here are overwritten in the circuitbuilding.js
         .then(function () {
           that.isLoading = false
@@ -53,7 +53,7 @@
         var modelPrettyName = this.getModelName(this.model_name)
         var category = this.$route.path.split('/')[1]
         this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, true)
-        this.createItemInExistingCollabCircuitBuilding(collab, this.uc_name, this.model_name)
+        this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
         .then(function () {
           that.isLoading = false
         })

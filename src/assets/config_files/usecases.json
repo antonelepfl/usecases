@@ -984,7 +984,7 @@
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
         "experience": ["all", "power"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png"
         },

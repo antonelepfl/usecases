@@ -8,13 +8,21 @@ import usecases from 'assets/config_files/usecases.json'
 export default {
   data () {
     return {
-      circuitBuilding: usecases[0].circuitbuilding
+      usecases: usecases[0],
+      // root like circuitbuiling, smallcircuitinsilicoexperiments
+      root: ''
     }
   },
   mixins: [collabAuthentication, createCollab],
+  mounted () {
+    let f = this.$route.fullPath.split('/')
+    if (f && f.length > 1) {
+      this.root = f[1]
+    }
+  },
   methods: {
-    createItemInExistingCollabCircuitBuilding (collab, uc, model) {
-      let ucInfo = this.getCBUsecaseInfo(uc, model)
+    createItemInExistingCollabDeepModel (collab, uc, model) {
+      let ucInfo = this.getUsecaseInfo(uc, model)
       var that = this
       return new Promise(function (resolve, reject) {
         if (ucInfo === undefined) {
@@ -42,17 +50,17 @@ export default {
     },
     getModelName (modelName) {
       if (modelName) {
-        let modelInfo = find(this.circuitBuilding, (elem) => {
+        let modelInfo = find(this.usecases[this.root], (elem) => {
           return this.uglyfy(elem.title) === this.uc_name
         })
         return modelInfo.title
       }
     },
-    getCBUsecaseInfo (uc, model) {
+    getUsecaseInfo (uc, model) {
       function compact (name) {
         return name.toLowerCase().replace(/ /g, '')
       }
-      let categoryInfo = find(this.circuitBuilding, (category) => {
+      let categoryInfo = find(this.usecases[this.root], (category) => {
         return compact(category.title) === uc
       })
       let index = findIndex(categoryInfo.models, function (m) {

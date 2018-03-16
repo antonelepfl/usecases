@@ -13,7 +13,7 @@
 <script>
    import modelItem from './model-item.vue'
    import CollabAuthentication from 'mixins/collabAuthentication.js'
-   import circuitbuilding from 'mixins/circuitbuilding.js'
+   import circuitbuilding from 'mixins/deepModel.js'
    import modelsMixins from 'mixins/models.js'
 
    export default {

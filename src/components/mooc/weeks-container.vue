@@ -1,6 +1,12 @@
 <template>
    <div id="course-container" class="course-container">
-      <div id="course-container-title" class="title">{{moocInfo.title}}</div>
+      <div id="course-container-title" class="title">
+        {{moocInfo.title}}
+        <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
+          <i>Link of the course</i>
+          <i class="material-icons middle">link</i>
+        </a>
+      </div>
       <div v-for="uc in weeks" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
@@ -120,6 +126,19 @@
    }
    .course-container .disabled-container {
       position: relative;
+   }
+   a.no-link {
+      color: #aacff1;
+      cursor: pointer;
+   }
+   a.no-link:hover {
+      color: #000000;
+   }
+   .middle {
+      vertical-align: middle;
+   }
+   .right {
+      float: right;
    }
    @media screen and (max-width: 751px) {
       .course-container .disabled-tag {

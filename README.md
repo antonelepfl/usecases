@@ -27,8 +27,8 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 ### To deploy in production (notebook): 
 
 * The owner is not able to deploy directly a notebook in production.
-* If a notebook has been changed, updated or somehow modified, the owner of this repo must be notified. 
-* After testing the existing DEV notebook it will be copied to the PROD environment.
+* If a notebook has been changed, updated or somehow modified, the owner of THIS repo must be notified. 
+* After testing the existing DEV notebook it will be copied to the PROD environment (the content will be copied to the Collab "Production Notebooks". The 'use_cases.json' in master links to the notebooks on this Collab.)
 
 ### How to:
 * Add new [use case](/documentation/add_new_usecase.md)

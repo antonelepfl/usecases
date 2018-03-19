@@ -12,7 +12,8 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import ModelsConfig from 'assets/config_files/models.json'
+   import modelsMixins from 'mixins/models.js'
+   import utils from 'mixins/utils.js'
 
    export default {
       name: 'modelContainer',
@@ -22,7 +23,6 @@
       props: ['uc_name'],
       data () {
          return {
-            modelsConfig: ModelsConfig,
             models: [],
             list_usecases: 'smallcircuitinsilicoexperiments'
          }
@@ -30,14 +30,21 @@
       methods: {
          selected (model) {
             if (!model.disabled) {
-              window.open('https://bbp.epfl.ch/public/simulationapp/index.html', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
-           }
+              if (model.files) {
+                  this.$router.push({name: 'scie_form',
+                     params: {
+                        'model_name': utils.compact(model.title)
+                     }
+                  })
+              } else {
+                  window.open('https://bbp.epfl.ch/public/simulationapp/index.html', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
+              }
+            }
          }
       },
       created () {
         document.querySelector('title').innerHTML = 'Models'
-        var currentModelList = this.modelsConfig[this.list_usecases];
-        this.models = currentModelList[this.uc_name]
+        this.models = modelsMixins.getModelByUc(this.uc_name)
       }
    }
 </script>

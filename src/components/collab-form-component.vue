@@ -75,10 +75,14 @@
         })
       },
       createNewCollab () {
-        var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
         var that = this
-        that.errorMessage = ''
-        that.isLoadingLocal = true
+        this.errorMessage = ''
+        if (!this.searchText) {
+          this.errorMessage = 'Name is require'
+          return
+        }
+        var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
+        this.isLoadingLocal = true
         this.createCollab(this.searchText, isPrivate)
         .then(function (collab) {
           that.getCollabStorage(collab.id).then(function () {

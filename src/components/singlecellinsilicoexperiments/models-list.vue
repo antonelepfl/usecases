@@ -1,15 +1,21 @@
 <template>
    <div class="models-list">
-    <md-whiteframe md-elevation="1" class="item-sections" v-for="model in showingModels" v-bind:key="model.title">
+    <md-whiteframe
+      md-elevation="1"
+      class="item-sections"
+      v-for="model in showingModels"
+      v-bind:key="model.title"
+    >
       <model-item
         class="model-item"
         :model="model"
         v-on:touched="touched(model)"
-        v-on:addSearch="addSearch"></model-item>
+        v-on:addSearch="addSearch">
+      </model-item>
     </md-whiteframe>
 
     <infinite-loading
-      :on-infinite="onInfinite" 
+      @infinite="onInfinite"
       ref="infiniteLoading"
       spinner="spiral"
     >
@@ -39,7 +45,7 @@
         touched (modelItem) {
           this.$emit('selected', modelItem)
         },
-        onInfinite () {
+        onInfinite ($state) {
           let temp = [];
           let size = this.showingModels.length
           // obtain the next elements
@@ -47,20 +53,21 @@
           this.showingModels = this.showingModels.concat(temp);
           if (this.models.length > this.showingModels.length) {
             // we have more items. next time scroll try to get new ones
-            this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+            $state.loaded()
           } else {
             // there is no more models. when scroll show the end
-            this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete')
+            $state.complete()
           }
         },
         addSearch (obj) {
           this.$emit('tagfilter', obj)
         },
         initializeItems () {
-          this.showingModels = this.models.slice(0, 10)
-          if (this.$refs.infiniteLoading) {
+          this.showingModels = []
+          this.$nextTick(() => {
+            this.showingModels = this.models.slice(0, 10)
             this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset')
-          }
+          })
         }
       },
       created () {

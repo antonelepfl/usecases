@@ -1,7 +1,7 @@
 import uuid from 'uuid4'
-import typesCollabsApps from '../assets/config_files/types_collabs_apps.json'
 import collabAuthentication from './collabAuthentication.js'
 import usecases from 'assets/config_files/usecases.json'
+import utils from './utils.js'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
@@ -9,12 +9,13 @@ const STORAGE_FILE_API = 'https://services.humanbrainproject.eu/storage/v1/api/f
 const USER_API = 'https://services.humanbrainproject.eu/idm/v1/api/user/me'
 const FOLDER_ENDPOINT = 'https://services.humanbrainproject.eu/storage/v1/api/folder/'
 const STORAGE_BY_QUERY_PARAM = 'https://services.humanbrainproject.eu/storage/v1/api/entity/'
+const JUPYTER_NOTEBOOK_APP_ID = 175
 
 export default {
   data () {
     return {
+      utils,
       errorMessage: '',
-      typesCollabsApps: typesCollabsApps,
       usecases: usecases[0],
       header: {},
       userInfo: null
@@ -65,7 +66,7 @@ export default {
         that.$http.post(collabReq, payload, that.header) // create navitem
         .then(function (navItem) {
           let navitemId = navItem.data.id
-          if (appId === that.typesCollabsApps.jupyternotebook.appid) { // is jupyter notebook
+          if (appId === JUPYTER_NOTEBOOK_APP_ID) {
             that.fillJupyterNavItem(fileId, navitemId, collabId, context)
             .then(function () {
               console.debug('Nav entry created')
@@ -264,18 +265,14 @@ export default {
       })
     },
     createItemInExistingCollab (collab, uc) {
-      var ucInfo = this.typesCollabsApps[uc]
+      let ucInfo = utils.getUsecaseInfo(uc)
       var that = this
       return new Promise(function (resolve, reject) {
         if (ucInfo === undefined) {
-          reject('No item in typesCollabsApps.json')
+          reject('No usecase named:', uc)
         } else {
           var tempPromise = null // to avoid code duplication
-          if (ucInfo.children) {
-            tempPromise = that.createMultipleItemsInExistingCollab(collab, uc)
-          } else {
-            tempPromise = that.createSingleItemInExistingCollab(collab, uc)
-          }
+          tempPromise = that.createMultipleItemsInExistingCollab(collab, ucInfo)
           tempPromise.then(function (promises) {
             Promise.all(promises)
             .then(function (elements) {
@@ -289,40 +286,17 @@ export default {
         }
       })
     },
-    createSingleItemInExistingCollab (collab, uc) {
+    createMultipleItemsInExistingCollab (collab, ucInfo) {
       var that = this
       return new Promise(function (resolve, reject) {
-        var ucInfo = that.typesCollabsApps[uc]
         that.getAllNav(collab.id).then(function (parentNav) {
-          var exists = {};
+          var exists = {}
           var promises = []
-          exists = that.checkExists(parentNav, ucInfo.appid, ucInfo.entryname)
-          if (!exists.found) { // does not exist or has children
-            if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-              promises.push(that.generateNotebook(collab.id, ucInfo, parentNav))
-            } else { // is not jupyter notebok just connect to the original file
-              promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
-            }
-            resolve(promises)
-          } else {
-            exists['collabId'] = collab.id
-            resolve([exists])
-          }
-        }, reject)
-      })
-    },
-    createMultipleItemsInExistingCollab (collab, uc) {
-      var that = this
-      return new Promise(function (resolve, reject) {
-        var ucInfo = that.typesCollabsApps[uc]
-        that.getAllNav(collab.id).then(function (parentNav) {
-          var exists = {};
-          var promises = []
-          for (let i = 0; i < ucInfo.children.length; i++) {
-            var item = ucInfo.children[i]
+
+          ucInfo.files.forEach((item) => {
             exists = that.checkExists(parentNav, item.appid, item.entryname)
             if (!exists.found) {
-              if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
+              if (item.appid === JUPYTER_NOTEBOOK_APP_ID) {
                 promises.push(that.generateNotebook(collab.id, item, parentNav))
               } else { // is not jupyter notebok just connect to the original file
                 promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
@@ -330,7 +304,8 @@ export default {
             } else if (item.initial) {
               promises.push(Promise.resolve({'collabId': collab.id, 'navitemId': exists.navitemId}))
             }
-          }
+          })
+
           if (promises.length === 0) {
             exists['collabId'] = collab.id
             resolve([exists])
@@ -458,34 +433,28 @@ export default {
     },
     createItemInExistingCollabWithReplace (collab, uc, modelName, findString) {
       var that = this
+      let ucInfo = utils.getUsecaseInfo(uc)
       return new Promise(function (resolve, reject) {
         that.getAllNav(collab.id).then(function (parentNav) {
-          var ucInfo = that.typesCollabsApps[uc]
           var promises = []
-          var exists = {};
+          var exists = {}
           if (ucInfo === undefined) {
-            return reject('No entry in typesCollabsApps.json')
+            return reject('No usecase named:', uc)
           }
-          if (ucInfo.children) {
-            for (let i = 0; i < ucInfo.children.length; i++) {
-              var item = ucInfo.children[i]
-              item.entryname = item.entryname + ' - ' + modelName
-              exists = that.checkExists(parentNav, item.appid, item.entryname)
-              if (!exists.found) {
-                if (item.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-                  promises.push(that.replaceContentAndCopy(findString, modelName, collab.id, item, parentNav))
-                } else { // is not jupyter notebok just connect to the original file
-                  promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, item.appid))
-                }
+          ucInfo.files.forEach((item) => {
+            item.entryname = item.entryname + ' - ' + modelName.substr(modelName.length - 10)
+            exists = that.checkExists(parentNav, item.appid, item.entryname)
+            if (!exists.found) {
+              if (item.appid === JUPYTER_NOTEBOOK_APP_ID) {
+                promises.push(that.replaceContentAndCopy(findString, modelName, collab.id, item, parentNav))
+              } else { // is not jupyter notebok just connect to the original file
+                promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
               }
+            } else if (item.initial) {
+              promises.push(Promise.resolve({'collabId': collab.id, 'navitemId': exists.navitemId}))
             }
-          } else { // is only one navitem
-            if (ucInfo.appid === that.typesCollabsApps.jupyternotebook.appid) { // if is jupyter notebook
-              promises.push(that.replaceContentAndCopy(findString, modelName, collab.id, ucInfo, parentNav))
-            } else { // is not jupyter notebok just connect to the original file
-              promises.push(that.createNavEntry(ucInfo.entryname, collab.id, parentNav.id, ucInfo.appid))
-            }
-          }
+          })
+
           Promise.all(promises).then(function (generatedNotebooks) {
             let obj = generatedNotebooks[0]
             if (obj === undefined) {
@@ -496,7 +465,7 @@ export default {
               resolve()
             }
           }, function (e) {
-            console.error('Error creating multiple files in existing collab')
+            console.error('Error creating multiple files in existing collab with replace')
             reject(e)
           })
         })

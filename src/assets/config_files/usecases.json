@@ -921,7 +921,7 @@
     ],
     "singlecellinsilicoexperiments": [
       {
-        "title": "Single cell in silico experiments under current/voltage clamp",
+        "title": "Single cell in silico experiments under current clamp",
         "description": "",
         "experience": ["all"],
         "maturity": ["beta"],

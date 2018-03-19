@@ -18,11 +18,17 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard.github/) is triggered.
 * The new changes appear in [Online Use Cases DEV](https://collab.humanbrainproject.eu/#/collab/8444/nav/64015)
 
-### To deploy in production: 
+### To deploy in production (non notebook): 
 * The owner receives the confirmation from the tests and the user that everything works correctly.
 * The owner create a pull request from `dev` environment to `master`.
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
 * The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
+
+### To deploy in production (notebook): 
+
+* The owner is not able to deploy directly a notebook in production.
+* If a notebook has been changed, updated or somehow modified, the owner of THIS repo must be notified. 
+* After testing the existing DEV notebook it will be copied to the PROD environment (the content will be copied to the Collab "Production Notebooks". The 'use_cases.json' in master links to the notebooks on this Collab.)
 
 ### How to:
 * Add new [use case](/documentation/add_new_usecase.md)

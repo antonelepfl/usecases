@@ -111,6 +111,13 @@ const router = new VueRouter({
       props: true,
       name: 'small_circuits'
     },
+    { path: '/smallcircuitinsilicoexperiments/:uc_name/:model_name',
+      component: function (resolve) {
+        require(['components/circuitbuilding/cb-form.vue'], resolve)
+      },
+      props: true,
+      name: 'scie_form'
+    },
     // ============================ mooc ============================
     { path: '/mooc/',
       component: function (resolve) {

@@ -26,9 +26,17 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 
 ### To deploy in production (notebook): 
 
-* The owner is not able to deploy directly a notebook in production.
-* If a notebook has been changed, updated or somehow modified, the owner of THIS repo must be notified. 
-* After testing the existing DEV notebook it will be copied to the PROD environment (the content will be copied to the Collab "Production Notebooks". The 'use_cases.json' in master links to the notebooks on this Collab.)
+* The owners of the notebook should make fixes in their public notebook (linked to the DEV environment).
+* The owner is not able to deploy directly a notebook in production. If a notebook is ready to go on PROD, you need to notify the responsible person(s) ()
+* After testing the current DEV version of the notebook, it will be copied to the PROD environment (the content will be copied to the Collab ["Production Notebooks"](https://collab.humanbrainproject.eu/#/collab/9494/nav/71623) . The 'usecases.json' in master links to the notebooks on this Collab.)
+
+#### Internal workflow to update PROD
+
+ * Open the single notebook on the Collab ["Production Notebooks"](https://collab.humanbrainproject.eu/#/collab/9494/nav/71623)
+ * Load the content of the file `prod_transform_notebooks.py` from this repository:
+ * `%load https://raw.githubusercontent.com/antonelepfl/usecases/68fe084b66bec8717ab250a0480e1f3229903c16/src/assets/config_files/prod_transform_notebooks.py`
+ * Call this function on a list of notebooks that should be updated
+
 
 ### How to:
 * Add new [use case](/documentation/add_new_usecase.md)

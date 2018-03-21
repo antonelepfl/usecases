@@ -661,35 +661,6 @@
         ]
       },
       {
-        "title": "Optimise a fast spiking interneuron in the Basal Ganglia",
-        "description": "Optimise parameters for a striatal fast spiking interneuron using BluePyOpt based on experimental data",
-        "experience": ["code"],
-        "maturity": ["experimental"],
-        "disabled": false,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-        },
-        "next": "sc_form",
-        "files": [
-          {
-            "file": "40754030-fe10-47de-ae04-f2bd4a48a8a2",
-            "appid": 175,
-            "entryname": "Optimise a fast spiking interneuron in the Basal Ganglia",
-            "extension": ".ipynb",
-            "contenttype": "application/x-ipynb+json",
-            "justcopy": false
-          },
-          {
-            "file": "1db33b78-df8a-4fa7-aca8-6a751590a921",
-            "appid": 175,
-            "entryname": "FS-use-case.tar",
-            "extension": ".bz2",
-            "contenttype": "application/x-bzip2",
-            "justcopy": true
-          }
-        ]
-      },
-      {
         "title": "Optimize a striatal fast-spiking interneuron",
         "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
         "experience": ["code"],

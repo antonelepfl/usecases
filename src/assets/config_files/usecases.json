@@ -955,47 +955,10 @@
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
         "experience": ["all", "power"],
-        "disabled": false,
+        "disabled": true,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png"
-        },
-        "next": "small_circuits",
-        "models": [
-          {
-            "title": "Cerebellum microcircuit",
-            "files": [
-              {
-                "entryname": "Cerebellum microcircuit",
-                "appid": 175,
-                "contenttype": "x-ipynb+json",
-                "extension": ".ipynb",
-                "file": "da012b41-4a6b-4b5d-9b71-869c1c68d731"
-              }
-            ],
-            "species": "Rat",
-            "brain_structure": "cerebellum",
-            "cell_soma_location": "cerebellar cortex and DCN",
-            "description": "Cerebellum microcircuit simulation with PyNEST",
-            "contributors": [
-              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
-              {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
-              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
-              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
-            ],
-            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
-          },
-          {
-            "title": "Rat hippocampus CA1",
-            "species": "Rat",
-            "brain_structure": "hippocampus",
-            "cell_soma_location": "CA1",
-            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
-            "contributors": [
-              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
-            ],
-            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
-          }
-        ]
+        }
       },
       {
         "title": "Configure and run a small circuit using HBP model and data",
@@ -1027,31 +990,85 @@
     ],
     "brainareacircuitinsilicoexperiments": [
       {
-        "title": "Configure and run a brain region using preconfigured HBP model and data",
+        "title": "Hippocampus",
         "description": "",
-        "experience": ["experts", "code"],
-        "disabled": true,
+        "experience": ["all", "power"],
+        "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-        }
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+        },
+        "next": "brainarea_circuits",
+        "models": [
+          {
+            "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
+            "disabled": false,
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1",
+            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+          },
+          {
+            "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
+            "description": "",
+            "experience": ["experts", "code"],
+            "disabled": true,
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          },
+          {
+            "title": "Configure and run a rat hippocampus CA1 region using HBP model and data",
+            "description": "",
+            "experience": ["code"],
+            "disabled": true,
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          },
+          {
+            "title": "Build, configure, and run a rat hippocampus CA1 region using HBP model and your own configuration rules",
+            "description": "",
+            "experience": ["code"],
+            "disabled": true,
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          }
+        ]
       },
       {
-        "title": "Configure and run a brain region using HBP model and data",
+        "title": "Cerebellum",
         "description": "",
-        "experience": ["code"],
-        "disabled": true,
+        "experience": ["all", "power"],
+        "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-        }
-      },
-      {
-        "title": "Build, configure, and run a brain region using HBP model and your own configuration rules",
-        "description": "",
-        "experience": ["code"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-        }
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+        },
+        "next": "brainarea_circuits",
+        "models": [
+          {
+            "title": "Functional Simulation with Point Neurons",
+            "files": [
+              {
+                "entryname": "Cerebellum microcircuit",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": "da012b41-4a6b-4b5d-9b71-869c1c68d731"
+              }
+            ],
+            "species": "Rat",
+            "brain_structure": "cerebellum",
+            "cell_soma_location": "cerebellar cortex and DCN",
+            "description": "Cerebellum microcircuit simulation with PyNEST",
+            "contributors": [
+              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+              {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+          }
+        ]
       }
     ],
     "analysisandvisualization": [

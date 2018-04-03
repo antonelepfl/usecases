@@ -46,7 +46,8 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file_prod": "0f93ca7b-98ee-47f4-b9bd-00fc11e7b890"
           }
         ]
       },
@@ -67,14 +68,16 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "edecb7f3-2a14-469a-abb0-40001c4152ab"
+            "file": "edecb7f3-2a14-469a-abb0-40001c4152ab",
+            "file_prod": "cbe7b31b-0c3d-4b84-8d22-4fd8864ade56"
           },
           {
             "entryname": "Synaptic events fitting with user model analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file_prod": "0f93ca7b-98ee-47f4-b9bd-00fc11e7b890"
           }
         ]
       },
@@ -95,14 +98,16 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "8ee1a349-fea9-4444-94fd-9d2dda45a828"
+            "file": "8ee1a349-fea9-4444-94fd-9d2dda45a828",
+            "file_prod": "6491306a-71f8-44b4-a1be-1545e05d68f5"
           },
           {
             "entryname": "Synaptic events fitting with user data analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file_prod": "0f93ca7b-98ee-47f4-b9bd-00fc11e7b890"
           }
         ]
       },
@@ -157,21 +162,24 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "71260306-28bb-4613-b5c8-03554810df05"
+            "file": "71260306-28bb-4613-b5c8-03554810df05",
+            "file_prod": "f15d5b3c-0ed0-43ac-989f-1054d423d7b2"
           },
           {
             "entryname": "Rebuild Single HippoCell - Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "66970e4e-8879-4f05-b669-d37c7bb69788"
+            "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
+            "file_prod": "6a75a3ae-0a11-42d7-b1cb-479fc452c6c7"
           },
           {
             "entryname": "Rebuild Single HippoCell - NSG Job Manager",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7"
+            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
+            "file_prod": "a187bdc0-57e1-4189-94a9-3d8b5354e414"
           }
         ]
       },
@@ -192,21 +200,24 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "f0889ca5-735d-4857-98e7-fb2e5630d503"
+            "file": "f0889ca5-735d-4857-98e7-fb2e5630d503",
+            "file_prod": "075d59c6-4547-4cd5-a6da-abbf79b7a8c4"
           },
           {
             "entryname": "BuildOwn Single HippoCell - Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "66970e4e-8879-4f05-b669-d37c7bb69788"
+            "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
+            "file_prod": "6a75a3ae-0a11-42d7-b1cb-479fc452c6c7"
           },
           {
             "entryname": "BuildOwn Single HippoCell - NSG Job Manager",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7"
+            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
+            "file_prod": "a187bdc0-57e1-4189-94a9-3d8b5354e414"
           }
         ]
       },
@@ -223,6 +234,7 @@
         "files": [
           {
             "file": "cdd7d4ba-8432-4172-8e3f-06fa18993242",
+            "file_prod": "b20ac676-5858-40c4-884b-aa1620463e33",
             "entryname": "Granule cell mono compartmental optimization",
             "extension": ".ipynb",
             "appid": 175,
@@ -349,6 +361,7 @@
         "files": [
           {
             "file": "a046d0ab-3740-4c56-8cc8-83f346e87782",
+            "file_prod": "ec99d993-0f3a-41eb-93f1-15464c816fd2",
             "appid": 175,
             "entryname": "Granule cell multi compartmental optimization",
             "extension": ".ipynb",
@@ -475,6 +488,7 @@
         "files": [
           {
             "file": "ad20df9f-7bc0-42e1-8dda-5b29e5eb02aa",
+            "file_prod": "831c846e-1d47-4903-ac53-83806c04be40",
             "entryname": "Purkinje cell simulation and validation",
             "extension": ".ipynb",
             "appid": 175,
@@ -676,7 +690,8 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "47557ac3-30c4-49d0-9d00-1a89d015e9e4"
+            "file": "47557ac3-30c4-49d0-9d00-1a89d015e9e4",
+            "file_prod": "929fecbd-74e9-40cc-a466-72eb7c860361"
           }
         ],
         "models": [
@@ -762,7 +777,8 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "b0509c3f-3330-435d-87d2-d0940e98766c"
+                "file": "b0509c3f-3330-435d-87d2-d0940e98766c",
+                "file_prod": "b8b1f2fa-8187-4008-9143-d3834afb5449"
               }
             ],
             "species": "Rat",
@@ -785,7 +801,8 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "00b83d98-0172-4825-b386-7671054cc31d"
+                "file": "00b83d98-0172-4825-b386-7671054cc31d",
+                "file_prod": "7e33ecff-2016-47d0-80d1-e80bb075991f"
               }
             ],
             "species": "Rat",
@@ -819,7 +836,8 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "85354cea-5f47-4852-8c8f-8cacf5d38333"
+                "file": "85354cea-5f47-4852-8c8f-8cacf5d38333",
+                "file_prod" :"3c755555-151f-472a-be2b-f0ac7d07ebad"
               }
             ],
             "species": "Rat",
@@ -867,7 +885,8 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d"
+            "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d",
+            "file_prod": "829c2011-af3f-441e-b5cf-96ed9126f0ae"
           }
         ],
         "models": {
@@ -1053,7 +1072,8 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "da012b41-4a6b-4b5d-9b71-869c1c68d731"
+                "file": "da012b41-4a6b-4b5d-9b71-869c1c68d731",
+                "file_prod": "4ed56192-8c8d-42ea-94a1-ffb86d71331a"
               }
             ],
             "species": "Rat",
@@ -1137,7 +1157,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "06f82f00-8895-4a2f-8d64-1d3208d8b6e1"
+            "file": "06f82f00-8895-4a2f-8d64-1d3208d8b6e1",
+            "file_prod": "ed2681a2-bf51-4e75-827d-dfa8b27d29de"
           }
         ]
       },
@@ -1158,7 +1179,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81"
+            "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81",
+            "file_prod": "f7570fb5-cee6-4ec1-8e84-e156ee910f97"
           }
         ]
       },
@@ -1179,7 +1201,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9b915d4d-c1d0-4d1a-9be9-a614ac305014"
+            "file": "9b915d4d-c1d0-4d1a-9be9-a614ac305014",
+            "file_prod": "e5961155-db20-4669-92d0-a4d23dd6df98"
           }
         ]
       },
@@ -1200,7 +1223,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "acb94529-a85c-4a79-bcf5-920612c17d91"
+            "file": "acb94529-a85c-4a79-bcf5-920612c17d91",
+            "file_prod": "40c99ada-9db4-4252-91a5-a42da919f1a9"
           }
         ]
       }

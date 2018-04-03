@@ -186,6 +186,12 @@ export default {
         }, reject)
       })
     },
+    getFileByEnv (info) {
+      if (process.env.DEV_WEBSITE) {
+        return info.file;
+      }
+      return info.file_prod || info.file;
+    },
     createFile (name, contentType, extension, parent, collabId) {
       var url = STORAGE_FILE_API
       var that = this
@@ -252,7 +258,7 @@ export default {
           return that.createFile(name, appInfo.contenttype, appInfo.extension, parent, collabId)
         })
         .then(function (file) {
-          return that.copyFileContent(appInfo.file, file.uuid)
+          return that.copyFileContent(that.getFileByEnv(appInfo), file.uuid)
         }, reject)
         .then(function (newFileId) {
           if (!appInfo.justcopy) {
@@ -408,7 +414,7 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         var replacedFileContent = ''
-        that.getFileContent(appInfo.file)
+        that.getFileContent(that.getFileByEnv(appInfo))
         .then(function (fileContent) {
           replacedFileContent = JSON.stringify(fileContent)
           replacedFileContent = replacedFileContent.replace(findString, replaceString)

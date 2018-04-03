@@ -102,7 +102,7 @@ export default {
           that.parent,
           collabId
         )
-        var originalFileId = appInfo.file
+        var originalFileId = that.getFileByEnv(appInfo)
         if (!originalFileId) {
           return Promise.reject('No entry in typesCollabsApps.json')
         }

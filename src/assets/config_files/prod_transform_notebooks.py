@@ -1,5 +1,10 @@
-class Notebooks(object):
+import os
+import filecmp
+from hbp_service_client.storage_service.exceptions import StorageException
 
+
+class Notebooks(object):
+    
     def __init__(self):
         self.notebooks = {
             'SynEvFit_UserModel': 'edecb7f3-2a14-469a-abb0-40001c4152ab',
@@ -12,9 +17,9 @@ class Notebooks(object):
             'BuildOwnHippoCell_Config': 'f0889ca5-735d-4857-98e7-fb2e5630d503',
             'BuildOwnHippoCell_Analysis': '66970e4e-8879-4f05-b669-d37c7bb69788',
             'BuildOwnHippoCell_JobManager': 'd4737dd8-1576-4f8d-ba4d-06b9e2c30ef7',
-            'GranuleMono': '38e3fae0-cd27-4924-a4bd-2244efb661f6',
-            'GranuleMulti': '9dea71b0-e091-47ba-8db9-1eaa12ec9c46',
-            'Purkinje': 'f3d66ad4-d646-42b8-ad5c-b3d6e67508bc',
+            'GranuleMono': '"cdd7d4ba-8432-4172-8e3f-06fa18993242',
+            'GranuleMulti': 'a046d0ab-3740-4c56-8cc8-83f346e87782',
+            'Purkinje': 'ad20df9f-7bc0-42e1-8dda-5b29e5eb02aa',
             'BasalGanglia': '40754030-fe10-47de-ae04-f2bd4a48a8a2',
             'CellPlacementCereb': 'b0509c3f-3330-435d-87d2-d0940e98766c',
             'CellPlacementHippo': '00b83d98-0172-4825-b386-7671054cc31d',
@@ -26,14 +31,14 @@ class Notebooks(object):
             'ValidationHippo': 'acb94529-a85c-4a79-bcf5-920612c17d91',
             'SmallCircuitCereb': 'da012b41-4a6b-4b5d-9b71-869c1c68d731',
             'Striatal': '47557ac3-30c4-49d0-9d00-1a89d015e9e4'
-          }
+          }  
         self.client = get_hbp_service_client()
-
+        
     def prod_transform_notebooks(self, keys = None):
-        """Takes a list of alias names for the notebooks to be copied to PROD.
-        If no list given, ALL notebooks will be updated.
+        """Takes a list of alias names for the notebooks to be copied to PROD. 
+        If no list given, ALL notebooks will be updated. 
         """
-
+    
         # Get current collab id and client
         this_collab = get_collab_storage_path()
         dest_folder = "usecases"
@@ -46,7 +51,7 @@ class Notebooks(object):
             id_ = self.notebooks[key]
 
             # Create the names
-            try:
+            try: 
                 path_source = str(self.client.storage.api_client.get_entity_path(id_))
             except StorageException:
                 print "ERROR: Notebook '%s' with ID %s does NOT exist in DEV" % (key, id_)
@@ -57,15 +62,15 @@ class Notebooks(object):
 
             # Do the copying
             print("Downloading file '%s' to '%s'" % (path_source, tmp_path))
-            self.client.storage.download_file(path_source, tmp_path)
-            if self.client.storage.exists(dest_path):
+            self.client.storage.download_file(path_source, tmp_path)    
+            if self.client.storage.exists(dest_path):        
                 entity = self.client.storage.api_client.get_entity_by_query(path=dest_path)
                 print("Changing file '%s' with ID %s" % (dest_path, entity['uuid']))
                 self.client.storage.api_client.upload_file_content(entity['uuid'], source=tmp_path)
-            else:
+            else: 
                 print("Uploading file '%s' to '%s'" % (tmp_path, dest_path))
                 self.client.storage.upload_file(tmp_path, dest_path, "application/x-ipynb+json")
-
+                
     def verify_notebooks(self):
         """Checks all notebooks and looks if they differ.
         """
@@ -74,11 +79,11 @@ class Notebooks(object):
         dest_folder = "usecases"
 
         # Loop over all usecases to copy
-        for key in self.notebooks.keys():
+        for key in sorted(self.notebooks.keys()):
             id_ = self.notebooks[key]
 
             # Create the names
-            try:
+            try: 
                 path_source = str(self.client.storage.api_client.get_entity_path(id_))
             except StorageException:
                 print "Notebook '%s' with ID %s does NOT exist in DEV" % (key, id_)
@@ -90,14 +95,23 @@ class Notebooks(object):
             tmp_prod = "/tmp/prod.ipynb"
 
             # Do the copying
-            self.client.storage.download_file(path_source, tmp_dev)
-            self.client.storage.download_file(dest_path, tmp_prod)
-
+            #print("Downloading file '%s' to '%s'" % (path_source, tmp_path))
+            self.client.storage.download_file(path_source, tmp_dev)  
+            self.client.storage.download_file(dest_path, tmp_prod)  
+            
+            # Get destination ID
+            entity = self.client.storage.api_client.get_entity_by_query(path=dest_path)
+            prod_id = entity['uuid']
+            
             # Comparing the files
             files_same = filecmp.cmp(tmp_dev, tmp_prod)
-            print "Notebook '%s' with ID %s is up-to-date: %s " % (key, id_, str(files_same))
-
+            print "Notebook '%s' is up-to-date: %s " % (key, str(files_same))
+            print "        DEV ID:  %s" % id_
+            print "        PROD ID: %s" % prod_id
+            
             # Deleting the local copies
             os.remove(tmp_dev)
             os.remove(tmp_prod)
-
+            
+           
+        

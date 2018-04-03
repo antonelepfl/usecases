@@ -17,7 +17,7 @@ class Notebooks(object):
             'BuildOwnHippoCell_Config': 'f0889ca5-735d-4857-98e7-fb2e5630d503',
             'BuildOwnHippoCell_Analysis': '66970e4e-8879-4f05-b669-d37c7bb69788',
             'BuildOwnHippoCell_JobManager': 'd4737dd8-1576-4f8d-ba4d-06b9e2c30ef7',
-            'GranuleMono': '"cdd7d4ba-8432-4172-8e3f-06fa18993242',
+            'GranuleMono': 'cdd7d4ba-8432-4172-8e3f-06fa18993242',
             'GranuleMulti': 'a046d0ab-3740-4c56-8cc8-83f346e87782',
             'Purkinje': 'ad20df9f-7bc0-42e1-8dda-5b29e5eb02aa',
             'BasalGanglia': '40754030-fe10-47de-ae04-f2bd4a48a8a2',

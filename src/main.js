@@ -103,13 +103,20 @@ const router = new VueRouter({
       props: true,
       name: 'insilico_exp'
     },
-    // ================= smallcircuitinsilicoexperiments ================
-    { path: '/smallcircuitinsilicoexperiments/:uc_name',
+    // ================= brainareacircuitinsilicoexperiments ================
+    { path: '/brainareacircuitinsilicoexperiments/:uc_name',
       component: function (resolve) {
-        require(['components/smallcircuitinsilicoexperiments/model-container.vue'], resolve)
+        require(['components/brainareacircuitinsilicoexperiments/model-container.vue'], resolve)
       },
       props: true,
-      name: 'small_circuits'
+      name: 'brainarea_circuits'
+    },
+    { path: '/brainareacircuitinsilicoexperiments/:uc_name/:model_name',
+      component: function (resolve) {
+        require(['components/circuitbuilding/cb-form.vue'], resolve)
+      },
+      props: true,
+      name: 'brainarea_form'
     },
     // ============================ mooc ============================
     { path: '/mooc/',

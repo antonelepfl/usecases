@@ -13,6 +13,7 @@
 <script>
    import modelItem from './model-item.vue'
    import modelsMixins from 'mixins/models.js'
+   import utils from 'mixins/utils.js'
 
    export default {
       name: 'modelContainer',
@@ -23,14 +24,22 @@
       data () {
          return {
             models: [],
-            list_usecases: 'smallcircuitinsilicoexperiments'
+            list_usecases: 'brainareacircuitinsilicoexperiments'
          }
       },
       methods: {
          selected (model) {
             if (!model.disabled) {
-              window.open('https://bbp.epfl.ch/public/simulationapp/index.html', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
-           }
+              if (model.files) {
+                  this.$router.push({name: 'brainarea_form',
+                     params: {
+                        'model_name': utils.compact(model.title)
+                     }
+                  })
+              } else {
+                  window.open('https://bbp.epfl.ch/public/dev.simulationapp/index.html', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
+              }
+            }
          }
       },
       created () {

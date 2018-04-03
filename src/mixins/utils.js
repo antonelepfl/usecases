@@ -22,5 +22,6 @@ function compact (name) {
 }
 
 export default {
-  getUsecaseInfo
+  getUsecaseInfo,
+  compact
 }

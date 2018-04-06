@@ -148,6 +148,14 @@ const router = new VueRouter({
       props: true,
       name: 'termsandconditions'
     },
+    // ================= entity dashboard integration ================
+    { path: '/entitydashboard/:json_params/',
+      component: function (resolve) {
+        require(['components/entitydashboard/form-replacing.vue'], resolve)
+      },
+      props: true,
+      name: 'entitydashboard'
+    },
     // ============================ rest of UC ============================
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json
       component: App,
@@ -169,10 +177,10 @@ const router = new VueRouter({
 
 // check the authentication for each page
 router.beforeEach((to, from, next) => {
-    let auth = CollabAuthentication;
-    auth.methods.login().then(function () {
-      next();
-    });
+  let auth = CollabAuthentication;
+  auth.methods.login().then(function () {
+    next();
+  });
 });
 
 /* eslint-disable no-new */

@@ -544,8 +544,8 @@ export default {
     },
     getDataRepo (url) {
       let that = this
-      return new Promise(function (resolve, reject) {
-        that.$http.get(url).then(function (content) {
+      return new Promise((resolve, reject) => {
+        that.$http.get(url).then((content) => {
           resolve(content.data)
         }, reject)
       })

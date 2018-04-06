@@ -45,3 +45,5 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 * If single cell models [change](/documentation/single_cell_model_change.md)
 
 * The usual [path](/documentation/usual_path.md) the user follows
+
+* [Integrate](/documentation/open_notebook_from_entity_dashboard.md) with other apps (create specific notebooks)

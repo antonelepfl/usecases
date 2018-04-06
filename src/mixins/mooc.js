@@ -63,7 +63,8 @@ export default {
         return Promise.reject(e)
       }
     },
-    async createItemInExistingCollab (collab, item) { // creates weeks -> files. Modified.
+    async createItemInExistingCollab (collab, item, replaceObj) { // creates weeks -> files. Modified.
+      // replaceObj = {findString, replaceString}
       // returns the info to generate entry
       var that = this
       try {
@@ -72,9 +73,10 @@ export default {
         } else {
           var exists = {};
           var promises = []
+            if (!that.parentNav) { await that.getNavElement(collab.id) }
             exists = that.checkExists(that.parentNav, item.appid, item.entryname)
             if (!exists.found) {
-              promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav))
+              promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav, replaceObj))
             } else {
               if (that.navitemId === null && item.initial) {
                 that.navitemId = exists.navitemId
@@ -90,7 +92,7 @@ export default {
         }
       } catch (e) { return Promise.reject(e) }
     },
-    async generateAndFillFiles (collabId, appInfo, parentNav) { // modified version.
+    async generateAndFillFiles (collabId, appInfo, parentNav, replaceObj) { // modified version.
       // it returns objects that has to be created in the navitem
       var that = this
       let newFileId = null
@@ -108,7 +110,12 @@ export default {
         }
         if (!file.exists) {
           let content = await that.getDataRepo(originalFileId)
-          await that.setFileContent(file.uuid, JSON.stringify(content))
+          if (replaceObj) {
+            if (typeof (content) === 'object') { content = JSON.stringify(content) }
+            content = content.replace(replaceObj.findString, replaceObj.replaceText)
+          }
+          if (typeof (content) === 'object') { content = JSON.stringify(content) }
+          await that.setFileContent(file.uuid, content)
         }
         newFileId = file.uuid
         if (!appInfo.justcopy) {

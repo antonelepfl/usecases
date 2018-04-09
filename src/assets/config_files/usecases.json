@@ -1185,7 +1185,7 @@
         ]
       },
       {
-        "title": "Basgal Ganglia Morphology Validation",
+        "title": "Basal Ganglia Morphology Validation",
         "description": "Validates single cell morphologies of MSN and FS cells",
         "experience": ["all"],
         "maturity": ["beta"],
@@ -1197,7 +1197,7 @@
         "dataprotected": true,
         "files": [
           {
-            "entryname": "Basgal Ganglia Morphology Validation",
+            "entryname": "Basal Ganglia Morphology Validation",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",

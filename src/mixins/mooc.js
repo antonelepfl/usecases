@@ -63,24 +63,26 @@ export default {
         return Promise.reject(e)
       }
     },
-    async createItemInExistingCollab (collab, item) { // creates weeks -> files. Modified.
+    async createItemInExistingCollab (collab, item, replaceObj) { // creates weeks -> files. Modified.
+      // replaceObj = {findString, replaceString}
       // returns the info to generate entry
       var that = this
       try {
         if (item === undefined) {
           return Promise.reject('No item in typesCollabsApps.json')
         } else {
-          var exists = {};
+          var exists = {}
           var promises = []
-            exists = that.checkExists(that.parentNav, item.appid, item.entryname)
-            if (!exists.found) {
-              promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav))
-            } else {
-              if (that.navitemId === null && item.initial) {
-                that.navitemId = exists.navitemId
-              }
-              promises.push(Promise.resolve(exists))
+          if (!that.parentNav) { await that.getNavElement(collab.id) }
+          exists = that.checkExists(that.parentNav, item.appid, item.entryname)
+          if (!exists.found) {
+            promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav, replaceObj))
+          } else {
+            if (that.navitemId === null && item.initial) {
+              that.navitemId = exists.navitemId
             }
+            promises.push(Promise.resolve(exists))
+          }
           if (promises.length === 0) {
             exists['collabId'] = collab.id
             return exists
@@ -90,7 +92,7 @@ export default {
         }
       } catch (e) { return Promise.reject(e) }
     },
-    async generateAndFillFiles (collabId, appInfo, parentNav) { // modified version.
+    async generateAndFillFiles (collabId, appInfo, parentNav, replaceObj) { // modified version.
       // it returns objects that has to be created in the navitem
       var that = this
       let newFileId = null
@@ -108,7 +110,13 @@ export default {
         }
         if (!file.exists) {
           let content = await that.getDataRepo(originalFileId)
-          await that.setFileContent(file.uuid, JSON.stringify(content))
+          if (replaceObj) {
+            console.debug(`Replacing ${replaceObj.replaceText}`)
+            if (typeof content !== 'string') { content = JSON.stringify(content) }
+            content = content.replace(replaceObj.findString, replaceObj.replaceText)
+          }
+          if (typeof content !== 'string') { content = JSON.stringify(content) }
+          await that.setFileContent(file.uuid, content)
         }
         newFileId = file.uuid
         if (!appInfo.justcopy) {
@@ -134,12 +142,12 @@ export default {
         // header from CreateCollab
         let response = await that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header)
         return response.data.results
-      } catch (responseError) {
-        if (responseError.status === 401) {
-          that.getToken(true) // force renew token
-          return Promise.reject(responseError)
+      } catch (error) {
+        if (error.response.status === 401) {
+          that.renewToken(true) // force renew token
+          return Promise.reject(error)
         } else {
-          return Promise.reject(responseError)
+          return Promise.reject(error)
         }
       }
     },

@@ -2,6 +2,7 @@ import uuid from 'uuid4'
 import collabAuthentication from './collabAuthentication.js'
 import usecases from 'assets/config_files/usecases.json'
 import utils from './utils.js'
+import store from './store.js'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
@@ -17,17 +18,11 @@ export default {
       utils,
       errorMessage: '',
       usecases: usecases[0],
-      header: {},
+      header: store.state.header,
       userInfo: null
     }
   },
   mixins: [collabAuthentication],
-  created () {
-    let that = this
-    this.getToken().then(function (token) {
-      that.header = {headers: {'Authorization': token}}
-    }) // from collabAuthentication
-  },
   methods: {
     searchCollab (param) {
       var that = this
@@ -38,12 +33,12 @@ export default {
             resolve(response.data.results)
           }
         },
-        function (responseError) {
-          if (responseError.status === 401) {
-            that.getToken(true) // force renew token
-            reject(responseError)
+        function (error) {
+          if (error.response.status === 401) {
+            that.renewToken() // force renew token
+            reject(error)
           } else {
-            reject(responseError)
+            reject(error)
           }
         })
       })
@@ -372,12 +367,12 @@ export default {
             that.userInfo = response.data
             resolve(response.data)
           },
-          function (responseError) {
-            if (responseError.status === 401) {
-              that.getToken(true) // force renew token
-              reject(responseError)
+          function (error) {
+            if (error.response.status === 401) {
+              that.renewToken(true) // force renew token
+              reject(error)
             } else {
-              reject(responseError)
+              reject(error)
             }
           })
         }
@@ -544,8 +539,8 @@ export default {
     },
     getDataRepo (url) {
       let that = this
-      return new Promise(function (resolve, reject) {
-        that.$http.get(url).then(function (content) {
+      return new Promise((resolve, reject) => {
+        that.$http.get(url).then((content) => {
           resolve(content.data)
         }, reject)
       })

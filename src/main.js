@@ -149,12 +149,19 @@ const router = new VueRouter({
       name: 'termsandconditions'
     },
     // ================= entity dashboard integration ================
-    { path: '/entitydashboard/:json_params/',
+    { path: '/entitydashboard/',
       component: function (resolve) {
         require(['components/entitydashboard/form-replacing.vue'], resolve)
       },
       props: true,
       name: 'entitydashboard'
+    },
+        // ================= login ================
+    { path: '/login/',
+      component: function (resolve) {
+        require(['components/login.vue'], resolve)
+      },
+      name: 'login'
     },
     // ============================ rest of UC ============================
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json
@@ -177,14 +184,31 @@ const router = new VueRouter({
 
 // check the authentication for each page
 router.beforeEach((to, from, next) => {
-  let auth = CollabAuthentication;
-  auth.methods.login().then(function () {
-    next();
-  });
-});
+  let loginPath = '/login'
+  if (to.path === loginPath) {
+    next()
+    return
+  }
+  let auth = CollabAuthentication
+  let authenticated = auth.methods.getAuthResponse()
+  if (!authenticated) {
+    saveQueryParams()
+    next({path: loginPath})
+    return
+  }
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router: router
 })
+
+function saveQueryParams () {
+  // Save this becuase an issue with hash and query params when get the access_token using hellojs
+  let match = window.location.href.match(new RegExp('\\/#\\/(.*)'))
+  if (match && match.length > 0 && match[1] !== '' && !match[1].startsWith('access_token')) {
+    window.localStorage.setItem('query', match[1])
+  }
+}

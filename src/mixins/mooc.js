@@ -71,18 +71,18 @@ export default {
         if (item === undefined) {
           return Promise.reject('No item in typesCollabsApps.json')
         } else {
-          var exists = {};
+          var exists = {}
           var promises = []
-            if (!that.parentNav) { await that.getNavElement(collab.id) }
-            exists = that.checkExists(that.parentNav, item.appid, item.entryname)
-            if (!exists.found) {
-              promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav, replaceObj))
-            } else {
-              if (that.navitemId === null && item.initial) {
-                that.navitemId = exists.navitemId
-              }
-              promises.push(Promise.resolve(exists))
+          if (!that.parentNav) { await that.getNavElement(collab.id) }
+          exists = that.checkExists(that.parentNav, item.appid, item.entryname)
+          if (!exists.found) {
+            promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav, replaceObj))
+          } else {
+            if (that.navitemId === null && item.initial) {
+              that.navitemId = exists.navitemId
             }
+            promises.push(Promise.resolve(exists))
+          }
           if (promises.length === 0) {
             exists['collabId'] = collab.id
             return exists
@@ -111,10 +111,11 @@ export default {
         if (!file.exists) {
           let content = await that.getDataRepo(originalFileId)
           if (replaceObj) {
-            if (typeof (content) === 'object') { content = JSON.stringify(content) }
+            console.debug(`Replacing ${replaceObj.replaceText}`)
+            if (typeof content !== 'string') { content = JSON.stringify(content) }
             content = content.replace(replaceObj.findString, replaceObj.replaceText)
           }
-          if (typeof (content) === 'object') { content = JSON.stringify(content) }
+          if (typeof content !== 'string') { content = JSON.stringify(content) }
           await that.setFileContent(file.uuid, content)
         }
         newFileId = file.uuid
@@ -141,12 +142,12 @@ export default {
         // header from CreateCollab
         let response = await that.$http.get(COLLAB_API + 'mycollabs/?search=' + param, that.header)
         return response.data.results
-      } catch (responseError) {
-        if (responseError.status === 401) {
-          that.getToken(true) // force renew token
-          return Promise.reject(responseError)
+      } catch (error) {
+        if (error.response.status === 401) {
+          that.renewToken(true) // force renew token
+          return Promise.reject(error)
         } else {
-          return Promise.reject(responseError)
+          return Promise.reject(error)
         }
       }
     },

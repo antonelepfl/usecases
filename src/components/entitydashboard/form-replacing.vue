@@ -14,6 +14,7 @@
 <script>
   import collabFormComponent from 'components/collab-form-component.vue'
   import mooc from 'mixins/mooc.js'
+  const traceAnalysisTemplate = 'https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb'
 
   export default {
     name: 'entityFormReplacing',
@@ -33,12 +34,14 @@
     props: ['json_params'],
     mounted () {
       try {
-        let decoded = window.atob(decodeURIComponent(this.json_params));
-        let parsed = JSON.parse(decoded);
-        this.findString = parsed.txtToReplace;
-        this.replaceText = parsed.replaceText;
-        this.uri = parsed.uri;
-        this.name = parsed.name;
+        let parsed = this.$route.query;
+        this.findString = parsed.txtToReplace || 'REPLACE_UUID';
+        this.replaceText = parsed.replaceText || '';
+        this.uri = parsed.uri || traceAnalysisTemplate;
+        this.name = parsed.name || 'Trace_Analysis_Nexus';
+        if (this.replaceText === '') {
+          throw Error('no replaceText was passed');
+        }
       } catch (e) {
         console.error(e);
         throw Error('decoding entity param');

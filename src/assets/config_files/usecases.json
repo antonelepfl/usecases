@@ -797,12 +797,18 @@
             "title": "Rat hippocampus CA1",
             "files": [
               {
+                "entryname": "Setup",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": "93cb9a13-3c86-4525-a3bf-2f896529ce09"
+              },
+              {
                 "entryname": "Cell Placement Hippocampus",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "00b83d98-0172-4825-b386-7671054cc31d",
-                "file_prod": "7e33ecff-2016-47d0-80d1-e80bb075991f"
+                "file": "56a8c5e9-e4be-4943-8eb8-f2f8592002ef"
               }
             ],
             "species": "Rat",
@@ -810,7 +816,8 @@
             "cell_soma_location": "CA1",
             "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
             "contributors": [
-              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
           }

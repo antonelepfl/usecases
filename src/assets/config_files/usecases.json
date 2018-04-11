@@ -27,7 +27,7 @@
         "experience": ["power"],
         "maturity": ["experimental"],
         "access": ["hpc"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },

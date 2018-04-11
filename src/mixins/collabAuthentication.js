@@ -44,7 +44,9 @@ export default {
       let session = hbpHello.getAuthResponse('hbp');
       var currentTime = (new Date()).getTime() / 1000;
       let valid = session && session.access_token && session.expires > currentTime + 1000;
-      if (valid) store.setToken(session.access_token)
+      if (valid && !store.state.header.headers) {
+        store.setToken(session.access_token)
+      }
       return valid
     }
   }

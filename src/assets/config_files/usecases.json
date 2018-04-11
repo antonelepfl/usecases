@@ -797,10 +797,11 @@
             "title": "Rat hippocampus CA1",
             "files": [
               {
-                "entryname": "Setup",
+                "entryname": "Cell Placement Hippocampus - Setup",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
+                "initial": true,
                 "file": "93cb9a13-3c86-4525-a3bf-2f896529ce09",
                 "file_prod": "bb405300-cefc-4ba5-91ab-eca452a08a21"
               },

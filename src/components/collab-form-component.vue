@@ -108,6 +108,7 @@
             that.isLoadingLocal = false
           }, function (reject) {
             that.errorMessage = 'Getting your collabs ...'
+            that.isLoadingLocal = false
           })
         }
       }

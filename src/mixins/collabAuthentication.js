@@ -1,4 +1,5 @@
 var hbpHello = require('../assets/hbp.hello.js').hellojs
+var store = require('./store.js').default
 // replace this with your collab app id
 hbpHello.init({
   hbp: '74b1a180-3646-45ac-b53c-ebd905cec418'
@@ -11,22 +12,20 @@ export default {
     }
   },
   methods: {
-    login (displayMethod) {
-      // var that = this
-      if (displayMethod === undefined) { displayMethod = 'page' }
+    login (displayMethod = 'none', force = false) {
       return new Promise(function (resolve, reject) {
-        hbpHello.login('hbp', {'display': displayMethod, 'force': false, 'page_uri': window.location.href})
-        .then(function () {
-          resolve()
+        hbpHello.login('hbp', {'display': displayMethod, 'force': force, 'page_uri': window.location.href})
+        .then(function (res) {
+          resolve(res.authResponse.access_token)
         }, function (e) {
           console.debug('Login Error', e)
           reject()
         });
       })
     },
-    logout () {
+    logout (force = false) {
       return new Promise(function (resolve, reject) {
-        hbpHello.logout('hbp', {force: false})
+        hbpHello.logout('hbp', {force: force})
         .then(function (event) {
           console.debug('User Logout OK')
           resolve()
@@ -36,41 +35,19 @@ export default {
         });
       })
     },
-    getToken (renew) {
-      var that = this
-      return new Promise(function (resolve, reject) {
-        var localToken = that.getLocalToken()
-        if (localToken) { // token exists
-          if (renew) {
-            localToken.expires = 1 // to force logout and login
-            console.log('Renew token forced')
-          }
-          var currentTime = (new Date()).getTime() / 1000;
-          if (localToken.expires > currentTime) { // token is not expired and valid
-            var token = 'Bearer ' + localToken.access_token
-            resolve(token)
-          } else { // token is expired
-            that.logout().then(function () {
-              that.login().then(function () {
-                var token = 'Bearer ' + that.getLocalToken().access_token
-                resolve(token)
-              })
-            })
-          }
-        } else { // token does not exist
-          that.login().then(function () {
-            var token = 'Bearer ' + that.getLocalToken().access_token
-            resolve(token)
-          })
-        }
+    renewToken () {
+      this.logout().then(() => {
+        this.login('page', true)
       })
     },
-    getLocalToken () {
-      var helloStorage = window.localStorage.hello
-      if (helloStorage) {
-        var hbpStorage = JSON.parse(helloStorage).hbp
+    getAuthResponse () {
+      let session = hbpHello.getAuthResponse('hbp');
+      var currentTime = (new Date()).getTime() / 1000;
+      let valid = session && session.access_token && session.expires > currentTime + 1000;
+      if (valid && !store.state.header.headers) {
+        store.setToken(session.access_token)
       }
-      return hbpStorage
+      return valid
     }
   }
 }

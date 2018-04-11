@@ -27,7 +27,7 @@
         "experience": ["power"],
         "maturity": ["experimental"],
         "access": ["hpc"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
@@ -797,12 +797,21 @@
             "title": "Rat hippocampus CA1",
             "files": [
               {
+                "entryname": "Cell Placement Hippocampus - Setup",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "initial": true,
+                "file": "93cb9a13-3c86-4525-a3bf-2f896529ce09",
+                "file_prod": "bb405300-cefc-4ba5-91ab-eca452a08a21"
+              },
+              {
                 "entryname": "Cell Placement Hippocampus",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "00b83d98-0172-4825-b386-7671054cc31d",
-                "file_prod": "7e33ecff-2016-47d0-80d1-e80bb075991f"
+                "file": "56a8c5e9-e4be-4943-8eb8-f2f8592002ef",
+                "file_prod": "5bf347c2-2cbd-48c6-a640-3c653d687d1a"
               }
             ],
             "species": "Rat",
@@ -810,7 +819,8 @@
             "cell_soma_location": "CA1",
             "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
             "contributors": [
-              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
           }
@@ -1181,6 +1191,27 @@
             "extension": ".ipynb",
             "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81",
             "file_prod": "f7570fb5-cee6-4ec1-8e84-e156ee910f97"
+          }
+        ]
+      },
+      {
+        "title": "Basal Ganglia Morphology Validation",
+        "description": "Validates single cell morphologies of MSN and FS cells",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Basal Ganglia Morphology Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c"
           }
         ]
       },

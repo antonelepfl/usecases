@@ -207,7 +207,7 @@ new Vue({
 
 function saveQueryParams () {
   // Save this becuase an issue with hash and query params when get the access_token using hellojs
-  let match = window.location.href.match(new RegExp('\#\\/(.*)'))
+  let match = window.location.href.match(new RegExp('#\\/(.*)'))
   if (match && match.length > 0 && match[1] !== '' && !match[1].startsWith('access_token')) {
     console.debug('Saving query param', match[1])
     window.localStorage.setItem('query', match[1])

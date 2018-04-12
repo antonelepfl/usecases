@@ -1,7 +1,7 @@
 import modelsBSP from 'assets/config_files/singlecellmodeling_structure.json'
 import modelsNMC from 'assets/config_files/nmcportalmodels_structure.json'
 import usecases from 'assets/config_files/usecases.json'
-import utils from './utils.js'
+import { getUsecaseInfo } from './utils.js'
 
 function getBSPMetadata () {
   let baseUrl = usecases[2].models.bsp.raw
@@ -75,7 +75,7 @@ function getModelTitle (modelInfo) {
 }
 
 function getModelByUc (ucName) {
-  let ucInfo = utils.getUsecaseInfo(ucName)
+  let ucInfo = getUsecaseInfo(ucName)
   return ucInfo.models
 }
 

@@ -3,7 +3,7 @@
       <div id="course-container-title" class="title">
         {{moocInfo.title}}
         <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
-          <i>Link of the course</i>
+          <i>Link to the course</i>
           <i class="material-icons middle">link</i>
         </a>
       </div>

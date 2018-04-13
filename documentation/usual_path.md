@@ -33,7 +33,9 @@ Private or public Collabs could be created depending on the user credentials.
 ![create](/documentation/create.png?raw=true)
 
 #### 3.B. If you already have the use case in your Collab an alert will appear:
+From here you are able to **replace** the content of the files (rewrite the entire use case that you have in your Collab) OR **go** to your Collab with the old version of the use case.
 
+![replace](/documentation/replace.png?raw=true)
 
 #### 4. You are redirected to your Collab with the use case ready to be run
 

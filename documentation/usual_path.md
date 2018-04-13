@@ -12,7 +12,12 @@ You will see all the use cases related to this domain. Each of them containing:
 ![main page](/documentation/main.png?raw=true)
 
 #### 2. Select one *Use Case* [Feature extraction, Synaptic event fitting, ... ]
-After you select one use case you will have 2 possibilities:
+
+#### 2.B. In some cases you need to choose among different models
+ for example to see a morphology you should select which morphology you want to see (the image below)
+![models](/documentation/models.png?raw=true)
+
+#### 3. You have to choose between 2 options:
 
 #### A). Search
 Search in your Collabs and add this use case as a new entry (navigation item)
@@ -27,9 +32,8 @@ Private or public Collabs could be created depending on the user credentials.
 
 ![create](/documentation/create.png?raw=true)
 
-#### 2.B. You are redirected to your Collab with the use case ready to be run
-In some cases you need to choose different models for example to see a morphology you should select which morpphology you want to see (the image below)
-![models](/documentation/models.png?raw=true)
+#### 3.B. If you already have the use case in your Collab an alert will appear:
 
-#### 3. You are redirected to your Collab with the use case ready to be run
+
+#### 4. You are redirected to your Collab with the use case ready to be run
 

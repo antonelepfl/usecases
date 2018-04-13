@@ -14,6 +14,7 @@
 <script>
   import collabFormComponent from 'components/collab-form-component.vue'
   import mooc from 'mixins/mooc.js'
+  import store from 'mixins/store.js'
   const traceAnalysisTemplate = 'https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb'
 
   export default {
@@ -69,12 +70,34 @@
           'file': this.uri
         }
         // from mooc with replace param
-        let replaceObj = {'findString': this.findString, 'replaceText': this.replaceText};
-        let navCreatedInfo = null;
-        this.createItemInExistingCollab(collab, item, replaceObj)
-        .then((elements) => {
-          let newElem = elements[0]
-          return that.createNavEntry(item.entryname, collab.id, newElem.parentId, item.appid, newElem.newFileId)
+        let replaceObj = {'findString': this.findString, 'replaceText': this.replaceText}
+        let navCreatedInfo = null
+        let parentNav = null
+        let navPromise = null
+        if (Object.keys(store.state.allNavItems).length === 0) {
+          navPromise = that.getAllNav(collab.id)
+        } else {
+          navPromise = Promise.resolve(store.state.allNavItems)
+        }
+        navPromise.then((navs) => { parentNav = navs })
+        .then(() => {
+          return that.replaceExistsDialog(parentNav, item)
+        })
+        .then((isReplace) => {
+          if (!isReplace) { // no replace. generate new navitem and new file
+            throw String('abort and redirect')
+          }
+          return this.createItemInExistingCollab(collab, item, replaceObj)
+        })
+        .then((element) => {
+          // using Mooc createNavEntry
+          return that.createNavEntry({
+            'entryName': item.entryname,
+            'collabId': collab.id,
+            'parentId': element.parentId,
+            'appId': item.appid,
+            'fileId': element.newFileId
+          })
         })
         .then((navInfo) => {
           navCreatedInfo = navInfo;
@@ -87,8 +110,16 @@
           that.isLoading = false
         })
         .catch((error) => {
+          if (error === 'abort and redirect') {
+            console.debug('Do not replace. Redirect to collab')
+            let initialNavId = that.findInitialInNavitems(store.state.allNavItems, item)
+            that.redirectToCollab(collab.id, initialNavId)
+            that.isLoading = false
+            return
+          }
           that.isLoading = false
           that.error = error
+          throw Error(error)
         });
       }
     }

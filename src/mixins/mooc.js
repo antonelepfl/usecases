@@ -13,8 +13,6 @@ export default {
       navitemId: null,
       moocUc: null,
       initialEntryName: null,
-      parent: null,
-      parentNav: null,
       moocWeek: null,
       usecaseMooc: usecases[0].mooc,
       moocFullWeeks: null
@@ -44,7 +42,7 @@ export default {
         console.debug('before getNavElement')
         await that.getNavElement(collab.id)
         if (that.moocWeek && that.moocWeek.files) {
-          let isReplace = await that.replaceExistsDialog(that.parentNav, that.moocWeek.files)
+          let isReplace = await that.replaceExistsDialog(store.state.allNavItems, that.moocWeek.files)
           this.moocWeek.files.forEach((file) => {
             if (!isReplace) { // no replace. generate new navitem and new file
               throw String('abort and redirect')
@@ -83,8 +81,8 @@ export default {
         if (item === undefined) {
           return Promise.reject('No item')
         } else {
-          if (!that.parentNav) { await that.getNavElement(collab.id) }
-          return that.generateAndFillFiles(collab.id, item, that.parentNav, replaceObj)
+          if (!store.navItemsExist()) { await that.getNavElement(collab.id) }
+          return that.generateAndFillFiles(collab.id, item, store.state.allNavItems, replaceObj)
         }
       } catch (e) { return Promise.reject(e) }
     },
@@ -97,7 +95,7 @@ export default {
           appInfo.entryname,
           appInfo.contenttype,
           appInfo.extension,
-          that.parent,
+          store.state.collabInfo.uuid,
           collabId
         )
         var originalFileId = that.getFileByEnv(appInfo)
@@ -202,12 +200,10 @@ export default {
     },
     async getNavElement (collabId) {
       try {
-        let elems = await Promise.all([
+        await Promise.all([
           this.getCollabStorage(collabId),
           this.getAllNav(collabId)
         ])
-        this.parent = elems[0].results[0].uuid
-        this.parentNav = elems[1]
       } catch (e) { return Promise.reject(e) }
     },
     async createNavEntry (properties) {

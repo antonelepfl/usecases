@@ -192,6 +192,7 @@ export default {
         that.$http.get(url, newHeader).then(function (response) {
           console.debug('Collab storage obtained')
           resolve(response.data)
+          store.setCollabInfo(response.data.results[0])
         })
       })
     },
@@ -403,7 +404,6 @@ export default {
     },
     findInitialInNavitems (nav, filesChildren) {
       /* find the initial navitem in the existings navitems **/
-      debugger
       if (nav.children && nav.children.length > 0) {
         let filesChildrenIsArray = Array.isArray(filesChildren)
         let initialName = null

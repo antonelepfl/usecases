@@ -2,6 +2,7 @@
 export default {
   state: {
     header: {},
+    collabInfo: {},
     rewriteFiles: false,
     allNavItems: {}
   },
@@ -16,5 +17,14 @@ export default {
   setAllNavItems (navItems) {
     console.debug('(store) Setting NavItems')
     this.state.allNavItems = navItems
+  },
+  setCollabInfo (info) {
+    console.debug('(store) Setting Collab Info')
+    this.state.collabInfo = info
+  },
+  navItemsExist () {
+    let hasNav = Object.keys(this.state.allNavItems).length > 0
+    let hasCollabInfo = Object.keys(this.state.collabInfo).length > 0
+    return hasNav && hasCollabInfo
   }
 }

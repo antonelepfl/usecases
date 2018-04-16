@@ -1,6 +1,7 @@
 <template>
   <div class="morph-form-replacing">
     <collab-form-component
+      class="custom-theme"
       @collabSelected="collabSelected"
       @collabCreated="createNewCollab"
       :isLoading="isLoading">
@@ -12,9 +13,9 @@
 </template>
 
 <script>
-  import collabFormComponent from 'components/collab-form-component.vue'
-  import mooc from 'mixins/mooc.js'
-  import store from 'mixins/store.js'
+  import collabFormComponent from '@/components/collab-form-component.vue'
+  import mooc from '@/mixins/mooc.js'
+  import store from '@/mixins/store.js'
   const traceAnalysisTemplate = 'https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb'
 
   export default {
@@ -126,9 +127,19 @@
   }
 </script>
 
-<style scoped>
+<style>
 .error {
   color: red;
   text-align: center;
+}
+.collab-form-component.custom-theme .header,
+.collab-form-component.custom-theme .tabs .custom-tabs a,
+.collab-form-component.custom-theme .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
+  background-color: #1e8bc3;
+  border-color: transparent;
+}
+.collab-form-component.custom-theme .tabs .custom-tabs .is-active a {
+  background-color: #176c98;
+  border-color: transparent;
 }
 </style>

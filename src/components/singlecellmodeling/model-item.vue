@@ -1,7 +1,7 @@
 <template>
   <div class="model-item" v-if="model">
     <div class="path" @click="search">
-      <div class="inline" v-for="(part, index) in pathParts">
+      <div class="inline" v-for="(part, index) in pathParts" :key="index">
         <span class="square">{{ part }}</span>
         <span v-show="hasNext(index)"> > </span>
       </div>
@@ -22,7 +22,7 @@
 
 <script>
   import modelDescription from './model-description.vue'
-  import placeholder from 'images/placeholder.jpg'
+  import placeholder from '@/assets/images/placeholder.jpg'
 
   export default {
     name: 'modelItem',
@@ -43,7 +43,7 @@
       hasNext (index) {
         return index < (this.pathParts.length - 1)
       },
-      touched (event) {
+      touched () {
         this.$emit('touched')
       },
       search (event) {

@@ -9,6 +9,7 @@
       </div>
       <div
          v-for="uc in usecases"
+         :key="uc.title"
          v-bind:class="{ 'disabled-container': uc.disabled }"
          v-on:click="selected(uc)"
       >
@@ -22,7 +23,7 @@
       </div>
       <!-- if the url is not correct show index of UCs -->
       <div v-if="!usecases">
-         <div v-for="index in indexes">
+         <div v-for="index in indexes" :key="index">
             <router-link :to="index">{{ index }}</router-link>
          </div>
       </div>
@@ -31,9 +32,9 @@
 
 <script>
    import ucItem from './uc-item.vue'
-   import usecases from 'assets/config_files/usecases.json'
-   import storageManager from 'mixins/storageManager.js'
-   import commitNumer from 'components/commit-number.vue'
+   import usecases from '@/assets/config_files/usecases.json'
+   import storageManager from '@/mixins/storageManager.js'
+   import commitNumer from '@/components/commit-number.vue'
 
    export default {
       name: 'ucContainer',

@@ -2,7 +2,7 @@
 // let findKey = require('lodash/findKey')
 let findIndex = require('lodash/findIndex')
 let find = require('lodash/find')
-let usecases = require('assets/config_files/usecases.json')[0]
+let usecases = require('@/assets/config_files/usecases.json')[0]
 let swal = require('sweetalert2')
 
 function getUsecaseInfo (ucName) {
@@ -22,7 +22,7 @@ function compact (name) {
   return name.toLowerCase().replace(/ /g, '')
 }
 
-function replaceConfirmation (exist) {
+function replaceConfirmation () {
   return swal({
     title: 'Replace File(s)?',
     text: 'File(s) already exists in this Collab',

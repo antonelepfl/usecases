@@ -1,9 +1,9 @@
-import createCollab from 'mixins/createCollab.js'
-import collabAuthentication from 'mixins/collabAuthentication.js'
-import usecases from 'assets/config_files/usecases.json'
+import createCollab from '@/mixins/createCollab.js'
+import collabAuthentication from '@/mixins/collabAuthentication.js'
+import usecases from '@/assets/config_files/usecases.json'
 import uuid from 'uuid4'
 import axios from 'axios'
-import store from 'mixins/store.js'
+import store from '@/mixins/store.js'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 
 export default {

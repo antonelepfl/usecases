@@ -1,8 +1,8 @@
 import uuid from 'uuid4'
 import collabAuthentication from './collabAuthentication.js'
-import usecases from 'assets/config_files/usecases.json'
-import { getUsecaseInfo, replaceConfirmation } from 'mixins/utils.js'
-import store from 'mixins/store.js'
+import usecases from '@/assets/config_files/usecases.json'
+import { getUsecaseInfo, replaceConfirmation } from '@/mixins/utils.js'
+import store from '@/mixins/store.js'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
@@ -108,10 +108,10 @@ export default {
         var payload = {}
         payload[context2] = 1 // adding context to the entry
         that.$http.put(jupyterNotebookUrl, payload, that.header)
-        .then(function (response) { // change the metadata jupyter file
+        .then(() => { // change the metadata jupyter file
           console.debug('Change metadata file <-> navitem')
           resolve();
-        }, function (error) {
+        }, (error) => {
           reject('Error changing the metadata:', error)
         })
       })
@@ -193,7 +193,7 @@ export default {
           console.debug('Collab storage obtained')
           resolve(response.data)
           store.setCollabInfo(response.data.results[0])
-        })
+        }, reject)
       })
     },
     getFileByName (collabId, fileName) {
@@ -242,7 +242,7 @@ export default {
               .then(function (file) {
                 file.exists = true
                 resolve(file)
-              }, function (e) {
+              }, () => {
                 reject('Error creating a file')
               })
             }
@@ -261,11 +261,11 @@ export default {
         'Accept': 'application/json'
       }}
       return new Promise(function (resolve, reject) {
-        that.$http.put(url, null, newHeader).then(function (response) {
+        that.$http.put(url, null, newHeader).then(() => {
           console.debug('File content copied')
           resolve(newFileId)
         }, function (e) {
-          console.error('Error copying the file content');
+          console.error('Error copying the file content', e)
           reject('Error copying the file: ' + originFileId)
         })
       })
@@ -446,7 +446,7 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         that.$http.post(STORAGE_FILE_API + fileId + '/content/upload/', content, that.header)
-        .then(function (response) {
+        .then(function () {
           resolve(fileId)
         },
         function (responseError) {
@@ -489,7 +489,7 @@ export default {
           resolve(folder.data)
         },
         function (e) {
-          console.error('Error creating folder. Folder already exists?')
+          console.error('Error creating folder. Folder already exists?', e)
           if (collabId) {
             that.getFileByName(collabId, name)
             .then(function (file) {

@@ -1,9 +1,9 @@
 
-import createCollab from 'mixins/createCollab.js'
-import collabAuthentication from 'mixins/collabAuthentication.js'
+import createCollab from '@/mixins/createCollab.js'
+import collabAuthentication from '@/mixins/collabAuthentication.js'
 import findIndex from 'lodash/findIndex'
 import find from 'lodash/find'
-import usecases from 'assets/config_files/usecases.json'
+import usecases from '@/assets/config_files/usecases.json'
 
 export default {
   data () {

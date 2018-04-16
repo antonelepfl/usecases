@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+  <div>Please Wait ...</div>
 </template>
 
 <script>
-  import CollabAuthentication from 'mixins/collabAuthentication'
-  import store from 'mixins/store.js'
+  import CollabAuthentication from '@/mixins/collabAuthentication'
+  import store from '@/mixins/store.js'
   export default {
     name: 'login',
     mounted () {
@@ -25,8 +25,8 @@
         if (window.localStorage.query) {
           window.location.hash = '/' + window.localStorage.query
         } else {
-          console.error('NO SessionStorage')
-          throw Error('Login component. No SessionStorage')
+          console.warn('NO SessionStorage')
+          window.location.hash = '/traceanalysis'
         }
       }
     }

@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  import createCollab from 'mixins/createCollab.js'
-  import collabFormComponent from 'components/collab-form-component.vue'
-  import collabAuthentication from 'mixins/collabAuthentication.js'
+  import createCollab from '@/mixins/createCollab.js'
+  import collabFormComponent from '@/components/collab-form-component.vue'
+  import collabAuthentication from '@/mixins/collabAuthentication.js'
   export default {
     name: 'collabFormReplacing',
     data () {

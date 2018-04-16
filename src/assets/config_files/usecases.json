@@ -801,10 +801,11 @@
             "title": "Rat hippocampus CA1",
             "files": [
               {
-                "entryname": "Setup",
+                "entryname": "Cell Placement Hippocampus - Setup",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
+                "initial": true,
                 "file": "93cb9a13-3c86-4525-a3bf-2f896529ce09",
                 "file_prod": "bb405300-cefc-4ba5-91ab-eca452a08a21"
               },
@@ -826,6 +827,36 @@
               {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+          },
+          {
+            "title": "Striatum microcircuitry",
+            "files": [
+              {
+                "entryname": "Striatum Microcircuitry",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "initial": true,
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe"
+              },
+              {
+                "entryname": "Striatum-scaffold-network-use-case-2018",
+                "appid": 175,
+                "justcopy": true,
+                "contenttype": "x-bzip2",
+                "extension": ".tar.bz2",
+                "file": "713979b4-14f7-48bd-9dcc-f713553f1cad"
+              }
+            ],
+            "species": "Mouse",
+            "brain_structure": "Basal Gangla",
+            "cell_soma_location": "Striatum",
+            "description": "Striatum microcircuitry.",
+            "contributors": [
+              {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
+              {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
           }
         ]
       },
@@ -876,44 +907,38 @@
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png",
             "disabled": true
+          },
+          {
+            "title": "Striatum microcircuitry",
+            "files": [
+              {
+                "entryname": "Striatum Microcircuitry",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "initial": true,
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe"
+              },
+              {
+                "entryname": "Striatum-scaffold-network-use-case-2018",
+                "appid": 175,
+                "justcopy": true,
+                "contenttype": "x-bzip2",
+                "extension": ".tar.bz2",
+                "file": "713979b4-14f7-48bd-9dcc-f713553f1cad"
+              }
+            ],
+            "species": "Mouse",
+            "brain_structure": "Basal Gangla",
+            "cell_soma_location": "Striatum",
+            "description": "Striatum microcircuitry.",
+            "contributors": [
+              {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
+              {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
           }
         ]
-                  {
-            "title": "Striatum microcircuitry building",
-            "files": [
-              {
-                "entryname": "code+data",
-                "appid": 666,
-                "contenttype": "tar+bz2",
-                "extension": ".tar.bz2",
-                "file": "Striatum-scaffold-network-use-case-2018.tar.bz2",
-                "file_prod": "Striatum-scaffold-network-use-case-2018.tar.bz2"
-              },
-
-              {
-                "entryname": "Striatum Microcircuitry",
-                "appid": 666,
-                "contenttype": "x-ipynb+json",
-                "extension": ".ipynb",
-                "file": "Striatum-Scaffold-model-March2018.ipynb",
-                "file_prod": "Striatum-Scaffold-model-March2018.ipynb"
-              }
-            ],
-            "species": "Mouse",
-            "brain_structure": "Basal Gangla",
-            "cell_soma_location": "Striatum",
-            "description": "Striatum microcircuitry.",
-            "contributors": [
-              {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
-              {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
-            ],
-
-            "img": ""
-
-          }
-
-
-        
       }
     ],
     "morphology": [

@@ -174,12 +174,17 @@ export default {
       // reset the variables
       store.setRewriteFiles(false)
       store.setAllNavItems({})
-      window.parent.postMessage({
-        eventName: 'location',
-        data: {
-          url: path
-        }
-      }, '*')
+      if (window !== window.top) {
+        // inside iframe
+        window.parent.postMessage({
+          eventName: 'location',
+          data: {
+            url: path
+          }
+        }, '*')
+      } else {
+        window.location.href = path;
+      }
     },
     getCollabStorage (collabId) {
       var url = COLLAB_STORAGE_API + collabId

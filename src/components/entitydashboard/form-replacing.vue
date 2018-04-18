@@ -1,6 +1,7 @@
 <template>
   <div class="morph-form-replacing">
     <collab-form-component
+      class="custom-theme"
       @collabSelected="collabSelected"
       @collabCreated="createNewCollab"
       :isLoading="isLoading">
@@ -126,9 +127,16 @@
   }
 </script>
 
-<style scoped>
+<style>
 .error {
   color: red;
   text-align: center;
+}
+.collab-form-component.custom-theme .header,
+.collab-form-component.custom-theme .md-theme-default.md-tabs>.md-tabs-navigation {
+  background-color: #1e8bc3;
+}
+.collab-form-component.custom-theme button.md-tab-header.md-active {
+  background-color: #176c98;
 }
 </style>

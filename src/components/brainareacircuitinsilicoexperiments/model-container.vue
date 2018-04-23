@@ -13,7 +13,7 @@
 <script>
    import modelItem from './model-item.vue'
    import modelsMixins from 'mixins/models.js'
-   import utils from 'mixins/utils.js'
+   import { compact } from 'mixins/utils.js'
 
    export default {
       name: 'modelContainer',
@@ -33,7 +33,7 @@
               if (model.files) {
                   this.$router.push({name: 'brainarea_form',
                      params: {
-                        'model_name': utils.compact(model.title)
+                        'model_name': compact(model.title)
                      }
                   })
               } else {

@@ -6,7 +6,7 @@ export default {
     rewriteFiles: false,
     allNavItems: {},
     devWebsite: process.env.GIT_BRANCH !== 'origin/master',
-    commitNumber: JSON.stringify(process.env.GIT_COMMIT),
+    commitNumber: process.env.GIT_COMMIT
   },
   setToken (token) {
     console.debug('(store) Setting Authorization Header')

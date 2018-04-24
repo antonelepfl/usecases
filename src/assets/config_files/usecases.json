@@ -856,7 +856,7 @@
               {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
               {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
             ],
-            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/striatum_circuit_building.png"
           }
         ]
       },
@@ -936,7 +936,7 @@
               {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
               {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
             ],
-            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/striatum_circuit_building.png"
           }
         ]
       }

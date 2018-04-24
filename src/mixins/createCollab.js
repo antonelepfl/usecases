@@ -623,7 +623,7 @@ export default {
       function getInfoAndSend () {
         that.getUserInfo().then(function (user) {
           formData.append(userEntry, user.id)
-          if (process.env.SEND_STATISTICS) {
+          if (!store.state.devWebsite) {
             send()
           }
         })

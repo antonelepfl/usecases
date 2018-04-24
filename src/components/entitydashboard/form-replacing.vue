@@ -1,6 +1,7 @@
 <template>
   <div class="morph-form-replacing">
     <collab-form-component
+      class="custom-theme"
       @collabSelected="collabSelected"
       @collabCreated="createNewCollab"
       :isLoading="isLoading">
@@ -12,8 +13,9 @@
 </template>
 
 <script>
-  import collabFormComponent from 'components/collab-form-component.vue'
-  import mooc from 'mixins/mooc.js'
+  import collabFormComponent from '@/components/collab-form-component.vue'
+  import mooc from '@/mixins/mooc.js'
+  import store from '@/mixins/store.js'
   const traceAnalysisTemplate = 'https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb'
 
   export default {
@@ -69,12 +71,34 @@
           'file': this.uri
         }
         // from mooc with replace param
-        let replaceObj = {'findString': this.findString, 'replaceText': this.replaceText};
-        let navCreatedInfo = null;
-        this.createItemInExistingCollab(collab, item, replaceObj)
-        .then((elements) => {
-          let newElem = elements[0]
-          return that.createNavEntry(item.entryname, collab.id, newElem.parentId, item.appid, newElem.newFileId)
+        let replaceObj = {'findString': this.findString, 'replaceText': this.replaceText}
+        let navCreatedInfo = null
+        let parentNav = null
+        let navPromise = null
+        if (Object.keys(store.state.allNavItems).length === 0) {
+          navPromise = that.getAllNav(collab.id)
+        } else {
+          navPromise = Promise.resolve(store.state.allNavItems)
+        }
+        navPromise.then((navs) => { parentNav = navs })
+        .then(() => {
+          return that.replaceExistsDialog(parentNav, item)
+        })
+        .then((isReplace) => {
+          if (!isReplace) { // no replace. generate new navitem and new file
+            throw String('abort and redirect')
+          }
+          return this.createItemInExistingCollab(collab, item, replaceObj)
+        })
+        .then((element) => {
+          // using Mooc createNavEntry
+          return that.createNavEntry({
+            'entryName': item.entryname,
+            'collabId': collab.id,
+            'parentId': element.parentId,
+            'appId': item.appid,
+            'fileId': element.newFileId
+          })
         })
         .then((navInfo) => {
           navCreatedInfo = navInfo;
@@ -87,17 +111,27 @@
           that.isLoading = false
         })
         .catch((error) => {
-          that.isLoading = false
-          that.error = error
-        });
+          let fileSearch = {'files': [item]}
+          that.abortAndRedirect(collab, fileSearch, error)
+        })
       }
     }
   }
 </script>
 
-<style scoped>
+<style>
 .error {
   color: red;
   text-align: center;
+}
+.collab-form-component.custom-theme .header,
+.collab-form-component.custom-theme .tabs .custom-tabs a,
+.collab-form-component.custom-theme .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {
+  background-color: #1e8bc3;
+  border-color: transparent;
+}
+.collab-form-component.custom-theme .tabs .custom-tabs .is-active a {
+  background-color: #176c98;
+  border-color: transparent;
 }
 </style>

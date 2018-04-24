@@ -1,9 +1,9 @@
 
-import createCollab from 'mixins/createCollab.js'
-import collabAuthentication from 'mixins/collabAuthentication.js'
+import createCollab from '@/mixins/createCollab.js'
+import collabAuthentication from '@/mixins/collabAuthentication.js'
 import findIndex from 'lodash/findIndex'
 import find from 'lodash/find'
-import usecases from 'assets/config_files/usecases.json'
+import usecases from '@/assets/config_files/usecases.json'
 
 export default {
   data () {
@@ -23,25 +23,7 @@ export default {
   methods: {
     createItemInExistingCollabDeepModel (collab, uc, model) {
       let ucInfo = this.getUsecaseInfo(uc, model)
-      var that = this
-      return new Promise(function (resolve, reject) {
-        if (ucInfo === undefined) {
-          reject('No usecase named:', uc)
-        } else {
-          var tempPromise = null
-          tempPromise = that.createMultipleItemsInExistingCollab(collab, ucInfo)
-          tempPromise.then(function (promises) {
-            Promise.all(promises)
-            .then(function (elements) {
-              let obj = elements[0]
-              if (obj.collabId) {
-                that.redirectToCollab(obj.collabId, obj.navitemId)
-                resolve()
-              }
-            }, reject)
-          })
-        }
-      })
+      return this.createItemInExistingCollab(collab, uc, ucInfo)
     },
     uglyfy (name) {
       return name.split(' ').map(function (word) {

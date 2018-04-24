@@ -1,8 +1,8 @@
 import uuid from 'uuid4'
 import collabAuthentication from './collabAuthentication.js'
-import usecases from 'assets/config_files/usecases.json'
-import utils from './utils.js'
-import store from './store.js'
+import usecases from '@/assets/config_files/usecases.json'
+import { getUsecaseInfo, replaceConfirmation } from '@/mixins/utils.js'
+import store from '@/mixins/store.js'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/'
 const COLLAB_STORAGE_API = 'https://services.humanbrainproject.eu/storage/v1/api/project/?collab_id='
@@ -15,7 +15,6 @@ const JUPYTER_NOTEBOOK_APP_ID = 175
 export default {
   data () {
     return {
-      utils,
       errorMessage: '',
       usecases: usecases[0],
       header: store.state.header,
@@ -44,23 +43,17 @@ export default {
       })
     },
     createNavEntry (entryName, collabId, parentId, appId, fileId, order) {
-      var that = this
+      let that = this
       return new Promise(function (resolve, reject) {
-        var context = uuid()
-        var navOrder = order || '-1'
-        var type = 'IT'
-        var payload = {
-          'app_id': appId,
-          'context': context,
-          'name': entryName,
-          'order_index': navOrder,
-          'parent': parentId,
-          'type': type
-        }
-        var collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
-        that.$http.post(collabReq, payload, that.header) // create navitem
-        .then(function (navItem) {
+        let request = null
+        if (store.state.allNavItems && store.state.rewriteFiles) {
+          /* replace is active so try to resuse the navitem if exists */
+          request = tryToFindExisting()
+        } else { request = generateRequest() }
+
+        request.then(function (navItem) {
           let navitemId = navItem.data.id
+          let context = navItem.data.context
           if (appId === JUPYTER_NOTEBOOK_APP_ID) {
             that.fillJupyterNavItem(fileId, navitemId, collabId, context)
             .then(function () {
@@ -76,6 +69,36 @@ export default {
           }
         }, function (error) { reject('Error to create NavItem:', error) })
       })
+
+      function generateRequest () {
+        let context = uuid()
+        let navOrder = order || '-1'
+        let type = 'IT'
+        let payload = {
+          'app_id': appId,
+          'context': context,
+          'name': entryName,
+          'order_index': navOrder,
+          'parent': parentId,
+          'type': type
+        }
+        let collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
+        return that.$http.post(collabReq, payload, that.header) // create navitem
+      }
+
+      function tryToFindExisting () {
+        let request = null
+        let found = store.state.allNavItems.children.find((nav) => {
+          return nav.name === entryName
+        })
+        if (found) {
+          request = Promise.resolve({'data': found})
+          console.debug('Reusing existing nav item')
+        } else {
+          request = generateRequest()
+        }
+        return request
+      }
     },
     fillJupyterNavItem: function (fileId, navitemId, collabId, context) {
       var that = this
@@ -85,9 +108,10 @@ export default {
         var payload = {}
         payload[context2] = 1 // adding context to the entry
         that.$http.put(jupyterNotebookUrl, payload, that.header)
-        .then(function (response) { // change the metadata jupyter file
+        .then(() => { // change the metadata jupyter file
+          console.debug('Change metadata file <-> navitem')
           resolve();
-        }, function (error) {
+        }, (error) => {
           reject('Error changing the metadata:', error)
         })
       })
@@ -134,24 +158,33 @@ export default {
         that.$http.get(url, that.header).then(function (response) {
           var nav = response.data
           console.debug('Get all nav obtained')
+          store.setAllNavItems(nav)
           resolve(nav)
         }, function () { reject('Error get nav root') })
       })
     },
     redirectToCollab (collabId, navitemId) {
       var path = ''
-      if (navitemId !== undefined) {
+      if (navitemId) {
         path = COLLAB_HOME + collabId + '/nav/' + navitemId
       } else {
         path = COLLAB_HOME + collabId
       }
       console.log('Redirecting to ', path)
-      window.parent.postMessage({
-        eventName: 'location',
-        data: {
-          url: path
-        }
-      }, '*')
+      // reset the variables
+      store.setRewriteFiles(false)
+      store.setAllNavItems({})
+      if (window !== window.top) {
+        // inside iframe
+        window.parent.postMessage({
+          eventName: 'location',
+          data: {
+            url: path
+          }
+        }, '*')
+      } else {
+        window.location.href = path;
+      }
     },
     getCollabStorage (collabId) {
       var url = COLLAB_STORAGE_API + collabId
@@ -164,7 +197,8 @@ export default {
         that.$http.get(url, newHeader).then(function (response) {
           console.debug('Collab storage obtained')
           resolve(response.data)
-        })
+          store.setCollabInfo(response.data.results[0])
+        }, reject)
       })
     },
     getFileByName (collabId, fileName) {
@@ -213,7 +247,7 @@ export default {
               .then(function (file) {
                 file.exists = true
                 resolve(file)
-              }, function (e) {
+              }, () => {
                 reject('Error creating a file')
               })
             }
@@ -232,11 +266,11 @@ export default {
         'Accept': 'application/json'
       }}
       return new Promise(function (resolve, reject) {
-        that.$http.put(url, null, newHeader).then(function (response) {
+        that.$http.put(url, null, newHeader).then(() => {
           console.debug('File content copied')
           resolve(newFileId)
         }, function (e) {
-          console.error('Error copying the file content');
+          console.error('Error copying the file content', e)
           reject('Error copying the file: ' + originFileId)
         })
       })
@@ -265,8 +299,8 @@ export default {
         }, reject)
       })
     },
-    createItemInExistingCollab (collab, uc) {
-      let ucInfo = utils.getUsecaseInfo(uc)
+    createItemInExistingCollab (collab, uc, ucInfo) {
+      if (!ucInfo) { ucInfo = getUsecaseInfo(uc) }
       var that = this
       return new Promise(function (resolve, reject) {
         if (ucInfo === undefined) {
@@ -282,7 +316,10 @@ export default {
                 that.redirectToCollab(obj.collabId, obj.navitemId)
                 resolve()
               }
-            }, reject)
+            })
+          })
+          .catch((error) => {
+            that.abortAndRedirect(collab, ucInfo, error, reject)
           })
         }
       })
@@ -290,30 +327,26 @@ export default {
     createMultipleItemsInExistingCollab (collab, ucInfo) {
       var that = this
       return new Promise(function (resolve, reject) {
-        that.getAllNav(collab.id).then(function (parentNav) {
-          var exists = {}
+        that.getAllNav(collab.id).then((parentNav) => {
           var promises = []
-
-          ucInfo.files.forEach((item) => {
-            exists = that.checkExists(parentNav, item.appid, item.entryname)
-            if (!exists.found) {
+          that.replaceExistsDialog(parentNav, ucInfo.files)
+          .then((isReplace) => {
+            ucInfo.files.forEach((item) => {
+              if (!isReplace) { // no replace. generate new navitem and new file
+                throw String('abort and redirect')
+              } // otherwise create = replace
               if (item.appid === JUPYTER_NOTEBOOK_APP_ID) {
                 promises.push(that.generateNotebook(collab.id, item, parentNav))
               } else { // is not jupyter notebok just connect to the original file
                 promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
               }
-            } else if (item.initial) {
-              promises.push(Promise.resolve({'collabId': collab.id, 'navitemId': exists.navitemId}))
-            }
-          })
-
-          if (promises.length === 0) {
-            exists['collabId'] = collab.id
-            resolve([exists])
-          } else {
+            })
             resolve(promises)
-          }
-        }, reject)
+          })
+          .catch((error) => {
+            reject(error)
+          })
+        })
       })
     },
     checkExists (nav, appId, appName) {
@@ -326,11 +359,73 @@ export default {
             item.found = true
             item.entryname = appName
             item.navitemId = nav.children[i].id
+            item.navitemContext = nav.children[i].context
           }
           i = i + 1
         }
         return item
       }
+    },
+    replaceExistsDialog (nav, filesChildren) {
+      /* find the same name of the existing navs and new files
+       * if finds a popup will apear to the user for replace or generate new files
+      **/
+      let promise = null
+      let found = null
+      if (nav.children && nav.children.length > 0) {
+        if (Array.isArray(filesChildren)) {
+          found = filesChildren.find((file) => {
+            return nav.children.find((navitem) => {
+              return (file.entryname === navitem.name)
+            })
+          })
+        } else {
+          found = nav.children.find((navitem) => {
+            return (filesChildren.entryname === navitem.name)
+          })
+        }
+
+        if (found && !store.state.rewriteFiles) {
+          promise = replaceConfirmation()
+        } else {
+          console.debug('Not item found. creating from scratch')
+          promise = Promise.resolve(true)
+        }
+      }
+
+      if (!promise) { throw Error('Replace Exists Dialog') }
+      return promise.then((isReplace = false) => {
+        store.setRewriteFiles(isReplace)
+        return isReplace || false
+      })
+    },
+    findInitialInNavitems (nav, filesChildren) {
+      /* find the initial navitem in the existings navitems **/
+      if (nav.children && nav.children.length > 0) {
+        let filesChildrenIsArray = Array.isArray(filesChildren)
+        let initialName = null
+        if (filesChildrenIsArray && filesChildren.length > 1) {
+          initialName = filesChildren.find((file) => {
+            return (file.initial)
+          })
+          if (initialName) {
+            initialName = initialName.entryname
+          } else {
+            console.warn('No initial was set in usecases.json')
+          }
+        } else {
+          initialName = filesChildren.entryname || filesChildren[0].entryname
+        }
+
+        let found = nav.children.find((navitem) => {
+          return (initialName === navitem.name)
+        })
+        if (found) {
+          console.debug('Initial Navitem found', found.name)
+          return found.id
+        }
+      }
+      return null
     },
     getFileContent (fileId) {
       var that = this
@@ -348,7 +443,7 @@ export default {
       var that = this
       return new Promise(function (resolve, reject) {
         that.$http.post(STORAGE_FILE_API + fileId + '/content/upload/', content, that.header)
-        .then(function (response) {
+        .then(function () {
           resolve(fileId)
         },
         function (responseError) {
@@ -391,7 +486,7 @@ export default {
           resolve(folder.data)
         },
         function (e) {
-          console.error('Error creating folder. Folder already exists?')
+          console.error('Error creating folder. Folder already exists?', e)
           if (collabId) {
             that.getFileByName(collabId, name)
             .then(function (file) {
@@ -434,45 +529,44 @@ export default {
     },
     createItemInExistingCollabWithReplace (collab, uc, modelName, findString) {
       var that = this
-      let ucInfo = utils.getUsecaseInfo(uc)
+      let ucInfo = getUsecaseInfo(uc)
       return new Promise(function (resolve, reject) {
         that.getAllNav(collab.id).then(function (parentNav) {
           var promises = []
-          var exists = {}
           if (ucInfo === undefined) {
             return reject('No usecase named:', uc)
           }
-          ucInfo.files.forEach((item) => {
-            item.entryname = item.entryname + ' - ' + modelName.substr(modelName.length - 10)
-            exists = that.checkExists(parentNav, item.appid, item.entryname)
-            if (!exists.found) {
+          that.replaceExistsDialog(parentNav, ucInfo.files)
+          .then((isReplace) => {
+            ucInfo.files.forEach((item) => {
+              if (!isReplace) { // no replace. generate new navitem and new file
+                throw String('abort and redirect')
+              } // otherwise create = replace
               if (item.appid === JUPYTER_NOTEBOOK_APP_ID) {
                 promises.push(that.replaceContentAndCopy(findString, modelName, collab.id, item, parentNav))
               } else { // is not jupyter notebok just connect to the original file
                 promises.push(that.createNavEntry(item.entryname, collab.id, parentNav.id, item.appid))
               }
-            } else if (item.initial) {
-              promises.push(Promise.resolve({'collabId': collab.id, 'navitemId': exists.navitemId}))
-            }
+            })
+            Promise.all(promises).then(function (generatedNotebooks) {
+              let obj = generatedNotebooks[0]
+              if (obj === undefined) {
+                that.redirectToCollab(collab.id)
+                resolve('Apps already in the collab')
+              } else if (obj && obj.collabId) {
+                that.redirectToCollab(obj.collabId, obj.navitemId)
+                resolve()
+              }
+            })
           })
-
-          Promise.all(promises).then(function (generatedNotebooks) {
-            let obj = generatedNotebooks[0]
-            if (obj === undefined) {
-              that.redirectToCollab(collab.id)
-              resolve('Apps already in the collab')
-            } else if (obj && obj.collabId) {
-              that.redirectToCollab(obj.collabId, obj.navitemId)
-              resolve()
-            }
-          }, function (e) {
-            console.error('Error creating multiple files in existing collab with replace')
-            reject(e)
+          .catch((error) => {
+            that.abortAndRedirect(collab, ucInfo, error, reject)
           })
         })
       })
     },
     sendStatistics (collabId, ucName, category, fullModelName, isNew) {
+      if (store.state.devWebsite) {return}
       let that = this
       function searchPath (ucName) {
         for (let i in that.usecases) {
@@ -514,7 +608,7 @@ export default {
       function getInfoAndSend () {
         that.getUserInfo().then(function (user) {
           formData.append(userEntry, user.id)
-          if (process.env.SEND_STATISTICS) {
+          if (!store.state.devWebsite) {
             send()
           }
         })
@@ -554,6 +648,18 @@ export default {
           resolve(team)
         }, reject)
       })
+    },
+    abortAndRedirect (collab, ucInfo, error, reject) {
+      if (error === 'abort and redirect') {
+        console.debug('Do not replace. Redirect to collab')
+        let initialNavId = this.findInitialInNavitems(store.state.allNavItems, ucInfo.files)
+        this.redirectToCollab(collab.id, initialNavId)
+        this.isLoading = false
+        return
+      }
+      console.error('Error creating multiple files in existing collab with replace')
+      if (!reject) throw Error(error)
+      reject(error)
     }
   }
 }

@@ -14,11 +14,11 @@
 </template>
 
 <script>
-   import BspNmcModelList from 'components/singlecellinsilicoexperiments/models-list.vue'
+   import BspNmcModelList from '@/components/singlecellinsilicoexperiments/models-list.vue'
    const VIEWER_URL = 'https://blue-naas.humanbrainproject.eu/#/model/'
-   import collabAuthentication from 'mixins/collabAuthentication.js'
-   import createCollab from 'mixins/createCollab.js'
-   import modelsMixins from 'mixins/models.js'
+   import collabAuthentication from '@/mixins/collabAuthentication.js'
+   import createCollab from '@/mixins/createCollab.js'
+   import modelsMixins from '@/mixins/models.js'
    
    export default {
       name: 'modelContainer',

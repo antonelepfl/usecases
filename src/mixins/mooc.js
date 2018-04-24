@@ -1,8 +1,9 @@
-import createCollab from 'mixins/createCollab.js'
-import collabAuthentication from 'mixins/collabAuthentication.js'
-import usecases from 'assets/config_files/usecases.json'
+import createCollab from '@/mixins/createCollab.js'
+import collabAuthentication from '@/mixins/collabAuthentication.js'
+import usecases from '@/assets/config_files/usecases.json'
 import uuid from 'uuid4'
 import axios from 'axios'
+import store from '@/mixins/store.js'
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/'
 
 export default {
@@ -12,8 +13,6 @@ export default {
       navitemId: null,
       moocUc: null,
       initialEntryName: null,
-      parent: null,
-      parentNav: null,
       moocWeek: null,
       usecaseMooc: usecases[0].mooc,
       moocFullWeeks: null
@@ -40,9 +39,14 @@ export default {
       this.moocWeek = await this.getWeekInfo(uc, week)
       let coursesPromises = []
       try {
+        console.debug('before getNavElement')
         await that.getNavElement(collab.id)
         if (that.moocWeek && that.moocWeek.files) {
+          let isReplace = await that.replaceExistsDialog(store.state.allNavItems, that.moocWeek.files)
           this.moocWeek.files.forEach((file) => {
+            if (!isReplace) { // no replace. generate new navitem and new file
+              throw String('abort and redirect')
+            }
             let creat = that.createItemInExistingCollab(collab, file)
             coursesPromises.push(creat)
           })
@@ -60,7 +64,7 @@ export default {
           return
         }
       } catch (e) {
-        return Promise.reject(e)
+        that.abortAndRedirect(collab, that.moocWeek, e)
       }
     },
     async createItemInExistingCollab (collab, item, replaceObj) { // creates weeks -> files. Modified.
@@ -68,26 +72,10 @@ export default {
       var that = this
       try {
         if (item === undefined) {
-          return Promise.reject('No item in typesCollabsApps.json')
+          return Promise.reject('No item')
         } else {
-          var exists = {}
-          var promises = []
-          if (!that.parentNav) { await that.getNavElement(collab.id) }
-          exists = that.checkExists(that.parentNav, item.appid, item.entryname)
-          if (!exists.found) {
-            promises.push(that.generateAndFillFiles(collab.id, item, that.parentNav, replaceObj))
-          } else {
-            if (that.navitemId === null && item.initial) {
-              that.navitemId = exists.navitemId
-            }
-            promises.push(Promise.resolve(exists))
-          }
-          if (promises.length === 0) {
-            exists['collabId'] = collab.id
-            return exists
-          } else {
-            return await Promise.all(promises)
-          }
+          if (!store.navItemsExist()) { await that.getNavElement(collab.id) }
+          return that.generateAndFillFiles(collab.id, item, store.state.allNavItems, replaceObj)
         }
       } catch (e) { return Promise.reject(e) }
     },
@@ -100,14 +88,16 @@ export default {
           appInfo.entryname,
           appInfo.contenttype,
           appInfo.extension,
-          that.parent,
+          store.state.collabInfo.uuid,
           collabId
         )
         var originalFileId = that.getFileByEnv(appInfo)
         if (!originalFileId) {
           return Promise.reject('No entry in typesCollabsApps.json')
         }
-        if (!file.exists) {
+
+        if (!file.exists || (file.exists && store.state.rewriteFiles)) {
+          console.debug('Put content to file')
           let content = await that.getDataRepo(originalFileId)
           if (replaceObj) {
             console.debug(`Replacing ${replaceObj.replaceText}`)
@@ -122,6 +112,7 @@ export default {
           that.collabCreationProgress = that.collabCreationProgress + 5
           if (appInfo.initial) {
             that.initialEntryName = appInfo.entryname
+            console.debug('Initial NavItem', appInfo.entryname)
           }
           return {
             'entryname': appInfo.entryname,
@@ -160,26 +151,15 @@ export default {
         this.fullCollabName = searchText + ' - ' + moocName + ' - Week ' + week + ' - ' + user.displayName + ' ' + d
       } catch (e) { return Promise.reject(e) }
     },
-    findInitialEntry (entry, queryName) {
-      return entry.entryName === queryName
-    },
-    findNotebook (entry) {
-      return entry.justcopy === false
-    },
     findEntryInStructure (unsortedCourses, entryName) {
       // will find an element in the courses -> children structure
-      for (let i = 0; i < unsortedCourses.length; i++) {
-        let unsortedItems = unsortedCourses[i]
-        for (let j = 0; j < unsortedItems.length; j++) {
-          let item = unsortedItems[j]
-          if (item.entryname === entryName) {
-            return item;
-          }
-        }
-      }
+      return unsortedCourses.find((elem) => {
+        return elem.entryname === entryName
+      })
     },
     setInitialNavItem (elem) { // add into the global variable the initial item to be redirected
       if (this.navitemId == null && this.initialEntryName === elem.entryName) {
+        console.debug('Set Initial NavItem:', elem.entryName)
         this.navitemId = elem.navitemId
       }
     },
@@ -188,18 +168,24 @@ export default {
        // TOOD convert this in parallel when collab order works
       let navItemsIdOrdered = []
       try {
+        console.debug('generateNavItems')
         for (let i = 0; i < that.moocWeek.files.length; i++) {
           let element = that.moocWeek.files[i]
           if (!element.justcopy) {
             let item = that.findEntryInStructure(unsortedCourses, element.entryname)
             let elem = null
-            if (item && !item.found) {
-              elem = await that.createNavEntry(item.entryname, item.collabId, item.parentId, item.appId, item.newFileId)
-            } else {
-              console.debug(element.entryname + ' already exists')
+            if (item) {
+              let o = {
+                'entryName': item.entryname,
+                'collabId': item.collabId,
+                'parentId': item.parentId,
+                'appId': item.appId,
+                'fileId': item.newFileId
+              }
+              elem = await that.createNavEntry(o)
+              that.setInitialNavItem(elem)
+              navItemsIdOrdered.push(elem)
             }
-            that.setInitialNavItem(elem)
-            if (elem) { navItemsIdOrdered.push(elem) }
           }
         }
         return navItemsIdOrdered
@@ -207,37 +193,50 @@ export default {
     },
     async getNavElement (collabId) {
       try {
-        let elems = await Promise.all([
+        await Promise.all([
           this.getCollabStorage(collabId),
           this.getAllNav(collabId)
         ])
-        this.parent = elems[0].results[0].uuid
-        this.parentNav = elems[1]
       } catch (e) { return Promise.reject(e) }
     },
-    async createNavEntry (entryName, collabId, parentId, appId, fileId, order) {
+    async createNavEntry (properties) {
+      let navInfo = { // info to populate the navitem
+        'fileId': properties.fileId,
+        'collabId': properties.collabId,
+        'entryName': properties.entryName
+      }
+      if (store.state.rewriteFiles) { // replace navitem mode
+        let exists = this.checkExists(
+          store.state.allNavItems,
+          properties.appId,
+          properties.entryName
+        )
+        // navitem already exists and
+        if (exists.found) {
+          console.debug('Navitem found. Keeping it')
+          navInfo.navitemId = exists.navitemId
+          navInfo.context = exists.navitemContext
+          return navInfo
+        }
+      }
+      console.debug('Create a new navitem')
       var that = this
       try {
         var context = uuid()
-        var navOrder = order || -1
+        var navOrder = properties.order || -1
         var type = 'IT'
         var payload = {
-          'app_id': appId,
+          'app_id': properties.appId,
           'context': context,
-          'name': entryName,
+          'name': properties.entryName,
           'order_index': navOrder,
-          'parent': parentId,
+          'parent': properties.parentId,
           'type': type
         }
-        var collabReq = COLLAB_API + 'collab/' + collabId + '/nav/'
+        var collabReq = COLLAB_API + 'collab/' + properties.collabId + '/nav/'
         let navItem = await that.$http.post(collabReq, payload, that.header) // create navitem
-        let navInfo = { // info to populate the navitem
-          'fileId': fileId,
-          'navitemId': navItem.data.id,
-          'collabId': collabId,
-          'context': context,
-          'entryName': entryName
-        }
+        navInfo.navitemId = navItem.data.id
+        navInfo.context = context
         return navInfo
       } catch (e) { return Promise.reject('Error to create NavItem') }
     },
@@ -245,7 +244,6 @@ export default {
       let that = this
       try {
         await that.fillJupyterNavItem(navInfo.fileId, navInfo.navitemId, navInfo.collabId, navInfo.context)
-        console.debug('Nav entry created')
         return {'collabId': navInfo.collabId, 'navitemId': navInfo.navitemId, 'entryName': navInfo.entryName}
       } catch (e) { return Promise.reject('Error in fillJupyterNavItem') }
     },

@@ -1,7 +1,7 @@
 <template>
    <div class="model-container">
       <div class="title">Please select a model</div>
-      <div v-for="model in models" v-on:click="selected(model)" v-bind:class="{ 'disabled-container': model.disabled }">
+      <div v-for="model in models" :key="model.title" v-on:click="selected(model)" v-bind:class="{ 'disabled-container': model.disabled }">
       <div v-if="model.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': model.disabled }">
             <model-item v-bind:model="model"></model-item>
@@ -12,9 +12,9 @@
 
 <script>
    import modelItem from './model-item.vue'
-   import CollabAuthentication from 'mixins/collabAuthentication.js'
-   import circuitbuilding from 'mixins/deepModel.js'
-   import modelsMixins from 'mixins/models.js'
+   import CollabAuthentication from '@/mixins/collabAuthentication.js'
+   import circuitbuilding from '@/mixins/deepModel.js'
+   import modelsMixins from '@/mixins/models.js'
 
    export default {
       name: 'modelContainer',

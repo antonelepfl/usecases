@@ -6,7 +6,7 @@
 
 <script>
    import ca1ModelList from './ca1-model-list.vue'
-   import collabAuthentication from 'mixins/collabAuthentication.js'
+   import collabAuthentication from '@/mixins/collabAuthentication.js'
    export default {
       name: 'modelContainer',
       components: {

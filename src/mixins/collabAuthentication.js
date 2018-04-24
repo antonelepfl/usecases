@@ -1,5 +1,6 @@
-var hbpHello = require('../assets/hbp.hello.js').hellojs
+var hbpHello = require('@/assets/hbp.hello.js').hellojs
 var store = require('./store.js').default
+
 // replace this with your collab app id
 hbpHello.init({
   hbp: '74b1a180-3646-45ac-b53c-ebd905cec418'
@@ -26,7 +27,7 @@ export default {
     logout (force = false) {
       return new Promise(function (resolve, reject) {
         hbpHello.logout('hbp', {force: force})
-        .then(function (event) {
+        .then(function () {
           console.debug('User Logout OK')
           resolve()
         }, function (e) {

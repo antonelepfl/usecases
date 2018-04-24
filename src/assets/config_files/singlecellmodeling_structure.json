@@ -351,33 +351,6 @@
     }
   }, 
   {
-    "CA1_int_cAC_990827IN5HP3_20180122140555": {
-      "meta": {
-        "cell_soma_location": "CA1", 
-        "cell_type": "interneuron", 
-        "best_run": "seed4.pkl", 
-        "offspring_size": 128, 
-        "mod_path": "mod_files", 
-        "affiliations": "CNR", 
-        "max_ngen": 60, 
-        "mod_repo": "https://github.com/cnr-ibf-pa/hbp-bsp-models.git", 
-        "fitting_name": "INT_cAC_noljp", 
-        "species": "Rat", 
-        "channels": "kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca", 
-        "brain_structure": "Hippocampus", 
-        "e-type": "cAC", 
-        "contributors": "Rosanna Migliore", 
-        "morphology": "990827IN5HP3", 
-        "mod_tag": "v1.0.0", 
-        "best_cell": "cell_seed4_0.hoc", 
-        "email": "rosanna.migliore@cnr.it", 
-        "description": ""
-      }, 
-      "responses": "CA1_int_cAC_990827IN5HP3_20180122140555_responses.png", 
-      "morph": "990827IN5HP3_morph.jpeg"
-    }
-  }, 
-  {
     "CA1_pyr_cACpyr_mpg141215_A_idA_20170915152442": {
       "meta": {
         "cell_soma_location": "CA1", 

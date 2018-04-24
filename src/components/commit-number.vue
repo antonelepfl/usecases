@@ -10,14 +10,15 @@
 
 <script>
   const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
+  import store from '@/mixins/store.js'
 
   export default {
     name: 'commit-number',
     data () {
       return {
-        commitLink: REPO_URL + process.env.COMMIT_NUMBER,
-        isDev: process.env.DEV_WEBSITE,
-        commitNumber: process.env.COMMIT_NUMBER
+        commitLink: REPO_URL + store.state.commitNumber,
+        isDev: store.state.devWebsite,
+        commitNumber: store.state.commitNumber
       }
     }
   }

@@ -3,11 +3,11 @@
       <div id="course-container-title" class="title">
         {{moocInfo.title}}
         <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
-          <i>Link of the course</i>
+          <i>Link to the course</i>
           <i class="material-icons middle">link</i>
         </a>
       </div>
-      <div v-for="uc in weeks" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
+      <div v-for="uc in weeks" :key="uc.title" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
          <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
          <md-whiteframe md-elevation="2" v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }">
             <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-   import ucItem from 'components/uc/uc-item.vue'
-   import usecases from 'assets/config_files/usecases.json'
-   import collabAuthentication from 'mixins/collabAuthentication.js'
-   import mooc from 'mixins/mooc.js'
+   import ucItem from '@/components/uc/uc-item.vue'
+   import usecases from '@/assets/config_files/usecases.json'
+   import collabAuthentication from '@/mixins/collabAuthentication.js'
+   import mooc from '@/mixins/mooc.js'
 
    export default {
       name: 'ucContainer',

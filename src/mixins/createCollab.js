@@ -299,8 +299,8 @@ export default {
         }, reject)
       })
     },
-    createItemInExistingCollab (collab, uc) {
-      let ucInfo = getUsecaseInfo(uc)
+    createItemInExistingCollab (collab, uc, ucInfo) {
+      if (!ucInfo) { ucInfo = getUsecaseInfo(uc) }
       var that = this
       return new Promise(function (resolve, reject) {
         if (ucInfo === undefined) {
@@ -319,15 +319,7 @@ export default {
             })
           })
           .catch((error) => {
-            if (error === 'abort and redirect') {
-              console.debug('Do not replace. Redirect to collab')
-              let initialNavId = that.findInitialInNavitems(store.state.allNavItems, ucInfo.files)
-              that.redirectToCollab(collab.id, initialNavId)
-              that.isLoading = false
-              return
-            }
-            console.error('Error creating multiple files in existing collab with replace')
-            reject(error)
+            that.abortAndRedirect(collab, ucInfo, error, reject)
           })
         }
       })
@@ -568,20 +560,13 @@ export default {
             })
           })
           .catch((error) => {
-            if (error === 'abort and redirect') {
-              console.debug('Do not replace. Redirect to collab')
-              let initialNavId = that.findInitialInNavitems(store.state.allNavItems, ucInfo.files)
-              that.redirectToCollab(collab.id, initialNavId)
-              that.isLoading = false
-              return
-            }
-            console.error('Error creating multiple files in existing collab with replace')
-            reject(error)
+            that.abortAndRedirect(collab, ucInfo, error, reject)
           })
         })
       })
     },
     sendStatistics (collabId, ucName, category, fullModelName, isNew) {
+      if (store.state.devWebsite) {return}
       let that = this
       function searchPath (ucName) {
         for (let i in that.usecases) {
@@ -663,6 +648,18 @@ export default {
           resolve(team)
         }, reject)
       })
+    },
+    abortAndRedirect (collab, ucInfo, error, reject) {
+      if (error === 'abort and redirect') {
+        console.debug('Do not replace. Redirect to collab')
+        let initialNavId = this.findInitialInNavitems(store.state.allNavItems, ucInfo.files)
+        this.redirectToCollab(collab.id, initialNavId)
+        this.isLoading = false
+        return
+      }
+      console.error('Error creating multiple files in existing collab with replace')
+      if (!reject) throw Error(error)
+      reject(error)
     }
   }
 }

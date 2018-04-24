@@ -64,14 +64,7 @@ export default {
           return
         }
       } catch (e) {
-        if (e === 'abort and redirect') {
-          console.debug('Do not replace. Redirect to collab')
-          let initialNavId = that.findInitialInNavitems(store.state.allNavItems, that.moocWeek.files)
-          that.redirectToCollab(collab.id, initialNavId)
-          return
-        }
-        console.error(e)
-        throw Error(e)
+        that.abortAndRedirect(collab, that.moocWeek, e)
       }
     },
     async createItemInExistingCollab (collab, item, replaceObj) { // creates weeks -> files. Modified.

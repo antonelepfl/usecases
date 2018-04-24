@@ -13,11 +13,7 @@
 <script>
 
 export default {
-  name: 'startapp',
-  mounted () {
-    console.log('commit:', process.env.GIT_COMMIT)
-    console.log('branch:', process.env.GIT_BRANCH)
-  }
+  name: 'startapp'
 }
 </script>
 

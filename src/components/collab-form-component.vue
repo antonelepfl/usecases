@@ -4,13 +4,13 @@
     <div class="header">Define in which collab you want to work</div>
     <div class="tabs is-toggle is-fullwidth is-large" @click="toggleIsSearch">
       <ul class="custom-tabs">
-        <li :class="{'is-active': isSearch}">
+        <li id="searchTab" :class="{'is-active': isSearch}">
           <a>
             <span class="icon"><i class="material-icons">search</i></span>
             <span>Search</span>
           </a>
         </li>
-        <li :class="{'is-active': !isSearch}">
+        <li id="createTab" :class="{'is-active': !isSearch}">
           <a>
             <span class="icon"><i class="material-icons">create</i></span>
             <span>Create</span>
@@ -39,7 +39,7 @@
       </md-input-container>
 
       <div v-show="!isLoadingLocal" class="centered">
-        <md-button class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
+        <md-button id="createButton" class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
         <md-switch v-model="isPrivate" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
       </div>
     </div>

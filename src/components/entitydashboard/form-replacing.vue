@@ -111,17 +111,9 @@
           that.isLoading = false
         })
         .catch((error) => {
-          if (error === 'abort and redirect') {
-            console.debug('Do not replace. Redirect to collab')
-            let initialNavId = that.findInitialInNavitems(store.state.allNavItems, item)
-            that.redirectToCollab(collab.id, initialNavId)
-            that.isLoading = false
-            return
-          }
-          that.isLoading = false
-          that.error = error
-          throw Error(error)
-        });
+          let fileSearch = {'files': [item]}
+          that.abortAndRedirect(collab, fileSearch, error)
+        })
       }
     }
   }

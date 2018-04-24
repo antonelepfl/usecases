@@ -14,8 +14,8 @@
 </template>
 
 <script>
-   import modelItem from 'components/singlecellinsilicoexperiments/models-list.vue'
-   import modelsUtils from 'mixins/models.js'
+   import modelItem from '@/components/singlecellinsilicoexperiments/models-list.vue'
+   import modelsUtils from '@/mixins/models.js'
 
    export default {
       name: 'ca1ModelList',

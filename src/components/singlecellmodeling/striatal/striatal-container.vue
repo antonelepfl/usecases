@@ -2,7 +2,7 @@
    <div class="single-cell-insilico-experiments">
     <div class="title">Please select a model</div>
     <div class="content">
-      <div v-for="model in models">
+      <div v-for="model in models" :key="model.title">
         <models-list
           :models="models"
           v-on:selected="touched">
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-   import striatalList from 'components/singlecellmodeling/striatal/striatal-list.vue'
-   import createCollab from 'mixins/createCollab.js'
-   import modelsMixins from 'mixins/models.js'
+   import striatalList from '@/components/singlecellmodeling/striatal/striatal-list.vue'
+   import createCollab from '@/mixins/createCollab.js'
+   import modelsMixins from '@/mixins/models.js'
 
    export default {
     props: ['uc_name'],

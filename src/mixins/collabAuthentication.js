@@ -26,7 +26,7 @@ export default {
     logout (force = false) {
       return new Promise(function (resolve, reject) {
         hbpHello.logout('hbp', {force: force})
-        .then(function (event) {
+        .then(function () {
           console.debug('User Logout OK')
           resolve()
         }, function (e) {

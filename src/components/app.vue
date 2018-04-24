@@ -1,23 +1,19 @@
 <template>
   <div class="startapp">
-    <uc-container key="container"></uc-container>
+    <transition appear name="fade" mode="out-in">
+      <router-view>
+        <h2 class="welcome">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h2>
+      </router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
-import Vue from 'vue'
-import ucContainer from 'components/uc/uc-container.vue'
-
-Vue.use(VueMaterial)
 
 export default {
-  name: 'startapp',
-  components: {
-    'uc-container': ucContainer
-  },
-  props: ['list_usecases']
+  name: 'startapp'
 }
 </script>
 

@@ -12,10 +12,10 @@
 </template>
 
 <script>
-  import collabFormComponent from 'components/collab-form-component.vue'
-  import createCollab from 'mixins/createCollab.js'
-  import circuitbuilding from 'mixins/deepModel.js'
-  import collabAuthentication from 'mixins/collabAuthentication.js'
+  import collabFormComponent from '@/components/collab-form-component.vue'
+  import createCollab from '@/mixins/createCollab.js'
+  import circuitbuilding from '@/mixins/deepModel.js'
+  import collabAuthentication from '@/mixins/collabAuthentication.js'
   export default {
     name: 'collabForm',
     data () {

@@ -1,6 +1,6 @@
-import modelsBSP from 'assets/config_files/singlecellmodeling_structure.json'
-import modelsNMC from 'assets/config_files/nmcportalmodels_structure.json'
-import usecases from 'assets/config_files/usecases.json'
+import modelsBSP from '@/assets/config_files/singlecellmodeling_structure.json'
+import modelsNMC from '@/assets/config_files/nmcportalmodels_structure.json'
+import usecases from '@/assets/config_files/usecases.json'
 import { getUsecaseInfo } from './utils.js'
 
 function getBSPMetadata () {
@@ -40,7 +40,7 @@ function getNMCMetadata () {
 }
 
 function search (text, originalModels) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve) {
     let idleAPI = window.requestIdleCallback
     if (idleAPI) {
       idleAPI(function () {

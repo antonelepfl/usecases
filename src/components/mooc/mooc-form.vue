@@ -23,7 +23,7 @@
         <md-input placeholder="Mooc" v-model.lazy="searchText"></md-input>
       </md-input-container>
       <div v-show="!isLoadingLocal" class="collabs-results-container">
-        <div v-for="collab in collabResults" class="collab-result" >
+        <div v-for="collab in collabResults" :key="collab.title" class="collab-result" >
           <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
         </div>
       </div>
@@ -39,8 +39,8 @@
 </template>
 
 <script>
-  import mooc from 'mixins/mooc.js'
-  import collabAuthentication from 'mixins/collabAuthentication.js'
+  import mooc from '@/mixins/mooc.js'
+  import collabAuthentication from '@/mixins/collabAuthentication.js'
   export default {
     name: 'moocForm',
     data () {
@@ -132,7 +132,7 @@
               that.collabResults = result
             }
             that.isLoadingLocal = false
-          }, function (reject) {
+          }, () => {
             that.errorMessage = 'Getting your collabs ...'
           })
         }, 500)

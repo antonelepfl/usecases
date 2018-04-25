@@ -1193,7 +1193,7 @@
     ],
     "highlyintegratedworkflows": [
       {
-        "title": "Hodgkin-Huxley Neuron Builder - CDP2 Product 1",
+        "title": "Hodgkin-Huxley Neuron Builder",
         "description": "",
         "experience": ["power"],
         "maturity": ["beta"],

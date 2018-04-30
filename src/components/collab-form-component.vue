@@ -18,7 +18,7 @@
         </li>
       </ul>
     </div>
-    <transition-group name="fade">
+    <transition-group name="fade" v-on:before-leave="beforeLeave">
       <div class="search-container column is-half is-offset-one-quarter" v-show="isSearch" key="search">
         <md-input-container>
           <label>Collab Name</label>
@@ -128,7 +128,11 @@
         if (event.target.innerText.toLowerCase().includes('search')) {
           this.isSearch = true;
         } else this.isSearch = false;
-      }
+      },
+      beforeLeave (el) {
+        // hide so we don't see juping when the new enters
+        el.style.display = 'none'
+      },
     },
     watch: {
       'searchText' (newVal) {
@@ -225,12 +229,14 @@
   }
   /* Enter and leave animations */
   .fade-enter-active {
-    transition: opacity .5s;
+    animation: bounce-in .5s;
   }
-  .fade-leave-active {
-    transition: opacity .2s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 </style>

@@ -837,7 +837,8 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "initial": true,
-                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe"
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe",
+                "file_prod": "e7e12933-1485-4a24-9b57-ce07b30d218d"
               },
               {
                 "entryname": "Striatum-scaffold-network-use-case-2018",

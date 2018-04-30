@@ -216,7 +216,7 @@ export default {
       })
     },
     getFileByEnv (info) {
-      if (process.env.DEV_WEBSITE) {
+      if (store.state.devWebsite) {
         return info.file;
       }
       return info.file_prod || info.file;

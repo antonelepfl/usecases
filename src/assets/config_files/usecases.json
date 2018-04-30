@@ -837,7 +837,8 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "initial": true,
-                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe"
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe",
+                "file_prod": "e7e12933-1485-4a24-9b57-ce07b30d218d"
               },
               {
                 "entryname": "Striatum-scaffold-network-use-case-2018",
@@ -1146,7 +1147,7 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "da012b41-4a6b-4b5d-9b71-869c1c68d731",
+                "file": "72aab9c8-b894-4220-bf36-85ec84e4d1ed",
                 "file_prod": "4ed56192-8c8d-42ea-94a1-ffb86d71331a"
               }
             ],
@@ -1193,7 +1194,7 @@
     ],
     "highlyintegratedworkflows": [
       {
-        "title": "Hodgkin-Huxley Neuron Builder - CDP2 Product 1",
+        "title": "Hodgkin-Huxley Neuron Builder",
         "description": "",
         "experience": ["power"],
         "maturity": ["beta"],

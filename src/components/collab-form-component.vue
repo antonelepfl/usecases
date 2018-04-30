@@ -18,31 +18,32 @@
         </li>
       </ul>
     </div>
+    <transition-group name="fade" v-on:before-leave="beforeLeave">
+      <div class="search-container column is-half is-offset-one-quarter" v-show="isSearch" key="search">
+        <md-input-container>
+          <label>Collab Name</label>
+          <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
+        </md-input-container>
 
-    <div class="search-container column is-half is-offset-one-quarter" v-if="isSearch">
-      <md-input-container>
-        <label>Collab Name</label>
-        <md-input placeholder="Search in your collabs" v-model.lazy="searchText"></md-input>
-      </md-input-container>
-
-      <div v-if="!isLoadingLocal" class="collabs-results-container">
-        <div v-for="collab in collabResults" :key="collab.title" class="collab-result" >
-          <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
+        <div v-if="!isLoadingLocal" class="collabs-results-container">
+          <div v-for="collab in collabResults" :key="collab.title" class="collab-result" >
+            <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="create-container column is-half is-offset-one-quarter" v-if="!isSearch">
-      <md-input-container>
-        <label>Collab Name</label>
-        <md-input placeholder="Create new collab" v-model.lazy="searchText"></md-input>
-      </md-input-container>
+      <div class="create-container column is-half is-offset-one-quarter" v-show="!isSearch" key="create">
+        <md-input-container>
+          <label>Collab Name</label>
+          <md-input placeholder="Create new collab" v-model.lazy="searchText"></md-input>
+        </md-input-container>
 
-      <div v-show="!isLoadingLocal" class="centered">
-        <md-button id="createButton" class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
-        <md-switch v-model="isPrivate" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
+        <div v-show="!isLoadingLocal" class="centered">
+          <md-button id="createButton" class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
+          <md-switch v-model="isPrivate" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
+        </div>
       </div>
-    </div>
+    </transition-group>
 
     <div v-show="isLoadingLocal" class="progress-bar column is-half is-offset-one-quarter">
       <md-progress class="md-accent" md-indeterminate></md-progress>
@@ -123,9 +124,15 @@
           })
         }
       },
-      toggleIsSearch () {
-        this.isSearch = !this.isSearch
-      }
+      toggleIsSearch (event) {
+        if (event.target.innerText.toLowerCase().includes('search')) {
+          this.isSearch = true;
+        } else this.isSearch = false;
+      },
+      beforeLeave (el) {
+        // hide so we don't see juping when the new enters
+        el.style.display = 'none'
+      },
     },
     watch: {
       'searchText' (newVal) {
@@ -219,5 +226,17 @@
   }
   ul:not(.md-list) > li + li {
     margin: 0;
+  }
+  /* Enter and leave animations */
+  .fade-enter-active {
+    animation: bounce-in .5s;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 </style>

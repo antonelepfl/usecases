@@ -127,11 +127,14 @@
    .course-container .disabled-container {
       position: relative;
    }
-   a.no-link {
+   a.no-link,
+   .md-theme-default a:not(.md-button) {
       color: #aacff1;
       cursor: pointer;
+      text-decoration: none;
    }
-   a.no-link:hover {
+   a.no-link:hover,
+   .md-theme-default a:not(.md-button):hover {
       color: #000000;
    }
    .middle {

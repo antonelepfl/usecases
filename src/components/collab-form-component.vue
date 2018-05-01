@@ -18,7 +18,7 @@
         </li>
       </ul>
     </div>
-    <transition-group name="fade" v-on:before-leave="beforeLeave">
+    <transition-group name="fade-form" v-on:before-leave="beforeLeave">
       <div class="search-container column is-half is-offset-one-quarter" v-show="isSearch" key="search">
         <md-input-container>
           <label>Collab Name</label>
@@ -228,7 +228,7 @@
     margin: 0;
   }
   /* Enter and leave animations */
-  .fade-enter-active {
+  .fade-form-enter-active {
     animation: bounce-in .5s;
   }
   @keyframes bounce-in {

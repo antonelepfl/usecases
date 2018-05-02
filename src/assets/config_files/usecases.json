@@ -1276,7 +1276,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c"
+            "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
+            "file_prod": "6883db0c-1c05-4d17-ad1b-d2b2479f09dc"
           }
         ]
       },

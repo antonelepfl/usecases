@@ -1,6 +1,6 @@
 <template>
    <div class="uc-description">
-      <div class="title">
+      <div class="title small-margin">
          <div class="title-text">{{ uc.title }}</div>
       </div>
       <div class="description">
@@ -31,5 +31,8 @@
    .uc-description .title-text {
       font-size: 20px;
       font-weight: bold;
+   }
+   .uc-description .title.small-margin {
+      margin-bottom: 10px;
    }
 </style>

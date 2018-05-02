@@ -1010,7 +1010,7 @@
     "mooc": [
       {
         "title": "Reconstruction and simulation of neural tissue I: Neurons and Synapses",
-        "description": "",
+        "description": "Exercises for the EdX MOOC Simulation Neuroscience",
         "experience": ["all"],
         "disabled": false,
         "picture": {
@@ -1033,7 +1033,7 @@
       },
       {
         "title": "The Multi-scale brain",
-        "description": "",
+        "description": "Exercises for the Courseware MOOC The Multi-scale brain",
         "experience": ["all"],
         "disabled": false,
         "picture": {

@@ -120,10 +120,6 @@
 </script>
 
 <style>
-.error {
-  color: red;
-  text-align: center;
-}
 .collab-form-component.custom-theme .header,
 .collab-form-component.custom-theme .tabs .custom-tabs a,
 .collab-form-component.custom-theme .md-theme-default.md-button:not([disabled]).md-primary.md-raised.button-medium {

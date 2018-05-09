@@ -7,7 +7,7 @@
       v-bind:key="model.title"
     >
       <model-item
-        class="model-item"
+        class="model-item-with-path"
         :model="model"
         v-on:touched="touched(model)"
         v-on:addSearch="addSearch">
@@ -81,29 +81,6 @@
    }
 </script>
 
-<style scoped>
-   .models-list {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-   }
-   .models-list .item-sections {
-      margin-top: 10px;
-      margin-bottom: 15px;
-      padding: 9px;
-      border: 3px solid white;
-   }
-   .models-list .selected {
-      background-color: lightgray;
-      transition: background-color 0.5s ease;
-   }
-   .models-list .item-sections:hover {
-      transition: 0.3s ease;
-      box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
-   }
-</style>
 <style>
   .flip-list-move {
     transition: transform 1s;

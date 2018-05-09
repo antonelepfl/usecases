@@ -1,11 +1,11 @@
 <template>
    <div class="single-cell-insilico-experiments">
-    <div class="title">Please select a model</div>
-    <div class="content">
+    <div class="title-uc">Please select a model</div>
+    <div class="content-uc">
       <md-whiteframe md-elevation="1">
-        <div class="search-container">
+        <div class="search-container-models">
           <i class="material-icons">search</i>
-          <input class="searchbox" type="text" v-model="filter" placeholder="Search e.g 'Hippocampus' or click on the item's title to filter">
+          <input class="searchbox-models" type="text" v-model="filter" placeholder="Search e.g 'Hippocampus' or click on the item's title to filter">
         </div>
       </md-whiteframe>
       <models-list :models="models" v-on:selected="touched" v-on:tagfilter="addSearch"></models-list>
@@ -66,39 +66,3 @@
       }
    }
 </script>
-
-<style scoped>
-.search-container {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-  padding: 10px;
-  background-color: #cfe2e8;
-}
-.searchbox {
-  font-size: 22px;
-  padding-left: 30px;
-  border: 1px solid #ddd;
-  margin-bottom: 0;
-  margin-left: 12px;
-  width: 100%;
-}
-.title {
-  box-shadow: 0 2px 5px rgba(0,0,0,.26);
-  position: fixed;
-  text-align: left;
-  color: #fff;
-  background-color: rgba(172, 96, 103, 0.95);
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 600;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-}
-.content {
-  padding: 10px;
-  margin-top: 50px;
-}
-</style>

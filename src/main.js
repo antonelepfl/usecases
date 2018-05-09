@@ -9,6 +9,7 @@ import Default from '@/components/default-list.vue'
 import Login from '@/components/login.vue'
 import CollabAuthentication from '@/mixins/collabAuthentication'
 import axios from 'axios'
+import '@/assets/general.css'
 
 Vue.use(VueMaterial)
 Vue.use(VueRouter)

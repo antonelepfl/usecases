@@ -1048,11 +1048,22 @@
       {
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
-        "experience": ["all", "power"],
-        "disabled": true,
+        "experience": ["all"],
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png"
-        }
+        },
+        "next": "small_circuit_model_container",
+        "models": [
+          {
+            "title": "Mouse O1",
+            "modelName": "",
+            "description": "Scaffold Somatosensory Cortex Microcircuit for Mouse",
+            "contributors": [
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png"
+          }
+        ]
       },
       {
         "title": "Configure and run a small circuit using HBP model and data",

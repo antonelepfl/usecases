@@ -9,7 +9,10 @@
       <div class="contributors" v-if="uc.contributors">
         <b>Credits:</b>
         <div class="">
-          Contributor(s): <span v-for="person in uc.contributors" :key="person.name"> <i>{{person.name}}</i> - {{person.email}}. </span>
+          Contributor(s):
+          <span v-for="person in getContributorFormated(uc)" :key="person.name">
+            <i>{{person}}</i>
+          </span>
         </div>
 
       </div>
@@ -17,13 +20,19 @@
 </template>
 
 <script>
+   import { getContributorFormated } from '@/mixins/utils.js'
    export default {
       name: 'ucDescription',
       props: {
          uc: {
             type: Object
          }
-      }
+      },
+      data () {
+        return {
+          getContributorFormated,
+        }
+      },
    }
 </script>
 

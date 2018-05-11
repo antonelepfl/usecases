@@ -16,24 +16,38 @@
         <div class="images-container">
           <img :src="model.img" class="" alt="image of morphology">
         </div>
+
         <div class="description-container">
-          {{model.description}}
+          <div>{{model.description}}</div>
+          <div class="contributors" v-if="model.contributors.length > 0">
+            <b class="margined-right">Contributor(s):</b>
+            <span v-for="contributor in getContributorFormated(model)" :key="contributor">
+              <span>{{contributor}}</span>
+            </span>
+          </div>
         </div>
+
       </div>
     </md-whiteframe>
    </div>
 </template>
 
 <script>
-   export default {
-      name: 'modelsList',
-      props: ['models'],
-      methods: {
-        touched (modelItem) {
-          this.$emit('selected', modelItem)
-        }
+  import { getContributorFormated } from '@/mixins/utils.js'
+  export default {
+    name: 'modelsList',
+    props: ['models'],
+    data () {
+      return {
+        getContributorFormated,
       }
-   }
+    },
+    methods: {
+      touched (modelItem) {
+        this.$emit('selected', modelItem)
+      },
+    },
+  }
 </script>
 
 <style scoped>
@@ -67,16 +81,24 @@
     width: 49%;
   }
   .images-container {
-    width: 35%;
+    width: 25%;
     align-self: center;
     padding: 10px 10px 0 10px;
   }
   .description-container {
-    width: 65%;
+    margin-left: 25px;
     font-size: 2em;
+    text-align: left;
+  }
+  .description-container .contributors {
+    margin-top: 15px;
+    font-size: .5em;
   }
   .item-body {
     display: flex;
+  }
+  .margined-right {
+    margin-right: 10px;
   }
 </style>
 <style>

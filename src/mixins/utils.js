@@ -42,8 +42,36 @@ function getDateDashed () {
   return d.toLocaleDateString().replace(/\//g, '-') + ' ' + d.toLocaleTimeString()
 }
 
+function getContributorFormated (model) {
+  let contributorsList = []
+  if ((typeof model.contributors === 'string')) {
+    let fullContributor = []
+    fullContributor.push(model.contributors || '')
+    if (model.email) {
+      fullContributor.push(' - ' + model.email)
+    }
+    contributorsList.push(fullContributor.join(' '))
+    return contributorsList
+  }
+  if (Array.isArray(model.contributors)) {
+    model.contributors.forEach((contributor, index) => {
+      let fullContributor = []
+      fullContributor.push(contributor.name || '')
+      if (contributor.email) {
+        fullContributor.push(' - ' + contributor.email)
+      }
+      if (index < model.contributors.length - 1) { // has next
+        fullContributor.push('| ')
+      }
+      contributorsList.push(fullContributor.join(' '))
+    })
+    return contributorsList
+  }
+}
+
 export {
   getUsecaseInfo,
+  getContributorFormated,
   compact,
   replaceConfirmation,
   getDateDashed

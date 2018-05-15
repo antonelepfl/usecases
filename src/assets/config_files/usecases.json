@@ -1140,13 +1140,6 @@
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
           },
           {
-            "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
-            "description": "",
-            "experience": ["experts", "code"],
-            "disabled": true,
-            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-          },
-          {
             "title": "Configure and run a rat hippocampus CA1 region using HBP model and data",
             "description": "",
             "experience": ["code"],

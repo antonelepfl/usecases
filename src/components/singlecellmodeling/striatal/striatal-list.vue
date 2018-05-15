@@ -81,14 +81,14 @@
     width: 49%;
   }
   .images-container {
-    width: 25%;
+    width: 20%;
     align-self: center;
     padding: 10px 10px 0 10px;
   }
   .description-container {
-    margin-left: 25px;
-    font-size: 2em;
+    font-size: 22px;
     text-align: left;
+    padding: 15px 15px 15px 25px;
   }
   .description-container .contributors {
     margin-top: 15px;

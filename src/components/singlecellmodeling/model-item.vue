@@ -1,5 +1,5 @@
 <template>
-  <div class="model-item" v-if="model">
+  <div class="model-item-custom" v-if="model">
     <div class="path" @click="search">
       <div class="inline" v-for="(part, index) in pathParts" :key="index">
         <span class="square">{{ part }}</span>

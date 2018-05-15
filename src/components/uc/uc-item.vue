@@ -34,37 +34,4 @@
       min-height: 80px;
       min-width: 100px;
    }
-   .uc-item {
-      display: flex;
-      align-items: center;
-   }
-   .uc-description {
-      width: 72%;
-      text-align: start;
-      padding-left: 10px;
-   }
-   .tags {
-      width: 20%;
-      padding: 10px 0px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-wrap: wrap;
-   }
-   @media screen and (min-width: 851px) and (max-width: 1200px) {
-      .tags {
-         width: 21%;
-      }
-      .uc-description {
-         width: 71%;
-      }
-   }
-   @media screen and (max-width: 450px) {
-      .item-picture {
-         display: none;
-      }
-      .uc-description {
-         width: 79%;
-      }
-   }
 </style>

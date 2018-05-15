@@ -1,6 +1,6 @@
 <template>
   <div class="mooc-form">
-    <div class="title">{{moocName}}</div>
+    <div class="title-uc">{{moocName}}</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
       <md-button
@@ -151,20 +151,6 @@
     padding: 10px;
     background-color: rgba(214, 233, 250, 0.2);
     min-height: 280px;
-  }
-  .mooc-form > .title {
-    box-shadow: 0 2px 5px rgba(0,0,0,.26);
-    position: fixed;
-    text-align: center;
-    color: #fff;
-    background-color: rgba(172, 96, 103, 0.95);
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 600;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
   }
   .progress-bar {
     margin-top: 20px;

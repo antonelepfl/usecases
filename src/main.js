@@ -9,6 +9,7 @@ import Default from '@/components/default-list.vue'
 import Login from '@/components/login.vue'
 import CollabAuthentication from '@/mixins/collabAuthentication'
 import axios from 'axios'
+import '@/assets/general.css'
 
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
@@ -141,6 +142,21 @@ const router = new VueRouter({
       },
       props: true,
       name: 'weeks_container'
+    },
+    // ================= small circuit in silico experiments ================
+    { path: '/smallcircuitinsilicoexperiments/:uc_name',
+      component: function (resolve) {
+        require(['@/components/smallcircuitinsilicoexperiments/model-container.vue'], resolve)
+      },
+      props: true,
+      name: 'small_circuit_model_container'
+    },
+    { path: '/smallcircuitinsilicoexperiments/:uc_name/:model_name',
+      component: function (resolve) {
+        require(['@/components/circuitbuilding/cb-form.vue'], resolve)
+      },
+      props: true,
+      name: 'small_circuit_form'
     },
     // ================= terms and conditions ================
     { path: '/termsandconditions/:list_usecases/:uc_name',

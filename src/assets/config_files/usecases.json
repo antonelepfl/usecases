@@ -1048,11 +1048,24 @@
       {
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
-        "experience": ["all", "power"],
-        "disabled": true,
+        "experience": ["all"],
+        "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png"
-        }
+          "src": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/pair_recording.png"
+        },
+        "next": "small_circuit_model_container",
+        "models": [
+          {
+            "title": "Mouse O1 - Scaffold Somatosensory Cortex Microcircuit for Mouse",
+            "description": "This model combines specific datasets obtained for mouse somatosensory cortex, models of neuronal electrophysiology constrained to mouse primary visual cortex data from the Allen Cell Types Database, and datasets that were algorithmically transformed from rat to mouse.",
+            "contributors": [
+              {"name": "Michael W. Reimann", "email": "michael.reimann@epfl.ch"},
+              {"name": "Eilif Muller", "email": "eilif.mueller@epfl.ch"},
+              {"name": "Srikanth Ramaswamy", "email": "srikanth.ramaswamy@epfl.ch"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png"
+          }
+        ]
       },
       {
         "title": "Configure and run a small circuit using HBP model and data",
@@ -1105,13 +1118,6 @@
               {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
-          },
-          {
-            "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
-            "description": "",
-            "experience": ["experts", "code"],
-            "disabled": true,
-            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
           },
           {
             "title": "Configure and run a rat hippocampus CA1 region using HBP model and data",

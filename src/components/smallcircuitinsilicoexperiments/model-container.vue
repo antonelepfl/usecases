@@ -13,7 +13,7 @@
 </template>
 
 <script>
-   import striatalList from '@/components/singlecellmodeling/striatal/striatal-list.vue'
+   import modelList from '@/components/singlecellmodeling/striatal/striatal-list.vue'
    import createCollab from '@/mixins/createCollab.js'
    import modelsMixins from '@/mixins/models.js'
 
@@ -21,18 +21,22 @@
     props: ['uc_name'],
     name: 'modelContainer',
     components: {
-        'models-list': striatalList
+        'models-list': modelList
     },
     data () {
       return {
         models: [],
-        ucName: 'optimizeastriatalfast-spikinginterneuron'
+        ucName: 'configureandrunasmallcircuitusingpreconfiguredhbpmodelanddata'
       }
     },
     mixins: [createCollab],
     methods: {
-      touched (modelItem) { // open Neuron as a service
-        this.$router.push({name: 'sc_striatal_form_replacing',
+      touched (modelItem) { // open form or pair recording
+        if (modelItem.title === 'Mouse O1 - Scaffold Somatosensory Cortex Microcircuit for Mouse') {
+          window.open('https://bsp-mouse-o1.humanbrainproject.eu/', '_blank')
+          return
+        }
+        this.$router.push({name: 'small_circuit_form',
           params: {
             'folder_name': modelItem.modelName
           }
@@ -41,7 +45,7 @@
     },
     created () {
       this.models = modelsMixins.getModelByUc(this.ucName)
-      document.querySelector('title').innerHTML = 'Striatal Models'
+      document.querySelector('title').innerHTML = 'Small Circuits In Silico Experiments'
     }
   }
 </script>

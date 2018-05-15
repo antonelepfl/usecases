@@ -8,11 +8,12 @@
         </div>
       </md-layout>
       <md-layout class="model-column" md-column md-flex-large="100" md-flex-medium="100">
-        <div class="credits">
+        <div class="credits" v-if="model.contributors && model.contributors.length > 1">
           <b>Credits:</b>
-          <!-- TODO: make it for multiple contributors -->
-          <div>Contributor(s): {{ model.contributors }} - {{ model.email }}</div>
-          <div>Reference:</div>
+          <div>Contributor(s):
+            <span v-for="contributor in getContributorFormated(model)" :key="contributor">{{contributor}}</span>
+          </div>
+          <!-- <div>Reference:</div> -->
         </div>
       </md-layout>
     </md-layout>
@@ -20,11 +21,17 @@
 </template>
 
 <script>
+  import { getContributorFormated } from '@/mixins/utils.js'
   export default {
     name: 'modelDescription',
     props: {
       model: Object
-    }
+    },
+    data () {
+      return {
+        getContributorFormated
+      }
+    },
   }
 </script>
 

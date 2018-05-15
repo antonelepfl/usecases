@@ -59,10 +59,3 @@
     }
   }
 </script>
-
-<style scoped>
-.error {
-  color: red;
-  text-align: center;
-}
-</style>

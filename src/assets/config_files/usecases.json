@@ -486,7 +486,7 @@
         "access": ["hpc"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/PC_usecase.png"
         },
         "next": "sc_form",
         "files": [

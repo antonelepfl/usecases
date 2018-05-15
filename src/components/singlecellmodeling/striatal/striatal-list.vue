@@ -86,13 +86,13 @@
     padding: 10px 10px 0 10px;
   }
   .description-container {
-    font-size: 22px;
+    font-size: 18px;
     text-align: left;
     padding: 15px 15px 15px 25px;
   }
   .description-container .contributors {
     margin-top: 15px;
-    font-size: .5em;
+    font-size: 14px;
   }
   .item-body {
     display: flex;

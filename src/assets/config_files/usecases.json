@@ -1063,7 +1063,8 @@
               {"name": "Eilif Muller", "email": "eilif.mueller@epfl.ch"},
               {"name": "Srikanth Ramaswamy", "email": "srikanth.ramaswamy@epfl.ch"}
             ],
-            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png"
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png",
+            "disabled": true
           }
         ]
       },

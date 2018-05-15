@@ -39,7 +39,7 @@
                      }
                   })
               } else {
-                  window.open('https://bbp.epfl.ch/public/dev.simulationapp/index.html#/', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
+                  window.open('https://bbp.epfl.ch/public/dev.simulationapp/index.html#/', '_blank');
               }
             }
          }

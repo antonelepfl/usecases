@@ -32,7 +32,7 @@
     mixins: [createCollab],
     methods: {
       touched (modelItem) { // open form or pair recording
-        if (modelItem.title === 'Mouse O1') {
+        if (modelItem.title === 'Mouse O1 - Scaffold Somatosensory Cortex Microcircuit for Mouse') {
           window.open('https://bsp-mouse-o1.humanbrainproject.eu/', '_blank')
           return
         }

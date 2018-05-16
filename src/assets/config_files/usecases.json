@@ -1208,7 +1208,7 @@
     "highlyintegratedworkflows": [
       {
         "title": "Hodgkin-Huxley Neuron Builder",
-        "description": "",
+        "description": "Use the eFEL and BluePyOpt libraries to go through the entire neuron builder pipeline: 1) feature extraction, 2) model optimization, 3) simulation.",
         "experience": ["power"],
         "maturity": ["beta"],
         "access": ["hpc"],

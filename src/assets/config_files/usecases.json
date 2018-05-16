@@ -150,6 +150,26 @@
       }
     ],
     "singlecellmodeling": [
+       {
+        "title": "Hodgkin-Huxley Neuron Builder",
+        "description": "Use the eFEL and BluePyOpt libraries to go through the entire neuron builder pipeline: 1) feature extraction, 2) model optimization, 3) simulation.",
+        "experience": ["power"],
+        "maturity": ["beta"],
+        "access": ["hpc"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
+        },
+        "next": "ta_form",
+        "files": [
+          {
+            "entryname": "Hodgkin-Huxley Neuron Builder",
+            "appid": 351,
+            "contenttype": "text/html",
+            "extension": ".html"
+          }
+        ]
+      },
       {
         "title": "Rebuild an existing single hippocampal cell model",
         "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",

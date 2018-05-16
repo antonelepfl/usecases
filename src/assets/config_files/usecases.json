@@ -1064,7 +1064,7 @@
               {"name": "Srikanth Ramaswamy", "email": "srikanth.ramaswamy@epfl.ch"}
             ],
             "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png",
-            "disabled": true
+            "disabled": false
           }
         ]
       },

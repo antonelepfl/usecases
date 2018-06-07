@@ -99,6 +99,10 @@ export default {
         if (!file.exists || (file.exists && store.state.rewriteFiles)) {
           console.debug('Put content to file')
           let content = await that.getDataRepo(originalFileId)
+          if (appInfo.contenttype === 'x-ipynb+json') {
+            console.debug('Adding Metadata to', appInfo.entryname);
+            content = this.addSubmissionTokenMetadata(content);
+          }
           if (replaceObj) {
             console.debug(`Replacing ${replaceObj.replaceText}`)
             if (typeof content !== 'string') { content = JSON.stringify(content) }
@@ -162,6 +166,21 @@ export default {
         console.debug('Set Initial NavItem:', elem.entryName)
         this.navitemId = elem.navitemId
       }
+    },
+    addSubmissionTokenMetadata (content) {
+      let parsed = content
+      let submissiontoken = null
+
+      if (typeof (content) === 'string') {
+        parsed = JSON.parse(content)
+      }
+      let queryParam = window.location.href.match(/state=([^&]+)/)
+      if (queryParam) {
+        submissiontoken = queryParam[1]
+        parsed.metadata['submission_token'] = submissiontoken
+      }
+
+      return JSON.stringify(parsed)
     },
     async generateNavItems (unsortedCourses) {
       let that = this

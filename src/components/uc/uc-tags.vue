@@ -100,10 +100,8 @@
    height: 48px;
 }
 .exp {
-   width: 49%;
 }
 .mat-acc {
-   width: 49%;
    display: flex;
    justify-content: center;
 }
@@ -112,7 +110,7 @@
    border-left-width: 1px;
    border-left-style: solid;
    border-color: lightgray;
-   width: 2%;
+   margin: 0 5px;
    min-height: 50px;
 }
 .image-tag-size {

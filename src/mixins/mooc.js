@@ -100,7 +100,6 @@ export default {
           console.debug('Put content to file')
           let content = await that.getDataRepo(originalFileId)
           if (appInfo.contenttype === 'x-ipynb+json') {
-            console.debug('Adding Metadata to', appInfo.entryname);
             content = this.addSubmissionTokenMetadata(content);
           }
           if (replaceObj) {
@@ -178,6 +177,7 @@ export default {
       if (queryParam) {
         submissiontoken = queryParam[1]
         parsed.metadata['submission_token'] = submissiontoken
+        console.debug('Adding Metadata to', appInfo.entryname)
       }
 
       return JSON.stringify(parsed)

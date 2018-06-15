@@ -81,9 +81,15 @@
     width: 49%;
   }
   .images-container {
-    width: 20%;
+    width: 15%;
     align-self: center;
     padding: 10px 10px 0 10px;
+  }
+  .images-container img {
+    width: 100%;
+  }
+  .description-container {
+    width: 85%;
   }
   .description-container {
     font-size: 18px;

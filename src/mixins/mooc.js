@@ -100,7 +100,6 @@ export default {
           console.debug('Put content to file')
           let content = await that.getDataRepo(originalFileId)
           if (appInfo.contenttype === 'x-ipynb+json') {
-            console.debug('Adding Metadata to', appInfo.entryname);
             content = this.addSubmissionTokenMetadata(content);
           }
           if (replaceObj) {

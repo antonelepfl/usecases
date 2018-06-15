@@ -177,7 +177,6 @@ export default {
       if (queryParam) {
         submissiontoken = queryParam[1]
         parsed.metadata['submission_token'] = submissiontoken
-        console.debug('Adding Metadata to', appInfo.entryname)
       }
 
       return JSON.stringify(parsed)

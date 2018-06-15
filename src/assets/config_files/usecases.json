@@ -1083,7 +1083,18 @@
               {"name": "Eilif Muller", "email": "eilif.mueller@epfl.ch"},
               {"name": "Srikanth Ramaswamy", "email": "srikanth.ramaswamy@epfl.ch"}
             ],
+            "externalLink": "https://bsp-mouse-o1.humanbrainproject.eu",
             "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png"
+          },
+          {
+            "title": "Rat hippocampus CA1",
+            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
+            ],
+            "externalLink": "https://bsp-rat-ca1.humanbrainproject.eu",
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/rat-ca1-circuit.png"
           }
         ]
       },

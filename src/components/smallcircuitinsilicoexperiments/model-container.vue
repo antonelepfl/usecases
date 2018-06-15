@@ -2,12 +2,10 @@
    <div class="single-cell-insilico-experiments">
     <div class="title-uc">Please select a model</div>
     <div class="content-uc">
-      <div v-for="model in models" :key="model.title">
-        <models-list
-          :models="models"
-          v-on:selected="touched">
-        </models-list>
-      </div>
+    <models-list
+      :models="models"
+      v-on:selected="touched">
+    </models-list>
     </div>
    </div>
 </template>
@@ -32,10 +30,11 @@
     mixins: [createCollab],
     methods: {
       touched (modelItem) { // open form or pair recording
-        if (modelItem.title === 'Mouse O1 - Scaffold Somatosensory Cortex Microcircuit for Mouse') {
-          window.open('https://bsp-mouse-o1.humanbrainproject.eu/', '_blank')
+        if(modelItem.externalLink) {
+          window.open(modelItem.externalLink, '_blank')
           return
         }
+
         this.$router.push({name: 'small_circuit_form',
           params: {
             'folder_name': modelItem.modelName

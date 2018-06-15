@@ -2,10 +2,10 @@
    <div class="single-cell-insilico-experiments">
     <div class="title-uc">Please select a model</div>
     <div class="content-uc">
-    <models-list
-      :models="models"
-      v-on:selected="touched">
-    </models-list>
+      <models-list
+        :models="models"
+        v-on:selected="touched">
+      </models-list>
     </div>
    </div>
 </template>
@@ -48,3 +48,11 @@
     }
   }
 </script>
+
+<style>
+  .disabled-model {
+    opacity: .5;
+    background-color: rgba(63,58,58,.22);
+    cursor: not-allowed;
+  }
+</style>

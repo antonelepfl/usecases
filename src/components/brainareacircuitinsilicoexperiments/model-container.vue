@@ -33,13 +33,13 @@
          selected (model) {
             if (!model.disabled) {
               if (model.files) {
-                  this.$router.push({name: 'brainarea_form',
-                     params: {
-                        'model_name': compact(model.title)
-                     }
-                  })
+                this.$router.push({name: 'brainarea_form',
+                   params: {
+                      'model_name': compact(model.title)
+                   }
+                })
               } else {
-                  window.open('https://bbp.epfl.ch/public/dev.simulationapp/index.html#/', '_blank');
+                window.open('https://bbp.epfl.ch/public/simulationapp/index.html#/', '_blank');
               }
             }
          }

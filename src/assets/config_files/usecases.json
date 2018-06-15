@@ -834,8 +834,8 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "f451526c-30e3-47cc-b18b-879e1883774c",
-                "file_prod": "5bf347c2-2cbd-48c6-a640-3c653d687d1a"
+                "file": "22c40748-5a84-4fc8-bef4-9cd29a9e90fd",
+                "file_prod": "8dbd7db7-568b-438b-af53-6a8a035559c1"
               }
             ],
             "species": "Rat",
@@ -1069,6 +1069,7 @@
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
         "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/pair_recording.png"

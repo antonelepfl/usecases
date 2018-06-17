@@ -36,10 +36,10 @@
 }
 
 .item-picture {
-  width: 18%;
+  width: 10%;
   min-height: 80px;
   min-width: 140px;
-  margin-right: 3%;
+  margin-right: 15px;
 }
 .uc-description {
   flex-grow: 1;
@@ -51,7 +51,8 @@
   align-items: center;
 }
 @media screen and (max-width: 450px) {
-  .item-picture {
+  .item-picture,
+  .models-list .images-container {
     display: none;
   }
 }

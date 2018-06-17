@@ -27,10 +27,3 @@
    }
 
 </script>
-
-<style scoped>
-   .item-picture {
-      min-height: 80px;
-      min-width: 100px;
-   }
-</style>

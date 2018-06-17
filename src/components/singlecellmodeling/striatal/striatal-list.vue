@@ -80,12 +80,12 @@
   .half {
     width: 49%;
   }
-  .images-container {
+  .models-list .images-container {
     width: 15%;
     align-self: center;
     padding: 10px 10px 0 10px;
   }
-  .images-container img {
+  .models-list .images-container img {
     width: 100%;
   }
   .description-container {

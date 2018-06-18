@@ -1091,8 +1091,11 @@
             "title": "Rat hippocampus CA1",
             "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
             "contributors": [
+              {"name": "Szabolcs Káli", "email": "kali@koki.hu"},
+              {"name": "Audrey Mercer", "email": "a.mercer@ucl.ac.uk"},
+              {"name": "Michele Migliore", "email": "michele.migliore@yale.edu"},
               {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
-              {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
+              {"name": "Eilif Muller", "email": "eilif.mueller@epfl.ch"}
             ],
             "externalLink": "https://bsp-rat-ca1.humanbrainproject.eu",
             "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/rat-ca1-circuit.png"

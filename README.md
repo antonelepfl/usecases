@@ -18,13 +18,13 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard.github/) is triggered.
 * The new changes appear in [Online Use Cases DEV](https://collab.humanbrainproject.eu/#/collab/8444/nav/64015)
 
-### To deploy in production (non notebook): 
+### To deploy in production (non notebook):
 * The owner receives the confirmation from the tests and the user that everything works correctly.
 * The owner create a pull request from `dev` environment to `master`.
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
 * The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
 
-### To deploy in production (notebook): 
+### To deploy in production (notebook):
 
 * The owners of the notebook should make fixes in their public notebook (linked to the `usecases.json` in `dev` environment).
 * The owner is not able to deploy directly a notebook in production. If a notebook is ready to go on PROD, you need to notify the responsible person(s)
@@ -36,7 +36,7 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
  * Load the content of the file `prod_transform_notebooks.py` from this repository:
  * `%load https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/config_files/prod_transform_notebooks.py`
  * Call this function on a list of notebooks that should be updated
- * If a new file is created, a PR to `master` has to be made changing the `id` of the notebook 
+ * If a new file is created, a PR to `master` has to be made changing the `id` of the notebook
 
 
 ### How to ... :

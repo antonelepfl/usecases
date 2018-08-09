@@ -39,6 +39,7 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         "next": <next_choice>,
         "files": [<file_usecase>, ...],
         "models": [<model_item>, ...],
+        "tutorial": url of the interactive tutorial,
       },
       ...
     ],

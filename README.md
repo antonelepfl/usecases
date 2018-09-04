@@ -22,6 +22,7 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 * The owner receives the confirmation from the tests and the user that everything works correctly.
 * The owner create a pull request from `dev` environment to `master`.
 * A [jenkins plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered.
+* Go to [jenkins](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) and **Build with parameters** and select **release**
 * The new changes appear in [Brain Simulation Platform](https://collab.humanbrainproject.eu/#/collab/1655/nav/28538)
 
 ### To deploy in production (notebook):

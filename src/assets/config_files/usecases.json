@@ -1028,6 +1028,71 @@
         }
       }
     ],
+    "hbpschool": [
+      {
+        "title": "HBP education school Palermo 2018",
+        "description": "Exercises for HBP education school in Palermo 2018",
+        "experience": ["all"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bsp_logo.png"
+        },
+        "next": "hbp_school_form",
+        "files": [
+          {
+            "entryname": "Download circuit",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/download_circuit.ipynb",
+            "initial": true
+          },
+          {
+            "entryname": "Bouton density",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bouton_density_new.ipynb"
+          },
+          {
+            "entryname": "Cell composition",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_composition_new.ipynb"
+          },
+          {
+            "entryname": "Cell density",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_density_new.ipynb"
+          },
+          {
+            "entryname": "Nsyns per conn",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/nsyns_per_conn_new.ipynb"
+          },
+          {
+            "entryname": "Simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/simulation_new.ipynb"
+          },
+          {
+            "entryname": "requirements",
+            "appid": 175,
+            "extension": ".txt",
+            "contenttype": "text/plain",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/requirements_new.txt",
+            "justcopy": true
+          }
+        ]
+      }
+    ],
     "mooc": [
       {
         "title": "Reconstruction and simulation of neural tissue I: Neurons and Synapses",

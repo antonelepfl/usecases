@@ -51,7 +51,7 @@ export default {
             coursesPromises.push(creat)
           })
           let elements = await Promise.all(coursesPromises)
-          let emptyNavItemsId = await that.generateNavItems(elements)
+          let emptyNavItemsId = await that.generateNavItems(that.moocWeek.files, elements)
           let prom = []
           for (let item in emptyNavItemsId) {
             prom.push(that.copyContentToNav(emptyNavItemsId[item]))
@@ -181,14 +181,14 @@ export default {
 
       return JSON.stringify(parsed)
     },
-    async generateNavItems (unsortedCourses) {
+    async generateNavItems (files, unsortedCourses) {
       let that = this
        // TOOD convert this in parallel when collab order works
       let navItemsIdOrdered = []
       try {
         console.debug('generateNavItems')
-        for (let i = 0; i < that.moocWeek.files.length; i++) {
-          let element = that.moocWeek.files[i]
+        for (let i = 0; i < files.length; i++) {
+          let element = files[i]
           if (!element.justcopy) {
             let item = that.findEntryInStructure(unsortedCourses, element.entryname)
             let elem = null

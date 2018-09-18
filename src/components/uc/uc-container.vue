@@ -17,7 +17,8 @@
            <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
            <md-whiteframe
               md-elevation="2"
-              v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }"
+              class="item-sections"
+              v-bind:class="{ 'disabled-item': uc.disabled }"
            >
               <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
            </md-whiteframe>

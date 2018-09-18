@@ -158,6 +158,14 @@ const router = new VueRouter({
       props: true,
       name: 'small_circuit_form'
     },
+    // ================= hbp school ================
+    { path: '/hbpschool/:uc_name/',
+      component: function (resolve) {
+        require(['@/components/hbpschool/hbp-school-form.vue'], resolve)
+      },
+      props: true,
+      name: 'hbp_school_form'
+    },
     // ================= terms and conditions ================
     { path: '/termsandconditions/:list_usecases/:uc_name',
       component: function (resolve) {

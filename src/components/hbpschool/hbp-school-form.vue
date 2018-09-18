@@ -20,7 +20,7 @@
 
       <md-input-container>
         <label>Collab Name</label>
-        <md-input placeholder="Mooc" v-model.lazy="searchText"></md-input>
+        <md-input v-model.lazy="searchText"></md-input>
       </md-input-container>
       <div v-show="!isLoadingLocal" class="collabs-results-container">
         <div v-for="collab in collabResults" :key="collab.title" class="collab-result" >
@@ -48,7 +48,6 @@
     name: 'hbpSchoolForm',
     data () {
       return {
-        private: true,
         searchText: '',
         schoolName: 'HBP School',
         isLoading: false,
@@ -58,7 +57,6 @@
         collabCreationProgress: 0,
         fullCollabName: '',
         timeoutId: 0,
-        weekNumber: null
       }
     },
     props: ['uc_name'],
@@ -156,14 +154,13 @@
     mounted () {
       let that = this
       this.$nextTick(function () { // waits until token is saved in mixins headers
-        // this.weekNumber = this.week.match(/\d+/)[0];
         that.updateFullCollabName(this.searchText, this.schoolName)
       })
     },
     watch: {
       'searchText' (newVal) {
         var that = this
-        this.updateFullCollabName(this.searchText, this.schoolName, this.weekNumber)
+        this.updateFullCollabName(this.searchText, this.schoolName)
         clearTimeout(this.timeoutId)
         if (newVal === '') {
           that.collabResults = []

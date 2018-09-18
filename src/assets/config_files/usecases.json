@@ -1040,7 +1040,7 @@
         "next": "hbp_school_form",
         "files": [
           {
-            "entryname": "Download circuit",
+            "entryname": "Setup",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -1048,11 +1048,11 @@
             "initial": true
           },
           {
-            "entryname": "Bouton density",
+            "entryname": "Cell density",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bouton_density_new.ipynb"
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_density_new.ipynb"
           },
           {
             "entryname": "Cell composition",
@@ -1062,11 +1062,11 @@
             "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_composition_new.ipynb"
           },
           {
-            "entryname": "Cell density",
+            "entryname": "Bouton density",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_density_new.ipynb"
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bouton_density_new.ipynb"
           },
           {
             "entryname": "Nsyns per conn",
@@ -1081,14 +1081,6 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/simulation_new.ipynb"
-          },
-          {
-            "entryname": "requirements",
-            "appid": 175,
-            "extension": ".txt",
-            "contenttype": "text/plain",
-            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/requirements_new.txt",
-            "justcopy": true
           }
         ]
       }

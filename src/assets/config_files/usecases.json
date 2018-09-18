@@ -1034,6 +1034,7 @@
         "description": "Exercises for HBP education school in Palermo 2018",
         "experience": ["all"],
         "disabled": false,
+        "dataprotected": true,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bsp_logo.png"
         },

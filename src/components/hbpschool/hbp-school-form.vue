@@ -102,12 +102,13 @@
       },
       async updateFullCollabName (searchText, schoolName) {
         try {
-          let user = await this.getUserInfo()
-          let d = new Date().toLocaleString()
           if (searchText !== '') {
-            searchText = searchText + ' - '
+            this.fullCollabName = searchText
+          } else {
+            let user = await this.getUserInfo()
+            let d = new Date().toLocaleString()
+            this.fullCollabName = schoolName + ' - ' + user.familyName + ' ' + d
           }
-          this.fullCollabName = searchText + schoolName + ' - ' + user.displayName + ' ' + d
         } catch (e) { return Promise.reject(e) }
       },
       addSchoolExistingCollab (collab, category, uc) {

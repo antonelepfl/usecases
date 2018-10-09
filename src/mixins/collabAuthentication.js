@@ -14,23 +14,18 @@ const client = new JSO({
 });
 
 function init() {
-  client.callback();
+  try {
+    client.callback();
+  } catch (e) {
+    console.warn('Issue decoding the token');
+  }
 
   const authorization = client.getToken();
   authorization.then((session) => {
     store.setToken(session.access_token);
-    redirectToUseCases();
   });
 
   return authorization;
-}
-
-function redirectToUseCases() {
-  if (window.location.href.includes('access_token')) {
-    const urlParts = window.location.href.split('/');
-    urlParts.splice(-1,1);
-    window.location.href = urlParts.join('/');
-  }
 }
 
 export default {

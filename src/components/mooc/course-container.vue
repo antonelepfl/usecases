@@ -16,16 +16,16 @@
 </template>
 
 <script>
-   import ucItem from '@/components/uc/uc-item.vue'
+   import UcItem from '@/components/uc/uc-item.vue'
    import usecases from '@/assets/config_files/usecases.json'
    import collabAuthentication from '@/mixins/collabAuthentication.js'
-   import commitNumer from '@/components/commit-number.vue'
+   import CommitNumer from '@/components/commit-number.vue'
 
    export default {
       name: 'ucContainer',
       components: {
-         ucItem,
-         commitNumer
+         UcItem,
+         CommitNumer
       },
       data () {
          return {

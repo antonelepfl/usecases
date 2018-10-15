@@ -1,3 +1,5 @@
+
+/* eslint-disable no-console */
 const BSP_TERMS = 'bsp-terms-accepted'
 export default {
   termsAcceptedLocally (category) {

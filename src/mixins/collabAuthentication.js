@@ -1,4 +1,5 @@
 
+/* eslint-disable no-console */
 import { JSO } from 'jso';
 
 import store from './store';

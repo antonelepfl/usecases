@@ -10,14 +10,16 @@
 </template>
 
 <script>
-   import ucDescription from './uc-description.vue'
-   import ucTags from './uc-tags.vue'
-   import videoTutorial from './video-tutorial.vue'
+   import UcDescription from './uc-description.vue'
+   import UcTags from './uc-tags.vue'
+   import VideoTutorial from './video-tutorial.vue'
 
    export default {
       name: 'ucItem',
       components: {
-         ucDescription, ucTags, videoTutorial
+         UcDescription,
+         UcTags,
+         VideoTutorial
       },
       props: {
          uc: {

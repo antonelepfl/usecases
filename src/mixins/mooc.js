@@ -1,3 +1,5 @@
+
+/* eslint-disable no-console */
 import createCollab from '@/mixins/createCollab.js'
 import collabAuthentication from '@/mixins/collabAuthentication.js'
 import usecases from '@/assets/config_files/usecases.json'

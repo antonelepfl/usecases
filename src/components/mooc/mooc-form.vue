@@ -77,7 +77,6 @@
           that.isLoading = false
         } catch (error) {
           if (error === 'collab with this title already exists.') {
-            console.debug('Collab name already exist')
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {

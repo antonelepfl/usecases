@@ -45,7 +45,6 @@
           throw Error('no replaceText was passed');
         }
       } catch (e) {
-        console.error(e);
         throw Error('decoding entity param');
       }
     },

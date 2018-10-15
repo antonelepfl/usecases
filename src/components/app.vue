@@ -21,7 +21,9 @@ export default {
        * going to another page that consider access_token as param
        */
       if (window.location.href.includes('access_token')) {
+        /* eslint-disable no-console */
         console.debug('URL has token, removing it ...');
+        /* eslint-enable no-console */
         const urlParts = window.location.href.split('/');
         urlParts.splice(-1,1);
         window.location.href = urlParts.join('/');

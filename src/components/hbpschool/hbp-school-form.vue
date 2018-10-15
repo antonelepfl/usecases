@@ -77,7 +77,6 @@
           that.isLoading = false
         } catch (error) {
           if (error === 'collab with this title already exists.') {
-            console.debug('Collab name already exist')
             that.errorMessage = 'Please try again'
             that.isLoading = false
           } else {
@@ -123,7 +122,6 @@
         )
         let coursesPromises = []
         try {
-          console.debug('before getNavElement')
           await that.getNavElement(collab.id)
           if (that.schoolInfo && that.schoolInfo.files) {
             let isReplace = await that.replaceExistsDialog(store.state.allNavItems, that.schoolInfo.files)

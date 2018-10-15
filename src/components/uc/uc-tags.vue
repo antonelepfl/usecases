@@ -6,17 +6,38 @@
             <md-tooltip md-direction="left">{{getTooltipByPrefix('experience',exp)}}</md-tooltip>
          </b>
       </div>
+
       <div class="divider"></div>
 
       <div class="mat-acc">
-         <b v-if="uc.maturity" v-for="(mat, index) in uc.maturity" :key="'maturity' + index">
-            <div v-if="mat" v-bind:class="getClassByPrefix('mat-',mat)" class="image-tag-size" title="maturity"></div>
+        <span v-if="uc.maturity">
+          <b
+            v-for="(mat, index) in uc.maturity"
+            :key="'maturity' + index"
+          >
+            <div
+              v-if="mat"
+              v-bind:class="getClassByPrefix('mat-',mat)"
+              class="image-tag-size"
+              title="maturity"
+            />
             <md-tooltip md-direction="left">{{getTooltipByPrefix('maturity',mat)}}</md-tooltip>
-         </b>
-         <b v-if="uc.access" v-for="(access, index) in uc.access" :key="'access' + index">
-            <div v-if="access" v-bind:class="getClassByPrefix('access-',access)" class="image-tag-size" title="access"></div>
+          </b>
+        </span>
+        <span v-if="uc.access">
+          <b
+            v-for="(access, index) in uc.access"
+            :key="'access' + index"
+          >
+            <div
+              v-if="access"
+              v-bind:class="getClassByPrefix('access-',access)"
+              class="image-tag-size"
+              title="access"
+            />
             <md-tooltip md-direction="left">{{getTooltipByPrefix('access',access)}}</md-tooltip>
-         </b>
+          </b>
+        </span>
       </div>
 
    </div>

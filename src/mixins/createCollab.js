@@ -1,3 +1,5 @@
+
+/* eslint-disable no-console */
 import uuid from 'uuid4'
 import collabAuthentication from './collabAuthentication.js'
 import usecases from '@/assets/config_files/usecases.json'

@@ -21,13 +21,13 @@
 </template>
 
 <script>
-  import modelDescription from './model-description.vue'
+  import ModelDescription from './model-description.vue'
   import placeholder from '@/assets/images/placeholder.jpg'
 
   export default {
     name: 'modelItem',
     components: {
-      modelDescription
+      ModelDescription
     },
     props: {
       model: Object

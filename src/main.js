@@ -6,7 +6,6 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from '@/components/app.vue'
 import Default from '@/components/default-list.vue'
-import Login from '@/components/login.vue'
 import CollabAuthentication from '@/mixins/collabAuthentication'
 import axios from 'axios'
 import '@/assets/general.css'
@@ -182,10 +181,9 @@ const router = new VueRouter({
       props: true,
       name: 'entitydashboard'
     },
-    // ================= login ================
-    { path: '/login/',
-      component: Login,
-      name: 'login'
+    // ================= default ================
+    { path: '/',
+      redirect: '/traceanalysis',
     },
     // ============================ rest of UC ============================
     { path: '/:list_usecases', // display the UC bases on the key of usecases.json
@@ -206,42 +204,13 @@ const router = new VueRouter({
   }
 })
 
-// check the authentication for each page
-let loginPath = '/login'
-router.beforeEach((to, from, next) => {
-  if (to.path === loginPath) {
-    next()
-    return
-  }
-  let auth = CollabAuthentication
-  let authenticated = auth.methods.getAuthResponse()
-  if (!authenticated) {
-    saveQueryParams()
-    next({path: loginPath})
-    return
-  }
-  next()
-})
-
 /* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   router: router
-// })
-new Vue({
+const app = new Vue({
   router: router,
   render: h => h(App)
-}).$mount('#app')
+})
 
-
-
-function saveQueryParams () {
-  // Save this becuase an issue with hash and query params when get the access_token using hellojs
-  let match = window.location.href.match(new RegExp('#\\/(.*)'))
-  if (match && match.length > 0 && match[1] !== '' && !match[1].startsWith('access_token')) {
-    console.debug('Saving query param', match[1])
-    if (match[1] !== loginPath) {
-      window.localStorage.setItem('query', match[1])
-    }
-  }
-}
+CollabAuthentication.init()
+  .then(() => {
+    app.$mount('#app');
+  });

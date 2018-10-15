@@ -23,6 +23,7 @@
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
+    "jso": "^4.1.1",
     "vue": "^2.5.13"
   },
   "devDependencies": {

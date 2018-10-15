@@ -12,6 +12,7 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "tutorial": "https://bbpteam.epfl.ch/public/bsp-resources/video-tutorials/feature-extraction/index.html",
         "files": [
           {
             "entryname": "Feature Extraction GUI",

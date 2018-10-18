@@ -110,7 +110,8 @@
         if (newVal === '') {
           that.collabResults = []
           that.errorMessage = ''
-        } else {
+        } else if (this.isSearch) {
+          // check for collabs only while searching
           that.isLoadingLocal = true
           this.searchCollab(newVal).then((result) => {
             if (that.errorMessage !== '') {

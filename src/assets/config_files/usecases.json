@@ -12,7 +12,11 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+<<<<<<< Updated upstream
         "tutorial": "https://bbpteam.epfl.ch/public/bsp-resources/video-tutorials/feature-extraction-v2/index.html",
+=======
+        "tutorial": "https://bbpteam.epfl.ch/public/bsp-resources/video-tutorials/feature-extraction-v3/index.html",
+>>>>>>> Stashed changes
         "files": [
           {
             "entryname": "Feature Extraction GUI",

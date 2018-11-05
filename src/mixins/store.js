@@ -6,7 +6,7 @@ export default {
     collabInfo: {},
     rewriteFiles: false,
     allNavItems: {},
-    devWebsite: process.env.GIT_BRANCH !== 'origin/master',
+    devWebsite: process.env.GIT_BRANCH != 'origin/master',
     commitNumber: process.env.GIT_COMMIT
   },
   setToken (token) {

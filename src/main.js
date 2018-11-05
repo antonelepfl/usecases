@@ -6,6 +6,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from '@/components/app.vue'
 import Default from '@/components/default-list.vue'
+import DefaultForm from '@/components/traceanalysis/ta-form.vue'
 import CollabAuthentication from '@/mixins/collabAuthentication'
 import axios from 'axios'
 import '@/assets/general.css'
@@ -19,9 +20,7 @@ const router = new VueRouter({
   routes: [
     // ============================ trace analysis ============================
     { path: '/traceanalysis/:uc_name',
-      component: function (resolve) {
-        require(['@/components/traceanalysis/ta-form.vue'], resolve)
-      },
+      component: DefaultForm,
       props: true,
       name: 'ta_form'
     },
@@ -42,9 +41,7 @@ const router = new VueRouter({
     },
     // ============================ singlecellmodeling ============================
     { path: '/singlecellmodeling/form/:uc_name',
-      component: function (resolve) {
-        require(['@/components/traceanalysis/ta-form.vue'], resolve)
-      },
+      component: DefaultForm,
       props: true,
       name: 'sc_form'
     },
@@ -191,9 +188,7 @@ const router = new VueRouter({
       props: true // to see in the component as props
     },
     { path: '/:list_usecases/:uc_name',
-      component: function (resolve) {
-        require(['@/components/traceanalysis/ta-form.vue'], resolve)
-      },
+      component: DefaultForm,
       props: true
     }
   ],

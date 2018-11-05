@@ -43,7 +43,7 @@
     animation: blinker 1s linear infinite;
   }
 
-  @keyframes blinker {  
+  @keyframes blinker {
     50% { opacity: 0.1; }
   }
 </style>

@@ -9,7 +9,7 @@
     <div class="divider"/>
     <div class="video-tutorial-container">
       <i class="material-icons">ondemand_video</i>
-      <span>Intractive Tutorial</span>
+      <span>Interactive Tutorial</span>
       <md-tooltip md-direction="left">How to use this use case</md-tooltip>
     </div>
   </a>

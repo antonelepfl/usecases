@@ -78,7 +78,7 @@ if __name__ == '__main__':
     metadata = create_meta()
     if metadata:
         logging.debug('Current dir: {0}'.format(os.getcwd()))
-        output = sys.argv[0]
+        output = sys.argv[1]
         logging.debug('Output file: {0}'.format(output))
         with open(output, 'w') as fd:
             fd.write(json.dumps(metadata, indent=2))

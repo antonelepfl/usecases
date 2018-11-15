@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Usage: make_json.py output.json
+Usage: create_singlecellmodeling_structure.py output.json
 '''
 
 import json
@@ -8,6 +8,8 @@ import requests
 import logging
 import os
 import sys
+
+logging.basicConfig(level=logging.DEBUG)
 
 CSCS_OBJECT_STORAGE = os.environ['MODELS_URL']
 

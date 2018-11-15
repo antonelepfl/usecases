@@ -32,7 +32,7 @@ def _check_models_modification(response):
     if os.path.isfile(old_list_name):
         x = open(old_list_name).read()
         if x == response.text:
-            logging.debug('No model modified')
+            logging.debug('Models were not modified')
             return False
         else:
             logging.debug('Model list was changed')
@@ -77,6 +77,8 @@ def create_meta():
 if __name__ == '__main__':
     metadata = create_meta()
     if metadata:
+        logging.debug('Current dir: {0}'.format(os.getcwd()))
         output = sys.argv[0]
+        logging.debug('Output file: {0}'.format(output))
         with open(output, 'w') as fd:
             fd.write(json.dumps(metadata, indent=2))

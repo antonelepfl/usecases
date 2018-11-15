@@ -61,13 +61,13 @@ def create_meta():
         model_name = file_url.split('/')[1]
         # get the folder
         base_url = '/'.join(file_url.split('/')[:-1])
-        logging.debug('Generating {}'.format(model_name))
+        logging.debug('Generating {0}'.format(model_name))
         response = requests.get(CSCS_OBJECT_STORAGE + file_url)
         metadata_info = response.json()
         cell_info = {model_name: {
             'meta': metadata_info,
-            'responses': '{}{}'.format(model_name, REQUIRED_FILES_NAME['responses']),
-            'morph': '{}{}'.format(metadata_info['morphology'], REQUIRED_FILES_NAME['morph'])
+            'responses': '{0}{1}'.format(model_name, REQUIRED_FILES_NAME['responses']),
+            'morph': '{0}{1}'.format(metadata_info['morphology'], REQUIRED_FILES_NAME['morph'])
         }}
         output_content.append(cell_info)
         _check_consistency(base_url, cell_info[model_name], files_url_list)

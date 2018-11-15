@@ -77,6 +77,6 @@ def create_meta():
 if __name__ == '__main__':
     metadata = create_meta()
     if metadata:
-        output = sys.argv[1]
+        output = sys.argv[0]
         with open(output, 'w') as fd:
             fd.write(json.dumps(metadata, indent=2))

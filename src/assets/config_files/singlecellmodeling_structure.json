@@ -1186,5 +1186,248 @@
       "responses": "CA1_pyr_cACpyr_oh140807_A0_idJ_20170915113621_responses.png", 
       "morph": "oh140807_A0_idJ_morph.jpeg"
     }
+  }, 
+  {
+    "DG_GC_type2_AA0091_20181112161509": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type2", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmbm, kir, can, cal, cat, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0091", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed2_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type2_AA0091_20181112161509_responses.png", 
+      "morph": "AA0091_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type2_AA0145_20181112161555": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type2", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmbm, kir, can, cal, cat, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0145", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed2_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type2_AA0145_20181112161555_responses.png", 
+      "morph": "AA0145_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type2_AA0189_20181112161626": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type2", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmbm, kir, can, cal, cat, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0189", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed3_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type2_AA0189_20181112161626_responses.png", 
+      "morph": "AA0189_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type3_AA0091_20181112145539": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type3", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmb, kir, can, cal, cat, cagk, cacumb, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0091", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed2_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type3_AA0091_20181112145539_responses.png", 
+      "morph": "AA0091_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type3_AA0145_20181112145637": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type3", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmb, kir, can, cal, cat, cagk, cacumb, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0145", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed2_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type3_AA0145_20181112145637_responses.png", 
+      "morph": "AA0145_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type3_AA0189_20181112145713": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type3", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmb, kir, can, cal, cat, cagk, cacumb, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0189", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed3_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type3_AA0189_20181112145713_responses.png", 
+      "morph": "AA0189_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type4_AA0091_20181112145154": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type4", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmb, kir, can, cal, cat, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0091", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed2_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type4_AA0091_20181112145154_responses.png", 
+      "morph": "AA0091_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type4_AA0145_20181112145247": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type4", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmb, kir, can, cal, cat, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0145", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed2_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type4_AA0145_20181112145247_responses.png", 
+      "morph": "AA0145_morph.jpeg"
+    }
+  }, 
+  {
+    "DG_GC_type4_AA0189_20181112145313": {
+      "meta": {
+        "cell_soma_location": "DG", 
+        "cell_type": "granule cell", 
+        "best_run": "seed2.pkl", 
+        "offspring_size": 128, 
+        "mod_path": "mod_files", 
+        "affiliations": "CNR", 
+        "max_ngen": 60, 
+        "mod_repo": "", 
+        "fitting_name": "type4", 
+        "species": "Mouse", 
+        "channels": "kdrb, kap, na3, kmb, kir, can, cal, cat, cagk, cacum, kca", 
+        "brain_structure": "Hippocampus", 
+        "e-type": "", 
+        "contributors": "Paola Vitale", 
+        "morphology": "AA0189", 
+        "mod_tag": "v1.0.0", 
+        "best_cell": "cell_seed3_0.hoc", 
+        "email": "paola.vitale@pa.ibf.cnr.it", 
+        "description": ""
+      }, 
+      "responses": "DG_GC_type4_AA0189_20181112145313_responses.png", 
+      "morph": "AA0189_morph.jpeg"
+    }
   }
 ]

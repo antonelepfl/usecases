@@ -984,10 +984,7 @@
             "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d",
             "file_prod": "829c2011-af3f-441e-b5cf-96ed9126f0ae"
           }
-        ],
-        "models": {
-          "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
-        }
+        ]
       },
       {
         "title": "Morphology visualization",
@@ -999,10 +996,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
-        "dataprotected": true,
-        "models": {
-          "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
-        }
+        "dataprotected": true
       }
     ],
     "singlecellinsilicoexperiments": [
@@ -1472,7 +1466,7 @@
   {
     "models": {
       "bsp": {
-        "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
+        "raw": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/"
       },
       "nmcportal": {
         "raw": "https://bbp.epfl.ch/public/nmc-models/"

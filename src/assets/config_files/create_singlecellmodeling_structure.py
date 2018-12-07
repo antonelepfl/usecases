@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 '''
-Usage: create_singlecellmodeling_structure.py output.json
+This will generate files models files on the output directory passed as param
+Usage: create_singlecellmodeling_structure.py output_dir/
 '''
 
 import collections
@@ -10,97 +11,112 @@ import os
 import requests
 import sys
 
-CSCS_OBJECT_STORAGE = os.environ['MODELS_URL']
+MODEL_CATALOG_URL = os.environ['MODELS_URL']
+# MODEL_CATALOG_URL = 'https://validation-v1.brainsimulation.eu/models/'
 
-REQUIRED_FILES_NAME = {
-    'morph': '_morph.jpeg',
-    'responses': '_responses.png',
-    'meta': 'meta.json',
+FILES_TO_CREATE = {
+    'hippocampus_models.json': '?species=Rat%20(Rattus%20rattus)&brain_region=Hippocampus&organization=HBP-SP6&model_scope=Single%20cell%20model',
+    'granule_models.json': '?species=Mouse%20(Mus%20musculus)&brain_region=Cerebellum&cell_type=Granule%20Cell',
 }
-OLD_LIST_NAME = 'old_model_list.txt'
+
+OLD_LIST_NAME = 'old_model_list.json'
+
+def get_id_list(models_list):
+    def get_id(o):
+        return o['id']
+
+    x = map(get_id, models_list)
+    x.sort()
+    return x
 
 
-def _check_consistency(base_url, metadata, required_names):
-    for required in ('responses', 'morph'):
-        asset = os.path.join(base_url, metadata[required])
-        if asset not in required_names[required]:
-            logging.warning('ERROR in cell. Plot not found %s', asset)
-
-
-def _check_models_modification(new_text):
-    new_text = list(sorted(new_text))
+def _check_models_modification(new_models, file_name):
+    new_models_ids = get_id_list(new_models)
+    old_model = None
+    # new_text = list(sorted(new_text))
     if os.path.isfile(OLD_LIST_NAME):
         with open(OLD_LIST_NAME) as fd:
-            old_text = list(sorted(fd.read().split()))
+            old_model = json.loads(fd.read())
 
-        if old_text == new_text:
-            logging.debug('Models were not modified')
+        if file_name in old_model and old_model[file_name] == new_models_ids:
+            logging.info('%s was not modified', file_name)
             return False
 
-    logging.debug('Model list was changed')
+    logging.info('%s list was changed', file_name)
 
-    # create file to compare next time
+    # create or update file to compare next time
+    if old_model:
+        old_model.update({ file_name: new_models_ids })
+    else:
+        old_model = { file_name: new_models_ids }
     with open(OLD_LIST_NAME, 'w') as fd:
-        fd.write('\n'.join(new_text))
+        fd.write(json.dumps(old_model))
 
     return True
 
 
-def filter_required_names(names, required):
-    ret = collections.defaultdict(set)
-    for name in names:
-        for k, ending in required.items():
-            if not name.endswith(ending):
-                continue
-            ret[k].add(name)
-    return ret
+def filter_meta(model_info):
+    fields_to_save = ('name', 'author', 'cell_type', 'brain_region', 'species', 'description')
+    x = {k: model_info[k] for k in fields_to_save}
+    return x
 
+
+def get_img(caption_to_find, model_info):
+    img_list = model_info['images']
+
+    def get_caption_img(img_list):
+        if img_list['caption'] == caption_to_find:
+            return True
+        return False
+
+    found = filter(get_caption_img, img_list)
+    if len(found):
+        return found[0]['url']
+
+    logging.warning('%s image not found on %s', caption_to_find, model_info['name'])
+    return None
+
+
+def save_model_file(file_name, output_content):
+    logging.info('Saving %s...', file_name)
+    logging.debug('Current dir: %s', os.getcwd())
+    # output = sys.argv[1]
+    output = '.'
+    logging.debug('Output file: %s', output)
+
+    with open(os.path.join(output, file_name), 'w') as fd:
+        fd.write(json.dumps(output_content, indent=2))
 
 
 def create_meta():
-    response = requests.get(CSCS_OBJECT_STORAGE)
-    contents = response.text.split()
+    for file_name, query_string in FILES_TO_CREATE.iteritems():
+        response = requests.get(MODEL_CATALOG_URL + query_string)
+        models_list = response.json()['models']
+        logging.info('Fetching %s', file_name)
+        if not _check_models_modification(models_list, file_name):
+            continue # avoid creation
+        
+        output_content = []
+        for model in models_list:
+            model_name = model['name']
+            cell_info = {
+                model_name: {
+                    'meta': filter_meta(model),
+                    'responses': get_img('Responses', model),
+                    'morph': get_img('Morphology', model),
+                },
+            }
+            output_content.append(cell_info)
 
-    if not _check_models_modification(contents):
-        return
+        save_model_file(file_name, output_content)
 
-    required_names = filter_required_names(contents, required=REQUIRED_FILES_NAME)
-
-    logging.debug('Fetching metadata files...')
-
-    output_content = []
-    for file_url in required_names['meta']:
-        model_name = file_url.split('/')[1]
-        base_url = os.path.dirname(file_url)
-
-        logging.debug('Generating %s', model_name)
-
-        response = requests.get(CSCS_OBJECT_STORAGE + file_url)
-        metadata_info = response.json()
-
-        cell_info = {
-            model_name: {
-                'meta': metadata_info,
-                'responses': '{0}{1}'.format(model_name, REQUIRED_FILES_NAME['responses']),
-                'morph': '{0}{1}'.format(metadata_info['morphology'], REQUIRED_FILES_NAME['morph'])
-            },
-        }
-        _check_consistency(base_url, cell_info[model_name], required_names)
-        output_content.append(cell_info)
-    return output_content
+    logging.info('All done')
 
 
 def main():
-    metadata = create_meta()
-    if metadata:
-        logging.debug('Current dir: %s', os.getcwd())
-        output = sys.argv[1]
-        logging.debug('Output file: %s', output)
-
-        with open(output, 'w') as fd:
-            fd.write(json.dumps(metadata, indent=2))
+    create_meta()
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
     main()

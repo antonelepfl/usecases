@@ -1,23 +1,38 @@
-import modelsBSP from '@/assets/config_files/singlecellmodeling_structure.json'
+import modelsGranule from '@/assets/config_files/granule_models.json'
+import modelsHIppocampus from '@/assets/config_files/hippocampus_models.json'
 import modelsNMC from '@/assets/config_files/nmcportalmodels_structure.json'
 import usecases from '@/assets/config_files/usecases.json'
 import { getUsecaseInfo } from './utils.js'
 
-function getBSPMetadata () {
-  let baseUrl = usecases[2].models.bsp.raw
+function getGranuleMetadata () {
   let models = []
-  for (let i = 0; i < modelsBSP.length; i++) {
-    let elem = modelsBSP[i]
+  modelsGranule.forEach((elem) => {
     let fileName = Object.keys(elem)[0]
     let modelInfo = elem[fileName].meta
-    let morphPath = baseUrl + fileName + '/' + elem[fileName].morph
+    let morphPath = elem[fileName].morph
     modelInfo.morphImg = morphPath
-    let responsePath = baseUrl + fileName + '/' + elem[fileName].responses
+    let responsePath = elem[fileName].responses
     modelInfo.reponsesImg = responsePath
     modelInfo.folderName = fileName
     modelInfo.modelTitle = getModelTitle(modelInfo)
     models.push(modelInfo)
-  }
+  })
+  return models
+}
+
+function getHippocampusMetadata () {
+  let models = []
+  modelsHIppocampus.forEach((elem) => {
+    let fileName = Object.keys(elem)[0]
+    let modelInfo = elem[fileName].meta
+    let morphPath = elem[fileName].morph
+    modelInfo.morphImg = morphPath
+    let responsePath = elem[fileName].responses
+    modelInfo.reponsesImg = responsePath
+    modelInfo.folderName = fileName
+    modelInfo.modelTitle = getModelTitle(modelInfo)
+    models.push(modelInfo)
+  })
   return models
 }
 
@@ -33,6 +48,7 @@ function getNMCMetadata () {
     let responsePath = baseUrl + elem[fileName].responses
     modelInfo.reponsesImg = responsePath
     modelInfo.folderName = fileName
+    modelInfo.author = modelInfo.contributors
     modelInfo.modelTitle = getModelTitle(modelInfo)
     models.push(modelInfo)
   }
@@ -68,9 +84,11 @@ function searchPerformance (text, originalModels) {
 }
 
 function getModelTitle (modelInfo) {
-  let title = modelInfo.species + ' ' + modelInfo.brain_structure + ' '
-  title += modelInfo.cell_soma_location + ' ' + modelInfo.cell_type + ' '
-  title += modelInfo['e-type'] + ' ' + modelInfo.morphology
+  const species = modelInfo.species.split(' ')[0];
+  const region = modelInfo.brain_region || modelInfo.brain_structure;
+  const type = modelInfo.cell_type.replace(/ /g, '_');
+  const name = (modelInfo.name || modelInfo.folderName).replace(/ /g, '_');
+  const title = `${species} ${region} ${type} ${name}`
   return title
 }
 
@@ -80,7 +98,8 @@ function getModelByUc (ucName) {
 }
 
 export default {
-  getBSPMetadata,
+  getHippocampusMetadata,
+  getGranuleMetadata,
   getNMCMetadata,
   searchPerformance,
   search,

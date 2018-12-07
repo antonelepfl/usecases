@@ -26,7 +26,7 @@
 </template>
 
 <script>
-   import modelItem from '@/components/singlecellmodeling/model-item.vue'
+   import modelItem from '@/components/shared/model-item.vue'
    import InfiniteLoading from 'vue-infinite-loading'
 
    export default {

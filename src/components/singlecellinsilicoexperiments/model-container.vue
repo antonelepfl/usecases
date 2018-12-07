@@ -14,12 +14,12 @@
 </template>
 
 <script>
-   import BspNmcModelList from '@/components/singlecellinsilicoexperiments/models-list.vue'
+   import BspNmcModelList from '@/components/shared/models-list.vue'
    const VIEWER_URL = 'https://blue-naas.humanbrainproject.eu/#/model/'
    import collabAuthentication from '@/mixins/collabAuthentication.js'
    import createCollab from '@/mixins/createCollab.js'
    import modelsMixins from '@/mixins/models.js'
-   
+
    export default {
       name: 'modelContainer',
       components: {
@@ -44,20 +44,19 @@
         addSearch (obj) {
           this.filter += ' ' + obj.text
         },
-        performNMC () {
-          let fullModels = modelsMixins.getNMCMetadata()
-          this.models = this.models.concat(fullModels)
+        performRestModels () {
+          let granule = modelsMixins.getGranuleMetadata()
+          let nmc = modelsMixins.getNMCMetadata()
+          this.models = this.models.concat(granule, nmc)
           this.originalModels = this.models // save all the models
         }
       },
       created () {
         document.querySelector('title').innerHTML = 'Models'
-        this.models = modelsMixins.getBSPMetadata()
-        if (window.requestIdleCallback) {
-          window.requestIdleCallback(this.performNMC)
-        } else {
-          this.performNMC()
-        }
+        this.models = modelsMixins.getHippocampusMetadata()
+        window.requestIdleCallback ?
+          window.requestIdleCallback(this.performRestModels) :
+          this.performRestModels();
       },
       watch: {
         'filter': async function (newVal) {

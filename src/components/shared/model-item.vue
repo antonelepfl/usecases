@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import ModelDescription from './model-description.vue'
+  import ModelDescription from '@/components/shared/model-description.vue'
   import placeholder from '@/assets/images/placeholder.jpg'
 
   export default {

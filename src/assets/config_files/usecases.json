@@ -1465,9 +1465,6 @@
   },
   {
     "models": {
-      "bsp": {
-        "raw": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/"
-      },
       "nmcportal": {
         "raw": "https://bbp.epfl.ch/public/nmc-models/"
       }

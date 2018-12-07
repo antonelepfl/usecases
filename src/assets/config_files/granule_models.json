@@ -1,0 +1,30 @@
+[
+  {
+    "Granule cell - Mono compartmental": {
+      "meta": {
+        "cell_type": "Granule Cell", 
+        "description": "Model\n\nNumber = 14\n\nSize (kB) = 15\n\nDissemination level = public", 
+        "author": "Stefano Masoli", 
+        "brain_region": "Cerebellum", 
+        "species": "Mouse (Mus musculus)", 
+        "name": "Granule cell - Mono compartmental"
+      }, 
+      "responses": null, 
+      "morph": null
+    }
+  }, 
+  {
+    "Granule cell - Multi compartmental": {
+      "meta": {
+        "cell_type": "Granule Cell", 
+        "description": "Model\n\nNumber = 12\n\nSize (kB) = 13\n\nDissemination level = public", 
+        "author": "Stefano Masoli", 
+        "brain_region": "Cerebellum", 
+        "species": "Mouse (Mus musculus)", 
+        "name": "Granule cell - Multi compartmental"
+      }, 
+      "responses": null, 
+      "morph": null
+    }
+  }
+]

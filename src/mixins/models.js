@@ -5,6 +5,7 @@ import usecases from '@/assets/config_files/usecases.json'
 import { getUsecaseInfo } from './utils.js'
 
 function getGranuleMetadata () {
+  const modelsZipBase = usecases[2].models.cerebellum.raw
   let models = []
   modelsGranule.forEach((elem) => {
     let fileName = Object.keys(elem)[0]
@@ -15,12 +16,14 @@ function getGranuleMetadata () {
     modelInfo.reponsesImg = responsePath
     modelInfo.folderName = fileName
     modelInfo.modelTitle = getModelTitle(modelInfo)
+    modelInfo.modelZipBase = modelsZipBase
     models.push(modelInfo)
   })
   return models
 }
 
 function getHippocampusMetadata () {
+  const modelsZipBase = usecases[2].models.hippocampus.raw
   let models = []
   modelsHIppocampus.forEach((elem) => {
     let fileName = Object.keys(elem)[0]
@@ -31,6 +34,7 @@ function getHippocampusMetadata () {
     modelInfo.reponsesImg = responsePath
     modelInfo.folderName = fileName
     modelInfo.modelTitle = getModelTitle(modelInfo)
+    modelInfo.modelZipBase = modelsZipBase
     models.push(modelInfo)
   })
   return models

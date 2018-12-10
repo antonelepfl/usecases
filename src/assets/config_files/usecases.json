@@ -1467,6 +1467,12 @@
     "models": {
       "nmcportal": {
         "raw": "https://bbp.epfl.ch/public/nmc-models/"
+      },
+      "cerebellum": {
+        "raw" : "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
+      },
+      "hippocampus": {
+        "raw": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
       }
     }
   }

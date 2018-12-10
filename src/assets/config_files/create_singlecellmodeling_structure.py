@@ -58,6 +58,9 @@ def _check_models_modification(new_models, file_name):
 def filter_meta(model_info):
     fields_to_save = ('name', 'author', 'cell_type', 'brain_region', 'species', 'description')
     x = {k: model_info[k] for k in fields_to_save}
+
+    instance_to_zip = model_info['instances'][0]['source']
+    x['zip_url'] = instance_to_zip
     return x
 
 
@@ -95,7 +98,7 @@ def create_meta():
         logging.info('Fetching %s', file_name)
         if not _check_models_modification(models_list, file_name):
             continue # avoid creation
-        
+
         output_content = []
         for model in models_list:
             model_name = model['name']

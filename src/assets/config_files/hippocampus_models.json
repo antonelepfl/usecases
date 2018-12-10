@@ -6,6 +6,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed7\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>010710HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_010710HP2_20180118155959/CA1_int_cAC_010710HP2_20180118155959.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_010710HP2_20180118155959"
       }, 
@@ -20,6 +21,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed6\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed6.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>990611HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_990611HP2_20180122160209/CA1_int_cAC_990611HP2_20180122160209.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_990611HP2_20180122160209"
       }, 
@@ -34,6 +36,7 @@
         "description": "Single cell model optimized using BluePyOptt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>970717D</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_970717D_20180118154811/CA1_int_cNAC_970717D_20180118154811.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_970717D_20180118154811"
       }, 
@@ -48,6 +51,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>010710HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_010710HP2_20180119154335/CA1_int_cNAC_010710HP2_20180119154335.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_010710HP2_20180119154335"
       }, 
@@ -62,6 +66,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>970911C</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_970911C_20180120154902/CA1_int_cNAC_970911C_20180120154902.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_970911C_20180120154902"
       }, 
@@ -76,6 +81,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed1.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>990611HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_990611HP2_20180120155246/CA1_int_cNAC_990611HP2_20180120155246.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_990611HP2_20180120155246"
       }, 
@@ -90,6 +96,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad, kd2</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141215\\_A\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141215_A_idA_20170915152442/CA1_pyr_cACpyr_mpg141215_A_idA_20170915152442.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141215_A_idA_20170915152442"
       }, 
@@ -104,6 +111,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed6\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed6.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141217\\_A\\_idB</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141217_A_idB_20170915111538/CA1_pyr_cACpyr_mpg141217_A_idB_20170915111538.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141217_A_idB_20170915111538"
       }, 
@@ -118,6 +126,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed6\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed6.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg150305\\_A\\_idB</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg150305_A_idB_20170915111718/CA1_pyr_cACpyr_mpg150305_A_idB_20170915111718.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg150305_A_idB_20170915111718"
       }, 
@@ -132,6 +141,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>bAC</em><br><strong>fitting\\_name</strong> : <em>bACnoljp</em><br><strong>morphology</strong> : <em>011017HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_bAC_011017HP2_20180110153901/CA1_int_bAC_011017HP2_20180110153901.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_bAC_011017HP2_20180110153901"
       }, 
@@ -146,6 +156,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>011017HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_011017HP2_20180119154507/CA1_int_cNAC_011017HP2_20180119154507.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_011017HP2_20180119154507"
       }, 
@@ -160,6 +171,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed1\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed1.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>971114B</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_971114B_20180119155005/CA1_int_cNAC_971114B_20180119155005.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_971114B_20180119155005"
       }, 
@@ -174,6 +186,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141017\\_a1-2\\_idC</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141017_a1-2_idC_20170918151638/CA1_pyr_cACpyr_mpg141017_a1-2_idC_20170918151638.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141017_a1-2_idC_20170918151638"
       }, 
@@ -188,6 +201,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>970627BHP1</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_970627BHP1_20180120160112/CA1_int_cAC_970627BHP1_20180120160112.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_970627BHP1_20180120160112"
       }, 
@@ -202,6 +216,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed7\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed7.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>980120A</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_980120A_20180115155814/CA1_int_cAC_980120A_20180115155814.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_980120A_20180115155814"
       }, 
@@ -216,6 +231,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>980513B</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_980513B_20180119155952/CA1_int_cAC_980513B_20180119155952.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_980513B_20180119155952"
       }, 
@@ -230,6 +246,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>bAC</em><br><strong>fitting\\_name</strong> : <em>bACnoljp</em><br><strong>morphology</strong> : <em>971114B</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_bAC_971114B_20180117154233/CA1_int_bAC_971114B_20180117154233.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_bAC_971114B_20180117154233"
       }, 
@@ -244,6 +261,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed5\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed5.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>011017HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_011017HP2_20180121160005/CA1_int_cAC_011017HP2_20180121160005.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_011017HP2_20180121160005"
       }, 
@@ -258,6 +276,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>990827IN5HP3</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_990827IN5HP3_20180122140555/CA1_int_cAC_990827IN5HP3_20180122140555.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_990827IN5HP3_20180122140555"
       }, 
@@ -272,6 +291,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>011023HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_011023HP2_20180118154613/CA1_int_cNAC_011023HP2_20180118154613.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_011023HP2_20180118154613"
       }, 
@@ -286,6 +306,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>970509HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_970509HP2_20180117154753/CA1_int_cNAC_970509HP2_20180117154753.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_970509HP2_20180117154753"
       }, 
@@ -300,6 +321,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>980120A</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_980120A_20180119155115/CA1_int_cNAC_980120A_20180119155115.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_980120A_20180119155115"
       }, 
@@ -314,6 +336,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>990111HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_990111HP2_20180118155424/CA1_int_cNAC_990111HP2_20180118155424.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_990111HP2_20180118155424"
       }, 
@@ -328,6 +351,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed5\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed5.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141208\\_B\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855/CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855"
       }, 
@@ -342,6 +366,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed6\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed6.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141209\\_B\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141209_B_idA_20170915152336/CA1_pyr_cACpyr_mpg141209_B_idA_20170915152336.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141209_B_idA_20170915152336"
       }, 
@@ -356,6 +381,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed5\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed5.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140521\\_B0\\_Rat\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140521_B0_Rat_idA_20170915111955/CA1_pyr_cACpyr_oh140521_B0_Rat_idA_20170915111955.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140521_B0_Rat_idA_20170915111955"
       }, 
@@ -370,6 +396,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idB</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idB_20170915112605/CA1_pyr_cACpyr_oh140807_A0_idB_20170915112605.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idB_20170915112605"
       }, 
@@ -384,6 +411,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed5\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed5.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad, kd2</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idF</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idF_20171003112912/CA1_pyr_cACpyr_oh140807_A0_idF_20171003112912.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idF_20171003112912"
       }, 
@@ -398,6 +426,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>060314AM2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_060314AM2_20180120154747/CA1_int_cNAC_060314AM2_20180120154747.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_060314AM2_20180120154747"
       }, 
@@ -412,6 +441,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed1\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed1.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>980513B</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_980513B_20180119155127/CA1_int_cNAC_980513B_20180119155127.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_980513B_20180119155127"
       }, 
@@ -426,6 +456,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141209\\_A\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008/CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008"
       }, 
@@ -440,6 +471,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad, kd2</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>mpg141216\\_A\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_mpg141216_A_idA_20171003152605/CA1_pyr_cACpyr_mpg141216_A_idA_20171003152605.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_mpg141216_A_idA_20171003152605"
       }, 
@@ -454,6 +486,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>bAC</em><br><strong>fitting\\_name</strong> : <em>bACnoljp</em><br><strong>morphology</strong> : <em>060314AM2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_bAC_060314AM2_20180120154128/CA1_int_bAC_060314AM2_20180120154128.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_bAC_060314AM2_20180120154128"
       }, 
@@ -468,6 +501,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>bAC</em><br><strong>fitting\\_name</strong> : <em>bACnoljp</em><br><strong>morphology</strong> : <em>980120A</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_bAC_980120A_20180119154402/CA1_int_bAC_980120A_20180119154402.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_bAC_980120A_20180119154402"
       }, 
@@ -482,6 +516,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>cNAC</em><br><strong>fitting\\_name</strong> : <em>cNACnoljp</em><br><strong>morphology</strong> : <em>970627BHP1</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cNAC_970627BHP1_20180120154830/CA1_int_cNAC_970627BHP1_20180120154830.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cNAC_970627BHP1_20180120154830"
       }, 
@@ -496,6 +531,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed4\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed4.pkl</em><br><strong>channels</strong> : <em>kdr, nax,  kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140521\\_B0\\_Rat\\_idC</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170915112201/CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170915112201.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140521_B0_Rat_idC_20170915112201"
       }, 
@@ -510,6 +546,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed5\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed5.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idA</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idA_20170915112548/CA1_pyr_cACpyr_oh140807_A0_idA_20170915112548.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idA_20170915112548"
       }, 
@@ -524,6 +561,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idC</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idC_20170912112759/CA1_pyr_cACpyr_oh140807_A0_idC_20170912112759.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idC_20170912112759"
       }, 
@@ -538,6 +576,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idG</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idG_20170915113354/CA1_pyr_cACpyr_oh140807_A0_idG_20170915113354.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idG_20170915113354"
       }, 
@@ -552,6 +591,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed6\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed6.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idH</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idH_20170915113422/CA1_pyr_cACpyr_oh140807_A0_idH_20170915113422.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idH_20170915113422"
       }, 
@@ -566,6 +606,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kca, cagk, cacum, kad</em><br><strong>e-type</strong> : <em>cACpyr</em><br><strong>fitting\\_name</strong> : <em>CA1\\_PC\\_cAC\\_sig</em><br><strong>morphology</strong> : <em>oh140807\\_A0\\_idJ</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_pyr_cACpyr_oh140807_A0_idJ_20170915113621/CA1_pyr_cACpyr_oh140807_A0_idJ_20170915113621.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_pyr_cACpyr_oh140807_A0_idJ_20170915113621"
       }, 
@@ -580,6 +621,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed2\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed2.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>bAC</em><br><strong>fitting\\_name</strong> : <em>bACnoljp</em><br><strong>morphology</strong> : <em>011023HP2</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_bAC_011023HP2_20180116154023/CA1_int_bAC_011023HP2_20180116154023.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_bAC_011023HP2_20180116154023"
       }, 
@@ -594,6 +636,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed6\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed6.pkl</em><br><strong>channels</strong> : <em>kdrb, na3, kmb, kap, hd, can, cal, cat, kdb, cagk, cacum, kca</em><br><strong>e-type</strong> : <em>bAC</em><br><strong>fitting\\_name</strong> : <em>bACnoljp</em><br><strong>morphology</strong> : <em>011127HP1</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_bAC_011127HP1_20180120115056/CA1_int_bAC_011127HP1_20180120115056.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_bAC_011127HP1_20180120115056"
       }, 
@@ -608,6 +651,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>031031AM1</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "Hippocampus", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_031031AM1_20180201104443/CA1_int_cAC_031031AM1_20180201104443.zip", 
         "species": "Rat (Rattus rattus)", 
         "name": "CA1_int_cAC_031031AM1_20180201104443"
       }, 

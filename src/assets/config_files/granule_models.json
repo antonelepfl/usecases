@@ -6,6 +6,7 @@
         "description": "Model\n\nNumber = 14\n\nSize (kB) = 15\n\nDissemination level = public", 
         "author": "Stefano Masoli", 
         "brain_region": "Cerebellum", 
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono.zip", 
         "species": "Mouse (Mus musculus)", 
         "name": "Granule cell - Mono compartmental"
       }, 
@@ -20,6 +21,7 @@
         "description": "Model\n\nNumber = 12\n\nSize (kB) = 13\n\nDissemination level = public", 
         "author": "Stefano Masoli", 
         "brain_region": "Cerebellum", 
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_multi.zip", 
         "species": "Mouse (Mus musculus)", 
         "name": "Granule cell - Multi compartmental"
       }, 

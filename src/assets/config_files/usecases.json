@@ -34,6 +34,7 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFitting/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting",

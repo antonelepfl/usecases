@@ -24,9 +24,9 @@ export default {
         /* eslint-disable no-console */
         console.debug('URL has token, removing it ...');
         /* eslint-enable no-console */
-        const urlParts = window.location.href.split('/');
-        urlParts.splice(-1,1);
-        window.location.href = urlParts.join('/');
+        const url = window.location.href;
+        const accessTokenIndex = url.indexOf('%2F&access_token') || url.indexOf('access_token');
+        window.location.href = url.substr(0, accessTokenIndex)
       }
     },
   },

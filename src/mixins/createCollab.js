@@ -634,6 +634,9 @@ export default {
       this.sendToForm(formData, url, userEntry)
     },
     getDataRepo (url) {
+      if (!url.includes('://')) {
+        url = decodeURIComponent(url);
+      }
       let that = this
       return new Promise(function (resolve, reject) {
         that.$http.get(url).then(function (content) {

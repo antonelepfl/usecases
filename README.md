@@ -40,7 +40,7 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
  * If a new file is created, a PR to `master` has to be made changing the `id` of the notebook
 
 
-### How to ... :
+### How to:
 * Add new: [use case](/documentation/add_new_usecase.md) - [MOOC](/documentation/add_new_mooc.md) - [models](/documentation/add_new_model.md)
 
 * If single cell models [change](/documentation/single_cell_model_change.md)

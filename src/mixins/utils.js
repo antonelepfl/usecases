@@ -1,14 +1,14 @@
 
-// let findKey = require('lodash/findKey')
-let findIndex = require('lodash/findIndex')
-let find = require('lodash/find')
-let usecases = require('@/assets/config_files/usecases.json')[0]
-let swal = require('sweetalert2')
+import findIndex from 'lodash/findIndex'
+import find from 'lodash/find'
+import swal from 'sweetalert2'
+import usecasesFile from '@/assets/config_files/usecases.json'
+const usecases = usecasesFile[0]
 
 function getUsecaseInfo (ucName) {
   let elem = {}
   find(usecases, function (category) {
-    let index = findIndex(category, function (uc) {
+    const index = findIndex(category, function (uc) {
       return compact(uc.title) === ucName
     })
     elem = category[index]

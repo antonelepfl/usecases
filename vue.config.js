@@ -1,5 +1,6 @@
 
 // this BASE_URL will be set in the different jenkins plans
+/* eslint-disable no-undef */
 const webpack = require('webpack')
 
 console.log('Base URL:', process.env.BASE_URL)

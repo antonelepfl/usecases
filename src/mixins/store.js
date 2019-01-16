@@ -1,5 +1,6 @@
 
 /* eslint-disable no-console */
+/* eslint-disable no-undef */
 export default {
   state: {
     header: {},

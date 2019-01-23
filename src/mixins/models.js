@@ -1,43 +1,38 @@
 import modelsGranule from '@/assets/config_files/granule_models.json'
-import modelsHIppocampus from '@/assets/config_files/hippocampus_models.json'
+import modelsHippocampus from '@/assets/config_files/hippocampus_models.json'
+import modelsPurkinje from '@/assets/config_files/purkinje_models.json'
 import modelsNMC from '@/assets/config_files/nmcportalmodels_structure.json'
 import usecases from '@/assets/config_files/usecases.json'
 import { getUsecaseInfo } from './utils.js'
 
 function getGranuleMetadata () {
   const modelsZipBase = usecases[2].models.cerebellum.raw
-  let models = []
-  modelsGranule.forEach((elem) => {
-    let fileName = Object.keys(elem)[0]
-    let modelInfo = elem[fileName].meta
-    let morphPath = elem[fileName].morph
-    modelInfo.morphImg = morphPath
-    let responsePath = elem[fileName].responses
-    modelInfo.reponsesImg = responsePath
-    modelInfo.folderName = fileName
-    modelInfo.modelTitle = getModelTitle(modelInfo)
-    modelInfo.modelZipBase = modelsZipBase
-    models.push(modelInfo)
-  })
-  return models
+  return populateGenericModels(modelsZipBase, modelsGranule)
+}
+
+function getPurkinjeMetadata () {
+  const modelsZipBase = usecases[2].models.purkinje.raw
+  return populateGenericModels(modelsZipBase, modelsPurkinje)
 }
 
 function getHippocampusMetadata () {
   const modelsZipBase = usecases[2].models.hippocampus.raw
-  let models = []
-  modelsHIppocampus.forEach((elem) => {
+  return populateGenericModels(modelsZipBase, modelsHippocampus)
+}
+
+function populateGenericModels(modelsZipBase, models) {
+  let modelsPopulated = []
+  models.forEach((elem) => {
     let fileName = Object.keys(elem)[0]
     let modelInfo = elem[fileName].meta
-    let morphPath = elem[fileName].morph
-    modelInfo.morphImg = morphPath
-    let responsePath = elem[fileName].responses
-    modelInfo.reponsesImg = responsePath
+    modelInfo.morphImg = elem[fileName].morph
+    modelInfo.reponsesImg = elem[fileName].responses
     modelInfo.folderName = fileName
     modelInfo.modelTitle = getModelTitle(modelInfo)
     modelInfo.modelZipBase = modelsZipBase
-    models.push(modelInfo)
+    modelsPopulated.push(modelInfo)
   })
-  return models
+  return modelsPopulated
 }
 
 function getNMCMetadata () {
@@ -104,6 +99,7 @@ function getModelByUc (ucName) {
 export default {
   getHippocampusMetadata,
   getGranuleMetadata,
+  getPurkinjeMetadata,
   getNMCMetadata,
   searchPerformance,
   search,

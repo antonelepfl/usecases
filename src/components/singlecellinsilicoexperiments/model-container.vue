@@ -48,9 +48,10 @@
           this.filter += ' ' + obj.text
         },
         performRestModels () {
-          let granule = modelsMixins.getGranuleMetadata()
-          let nmc = modelsMixins.getNMCMetadata()
-          this.models = this.models.concat(granule, nmc)
+          const granule = modelsMixins.getGranuleMetadata()
+          const purkinje = modelsMixins.getPurkinjeMetadata()
+          const nmc = modelsMixins.getNMCMetadata()
+          this.models = this.models.concat(granule, nmc, purkinje)
           this.originalModels = this.models // save all the models
         }
       },

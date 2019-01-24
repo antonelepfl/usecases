@@ -1419,6 +1419,28 @@
             "file_prod": "40c99ada-9db4-4252-91a5-a42da919f1a9"
           }
         ]
+      },
+      {
+        "title": "Jupyter Notebook Version Testing",
+        "description": "Attempt to check version of notebook being used",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Test Use Case Versioning",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "3d81165a-51a9-4264-977c-c3cc2940b6d9",
+            "file_prod": ""
+          }
+        ]
       }
     ]
   },

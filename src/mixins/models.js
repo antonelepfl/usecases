@@ -1,24 +1,38 @@
-import modelsBSP from '@/assets/config_files/singlecellmodeling_structure.json'
+import modelsGranule from '@/assets/config_files/granule_models.json'
+import modelsHippocampus from '@/assets/config_files/hippocampus_models.json'
+import modelsPurkinje from '@/assets/config_files/purkinje_models.json'
 import modelsNMC from '@/assets/config_files/nmcportalmodels_structure.json'
 import usecases from '@/assets/config_files/usecases.json'
 import { getUsecaseInfo } from './utils.js'
 
-function getBSPMetadata () {
-  let baseUrl = usecases[2].models.bsp.raw
-  let models = []
-  for (let i = 0; i < modelsBSP.length; i++) {
-    let elem = modelsBSP[i]
+function getGranuleMetadata () {
+  const modelsZipBase = usecases[2].models.cerebellum.raw
+  return populateGenericModels(modelsZipBase, modelsGranule)
+}
+
+function getPurkinjeMetadata () {
+  const modelsZipBase = usecases[2].models.purkinje.raw
+  return populateGenericModels(modelsZipBase, modelsPurkinje)
+}
+
+function getHippocampusMetadata () {
+  const modelsZipBase = usecases[2].models.hippocampus.raw
+  return populateGenericModels(modelsZipBase, modelsHippocampus)
+}
+
+function populateGenericModels(modelsZipBase, models) {
+  let modelsPopulated = []
+  models.forEach((elem) => {
     let fileName = Object.keys(elem)[0]
     let modelInfo = elem[fileName].meta
-    let morphPath = baseUrl + fileName + '/' + elem[fileName].morph
-    modelInfo.morphImg = morphPath
-    let responsePath = baseUrl + fileName + '/' + elem[fileName].responses
-    modelInfo.reponsesImg = responsePath
+    modelInfo.morphImg = elem[fileName].morph
+    modelInfo.reponsesImg = elem[fileName].responses
     modelInfo.folderName = fileName
     modelInfo.modelTitle = getModelTitle(modelInfo)
-    models.push(modelInfo)
-  }
-  return models
+    modelInfo.modelZipBase = modelsZipBase
+    modelsPopulated.push(modelInfo)
+  })
+  return modelsPopulated
 }
 
 function getNMCMetadata () {
@@ -33,6 +47,7 @@ function getNMCMetadata () {
     let responsePath = baseUrl + elem[fileName].responses
     modelInfo.reponsesImg = responsePath
     modelInfo.folderName = fileName
+    modelInfo.author = modelInfo.contributors
     modelInfo.modelTitle = getModelTitle(modelInfo)
     models.push(modelInfo)
   }
@@ -68,9 +83,11 @@ function searchPerformance (text, originalModels) {
 }
 
 function getModelTitle (modelInfo) {
-  let title = modelInfo.species + ' ' + modelInfo.brain_structure + ' '
-  title += modelInfo.cell_soma_location + ' ' + modelInfo.cell_type + ' '
-  title += modelInfo['e-type'] + ' ' + modelInfo.morphology
+  const species = modelInfo.species.split(' ')[0];
+  const region = modelInfo.brain_region || modelInfo.brain_structure;
+  const type = modelInfo.cell_type.replace(/ /g, '_');
+  const name = (modelInfo.name || modelInfo.folderName).replace(/ /g, '_');
+  const title = `${species} ${region} ${type} ${name}`
   return title
 }
 
@@ -80,7 +97,9 @@ function getModelByUc (ucName) {
 }
 
 export default {
-  getBSPMetadata,
+  getHippocampusMetadata,
+  getGranuleMetadata,
+  getPurkinjeMetadata,
   getNMCMetadata,
   searchPerformance,
   search,

@@ -1,0 +1,32 @@
+[
+  {
+    "Granule cell - Multi compartmental": {
+      "meta": {
+        "cell_type": "Granule Cell", 
+        "description": "Cerebellar Granule cell multi compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -70\n3) Current injections physiological range = 0nA to 0.03nA (30pA)", 
+        "author": "Stefano Masoli", 
+        "brain_region": "Cerebellum", 
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_multi.zip", 
+        "species": "Mouse (Mus musculus)", 
+        "name": "Granule cell - Multi compartmental"
+      }, 
+      "responses": null, 
+      "morph": null
+    }
+  }, 
+  {
+    "Granule cell - Mono compartmental": {
+      "meta": {
+        "cell_type": "Granule Cell", 
+        "description": "Cerebellar Granule cell single compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -80\n3) Current injections physiological range = 0nA to 0.03nA (30pA)", 
+        "author": "Stefano Masoli", 
+        "brain_region": "Cerebellum", 
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono.zip", 
+        "species": "Mouse (Mus musculus)", 
+        "name": "Granule cell - Mono compartmental"
+      }, 
+      "responses": null, 
+      "morph": null
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "Purkinje cell - Multi compartmental": {
+      "meta": {
+        "cell_type": "Purkinje Cell", 
+        "description": "Model\n\nNumber = 19\n\nSize (kB) = 88\n\nDissemination level = public", 
+        "author": "Stefano Masoli", 
+        "brain_region": "Cerebellum", 
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/purkinje_mouse.zip", 
+        "species": "Mouse (Mus musculus)", 
+        "name": "Purkinje cell - Multi compartmental"
+      }, 
+      "responses": null, 
+      "morph": null
+    }
+  }
+]

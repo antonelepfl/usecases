@@ -5,7 +5,7 @@
 </template>
 
 <script>
-   import ca1ModelList from './ca1-model-list.vue'
+   import ca1ModelList from '@/components/shared/ca1-model-list.vue'
    import collabAuthentication from '@/mixins/collabAuthentication.js'
    export default {
       name: 'modelContainer',

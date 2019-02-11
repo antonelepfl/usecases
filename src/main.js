@@ -16,6 +16,29 @@ Vue.use(VueRouter)
 
 Vue.prototype.$http = axios
 
+import CBModelContainer from '@/components/circuitbuilding/model-container.vue';
+import CBForm from '@/components/circuitbuilding/cb-form.vue';
+
+import SCMForm from '@/components/singlecellmodeling/striatal/form-replacing.vue';
+import SCMModelContainer from '@/components/singlecellmodeling/model-container.vue';
+import SCMModelForm from '@/components/singlecellmodeling/model-form.vue';
+
+import MorphAnalysis from '@/components/morphology/analysis-model-container.vue';
+import MorphViewer from '@/components/morphology/viewer-model-container.vue';
+import MorphForm from '@/components/morphology/form-replacing.vue';
+
+import MoocCourseContainer from '@/components/mooc/course-container.vue';
+import MoocForm from '@/components/mooc/mooc-form.vue';
+import MoocWeekContainer from '@/components/mooc/weeks-container.vue';
+
+import SCMStriatalContainer from '@/components/singlecellmodeling/striatal/striatal-container.vue';
+import SSIEModelContainer from '@/components/singlecellinsilicoexperiments/model-container.vue';
+import BACISEModelContainer from '@/components/brainareacircuitinsilicoexperiments/model-container.vue';
+import SCIEModelContainer from '@/components/smallcircuitinsilicoexperiments/model-container.vue';
+import HBPSchoolForm from '@/components/hbpschool/hbp-school-form.vue';
+import TermAndConditions from '@/components/terms-and-conditions.vue';
+import EntityFormReplace from '@/components/entitydashboard/form-replacing.vue';
+
 const router = new VueRouter({
   routes: [
     // ============================ trace analysis ============================
@@ -26,16 +49,12 @@ const router = new VueRouter({
     },
     // ============================ circuit building ============================
     { path: '/circuitbuilding/:uc_name',
-      component: function (resolve) {
-        require(['@/components/circuitbuilding/model-container.vue'], resolve)
-      },
+      component: CBModelContainer,
       props: true,
       name: 'cb_models'
     },
     { path: '/circuitbuilding/:uc_name/:model_name',
-      component: function (resolve) {
-        require(['@/components/circuitbuilding/cb-form.vue'], resolve)
-      },
+      component: CBForm,
       props: true,
       name: 'cb_form'
     },
@@ -46,135 +65,99 @@ const router = new VueRouter({
       name: 'sc_form'
     },
     { path: '/singlecellmodeling/optimizeastriatalfast-spikinginterneuron',
-      component: function (resolve) {
-        require(['@/components/singlecellmodeling/striatal/striatal-container.vue'], resolve)
-      },
+      component: SCMStriatalContainer,
       name: 'sc_striatal_models'
     },
     { path: '/singlecellmodeling/optimizeastriatalfast-spikinginterneuron/:folder_name',
-      component: function (resolve) {
-        require(['@/components/singlecellmodeling/striatal/form-replacing.vue'], resolve)
-      },
+      component: SCMForm,
       props: true,
       name: 'sc_striatal_form_replacing'
     },
     { path: '/singlecellmodeling/:uc_name',
-      component: function (resolve) {
-        require(['@/components/singlecellmodeling/model-container.vue'], resolve)
-      },
+      component: SCMModelContainer,
       props: true,
       name: 'sc_models'
     },
     { path: '/singlecellmodeling/:uc_name/:folder_name',
-      component: function (resolve) {
-        require(['@/components/singlecellmodeling/model-form.vue'], resolve)
-      },
+      component: SCMModelForm,
       props: true,
       name: 'sc_models_form'
     },
     // ============================ moprhology ============================
     { path: '/morphology/:uc_name',
-      component: function (resolve) {
-        require(['@/components/morphology/analysis-model-container.vue'], resolve)
-      },
+      component: MorphAnalysis,
       props: true,
       name: 'morph_analysis_models'
     },
     { path: '/morphology/:uc_name/view',
-      component: function (resolve) {
-        require(['@/components/morphology/viewer-model-container.vue'], resolve)
-      },
+      component: MorphViewer,
       props: true,
       name: 'morph_viewer_models'
     },
     { path: '/morphology/:uc_name/:folder_name',
-      component: function (resolve) {
-        require(['@/components/morphology/form-replacing.vue'], resolve)
-      },
+      component: MorphForm,
       props: true,
       name: 'morph_form_replacing'
     },
     // ================= singlecellinsilicoexperiments ================
     { path: '/singlecellinsilicoexperiments/:uc_name',
-      component: function (resolve) {
-        require(['@/components/singlecellinsilicoexperiments/model-container.vue'], resolve)
-      },
+      component: SSIEModelContainer,
       props: true,
       name: 'insilico_exp'
     },
     // ================= brainareacircuitinsilicoexperiments ================
     { path: '/brainareacircuitinsilicoexperiments/:uc_name',
-      component: function (resolve) {
-        require(['@/components/brainareacircuitinsilicoexperiments/model-container.vue'], resolve)
-      },
+      component: BACISEModelContainer,
       props: true,
       name: 'brainarea_circuits'
     },
     { path: '/brainareacircuitinsilicoexperiments/:uc_name/:model_name',
-      component: function (resolve) {
-        require(['@/components/circuitbuilding/cb-form.vue'], resolve)
-      },
+      component: CBForm,
       props: true,
       name: 'brainarea_form'
     },
     // ============================ mooc ============================
     { path: '/mooc/',
-      component: function (resolve) {
-        require(['@/components/mooc/course-container.vue'], resolve)
-      },
+      component: MoocCourseContainer,
       props: true,
       name: 'mooc_container'
     },
     { path: '/mooc/:uc_name/:week',
-      component: function (resolve) {
-        require(['@/components/mooc/mooc-form.vue'], resolve)
-      },
+      component: MoocForm,
       props: true,
       name: 'mooc_form'
     },
     { path: '/mooc/:uc_name/',
-      component: function (resolve) {
-        require(['@/components/mooc/weeks-container.vue'], resolve)
-      },
+      component: MoocWeekContainer,
       props: true,
       name: 'weeks_container'
     },
     // ================= small circuit in silico experiments ================
     { path: '/smallcircuitinsilicoexperiments/:uc_name',
-      component: function (resolve) {
-        require(['@/components/smallcircuitinsilicoexperiments/model-container.vue'], resolve)
-      },
+      component: SCIEModelContainer,
       props: true,
       name: 'small_circuit_model_container'
     },
     { path: '/smallcircuitinsilicoexperiments/:uc_name/:model_name',
-      component: function (resolve) {
-        require(['@/components/circuitbuilding/cb-form.vue'], resolve)
-      },
+      component: CBForm,
       props: true,
       name: 'small_circuit_form'
     },
     // ================= hbp school ================
     { path: '/hbpschool/:uc_name/',
-      component: function (resolve) {
-        require(['@/components/hbpschool/hbp-school-form.vue'], resolve)
-      },
+      component: HBPSchoolForm,
       props: true,
       name: 'hbp_school_form'
     },
     // ================= terms and conditions ================
     { path: '/termsandconditions/:list_usecases/:uc_name',
-      component: function (resolve) {
-        require(['@/components/terms-and-conditions.vue'], resolve)
-      },
+      component: TermAndConditions,
       props: true,
       name: 'termsandconditions'
     },
     // ================= entity dashboard integration ================
     { path: '/entitydashboard/',
-      component: function (resolve) {
-        require(['@/components/entitydashboard/form-replacing.vue'], resolve)
-      },
+      component: EntityFormReplace,
       props: true,
       name: 'entitydashboard'
     },

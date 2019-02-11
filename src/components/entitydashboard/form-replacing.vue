@@ -41,6 +41,7 @@
         this.replaceText = parsed.replaceText || '';
         this.uri = parsed.uri || traceAnalysisTemplate;
         this.name = parsed.name || 'Trace_Analysis_Nexus';
+        this.appId = parsed.appId || '175';
         if (this.replaceText === '') {
           throw Error('no replaceText was passed');
         }
@@ -63,7 +64,7 @@
         this.isLoading = true
         let item = {
           'entryname': that.name,
-          'appid': 175,
+          'appid': that.appId,
           'extension': '.ipynb',
           'contenttype': 'x-ipynb+json',
           'initial': true,

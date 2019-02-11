@@ -14,12 +14,12 @@
 </template>
 
 <script>
-   import BspNmcModelList from '@/components/singlecellinsilicoexperiments/models-list.vue'
-   const VIEWER_URL = 'https://blue-naas.humanbrainproject.eu/#/model/'
+   import BspNmcModelList from '@/components/shared/models-list.vue'
+   const VIEWER_URL = 'https://blue-naas.humanbrainproject.eu/#/'
    import collabAuthentication from '@/mixins/collabAuthentication.js'
    import createCollab from '@/mixins/createCollab.js'
    import modelsMixins from '@/mixins/models.js'
-   
+
    export default {
       name: 'modelContainer',
       components: {
@@ -38,26 +38,29 @@
         touched (modelItem) { // open Neuron as a service
           var category = this.$route.path.split('/')[1]
           this.sendStatistics(null, this.uc_name, category, modelItem.folderName, null)
-          let viewUrl = VIEWER_URL + modelItem.folderName
-          window.open(viewUrl, '_blank');
+          let modelBlueNaasUrl = modelItem.modelZipBase ?
+            `url/${modelItem.zip_url.replace(modelItem.modelZipBase, '')}` :
+            `model/${modelItem.folderName}`
+
+          window.open(VIEWER_URL + modelBlueNaasUrl, '_blank');
         },
         addSearch (obj) {
           this.filter += ' ' + obj.text
         },
-        performNMC () {
-          let fullModels = modelsMixins.getNMCMetadata()
-          this.models = this.models.concat(fullModels)
+        performRestModels () {
+          const granule = modelsMixins.getGranuleMetadata()
+          const purkinje = modelsMixins.getPurkinjeMetadata()
+          const nmc = modelsMixins.getNMCMetadata()
+          this.models = this.models.concat(granule, nmc, purkinje)
           this.originalModels = this.models // save all the models
         }
       },
       created () {
         document.querySelector('title').innerHTML = 'Models'
-        this.models = modelsMixins.getBSPMetadata()
-        if (window.requestIdleCallback) {
-          window.requestIdleCallback(this.performNMC)
-        } else {
-          this.performNMC()
-        }
+        this.models = modelsMixins.getHippocampusMetadata()
+        window.requestIdleCallback ?
+          window.requestIdleCallback(this.performRestModels) :
+          this.performRestModels();
       },
       watch: {
         'filter': async function (newVal) {

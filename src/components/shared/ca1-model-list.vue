@@ -14,13 +14,13 @@
 </template>
 
 <script>
-   import modelItem from '@/components/singlecellinsilicoexperiments/models-list.vue'
+   import modelList from '@/components/shared/models-list.vue'
    import modelsUtils from '@/mixins/models.js'
 
    export default {
       name: 'ca1ModelList',
       components: {
-         'models-list': modelItem
+         'models-list': modelList
       },
       data () {
          return {
@@ -39,7 +39,7 @@
       },
       created () {
         document.querySelector('title').innerHTML = 'Models'
-        this.originalModels = modelsUtils.getBSPMetadata()
+        this.originalModels = modelsUtils.getHippocampusMetadata()
         this.models = this.originalModels
       },
       watch: {

@@ -12,7 +12,7 @@
         },
         "next": "ta_form",
         "dataprotected": true,
-        "tutorial": "https://bbpteam.epfl.ch/public/bsp-resources/video-tutorials/feature-extraction-v3/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/FeatureExtraction/index.html",
         "files": [
           {
             "entryname": "Feature Extraction GUI",
@@ -34,6 +34,7 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFitting/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting",
@@ -984,10 +985,7 @@
             "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d",
             "file_prod": "829c2011-af3f-441e-b5cf-96ed9126f0ae"
           }
-        ],
-        "models": {
-          "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
-        }
+        ]
       },
       {
         "title": "Morphology visualization",
@@ -999,10 +997,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
-        "dataprotected": true,
-        "models": {
-          "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
-        }
+        "dataprotected": true
       }
     ],
     "singlecellinsilicoexperiments": [
@@ -1471,11 +1466,17 @@
   },
   {
     "models": {
-      "bsp": {
-        "raw": "https://raw.githubusercontent.com/lbologna/bsp_data_repository/master/optimizations/"
-      },
       "nmcportal": {
         "raw": "https://bbp.epfl.ch/public/nmc-models/"
+      },
+      "cerebellum": {
+        "raw" : "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
+      },
+      "hippocampus": {
+        "raw": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
+      },
+      "purkinje": {
+        "raw" : "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
       }
     }
   }

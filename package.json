@@ -23,6 +23,7 @@
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
+    "@vue/eslint-config-airbnb": "^4.0.0",
     "axios": "^0.18.0",
     "jso": "^4.1.1",
     "lodash": "^4.17.11",
@@ -53,16 +54,31 @@
   },
   "eslintConfig": {
     "root": true,
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "no-console": 0
+    "env": {
+      "node": true
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
-    ]
+      "@vue/airbnb"
+    ],
+    "rules": {
+      "no-debugger": 0,
+      "no-console": 0,
+      "guard-for-in": 0,
+      "no-restricted-syntax": 0,
+      "no-underscore-dangle": 0,
+      "import/no-named-as-default-member": 0,
+      "max-len": [
+        "error",
+        {
+          "code": 140,
+          "ignoreStrings": true
+        }
+      ]
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
   },
   "postcss": {
     "plugins": {

@@ -17,17 +17,17 @@
 
 
 <script>
-  export default {
-    name: 'video-tutorial',
-    props: ['uc'],
-    methods: {
-      playTutorial(event) {
-        event.stopPropagation();
-        const win = window.open(this.uc.tutorial, '_blank');
-        win.focus();
-      },
+export default {
+  name: 'video-tutorial',
+  props: ['uc'],
+  methods: {
+    playTutorial(event) {
+      event.stopPropagation();
+      const win = window.open(this.uc.tutorial, '_blank');
+      win.focus();
     },
-  };
+  },
+};
 </script>
 
 

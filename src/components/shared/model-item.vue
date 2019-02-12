@@ -21,45 +21,45 @@
 </template>
 
 <script>
-  import ModelDescription from '@/components/shared/model-description.vue'
-  import placeholder from '@/assets/images/placeholder.jpg'
+import ModelDescription from '@/components/shared/model-description.vue';
+import placeholder from '@/assets/images/placeholder.jpg';
 
-  export default {
-    name: 'modelItem',
-    components: {
-      ModelDescription
+export default {
+  name: 'modelItem',
+  components: {
+    ModelDescription,
+  },
+  props: {
+    model: Object,
+  },
+  data() {
+    return {
+      pathParts: [],
+      path: '',
+      placeholder,
+    };
+  },
+  methods: {
+    hasNext(index) {
+      return index < (this.pathParts.length - 1);
     },
-    props: {
-      model: Object
+    touched() {
+      this.$emit('touched');
     },
-    data () {
-      return {
-        pathParts: [],
-        path: '',
-        placeholder: placeholder
+    search(event) {
+      const searchText = event.target.innerText;
+      if (searchText !== '>') {
+        this.$emit('addSearch', {
+          text: searchText,
+        });
       }
     },
-    methods: {
-      hasNext (index) {
-        return index < (this.pathParts.length - 1)
-      },
-      touched () {
-        this.$emit('touched')
-      },
-      search (event) {
-        let searchText = event.target.innerText
-        if (searchText !== '>') {
-          this.$emit('addSearch', {
-            'text': searchText
-          })
-        }
-      }
-    },
-    mounted () {
-      this.pathParts = this.model.modelTitle.split(' ')
-      this.path = this.pathParts.join(' > ')
-    }
-  }
+  },
+  mounted() {
+    this.pathParts = this.model.modelTitle.split(' ');
+    this.path = this.pathParts.join(' > ');
+  },
+};
 </script>
 
 <style scoped>

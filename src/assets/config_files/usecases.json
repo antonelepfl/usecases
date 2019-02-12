@@ -42,8 +42,8 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "6c6c7956-c391-4981-ba7c-e1988e9c7e0c",
-            "file_prod": "89db99a2-507d-498d-a9f3-61c425d23310",
-            "initial": true
+            "initial": true,
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/traceanalysis/Synaptic%20events%20fitting.ipynb"
           },
           {
             "entryname": "Synaptic events fitting with analysis",
@@ -51,7 +51,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
-            "file_prod": "0f93ca7b-98ee-47f4-b9bd-00fc11e7b890"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb"
           }
         ]
       },
@@ -74,7 +74,7 @@
             "extension": ".ipynb",
             "initial": true,
             "file": "edecb7f3-2a14-469a-abb0-40001c4152ab",
-            "file_prod": "cbe7b31b-0c3d-4b84-8d22-4fd8864ade56"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20model.ipynb"
           },
           {
             "entryname": "Synaptic events fitting with user model analysis",
@@ -82,7 +82,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
-            "file_prod": "0f93ca7b-98ee-47f4-b9bd-00fc11e7b890"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20model%20analysis%20copy.ipynb"
           }
         ]
       },
@@ -105,7 +105,7 @@
             "extension": ".ipynb",
             "initial": true,
             "file": "8ee1a349-fea9-4444-94fd-9d2dda45a828",
-            "file_prod": "6491306a-71f8-44b4-a1be-1545e05d68f5"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20data.ipynb"
           },
           {
             "entryname": "Synaptic events fitting with user data analysis",
@@ -113,7 +113,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
-            "file_prod": "0f93ca7b-98ee-47f4-b9bd-00fc11e7b890"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20data%20analysis.ipynb"
           }
         ]
       },
@@ -189,7 +189,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "71260306-28bb-4613-b5c8-03554810df05",
-            "file_prod": "f15d5b3c-0ed0-43ac-989f-1054d423d7b2"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Rebuild%20Single%20HippoCell%20-%20Config.ipynb"
           },
           {
             "entryname": "Rebuild Single HippoCell - Analysis",
@@ -197,7 +197,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
-            "file_prod": "6a75a3ae-0a11-42d7-b1cb-479fc452c6c7"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Rebuild%20Single%20HippoCell%20-%20Analysis.ipynb"
           },
           {
             "entryname": "Rebuild Single HippoCell - NSG Job Manager",
@@ -205,7 +205,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
-            "file_prod": "a187bdc0-57e1-4189-94a9-3d8b5354e414"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Rebuild%20Single%20HippoCell%20-%20NSG%20Job%20Manager.ipynb"
           }
         ]
       },
@@ -227,7 +227,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "f0889ca5-735d-4857-98e7-fb2e5630d503",
-            "file_prod": "075d59c6-4547-4cd5-a6da-abbf79b7a8c4"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20Config.ipynb"
           },
           {
             "entryname": "BuildOwn Single HippoCell - Analysis",
@@ -235,7 +235,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
-            "file_prod": "6a75a3ae-0a11-42d7-b1cb-479fc452c6c7"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20Analysis.ipynb"
           },
           {
             "entryname": "BuildOwn Single HippoCell - NSG Job Manager",
@@ -243,7 +243,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
-            "file_prod": "a187bdc0-57e1-4189-94a9-3d8b5354e414"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20NSG%20Job%20Manager.ipynb"
           }
         ]
       },
@@ -259,14 +259,14 @@
         "next": "sc_form",
         "files": [
           {
-            "file": "cdd7d4ba-8432-4172-8e3f-06fa18993242",
-            "file_prod": "b20ac676-5858-40c4-884b-aa1620463e33",
             "entryname": "Granule cell mono compartmental optimization",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
-            "initial": true
+            "initial": true,
+            "file": "cdd7d4ba-8432-4172-8e3f-06fa18993242",
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Granule%20cell%20mono%20compartmental%20optimization.ipynb"
           },
           {
             "file": "8cf15718-ebdb-48a2-b3ec-ff2b2770ace9",
@@ -386,14 +386,14 @@
         "next": "sc_form",
         "files": [
           {
-            "file": "a046d0ab-3740-4c56-8cc8-83f346e87782",
-            "file_prod": "ec99d993-0f3a-41eb-93f1-15464c816fd2",
             "appid": 175,
             "entryname": "Granule cell multi compartmental optimization",
             "extension": ".ipynb",
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
-            "initial": true
+            "initial": true,
+            "file": "a046d0ab-3740-4c56-8cc8-83f346e87782",
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Granule%20cell%20multi%20compartmental%20optimization.ipynb"
           },
           {
             "file": "639d663f-eedb-4748-8598-8b2fabdecc38",
@@ -513,14 +513,14 @@
         "next": "sc_form",
         "files": [
           {
-            "file": "ad20df9f-7bc0-42e1-8dda-5b29e5eb02aa",
-            "file_prod": "831c846e-1d47-4903-ac53-83806c04be40",
             "entryname": "Purkinje cell simulation and validation",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
-            "initial": true
+            "initial": true,
+            "file": "ad20df9f-7bc0-42e1-8dda-5b29e5eb02aa",
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Purkinje%20cell%20simulation%20and%20validation.ipynb"
           },
           {
             "file": "fef633e5-f243-410c-b921-db6b2576682d",
@@ -717,7 +717,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "47557ac3-30c4-49d0-9d00-1a89d015e9e4",
-            "file_prod": "929fecbd-74e9-40cc-a466-72eb7c860361"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/singlecellmodeling/Optimization%20of%20FS%20cell.ipynb"
           }
         ],
         "models": [
@@ -804,7 +804,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "b0509c3f-3330-435d-87d2-d0940e98766c",
-                "file_prod": "b8b1f2fa-8187-4008-9143-d3834afb5449"
+                "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/circuitbuilding/Cell%20Placement%20Cerebellum.ipynb"
               }
             ],
             "species": "Rat",
@@ -829,7 +829,7 @@
                 "extension": ".ipynb",
                 "initial": true,
                 "file": "93cb9a13-3c86-4525-a3bf-2f896529ce09",
-                "file_prod": "bb405300-cefc-4ba5-91ab-eca452a08a21"
+                "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/circuitbuilding/Cell%20Placement%20Hippocampus%20-%20Setup.ipynb"
               },
               {
                 "entryname": "Cell Placement Hippocampus",
@@ -837,7 +837,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "22c40748-5a84-4fc8-bef4-9cd29a9e90fd",
-                "file_prod": "8dbd7db7-568b-438b-af53-6a8a035559c1"
+                "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/circuitbuilding/Cell%20Placement%20Hippocampus.ipynb"
               }
             ],
             "species": "Rat",
@@ -860,7 +860,7 @@
                 "extension": ".ipynb",
                 "initial": true,
                 "file": "4d115880-3edc-437a-a701-f23a0d4b63fe",
-                "file_prod": "e7e12933-1485-4a24-9b57-ce07b30d218d"
+                "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/circuitbuilding/Striatum%20Microcircuitry.ipynb"
               },
               {
                 "entryname": "Striatum-scaffold-network-use-case-2018",
@@ -904,7 +904,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "85354cea-5f47-4852-8c8f-8cacf5d38333",
-                "file_prod" :"3c755555-151f-472a-be2b-f0ac7d07ebad"
+                "file_prod" :"https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/circuitbuilding/Connectome%20Cerebellum.ipynb"
               }
             ],
             "species": "Rat",
@@ -983,7 +983,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d",
-            "file_prod": "829c2011-af3f-441e-b5cf-96ed9126f0ae"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/morphology/Morphology%20Analysis.ipynb"
           }
         ]
       },
@@ -1243,7 +1243,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "72aab9c8-b894-4220-bf36-85ec84e4d1ed",
-                "file_prod": "7ba4cf91-2678-4d2a-a197-bdd87939da97"
+                "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/brainareacircuitinsilicoexperiments/Cerebellum%20microcircuit.ipynb"
               }
             ],
             "species": "Rat",
@@ -1328,7 +1328,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "06f82f00-8895-4a2f-8d64-1d3208d8b6e1",
-            "file_prod": "ed2681a2-bf51-4e75-827d-dfa8b27d29de"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/modelvalidation/Validation%20Framework%20Demo.ipynb"
           }
         ]
       },
@@ -1350,7 +1350,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81",
-            "file_prod": "f7570fb5-cee6-4ec1-8e84-e156ee910f97"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/modelvalidation/Optimized%20BG%20model%20validation.ipynb"
           }
         ]
       },
@@ -1372,7 +1372,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
-            "file_prod": "6883db0c-1c05-4d17-ad1b-d2b2479f09dc"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/modelvalidation/Basal%20Ganglia%20Morphology%20Validation.ipynb"
           }
         ]
       },
@@ -1394,7 +1394,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "9b915d4d-c1d0-4d1a-9be9-a614ac305014",
-            "file_prod": "e5961155-db20-4669-92d0-a4d23dd6df98"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/modelvalidation/BluePyOpt%20optimized%20model%20validation.ipynb"
           }
         ]
       },
@@ -1416,7 +1416,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "acb94529-a85c-4a79-bcf5-920612c17d91",
-            "file_prod": "40c99ada-9db4-4252-91a5-a42da919f1a9"
+            "file_prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/modelvalidation/Hippocampus%20single%20cell%20validation.ipynb"
           }
         ]
       }

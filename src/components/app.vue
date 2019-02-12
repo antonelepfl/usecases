@@ -15,7 +15,7 @@
 export default {
   name: 'startapp',
   watch: {
-    '$route' () {
+    $route() {
       /*
        * check if the access_token is in the URL and remove it to avoid
        * going to another page that consider access_token as param
@@ -26,11 +26,11 @@ export default {
         /* eslint-enable no-console */
         const url = window.location.href;
         const accessTokenIndex = url.indexOf('%2F&access_token') || url.indexOf('access_token');
-        window.location.href = url.substr(0, accessTokenIndex)
+        window.location.href = url.substr(0, accessTokenIndex);
       }
     },
   },
-}
+};
 </script>
 
 <style>

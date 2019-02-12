@@ -1,30 +1,30 @@
 
 /* eslint-disable no-console */
-const BSP_TERMS = 'bsp-terms-accepted'
+const BSP_TERMS = 'bsp-terms-accepted';
 export default {
-  termsAcceptedLocally (category) {
+  termsAcceptedLocally(category) {
     /* eslint no-undef: 0 */
-    let termsStored = localStorage.getItem(BSP_TERMS)
+    const termsStored = localStorage.getItem(BSP_TERMS);
     try {
-      let parsed = JSON.parse(termsStored)
-      if (parsed.includes(category)) return true
-      return false
+      const parsed = JSON.parse(termsStored);
+      if (parsed.includes(category)) return true;
+      return false;
     } catch (e) {
-      return false
+      return false;
     }
   },
 
-  saveTermsAccept (category) {
+  saveTermsAccept(category) {
     /* eslint no-undef: 0 */
-    let termsLocally = localStorage.getItem(BSP_TERMS)
+    const termsLocally = localStorage.getItem(BSP_TERMS);
     try {
-      let parsed = JSON.parse(termsLocally) || []
+      const parsed = JSON.parse(termsLocally) || [];
       if (!parsed.includes(category)) {
-        parsed.push(category)
-        localStorage.setItem(BSP_TERMS, JSON.stringify(parsed))
+        parsed.push(category);
+        localStorage.setItem(BSP_TERMS, JSON.stringify(parsed));
       }
     } catch (e) {
-      console.error('Error updating accepted terms locally')
+      console.error('Error updating accepted terms locally');
     }
-  }
-}
+  },
+};

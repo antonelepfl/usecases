@@ -44,35 +44,34 @@
 </template>
 
 <script>
-   export default {
-      name: 'uc-tags',
-      props: {
-         uc: {
-            type: Object,
-            default () { return {} }
-         },
-         categories: {
-            type: Object
-         }
-      },
-      methods: {
-         getClassByPrefix (prefix, type) {
-            var key = prefix + type
-            var data = { [key]: true }
-            return data
-         },
-         getTooltipByPrefix (prefix, type) {
-            var tooltip = ''
-            if (prefix && type) {
-               tooltip = this.categories[prefix][type].tooltip
-            }
-            return tooltip
-         },
-         fullName (prefix, elem) {
-            return this.categories[prefix][elem].name
-         }
-      }
-   }
+import get from 'lodash/get';
+
+export default {
+  name: 'uc-tags',
+  props: {
+    uc: {
+      type: Object,
+      default() { return {}; },
+    },
+    categories: {
+      type: Object,
+    },
+  },
+  methods: {
+    getClassByPrefix(prefix, type) {
+      const key = prefix + type;
+      const data = { [key]: true };
+      return data;
+    },
+    getTooltipByPrefix(prefix, type) {
+      const tooltip = get(this, `categories[${prefix}][${type}].tooltip`, '');
+      return tooltip;
+    },
+    fullName(prefix, elem) {
+      return this.categories[prefix][elem].name;
+    },
+  },
+};
 </script>
 
 <style scoped>

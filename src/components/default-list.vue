@@ -6,13 +6,13 @@
 
 <script>
 
-import ucContainer from '@/components/uc/uc-container.vue'
+import ucContainer from '@/components/uc/uc-container.vue';
 
 export default {
   name: 'defaultList',
   components: {
-    'uc-container': ucContainer
+    'uc-container': ucContainer,
   },
   props: ['list_usecases'],
-}
+};
 </script>

@@ -39,153 +39,125 @@
 </template>
 
 <script>
-  import mooc from '@/mixins/mooc.js'
-  import collabAuthentication from '@/mixins/collabAuthentication.js'
-  import usecases from '@/assets/config_files/usecases.json'
-  import store from '@/mixins/store.js'
+import mooc from '@/mixins/mooc';
+import collabAuthentication from '@/mixins/collabAuthentication';
+import usecases from '@/assets/config_files/usecases.json';
 
-  export default {
-    name: 'hbpSchoolForm',
-    data () {
-      return {
-        searchText: '',
-        schoolName: 'HBP School',
-        isLoading: false,
-        errorMessage: '',
-        isLoadingLocal: false,
-        collabResults: [],
-        collabCreationProgress: 0,
-        fullCollabName: '',
-        timeoutId: 0,
+export default {
+  name: 'hbpSchoolForm',
+  data() {
+    return {
+      searchText: '',
+      schoolName: 'HBP School',
+      isLoading: false,
+      errorMessage: '',
+      isLoadingLocal: false,
+      collabResults: [],
+      collabCreationProgress: 0,
+      fullCollabName: '',
+      timeoutId: 0,
+    };
+  },
+  props: ['uc_name'],
+  mixins: [mooc, collabAuthentication], // use common functions
+  methods: {
+    async createNewCollab() {
+      const isPrivate = false;
+      this.isLoading = true;
+      this.errorMessage = '';
+      this.collabCreationProgress = 10;
+      let collab = null;
+
+      try {
+        collab = await this.createMoocCollab(isPrivate, this.fullCollabName);
+      } catch (error) {
+        this.errorMessage = error.message;
+        this.isLoadingLocal = false;
+        return;
       }
-    },
-    props: ['uc_name'],
-    mixins: [mooc, collabAuthentication], // use common functions
-    methods: {
-      async createNewCollab () {
-        var that = this
-        var isPrivate = false
-        this.isLoading = true
-        this.errorMessage = ''
-        this.collabCreationProgress = 10
-        try {
-          let collab = await this.createMoocCollab(isPrivate, this.fullCollabName)
-          var category = this.$route.path.split('/')[1]
-          await that.createCoursesSchool(collab, category, that.uc_name)
-          that.sendStatistics(collab.id, that.uc_name, category, this.schoolName, true)
-          that.collabCreationProgress = 100
-          that.isLoading = false
-        } catch (error) {
-          if (error === 'collab with this title already exists.') {
-            that.errorMessage = 'Please try again'
-            that.isLoading = false
-          } else {
-            that.errorMessage = 'Error during collab creation: ' + error
-            that.isLoading = false
-          }
-        }
-      },
-      async collabSelected (collab) {
-        var that = this
-        that.isLoadingLocal = true
-        this.collabCreationProgress = 10
-        try {
-          var category = this.$route.path.split('/')[1]
-          await this.addSchoolExistingCollab(collab, category, this.uc_name)
-          that.sendStatistics(collab.id, that.uc_name, category, this.schoolName, false)
-          that.isLoadingLocal = false
-        } catch (error) {
-          that.errorMessage = error
-          that.isLoadingLocal = false
-        }
-      },
-      async updateFullCollabName (searchText, schoolName) {
-        try {
-          if (searchText !== '') {
-            this.fullCollabName = searchText
-          } else {
-            let user = await this.getUserInfo()
-            let d = new Date().toLocaleString()
-            this.fullCollabName = schoolName + ' - ' + user.familyName + ' ' + d
-          }
-        } catch (e) { return Promise.reject(e) }
-      },
-      addSchoolExistingCollab (collab, category, uc) {
-        try {
-          return this.createCoursesSchool(collab, category, uc)
-        } catch (e) { return Promise.reject(e) }
-      },
-      async createCoursesSchool (collab, category, uc) {
-        var that = this
-        that.schoolInfo = usecases[0][category].find(elem => (
-          this.compact(elem.title) === uc)
-        )
-        let coursesPromises = []
-        try {
-          await that.getNavElement(collab.id)
-          if (that.schoolInfo && that.schoolInfo.files) {
-            let isReplace = await that.replaceExistsDialog(store.state.allNavItems, that.schoolInfo.files)
-            this.schoolInfo.files.forEach((file) => {
-              if (!isReplace) { // no replace. generate new navitem and new file
-                throw String('abort and redirect')
-              }
-              let creat = that.createItemInExistingCollab(collab, file)
-              coursesPromises.push(creat)
-            })
-            let elements = await Promise.all(coursesPromises)
-            let emptyNavItemsId = await that.generateNavItems(that.schoolInfo.files, elements)
-            let prom = []
-            for (let item in emptyNavItemsId) {
-              prom.push(that.copyContentToNav(emptyNavItemsId[item]))
-            }
-            await Promise.all(prom)// populate navitem parallel
-            that.collabCreationProgress = that.collabCreationProgress + 5
 
-            that.redirectToCollab(collab.id, that.navitemId)
-            await setTimeout(1500) // if it does not redirect stop loading
-            return
-          }
+      const category = this.$route.path.split('/')[1];
+
+      try {
+        await this.createCoursesSchool(collab, category, this.uc_name);
+      } catch (error) {
+        this.errorMessage = `Error during course creation: ${error.message}`;
+        this.isLoadingLocal = false;
+        return;
+      }
+
+      this.sendStatistics(collab.id, this.uc_name, category, this.schoolName, true);
+      this.collabCreationProgress = 100;
+      this.isLoadingLocal = false;
+    },
+    async collabSelected(collab) {
+      this.isLoadingLocal = true;
+      this.collabCreationProgress = 10;
+      const category = this.$route.path.split('/')[1];
+      try {
+        await this.createCoursesSchool(collab, category, this.uc_name);
+        this.sendStatistics(collab.id, this.uc_name, category, this.schoolName, false);
+      } catch (error) {
+        console.error(error);
+        this.errorMessage = error.message;
+      }
+      this.isLoadingLocal = false;
+    },
+    async updateFullCollabName(searchText, schoolName) {
+      if (searchText !== '') {
+        this.fullCollabName = searchText;
+      } else {
+        let user = null;
+        try {
+          user = await this.getUserInfo();
         } catch (e) {
-          that.abortAndRedirect(collab, that.moocWeek, e)
+          console.error(e);
+          this.errorMessage = e.message;
         }
-      },
-    },
-    mounted () {
-      let that = this
-      this.$nextTick(function () { // waits until token is saved in mixins headers
-        that.updateFullCollabName(this.searchText, this.schoolName)
-      })
-    },
-    watch: {
-      'searchText' (newVal) {
-        var that = this
-        this.updateFullCollabName(this.searchText, this.schoolName)
-        clearTimeout(this.timeoutId)
-        if (newVal === '') {
-          that.collabResults = []
-          that.errorMessage = ''
-          that.isLoadingLocal = false
-          return;
-        }
-        this.timeoutId = setTimeout(function () {
-          that.isLoadingLocal = true
-          that.searchCollab(newVal).then(function (result) {
-            if (that.errorMessage !== '') {
-              that.errorMessage = ''
-            }
-            if (result.length === 0) {
-              that.collabResults = [{'title': 'No found'}]
-            } else {
-              that.collabResults = result
-            }
-            that.isLoadingLocal = false
-          }, () => {
-            that.errorMessage = 'Getting your collabs ...'
-          })
-        }, 500)
+        const d = new Date().toLocaleString();
+        this.fullCollabName = `${schoolName} - ${user.familyName} ${d}`;
       }
-    }
-  }
+    },
+
+    async createCoursesSchool(collab, category, uc) {
+      this.schoolInfo = usecases[0][category].find(elem => (this.compact(elem.title) === uc));
+      return this.createGenericCourses(collab, this.schoolInfo);
+    },
+  },
+  mounted() {
+    this.$nextTick(() => { // waits until token is saved in mixins headers
+      this.updateFullCollabName(this.searchText, this.schoolName);
+    });
+  },
+  watch: {
+    searchText(newVal) {
+      this.updateFullCollabName(this.searchText, this.schoolName);
+      clearTimeout(this.timeoutId);
+      if (newVal === '') {
+        this.collabResults = [];
+        this.errorMessage = '';
+        this.isLoadingLocal = false;
+        return;
+      }
+      this.timeoutId = setTimeout(() => {
+        this.isLoadingLocal = true;
+        this.searchCollab(newVal).then((result) => {
+          if (this.errorMessage !== '') {
+            this.errorMessage = '';
+          }
+          if (result.length === 0) {
+            this.collabResults = [{ title: 'No found' }];
+          } else {
+            this.collabResults = result;
+          }
+          this.isLoadingLocal = false;
+        }).catch(() => {
+          this.errorMessage = 'Getting your collabs ...';
+        });
+      }, 500);
+    },
+  },
+};
 </script>
 
 <style scoped>

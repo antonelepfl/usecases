@@ -37,20 +37,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'modelDescription',
-    props: {
-      model: Object
+export default {
+  name: 'modelDescription',
+  props: {
+    model: Object,
+  },
+  computed: {
+    description() {
+      if (!this.model.description) return '';
+      // sanitize a little bit
+      const proper = this.model.description.replace(/\\_/g, '_');
+      return proper;
     },
-    computed: {
-      description() {
-        if (!this.model.description) return;
-        // sanitize a little bit
-        const proper = this.model.description.replace(/\\_/g, '_')
-        return proper;
-      },
-    },
-  }
+  },
+};
 </script>
 
 <style>

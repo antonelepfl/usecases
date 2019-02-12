@@ -6,8 +6,8 @@
 
                <div class="modal-header">
                   <slot name="header"></slot>
-                  <img src="../assets/icons/icon-close-128.png" 
-                     alt="close button" class="close-button" 
+                  <img src="../assets/icons/icon-close-128.png"
+                     alt="close button" class="close-button"
                      v-on:click="$emit('close')">
                </div>
 

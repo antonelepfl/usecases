@@ -12,34 +12,35 @@
 </template>
 
 <script>
-  import collabAuthentication from '@/mixins/createCollab.js'
-  import termsAndConditions from '@/assets/config_files/terms_and_conditions.md'
-  import storageManager from '@/mixins/storageManager.js'
-  export default {
-    mixins: [collabAuthentication],
-    data () {
-      return {
-        collabAuthentication,
-        termsAndConditions
+import collabAuthentication from '@/mixins/createCollab';
+import termsAndConditions from '@/assets/config_files/terms_and_conditions.md';
+import storageManager from '@/mixins/storageManager';
+
+export default {
+  mixins: [collabAuthentication],
+  data() {
+    return {
+      collabAuthentication,
+      termsAndConditions,
+    };
+  },
+  methods: {
+    choiceSelected(choice) {
+      // from mixin collabAuthentication
+      this.sendAcceptTerms(choice);
+      if (choice === 'Yes') {
+        const category = this.$route.params.list_usecases;
+        storageManager.saveTermsAccept(category);
+        // go to the page to create / add collabs
+        this.$router.replace({
+          path: `/${this.$route.params.list_usecases}/${this.$route.params.uc_name}`,
+        });
+      } else {
+        this.$router.go(-1);
       }
     },
-    methods: {
-      choiceSelected (choice) {
-        // from mixin collabAuthentication
-        this.sendAcceptTerms(choice)
-        if (choice === 'Yes') {
-          let category = this.$route.params.list_usecases
-          storageManager.saveTermsAccept(category)
-          // go to the page to create / add collabs
-          this.$router.replace({
-            path: `/${this.$route.params.list_usecases}/${this.$route.params.uc_name}`
-          })
-        } else {
-          this.$router.go(-1)
-        }
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style scoped>

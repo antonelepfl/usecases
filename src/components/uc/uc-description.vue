@@ -20,20 +20,21 @@
 </template>
 
 <script>
-   import { getContributorFormated } from '@/mixins/utils.js'
-   export default {
-      name: 'ucDescription',
-      props: {
-         uc: {
-            type: Object
-         }
-      },
-      data () {
-        return {
-          getContributorFormated,
-        }
-      },
-   }
+import { getContributorFormated } from '@/mixins/utils';
+
+export default {
+  name: 'ucDescription',
+  props: {
+    uc: {
+      type: Object,
+    },
+  },
+  data() {
+    return {
+      getContributorFormated,
+    };
+  },
+};
 </script>
 
 <style scoped>

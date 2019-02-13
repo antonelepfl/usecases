@@ -1,35 +1,28 @@
 <template>
    <div class="model-container">
-      <div class="title-uc">Please select a model</div>
-      <div class="content-uc">
-         <div
-          v-for="model in models"
-          :key="model.title"
-          :class="{ 'disabled-container': model.disabled }"
-          @click="selected(model)"
-         >
-         <div v-if="model.disabled" class="disabled-tag">Coming Soon</div>
-            <md-whiteframe
-              md-elevation="2"
-              class="item-sections"
-              v-bind:class="{ 'disabled-item': model.disabled }"
-            >
-               <model-item v-bind:model="model"></model-item>
-            </md-whiteframe>
-         </div>
-      </div>
+      <uc-list-viewer :item-list="models" @selected="selected">
+
+        <template v-slot:title>Please select a model</template>
+
+        <template v-slot:default="slotProps">
+          <model-item v-bind:model="slotProps.item"/>
+        </template>
+
+      </uc-list-viewer>
    </div>
 </template>
 
 <script>
-import modelItem from './model-item.vue';
+import ModelItem from './model-item.vue';
+import UcListViewer from '@/components/uc-list-viewer.vue';
 import modelsMixins from '@/mixins/models';
 import { compact } from '@/mixins/utils';
 
 export default {
-  name: 'modelContainer',
+  name: 'ModelContainer',
   components: {
-    'model-item': modelItem,
+    ModelItem,
+    UcListViewer,
   },
   props: ['uc_name'],
   data() {

@@ -1,28 +1,25 @@
 <template>
-   <div id="course-container" class="course-container">
-      <div id="course-container-title" class="title-uc">
-        {{moocInfo.title}}
-        <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
-          <i>Link to the course </i>
-          <i class="material-icons middle">link</i>
-        </a>
-      </div>
-      <div class="content-uc">
-        <div v-for="uc in weeks" :key="uc.title" v-bind:class="{ 'disabled-container': uc.disabled }" v-on:click="selected(uc)">
-           <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
-           <md-whiteframe
-            md-elevation="2"
-            v-bind:class="{ 'item-sections': true, 'disabled-item': uc.disabled }"
-           >
-              <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
-           </md-whiteframe>
-        </div>
-      </div>
+    <div id="course-container" class="course-container">
+      <uc-list-viewer :item-list="weeks" @selected="selected">
+        <template v-slot:title>
+          {{ moocInfo.title }}
+          <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
+            <i>Link to the course </i>
+            <i class="material-icons middle">link</i>
+          </a>
+        </template>
+
+        <template v-slot:default="slotProps">
+          <uc-item v-bind:uc="slotProps.item" v-bind:categories="categories"/>
+        </template>
+
+      </uc-list-viewer>
    </div>
 </template>
 
 <script>
 import UcItem from '@/components/uc/uc-item.vue';
+import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import collabAuthentication from '@/mixins/collabAuthentication';
 import mooc from '@/mixins/mooc';
@@ -31,6 +28,7 @@ export default {
   name: 'ucContainer',
   components: {
     UcItem,
+    UcListViewer,
   },
   data() {
     return {

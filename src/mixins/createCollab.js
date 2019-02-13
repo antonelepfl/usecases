@@ -216,9 +216,10 @@ export default {
       }));
     },
     getFileByEnv(info) {
-      if (store.state.devWebsite) {
-        return info.file;
-      }
+      // TODO: uncomment next
+      // if (store.state.devWebsite) {
+      //   return info.file;
+      // }
       return info.file_prod || info.file;
     },
     async createFile(name, contentType, extension, parent, collabId) {
@@ -231,7 +232,7 @@ export default {
       const newHeader = {
         headers: {
           Authorization: this.header.headers.Authorization,
-          Accept: 'applion/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
       };
@@ -574,16 +575,19 @@ export default {
       console.debug('Send acceptance Terms & Conditions to form');
       this.sendToForm(formData, url, userEntry);
     },
-    getDataRepo(url) {
+    async getDataRepo(url) {
       if (!url.includes('://')) {
         url = decodeURIComponent(url);
       }
-      const that = this;
-      return new Promise(((resolve, reject) => {
-        that.$http.get(url).then((content) => {
-          resolve(content.data);
-        }, reject);
-      }));
+      try {
+        const response = await this.$http.get(url);
+        debugger;
+        return response.data;
+      } catch (error) {
+        debugger;
+        console.log(error);
+        throw new Error('Error fetching content from Github');
+      }
     },
     addCollabMemeber(collabId, userId) {
       const that = this;

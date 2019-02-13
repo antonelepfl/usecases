@@ -9,7 +9,7 @@ console.log('Commit:', process.env.GIT_COMMIT);
 console.log('Branch:', process.env.GIT_BRANCH);
 
 module.exports = {
-  baseUrl: process.env.BASE_URL,
+  publicPath: process.env.BASE_URL,
   configureWebpack: {
     module: {
       rules: [

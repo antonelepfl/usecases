@@ -1,29 +1,18 @@
 <template>
    <div id="uc-container" class="uc-container">
-      <div
-         id="uc-container-title"
-         class="title-uc"
-      >
-        Please select a use case
-        <commit-number></commit-number>
-      </div>
-      <div class="content-uc">
-        <div
-           v-for="uc in usecases"
-           :key="uc.title"
-           v-bind:class="{ 'disabled-container': uc.disabled }"
-           v-on:click="selected(uc)"
-        >
-           <div v-if="uc.disabled" class="disabled-tag">Coming Soon</div>
-           <md-whiteframe
-              md-elevation="2"
-              class="item-sections"
-              v-bind:class="{ 'disabled-item': uc.disabled }"
-           >
-              <uc-item v-bind:uc="uc" v-bind:categories="categories"></uc-item>
-           </md-whiteframe>
-        </div>
-      </div>
+      <uc-list-viewer :item-list="usecases" @selected="selected">
+
+        <template v-slot:title>
+          Please select a use case
+          <commit-number></commit-number>
+        </template>
+
+        <template v-slot:default="slotProps">
+          <uc-item v-bind:uc="slotProps.item" v-bind:categories="categories"/>
+        </template>
+
+      </uc-list-viewer>
+
       <!-- if the url is not correct show index of UCs -->
       <div v-if="!usecases">
          <div v-for="index in indexes" :key="index">
@@ -35,6 +24,7 @@
 
 <script>
 import ucItem from './uc-item.vue';
+import ucListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import storageManager from '@/mixins/storageManager';
 import commitNumer from '@/components/commit-number.vue';
@@ -44,6 +34,7 @@ export default {
   components: {
     'uc-item': ucItem,
     'commit-number': commitNumer,
+    'uc-list-viewer': ucListViewer,
   },
   data() {
     return {

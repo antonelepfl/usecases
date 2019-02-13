@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import ucDescription from '@/components/uc/uc-description.vue';
+import UcDescription from '@/components/uc/uc-description.vue';
 
 export default {
   name: 'modelItem',
   components: {
-    'uc-description': ucDescription,
+    UcDescription,
   },
   data() {
     return {
@@ -32,5 +32,4 @@ export default {
     this.uc.contributors = this.model.contributors;
   },
 };
-
 </script>

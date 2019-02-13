@@ -261,8 +261,8 @@ export default {
       console.debug('File created');
       return response.data;
     },
-    async addCommonHeaderCells(content) {
-      console.warn('***** add common header cells *****');
+    async addCommonHeaderCells(content, fileUrl, sha) {
+      console.debug('***** add common header cells *****');
       let url = null;
       let headerFile = null;
       if (store.state.devWebsite) {
@@ -278,16 +278,19 @@ export default {
         throw new Error('Error getting github common header file');
       }
       content.cells.unshift(...headerFile.data.cells);
-      return content;
+
+      return JSON.stringify(content)
+        .replace('TEST_ID', sha)
+        .replace('IMPORT', fileUrl);
     },
     async copyFileContent(originFileId, newFileId) {
       console.debug('Put content to file');
       if (originFileId.includes('://')) {
         console.debug('Putting content of notebook from github');
         // it's from github
-        const content = await this.getDataRepo(originFileId);
-        const notebookWithHeader = await this.addCommonHeaderCells(content);
-        await this.setFileContent(newFileId, JSON.stringify(notebookWithHeader));
+        const { content, sha } = await this.getDataFromRepo(originFileId);
+        const notebookWithHeaderStr = await this.addCommonHeaderCells(content, originFileId, sha);
+        await this.setFileContent(newFileId, notebookWithHeaderStr);
       } else {
         console.debug('Putting content of notebook from Collab storage');
         // it's from the Collab storage
@@ -420,16 +423,21 @@ export default {
       return null;
     },
     async getFileContent(fileId) {
-      let content = null;
+      let response = null;
       try {
-        content = fileId.includes('://')
-          ? await this.getDataRepo(fileId)
+        response = fileId.includes('://')
+          ? await this.getDataFromRepo(fileId)
           : await this.$http.get(`${STORAGE_FILE_API + fileId}/content/`, this.header);
+        if (!response) throw new Error('no response data from github');
       } catch (error) {
         console.error(error);
         throw new Error('Error getting file content');
       }
-      return this.addCommonHeaderCells(content);
+      if (response.sha) {
+        // production notebooks
+        return this.addCommonHeaderCells(response.content, fileId, response.sha);
+      }
+      return response.data;
     },
     setFileContent(fileId, content) {
       const that = this;
@@ -575,19 +583,26 @@ export default {
       console.debug('Send acceptance Terms & Conditions to form');
       this.sendToForm(formData, url, userEntry);
     },
-    async getDataRepo(url) {
+    async getDataFromRepo(url) {
+      // sha used for check new notebook available in productions notebooks
+      const dataObj = { content: null, sha: null };
       if (!url.includes('://')) {
         url = decodeURIComponent(url);
       }
+      let response = null;
       try {
-        const response = await this.$http.get(url);
-        debugger;
-        return response.data;
+        response = await this.$http.get(url);
       } catch (error) {
-        debugger;
         console.log(error);
         throw new Error('Error fetching content from Github');
       }
+      if (url.includes('contents/production_notebooks')) {
+        dataObj.content = JSON.parse(atob(response.data.content));
+        dataObj.sha = response.data.sha;
+      } else {
+        dataObj.content = response.data;
+      }
+      return dataObj;
     },
     addCollabMemeber(collabId, userId) {
       const that = this;

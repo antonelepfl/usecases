@@ -86,7 +86,7 @@ export default {
 
         if (!file.exists || (file.exists && store.state.rewriteFiles)) {
           console.debug('Put content to file');
-          let content = await that.getDataRepo(originalFileId);
+          let { content } = await that.getDataFromRepo(originalFileId);
           if (appInfo.contenttype === 'x-ipynb+json') {
             content = this.addSubmissionTokenMetadata(content);
           }

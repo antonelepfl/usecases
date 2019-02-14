@@ -216,10 +216,9 @@ export default {
       }));
     },
     getFileByEnv(info) {
-      // TODO: uncomment next
-      // if (store.state.devWebsite) {
-      //   return info.file;
-      // }
+      if (store.state.devWebsite) {
+        return info.file;
+      }
       return info.file_prod || info.file;
     },
     async createFile(name, contentType, extension, parent, collabId) {
@@ -281,7 +280,7 @@ export default {
 
       return JSON.stringify(content)
         .replace('TEST_ID', sha)
-        .replace('IMPORT', fileUrl);
+        .replace('GITHUB_FILE_PATH', fileUrl);
     },
     async copyFileContent(originFileId, newFileId) {
       console.debug('Put content to file');

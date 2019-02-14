@@ -12,53 +12,53 @@
 </template>
 
 <script>
-  import collabFormComponent from '@/components/collab-form-component.vue'
-  import createCollab from '@/mixins/createCollab.js'
-  import circuitbuilding from '@/mixins/deepModel.js'
-  import collabAuthentication from '@/mixins/collabAuthentication.js'
-  export default {
-    name: 'collabForm',
-    data () {
-      return {
-        isLoading: false,
-        error: ''
-      }
-    },
-    props: ['uc_name', 'model_name'],
-    mixins: [createCollab, circuitbuilding, collabAuthentication], // use common functions
-    components: {
-      'cb-form-component': collabFormComponent
-    },
-    methods: {
-      collabSelected: function (collab) {
-        var that = this
-        this.isLoading = true
-        this.error = ''
-        var modelPrettyName = this.getModelName(this.model_name)
-        var category = this.$route.path.split('/')[1]
-        this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, false)
-        this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
-        // some of the functions here are overwritten in the circuitbuilding.js
-        .then(function () {
-          that.isLoading = false
-        }, function (error) {
-          that.isLoading = false
-          that.error = error
-        })
-      },
-      createNewCollab (collab) {
-        var that = this
-        this.error = ''
-        this.isLoading = true
-        var modelPrettyName = this.getModelName(this.model_name)
-        var category = this.$route.path.split('/')[1]
-        this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, true)
-        this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
-        .then(function () {
-          that.isLoading = false
-        })
-      }
-    }
-  }
-</script>
+import collabFormComponent from '@/components/collab-form-component.vue';
+import createCollab from '@/mixins/createCollab';
+import circuitbuilding from '@/mixins/deepModel';
+import collabAuthentication from '@/mixins/collabAuthentication';
 
+export default {
+  name: 'collabForm',
+  data() {
+    return {
+      isLoading: false,
+      error: '',
+    };
+  },
+  props: ['uc_name', 'model_name'],
+  mixins: [createCollab, circuitbuilding, collabAuthentication], // use common functions
+  components: {
+    'cb-form-component': collabFormComponent,
+  },
+  methods: {
+    collabSelected(collab) {
+      const that = this;
+      this.isLoading = true;
+      this.error = '';
+      const modelPrettyName = this.getModelName(this.model_name);
+      const category = this.$route.path.split('/')[1];
+      this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, false);
+      this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
+        // some of the functions here are overwritten in the circuitbuilding.js
+        .then(() => {
+          that.isLoading = false;
+        }, (error) => {
+          that.isLoading = false;
+          that.error = error;
+        });
+    },
+    createNewCollab(collab) {
+      const that = this;
+      this.error = '';
+      this.isLoading = true;
+      const modelPrettyName = this.getModelName(this.model_name);
+      const category = this.$route.path.split('/')[1];
+      this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, true);
+      this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
+        .then(() => {
+          that.isLoading = false;
+        });
+    },
+  },
+};
+</script>

@@ -39,8 +39,17 @@
         </md-input-container>
 
         <div v-show="!isLoadingLocal" class="centered">
-          <md-button id="createButton" class="md-raised md-primary button-medium separated" @click.native="createNewCollab">Create</md-button>
-          <md-switch v-model="isPrivate" id="priv_pub" name="priv_pub" class="md-primary priv_pub separated">{{private_public}}</md-switch>
+          <md-button
+            id="createButton"
+            class="md-raised md-primary button-medium separated"
+            @click.native="createNewCollab"
+          >Create</md-button>
+          <md-switch
+            v-model="isPrivate"
+            id="priv_pub"
+            name="priv_pub"
+            class="md-primary priv_pub separated"
+          >{{private_public}}</md-switch>
         </div>
       </div>
     </transition-group>
@@ -54,100 +63,100 @@
 </template>
 
 <script>
-  import createCollab from '@/mixins/createCollab.js'
-  
-  export default {
-    name: 'collabFormComponent',
-    props: ['isLoading'],
-    data () {
-      return {
-        isPrivate: false,
-        searchText: '',
-        collabResults: [],
-        errorMessage: '',
-        isLoadingLocal: this.isLoading,
-        isSearch: true,
-        timeoutId: 0 // to delay the collab search
+import createCollab from '@/mixins/createCollab';
+
+export default {
+  name: 'collabFormComponent',
+  props: ['isLoading'],
+  data() {
+    return {
+      isPrivate: false,
+      searchText: '',
+      collabResults: [],
+      errorMessage: '',
+      isLoadingLocal: this.isLoading,
+      isSearch: true,
+      timeoutId: 0, // to delay the collab search
+    };
+  },
+  mixins: [createCollab], // use common functions
+  computed: {
+    private_public() {
+      if (this.isPrivate) {
+        return 'Private';
+      }
+      return 'Public';
+    },
+  },
+  methods: {
+    collabSelected(collab) {
+      const that = this;
+      this.getCollabStorage(collab.id).then(() => {
+        that.$emit('collabSelected', collab);
+      });
+    },
+    async createNewCollab() {
+      this.errorMessage = '';
+      if (!this.searchText) {
+        this.errorMessage = 'Name is require';
+        return;
+      }
+      const isPrivate = (this.$el.querySelector('#priv_pub').value === 'true'); // to convert in bool
+      this.isLoadingLocal = true;
+      try {
+        const collabInfo = await this.createCollab(this.searchText, isPrivate);
+        await this.getCollabStorage(collabInfo.id);
+        this.$emit('collabCreated', collabInfo);
+      } catch (error) {
+        this.errorMessage = error.message;
+        this.isLoadingLocal = false;
       }
     },
-    mixins: [createCollab], // use common functions
-    computed: {
-      private_public () {
-        if (this.isPrivate) {
-          return 'Private'
-        }
-        return 'Public'
+    search(newVal) {
+      this.errorMessage = '';
+      const that = this;
+      if (newVal === '') {
+        that.collabResults = [];
+        that.errorMessage = '';
+      } else if (this.isSearch) {
+        // check for collabs only while searching
+        that.isLoadingLocal = true;
+        this.searchCollab(newVal).then((result) => {
+          if (that.errorMessage !== '') {
+            that.errorMessage = '';
+          }
+          that.collabResults = result;
+          that.isLoadingLocal = false;
+        }, () => {
+          that.errorMessage = 'Getting your collabs ...';
+          that.isLoadingLocal = false;
+        });
       }
     },
-    methods: {
-      collabSelected: function (collab) {
-        let that = this
-        this.getCollabStorage(collab.id).then(() => {
-          that.$emit('collabSelected', collab)
-        })
-      },
-      createNewCollab () {
-        var that = this
-        this.errorMessage = ''
-        if (!this.searchText) {
-          this.errorMessage = 'Name is require'
-          return
-        }
-        var isPrivate = (this.$el.querySelector('#priv_pub').value === 'true') // to convert in bool
-        this.isLoadingLocal = true
-        this.createCollab(this.searchText, isPrivate)
-        .then(function (collab) {
-          that.getCollabStorage(collab.id).then(() => {
-            that.$emit('collabCreated', collab)
-          })
-        }, (error) => {
-          that.errorMessage = error
-          that.isLoadingLocal = false
-        })
-      },
-      search (newVal) {
-        var that = this
-        if (newVal === '') {
-          that.collabResults = []
-          that.errorMessage = ''
-        } else if (this.isSearch) {
-          // check for collabs only while searching
-          that.isLoadingLocal = true
-          this.searchCollab(newVal).then((result) => {
-            if (that.errorMessage !== '') {
-              that.errorMessage = ''
-            }
-            that.collabResults = result
-            that.isLoadingLocal = false
-          }, () => {
-            that.errorMessage = 'Getting your collabs ...'
-            that.isLoadingLocal = false
-          })
-        }
-      },
-      toggleIsSearch (event) {
-        if (event.target.innerText.toLowerCase().includes('search')) {
-          this.isSearch = true;
-        } else this.isSearch = false;
-      },
-      beforeLeave (el) {
-        // hide so we don't see juping when the new enters
-        el.style.display = 'none'
-      },
+    toggleIsSearch(event) {
+      if (event.target.innerText.toLowerCase().includes('search')) {
+        this.isSearch = true;
+      } else this.isSearch = false;
     },
-    watch: {
-      'searchText' (newVal) {
-        var that = this
-        clearTimeout(this.timeoutId)
-        this.timeoutId = setTimeout(() => {
-          that.search(newVal)
-        }, 500)
-      },
-      'isLoading' (newVal) {
-        this.isLoadingLocal = newVal
-      }
-    }
-  }
+    beforeLeave(el) {
+      const element = el;
+      // hide so we don't see juping when the new enters
+      element.style.display = 'none';
+    },
+  },
+  watch: {
+    searchText(newVal) {
+      const that = this;
+      clearTimeout(this.timeoutId);
+      this.timeoutId = setTimeout(() => {
+        that.search(newVal);
+      }, 500);
+    },
+    isLoading(newVal) {
+      this.isLoadingLocal = newVal;
+    },
+  },
+};
 </script>
 
 <style>

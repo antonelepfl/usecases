@@ -11,42 +11,43 @@
 </template>
 
 <script>
-   import modelList from '@/components/singlecellmodeling/striatal/striatal-list.vue'
-   import createCollab from '@/mixins/createCollab.js'
-   import modelsMixins from '@/mixins/models.js'
+import modelList from '@/components/singlecellmodeling/striatal/striatal-list.vue';
+import createCollab from '@/mixins/createCollab';
+import modelsMixins from '@/mixins/models';
 
-   export default {
-    props: ['uc_name'],
-    name: 'modelContainer',
-    components: {
-        'models-list': modelList
-    },
-    data () {
-      return {
-        models: [],
-        ucName: 'configureandrunasmallcircuitusingpreconfiguredhbpmodelanddata'
+export default {
+  props: ['uc_name'],
+  name: 'modelContainer',
+  components: {
+    'models-list': modelList,
+  },
+  data() {
+    return {
+      models: [],
+      ucName: 'configureandrunasmallcircuitusingpreconfiguredhbpmodelanddata',
+    };
+  },
+  mixins: [createCollab],
+  methods: {
+    touched(modelItem) { // open form or pair recording
+      if (modelItem.externalLink) {
+        window.open(modelItem.externalLink, '_blank');
+        return;
       }
-    },
-    mixins: [createCollab],
-    methods: {
-      touched (modelItem) { // open form or pair recording
-        if(modelItem.externalLink) {
-          window.open(modelItem.externalLink, '_blank')
-          return
-        }
 
-        this.$router.push({name: 'small_circuit_form',
-          params: {
-            'folder_name': modelItem.modelName
-          }
-        })
-      }
+      this.$router.push({
+        name: 'small_circuit_form',
+        params: {
+          folder_name: modelItem.modelName,
+        },
+      });
     },
-    created () {
-      this.models = modelsMixins.getModelByUc(this.ucName)
-      document.querySelector('title').innerHTML = 'Small Circuits In Silico Experiments'
-    }
-  }
+  },
+  created() {
+    this.models = modelsMixins.getModelByUc(this.ucName);
+    document.querySelector('title').innerHTML = 'Small Circuits In Silico Experiments';
+  },
+};
 </script>
 
 <style>

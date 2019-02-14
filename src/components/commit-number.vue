@@ -9,19 +9,20 @@
 </template>
 
 <script>
-  const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/'
-  import store from '@/mixins/store.js'
+import store from '@/mixins/store';
 
-  export default {
-    name: 'commit-number',
-    data () {
-      return {
-        commitLink: REPO_URL + store.state.commitNumber,
-        isDev: store.state.devWebsite,
-        commitNumber: store.state.commitNumber
-      }
-    }
-  }
+const REPO_URL = 'https://github.com/antonelepfl/usecases/commit/';
+
+export default {
+  name: 'commit-number',
+  data() {
+    return {
+      commitLink: REPO_URL + store.state.commitNumber,
+      isDev: store.state.devWebsite,
+      commitNumber: store.state.commitNumber,
+    };
+  },
+};
 </script>
 
 <style scoped>

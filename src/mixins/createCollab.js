@@ -477,10 +477,9 @@ export default {
       replacedFileContent = replacedFileContent.replace(findString, replaceString);
       const projectStorage = await this.getCollabStorage(collabId);
       const parent = projectStorage.results[0].uuid;
-      const name = `replaced-${appInfo.entryname}`;
-      const file = await this.createFile(name, appInfo.contenttype, appInfo.extension, parent, collabId);
-      const newFileId = await this.setFileContent(file.uuid, JSON.parse(replacedFileContent));
       const entryName = appInfo.entryname;
+      const file = await this.createFile(entryName, appInfo.contenttype, appInfo.extension, parent, collabId);
+      const newFileId = await this.setFileContent(file.uuid, JSON.parse(replacedFileContent));
       return this.createNavEntry(entryName, collabId, parentNav.id, appInfo.appid, newFileId);
     },
     async createItemInExistingCollabWithReplace(collab, uc, modelName, findString) {

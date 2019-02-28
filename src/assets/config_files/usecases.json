@@ -1204,9 +1204,26 @@
             "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
             "contributors": [
               {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
-              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
             ],
-            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+            "redirect_url": "https://bbp.epfl.ch/public/dev.simulationapp/index.html#/circuits/fullca1",
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/hippocampusConnections.png"
+          },
+          {
+            "title": "Configure and run a hippocampus column",
+            "disabled": false,
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1",
+            "description": "A microcircuit of detailed neuron models with a column shape.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
+            ],
+            "redirect_url": "https://bbp.epfl.ch/public/dev.simulationapp/index.html#/circuits/microcircuit",
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ca1_microcircuit.png"
           },
           {
             "title": "Configure and run a rat hippocampus CA1 region using HBP model and data",

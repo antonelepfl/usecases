@@ -35,13 +35,12 @@ export default {
   },
   methods: {
     selected(model) {
-      if (!model.disabled) {
-        const pathName = this.uglyfy(model.title);
-        this.$router.push({
-          name: 'cb_form',
-          params: { model_name: pathName },
-        });
-      }
+      if (model.disabled) return;
+      const pathName = this.uglyfy(model.title);
+      this.$router.push({
+        name: 'cb_form',
+        params: { model_name: pathName },
+      });
     },
   },
   created() {

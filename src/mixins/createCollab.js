@@ -216,10 +216,9 @@ export default {
       }));
     },
     getFileByEnv(info) {
-      // TODO: uncomment this before pushing prod
-      // if (store.state.devWebsite) {
-      //   return info.file;
-      // }
+      if (store.state.devWebsite) {
+        return info.file;
+      }
       return info.file_prod || info.file;
     },
     async createFile(name, contentType, extension, parent, collabId) {

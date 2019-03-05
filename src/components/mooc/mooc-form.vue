@@ -1,6 +1,6 @@
 <template>
   <div class="mooc-form">
-    <div class="title">{{moocName}}</div>
+    <div class="title-uc">{{moocName}}</div>
 
     <md-whiteframe md-tag="section" class="body-mooc">
       <md-button
@@ -23,7 +23,7 @@
         <md-input placeholder="Mooc" v-model.lazy="searchText"></md-input>
       </md-input-container>
       <div v-show="!isLoadingLocal" class="collabs-results-container">
-        <div v-for="collab in collabResults" class="collab-result" >
+        <div v-for="collab in collabResults" :key="collab.title" class="collab-result" >
           <a class="nota" @click="collabSelected(collab)">{{ collab.title }}</a>
         </div>
       </div>
@@ -39,106 +39,108 @@
 </template>
 
 <script>
-  import mooc from 'mixins/mooc.js'
-  import collabAuthentication from 'mixins/collabAuthentication.js'
-  export default {
-    name: 'moocForm',
-    data () {
-      return {
-        private: true,
-        searchText: '',
-        moocName: this.$route.params.moocFullName,
-        isLoading: false,
-        errorMessage: '',
-        isLoadingLocal: false,
-        collabResults: [],
-        collabCreationProgress: 0,
-        fullCollabName: '',
-        timeoutId: 0,
-        weekNumber: null
+import mooc from '@/mixins/mooc';
+import collabAuthentication from '@/mixins/collabAuthentication';
+
+export default {
+  name: 'moocForm',
+  data() {
+    return {
+      private: true,
+      searchText: '',
+      moocName: this.$route.params.moocFullName,
+      isLoading: false,
+      errorMessage: '',
+      isLoadingLocal: false,
+      collabResults: [],
+      collabCreationProgress: 0,
+      fullCollabName: '',
+      timeoutId: 0,
+      weekNumber: null,
+    };
+  },
+  props: ['uc_name', 'week'],
+  mixins: [mooc, collabAuthentication], // use common functions
+  methods: {
+    async createNewCollab() {
+      const that = this;
+      const isPrivate = false;
+      this.isLoading = true;
+      this.errorMessage = '';
+      this.collabCreationProgress = 10;
+      try {
+        const collab = await this.createMoocCollab(isPrivate, this.fullCollabName);
+        const prettyWeek = `Week ${this.weekNumber}`;
+        const category = this.$route.path.split('/')[1];
+        await that.createCoursesMooc(collab, that.uc_name, this.week);
+        that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, true);
+        that.collabCreationProgress = 100;
+        that.isLoading = false;
+      } catch (error) {
+        if (error.message === 'Collab already exist') {
+          that.errorMessage = 'Collab already exist. Please try again';
+        } else {
+          that.errorMessage = `Error during collab creation: ${error.message}`;
+        }
+        that.isLoading = false;
       }
     },
-    props: ['uc_name', 'week'],
-    mixins: [mooc, collabAuthentication], // use common functions
-    methods: {
-      async createNewCollab () {
-        var that = this
-        var isPrivate = false
-        this.isLoading = true
-        this.errorMessage = ''
-        this.collabCreationProgress = 10
-        try {
-          let collab = await this.createMoocCollab(isPrivate, this.fullCollabName)
-          let prettyWeek = 'Week ' + this.weekNumber
-          var category = this.$route.path.split('/')[1]
-          await that.createCoursesMooc(collab, that.uc_name, this.week)
-          that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, true)
-          that.collabCreationProgress = 100
-          that.isLoading = false
-        } catch (error) {
-          if (error === 'collab with this title already exists.') {
-            console.debug('Collab name already exist')
-            that.errorMessage = 'Please try again'
-            that.isLoading = false
-          } else {
-            that.errorMessage = 'Error during collab creation: ' + error
-            that.isLoading = false
+    async collabSelected(collab) {
+      // const that = this;
+      this.isLoadingLocal = true;
+      this.collabCreationProgress = 10;
+      const prettyWeek = `Week ${this.weekNumber}`;
+      const category = this.$route.path.split('/')[1];
+      try {
+        await this.addMoocExistingCollab(collab, this.uc_name, this.week);
+        this.sendStatistics(collab.id, this.uc_name, category, prettyWeek, false);
+      } catch (error) {
+        console.error(error);
+        this.errorMessage = error.message;
+      }
+      this.isLoadingLocal = false;
+    },
+  },
+  mounted() {
+    this.$nextTick(() => { // waits until token is saved in mixins headers
+      [this.weekNumber] = this.week.match(/\d+/);
+      this.updateFullCollabName(this.searchText, this.moocName, this.weekNumber)
+        .catch((error) => {
+          this.errorMessage = error.message;
+          this.isLoadingLocal = false;
+        });
+    });
+  },
+  watch: {
+    searchText(newVal) {
+      const that = this;
+      this.updateFullCollabName(this.searchText, this.moocName, this.weekNumber);
+      clearTimeout(this.timeoutId);
+      if (newVal === '') {
+        that.collabResults = [];
+        that.errorMessage = '';
+        that.isLoadingLocal = false;
+        return;
+      }
+      this.timeoutId = setTimeout(() => {
+        that.isLoadingLocal = true;
+        that.searchCollab(newVal).then((result) => {
+          if (that.errorMessage !== '') {
+            that.errorMessage = '';
           }
-        }
-      },
-      async collabSelected (collab) {
-        var that = this
-        that.isLoadingLocal = true
-        this.collabCreationProgress = 10
-        try {
-          let prettyWeek = 'Week ' + this.weekNumber
-          var category = this.$route.path.split('/')[1]
-          await this.addMoocExistingCollab(collab, this.uc_name, this.week)
-          that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, false)
-          that.isLoadingLocal = false
-        } catch (error) {
-          that.errorMessage = error
-          that.isLoadingLocal = false
-        }
-      }
+          if (result.length === 0) {
+            that.collabResults = [{ title: 'No found' }];
+          } else {
+            that.collabResults = result;
+          }
+          that.isLoadingLocal = false;
+        }, () => {
+          that.errorMessage = 'Getting your collabs ...';
+        });
+      }, 500);
     },
-    mounted () {
-      let that = this
-      this.$nextTick(function () { // waits until token is saved in mixins headers
-        this.weekNumber = this.week.match(/\d+/)[0];
-        that.updateFullCollabName(this.searchText, this.moocName, this.weekNumber)
-      })
-    },
-    watch: {
-      'searchText' (newVal) {
-        var that = this
-        this.updateFullCollabName(this.searchText, this.moocName, this.weekNumber)
-        clearTimeout(this.timeoutId)
-        if (newVal === '') {
-          that.collabResults = []
-          that.errorMessage = ''
-          that.isLoadingLocal = false
-          return;
-        }
-        this.timeoutId = setTimeout(function () {
-          that.isLoadingLocal = true
-          that.searchCollab(newVal).then(function (result) {
-            if (that.errorMessage !== '') {
-              that.errorMessage = ''
-            }
-            if (result.length === 0) {
-              that.collabResults = [{'title': 'No found'}]
-            } else {
-              that.collabResults = result
-            }
-            that.isLoadingLocal = false
-          }, function (reject) {
-            that.errorMessage = 'Getting your collabs ...'
-          })
-        }, 500)
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style scoped>
@@ -151,20 +153,6 @@
     padding: 10px;
     background-color: rgba(214, 233, 250, 0.2);
     min-height: 280px;
-  }
-  .mooc-form > .title {
-    box-shadow: 0 2px 5px rgba(0,0,0,.26);
-    position: fixed;
-    text-align: center;
-    color: #fff;
-    background-color: rgba(172, 96, 103, 0.95);
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 600;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
   }
   .progress-bar {
     margin-top: 20px;

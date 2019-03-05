@@ -16,49 +16,43 @@
         <div class="images-container">
           <img :src="model.img" class="" alt="image of morphology">
         </div>
+
         <div class="description-container">
-          {{model.description}}
+          <div>{{model.description}}</div>
+          <div class="contributors" v-if="model.contributors.length > 0">
+            <b class="margined-right">Contributor(s):</b>
+            <span v-for="contributor in getContributorFormated(model)" :key="contributor">
+              <span>{{contributor}}</span>
+            </span>
+          </div>
         </div>
+
       </div>
     </md-whiteframe>
    </div>
 </template>
 
 <script>
-   export default {
-      name: 'modelsList',
-      props: ['models'],
-      methods: {
-        touched (modelItem) {
-          this.$emit('selected', modelItem)
-        }
-      }
-   }
+import { getContributorFormated } from '@/mixins/utils';
+
+export default {
+  name: 'modelsList',
+  props: ['models'],
+  data() {
+    return {
+      getContributorFormated,
+    };
+  },
+  methods: {
+    touched(modelItem) {
+      this.$emit('selected', modelItem);
+    },
+  },
+};
 </script>
 
 <style scoped>
-   .models-list {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-   }
-   .models-list .item-sections {
-      margin-top: 10px;
-      margin-bottom: 15px;
-      padding: 9px;
-      border: 3px solid white;
-   }
-   .models-list .selected {
-      background-color: lightgray;
-      transition: background-color 0.5s ease;
-   }
-   .models-list .item-sections:hover {
-      transition: 0.3s ease;
-      box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
-   }
-   .item-body {
+  .item-body {
     cursor: pointer;
   }
   .model-item-picture {
@@ -87,16 +81,31 @@
   .half {
     width: 49%;
   }
-  .images-container {
-    width: 45%;
+  .models-list .images-container {
+    width: 15%;
     align-self: center;
     padding: 10px 10px 0 10px;
   }
+  .models-list .images-container img {
+    width: 100%;
+  }
   .description-container {
-    width: 55%;
+    width: 85%;
+  }
+  .description-container {
+    font-size: 18px;
+    text-align: left;
+    padding: 15px 15px 15px 25px;
+  }
+  .description-container .contributors {
+    margin-top: 15px;
+    font-size: 14px;
   }
   .item-body {
     display: flex;
+  }
+  .margined-right {
+    margin-right: 10px;
   }
 </style>
 <style>

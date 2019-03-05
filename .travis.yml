@@ -8,6 +8,6 @@ cache:
   - node_modules
 
 script:
-- npm install
+- npm install eslint
 - set -e
 - npm run lint

@@ -1,24 +1,36 @@
 <template>
   <div class="startapp">
-    <uc-container key="container"></uc-container>
+    <transition appear name="fade" mode="out-in">
+      <router-view>
+        <h2 class="welcome">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h2>
+      </router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
-import Vue from 'vue'
-import ucContainer from 'components/uc/uc-container.vue'
-
-Vue.use(VueMaterial)
 
 export default {
   name: 'startapp',
-  components: {
-    'uc-container': ucContainer
+  watch: {
+    $route() {
+      /*
+       * check if the access_token is in the URL and remove it to avoid
+       * going to another page that consider access_token as param
+       */
+      if (window.location.href.includes('access_token')) {
+        /* eslint-disable no-console */
+        console.debug('URL has token, removing it ...');
+        /* eslint-enable no-console */
+        const url = window.location.href;
+        const accessTokenIndex = url.indexOf('%2F&access_token') || url.indexOf('access_token');
+        window.location.href = url.substr(0, accessTokenIndex);
+      }
+    },
   },
-  props: ['list_usecases']
-}
+};
 </script>
 
 <style>

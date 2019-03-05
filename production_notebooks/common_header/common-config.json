@@ -1,0 +1,6 @@
+{
+  "commonHeader": {
+    "dev": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/common_header/common_headers.ipynb",
+    "prod": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/production_notebooks/common_header/common_headers.ipynb"
+  }
+}

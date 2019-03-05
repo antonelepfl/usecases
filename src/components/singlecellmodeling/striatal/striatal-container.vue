@@ -1,8 +1,8 @@
 <template>
    <div class="single-cell-insilico-experiments">
-    <div class="title">Please select a model</div>
-    <div class="content">
-      <div v-for="model in models">
+    <div class="title-uc">Please select a model</div>
+    <div class="content-uc">
+      <div v-for="model in models" :key="model.title">
         <models-list
           :models="models"
           v-on:selected="touched">
@@ -13,56 +13,36 @@
 </template>
 
 <script>
-   import striatalList from 'components/singlecellmodeling/striatal/striatal-list.vue'
-   import createCollab from 'mixins/createCollab.js'
-   import modelsMixins from 'mixins/models.js'
+import striatalList from '@/components/singlecellmodeling/striatal/striatal-list.vue';
+import createCollab from '@/mixins/createCollab';
+import modelsMixins from '@/mixins/models';
 
-   export default {
-    props: ['uc_name'],
-    name: 'modelContainer',
-    components: {
-        'models-list': striatalList
+export default {
+  props: ['uc_name'],
+  name: 'modelContainer',
+  components: {
+    'models-list': striatalList,
+  },
+  data() {
+    return {
+      models: [],
+      ucName: 'optimizeastriatalfast-spikinginterneuron',
+    };
+  },
+  mixins: [createCollab],
+  methods: {
+    touched(modelItem) { // open Neuron as a service
+      this.$router.push({
+        name: 'sc_striatal_form_replacing',
+        params: {
+          folder_name: modelItem.modelName,
+        },
+      });
     },
-    data () {
-      return {
-        models: [],
-        ucName: 'optimizeastriatalfast-spikinginterneuron'
-      }
-    },
-    mixins: [createCollab],
-    methods: {
-      touched (modelItem) { // open Neuron as a service
-        this.$router.push({name: 'sc_striatal_form_replacing',
-          params: {
-            'folder_name': modelItem.modelName
-          }
-        })
-      }
-    },
-    created () {
-      this.models = modelsMixins.getModelByUc(this.ucName)
-      document.querySelector('title').innerHTML = 'Striatal Models'
-    }
-  }
+  },
+  created() {
+    this.models = modelsMixins.getModelByUc(this.ucName);
+    document.querySelector('title').innerHTML = 'Striatal Models';
+  },
+};
 </script>
-
-<style scoped>
-.title {
-  box-shadow: 0 2px 5px rgba(0,0,0,.26);
-  position: fixed;
-  text-align: left;
-  color: #fff;
-  background-color: rgba(172, 96, 103, 0.95);
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 600;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-}
-.content {
-  padding: 10px;
-  margin-top: 50px;
-}
-</style>

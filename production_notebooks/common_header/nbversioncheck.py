@@ -47,12 +47,14 @@ class NBVersionCheck(object):
     def create_gui(self):
         """This function creates a GUI where the user can choose if to update this notebook. 
         """
+        layout = widgets.Layout(width='30%')
         button_replace = widgets.Button(
             description='Replace current notebook?',
             disabled=False,
-            button_style='', # 'success', 'info', 'warning', 'danger' or ''
+            button_style='warning', # 'success', 'info', 'warning', 'danger' or ''
             tooltip='Replaces the current version of the notebook with a newer one.',
-            icon='check'
+            icon='check',
+            layout=layout
         )        
         button_replace.on_click(self.replace_notebook)
         display(button_replace)

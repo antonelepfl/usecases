@@ -5,7 +5,12 @@
         <md-whiteframe md-elevation="1">
           <div class="search-container-models">
             <i class="material-icons">search</i>
-            <input class="searchbox-models" type="text" v-model="filter" placeholder="Search e.g 'Hippocampus' or click on the item's title to filter">
+            <input
+              class="searchbox-models"
+              type="text"
+              v-model="filter"
+              placeholder="Search e.g 'Hippocampus' or click on the item's title to filter"
+            >
           </div>
         </md-whiteframe>
         <models-list :models="models" v-on:selected="touched" v-on:tagfilter="addSearch"></models-list>
@@ -14,40 +19,40 @@
 </template>
 
 <script>
-   import modelList from '@/components/shared/models-list.vue'
-   import modelsUtils from '@/mixins/models.js'
+import modelList from '@/components/shared/models-list.vue';
+import modelsUtils from '@/mixins/models';
 
-   export default {
-      name: 'ca1ModelList',
-      components: {
-         'models-list': modelList
-      },
-      data () {
-         return {
-            models: [],
-            originalModels: [],
-            filter: ''
-         }
-      },
-      methods: {
-        touched (modelItem) {
-          this.$emit('selected', modelItem)
-        },
-        addSearch (obj) {
-          this.filter += ' ' + obj.text
-        }
-      },
-      created () {
-        document.querySelector('title').innerHTML = 'Models'
-        this.originalModels = modelsUtils.getHippocampusMetadata()
-        this.models = this.originalModels
-      },
-      watch: {
-        'filter': async function (newVal) {
-          this.models = await modelsUtils.search(newVal, this.originalModels)
-        }
-      }
-   }
+export default {
+  name: 'ca1ModelList',
+  components: {
+    'models-list': modelList,
+  },
+  data() {
+    return {
+      models: [],
+      originalModels: [],
+      filter: '',
+    };
+  },
+  methods: {
+    touched(modelItem) {
+      this.$emit('selected', modelItem);
+    },
+    addSearch(obj) {
+      this.filter += ` ${obj.text}`;
+    },
+  },
+  created() {
+    document.querySelector('title').innerHTML = 'Models';
+    this.originalModels = modelsUtils.getHippocampusMetadata();
+    this.models = this.originalModels;
+  },
+  watch: {
+    async filter(newVal) {
+      this.models = await modelsUtils.search(newVal, this.originalModels);
+    },
+  },
+};
 </script>
 
 <style scoped>

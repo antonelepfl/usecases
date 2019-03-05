@@ -10,25 +10,25 @@
 </template>
 
 <script>
-   import UcDescription from './uc-description.vue'
-   import UcTags from './uc-tags.vue'
-   import VideoTutorial from './video-tutorial.vue'
+import UcDescription from './uc-description.vue';
+import UcTags from './uc-tags.vue';
+import VideoTutorial from './video-tutorial.vue';
 
-   export default {
-      name: 'ucItem',
-      components: {
-         UcDescription,
-         UcTags,
-         VideoTutorial
-      },
-      props: {
-         uc: {
-            type: Object
-         },
-         categories: {
-            type: Object
-         }
-      }
-   }
+export default {
+  name: 'ucItem',
+  components: {
+    UcDescription,
+    UcTags,
+    VideoTutorial,
+  },
+  props: {
+    uc: {
+      type: Object,
+    },
+    categories: {
+      type: Object,
+    },
+  },
+};
 
 </script>

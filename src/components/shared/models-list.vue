@@ -26,59 +26,59 @@
 </template>
 
 <script>
-   import modelItem from '@/components/shared/model-item.vue'
-   import InfiniteLoading from 'vue-infinite-loading'
+import modelItem from '@/components/shared/model-item.vue';
+import InfiniteLoading from 'vue-infinite-loading';
 
-   export default {
-      name: 'modelsList',
-      components: {
-         'model-item': modelItem,
-         'infinite-loading': InfiniteLoading
-      },
-      data () {
-         return {
-            showingModels: []
-         }
-      },
-      props: ['models'],
-      methods: {
-        touched (modelItem) {
-          this.$emit('selected', modelItem)
-        },
-        onInfinite ($state) {
-          let temp = [];
-          let size = this.showingModels.length
-          // obtain the next elements
-          temp = this.models.slice(size, size + 10);
-          this.showingModels = this.showingModels.concat(temp);
-          if (this.models.length > this.showingModels.length) {
-            // we have more items. next time scroll try to get new ones
-            $state.loaded()
-          } else {
-            // there is no more models. when scroll show the end
-            $state.complete()
-          }
-        },
-        addSearch (obj) {
-          this.$emit('tagfilter', obj)
-        },
-        initializeItems () {
-          this.showingModels = []
-          this.$nextTick(() => {
-            this.showingModels = this.models.slice(0, 10)
-            this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset')
-          })
-        }
-      },
-      created () {
-        this.initializeItems()
-      },
-      watch: {
-        'models' () {
-          this.initializeItems()
-        }
+export default {
+  name: 'modelsList',
+  components: {
+    'model-item': modelItem,
+    'infinite-loading': InfiniteLoading,
+  },
+  data() {
+    return {
+      showingModels: [],
+    };
+  },
+  props: ['models'],
+  methods: {
+    touched(modelItemSelected) {
+      this.$emit('selected', modelItemSelected);
+    },
+    onInfinite($state) {
+      let temp = [];
+      const size = this.showingModels.length;
+      // obtain the next elements
+      temp = this.models.slice(size, size + 10);
+      this.showingModels = this.showingModels.concat(temp);
+      if (this.models.length > this.showingModels.length) {
+        // we have more items. next time scroll try to get new ones
+        $state.loaded();
+      } else {
+        // there is no more models. when scroll show the end
+        $state.complete();
       }
-   }
+    },
+    addSearch(obj) {
+      this.$emit('tagfilter', obj);
+    },
+    initializeItems() {
+      this.showingModels = [];
+      this.$nextTick(() => {
+        this.showingModels = this.models.slice(0, 10);
+        this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset');
+      });
+    },
+  },
+  created() {
+    this.initializeItems();
+  },
+  watch: {
+    models() {
+      this.initializeItems();
+    },
+  },
+};
 </script>
 
 <style>

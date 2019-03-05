@@ -8,29 +8,28 @@
 </template>
 
 <script>
-   import ucDescription from '@/components/uc/uc-description.vue'
-   export default {
-      name: 'modelItem',
-      components: {
-         'uc-description': ucDescription
-      },
-      data () {
-        return {
-          uc: {}
-        }
-      },
-      props: {
-         model: {
-            type: Object
-         }
-      },
-      created () {
-        // converting to reuse the uc description
-        this.uc.title = this.model.title
-        this.uc.description = this.model.description
-        this.uc.contributors = this.model.contributors
-      }
-   }
+import ucDescription from '@/components/uc/uc-description.vue';
 
+export default {
+  name: 'modelItem',
+  components: {
+    'uc-description': ucDescription,
+  },
+  data() {
+    return {
+      uc: {},
+    };
+  },
+  props: {
+    model: {
+      type: Object,
+    },
+  },
+  created() {
+    // converting to reuse the uc description
+    this.uc.title = this.model.title;
+    this.uc.description = this.model.description;
+    this.uc.contributors = this.model.contributors;
+  },
+};
 </script>
-

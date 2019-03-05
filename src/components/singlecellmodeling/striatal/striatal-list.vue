@@ -33,21 +33,22 @@
 </template>
 
 <script>
-  import { getContributorFormated } from '@/mixins/utils.js'
-  export default {
-    name: 'modelsList',
-    props: ['models'],
-    data () {
-      return {
-        getContributorFormated,
-      }
+import { getContributorFormated } from '@/mixins/utils';
+
+export default {
+  name: 'modelsList',
+  props: ['models'],
+  data() {
+    return {
+      getContributorFormated,
+    };
+  },
+  methods: {
+    touched(modelItem) {
+      this.$emit('selected', modelItem);
     },
-    methods: {
-      touched (modelItem) {
-        this.$emit('selected', modelItem)
-      },
-    },
-  }
+  },
+};
 </script>
 
 <style scoped>

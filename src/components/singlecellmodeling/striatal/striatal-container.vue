@@ -13,35 +13,36 @@
 </template>
 
 <script>
-   import striatalList from '@/components/singlecellmodeling/striatal/striatal-list.vue'
-   import createCollab from '@/mixins/createCollab.js'
-   import modelsMixins from '@/mixins/models.js'
+import striatalList from '@/components/singlecellmodeling/striatal/striatal-list.vue';
+import createCollab from '@/mixins/createCollab';
+import modelsMixins from '@/mixins/models';
 
-   export default {
-    props: ['uc_name'],
-    name: 'modelContainer',
-    components: {
-        'models-list': striatalList
+export default {
+  props: ['uc_name'],
+  name: 'modelContainer',
+  components: {
+    'models-list': striatalList,
+  },
+  data() {
+    return {
+      models: [],
+      ucName: 'optimizeastriatalfast-spikinginterneuron',
+    };
+  },
+  mixins: [createCollab],
+  methods: {
+    touched(modelItem) { // open Neuron as a service
+      this.$router.push({
+        name: 'sc_striatal_form_replacing',
+        params: {
+          folder_name: modelItem.modelName,
+        },
+      });
     },
-    data () {
-      return {
-        models: [],
-        ucName: 'optimizeastriatalfast-spikinginterneuron'
-      }
-    },
-    mixins: [createCollab],
-    methods: {
-      touched (modelItem) { // open Neuron as a service
-        this.$router.push({name: 'sc_striatal_form_replacing',
-          params: {
-            'folder_name': modelItem.modelName
-          }
-        })
-      }
-    },
-    created () {
-      this.models = modelsMixins.getModelByUc(this.ucName)
-      document.querySelector('title').innerHTML = 'Striatal Models'
-    }
-  }
+  },
+  created() {
+    this.models = modelsMixins.getModelByUc(this.ucName);
+    document.querySelector('title').innerHTML = 'Striatal Models';
+  },
+};
 </script>

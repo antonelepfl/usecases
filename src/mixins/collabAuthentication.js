@@ -1,5 +1,5 @@
 
-/* eslint-disable no-console */
+/* eslint-disable no-use-before-define */
 import { JSO } from 'jso';
 
 import store from './store';

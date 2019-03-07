@@ -262,10 +262,6 @@ export default {
     },
     async addCommonHeaderCells(content, fileUrl, sha) {
       console.debug('***** add common header cells *****');
-      if (!store.state.devWebsite) {
-        // TODO: remove this when replace header works
-        return JSON.stringify(content);
-      }
       let url = null;
       let headerFile = null;
       if (store.state.devWebsite) {

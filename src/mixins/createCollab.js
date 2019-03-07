@@ -280,8 +280,8 @@ export default {
       content.cells.unshift(...headerFile.data.cells);
 
       return JSON.stringify(content)
-        .replace('TEST_ID', sha)
-        .replace('GITHUB_FILE_PATH', fileUrl);
+        .replace('NOTEBOOK_ID', sha)
+        .replace('NOTEBOOK_URL', fileUrl);
     },
     async copyFileContent(originFileId, newFileId) {
       console.debug('Put content to file');

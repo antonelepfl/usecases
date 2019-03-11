@@ -82,7 +82,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20model%20analysis%20copy.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
       },
@@ -113,7 +113,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20data%20analysis.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
       },

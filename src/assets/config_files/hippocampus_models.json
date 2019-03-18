@@ -636,7 +636,7 @@
         "description": "Single cell model optimized using BluePyOpt<br><br><strong>best\\_cell</strong> : <em>cell\\_seed3\\_0.hoc</em><br><strong>best\\_run</strong> : <em>seed3.pkl</em><br><strong>channels</strong> : <em>kdr, nax, kmb, kap, hd, can, cal, cat, kdb, cagk, cacumb, kca</em><br><strong>e-type</strong> : <em>cAC</em><br><strong>fitting\\_name</strong> : <em>INT\\_cAC\\_noljp</em><br><strong>morphology</strong> : <em>031031AM1</em>", 
         "author": "Rosanna Migliore", 
         "brain_region": "hippocampus", 
-        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/hippocampus_optimization/optimizations/CA1_int_cAC_031031AM1_20180201104443/CA1_int_cAC_031031AM1_20180201104443.zip?bluenaas=true", 
+        "zip_url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/models/CA1_int_cAC_031031AM1_20180201104443/CA1_int_cAC_031031AM1_20180201104443.zip?bluenaas=true", 
         "species": "Rattus norvegicus", 
         "name": "CA1_int_cAC_031031AM1_20180201104443"
       }, 

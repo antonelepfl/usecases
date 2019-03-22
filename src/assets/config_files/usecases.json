@@ -1123,7 +1123,7 @@
         "experience": ["all"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/Extra/MultiBrain-MOOC-small.jpg"
+          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/images/course-img.jpg"
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/weeks_config.json",

@@ -16,7 +16,7 @@ MODEL_CATALOG_URL = os.environ['MODELS_URL']
 
 FILES_TO_CREATE = {
     'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus',
-    'granule_models.json': '?species=Mus%20musculus&brain_region=cerebellum&cell_type=Granule%20Cell',
+    'granule_models.json': '?brain_region=cerebellum&cell_type=granule%20cell&model_scope=single%20cell&species=Mus%20musculus',
     'purkinje_models.json': '?brain_region=cerebellum&cell_type=Purkinje%20Cell&model_scope=single%20cell&name=Purkinje%20cell%20-%20Multi%20compartmental',
 }
 

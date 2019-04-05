@@ -1,5 +1,48 @@
 [
   {
+    "molecular": [
+      {
+        "title": "Protein structure",
+        "description": "Use cases to simulate, analysis and visualize protein structures",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Tools to search and analyze molecules",
+        "description": "Use cases to simulate, analysis and visualize molecules",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      }
+    ],
+    "subcellular": [
+      {
+        "title": "KappaNeuron how to",
+        "description": "An example use case on how to use KappaNeuron",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      }
+    ],
     "traceanalysis": [
       {
         "title": "Feature extraction",

@@ -1116,18 +1116,6 @@
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/weeks_config.json",
         "course_url": "https://courseware.epfl.ch/courses/course-v1:EPFL+Multi-BrainX+2018_T1/about"
-      },
-      {
-        "title": "Simulation of the Hippocampus Hippocampal Microcircuits",
-        "description": "Exercises to learn how to simulate, analyze and visualize hippocampal microcircuits",
-        "experience": ["all"],
-        "disabled": false,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/images/course-img.jpg"
-        },
-        "next": "weeks_container",
-        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/weeks_config.json",
-        "course_url": "https://courseware.epfl.ch/course/course-v1:EPFL+SimNeuro2+2019_2"
       }
     ],
     "smallcircuitinsilicoexperiments": [

@@ -10,6 +10,7 @@ import DefaultForm from '@/components/traceanalysis/ta-form.vue';
 import CollabAuthentication from '@/mixins/collabAuthentication';
 import axios from 'axios';
 import '@/assets/general.css';
+import '@/mixins/sentry';
 
 import CBModelContainer from '@/components/circuitbuilding/model-container.vue';
 import CBForm from '@/components/circuitbuilding/cb-form.vue';

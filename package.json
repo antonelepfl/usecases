@@ -23,6 +23,8 @@
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
+    "@sentry/browser": "^5.0.6",
+    "@sentry/integrations": "^5.0.8",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "axios": "^0.18.0",
     "jso": "^4.1.1",

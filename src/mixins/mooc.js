@@ -9,6 +9,7 @@ import axios from 'axios';
 import store from '@/mixins/store';
 
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/';
+const EXTERNAL_LINK_APP_ID = 92;
 
 export default {
   mixins: [collabAuthentication, createCollab],
@@ -58,63 +59,77 @@ export default {
     },
     async createItemInExistingCollab(collab, item, replaceObj) { // creates weeks -> files. Modified.
       // returns the info to generate entry
-      const that = this;
-      try {
-        if (item === undefined) {
-          throw new Error('No item');
-        }
-        if (!store.navItemsExist()) { await that.getNavElement(collab.id); }
-        return that.generateAndFillFiles(collab.id, item, store.state.allNavItems, replaceObj);
-      } catch (e) { throw new Error(e); }
+      if (item === undefined) {
+        throw new Error('No item');
+      }
+      if (!store.navItemsExist()) { await this.getNavElement(collab.id); }
+
+      if (item.appid === EXTERNAL_LINK_APP_ID) {
+        return this.generateExternalLinkItem(item, collab.id);
+      }
+      // setting up jupyter notebook
+      const createdItem = await this.generateAndFillFiles(collab.id, item, store.state.allNavItems, replaceObj);
+      return createdItem;
+    },
+    generateExternalLinkItem(appInfo, collabId) {
+      // this will return the items to then create the nav items and after that change the /config
+      if (appInfo.initial) {
+        this.initialEntryName = appInfo.entryname;
+        console.debug('Initial NavItem', appInfo.entryname);
+      }
+      return {
+        entryname: appInfo.entryname,
+        parentId: store.state.allNavItems.id,
+        appId: appInfo.appid,
+        collabId,
+      };
     },
     async generateAndFillFiles(collabId, appInfo, parentNav, replaceObj) { // modified version.
       // it returns objects that has to be created in the navitem
-      const that = this;
       let newFileId = null;
-      try {
-        const file = await that.createFile(
-          appInfo.entryname,
-          appInfo.contenttype,
-          appInfo.extension,
-          store.state.collabInfo.uuid,
-          collabId,
-        );
-        const originalFileId = that.getFileByEnv(appInfo);
-        if (!originalFileId) {
-          throw new Error('No entry in typesCollabsApps.json');
-        }
 
-        if (!file.exists || (file.exists && store.state.rewriteFiles)) {
-          console.debug('Put content to file');
-          let { content } = await that.getDataFromRepo(originalFileId);
-          if (appInfo.contenttype === 'x-ipynb+json') {
-            content = this.addSubmissionTokenMetadata(content);
-          }
-          if (replaceObj) {
-            console.debug(`Replacing ${replaceObj.replaceText}`);
-            if (typeof content !== 'string') { content = JSON.stringify(content); }
-            content = content.replace(replaceObj.findString, replaceObj.replaceText);
-          }
+      const file = await this.createFile(
+        appInfo.entryname,
+        appInfo.contenttype,
+        appInfo.extension,
+        store.state.collabInfo.uuid,
+        collabId,
+      );
+      const originalFileId = this.getFileByEnv(appInfo);
+      if (!originalFileId) {
+        throw new Error('No entry in typesCollabsApps.json');
+      }
+
+      if (!file.exists || (file.exists && store.state.rewriteFiles)) {
+        console.debug('Put content to file');
+        let { content } = await this.getDataFromRepo(originalFileId);
+        if (appInfo.contenttype === 'x-ipynb+json') {
+          content = this.addSubmissionTokenMetadata(content);
+        }
+        if (replaceObj) {
+          console.debug(`Replacing ${replaceObj.replaceText}`);
           if (typeof content !== 'string') { content = JSON.stringify(content); }
-          await that.setFileContent(file.uuid, content);
+          content = content.replace(replaceObj.findString, replaceObj.replaceText);
         }
-        newFileId = file.uuid;
-        if (!appInfo.justcopy) {
-          that.collabCreationProgress += 5;
-          if (appInfo.initial) {
-            that.initialEntryName = appInfo.entryname;
-            console.debug('Initial NavItem', appInfo.entryname);
-          }
-          return {
-            entryname: appInfo.entryname,
-            collabId,
-            parentId: parentNav.id,
-            appId: appInfo.appid,
-            newFileId,
-          };
-        }
-        return { collabId, entryname: appInfo.entryname };
-      } catch (e) { throw new Error(e); }
+        if (typeof content !== 'string') { content = JSON.stringify(content); }
+        await this.setFileContent(file.uuid, content);
+      }
+      newFileId = file.uuid;
+
+      if (appInfo.justcopy) return { collabId, entryname: appInfo.entryname };
+
+      this.collabCreationProgress += 5;
+      if (appInfo.initial) {
+        this.initialEntryName = appInfo.entryname;
+        console.debug('Initial NavItem', appInfo.entryname);
+      }
+      return {
+        entryname: appInfo.entryname,
+        collabId,
+        parentId: parentNav.id,
+        appId: appInfo.appid,
+        newFileId,
+      };
     },
     async searchCollab(param) {
       const that = this;
@@ -163,7 +178,6 @@ export default {
       return JSON.stringify(parsed);
     },
     async generateNavItems(files, unsortedCourses) {
-      const that = this;
       // TOOD convert this in parallel when collab order works
       const navItemsIdOrdered = [];
       try {
@@ -171,21 +185,20 @@ export default {
         for (let i = 0; i < files.length; i += 1) {
           const element = files[i];
           if (!element.justcopy) {
-            const item = that.findEntryInStructure(unsortedCourses, element.entryname);
-            let elem = null;
-            if (item) {
-              const o = {
-                entryName: item.entryname,
-                collabId: item.collabId,
-                parentId: item.parentId,
-                appId: item.appId,
-                fileId: item.newFileId,
-              };
-              /* eslint-disable-next-line no-await-in-loop */
-              elem = await that.createNavEntry(o);
-              that.setInitialNavItem(elem);
-              navItemsIdOrdered.push(elem);
-            }
+            const item = this.findEntryInStructure(unsortedCourses, element.entryname);
+            /* eslint-disable-next-line no-continue */
+            if (!item) continue;
+            /* eslint-disable-next-line no-await-in-loop */
+            const elem = await this.createNavEntry({
+              entryName: item.entryname,
+              collabId: item.collabId,
+              parentId: item.parentId,
+              appId: item.appId,
+              fileId: item.newFileId,
+              url: element.url, // used for external link
+            });
+            this.setInitialNavItem(elem);
+            navItemsIdOrdered.push(elem);
           }
         }
         return navItemsIdOrdered;
@@ -202,6 +215,8 @@ export default {
         fileId: properties.fileId,
         collabId: properties.collabId,
         entryName: properties.entryName,
+        appId: properties.appId,
+        url: properties.url, // used for external link
       };
       if (store.state.rewriteFiles) { // replace navitem mode
         const exists = this.checkExists(
@@ -225,10 +240,10 @@ export default {
         const type = 'IT';
         const payload = {
           app_id: properties.appId,
-          context,
           name: properties.entryName,
           order_index: navOrder,
           parent: properties.parentId,
+          context,
           type,
         };
         const collabReq = `${COLLAB_API}collab/${properties.collabId}/nav/`;
@@ -238,12 +253,32 @@ export default {
         return navInfo;
       } catch (e) { throw new Error('Error to create NavItem'); }
     },
-    async copyContentToNav(navInfo) {
-      const that = this;
-      try {
-        await that.fillJupyterNavItem(navInfo.fileId, navInfo.navitemId, navInfo.collabId, navInfo.context);
-        return { collabId: navInfo.collabId, navitemId: navInfo.navitemId, entryName: navInfo.entryName };
-      } catch (e) { throw new Error('Error in fillJupyterNavItem'); }
+    copyContentToNav(navInfo) {
+      if (navInfo.appId === EXTERNAL_LINK_APP_ID) {
+        return this.setLinkToConfig(navInfo.context, navInfo.url, navInfo.collabId)
+          .catch((e) => {
+            console.error(e);
+            throw new Error('Error generating external link');
+          });
+      }
+
+      return this.fillJupyterNavItem(navInfo.fileId, navInfo.navitemId, navInfo.collabId, navInfo.context)
+        .then(() => ({
+          collabId: navInfo.collabId, navitemId: navInfo.navitemId, entryName: navInfo.entryName,
+        }))
+        .catch((e) => {
+          console.error(e);
+          throw new Error('Error in fillJupyterNavItem');
+        });
+    },
+    setLinkToConfig(context, url, collab) {
+      console.debug('Posting config');
+      const configUrl = `${COLLAB_API}config/${context}/`;
+      const payload = {
+        context,
+        content: JSON.stringify({ url: `${url}?collab=${collab}`, iframe_support: false }),
+      };
+      return this.$http.put(configUrl, payload, this.header);
     },
     async getMoocFullConfig(ucCompactName) {
       // ucCompactName: is the name of the mooc without spaces

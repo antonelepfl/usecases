@@ -93,13 +93,14 @@ def save_model_file(file_name, output_content):
 
 def create_meta():
     for file_name, query_string in FILES_TO_CREATE.items():
+        logging.info('Fetching %s:', file_name)
         response = requests.get(MODEL_CATALOG_URL + query_string)
         if not response.ok:
             logging.error('Failed to fetch data for %s', file_name)
             logging.error(response.text)
             continue
         models_list = response.json()['models']
-        logging.info('Fetching %s: models %s', file_name, len(models_list))
+        logging.info('Models found: %s', len(models_list))
         if not _check_models_modification(models_list, file_name):
             continue # avoid creation
 

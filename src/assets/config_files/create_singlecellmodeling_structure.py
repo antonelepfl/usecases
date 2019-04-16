@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/opt/rh/rh-python36/python
+
 '''
 This will generate files models files on the output directory passed as param
 Usage: create_singlecellmodeling_structure.py output_dir/
@@ -17,7 +18,7 @@ MODEL_CATALOG_URL = os.environ['MODELS_URL']
 FILES_TO_CREATE = {
     'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus',
     'granule_models.json': '?brain_region=cerebellum&cell_type=granule%20cell&model_scope=single%20cell&species=Mus%20musculus',
-    'purkinje_models.json': '?brain_region=cerebellum&cell_type=Purkinje%20Cell&model_scope=single%20cell&name=Purkinje%20cell%20-%20Multi%20compartmental',
+    'purkinje_models.json': '?brain_region=cerebellum&cell_type=Purkinje%20cell&model_scope=single%20cell&name=Purkinje%20cell%20-%20Multi%20compartmental',
 }
 
 OLD_LIST_NAME = 'old_model_list.json'
@@ -26,7 +27,7 @@ def get_id_list(models_list):
     def get_id(o):
         return o['id']
 
-    x = map(get_id, models_list)
+    x = list(map(get_id, models_list))
     x.sort()
     return x
 
@@ -73,7 +74,7 @@ def get_img(caption_to_find, model_info):
             return True
         return False
 
-    found = filter(get_caption_img, img_list)
+    found = list(filter(get_caption_img, img_list))
     if len(found):
         return found[0]['url']
 
@@ -93,10 +94,14 @@ def save_model_file(file_name, output_content):
 
 
 def create_meta():
-    for file_name, query_string in FILES_TO_CREATE.iteritems():
-        response = requests.get(MODEL_CATALOG_URL + query_string)
+    for file_name, query_string in FILES_TO_CREATE.items():
+        response = requests.get(MODEL_CATALOG_URL + query_string, verify=False)
+        if not response.ok:
+            logging.error('Failed to fetch data for %s', file_name)
+            logging.error(response.text)
+            continue
         models_list = response.json()['models']
-        logging.info('Fetching %s', file_name)
+        logging.info('Fetching %s: models %s', file_name, len(models_list))
         if not _check_models_modification(models_list, file_name):
             continue # avoid creation
 

@@ -2,6 +2,42 @@
   {
     "molecular": [
       {
+        "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
+        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Analyse the results of a Brownian dynamics simulation for calculating protein-protein association rate constants",
+        "description": "Analyse the results of an SDA Brownian dynamics simulation to calculate the rate constant of Gαolf associating to adenylyl cyclase 5, and estimate the error in this prediction via bootstrapping.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Brownian dynamics simulation - analysis",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "3D6ffd5ebb-a36c-4fa4-9f44-d329c9e6d3e1",
+            "initial": true,
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting.ipynb?ref=master"
+          }
+        ]
+      },
+      {
         "title": "Calculating the electrostatic potential of a protein from its atomic structure",
         "description": "Use the multipipsa package to assign atomic charges and radii to a protein structure then solve the Poisson-Boltzmann equation to calculate its electrostatic potential in aqueous solution.",
         "experience": ["all"],
@@ -52,42 +88,6 @@
         "next": "ta_form",
         "dataprotected": true,
         "files": []
-      },
-      {
-        "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
-        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Analyse the results of a Brownian dynamics simulation for calculating protein-protein association rate constants",
-        "description": "Analyse the results of an SDA Brownian dynamics simulation to calculate the rate constant of Gαolf associating to adenylyl cyclase 5, and estimate the error in this prediction via bootstrapping.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": false,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": [
-          {
-            "entryname": "Brownian dynamics simulation - analysis",
-            "appid": 175,
-            "contenttype": "x-ipynb+json",
-            "extension": ".ipynb",
-            "file": "3D6ffd5ebb-a36c-4fa4-9f44-d329c9e6d3e1",
-            "initial": true,
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting.ipynb?ref=master"
-          }
-        ]
       },
       {
         "title": "Tools to search and analyze molecules",

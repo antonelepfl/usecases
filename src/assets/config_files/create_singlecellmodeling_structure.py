@@ -1,4 +1,4 @@
-#!/opt/rh/rh-python36/python
+#!/usr/bin/env python
 
 '''
 This will generate files models files on the output directory passed as param
@@ -16,8 +16,8 @@ MODEL_CATALOG_URL = os.environ['MODELS_URL']
 # MODEL_CATALOG_URL = 'https://validation-v1.brainsimulation.eu/models/'
 
 FILES_TO_CREATE = {
-    'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus',
     'granule_models.json': '?brain_region=cerebellum&cell_type=granule%20cell&model_scope=single%20cell&species=Mus%20musculus',
+    'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus',
     'purkinje_models.json': '?brain_region=cerebellum&cell_type=Purkinje%20cell&model_scope=single%20cell&name=Purkinje%20cell%20-%20Multi%20compartmental',
 }
 
@@ -35,7 +35,6 @@ def get_id_list(models_list):
 def _check_models_modification(new_models, file_name):
     new_models_ids = get_id_list(new_models)
     old_model = None
-    # new_text = list(sorted(new_text))
     if os.path.isfile(OLD_LIST_NAME):
         with open(OLD_LIST_NAME) as fd:
             old_model = json.loads(fd.read())
@@ -85,8 +84,7 @@ def get_img(caption_to_find, model_info):
 def save_model_file(file_name, output_content):
     logging.info('Saving %s...', file_name)
     logging.debug('Current dir: %s', os.getcwd())
-    # output = sys.argv[1]
-    output = '.'
+    output = sys.argv[1] if len(sys.argv) > 1 else '.'
     logging.debug('Output file: %s', output)
 
     with open(os.path.join(output, file_name), 'w') as fd:
@@ -95,7 +93,7 @@ def save_model_file(file_name, output_content):
 
 def create_meta():
     for file_name, query_string in FILES_TO_CREATE.items():
-        response = requests.get(MODEL_CATALOG_URL + query_string, verify=False)
+        response = requests.get(MODEL_CATALOG_URL + query_string)
         if not response.ok:
             logging.error('Failed to fetch data for %s', file_name)
             logging.error(response.text)

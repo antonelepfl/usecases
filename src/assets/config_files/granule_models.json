@@ -1,32 +1,32 @@
 [
   {
     "Granule cell - Multi compartmental": {
-      "responses": null,
       "morph": null,
       "meta": {
-        "species": "Mus musculus",
-        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_multi.zip",
-        "cell_type": "granule cell",
-        "description": "Cerebellar Granule cell multi compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -70\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
         "brain_region": "cerebellum",
         "author": "Stefano Masoli",
-        "name": "Granule cell - Multi compartmental"
-      }
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_multi.zip",
+        "species": "Mus musculus",
+        "description": "Cerebellar Granule cell multi compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -70\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
+        "name": "Granule cell - Multi compartmental",
+        "cell_type": "granule cell"
+      },
+      "responses": null
     }
   },
   {
     "Granule cell - Mono compartmental": {
-      "responses": null,
       "morph": null,
       "meta": {
-        "species": "Mus musculus",
-        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono.zip",
-        "cell_type": "granule cell",
-        "description": "Cerebellar Granule cell single compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -80\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
         "brain_region": "cerebellum",
         "author": "Stefano Masoli",
-        "name": "Granule cell - Mono compartmental"
-      }
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono.zip",
+        "species": "Mus musculus",
+        "description": "Cerebellar Granule cell single compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -80\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
+        "name": "Granule cell - Mono compartmental",
+        "cell_type": "granule cell"
+      },
+      "responses": null
     }
   }
 ]

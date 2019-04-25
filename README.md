@@ -28,7 +28,7 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 ### To deploy in production (notebook):
 * Download the notebook that is pointed in the `file` field in **usecases.json** (Collab UUID)
 * Create a Pull Request to `dev` branch with the previously downloaded notebook on the *usecases/production_notebooks* folder
-* Add a new field on the **usecases.json** next to `file` called `file_prod` that points to ```https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/<category>/<notebook_name>.ipynb?ref=master"```
+* Add a new field on the **usecases.json** next to `file` called `file_prod` that points to ```https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/<category>/<notebook_name>.ipynb?ref=master``` (\*)
 * Merge *dev* into *master* and this jenkin [plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered
 * Release the new version to production selecting **release** on this [plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/build?delay=0sec)
 
@@ -36,3 +36,5 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 * Add new: [use case](/documentation/add_new_usecase.md) - [MOOC](/documentation/add_new_mooc.md) - [models](/documentation/add_new_model.md)
 * If single cell models [change](/documentation/single_cell_model_change.md)
 * The usual [path](/documentation/usual_path.md) the user follows
+
+(\*) We are using the Github API and not the raw content because we need the SHA to compare using the [common header](https://github.com/antonelepfl/usecases/blob/dev/production_notebooks/common_header/common_headers.ipynb) snippet

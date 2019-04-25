@@ -25,6 +25,28 @@
         ]
       },
       {
+        "title": "Calculate the electrostatic potential of a protein from its atomic structure",
+        "description": "Use the multipipsa package to assign atomic charges and radii to a protein structure then solve the Poisson-Boltzmann equation to calculate its electrostatic potential in aqueous solution.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Calculate the electrostatic potential of a protein from its atomic structure",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "d605d11c-876f-4cab-b844-ec82166d9ba7",
+            "initial": true
+          }
+        ]
+      },
+      {
         "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
         "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
         "experience": ["all"],
@@ -38,52 +60,39 @@
         "files": []
       },
       {
-        "title": "Calculating the electrostatic potential of a protein from its atomic structure",
-        "description": "Use the multipipsa package to assign atomic charges and radii to a protein structure then solve the Poisson-Boltzmann equation to calculate its electrostatic potential in aqueous solution.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "PIPSA analysis to compare the electrostatic potentials surrounding a set of protein isoforms",
+        "title": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
         "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase and cluster the isoforms by electrostatic similarity.",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
         },
         "next": "ta_form",
         "dataprotected": true,
         "files": []
       },
       {
-        "title": "PIPSA analysis to compare a specific region of the electrostatic potentials surrounding a set of protein isoforms",
+        "title": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
         "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase, at a specific site on their surfaces, and cluster the isoforms by electrostatic similarity in this region.",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
         },
         "next": "ta_form",
         "dataprotected": true,
         "files": []
       },
       {
-        "title": "Identification of potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
+        "title": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
         "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase at many sites on their surfaces. The electrostatic similarities at these sites is compared to known isoform-specific regulation patterns for the inhibitory protein , to predict the likely binding sites of regulatory proteins.",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
         },
         "next": "ta_form",
         "dataprotected": true,

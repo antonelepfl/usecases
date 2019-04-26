@@ -42,6 +42,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "d605d11c-876f-4cab-b844-ec82166d9ba7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/multipipsaCalcEP.ipynb?ref=master",
             "initial": true
           }
         ]

@@ -1244,18 +1244,6 @@
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/weeks_config.json",
         "course_url": "https://courseware.epfl.ch/courses/course-v1:EPFL+Multi-BrainX+2018_T1/about"
-      },
-      {
-        "title": "Simulation of the Hippocampus: Hippocampal Microcircuits",
-        "description": "Exercises to learn how to simulate, analyze and visualize hippocampal microcircuits",
-        "experience": ["all"],
-        "disabled": false,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/images/course-img.jpg"
-        },
-        "next": "weeks_container",
-        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/weeks_config.json",
-        "course_url": "https://courseware.epfl.ch/course/course-v1:EPFL+SimNeuro2+2019_2"
       }
     ],
     "smallcircuitinsilicoexperiments": [
@@ -1347,7 +1335,7 @@
               {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
               {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
             ],
-            "redirect_url": "https://bbp.epfl.ch/public/dev.simulationapp/index.html#/circuits/fullca1",
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/fullca1",
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/hippocampusConnections.png"
           },
           {
@@ -1362,7 +1350,7 @@
               {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
               {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
             ],
-            "redirect_url": "https://bbp.epfl.ch/public/dev.simulationapp/index.html#/circuits/microcircuit",
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/microcircuit",
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ca1_microcircuit.png"
           },
           {

@@ -27,10 +27,12 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 
 ### To deploy in production (notebook):
 * Download the notebook that is pointed in the `file` field in **usecases.json** (Collab UUID)
-* Create a Pull Request to `dev` branch with the previously downloaded notebook on the *usecases/production_notebooks* folder
+* Add this notebook into *usecases/production_notebooks* folder
 * Add a new field on the **usecases.json** next to `file` called `file_prod` that points to ```https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/<category>/<notebook_name>.ipynb?ref=master``` (\*)
-* Merge *dev* into *master* and this jenkin [plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered
-* Release the new version to production selecting **release** on this [plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/build?delay=0sec)
+* Create a Pull Request to *dev* branch with this 2 changes
+* After aproved in *dev* create a new Pull Request merging *dev* into *master*
+* After *dev* is merged into *master* this jenkin [plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/) is triggered
+* To release the new version of the site, tick **release** checkbox on this [plan](https://bbpcode.epfl.ch/ci/job/nse.usecases-wizard/build?delay=0sec)
 
 ### How to:
 * Add new: [use case](/documentation/add_new_usecase.md) - [MOOC](/documentation/add_new_mooc.md) - [models](/documentation/add_new_model.md)

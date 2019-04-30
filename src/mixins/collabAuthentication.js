@@ -9,7 +9,7 @@ const authUrl = 'https://services.humanbrainproject.eu/oidc/authorize';
 
 const client = new JSO({
   client_id: clientId,
-  redirect_uri: `${window.location.href}/`,
+  redirect_uri: `${window.location.href}`,
   authorization: authUrl,
   response_type: 'id_token token',
 });

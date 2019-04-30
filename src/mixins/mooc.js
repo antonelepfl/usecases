@@ -107,9 +107,11 @@ export default {
           content = this.addSubmissionTokenMetadata(content);
         }
         if (replaceObj) {
-          console.debug(`Replacing ${replaceObj.replaceText}`);
+          const decodedReplaceText = decodeURIComponent(replaceObj.replaceText);
+          const escapedReplaceText = decodedReplaceText.replace(/"/g, '\\"');
+          console.debug(`Replacing ${decodedReplaceText}`);
           if (typeof content !== 'string') { content = JSON.stringify(content); }
-          content = content.replace(replaceObj.findString, replaceObj.replaceText);
+          content = content.replace(replaceObj.findString, escapedReplaceText);
         }
         if (typeof content !== 'string') { content = JSON.stringify(content); }
         await this.setFileContent(file.uuid, content);

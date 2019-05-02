@@ -94,6 +94,10 @@ const router = new VueRouter({
     },
     // ============================ moprhology ============================
     {
+      path: '/morphology/morphologyvisualization/',
+      redirect: '/morphology/morphologyvisualization/view',
+    },
+    {
       path: '/morphology/:uc_name',
       component: MorphAnalysis,
       props: true,

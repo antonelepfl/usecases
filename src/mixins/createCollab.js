@@ -18,6 +18,8 @@ const COLLAB_HOME = 'https://collab.humanbrainproject.eu/#/collab/';
 const USER_API = `${SERVICES_BASE}/idm/v1/api/user/me`;
 const JUPYTER_NOTEBOOK_APP_ID = 175;
 const ABORT_AND_REDIRECT = 'abort and redirect';
+const TERMS_FORM = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSdd8gMoS5Ki-3o9cdqwmqU9-wgtzMGNKusamSoK-L3wsQPWnA/formResponse';
+const ACTIVITY_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse';
 
 export default {
   data() {
@@ -536,7 +538,6 @@ export default {
       const userEntry = 'entry.1933333390';
       /* eslint no-undef: 0 */
       const formData = new URLSearchParams();
-      const url = 'https://docs.google.com/forms/d/e/1FAIpQLSc6u9NerFcvI_4Duh1N4LyV48pDi8Mjq0xYGWJzOPBaJ9FjWw/formResponse';
       const collabCreated = (isNew) ? 'Create' : 'Add';
       formData.append('entry.724323063', collabCreated);
       formData.append('entry.1219332324', fullUCName);
@@ -544,23 +545,23 @@ export default {
       formData.append('entry.748800890', collabId);
       formData.append('entry.2065854000', category);
       console.debug('Send usage statistic to form');
-      this.sendToForm(formData, url, userEntry);
+      this.sendToForm(formData, ACTIVITY_FORM, userEntry);
     },
     sendToForm(formData, url, userEntry) {
+      if (store.state.devWebsite) { return; }
+
       const send = () => {
         const options = {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         };
         this.$http.post(url, formData.toString(), options)
-          .finally(() => {});
+          .catch(() => {});
       };
 
       const getInfoAndSend = () => {
         this.getUserInfo().then((user) => {
           formData.append(userEntry, user.id);
-          if (!store.state.devWebsite) {
-            send();
-          }
+          send();
         });
       };
 
@@ -575,11 +576,10 @@ export default {
     sendAcceptTerms(choice) {
       /* eslint no-undef: 0 */
       const formData = new URLSearchParams();
-      const url = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSdd8gMoS5Ki-3o9cdqwmqU9-wgtzMGNKusamSoK-L3wsQPWnA/formResponse';
       const userEntry = 'entry.974372560';
       formData.append('entry.1853154584', choice);
       console.debug('Send acceptance Terms & Conditions to form');
-      this.sendToForm(formData, url, userEntry);
+      this.sendToForm(formData, TERMS_FORM, userEntry);
     },
     async getDataFromRepo(url) {
       // sha used for check new notebook available in productions notebooks

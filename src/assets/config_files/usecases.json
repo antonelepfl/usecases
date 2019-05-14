@@ -1251,10 +1251,10 @@
         "experience": ["all"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/images/course-img.jpg"
+          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/master/images/course-img.jpg"
         },
         "next": "weeks_container",
-        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/edx-migration/weeks_config.json",
+        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/master/weeks_config.json",
         "course_url": "https://courseware.epfl.ch/course/course-v1:EPFL+SimNeuro2+2019_2"
       }
     ],

@@ -115,17 +115,51 @@
     ],
     "subcellular": [
       {
-        "title": "KappaNeuron how to",
-        "description": "An example use case on how to use KappaNeuron",
+        "title": "KappaNEURON demonstration",
+        "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/KappaNEURON.png"
+          "alt": "Thumbnail of KappaNEURON traces"
         },
         "next": "ta_form",
         "dataprotected": true,
-        "files": []
+        "files": [
+          {
+            "file": "7e4731f8-0e6d-4548-992d-136d9aef7fc4",
+            "entryname": "capulse",
+            "extension": ".mod",
+            "appid": 175,
+            "contenttype": "audio/x-mod",
+            "justcopy": true
+          },
+          {
+            "file": "ba3a1b3c-837d-416f-9b79-8990b4948a14",
+            "entryname": "caPump2",
+            "extension": ".mod",
+            "appid": 175,
+            "contenttype": "audio/x-mod",
+            "justcopy": true
+          },
+          {
+            "file": "c3b1910f-de74-449e-8043-f172943d0a2b",
+            "entryname": "caPump2",
+            "extension": ".ka",
+            "appid": 175,
+            "contenttype": "audio/x-ka",
+            "justcopy": true
+          },
+          {
+            "entryname": "notebook_2018-10-11T14:51:21+01:00",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "9af68102-5471-43ac-bfb9-81975269c291",
+            "initial": true
+          }
+        ]
       }
     ],
     "traceanalysis": [

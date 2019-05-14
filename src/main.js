@@ -34,6 +34,7 @@ import SCIEModelContainer from '@/components/smallcircuitinsilicoexperiments/mod
 import HBPSchoolForm from '@/components/hbpschool/hbp-school-form.vue';
 import TermAndConditions from '@/components/terms-and-conditions.vue';
 import EntityFormReplace from '@/components/entitydashboard/form-replacing.vue';
+import ArdockFrame from '@/components/molecular/ardock.vue';
 
 Vue.use(VueMaterial);
 Vue.use(VueRouter);
@@ -204,6 +205,12 @@ const router = new VueRouter({
       component: DefaultForm,
       props: true,
     },
+    // ==== ardock component
+    {
+      path: '/:list_usecases/molecular/predictproteininteractionsurfacewiththeardockserver',
+      component: ArdockFrame,
+      props: true,
+    }
   ],
   base: '/usecases/',
   scrollBehavior() {

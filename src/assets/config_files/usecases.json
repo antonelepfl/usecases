@@ -111,6 +111,20 @@
         "next": "ta_form",
         "dataprotected": true,
         "files": []
+      },
+      {
+        "title": "Predict protein interaction surface with the ARDOCK server",
+        "description": "In silico analysis of your protein surface using molecular probes to reveal potential interaction sites",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "appid": 423,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ardock.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
       }
     ],
     "subcellular": [

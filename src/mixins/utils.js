@@ -64,10 +64,29 @@ function getContributorFormated(model) {
   return contributorsList;
 }
 
+function getUrlWithoutToken(href) {
+  if (href.includes('access_token')) {
+    /* eslint-disable no-console */
+    console.debug('URL has token, removing it ...');
+    /* eslint-enable no-console */
+    let accessTokenIndex = href.indexOf('%2F&access_token');
+    if (accessTokenIndex === -1) {
+      accessTokenIndex = href.indexOf('&access_token');
+      if (accessTokenIndex === -1) {
+        accessTokenIndex = href.indexOf('access_token');
+      }
+    }
+
+    return href.substr(0, accessTokenIndex);
+  }
+  return href;
+}
+
 export {
   getUsecaseInfo,
   getContributorFormated,
   compact,
   replaceConfirmation,
   getDateDashed,
+  getUrlWithoutToken,
 };

@@ -23,6 +23,7 @@ import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import collabAuthentication from '@/mixins/collabAuthentication';
 import mooc from '@/mixins/mooc';
+import { getUrlWithoutToken } from '@/mixins/utils';
 
 export default {
   name: 'ucContainer',
@@ -60,7 +61,13 @@ export default {
     },
   },
   mounted() {
-    const ucSelected = this.compact(this.$route.params.uc_name);
+    /* $route.params is not in sync with window.location so even the token was
+     * removed for $route is still there. to remove issue we call getUrlWithoutToken */
+    let ucUrl = this.$route.params.uc_name;
+    if (ucUrl.includes('access_token')) {
+      ucUrl = getUrlWithoutToken(ucUrl);
+    }
+    const ucSelected = this.compact(ucUrl);
     // get the overall mooc info (title, url, etc)
     this.moocInfo = usecases[0].mooc.find(moocCourse => this.compact(moocCourse.title) === ucSelected);
     document.querySelector('title').innerText = this.prettyfy(this.moocInfo.title);

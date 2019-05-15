@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { getUrlWithoutToken } from '@/mixins/utils';
 
 export default {
   name: 'startapp',
@@ -20,14 +21,8 @@ export default {
        * check if the access_token is in the URL and remove it to avoid
        * going to another page that consider access_token as param
        */
-      if (window.location.href.includes('access_token')) {
-        /* eslint-disable no-console */
-        console.debug('URL has token, removing it ...');
-        /* eslint-enable no-console */
-        const url = window.location.href;
-        const accessTokenIndex = url.indexOf('%2F&access_token') || url.indexOf('access_token');
-        window.location.href = url.substr(0, accessTokenIndex);
-      }
+      if (!window.location.href.includes('access_token')) return;
+      window.location.href = getUrlWithoutToken(window.location.href);
     },
   },
 };

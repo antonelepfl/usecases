@@ -29,6 +29,11 @@ function init() {
   return authorization;
 }
 
+function renewToken() {
+  client.wipeTokens();
+}
+
 export default {
   init,
+  renewToken,
 };

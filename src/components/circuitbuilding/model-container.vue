@@ -15,7 +15,6 @@
 <script>
 import ModelItem from './model-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
-import CollabAuthentication from '@/mixins/collabAuthentication';
 import circuitbuilding from '@/mixins/deepModel';
 import modelsMixins from '@/mixins/models';
 
@@ -26,7 +25,7 @@ export default {
     UcListViewer,
   },
   props: ['uc_name'],
-  mixins: [CollabAuthentication, circuitbuilding],
+  mixins: [circuitbuilding],
   data() {
     return {
       models: [],

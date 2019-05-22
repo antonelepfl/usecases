@@ -40,7 +40,6 @@
 
 <script>
 import mooc from '@/mixins/mooc';
-import collabAuthentication from '@/mixins/collabAuthentication';
 
 export default {
   name: 'moocForm',
@@ -60,7 +59,7 @@ export default {
     };
   },
   props: ['uc_name', 'week'],
-  mixins: [mooc, collabAuthentication], // use common functions
+  mixins: [mooc], // use common functions
   methods: {
     async createNewCollab() {
       const that = this;

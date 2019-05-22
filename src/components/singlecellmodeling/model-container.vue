@@ -6,7 +6,6 @@
 
 <script>
 import ca1ModelList from '@/components/shared/ca1-model-list.vue';
-import collabAuthentication from '@/mixins/collabAuthentication';
 
 export default {
   name: 'modelContainer',
@@ -14,7 +13,6 @@ export default {
     'ca1-model-list': ca1ModelList,
   },
   props: ['list_usecases', 'uc_name'],
-  mixins: [collabAuthentication],
   methods: {
     touched(modelItem) {
       this.$router.push({

@@ -40,6 +40,12 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         "files": [<file_usecase>, ...],
         "models": [<model_item>, ...],
         "tutorial": url of the interactive tutorial,
+        "contributors": [
+          {
+            "name": name of the contributor,
+            "email": email of the contributor
+          }
+        ],
       },
       ...
     ],

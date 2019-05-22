@@ -30,7 +30,6 @@ export default {
       userInfo: null,
     };
   },
-  mixins: [collabAuthentication],
   methods: {
     searchCollab(param) {
       const that = this;
@@ -43,7 +42,7 @@ export default {
           },
           (error) => {
             if (error.response.status === 401) {
-              that.renewToken(); // force renew token
+              collabAuthentication.renewToken(); // force renew token
               reject(error);
             } else {
               reject(error);
@@ -459,7 +458,7 @@ export default {
         this.userInfo = response.data;
       } catch (error) {
         if (error.response.status === 401) {
-          this.renewToken(true); // force renew token
+          collabAuthentication.renewToken(true); // force renew token
           console.error(error);
           throw new Error('Error (401) getting user info');
         } else {

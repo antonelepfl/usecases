@@ -21,7 +21,6 @@
 import UcItem from '@/components/uc/uc-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import mooc from '@/mixins/mooc';
 import { getUrlWithoutToken } from '@/mixins/utils';
 
@@ -39,7 +38,7 @@ export default {
       moocInfo: {},
     };
   },
-  mixins: [collabAuthentication, mooc],
+  mixins: [mooc],
   methods: {
     selected(uc) {
       if (!uc.disabled) {

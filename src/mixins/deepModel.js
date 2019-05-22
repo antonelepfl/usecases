@@ -1,6 +1,5 @@
 
 import createCollab from '@/mixins/createCollab';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import findIndex from 'lodash/findIndex';
 import find from 'lodash/find';
 import usecases from '@/assets/config_files/usecases.json';
@@ -13,7 +12,7 @@ export default {
       root: '',
     };
   },
-  mixins: [collabAuthentication, createCollab],
+  mixins: [createCollab],
   mounted() {
     const path = this.$route.fullPath.split('/');
     if (path && path.length > 1) {

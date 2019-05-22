@@ -12,21 +12,19 @@
 </template>
 
 <script>
-import collabAuthentication from '@/mixins/createCollab';
 import termsAndConditions from '@/assets/config_files/terms_and_conditions.md';
 import storageManager from '@/mixins/storageManager';
+import createCollab from '@/mixins/createCollab';
 
 export default {
-  mixins: [collabAuthentication],
   data() {
     return {
-      collabAuthentication,
       termsAndConditions,
     };
   },
+  mixins: [createCollab],
   methods: {
     choiceSelected(choice) {
-      // from mixin collabAuthentication
       this.sendAcceptTerms(choice);
       if (choice === 'Yes') {
         const category = this.$route.params.list_usecases;

@@ -6,7 +6,6 @@
 
 <script>
 import ca1ModelList from '@/components/shared/ca1-model-list.vue';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import createCollab from '@/mixins/createCollab';
 
 export default {
@@ -14,7 +13,7 @@ export default {
   components: {
     'ca1-model-list': ca1ModelList,
   },
-  mixins: [collabAuthentication, createCollab],
+  mixins: [createCollab],
   props: ['list_usecases', 'uc_name'],
   methods: {
     touched(modelItem) {

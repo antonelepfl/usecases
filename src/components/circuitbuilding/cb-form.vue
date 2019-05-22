@@ -15,7 +15,6 @@
 import collabFormComponent from '@/components/collab-form-component.vue';
 import createCollab from '@/mixins/createCollab';
 import circuitbuilding from '@/mixins/deepModel';
-import collabAuthentication from '@/mixins/collabAuthentication';
 
 export default {
   name: 'collabForm',
@@ -26,7 +25,7 @@ export default {
     };
   },
   props: ['uc_name', 'model_name'],
-  mixins: [createCollab, circuitbuilding, collabAuthentication], // use common functions
+  mixins: [createCollab, circuitbuilding], // use common functions
   components: {
     'cb-form-component': collabFormComponent,
   },

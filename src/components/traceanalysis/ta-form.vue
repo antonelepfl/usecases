@@ -14,7 +14,6 @@
 <script>
 import collabFormComponent from '@/components/collab-form-component.vue';
 import createCollab from '@/mixins/createCollab';
-import collabAuthentication from '@/mixins/collabAuthentication';
 
 export default {
   name: 'taForm',
@@ -25,7 +24,7 @@ export default {
     };
   },
   props: ['uc_name'],
-  mixins: [createCollab, collabAuthentication], // use common functions
+  mixins: [createCollab], // use common functions
   components: {
     'cb-form-component': collabFormComponent,
   },

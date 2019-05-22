@@ -2,7 +2,6 @@
 /* eslint-disable no-console */
 /* eslint-disable prefer-promise-reject-errors */
 import createCollab from '@/mixins/createCollab';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import usecases from '@/assets/config_files/usecases.json';
 import uuid from 'uuid4';
 import axios from 'axios';
@@ -12,7 +11,7 @@ const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/';
 const EXTERNAL_LINK_APP_ID = 92;
 
 export default {
-  mixins: [collabAuthentication, createCollab],
+  mixins: [createCollab],
   data() {
     return {
       navitemId: null,

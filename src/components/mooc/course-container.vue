@@ -14,7 +14,6 @@
 import UcItem from '@/components/uc/uc-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
-import collabAuthentication from '@/mixins/collabAuthentication';
 
 export default {
   name: 'ucContainer',
@@ -29,7 +28,6 @@ export default {
       route: {},
     };
   },
-  mixins: [collabAuthentication],
   methods: {
     selected(uc) {
       if (!uc.disabled) {

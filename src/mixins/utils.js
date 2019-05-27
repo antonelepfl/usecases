@@ -56,7 +56,7 @@ function getContributorFormated(model) {
         fullContributor.push(` - ${contributor.email}`);
       }
       if (index < model.contributors.length - 1) { // has next
-        fullContributor.push('| ');
+        fullContributor.push('┃');
       }
       contributorsList.push(fullContributor.join(' '));
     });

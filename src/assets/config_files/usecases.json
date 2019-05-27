@@ -157,6 +157,11 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
@@ -190,6 +195,11 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
@@ -221,6 +231,11 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
@@ -306,6 +321,11 @@
         "experience": ["all"],
         "access": ["hpc", "byor"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
@@ -344,6 +364,11 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },

@@ -1129,6 +1129,7 @@
         },
         "next": "morph_analysis_models",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyAnalysis/index.html",
         "files": [
           {
             "entryname": "Morphology Analysis",

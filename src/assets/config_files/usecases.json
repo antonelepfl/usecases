@@ -1269,7 +1269,7 @@
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/weeks_config.json",
-        "course_url": "https://courseware.epfl.ch/courses/course-v1:EPFL+Multi-BrainX+2018_T1/about"
+        "course_url": "https://www.edx.org/course/the-multi-scale-brain"
       },
       {
         "title": "Simulation of the Hippocampus: Hippocampal Microcircuits",

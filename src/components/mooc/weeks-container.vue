@@ -3,7 +3,11 @@
       <uc-list-viewer :item-list="weeks" @selected="selected">
         <template v-slot:title>
           {{ moocInfo.title }}
-          <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
+          <a
+            v-if="moocInfo.course_url"
+            @click="openCoursePage(moocInfo.course_url)"
+            class="no-link right"
+          >
             <i>Link to the course </i>
             <i class="material-icons middle">link</i>
           </a>
@@ -57,6 +61,10 @@ export default {
     },
     prettyfy(name) {
       return name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    },
+    openCoursePage(url) {
+      const win = window.open(url, '_blank');
+      win.focus();
     },
   },
   mounted() {

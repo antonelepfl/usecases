@@ -119,7 +119,7 @@
         "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/KappaNEURON.png"
           "alt": "Thumbnail of KappaNEURON traces"

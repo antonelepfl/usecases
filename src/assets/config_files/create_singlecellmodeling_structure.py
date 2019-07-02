@@ -16,7 +16,7 @@ MODEL_CATALOG_URL = os.environ['MODELS_URL']
 # MODEL_CATALOG_URL = 'https://validation-v1.brainsimulation.eu/models/'
 
 FILES_TO_CREATE = {
-    'granule_models.json': '?brain_region=cerebellum&cell_type=granule%20cell&model_scope=single%20cell&species=Mus%20musculus',
+    'granule_models.json': '?brain_region=cerebellum&cell_type=granule%20cell&model_scope=single%20cell&species=Rattus%20norvegicus&abstraction_level=spiking%20neurons%3A%20biophysical',
     'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus',
     'purkinje_models.json': '?brain_region=cerebellum&cell_type=Purkinje%20cell&model_scope=single%20cell&name=Purkinje%20cell%20-%20Multi%20compartmental',
 }

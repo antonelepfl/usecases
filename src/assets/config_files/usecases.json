@@ -1152,7 +1152,8 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
-        "dataprotected": true
+        "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyVisualization/index.html"
       }
     ],
     "singlecellinsilicoexperiments": [

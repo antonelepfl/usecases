@@ -2,15 +2,15 @@
   {
     "Purkinje cell - Multi compartmental": {
       "meta": {
-        "cell_type": "Purkinje cell", 
-        "description": "Cerebellar Purkinje cell multi compartmental model. Age P43.\n\nTo correctly simulate it: 1) Temperature = 37\u00b0 2) Vinit (Vm) = -65 3) Current injections physiological range = 0nA to 2nA", 
-        "author": "Stefano Masoli", 
-        "brain_region": "cerebellum", 
-        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/purkinje_mouse.zip", 
-        "species": "Mus musculus", 
-        "name": "Purkinje cell - Multi compartmental"
-      }, 
-      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/PC_multi_traces.jpg", 
+        "name": "Purkinje cell - Multi compartmental",
+        "author": "Stefano Masoli",
+        "cell_type": "Purkinje cell",
+        "brain_region": "cerebellum",
+        "species": "Mus musculus",
+        "description": "Cerebellar Purkinje cell multi compartmental model. Age P43.\n\nTo correctly simulate it: 1) Temperature = 37\u00b0 2) Vinit (Vm) = -65 3) Current injections physiological range = 0nA to 2nA",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/purkinje_mouse.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/PC_multi_traces.jpg",
       "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/PC_multi_morfo.jpg"
     }
   }

@@ -204,6 +204,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFittingWithUserModel/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting with user model",
@@ -240,6 +241,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFittingWithUserData/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting with user data",
@@ -1151,7 +1153,8 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
-        "dataprotected": true
+        "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyVisualization/index.html"
       }
     ],
     "singlecellinsilicoexperiments": [
@@ -1355,6 +1358,7 @@
         "title": "Hippocampus",
         "description": "",
         "experience": ["all", "power"],
+        "isDemo": true,
         "disabled": false,
         "picture": {
           "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
@@ -1643,6 +1647,12 @@
         "byor": {
           "name": "BYOR",
           "tooltip": "(Bring Your Own Resources) Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility."
+        }
+      },
+      "demo": {
+        "model": {
+          "name": "WIP Circuit",
+          "tooltip": "Warning: model is work in progress"
         }
       }
     }

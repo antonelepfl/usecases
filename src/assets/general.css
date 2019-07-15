@@ -55,6 +55,10 @@
   .models-list .images-container {
     display: none;
   }
+
+  .uc-item {
+    flex-wrap: wrap;
+  }
 }
 .model-item {
   display: flex;

@@ -1381,12 +1381,12 @@
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/hippocampusConnections.png"
           },
           {
-            "title": "Configure and run a hippocampus column",
+            "title": "Configure and run a hippocampus microcircuit",
             "disabled": false,
             "species": "Rat",
             "brain_structure": "hippocampus",
             "cell_soma_location": "CA1",
-            "description": "A microcircuit of detailed neuron models with a column shape.",
+            "description": "A microcircuit of detailed neuron models.",
             "contributors": [
               {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
               {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},

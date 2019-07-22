@@ -656,6 +656,37 @@
           }
         ]
       },
+	  {
+        "title": "How to setup a custom axon (BluePyOpt) and simulate with it a regular firing granule cell (2019)",
+        "description": "The purpose of this usecase it to explain how to setup an axon, built with BluePyOpt, containing an erbitrary number of sections. Afterward to simulate an actual cerebellar granule cell model with an axon composed by over 300 sections.",
+        "experience": ["power"],
+        "access": ["hpc"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Granule_2019.png"
+        },
+        "next": "sc_form",
+        "files": [
+          {
+            "file": "ca27b360-28c8-4655-bb67-aea88b0903c1",
+            "file_prod": "831c846e-1d47-4903-ac53-83806c04be40",
+            "entryname": "Cerebellar granule cell custom axon and simulation",
+            "extension": ".ipynb",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "justcopy": false,
+            "initial": true
+          },
+          {
+            "file": "e0ba0b4c-d157-4170-bc13-6cce5e36a2a9",
+            "entryname": "GrC_2019_mod_axon",
+            "extension": ".zip",
+            "appid": 175,
+            "contenttype": "application/x-compressed",
+            "justcopy": true
+          }
+        ]
+      },
       {
         "title": "Simulation and validation of a mouse Purkinje cell multicompartmental model",
         "description": "Simulation and validation of a mouse Purkinje cell multicompartmental model obtained from BluePyOpt optimizer. The purpose of this usecase it to extract, simulate and validated a series of physiologically correct Purkinje cells. This notebook runs directly on the Collab and does not require HPC resources",

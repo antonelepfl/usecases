@@ -128,27 +128,11 @@
         "dataprotected": true,
         "files": [
           {
-            "file": "7e4731f8-0e6d-4548-992d-136d9aef7fc4",
-            "entryname": "capulse",
-            "extension": ".mod",
+            "file": "781b53e6-6837-40f7-884d-42b8d126831f",
+            "entryname": "demo_ca_pulse",
+            "extension": ".zip",
             "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "ba3a1b3c-837d-416f-9b79-8990b4948a14",
-            "entryname": "caPump2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "c3b1910f-de74-449e-8043-f172943d0a2b",
-            "entryname": "caPump2",
-            "extension": ".ka",
-            "appid": 175,
-            "contenttype": "audio/x-ka",
+            "contenttype": "application/zip",
             "justcopy": true
           },
           {

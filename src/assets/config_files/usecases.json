@@ -115,17 +115,35 @@
     ],
     "subcellular": [
       {
-        "title": "KappaNeuron how to",
-        "description": "An example use case on how to use KappaNeuron",
+        "title": "KappaNEURON demonstration",
+        "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/KappaNEURON.png",
+          "alt": "Thumbnail of KappaNEURON traces"
         },
         "next": "ta_form",
         "dataprotected": true,
-        "files": []
+        "files": [
+          {
+            "file": "781b53e6-6837-40f7-884d-42b8d126831f",
+            "entryname": "demo_ca_pulse",
+            "extension": ".zip",
+            "appid": 175,
+            "contenttype": "application/zip",
+            "justcopy": true
+          },
+          {
+            "entryname": "KappaNEURON Ca Pump",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "9af68102-5471-43ac-bfb9-81975269c291",
+            "initial": true
+          }
+        ]
       }
     ],
     "traceanalysis": [

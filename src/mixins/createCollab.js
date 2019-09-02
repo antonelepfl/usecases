@@ -330,7 +330,8 @@ export default {
       if (ucInfo === undefined) throw new Error(`No usecase named: ${uc}`);
 
       const creationItemsPromises = await this.createMultipleItemsInExistingCollab(collab, ucInfo);
-      const [item] = await Promise.all(creationItemsPromises);
+      const items = await Promise.all(creationItemsPromises);
+      const item = items.find(i => i.navitemId) || items[0];
       if (item.collabId) {
         this.redirectToCollab(item.collabId, item.navitemId);
         return true;

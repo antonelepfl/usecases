@@ -125,12 +125,19 @@
         "dataprotected": true,
         "files": [
           {
+            "entryname": "Protein atomistic MD simulation setup - Setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "73d225d1-3590-442b-8a5a-5210ba64af19",
+            "initial": true
+          },
+          {
             "entryname": "Protein atomistic MD simulation setup",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf",
-            "initial": true
+            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf"
           }
         ]
       },
@@ -147,12 +154,19 @@
         "dataprotected": true,
         "files": [
           {
+            "entryname": "Small molecule force field parameterization - Setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "2202d036-d233-4074-93c6-cf696f28293f",
+            "initial": true
+          },
+          {
             "entryname": "Small molecule force field parameterization",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f",
-            "initial": true
+            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f"
           }
         ]
       },
@@ -169,12 +183,19 @@
         "dataprotected": true,
         "files": [
           {
+            "entryname": "Small molecule force field parameterization - Setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "c11f4dcc-ce53-43f1-8067-fe477f438c76",
+            "initial": true
+          },
+          {
             "entryname": "Protein-ligand complex atomistic MD simulation setup",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7",
-            "initial": true
+            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcb"
           }
         ]
       },

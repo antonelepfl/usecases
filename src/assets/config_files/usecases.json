@@ -141,6 +141,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "9af68102-5471-43ac-bfb9-81975269c291",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/subcellular/KappaNeuron_Ca_Pump.ipynb?ref=master",
             "initial": true
           }
         ]
@@ -687,7 +688,7 @@
         "files": [
           {
             "file": "ca27b360-28c8-4655-bb67-aea88b0903c1",
-            "file_prod": "831c846e-1d47-4903-ac53-83806c04be40",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/GrC_axon.ipynb?ref=master",
             "entryname": "Cerebellar granule cell custom axon and simulation",
             "extension": ".ipynb",
             "appid": 175,
@@ -1187,7 +1188,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d",
+            "file": "26169d21-23a0-4a6a-86f3-b16eedbb3732",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/morphology/Morphology%20Analysis.ipynb?ref=master"
           }
         ]

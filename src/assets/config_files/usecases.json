@@ -327,6 +327,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
         "next": "ta_form",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
         "files": [
           {
             "entryname": "Hodgkin-Huxley Neuron Builder",

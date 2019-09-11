@@ -125,7 +125,7 @@
         "dataprotected": true,
         "files": [
           {
-            "entryname": "Protein atomistic MD simulation setup - Setup",
+            "entryname": "Working environment setting up for the \"Preparing a protein to run an atomistic Molecular Dynamics simulation\" Notebook",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -133,7 +133,7 @@
             "initial": true
           },
           {
-            "entryname": "Protein atomistic MD simulation setup",
+            "entryname": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -154,7 +154,7 @@
         "dataprotected": true,
         "files": [
           {
-            "entryname": "Small molecule force field parameterization - Setup",
+            "entryname": "Working environment setting up for the \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\" Notebook",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -162,7 +162,7 @@
             "initial": true
           },
           {
-            "entryname": "Small molecule force field parameterization",
+            "entryname": "Small molecule force field parametrization for atomistic Molecular Dynamics simulations",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -183,7 +183,7 @@
         "dataprotected": true,
         "files": [
           {
-            "entryname": "Small molecule force field parameterization - Setup",
+            "entryname": "Working environment setting up for the \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\" Notebook",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -191,11 +191,11 @@
             "initial": true
           },
           {
-            "entryname": "Protein-ligand complex atomistic MD simulation setup",
+            "entryname": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcb"
+            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7"
           }
         ]
       },

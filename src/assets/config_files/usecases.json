@@ -48,71 +48,6 @@
         ]
       },
       {
-        "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
-        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
-        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase and cluster the isoforms by electrostatic similarity.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
-        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase, at a specific site on their surfaces, and cluster the isoforms by electrostatic similarity in this region.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
-        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase at many sites on their surfaces. The electrostatic similarities at these sites is compared to known isoform-specific regulation patterns for the inhibitory protein , to predict the likely binding sites of regulatory proteins.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Tools to search and analyze molecules",
-        "description": "Use cases to simulate, analysis and visualize molecules",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
         "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
         "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
         "experience": ["all", "power"],
@@ -123,6 +58,9 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+        ],
         "files": [
           {
             "entryname": "Working environment setting up for the \"Preparing a protein to run an atomistic Molecular Dynamics simulation\" Notebook",
@@ -152,6 +90,9 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+        ],
         "files": [
           {
             "entryname": "Working environment setting up for the \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\" Notebook",
@@ -175,7 +116,10 @@
         "description": "Running a Molecular Dynamics setup from a protein-ligand complex in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a small molecule. Using GROMACS MD package and the building blocks library from the BioExcel project.",
         "experience": ["all", "power"],
         "maturity": ["beta"],
-        "disabled": true,
+        "disabled": false,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
         },
@@ -261,6 +205,71 @@
             "initial": true
           }
         ]
+      },
+      {
+        "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
+        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase and cluster the isoforms by electrostatic similarity.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase, at a specific site on their surfaces, and cluster the isoforms by electrostatic similarity in this region.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase at many sites on their surfaces. The electrostatic similarities at these sites is compared to known isoform-specific regulation patterns for the inhibitory protein , to predict the likely binding sites of regulatory proteins.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Tools to search and analyze molecules",
+        "description": "Use cases to simulate, analysis and visualize molecules",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
       }
     ],
     "subcellular": [

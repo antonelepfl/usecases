@@ -59,7 +59,13 @@
         "next": "ta_form",
         "dataprotected": true,
         "contributors": [
-          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
         ],
         "files": [
           {
@@ -91,7 +97,13 @@
         "next": "ta_form",
         "dataprotected": true,
         "contributors": [
-          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
         ],
         "files": [
           {
@@ -125,6 +137,15 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
         "files": [
           {
             "entryname": "Working environment setting up for the \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\" Notebook",

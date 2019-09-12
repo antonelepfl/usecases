@@ -423,7 +423,7 @@
         ]
       },
       {
-        "title": "Optimize a cerebellar granule cell model composed by a single section",
+        "title": "Mono compartmental Cerebellar Granule cell optimization",
         "description": "Using BluePyOpt to optimize a single compartmental cerebellar granule cell. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
         "experience": ["all"],
         "access": ["hpc"],
@@ -434,7 +434,7 @@
         "next": "sc_form",
         "files": [
           {
-            "entryname": "Granule cell mono compartmental optimization",
+            "entryname": "Mono compartmental Cerebellar Granule cell optimization",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
@@ -550,7 +550,7 @@
         ]
       },
       {
-        "title": "Optimize a cerebellar granule cell multicompartmental model",
+        "title": "Multi compartmental Cerebellar Granule cell optimization",
         "description": "Using BluePyOpt to optimize a multcompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
         "experience": ["all"],
         "access": ["hpc"],
@@ -562,7 +562,7 @@
         "files": [
           {
             "appid": 175,
-            "entryname": "Granule cell multi compartmental optimization",
+            "entryname": "Multi compartmental Cerebellar Granule cell optimization",
             "extension": ".ipynb",
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
@@ -677,7 +677,7 @@
         ]
       },
 	  {
-        "title": "How to setup a custom axon (BluePyOpt) and simulate with it a regular firing granule cell (2019)",
+        "title": "Custom Axon Cerebellar Granule cell simulation",
         "description": "The purpose of this usecase it to explain how to setup an axon, built with BluePyOpt, containing an erbitrary number of sections. Afterward to simulate an actual cerebellar granule cell model with an axon composed by over 300 sections.",
         "experience": ["power"],
         "access": ["hpc"],
@@ -690,7 +690,7 @@
           {
             "file": "ca27b360-28c8-4655-bb67-aea88b0903c1",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/GrC_axon.ipynb?ref=master",
-            "entryname": "Cerebellar granule cell custom axon and simulation",
+            "entryname": "Custom Axon Cerebellar Granule cell simulation",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",

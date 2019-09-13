@@ -48,6 +48,186 @@
         ]
       },
       {
+        "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
+        "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc1.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Working environment setting up for the \"Preparing a protein to run an atomistic Molecular Dynamics simulation\" Notebook",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "73d225d1-3590-442b-8a5a-5210ba64af19",
+            "initial": true
+          },
+          {
+            "entryname": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf"
+          }
+        ]
+      },
+      {
+        "title": "Small molecule force field parameterization for atomistic Molecular Dynamics simulations",
+        "description": "Generate force field (GAFF) parameters for a small molecule in PDB format to use it in atomistic Molecular Dynamics simulations. Using ACPype, Ambertools and OpenBabel programs, and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc2.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Working environment setting up for the \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\" Notebook",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "2202d036-d233-4074-93c6-cf696f28293f",
+            "initial": true
+          },
+          {
+            "entryname": "Small molecule force field parametrization for atomistic Molecular Dynamics simulations",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation",
+        "description": "Running a Molecular Dynamics setup from a protein-ligand complex in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a small molecule. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Working environment setting up for the \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\" Notebook",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "c11f4dcc-ce53-43f1-8067-fe477f438c76",
+            "initial": true
+          },
+          {
+            "entryname": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a membrane protein to run an atomistic Molecular Dynamics Simulation",
+        "description": "Running a Molecular Dynamics setup from a membrane protein in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a nuclear membrane. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc4.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Membrane-Protein atomistic MD simulation setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Generating small molecule conformations from Replica Exchange Molecular Dynamics (REMD)",
+        "description": "Running a Replica Exchange Molecular Dynamics (REMD) for a small molecule in PDB format to obtain an ensemble of conformations ready to be used as input for docking simulations. Extending the use case 2 notebook. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc5.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Small molecule conformations from REMD",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Extracting relevant information from atomistic Molecular Dynamics trajectories of relevant signal transduction proteins using MoDEL_CNS API",
+        "description": "Use case showcasing several useful examples of how to extract, play, store, and visualize information from the atomistic MD trajectories stored in the MoDEL_CNS database.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc6.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "MoDEL_CNS API data mining",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
         "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
         "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
         "experience": ["all"],

@@ -69,11 +69,12 @@
         ],
         "files": [
           {
-            "entryname": "Working environment setting up for the \"Preparing a protein to run an atomistic Molecular Dynamics simulation\" Notebook",
+            "entryname": "Prepare environment for Notebook \"Preparing a protein to run an atomistic Molecular Dynamics simulation\"",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "73d225d1-3590-442b-8a5a-5210ba64af19",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_PreparingAProteinToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master",
             "initial": true
           },
           {
@@ -81,7 +82,8 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf"
+            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/PreparingAProteinToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master"
           }
         ]
       },
@@ -107,11 +109,12 @@
         ],
         "files": [
           {
-            "entryname": "Working environment setting up for the \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\" Notebook",
+            "entryname": "Prepare environment for Notebook \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\"",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "2202d036-d233-4074-93c6-cf696f28293f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_SmallMoleculeForceFieldParametrizationForAtomisticMolecularDynamicsSimulations.ipynb?ref=master",
             "initial": true
           },
           {
@@ -119,7 +122,8 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f"
+            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/SmallMoleculeForceFieldParametrizationForAtomisticMolecularDynamicsSimulations.ipynb?ref=master"
           }
         ]
       },
@@ -148,11 +152,12 @@
         ],
         "files": [
           {
-            "entryname": "Working environment setting up for the \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\" Notebook",
+            "entryname": "Prepare environment for Notebook \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\"",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "c11f4dcc-ce53-43f1-8067-fe477f438c76",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_PreparingAProtein-ligandComplexToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master",
             "initial": true
           },
           {
@@ -160,7 +165,8 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7"
+            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/PreparingAProtein-ligandComplexToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master"
           }
         ]
       },

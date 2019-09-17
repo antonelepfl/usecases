@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .content-uc {
@@ -37,8 +37,7 @@
 
 .item-picture {
   width: 10%;
-  min-height: 80px;
-  min-width: 140px;
+  min-width: 10%;
   margin-right: 15px;
 }
 .uc-description {

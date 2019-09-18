@@ -20,7 +20,6 @@
 
 <script>
 import BspNmcModelList from '@/components/shared/models-list.vue';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import createCollab from '@/mixins/createCollab';
 import modelsMixins from '@/mixins/models';
 
@@ -38,7 +37,7 @@ export default {
       filter: '',
     };
   },
-  mixins: [collabAuthentication, createCollab],
+  mixins: [createCollab],
   props: ['list_usecases', 'uc_name'],
   methods: {
     touched(modelItem) { // open Neuron as a service

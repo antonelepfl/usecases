@@ -40,7 +40,6 @@
 
 <script>
 import mooc from '@/mixins/mooc';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import usecases from '@/assets/config_files/usecases.json';
 
 export default {
@@ -59,7 +58,7 @@ export default {
     };
   },
   props: ['uc_name'],
-  mixins: [mooc, collabAuthentication], // use common functions
+  mixins: [mooc], // use common functions
   methods: {
     async createNewCollab() {
       const isPrivate = false;

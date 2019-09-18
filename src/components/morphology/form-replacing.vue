@@ -14,7 +14,6 @@
 <script>
 import createCollab from '@/mixins/createCollab';
 import collabFormComponent from '@/components/collab-form-component.vue';
-import collabAuthentication from '@/mixins/collabAuthentication';
 
 export default {
   name: 'collabFormReplacing',
@@ -28,7 +27,7 @@ export default {
     'collab-form-component': collabFormComponent,
   },
   props: ['folder_name', 'uc_name'],
-  mixins: [createCollab, collabAuthentication], // use common functions
+  mixins: [createCollab], // use common functions
   methods: {
     collabSelected(collab) {
       this.createItems(collab, false);

@@ -66,6 +66,192 @@
             "extension": ".html"
           }
         ]
+      }, 
+      {
+        "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
+        "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc1.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Prepare environment for Notebook \"Preparing a protein to run an atomistic Molecular Dynamics simulation\"",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "73d225d1-3590-442b-8a5a-5210ba64af19",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_PreparingAProteinToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master",
+            "initial": true
+          },
+          {
+            "entryname": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/PreparingAProteinToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Small molecule force field parameterization for atomistic Molecular Dynamics simulations",
+        "description": "Generate force field (GAFF) parameters for a small molecule in PDB format to use it in atomistic Molecular Dynamics simulations. Using ACPype, Ambertools and OpenBabel programs, and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc2.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Prepare environment for Notebook \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\"",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "2202d036-d233-4074-93c6-cf696f28293f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_SmallMoleculeForceFieldParametrizationForAtomisticMolecularDynamicsSimulations.ipynb?ref=master",
+            "initial": true
+          },
+          {
+            "entryname": "Small molecule force field parametrization for atomistic Molecular Dynamics simulations",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/SmallMoleculeForceFieldParametrizationForAtomisticMolecularDynamicsSimulations.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation",
+        "description": "Running a Molecular Dynamics setup from a protein-ligand complex in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a small molecule. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Prepare environment for Notebook \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\"",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "c11f4dcc-ce53-43f1-8067-fe477f438c76",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_PreparingAProtein-ligandComplexToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master",
+            "initial": true
+          },
+          {
+            "entryname": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/PreparingAProtein-ligandComplexToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a membrane protein to run an atomistic Molecular Dynamics Simulation",
+        "description": "Running a Molecular Dynamics setup from a membrane protein in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a nuclear membrane. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc4.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Membrane-Protein atomistic MD simulation setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Generating small molecule conformations from Replica Exchange Molecular Dynamics (REMD)",
+        "description": "Running a Replica Exchange Molecular Dynamics (REMD) for a small molecule in PDB format to obtain an ensemble of conformations ready to be used as input for docking simulations. Extending the use case 2 notebook. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc5.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Small molecule conformations from REMD",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Extracting relevant information from atomistic Molecular Dynamics trajectories of relevant signal transduction proteins using MoDEL_CNS API",
+        "description": "Use case showcasing several useful examples of how to extract, play, store, and visualize information from the atomistic MD trajectories stored in the MoDEL_CNS database.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc6.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "MoDEL_CNS API data mining",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
       },
       {
         "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
@@ -135,17 +321,36 @@
     ],
     "subcellular": [
       {
-        "title": "KappaNeuron how to",
-        "description": "An example use case on how to use KappaNeuron",
+        "title": "KappaNEURON demonstration",
+        "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/KappaNEURON.png",
+          "alt": "Thumbnail of KappaNEURON traces"
         },
         "next": "ta_form",
         "dataprotected": true,
-        "files": []
+        "files": [
+          {
+            "file": "781b53e6-6837-40f7-884d-42b8d126831f",
+            "entryname": "demo_ca_pulse",
+            "extension": ".zip",
+            "appid": 175,
+            "contenttype": "application/zip",
+            "justcopy": true
+          },
+          {
+            "entryname": "KappaNEURON Ca Pump",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "9af68102-5471-43ac-bfb9-81975269c291",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/subcellular/KappaNeuron_Ca_Pump.ipynb?ref=master",
+            "initial": true
+          }
+        ]
       }
     ],
     "traceanalysis": [
@@ -177,6 +382,11 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
@@ -210,10 +420,16 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFittingWithUserModel/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting with user model",
@@ -241,10 +457,16 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFittingWithUserData/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting with user data",
@@ -311,6 +533,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
         "next": "ta_form",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
         "files": [
           {
             "entryname": "Hodgkin-Huxley Neuron Builder",
@@ -326,6 +549,11 @@
         "experience": ["all"],
         "access": ["hpc", "byor"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
@@ -364,6 +592,11 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
@@ -396,7 +629,7 @@
         ]
       },
       {
-        "title": "Optimize a cerebellar granule cell model composed by a single section",
+        "title": "Mono compartmental Cerebellar Granule cell optimization",
         "description": "Using BluePyOpt to optimize a single compartmental cerebellar granule cell. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
         "experience": ["all"],
         "access": ["hpc"],
@@ -407,7 +640,7 @@
         "next": "sc_form",
         "files": [
           {
-            "entryname": "Granule cell mono compartmental optimization",
+            "entryname": "Mono compartmental Cerebellar Granule cell optimization",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
@@ -523,7 +756,7 @@
         ]
       },
       {
-        "title": "Optimize a cerebellar granule cell multicompartmental model",
+        "title": "Multi compartmental Cerebellar Granule cell optimization",
         "description": "Using BluePyOpt to optimize a multcompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
         "experience": ["all"],
         "access": ["hpc"],
@@ -535,7 +768,7 @@
         "files": [
           {
             "appid": 175,
-            "entryname": "Granule cell multi compartmental optimization",
+            "entryname": "Multi compartmental Cerebellar Granule cell optimization",
             "extension": ".ipynb",
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
@@ -645,6 +878,37 @@
             "entryname": "GRC_NA",
             "extension": ".mod",
             "contenttype": "audio/x-mod",
+            "justcopy": true
+          }
+        ]
+      },
+	  {
+        "title": "Custom Axon Cerebellar Granule cell simulation",
+        "description": "The purpose of this usecase it to explain how to setup an axon, built with BluePyOpt, containing an erbitrary number of sections. Afterward to simulate an actual cerebellar granule cell model with an axon composed by over 300 sections.",
+        "experience": ["power"],
+        "access": ["hpc"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Granule_2019.png"
+        },
+        "next": "sc_form",
+        "files": [
+          {
+            "file": "ca27b360-28c8-4655-bb67-aea88b0903c1",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/GrC_axon.ipynb?ref=master",
+            "entryname": "Custom Axon Cerebellar Granule cell simulation",
+            "extension": ".ipynb",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "justcopy": false,
+            "initial": true
+          },
+          {
+            "file": "e0ba0b4c-d157-4170-bc13-6cce5e36a2a9",
+            "entryname": "GrC_2019_mod_axon",
+            "extension": ".zip",
+            "appid": 175,
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
@@ -1124,13 +1388,14 @@
         },
         "next": "morph_analysis_models",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyAnalysis/index.html",
         "files": [
           {
             "entryname": "Morphology Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d",
+            "file": "26169d21-23a0-4a6a-86f3-b16eedbb3732",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/morphology/Morphology%20Analysis.ipynb?ref=master"
           }
         ]
@@ -1145,7 +1410,8 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
-        "dataprotected": true
+        "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyVisualization/index.html"
       }
     ],
     "singlecellinsilicoexperiments": [
@@ -1263,7 +1529,7 @@
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/weeks_config.json",
-        "course_url": "https://courseware.epfl.ch/courses/course-v1:EPFL+Multi-BrainX+2018_T1/about"
+        "course_url": "https://www.edx.org/course/the-multi-scale-brain"
       },
       {
         "title": "Simulation of the Hippocampus: Hippocampal Microcircuits",
@@ -1349,6 +1615,7 @@
         "title": "Hippocampus",
         "description": "",
         "experience": ["all", "power"],
+        "isDemo": true,
         "disabled": false,
         "picture": {
           "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
@@ -1371,12 +1638,12 @@
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/hippocampusConnections.png"
           },
           {
-            "title": "Configure and run a hippocampus column",
+            "title": "Configure and run a hippocampus microcircuit",
             "disabled": false,
             "species": "Rat",
             "brain_structure": "hippocampus",
             "cell_soma_location": "CA1",
-            "description": "A microcircuit of detailed neuron models with a column shape.",
+            "description": "A microcircuit of detailed neuron models.",
             "contributors": [
               {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
               {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
@@ -1637,6 +1904,12 @@
         "byor": {
           "name": "BYOR",
           "tooltip": "(Bring Your Own Resources) Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility."
+        }
+      },
+      "demo": {
+        "model": {
+          "name": "WIP Circuit",
+          "tooltip": "Warning: model is work in progress"
         }
       }
     }

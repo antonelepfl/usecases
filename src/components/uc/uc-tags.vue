@@ -1,47 +1,59 @@
+
 <template>
    <div class="uc-tags">
-      <div class="exp">
-         <b v-for="(exp, index) in uc.experience" :key="index">
-            <md-chip v-bind:class="getClassByPrefix('exp-',exp)" disabled>{{ fullName('experience',exp) }}</md-chip>
-            <md-tooltip md-direction="left">{{getTooltipByPrefix('experience',exp)}}</md-tooltip>
-         </b>
+      <div class="demo-model-container">
+        <div class="demo-uc" v-if="uc.isDemo">
+          <div class="demo-model" />
+          <md-tooltip md-direction="left">{{getTooltipByPrefix('demo','model')}}</md-tooltip>
+        </div>
       </div>
 
-      <div class="divider"></div>
 
-      <div class="mat-acc">
-        <span v-if="uc.maturity">
-          <b
-            v-for="(mat, index) in uc.maturity"
-            :key="'maturity' + index"
-          >
-            <div
-              v-if="mat"
-              v-bind:class="getClassByPrefix('mat-',mat)"
-              class="image-tag-size"
-              title="maturity"
-            />
-            <md-tooltip md-direction="left">{{getTooltipByPrefix('maturity',mat)}}</md-tooltip>
-          </b>
-        </span>
-        <span v-if="uc.access">
-          <b
-            v-for="(access, index) in uc.access"
-            :key="'access' + index"
-          >
-            <div
-              v-if="access"
-              v-bind:class="getClassByPrefix('access-',access)"
-              class="image-tag-size"
-              title="access"
-            />
-            <md-tooltip md-direction="left">{{getTooltipByPrefix('access',access)}}</md-tooltip>
-          </b>
-        </span>
+      <div class="tags-container">
+        <div class="exp">
+           <b v-for="(exp, index) in uc.experience" :key="index">
+              <md-chip v-bind:class="getClassByPrefix('exp-',exp)" disabled>{{ fullName('experience',exp) }}</md-chip>
+              <md-tooltip md-direction="left">{{getTooltipByPrefix('experience',exp)}}</md-tooltip>
+           </b>
+        </div>
+        <div class="divider"></div>
+
+        <div class="mat-acc">
+          <span v-if="uc.maturity">
+            <b
+              v-for="(mat, index) in uc.maturity"
+              :key="'maturity' + index"
+            >
+              <div
+                v-if="mat"
+                v-bind:class="getClassByPrefix('mat-',mat)"
+                class="image-tag-size"
+                title="maturity"
+              />
+              <md-tooltip md-direction="left">{{getTooltipByPrefix('maturity',mat)}}</md-tooltip>
+            </b>
+          </span>
+          <span v-if="uc.access">
+            <b
+              v-for="(access, index) in uc.access"
+              :key="'access' + index"
+            >
+              <div
+                v-if="access"
+                v-bind:class="getClassByPrefix('access-',access)"
+                class="image-tag-size"
+                title="access"
+              />
+              <md-tooltip md-direction="left">{{getTooltipByPrefix('access',access)}}</md-tooltip>
+            </b>
+          </span>
+        </div>
+
       </div>
 
    </div>
 </template>
+
 
 <script>
 import get from 'lodash/get';
@@ -74,12 +86,14 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .all {
    color: gray;
 }
-.uc-tags.tags {
+.uc-tags {
   margin-bottom: 0;
+  display: flex;
 }
 /* Experiences levels */
 .md-chip.md-theme-default.exp-all {
@@ -112,6 +126,7 @@ export default {
 .access-byor {
    background-image: url('https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Access_BYO_48x48.png');
 }
+
 .mat-acc {
    display: flex;
    justify-content: center;
@@ -121,21 +136,37 @@ export default {
    height: 38px;
    background-size: 100% 100%;
 }
-@media screen and (max-width: 1500px) {
-   .tags {
-      display: block;
-   }
-   .divider {
-      display: none;
-   }
+
+.demo-model {
+  background-image: url('https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/demo-model.png');
+  width: 80px;
+  height: 60px;
+  background-size: 100% 100%;
+  margin-right: 10px;
+}
+.tags-container {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
    .md-chip {
       font-size: 12px;
    }
    .mat-acc, .exp {
       width: 100%;
    }
+  .divider {
+    display: none;
+  }
+  .tags-container {
+    flex-wrap: wrap;
+  }
 }
 @media screen and (max-width: 500px) {
+   .uc-tags {
+      display: block;
+   }
   .image-tag-size {
     width: 20px;
     height: 20px;

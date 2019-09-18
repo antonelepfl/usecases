@@ -3,7 +3,11 @@
       <uc-list-viewer :item-list="weeks" @selected="selected">
         <template v-slot:title>
           {{ moocInfo.title }}
-          <a v-if="moocInfo.course_url" :href="moocInfo.course_url" class="no-link right">
+          <a
+            v-if="moocInfo.course_url"
+            @click="openCoursePage(moocInfo.course_url)"
+            class="no-link right"
+          >
             <i>Link to the course </i>
             <i class="material-icons middle">link</i>
           </a>
@@ -21,8 +25,8 @@
 import UcItem from '@/components/uc/uc-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
-import collabAuthentication from '@/mixins/collabAuthentication';
 import mooc from '@/mixins/mooc';
+import { getUrlWithoutToken } from '@/mixins/utils';
 
 export default {
   name: 'ucContainer',
@@ -38,7 +42,7 @@ export default {
       moocInfo: {},
     };
   },
-  mixins: [collabAuthentication, mooc],
+  mixins: [mooc],
   methods: {
     selected(uc) {
       if (!uc.disabled) {
@@ -58,9 +62,19 @@ export default {
     prettyfy(name) {
       return name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     },
+    openCoursePage(url) {
+      const win = window.open(url, '_blank');
+      win.focus();
+    },
   },
   mounted() {
-    const ucSelected = this.compact(this.$route.params.uc_name);
+    /* $route.params is not in sync with window.location so even the token was
+     * removed for $route is still there. to remove issue we call getUrlWithoutToken */
+    let ucUrl = this.$route.params.uc_name;
+    if (ucUrl.includes('access_token')) {
+      ucUrl = getUrlWithoutToken(ucUrl);
+    }
+    const ucSelected = this.compact(ucUrl);
     // get the overall mooc info (title, url, etc)
     this.moocInfo = usecases[0].mooc.find(moocCourse => this.compact(moocCourse.title) === ucSelected);
     document.querySelector('title').innerText = this.prettyfy(this.moocInfo.title);

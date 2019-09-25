@@ -48,6 +48,26 @@
         ]
       },
       {
+        "title": "Predict protein interaction surface with the ARDOCK server",
+        "description": "In silico analysis of your protein surface using molecular probes to reveal potential interaction sites",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ardock.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "ArDock",
+            "appid": 423,
+            "contenttype": "text/html",
+            "extension": ".html"
+          }
+        ]
+      }, 
+      {
         "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
         "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
         "experience": ["all", "power"],

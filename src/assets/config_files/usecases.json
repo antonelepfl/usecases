@@ -357,6 +357,10 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+	"contributors": [
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
+              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},              
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
@@ -526,6 +530,9 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+	"contributors": [
+              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },

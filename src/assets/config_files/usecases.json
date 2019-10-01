@@ -346,7 +346,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9af68102-5471-43ac-bfb9-81975269c291",
+            "file": "38aed56c-fd59-4850-babb-732bc8127358",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/subcellular/KappaNeuron_Ca_Pump.ipynb?ref=master",
             "initial": true
           }

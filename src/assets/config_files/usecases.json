@@ -357,9 +357,9 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
-	"contributors": [
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},              
+        "contributors": [
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
@@ -530,14 +530,14 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
-	"contributors": [
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
+        "contributors": [
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
         "next": "ta_form",
-	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
         "files": [
           {
             "entryname": "Hodgkin-Huxley Neuron Builder",

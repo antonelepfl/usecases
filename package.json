@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint src/assets/config_files/usecases.json && vue-cli-service lint",
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
@@ -45,6 +45,7 @@
     "@vue/cli-service": "^3.4.0",
     "eslint": "^5.13.0",
     "eslint-plugin-vue": "^5.1.0",
+    "eslint-plugin-json": "^1.4.0",
     "html-loader": "^0.5.5",
     "jsdoc": "^3.6.3",
     "vue-template-compiler": "^2.6.6"
@@ -62,6 +63,9 @@
     "extends": [
       "plugin:vue/essential",
       "@vue/airbnb"
+    ],
+    "plugins": [
+      "json"
     ],
     "rules": {
       "no-console": 0,

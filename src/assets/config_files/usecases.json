@@ -153,9 +153,6 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
-        "contributors": [
-          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
-        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
         },
@@ -635,8 +632,8 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
-              {"name": "Martina Rizzi", "email": "martinafrancesca.rizza@unipv.it"},
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
+          {"name": "Martina Rizzi", "email": "martinafrancesca.rizza@unipv.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
@@ -766,7 +763,7 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
@@ -896,7 +893,7 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Granule_2019.png"
@@ -929,8 +926,8 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
-         "contributors": [
-              {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/PC_usecase.png"

@@ -207,10 +207,6 @@ export default {
   .collab-form-component .elevated {
     min-height: 300px;
   }
-  .collabs-results-container {
-    max-height: 400px;
-    overflow: scroll;
-  }
   .collabs-results-container .collab-result > a.nota {
     color: #ac6067;
     cursor: pointer;

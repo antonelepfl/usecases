@@ -48,6 +48,26 @@
         ]
       },
       {
+        "title": "Predict protein interaction surface with the ARDOCK server",
+        "description": "In silico analysis of your protein surface using molecular probes to reveal potential interaction sites",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ardock.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "ArDock",
+            "appid": 423,
+            "contenttype": "text/html",
+            "extension": ".html"
+          }
+        ]
+      }, 
+      {
         "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
         "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
         "experience": ["all", "power"],
@@ -133,9 +153,6 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
-        "contributors": [
-          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"}
-        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
         },
@@ -340,6 +357,10 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "contributors": [
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
@@ -509,11 +530,14 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
         "next": "ta_form",
-	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
         "files": [
           {
             "entryname": "Hodgkin-Huxley Neuron Builder",
@@ -614,6 +638,10 @@
         "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
+          {"name": "Martina Rizzi", "email": "martinafrancesca.rizza@unipv.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
@@ -741,6 +769,9 @@
         "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
@@ -868,6 +899,9 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Granule_2019.png"
         },
@@ -899,6 +933,9 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/PC_usecase.png"
         },

@@ -218,8 +218,4 @@ export default {
   .small-label {
     font-size: 11px;
   }
-  .collabs-results-container {
-    max-height: 400px;
-    overflow: scroll;
-  }
 </style>

@@ -124,3 +124,7 @@
     left: 35%;
   }
 }
+.collabs-results-container {
+  max-height: 400px;
+  overflow-y: scroll;
+}

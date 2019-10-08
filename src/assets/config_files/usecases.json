@@ -1789,7 +1789,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "06f82f00-8895-4a2f-8d64-1d3208d8b6e1",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Validation%20Framework%20Demo.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Validation_Framework_Demo.ipynb?ref=master"
           }
         ]
       },
@@ -1811,7 +1811,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Optimized%20BG%20model%20validation.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Optimized_BG_model_validation.ipynb?ref=master"
           }
         ]
       },

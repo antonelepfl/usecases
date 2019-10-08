@@ -597,6 +597,7 @@ export default {
       if (url.includes('contents/production_notebooks')) {
         let decodedContent = '';
         try {
+          // This is to avoid enconding issues
           const decoded = decodeURIComponent(escape(atob(response.data.content)));
           decodedContent = JSON.parse(decoded);
         } catch (error) {

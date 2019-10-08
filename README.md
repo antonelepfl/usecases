@@ -8,7 +8,7 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 ### To run locally
 ``` npm install ``` (install dependencies)
 
-``` npm run dev ``` (run server)
+``` npm run dev ``` (run dev server)
 
 ### To deploy in a dev environment:
 * The user make a pull request to the `dev` branch

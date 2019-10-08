@@ -1833,7 +1833,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal%20Ganglia%20Morphology%20Validation.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Morphology_Validation.ipynb?ref=master"
           }
         ]
       },
@@ -1855,7 +1855,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "9b915d4d-c1d0-4d1a-9be9-a614ac305014",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/BluePyOpt%20optimized%20model%20validation.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/BluePyOpt_Optimized_model_Validation.ipynb?ref=master"
           }
         ]
       },
@@ -1877,7 +1877,7 @@
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
             "file": "acb94529-a85c-4a79-bcf5-920612c17d91",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Hippocampus%20single%20cell%20validation.ipynb?ref=master"
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Hippocampus_Single_Cell_Validation.ipynb?ref=master"
           }
         ]
       }

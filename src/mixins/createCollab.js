@@ -591,11 +591,19 @@ export default {
       try {
         response = await this.$http.get(url);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         throw new Error('Error fetching content from Github');
       }
       if (url.includes('contents/production_notebooks')) {
-        dataObj.content = JSON.parse(atob(response.data.content));
+        let decodedContent = '';
+        try {
+          const decoded = decodeURIComponent(escape(atob(response.data.content)));
+          decodedContent = JSON.parse(decoded);
+        } catch (error) {
+          console.error(error);
+          throw new Error('Error parsing Github content');
+        }
+        dataObj.content = decodedContent;
         dataObj.sha = response.data.sha;
       } else {
         dataObj.content = response.data;

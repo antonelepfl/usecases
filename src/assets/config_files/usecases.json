@@ -129,7 +129,7 @@
         ],
         "files": [
           {
-            "entryname": "Prepare environment for Notebook \"Small molecule force field parametrization for atomistic Molecular Dynamics simulations\"",
+            "entryname": "Prepare environment for Notebook \"Small molecule force field parameterization for atomistic Molecular Dynamics simulations\"",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -138,7 +138,7 @@
             "initial": true
           },
           {
-            "entryname": "Small molecule force field parametrization for atomistic Molecular Dynamics simulations",
+            "entryname": "Small molecule force field parameterization for atomistic Molecular Dynamics simulations",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -169,7 +169,7 @@
         ],
         "files": [
           {
-            "entryname": "Prepare environment for Notebook \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation\"",
+            "entryname": "Prepare environment for Notebook \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation\"",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -178,7 +178,7 @@
             "initial": true
           },
           {
-            "entryname": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics simulation",
+            "entryname": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",

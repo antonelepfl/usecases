@@ -357,6 +357,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "contributors": [
           {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"}
@@ -383,6 +384,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
               {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
               {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -1927,6 +1929,14 @@
         "model": {
           "name": "WIP Circuit",
           "tooltip": "Warning: model is work in progress"
+        }
+      },
+      "uc-type": {
+        "webapp": {
+          "tooltip": "This use case was implementing using a Web Application"
+        },
+        "ipynb": {
+          "tooltip": "This use case was implementing using Jupyter Notebook"
         }
       }
     }

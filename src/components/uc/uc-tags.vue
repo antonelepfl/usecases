@@ -155,8 +155,8 @@ export default {
 }
 
 .type-item {
-  height: 80px;
-  width: 80px;
+  height: 45px;
+  width: 45px;
   background-size: 100% 100%;
 }
 .uc-type-webapp {

@@ -66,7 +66,7 @@
             "extension": ".html"
           }
         ]
-      }, 
+      },
       {
         "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
         "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
@@ -1137,6 +1137,11 @@
         "experience": ["code"],
         "maturity": ["experimental"],
         "disabled": false,
+        "contributors": [
+          {"name": "Alexander Kozlov", "email": "akozlov@kth.se"},
+          {"name": "Yvonne Johansson", "email": "yvonne.johansson@ki.se"},
+          {"name": "Gilad Silberberg", "email": "gilad.silberberg@ki.se"}
+        ],
         "picture": {
           "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
         },

@@ -1404,6 +1404,9 @@
       {
         "title": "Morphology analysis",
         "description": "Performs analysis on a morphology with NeuroM",
+        "contributors": [
+              {"name": "Liesbeth Vanherpe"}
+            ],
         "experience": ["power"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1427,6 +1430,9 @@
       {
         "title": "Morphology visualization",
         "description": "Display neuron morphology in 3D",
+        "contributors": [
+              {"name": "Liesbeth Vanherpe"}
+            ],
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1442,6 +1448,9 @@
       {
         "title": "Single cell in silico experiments under current clamp",
         "description": "",
+        "contributors": [
+              {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
+            ],
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,

@@ -564,6 +564,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_models",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/RebuildAnExistingSingleHippocampalCellModel/index.html",
         "files": [
           {
             "entryname": "Rebuild Single HippoCell - Config",

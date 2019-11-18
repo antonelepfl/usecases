@@ -386,9 +386,9 @@
         "disabled": false,
         "type": "ipynb",
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
@@ -424,9 +424,9 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
@@ -461,9 +461,9 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
@@ -556,9 +556,9 @@
         "access": ["hpc", "byor"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
@@ -599,9 +599,9 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
@@ -1405,8 +1405,8 @@
         "title": "Morphology analysis",
         "description": "Performs analysis on a morphology with NeuroM",
         "contributors": [
-              {"name": "Liesbeth Vanherpe"}
-            ],
+          {"name": "Liesbeth Vanherpe"}
+        ],
         "experience": ["power"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1431,8 +1431,8 @@
         "title": "Morphology visualization",
         "description": "Display neuron morphology in 3D",
         "contributors": [
-              {"name": "Liesbeth Vanherpe"}
-            ],
+          {"name": "Liesbeth Vanherpe"}
+        ],
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1449,8 +1449,8 @@
         "title": "Single cell in silico experiments under current clamp",
         "description": "",
         "contributors": [
-              {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
-            ],
+          {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
+        ],
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,

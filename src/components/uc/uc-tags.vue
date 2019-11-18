@@ -4,16 +4,15 @@
       <div class="demo-model-container">
         <div class="demo-uc" v-if="uc.isDemo">
           <div class="demo-model" />
-          <md-tooltip md-direction="left">{{getTooltipByPrefix('demo','model')}}</md-tooltip>
+          <md-tooltip md-direction="left">{{getTooltipByPrefix('demo', 'model')}}</md-tooltip>
         </div>
       </div>
-
 
       <div class="tags-container">
         <div class="exp">
            <b v-for="(exp, index) in uc.experience" :key="index">
-              <md-chip v-bind:class="getClassByPrefix('exp-',exp)" disabled>{{ fullName('experience',exp) }}</md-chip>
-              <md-tooltip md-direction="left">{{getTooltipByPrefix('experience',exp)}}</md-tooltip>
+              <md-chip v-bind:class="getClassByPrefix('exp-',exp)" disabled>{{ fullName('experience', exp) }}</md-chip>
+              <md-tooltip md-direction="left">{{getTooltipByPrefix('experience', exp)}}</md-tooltip>
            </b>
         </div>
         <div class="divider"></div>
@@ -30,7 +29,7 @@
                 class="image-tag-size"
                 title="maturity"
               />
-              <md-tooltip md-direction="left">{{getTooltipByPrefix('maturity',mat)}}</md-tooltip>
+              <md-tooltip md-direction="left">{{getTooltipByPrefix('maturity', mat)}}</md-tooltip>
             </b>
           </span>
           <span v-if="uc.access">
@@ -44,9 +43,15 @@
                 class="image-tag-size"
                 title="access"
               />
-              <md-tooltip md-direction="left">{{getTooltipByPrefix('access',access)}}</md-tooltip>
+              <md-tooltip md-direction="left">{{getTooltipByPrefix('access', access)}}</md-tooltip>
             </b>
           </span>
+        </div>
+
+        <div v-if="uc.type" class="divider"></div>
+        <div v-if="uc.type">
+          <div class="type-item" :class="getClassByPrefix('uc-type-', uc.type)"></div>
+          <md-tooltip md-direction="left">{{getTooltipByPrefix('uc-type', uc.type)}}</md-tooltip>
         </div>
 
       </div>
@@ -147,6 +152,18 @@ export default {
 .tags-container {
   display: flex;
   align-items: center;
+}
+
+.type-item {
+  height: 45px;
+  width: 45px;
+  background-size: 100% 100%;
+}
+.uc-type-webapp {
+  background-image: url('https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/web_uc.png');
+}
+.uc-type-ipynb {
+  background-image: url('https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ipynb_uc.png');
 }
 
 @media screen and (max-width: 1000px) {

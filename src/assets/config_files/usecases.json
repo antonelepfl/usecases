@@ -66,7 +66,7 @@
             "extension": ".html"
           }
         ]
-      }, 
+      },
       {
         "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
         "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
@@ -357,6 +357,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "contributors": [
           {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"}
@@ -383,10 +384,11 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
@@ -422,9 +424,9 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
@@ -459,9 +461,9 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
@@ -554,14 +556,15 @@
         "access": ["hpc", "byor"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_models",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/RebuildAnExistingSingleHippocampalCellModel/index.html",
         "files": [
           {
             "entryname": "Rebuild Single HippoCell - Config",
@@ -597,9 +600,9 @@
         "access": ["hpc"],
         "disabled": false,
         "contributors": [
-              {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
-              {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
-              {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
@@ -646,6 +649,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MonoCompartmentalCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
             "entryname": "Mono compartmental Cerebellar Granule cell optimization",
@@ -776,6 +780,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MultiCompartmentalCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
             "appid": 175,
@@ -940,6 +945,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/PC_usecase.png"
         },
         "next": "sc_form",
+	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SimulationAndValidationOfAMousePurkinjeCellMulticompartmentalModel/index.html",
         "files": [
           {
             "entryname": "Purkinje cell simulation and validation",
@@ -1135,6 +1141,11 @@
         "experience": ["code"],
         "maturity": ["experimental"],
         "disabled": false,
+        "contributors": [
+          {"name": "Alexander Kozlov", "email": "akozlov@kth.se"},
+          {"name": "Yvonne Johansson", "email": "yvonne.johansson@ki.se"},
+          {"name": "Gilad Silberberg", "email": "gilad.silberberg@ki.se"}
+        ],
         "picture": {
           "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
         },
@@ -1397,6 +1408,9 @@
       {
         "title": "Morphology analysis",
         "description": "Performs analysis on a morphology with NeuroM",
+        "contributors": [
+          {"name": "Liesbeth Vanherpe"}
+        ],
         "experience": ["power"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1420,6 +1434,9 @@
       {
         "title": "Morphology visualization",
         "description": "Display neuron morphology in 3D",
+        "contributors": [
+          {"name": "Liesbeth Vanherpe"}
+        ],
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1435,6 +1452,9 @@
       {
         "title": "Single cell in silico experiments under current clamp",
         "description": "",
+        "contributors": [
+          {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
+        ],
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1927,6 +1947,14 @@
         "model": {
           "name": "WIP Circuit",
           "tooltip": "Warning: model is work in progress"
+        }
+      },
+      "uc-type": {
+        "webapp": {
+          "tooltip": "This use case was implementing using a Web Application"
+        },
+        "ipynb": {
+          "tooltip": "This use case was implementing using Jupyter Notebook"
         }
       }
     }

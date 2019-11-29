@@ -7,6 +7,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
         },
@@ -30,6 +31,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
         },
@@ -53,6 +55,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ardock.png"
         },
@@ -73,6 +76,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc1.png"
         },
@@ -113,6 +117,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc2.png"
         },
@@ -153,6 +158,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
         },
@@ -193,6 +199,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc4.png"
         },
@@ -214,6 +221,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc5.png"
         },
@@ -235,6 +243,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc6.png"
         },
@@ -323,6 +332,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "David C Sterratt", "email": "david.c.sterratt@ed.ac.uk"}
         ],
@@ -426,6 +436,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -463,6 +474,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -535,6 +547,7 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "webapp",
         "contributors": [
           {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
@@ -558,6 +571,7 @@
         "experience": ["all"],
         "access": ["hpc", "byor"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -602,6 +616,7 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -644,6 +659,7 @@
         "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
           {"name": "Martina Rizzi", "email": "martinafrancesca.rizza@unipv.it"}
@@ -680,6 +696,7 @@
         "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
@@ -715,6 +732,7 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
@@ -749,6 +767,7 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
@@ -792,6 +811,7 @@
         "experience": ["code"],
         "maturity": ["experimental"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Alexander Kozlov", "email": "akozlov@kth.se"},
           {"name": "Yvonne Johansson", "email": "yvonne.johansson@ki.se"},
@@ -881,6 +901,7 @@
         "experience": ["power"],
         "maturity": ["experimental"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png"
         },
@@ -981,6 +1002,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/connectome.png"
         },
@@ -1065,6 +1087,7 @@
         "experience": ["power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png"
         },
@@ -1091,6 +1114,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
@@ -1109,6 +1133,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg"
         },
@@ -1132,6 +1157,7 @@
         "experience": ["all"],
         "disabled": false,
         "dataprotected": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bsp_logo.png"
         },
@@ -1239,6 +1265,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/pair_recording.png"
         },
@@ -1313,6 +1340,7 @@
           {
             "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
             "disabled": false,
+            "type": "webapp",
             "species": "Rat",
             "brain_structure": "hippocampus",
             "cell_soma_location": "CA1",
@@ -1328,6 +1356,7 @@
           {
             "title": "Configure and run a hippocampus microcircuit",
             "disabled": false,
+            "type": "webapp",
             "species": "Rat",
             "brain_structure": "hippocampus",
             "cell_soma_location": "CA1",
@@ -1361,6 +1390,7 @@
         "description": "",
         "experience": ["all", "power"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
         },
@@ -1427,6 +1457,7 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
@@ -1448,6 +1479,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1470,6 +1502,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1492,6 +1525,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1514,6 +1548,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1536,6 +1571,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },

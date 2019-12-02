@@ -17,7 +17,7 @@
         </div>
         <div class="divider"></div>
 
-        <div class="mat-acc">
+        <div class="mat-acc-type">
           <span v-if="uc.maturity">
             <b
               v-for="(mat, index) in uc.maturity"
@@ -46,12 +46,15 @@
               <md-tooltip md-direction="left">{{getTooltipByPrefix('access', access)}}</md-tooltip>
             </b>
           </span>
-        </div>
 
-        <div v-if="uc.type" class="divider"></div>
-        <div v-if="uc.type">
-          <div class="type-item" :class="getClassByPrefix('uc-type-', uc.type)"></div>
-          <md-tooltip md-direction="left">{{getTooltipByPrefix('uc-type', uc.type)}}</md-tooltip>
+          <span v-if="uc.type">
+            <div
+              class="type-item image-tag-size"
+              :class="getClassByPrefix('uc-type-', uc.type)"
+            />
+            <md-tooltip md-direction="left">{{getTooltipByPrefix('uc-type', uc.type)}}</md-tooltip>
+          </span>
+
         </div>
 
       </div>
@@ -132,9 +135,10 @@ export default {
    background-image: url('https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Access_BYO_48x48.png');
 }
 
-.mat-acc {
+.mat-acc-type {
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
+   align-items: center;
 }
 .image-tag-size {
    width: 38px;
@@ -170,7 +174,7 @@ export default {
    .md-chip {
       font-size: 12px;
    }
-   .mat-acc, .exp {
+   .mat-acc-type, .exp {
       width: 100%;
    }
   .divider {
@@ -193,7 +197,7 @@ export default {
     border-radius: 13px;
     padding: 10px 5px;
   }
-  .mat-acc {
+  .mat-acc-type {
     flex-direction: column;
     align-items: center;
   }

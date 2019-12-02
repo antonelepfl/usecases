@@ -30,6 +30,7 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         "experience": [<experience_choice>, ... ],
         "maturity":  [<maturity_choice>, ...],
         "access": [<access_choice>, ...],
+        "type": how the use case is implemented [webapp, ipynb],
         "disabled": boolean if the usecases is accessible or not,
         "picture": {
            "src": url of the image,

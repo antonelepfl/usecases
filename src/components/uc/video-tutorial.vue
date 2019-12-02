@@ -9,7 +9,7 @@
     <div class="divider"/>
     <div class="video-tutorial-container">
       <i class="material-icons">ondemand_video</i>
-      <span>Interactive Tutorial</span>
+      <span class="text-description">Interactive Tutorial</span>
       <md-tooltip md-direction="left">How to use this use case</md-tooltip>
     </div>
   </a>
@@ -43,5 +43,15 @@ export default {
     display: flex;
     flex-direction: column;
     width: 80px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 700px) {
+    .video-tutorial-container {
+      width: 40px;
+    }
+    .text-description {
+      display: none;
+    }
   }
 </style>

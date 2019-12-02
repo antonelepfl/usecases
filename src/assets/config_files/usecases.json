@@ -7,6 +7,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
         },
@@ -30,6 +31,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
         },
@@ -53,6 +55,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ardock.png"
         },
@@ -73,6 +76,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc1.png"
         },
@@ -113,6 +117,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc2.png"
         },
@@ -153,6 +158,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
         },
@@ -193,6 +199,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc4.png"
         },
@@ -214,6 +221,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc5.png"
         },
@@ -235,6 +243,7 @@
         "experience": ["all", "power"],
         "maturity": ["beta"],
         "disabled": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc6.png"
         },
@@ -323,6 +332,10 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "David C Sterratt", "email": "david.c.sterratt@ed.ac.uk"}
+        ],
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/KappaNEURON.png",
           "alt": "Thumbnail of KappaNEURON traces"
@@ -423,6 +436,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -460,6 +474,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -532,6 +547,7 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "webapp",
         "contributors": [
           {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
         ],
@@ -555,6 +571,7 @@
         "experience": ["all"],
         "access": ["hpc", "byor"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -599,6 +616,7 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
           {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
@@ -641,6 +659,7 @@
         "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
           {"name": "Martina Rizzi", "email": "martinafrancesca.rizza@unipv.it"}
@@ -658,111 +677,15 @@
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
             "initial": true,
-            "file": "cdd7d4ba-8432-4172-8e3f-06fa18993242",
+            "file": "c6f58f6e-6e4e-41f9-8b01-07c22145468b",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Granule%20cell%20mono%20compartmental%20optimization.ipynb?ref=master"
           },
           {
-            "file": "8cf15718-ebdb-48a2-b3ec-ff2b2770ace9",
-            "entryname": "grc_calc",
-            "extension": ".mod",
+            "file": "b4af6b05-2379-440f-9ecd-c3cc3785f6d9",
+            "entryname": "granule_mono",
+            "extension": ".zip",
             "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "5c86d104-c44b-4507-8d5d-5e6e1ddf08e6",
-            "entryname": "grc_ca",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "d211f390-5d18-4715-8c6c-8116fe1c38be",
-            "entryname": "grc_ka",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "efbb3a4a-ce17-403f-9256-8fb13188ff2e",
-            "entryname": "Grc_kca",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "39731a30-4363-488e-ba3b-fda2e322d047",
-            "entryname": "grc_kir",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "63c2bdf6-3efb-47aa-8b1b-e80f29a9965d",
-            "entryname": "grc_lkg1",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8294ca68-baed-4e27-9bbc-8fd8bb0c1e43",
-            "entryname": "Grc_lkg2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "e6beb883-64d2-4859-9e39-5fcd406e2b1e",
-            "entryname": "GrCmorphmono",
-            "extension": ".asc",
-            "appid": 175,
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "49393fbe-2706-4084-af9a-b7fbaee929a0",
-            "entryname": "grc_pna",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "1720d596-fdc1-42d1-aecc-8d8b46c1cdbc",
-            "entryname": "grg_km",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "76f86dce-fa50-43a8-a32c-c91b967bdff1",
-            "entryname": "Grg_kv",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "9b3d8dc3-1408-432e-9410-cc3d904bd9b7",
-            "entryname": "grg_na",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "9f912727-4a27-4183-8670-030eef39d2cd",
-            "entryname": "grg_nar",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
@@ -773,6 +696,7 @@
         "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
@@ -789,111 +713,15 @@
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
             "initial": true,
-            "file": "a046d0ab-3740-4c56-8cc8-83f346e87782",
+            "file": "46586ae0-2e80-43b1-b31f-b5dfa8ad8f1f",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Granule%20cell%20multi%20compartmental%20optimization.ipynb?ref=master"
           },
           {
-            "file": "639d663f-eedb-4748-8598-8b2fabdecc38",
+            "file": "22cc9e5e-e226-49aa-a17b-62db072081c4",
+            "entryname": "granule_multi",
+            "extension": ".zip",
             "appid": 175,
-            "entryname": "basic_param",
-            "extension": ".txt",
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "ef117f76-4a5d-4af5-b01a-88be555dc158",
-            "appid": 175,
-            "entryname": "GrC2017",
-            "extension": ".asc",
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "7111aec4-a9d2-48a6-a334-3d1f44f31ae1",
-            "appid": 175,
-            "entryname": "GRC_CALC",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "b332546b-9b53-40b9-9400-97c7f074c1ba",
-            "appid": 175,
-            "entryname": "GRC_CA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "a1fd05c7-22fb-4014-8abb-4febe899ac4a",
-            "appid": 175,
-            "entryname": "GRC_KA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "e1d4e683-b0e4-452d-ac93-b58ea5f9d3a7",
-            "appid": 175,
-            "entryname": "GRC_KCA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "938ae0c1-8648-4dc7-8d9f-5cf13739d4de",
-            "appid": 175,
-            "entryname": "GRC_KIR",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "d1f9ca3b-6b81-415d-a684-8fcd7daf9ecf",
-            "appid": 175,
-            "entryname": "GRC_KM",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "c6b84254-e837-4335-a130-c945fd86f940",
-            "appid": 175,
-            "entryname": "GRC_KV",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "921abef6-0fd7-43c0-9ec5-b4b91f5c7caa",
-            "appid": 175,
-            "entryname": "GRC_LKG1",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8f30654e-e2e5-447d-8bdc-b5112f967c8e",
-            "appid": 175,
-            "entryname": "GRC_LKG2",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "0f562f2e-d36a-4ff7-8478-679db324204d",
-            "appid": 175,
-            "entryname": "GrCmultiopt_conv",
-            "extension": ".py",
-            "contenttype": "text/x-python",
-            "justcopy": true
-          },
-          {
-            "file": "dca7594b-f6e0-46ea-9759-e10896295520",
-            "appid": 175,
-            "entryname": "GRC_NA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
@@ -904,6 +732,7 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
@@ -913,7 +742,7 @@
         "next": "sc_form",
         "files": [
           {
-            "file": "ca27b360-28c8-4655-bb67-aea88b0903c1",
+            "file": "d1cd767c-bdf0-4874-a2cd-4f737f073859",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/GrC_axon.ipynb?ref=master",
             "entryname": "Custom Axon Cerebellar Granule cell simulation",
             "extension": ".ipynb",
@@ -923,7 +752,7 @@
             "initial": true
           },
           {
-            "file": "e0ba0b4c-d157-4170-bc13-6cce5e36a2a9",
+            "file": "6ed72287-5f4f-40ad-b7f9-4a770b781bc0",
             "entryname": "GrC_2019_mod_axon",
             "extension": ".zip",
             "appid": 175,
@@ -938,6 +767,7 @@
         "experience": ["power"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
         ],
@@ -954,183 +784,23 @@
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
             "initial": true,
-            "file": "ad20df9f-7bc0-42e1-8dda-5b29e5eb02aa",
+            "file": "3bcf79d3-e666-4772-bc69-3bcff16f9c5b",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Purkinje%20cell%20simulation%20and%20validation.ipynb?ref=master"
           },
           {
-            "file": "fef633e5-f243-410c-b921-db6b2576682d",
-            "entryname": "Cav2_1",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "5c86d104-c44b-4507-8d5d-5e6e1ddf08e6",
-            "entryname": "grc_ca",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "018ac41b-70ba-4b16-be40-fe84fe33a5b9",
-            "entryname": "Cav3_1",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "d8c7f0bf-36b7-47ad-9f46-6ddf1d17eb77",
-            "entryname": "Cav3_2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "2bd8126c-99d1-4a1f-9138-73e09faafa01",
-            "entryname": "Cav3_3",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "f94d9a66-598a-4263-84ea-31c714ad17b9",
-            "entryname": "cdp5",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8294ca68-baed-4e27-9bbc-8fd8bb0c1e43",
-            "entryname": "Grc_lkg2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8c55ff4a-231e-4c1d-8d3f-0da3a4eeeb52",
-            "entryname": "final_pop",
-            "extension": ".txt",
-            "appid": 175,
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "6e21dae0-a99f-4b7e-a31a-036486daff17",
-            "entryname": "HCN1_Angeloetal2007",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "4cc7844e-f72a-43dd-9d01-c10fa17f4af7",
-            "entryname": "Kca11",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "011d64fb-ccbe-4578-9d1c-7f52667ccbf6",
-            "entryname": "Kca22",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "7e2f58c1-6198-42e9-a5d8-ce37d561f38a",
-            "entryname": "Kca31",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "afecd9bd-0121-4d88-909c-c0f4abcb4942",
-            "entryname": "Kir23",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "92b7dc0a-be21-4d3c-8d0d-edc19d3a8169",
-            "entryname": "Kv11",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "b2d4f7f4-20ca-41d4-a02f-05062d233986",
-            "entryname": "Kv15",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "9f67e039-145c-4987-9a8f-bf75c433888e",
-            "entryname": "Kv33",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "770fd1cc-e83f-47df-beca-ce54ad86c8fa",
-            "entryname": "Kv34",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "6d75cac6-11ea-4009-98a8-a0b46686e693",
-            "entryname": "Kv43",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "ca65e1dd-f9de-4770-a0de-d6f0e8ae8f6f",
-            "entryname": "Leak",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "dc01632f-0418-4c7c-bbea-d9c5027d7f10",
-            "entryname": "Nav16",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "47147a18-b1d4-46f7-8afe-2afbbce4062d",
-            "entryname": "Notebook_hbp",
+            "file": "a7f0e6e2-35ae-4490-b949-93889803c5bf",
+            "entryname": "Purkinje_multi",
             "extension": ".zip",
             "appid": 175,
             "contenttype": "application/x-compressed",
             "justcopy": true
           },
           {
-            "file": "4bd306fa-6981-4ef1-90f6-10ce3a892015",
-            "entryname": "purkinje_mouse",
-            "extension": ".swc",
+            "file": "e75582f3-66d5-4ef8-963c-6debbf6cdbfe",
+            "entryname": "Purkinje_res",
+            "extension": ".zip",
             "appid": 175,
-            "contenttype": "text/plain",
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
@@ -1141,6 +811,7 @@
         "experience": ["code"],
         "maturity": ["experimental"],
         "disabled": false,
+        "type": "ipynb",
         "contributors": [
           {"name": "Alexander Kozlov", "email": "akozlov@kth.se"},
           {"name": "Yvonne Johansson", "email": "yvonne.johansson@ki.se"},
@@ -1230,6 +901,7 @@
         "experience": ["power"],
         "maturity": ["experimental"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png"
         },
@@ -1330,6 +1002,7 @@
         "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/connectome.png"
         },
@@ -1414,6 +1087,7 @@
         "experience": ["power"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png"
         },
@@ -1440,6 +1114,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
@@ -1458,6 +1133,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg"
         },
@@ -1481,6 +1157,7 @@
         "experience": ["all"],
         "disabled": false,
         "dataprotected": true,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bsp_logo.png"
         },
@@ -1588,6 +1265,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/pair_recording.png"
         },
@@ -1654,6 +1332,7 @@
         "experience": ["all", "power"],
         "isDemo": true,
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
         },
@@ -1710,6 +1389,7 @@
         "description": "",
         "experience": ["all", "power"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
         },
@@ -1776,6 +1456,7 @@
         "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
@@ -1797,6 +1478,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1819,6 +1501,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1841,6 +1524,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1863,6 +1547,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
@@ -1885,6 +1570,7 @@
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },

@@ -1332,6 +1332,7 @@
         "experience": ["all", "power"],
         "isDemo": true,
         "disabled": false,
+        "type": "webapp",
         "picture": {
           "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
         },
@@ -1340,7 +1341,6 @@
           {
             "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
             "disabled": false,
-            "type": "webapp",
             "species": "Rat",
             "brain_structure": "hippocampus",
             "cell_soma_location": "CA1",
@@ -1356,7 +1356,6 @@
           {
             "title": "Configure and run a hippocampus microcircuit",
             "disabled": false,
-            "type": "webapp",
             "species": "Rat",
             "brain_structure": "hippocampus",
             "cell_soma_location": "CA1",

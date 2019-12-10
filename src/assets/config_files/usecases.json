@@ -1484,6 +1484,11 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
+          {"name": "Andrew Davison", "email": "andrew.davison@unic.cnrs-gif.fr"},
+          {"name": "Lungsi Sharma", "email": "lungsi.sharma@unic.cnrs-gif.fr"}
+        ],
         "files": [
           {
             "entryname": "Validation Framework Demo",
@@ -1496,7 +1501,7 @@
         ]
       },
       {
-        "title": "Basal Ganglia - BluePyOpt Optimized Model Validation - Multiple HOF",
+        "title": "Basal Ganglia - Single Cell Validation",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
         "experience": ["all"],
         "maturity": ["beta"],
@@ -1507,9 +1512,12 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
         "files": [
           {
-            "entryname": "Optimized BG model validation",
+            "entryname": "Basal Ganglia Single Cell Validation",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
@@ -1530,6 +1538,10 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
+          {"name": "Pedro Garcia", "email": "pedro.garcia@unic.cnrs-gif.fr"}
+        ],
         "files": [
           {
             "entryname": "Basal Ganglia Morphology Validation",
@@ -1542,7 +1554,7 @@
         ]
       },
       {
-        "title": "Generic - BluePyOpt Optimized Model Validation",
+        "title": "BluePyOpt Optimized Model Validation",
         "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
         "experience": ["all"],
         "maturity": ["beta"],
@@ -1553,9 +1565,12 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
         "files": [
           {
-            "entryname": "BluePyOpt optimized model validation",
+            "entryname": "BluePyOpt Optimized Model Validation",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
@@ -1565,7 +1580,7 @@
         ]
       },
       {
-        "title": "Hippocampus Single Cell - BluePyOpt Optimized Model Validation",
+        "title": "Hippocampus Single Cell Model Validation",
         "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
         "experience": ["all"],
         "maturity": ["beta"],
@@ -1576,9 +1591,13 @@
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Sáray Sára", "email": "saray.sara@koki.mta.hu"},
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
         "files": [
           {
-            "entryname": "Hippocampus single cell validation",
+            "entryname": "Hippocampus Single Cell Validation",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",

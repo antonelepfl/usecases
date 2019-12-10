@@ -1565,7 +1565,7 @@
         },
         "next": "ta_form",
         "dataprotected": true,
-      	"contributors": [
+        "contributors": [
           {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
         ],
         "files": [

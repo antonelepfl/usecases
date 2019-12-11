@@ -1502,7 +1502,7 @@
         ]
       },
       {
-        "title": "Basal Ganglia - Single Cell Validation",
+        "title": "Basal Ganglia Single Cell Validation",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
         "experience": ["all"],
         "maturity": ["beta"],

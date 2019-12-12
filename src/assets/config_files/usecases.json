@@ -1502,6 +1502,33 @@
         ]
       },
       {
+        "title": "Hippocampus Single Cell Model Validation",
+        "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Sáray Sára", "email": "saray.sara@koki.mta.hu"},
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "Hippocampus Single Cell Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "acb94529-a85c-4a79-bcf5-920612c17d91",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Hippocampus_Single_Cell_Validation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
         "title": "Basal Ganglia Single Cell Validation",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
         "experience": ["all"],
@@ -1524,33 +1551,6 @@
             "extension": ".ipynb",
             "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Optimized_BG_model_validation.ipynb?ref=master"
-          }
-        ]
-      },
-      {
-        "title": "Basal Ganglia Morphology Validation",
-        "description": "Validates single cell morphologies of MSN and FS cells",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": false,
-        "type": "ipynb",
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "contributors": [
-          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
-          {"name": "Pedro Garcia", "email": "pedro.garcia@unic.cnrs-gif.fr"}
-        ],
-        "files": [
-          {
-            "entryname": "Basal Ganglia Morphology Validation",
-            "appid": 175,
-            "contenttype": "application/x-ipynb+json",
-            "extension": ".ipynb",
-            "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Morphology_Validation.ipynb?ref=master"
           }
         ]
       },
@@ -1581,8 +1581,8 @@
         ]
       },
       {
-        "title": "Hippocampus Single Cell Model Validation",
-        "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
+        "title": "Basal Ganglia Morphology Validation",
+        "description": "Validates single cell morphologies of MSN and FS cells",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": false,
@@ -1593,17 +1593,17 @@
         "next": "ta_form",
         "dataprotected": true,
         "contributors": [
-          {"name": "Sáray Sára", "email": "saray.sara@koki.mta.hu"},
-          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
+          {"name": "Pedro Garcia", "email": "pedro.garcia@unic.cnrs-gif.fr"}
         ],
         "files": [
           {
-            "entryname": "Hippocampus Single Cell Validation",
+            "entryname": "Basal Ganglia Morphology Validation",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "acb94529-a85c-4a79-bcf5-920612c17d91",
-            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Hippocampus_Single_Cell_Validation.ipynb?ref=master"
+            "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Morphology_Validation.ipynb?ref=master"
           }
         ]
       }

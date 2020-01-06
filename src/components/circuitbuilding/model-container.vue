@@ -17,6 +17,7 @@ import ModelItem from './model-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import circuitbuilding from '@/mixins/deepModel';
 import modelsMixins from '@/mixins/models';
+import { compactString } from '@/mixins/utils';
 
 export default {
   name: 'modelContainer',
@@ -35,7 +36,7 @@ export default {
   methods: {
     selected(model) {
       if (model.disabled) return;
-      const pathName = this.uglyfy(model.title);
+      const pathName = compactString(model.title);
       this.$router.push({
         name: 'cb_form',
         params: { model_name: pathName },

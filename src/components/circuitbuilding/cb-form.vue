@@ -34,7 +34,7 @@ export default {
       const that = this;
       this.isLoading = true;
       this.error = '';
-      const modelPrettyName = this.getModelName(this.model_name);
+      const modelPrettyName = this.getModelName(this.uc_name, this.model_name);
       this.sendStatistics(collab.id, this.uc_name, modelPrettyName, false);
       this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
         // some of the functions here are overwritten in the circuitbuilding.js
@@ -49,7 +49,7 @@ export default {
       const that = this;
       this.error = '';
       this.isLoading = true;
-      const modelPrettyName = this.getModelName(this.model_name);
+      const modelPrettyName = this.getModelName(this.uc_name, this.model_name);
       this.sendStatistics(collab.id, this.uc_name, modelPrettyName, true);
       this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
         .then(() => {

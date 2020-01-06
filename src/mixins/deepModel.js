@@ -25,12 +25,9 @@ export default {
       const ucInfo = this.getUsecaseInfo(uc, model);
       return this.createItemInExistingCollab(collab, uc, ucInfo);
     },
-    uglyfy(name) {
-      return name.split(' ').map(word => word.toLowerCase()).join('');
-    },
-    getModelName(modelName) {
+    getModelName(ucName, modelName) {
       if (!modelName) return null;
-      const modelInfo = find(this.usecases[this.root], elem => this.uglyfy(elem.title) === this.uc_name);
+      const modelInfo = this.getUsecaseInfo(ucName, modelName);
       return modelInfo.title;
     },
     getUsecaseInfo(uc, model) {

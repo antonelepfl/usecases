@@ -43,8 +43,7 @@ export default {
     touched(modelItem) {
       const viewUrl = `${VIEWER_URL + modelItem.folderName}.html`;
       window.open(viewUrl, '_blank');
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(null, this.uc_name, category, modelItem.folderName, null);
+      this.sendStatistics(null, this.uc_name, modelItem.folderName, null);
     },
     addSearch(obj) {
       this.filter += ` ${obj.text}`;

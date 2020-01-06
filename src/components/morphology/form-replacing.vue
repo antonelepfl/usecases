@@ -40,8 +40,7 @@ export default {
       this.isLoading = true;
       const findString = 'REPLACE_MORPHOLOGY_FILE_HERE';
       const replaceText = this.folder_name;
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, isNewCollab);
+      this.sendStatistics(collab.id, this.uc_name, this.folder_name, isNewCollab);
       this.createItemInExistingCollabWithReplace(collab, this.uc_name, replaceText, findString)
         .catch((error) => {
           this.errorMessage = error.message;

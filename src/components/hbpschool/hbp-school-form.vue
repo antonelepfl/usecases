@@ -85,7 +85,7 @@ export default {
         return;
       }
 
-      this.sendStatistics(collab.id, this.uc_name, category, this.schoolName, true);
+      this.sendStatistics(collab.id, this.uc_name, this.schoolName, true);
       this.collabCreationProgress = 100;
       this.isLoadingLocal = false;
     },
@@ -95,7 +95,7 @@ export default {
       const category = this.$route.path.split('/')[1];
       try {
         await this.createCoursesSchool(collab, category, this.uc_name);
-        this.sendStatistics(collab.id, this.uc_name, category, this.schoolName, false);
+        this.sendStatistics(collab.id, this.uc_name, this.schoolName, false);
       } catch (error) {
         console.error(error);
         this.errorMessage = error.message;

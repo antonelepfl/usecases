@@ -70,9 +70,8 @@ export default {
       try {
         const collab = await this.createMoocCollab(isPrivate, this.fullCollabName);
         const prettyWeek = `Week ${this.weekNumber}`;
-        const category = this.$route.path.split('/')[1];
         await that.createCoursesMooc(collab, that.uc_name, this.week);
-        that.sendStatistics(collab.id, that.uc_name, category, prettyWeek, true);
+        that.sendStatistics(collab.id, that.uc_name, prettyWeek, true);
         that.collabCreationProgress = 100;
         that.isLoading = false;
       } catch (error) {
@@ -89,10 +88,9 @@ export default {
       this.isLoadingLocal = true;
       this.collabCreationProgress = 10;
       const prettyWeek = `Week ${this.weekNumber}`;
-      const category = this.$route.path.split('/')[1];
       try {
         await this.addMoocExistingCollab(collab, this.uc_name, this.week);
-        this.sendStatistics(collab.id, this.uc_name, category, prettyWeek, false);
+        this.sendStatistics(collab.id, this.uc_name, prettyWeek, false);
       } catch (error) {
         console.error(error);
         this.errorMessage = error.message;

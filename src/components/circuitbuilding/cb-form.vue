@@ -35,8 +35,7 @@ export default {
       this.isLoading = true;
       this.error = '';
       const modelPrettyName = this.getModelName(this.model_name);
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, false);
+      this.sendStatistics(collab.id, this.uc_name, modelPrettyName, false);
       this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
         // some of the functions here are overwritten in the circuitbuilding.js
         .then(() => {
@@ -51,8 +50,7 @@ export default {
       this.error = '';
       this.isLoading = true;
       const modelPrettyName = this.getModelName(this.model_name);
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, modelPrettyName, true);
+      this.sendStatistics(collab.id, this.uc_name, modelPrettyName, true);
       this.createItemInExistingCollabDeepModel(collab, this.uc_name, this.model_name)
         .then(() => {
           that.isLoading = false;

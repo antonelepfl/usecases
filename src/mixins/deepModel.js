@@ -3,6 +3,7 @@ import createCollab from '@/mixins/createCollab';
 import findIndex from 'lodash/findIndex';
 import find from 'lodash/find';
 import usecases from '@/assets/config_files/usecases.json';
+import { compactString } from '@/mixins/utils';
 
 export default {
   data() {
@@ -33,11 +34,8 @@ export default {
       return modelInfo.title;
     },
     getUsecaseInfo(uc, model) {
-      function compact(name) {
-        return name.toLowerCase().replace(/ /g, '');
-      }
-      const categoryInfo = find(this.usecases[this.root], category => compact(category.title) === uc);
-      const index = findIndex(categoryInfo.models, m => compact(m.title) === model);
+      const categoryInfo = find(this.usecases[this.root], category => compactString(category.title) === uc);
+      const index = findIndex(categoryInfo.models, m => compactString(m.title) === model);
       return categoryInfo.models[index];
     },
   },

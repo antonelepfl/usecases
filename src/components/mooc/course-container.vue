@@ -14,6 +14,7 @@
 import UcItem from '@/components/uc/uc-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
+import { compactString } from '@/mixins/utils';
 
 export default {
   name: 'ucContainer',
@@ -31,7 +32,7 @@ export default {
   methods: {
     selected(uc) {
       if (!uc.disabled) {
-        const title = uc.title.toLowerCase().replace(/\s/g, '');
+        const title = compactString(uc.title);
         this.$router.push({
           name: uc.next,
           params: { uc_name: title },

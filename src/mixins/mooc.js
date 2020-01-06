@@ -6,6 +6,7 @@ import usecases from '@/assets/config_files/usecases.json';
 import uuid from 'uuid4';
 import axios from 'axios';
 import store from '@/mixins/store';
+import { compactString } from '@/mixins/utils';
 
 const COLLAB_API = 'https://services.humanbrainproject.eu/collab/v0/';
 const EXTERNAL_LINK_APP_ID = 92;
@@ -284,7 +285,7 @@ export default {
     async getMoocFullConfig(ucCompactName) {
       // ucCompactName: is the name of the mooc without spaces
       if (ucCompactName) {
-        const found = this.usecaseMooc.find(elem => this.compact(elem.title) === ucCompactName);
+        const found = this.usecaseMooc.find(elem => compactString(elem.title) === ucCompactName);
         if (found) {
           const configUrl = found.config_url;
           const moocConfig = await axios.get(configUrl);
@@ -302,11 +303,8 @@ export default {
       if (!this.moocFullWeeks) {
         this.moocFullWeeks = await this.getMoocFullConfig(ucCompactName);
       }
-      this.moocWeek = this.moocFullWeeks.find(elem => this.compact(elem.title) === weekCompactName);
+      this.moocWeek = this.moocFullWeeks.find(elem => compactString(elem.title) === weekCompactName);
       return this.moocWeek;
-    },
-    compact(name) {
-      return name.toLowerCase().replace(/ /g, '');
     },
   },
 };

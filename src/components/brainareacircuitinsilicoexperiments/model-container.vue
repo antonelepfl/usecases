@@ -16,7 +16,7 @@
 import ModelItem from './model-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import modelsMixins from '@/mixins/models';
-import { compact } from '@/mixins/utils';
+import { compactString } from '@/mixins/utils';
 
 export default {
   name: 'ModelContainer',
@@ -38,7 +38,7 @@ export default {
         this.$router.push({
           name: 'brainarea_form',
           params: {
-            model_name: compact(model.title),
+            model_name: compactString(model.title),
           },
         });
       } else {

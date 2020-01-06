@@ -4,7 +4,7 @@
 import uuid from 'uuid4';
 import collabAuthentication from './collabAuthentication';
 import usecases from '@/assets/config_files/usecases.json';
-import { getUsecaseInfo, replaceConfirmation, compact } from '@/mixins/utils';
+import { getUsecaseInfo, replaceConfirmation, compactString } from '@/mixins/utils';
 import store from '@/mixins/store';
 import find from 'lodash/find';
 import commonConfig from '@/../production_notebooks/common_header/common-config.json';
@@ -520,7 +520,7 @@ export default {
         let categoryName = '';
         find(this.usecases, (categoryValue, categoryKey) => (
           find(categoryValue, (ucInfo) => {
-            const titleCompressed = compact(ucInfo.title);
+            const titleCompressed = compactString(ucInfo.title);
             if (titleCompressed === ucName) {
               fullUCName = ucInfo.title;
               categoryName = categoryKey;

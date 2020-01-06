@@ -28,6 +28,7 @@ import ucListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import storageManager from '@/mixins/storageManager';
 import commitNumer from '@/components/commit-number.vue';
+import { compactString } from '@/mixins/utils';
 
 export default {
   name: 'ucContainer',
@@ -47,7 +48,7 @@ export default {
   methods: {
     selected(uc) {
       if (!uc.disabled) {
-        const ucName = uc.title.toLowerCase().replace(/\s/g, '');
+        const ucName = compactString(uc.title);
         const category = this.$route.params.list_usecases;
         if (uc.dataprotected
                 && !storageManager.termsAcceptedLocally(category)) {

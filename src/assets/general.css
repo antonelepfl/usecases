@@ -39,6 +39,10 @@
   width: 10%;
   min-width: 10%;
   margin-right: 15px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .uc-description {
   flex-grow: 1;

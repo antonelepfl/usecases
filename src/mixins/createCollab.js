@@ -4,9 +4,9 @@
 import uuid from 'uuid4';
 import collabAuthentication from './collabAuthentication';
 import usecases from '@/assets/config_files/usecases.json';
-import { getUsecaseInfo, replaceConfirmation } from '@/mixins/utils';
+import { getUsecaseInfo, replaceConfirmation, compactString } from '@/mixins/utils';
 import store from '@/mixins/store';
-import some from 'lodash/some';
+import find from 'lodash/find';
 import commonConfig from '@/../production_notebooks/common_header/common-config.json';
 
 const SERVICES_BASE = 'https://services.humanbrainproject.eu';
@@ -512,26 +512,27 @@ export default {
         this.redirectToCollab(obj.collabId, obj.navitemId);
       }
     },
-    sendStatistics(collabId, ucName, category, fullModelName, isNew) {
+    sendStatistics(collabId, ucName, fullModelName, isNew) {
       if (store.state.devWebsite) { return; }
 
-      const searchTitleRecursively = () => {
-        let foundTitle = null;
-        some(this.usecases, ucCategory => (
-          some(ucCategory, (uc) => {
-            const { title } = uc;
-            const titleCompressed = title.replace(/ /g, '').toLowerCase();
+      const searchCategoryAndFullTitleRecursively = () => {
+        let fullUCName = '';
+        let categoryName = '';
+        find(this.usecases, (categoryValue, categoryKey) => (
+          find(categoryValue, (ucInfo) => {
+            const titleCompressed = compactString(ucInfo.title);
             if (titleCompressed === ucName) {
-              foundTitle = title;
+              fullUCName = ucInfo.title;
+              categoryName = categoryKey;
               return true;
             }
             return false;
           })
         ));
-        return foundTitle;
+        return { fullUCName, categoryName };
       };
 
-      const fullUCName = searchTitleRecursively();
+      const { fullUCName, categoryName } = searchCategoryAndFullTitleRecursively();
       if (!fullUCName) {
         console.warn('Title of the UC do not found');
       }
@@ -543,7 +544,7 @@ export default {
       formData.append('entry.1219332324', fullUCName);
       formData.append('entry.2088231351', fullModelName);
       formData.append('entry.748800890', collabId);
-      formData.append('entry.2065854000', category);
+      formData.append('entry.2065854000', categoryName);
       console.debug('Send usage statistic to form');
       this.sendToForm(formData, ACTIVITY_FORM, userEntry);
     },

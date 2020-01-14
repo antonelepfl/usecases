@@ -36,7 +36,6 @@ export default {
       const that = this;
       this.errorMessage = '';
       this.isLoading = true;
-      const category = this.$route.path.split('/')[1];
       this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.replaceText, this.findString)
         .catch((error) => {
           that.errorMessage = error.message;
@@ -44,13 +43,12 @@ export default {
         .finally(() => {
           that.isLoading = false;
         });
-      this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, false);
+      this.sendStatistics(collab.id, this.uc_name, this.folder_name, false);
     },
     createNewCollab(collab) {
       const that = this;
       this.errorMessage = '';
       this.isLoading = true;
-      const category = this.$route.path.split('/')[1];
       this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.replaceText, this.findString)
         .catch((error) => {
           that.errorMessage = error.message;
@@ -58,7 +56,7 @@ export default {
         .finally(() => {
           that.isLoading = false;
         });
-      this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, true);
+      this.sendStatistics(collab.id, this.uc_name, this.folder_name, true);
     },
   },
 };

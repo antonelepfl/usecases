@@ -40,7 +40,7 @@
 
 <script>
 import mooc from '@/mixins/mooc';
-import usecases from '@/assets/config_files/usecases.json';
+import { getUsecaseInfo } from '@/mixins/utils';
 
 export default {
   name: 'hbpSchoolForm',
@@ -75,27 +75,24 @@ export default {
         return;
       }
 
-      const category = this.$route.path.split('/')[1];
-
       try {
-        await this.createCoursesSchool(collab, category, this.uc_name);
+        await this.createCoursesSchool(collab, this.uc_name);
       } catch (error) {
         this.errorMessage = `Error during course creation: ${error.message}`;
         this.isLoadingLocal = false;
         return;
       }
 
-      this.sendStatistics(collab.id, this.uc_name, category, this.schoolName, true);
+      this.sendStatistics(collab.id, this.uc_name, this.schoolName, true);
       this.collabCreationProgress = 100;
       this.isLoadingLocal = false;
     },
     async collabSelected(collab) {
       this.isLoadingLocal = true;
       this.collabCreationProgress = 10;
-      const category = this.$route.path.split('/')[1];
       try {
-        await this.createCoursesSchool(collab, category, this.uc_name);
-        this.sendStatistics(collab.id, this.uc_name, category, this.schoolName, false);
+        await this.createCoursesSchool(collab, this.uc_name);
+        this.sendStatistics(collab.id, this.uc_name, this.schoolName, false);
       } catch (error) {
         console.error(error);
         this.errorMessage = error.message;
@@ -118,8 +115,8 @@ export default {
       }
     },
 
-    async createCoursesSchool(collab, category, uc) {
-      this.schoolInfo = usecases[0][category].find(elem => (this.compact(elem.title) === uc));
+    async createCoursesSchool(collab, uc) {
+      this.schoolInfo = getUsecaseInfo(uc);
       return this.createGenericCourses(collab, this.schoolInfo);
     },
   },

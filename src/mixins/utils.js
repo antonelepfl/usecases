@@ -6,14 +6,14 @@ import usecasesFile from '@/assets/config_files/usecases.json';
 
 const usecases = usecasesFile[0];
 
-function compact(name) {
+function compactString(name) {
   return name.toLowerCase().replace(/ /g, '');
 }
 
 function getUsecaseInfo(ucName) {
   let elem = {};
   find(usecases, (category) => {
-    const index = findIndex(category, uc => compact(uc.title) === ucName);
+    const index = findIndex(category, uc => compactString(uc.title) === ucName);
     elem = category[index];
     return elem;
   });
@@ -85,7 +85,7 @@ function getUrlWithoutToken(href) {
 export {
   getUsecaseInfo,
   getContributorFormated,
-  compact,
+  compactString,
   replaceConfirmation,
   getDateDashed,
   getUrlWithoutToken,

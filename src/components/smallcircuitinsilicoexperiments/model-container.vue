@@ -31,16 +31,9 @@ export default {
   methods: {
     touched(modelItem) { // open form or pair recording
       if (modelItem.externalLink) {
+        this.sendStatistics(null, this.uc_name, modelItem.title, null);
         window.open(modelItem.externalLink, '_blank');
-        return;
       }
-
-      this.$router.push({
-        name: 'small_circuit_form',
-        params: {
-          folder_name: modelItem.modelName,
-        },
-      });
     },
   },
   created() {

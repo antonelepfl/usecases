@@ -33,8 +33,7 @@ export default {
       this.errorMessage = '';
       this.isLoading = true;
       const findString = 'REPLACE_MODEL_HERE';
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, false);
+      this.sendStatistics(collab.id, this.uc_name, this.folder_name, false);
       this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .catch((error) => {
           this.errorMessage = error.message;
@@ -47,8 +46,7 @@ export default {
       this.errorMessage = '';
       this.isLoading = true;
       const findString = 'REPLACE_MODEL_HERE';
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, this.folder_name, true);
+      this.sendStatistics(collab.id, this.uc_name, this.folder_name, true);
       this.createItemInExistingCollabWithReplace(collab, this.uc_name, this.folder_name, findString)
         .catch((error) => {
           this.errorMessage = error.message;

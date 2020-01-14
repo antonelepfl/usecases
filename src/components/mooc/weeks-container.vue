@@ -26,7 +26,7 @@ import UcItem from '@/components/uc/uc-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import mooc from '@/mixins/mooc';
-import { getUrlWithoutToken } from '@/mixins/utils';
+import { getUrlWithoutToken, compactString, getUsecaseInfo } from '@/mixins/utils';
 
 export default {
   name: 'ucContainer',
@@ -46,7 +46,7 @@ export default {
   methods: {
     selected(uc) {
       if (!uc.disabled) {
-        const weekName = uc.title.toLowerCase().replace(/\s/g, '');
+        const weekName = compactString(uc.title);
 
         this.$router.push({
           name: uc.next,
@@ -74,9 +74,9 @@ export default {
     if (ucUrl.includes('access_token')) {
       ucUrl = getUrlWithoutToken(ucUrl);
     }
-    const ucSelected = this.compact(ucUrl);
+    const ucSelected = compactString(ucUrl);
     // get the overall mooc info (title, url, etc)
-    this.moocInfo = usecases[0].mooc.find(moocCourse => this.compact(moocCourse.title) === ucSelected);
+    this.moocInfo = getUsecaseInfo(ucSelected);
     document.querySelector('title').innerText = this.prettyfy(this.moocInfo.title);
     // get the external config for the weeks
     this.getMoocFullConfig(ucSelected)

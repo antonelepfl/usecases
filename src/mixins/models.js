@@ -3,7 +3,7 @@ import modelsHippocampus from '@/assets/config_files/hippocampus_models.json';
 import modelsPurkinje from '@/assets/config_files/purkinje_models.json';
 import modelsNMC from '@/assets/config_files/nmcportalmodels_structure.json';
 import usecases from '@/assets/config_files/usecases.json';
-import { getUsecaseInfo } from './utils';
+import { getUsecaseInfo, compactString } from './utils';
 
 function getModelTitle(modelInfo) {
   const species = modelInfo.species.split(' ')[0];
@@ -70,13 +70,13 @@ function searchPerformance(text, originalModels) {
 
   const filterTerm = textTerm => (
     matches.filter((v) => {
-      const title = v.modelTitle.toLowerCase().replace(/\s+/g, '');
+      const title = compactString(v.modelTitle);
       return (title.search(textTerm) !== -1);
     })
   );
 
   for (let i = 0; i < attributesSize; i += 1) {
-    const textTerm = attributes[i].toLowerCase().replace(/\s+/g, '');
+    const textTerm = compactString(attributes[i]);
     matches = filterTerm(textTerm);
   }
   return matches;

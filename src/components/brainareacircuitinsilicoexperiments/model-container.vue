@@ -16,7 +16,8 @@
 import ModelItem from './model-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import modelsMixins from '@/mixins/models';
-import { compact } from '@/mixins/utils';
+import createCollab from '@/mixins/createCollab';
+import { compactString } from '@/mixins/utils';
 
 export default {
   name: 'ModelContainer',
@@ -31,6 +32,7 @@ export default {
       list_usecases: 'brainareacircuitinsilicoexperiments',
     };
   },
+  mixins: [createCollab],
   methods: {
     selected(model) {
       if (model.disabled) return;
@@ -38,10 +40,11 @@ export default {
         this.$router.push({
           name: 'brainarea_form',
           params: {
-            model_name: compact(model.title),
+            model_name: compactString(model.title),
           },
         });
       } else {
+        this.sendStatistics(null, this.uc_name, model.title, null);
         window.open(model.redirect_url, '_blank');
       }
     },

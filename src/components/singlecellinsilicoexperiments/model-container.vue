@@ -41,8 +41,7 @@ export default {
   props: ['list_usecases', 'uc_name'],
   methods: {
     touched(modelItem) { // open Neuron as a service
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(null, this.uc_name, category, modelItem.folderName, null);
+      this.sendStatistics(null, this.uc_name, modelItem.folderName, null);
       const modelBlueNaasUrl = modelItem.modelZipBase
         ? `url/${modelItem.zip_url.replace(modelItem.modelZipBase, '')}`
         : `model/${modelItem.folderName}`;

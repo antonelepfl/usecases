@@ -33,8 +33,7 @@ export default {
       const that = this;
       this.isLoading = true;
       this.errorMessage = '';
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, null, false);
+      this.sendStatistics(collab.id, this.uc_name, null, false);
       this.createItemInExistingCollab(collab, this.uc_name)
         .catch((error) => {
           that.errorMessage = error.message;
@@ -47,8 +46,7 @@ export default {
       const that = this;
       this.isLoading = true;
       this.errorMessage = '';
-      const category = this.$route.path.split('/')[1];
-      this.sendStatistics(collab.id, this.uc_name, category, null, true);
+      this.sendStatistics(collab.id, this.uc_name, null, true);
       this.createItemInExistingCollab(collab, this.uc_name)
         .catch((error) => {
           that.errorMessage = error.message;

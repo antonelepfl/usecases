@@ -581,7 +581,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_models",
-	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/RebuildAnExistingSingleHippocampalCellModel/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/RebuildAnExistingSingleHippocampalCellModel/index.html",
         "files": [
           {
             "entryname": "Rebuild Single HippoCell - Config",
@@ -669,7 +669,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
-	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MonoCompartmentalCerebellarGranuleCellOptimization/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MonoCompartmentalCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
             "entryname": "Mono compartmental Cerebellar Granule cell optimization",
@@ -705,7 +705,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
-	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MultiCompartmentalCerebellarGranuleCellOptimization/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MultiCompartmentalCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
             "appid": 175,
@@ -727,7 +727,7 @@
           }
         ]
       },
-	  {
+      {
         "title": "Custom Axon Cerebellar Granule cell simulation",
         "description": "The purpose of this usecase it to explain how to setup an axon, built with BluePyOpt, containing an erbitrary number of sections. Afterward to simulate an actual cerebellar granule cell model with an axon composed by over 300 sections.",
         "experience": ["power"],
@@ -776,7 +776,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/PC_usecase.png"
         },
         "next": "sc_form",
-	"tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SimulationAndValidationOfAMousePurkinjeCellMulticompartmentalModel/index.html",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SimulationAndValidationOfAMousePurkinjeCellMulticompartmentalModel/index.html",
         "files": [
           {
             "entryname": "Purkinje cell simulation and validation",

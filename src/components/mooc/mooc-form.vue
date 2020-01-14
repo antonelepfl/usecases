@@ -72,6 +72,7 @@ export default {
         const prettyWeek = `Week ${this.weekNumber}`;
         await that.createCoursesMooc(collab, that.uc_name, this.week);
         that.sendStatistics(collab.id, that.uc_name, prettyWeek, true);
+        this.redirectToCollab(collab.id, this.navitemId);
         that.collabCreationProgress = 100;
         that.isLoading = false;
       } catch (error) {
@@ -91,6 +92,7 @@ export default {
       try {
         await this.addMoocExistingCollab(collab, this.uc_name, this.week);
         this.sendStatistics(collab.id, this.uc_name, prettyWeek, false);
+        this.redirectToCollab(collab.id, this.navitemId);
       } catch (error) {
         console.error(error);
         this.errorMessage = error.message;

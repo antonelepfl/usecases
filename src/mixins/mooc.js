@@ -55,7 +55,6 @@ export default {
         this.copyContentToNav(itemInfo)
       ))); // populate navitem parallel
       this.collabCreationProgress += 5;
-      this.redirectToCollab(collab.id, this.navitemId);
     },
     async createItemInExistingCollab(collab, item, replaceObj) { // creates weeks -> files. Modified.
       // returns the info to generate entry

@@ -549,7 +549,6 @@ export default {
       formData.append('entry.2088231351', fullModelName);
       formData.append('entry.748800890', collabId);
       formData.append('entry.2065854000', categoryName);
-      console.debug('Send usage statistic to form');
       this.sendToForm(formData, ACTIVITY_FORM, userEntry);
     },
     sendToForm(formData, url, userEntry) {
@@ -566,6 +565,7 @@ export default {
       const getInfoAndSend = () => {
         this.getUserInfo().then((user) => {
           formData.append(userEntry, user.id);
+          console.debug('Send usage statistic to form');
           send();
         });
       };

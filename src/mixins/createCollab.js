@@ -217,10 +217,14 @@ export default {
       }));
     },
     getFileByEnv(info) {
-      if (store.state.devWebsite) {
-        return info.file;
+      if (store.state.devWebsite) return info.file;
+      const fileToFetch = info.file_prod || info.file;
+      if (store.state.stagingWebsite) {
+        return fileToFetch.includes('.ipynb')
+          ? fileToFetch.replace('ipynb?ref=master', 'ipynb?ref=dev')
+          : fileToFetch;
       }
-      return info.file_prod || info.file;
+      return fileToFetch;
     },
     async createFile(name, contentType, extension, parent, collabId) {
       const url = STORAGE_FILE_API;
@@ -513,7 +517,7 @@ export default {
       }
     },
     sendStatistics(collabId, ucName, fullModelName, isNew) {
-      if (store.state.devWebsite) { return; }
+      if (store.state.devWebsite || store.state.stagingWebsite) { return; }
 
       const searchCategoryAndFullTitleRecursively = () => {
         let fullUCName = '';
@@ -549,7 +553,7 @@ export default {
       this.sendToForm(formData, ACTIVITY_FORM, userEntry);
     },
     sendToForm(formData, url, userEntry) {
-      if (store.state.devWebsite) { return; }
+      if (store.state.devWebsite || store.state.stagingWebsite) { return; }
 
       const send = () => {
         const options = {

@@ -217,10 +217,14 @@ export default {
       }));
     },
     getFileByEnv(info) {
-      if (store.state.devWebsite) {
-        return info.file;
+      if (store.state.devWebsite) return info.file;
+      const fileToFetch = info.file_prod || info.file;
+      if (store.state.stagingWebsite) {
+        return fileToFetch.includes('.ipynb')
+          ? fileToFetch.replace('ipynb?ref=master', 'ipynb?ref=dev')
+          : fileToFetch;
       }
-      return info.file_prod || info.file;
+      return fileToFetch;
     },
     async createFile(name, contentType, extension, parent, collabId) {
       const url = STORAGE_FILE_API;
@@ -513,7 +517,7 @@ export default {
       }
     },
     sendStatistics(collabId, ucName, fullModelName, isNew) {
-      if (store.state.devWebsite) { return; }
+      if (store.state.devWebsite || store.state.stagingWebsite) { return; }
 
       const searchCategoryAndFullTitleRecursively = () => {
         let fullUCName = '';
@@ -545,11 +549,10 @@ export default {
       formData.append('entry.2088231351', fullModelName);
       formData.append('entry.748800890', collabId);
       formData.append('entry.2065854000', categoryName);
-      console.debug('Send usage statistic to form');
       this.sendToForm(formData, ACTIVITY_FORM, userEntry);
     },
     sendToForm(formData, url, userEntry) {
-      if (store.state.devWebsite) { return; }
+      if (store.state.devWebsite || store.state.stagingWebsite) { return; }
 
       const send = () => {
         const options = {
@@ -562,6 +565,7 @@ export default {
       const getInfoAndSend = () => {
         this.getUserInfo().then((user) => {
           formData.append(userEntry, user.id);
+          console.debug('Send usage statistic to form');
           send();
         });
       };

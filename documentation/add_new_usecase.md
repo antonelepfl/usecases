@@ -83,10 +83,12 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
       "contenttype": (string) possible values ["x-ipynb+json", "text/html"],
       "extension": (string) extension with "." like ".ipynb",
       "file": UUID of the file in collab storage (more information see below) OR raw file URL,
+      "file_prod": (optional*) Github file url using API,
       "initial": (boolean) if true this nav item will be shown when redirect to collab,
       "justcopy": (boolean) if true, it will avoid creating a nav item,
    }
    ```
+   \* This can be added later when the notebook is tested 
 * #### model_item:
   ```
   {

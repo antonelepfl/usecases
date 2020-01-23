@@ -38,6 +38,7 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         },
         "dataprotected": if the user should accept terms and conditions [true, false]
         "next": <next_choice>,
+        "external_link": <external_link>,
         "files": [<file_usecase>, ...],
         "models": [<model_item>, ...],
         "tutorial": url of the interactive tutorial,
@@ -73,7 +74,10 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
 * #### next_choice:
    Name the route that you want to open when the uc is clicked.
    Use the default `ta_form` to show the form or create / reuse one of the existing routes in the 'routes' object in main.js for custom steps.
+   You could use `'next': false` and use `'external_link': 'https://...'` to open your application in a new tab
 
+* #### next_choice:
+   URL. Open a web app in a new tab. 'next' needs to be set to 'false'
 * #### file_usecase:
    This array will contain the apps or files that they are going to be copied to the new Collab. The format should be something like
    ```

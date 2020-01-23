@@ -854,6 +854,9 @@
         "contributors": [
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"}
         ],
+        "picture": {
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/placeholder.jpg"
+        },
         "next": "sc_models",
         "files": [
           {
@@ -862,7 +865,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "2ff60e25-30d9-4da6-aa65-e659b46c10d8",
-            "file_prod": false
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Synaptic%20plasticity.ipynb?ref=master"
           }
         ]
       },

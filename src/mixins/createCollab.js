@@ -459,7 +459,7 @@ export default {
     async getUserInfo() {
       if (this.userInfo) return this.userInfo;
       try {
-        const response = await this.$http.get(USER_API, this.header);
+        const response = await this.$http.get(USER_API, store.state.header);
         this.userInfo = response.data;
       } catch (error) {
         if (error.response.status === 401) {
@@ -522,7 +522,7 @@ export default {
       const searchCategoryAndFullTitleRecursively = () => {
         let fullUCName = '';
         let categoryName = '';
-        find(this.usecases, (categoryValue, categoryKey) => (
+        find(usecases[0], (categoryValue, categoryKey) => (
           find(categoryValue, (ucInfo) => {
             const titleCompressed = compactString(ucInfo.title);
             if (titleCompressed === ucName) {

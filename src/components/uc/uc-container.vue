@@ -29,6 +29,7 @@ import usecases from '@/assets/config_files/usecases.json';
 import storageManager from '@/mixins/storageManager';
 import commitNumer from '@/components/commit-number.vue';
 import { compactString } from '@/mixins/utils';
+import createCollab from '@/mixins/createCollab';
 
 export default {
   name: 'ucContainer',
@@ -59,6 +60,14 @@ export default {
               uc_name: ucName,
             },
           });
+        } else if (!uc.next && uc.external_link) {
+          // open app in new tab and send statistics
+          const sendStatisticsBinded = createCollab.methods.sendStatistics.bind(this);
+          this.sendToForm = createCollab.methods.sendToForm;
+          this.getUserInfo = createCollab.methods.getUserInfo;
+          sendStatisticsBinded(null, ucName, null, null);
+
+          window.open(uc.external_link, '_blank');
         } else {
           this.$router.push({ name: uc.next, params: { uc_name: ucName } });
         }

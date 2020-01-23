@@ -845,6 +845,31 @@
         ]
       },
       {
+        "title": "Synaptic plasticity",
+        "description": "Configure and test different synaptic plasticity models and protocols",
+        "experience": ["all"],
+        "access": ["byor"],
+        "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"}
+        ],
+        "picture": {
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "sc_models",
+        "files": [
+          {
+            "entryname": "Synaptic plasticity",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "2ff60e25-30d9-4da6-aa65-e659b46c10d8",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Synaptic%20plasticity.ipynb?ref=master"
+          }
+        ]
+      },
+      {
         "title": "Build your own single hippocampal cell model using HBP and your own data",
         "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",
         "experience": ["power", "experts"],

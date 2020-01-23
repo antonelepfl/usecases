@@ -361,6 +361,18 @@
             "initial": true
           }
         ]
+      }, {
+        "title": "Subcellular application",
+        "description": "Web based environment for creation and simulation of reaction-diffusion models",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "type": "webapp",
+        "external_link": "https://subcellular.humanbrainproject.eu",
+        "next": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/subcellular_app.png",
+          "alt": "Thumbnail of Subcellular Application"
+        }
       }
     ],
     "traceanalysis": [

@@ -38,6 +38,7 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
         },
         "dataprotected": if the user should accept terms and conditions [true, false]
         "next": <next_choice>,
+        "external_link": <external_link>,
         "files": [<file_usecase>, ...],
         "models": [<model_item>, ...],
         "tutorial": url of the interactive tutorial,
@@ -73,7 +74,10 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
 * #### next_choice:
    Name the route that you want to open when the uc is clicked.
    Use the default `ta_form` to show the form or create / reuse one of the existing routes in the 'routes' object in main.js for custom steps.
+   You could use `'next': false` and use `'external_link': 'https://...'` to open your application in a new tab
 
+* #### next_choice:
+   URL. Open a web app in a new tab. 'next' needs to be set to 'false'
 * #### file_usecase:
    This array will contain the apps or files that they are going to be copied to the new Collab. The format should be something like
    ```
@@ -83,10 +87,12 @@ Create a new entry (json) to the [usecases.json](/src/assets/config_files/usecas
       "contenttype": (string) possible values ["x-ipynb+json", "text/html"],
       "extension": (string) extension with "." like ".ipynb",
       "file": UUID of the file in collab storage (more information see below) OR raw file URL,
+      "file_prod": (optional*) Github file url using API,
       "initial": (boolean) if true this nav item will be shown when redirect to collab,
       "justcopy": (boolean) if true, it will avoid creating a nav item,
    }
    ```
+   \* This can be added later when the notebook is tested 
 * #### model_item:
   ```
   {

@@ -759,6 +759,7 @@
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Granule_2019.png"
         },
         "next": "sc_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/CustomAxonCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
             "file": "d1cd767c-bdf0-4874-a2cd-4f737f073859",

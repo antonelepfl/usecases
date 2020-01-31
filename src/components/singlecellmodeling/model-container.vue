@@ -5,27 +5,23 @@
 </template>
 
 <script>
-   import ca1ModelList from './ca1-model-list.vue'
-   import collabAuthentication from 'mixins/collabAuthentication.js'
-   export default {
-      name: 'modelContainer',
-      components: {
-         'ca1-model-list': ca1ModelList
-      },
-      props: ['list_usecases', 'uc_name'],
-      mixins: [collabAuthentication],
-      methods: {
-        touched (modelItem) {
-          this.$router.push({name: 'sc_models_form',
-            params: {
-              'folder_name': modelItem.folderName
-            }
-          })
-        }
-      }
-   }
+import ca1ModelList from '@/components/shared/ca1-model-list.vue';
+
+export default {
+  name: 'modelContainer',
+  components: {
+    'ca1-model-list': ca1ModelList,
+  },
+  props: ['list_usecases', 'uc_name'],
+  methods: {
+    touched(modelItem) {
+      this.$router.push({
+        name: 'sc_models_form',
+        params: {
+          folder_name: modelItem.folderName,
+        },
+      });
+    },
+  },
+};
 </script>
-
-<style scoped>
-
-</style>

@@ -1,0 +1,92 @@
+[
+  {
+    "Granule cell - Multi compartmental": {
+      "meta": {
+        "name": "Granule cell - Multi compartmental",
+        "author": "Stefano Masoli",
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Cerebellar Granule cell multi compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -70\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_multi.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/GrC_multi_traace.jpg",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_multi_morfo.jpg"
+    }
+  },
+  {
+    "Granule cell - Mono compartmental": {
+      "meta": {
+        "name": "Granule cell - Mono compartmental",
+        "author": "Stefano Masoli",
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Cerebellar Granule cell single compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -80\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono_trace.jpg",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono_morfo.jpg"
+    }
+  },
+  {
+    "Granule cell 2019 - Accelerating": {
+      "meta": {
+        "name": "Granule cell 2019 - Accelerating",
+        "author": "Stefano Masoli",
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Granule Cell 2019 - Accelerating model. The model will show an incresing in action potential generation after 1600ms of simulations.\n\nTo correctly simulate it: \n1) Temperature = 32\u00b0\n2) Vinit (Vm) = -70\n3) Currents injection used in the paper = 10, 16 and 22pA\n4) Currents injection, 100ms delay, 2000ms injection and 2000ms tstop (length of the simulation)",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_accellerating.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/04_acell.png",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
+    }
+  },
+  {
+    "Granule cell 2019 - Mild adapting": {
+      "meta": {
+        "name": "Granule cell 2019 - Mild adapting",
+        "author": "Stefano Masoli",
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Granule Cell 2019 - Mild adapting model. After the first 600-700ms the action potential generation will be reduced to a sparse activity.\n\nTo correctly simulate it: \n1) Temperature = 32\u00b0\n2) Vinit (Vm) = -70\n3) Currents injection used in the paper = 10, 16 and 22pA\n4) Currents injection, 100ms delay, 2000ms injection and 2000ms tstop (length of the simulation)",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_mild_adapting.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/02_mild.png",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
+    }
+  },
+  {
+    "Granule cell 2019 - Regular firing": {
+      "meta": {
+        "name": "Granule cell 2019 - Regular firing",
+        "author": "Stefano Masoli",
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Granule Cell 2019 - Regular firing model. Typical regular response to a steady current injection\n\nTo correctly simulate it: \n1) Temperature = 32\u00b0\n2) Vinit (Vm) = -70\n3) Currents injection used in the paper = 10, 16 and 22pA\n4) Currents injection, 100ms delay, 2000ms injection and 2000ms tstop (length of the simulation)",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_non_adapting_low_ahp.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/01_regular.png",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
+    }
+  },
+  {
+    "Granule cell 2019 - Strong adapting": {
+      "meta": {
+        "name": "Granule cell 2019 - Strong adapting",
+        "author": "Stefano Masoli",
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Granule cell 2019 - Strong adapting model. After the first few hundred ms the cell will stop firing with long pauses between sparse action potentials.\n\nTo correctly simulate it: \n1) Temperature = 32\u00b0\n2) Vinit (Vm) = -70\n3) Currents injection used in the paper = 10, 16 and 22pA\n4) Currents injection, 100ms delay, 2000ms injection and 2000ms tstop (length of the simulation)",
+        "zip_url": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_adapting.zip"
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/03_adapt.png",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
+    }
+  }
+]

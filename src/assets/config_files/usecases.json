@@ -1,23 +1,404 @@
 [
   {
+    "molecular": [
+      {
+        "title": "Analyse the results of a Brownian dynamics simulation for calculating protein-protein association rate constants",
+        "description": "Analyse the results of an SDA Brownian dynamics simulation to calculate the rate constant of Gαolf associating to adenylyl cyclase 5, and estimate the error in this prediction via bootstrapping.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Brownian dynamics simulation - analysis",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "6ffd5ebb-a36c-4fa4-9f44-d329c9e6d3e1",
+            "initial": true,
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/SimulationOfDiffusionalAssociationAnalysisReady.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Calculate the electrostatic potential of a protein from its atomic structure",
+        "description": "Use the multipipsa package to assign atomic charges and radii to a protein structure then solve the Poisson-Boltzmann equation to calculate its electrostatic potential in aqueous solution.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Calculate the electrostatic potential of a protein from its atomic structure",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "d605d11c-876f-4cab-b844-ec82166d9ba7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/multipipsaCalcEP.ipynb?ref=master",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Predict protein interaction surface with the ARDOCK server",
+        "description": "In silico analysis of your protein surface using molecular probes to reveal potential interaction sites",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "webapp",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ardock.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "ArDock",
+            "appid": 423,
+            "contenttype": "text/html",
+            "extension": ".html"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
+        "description": "Running a Molecular Dynamics setup from a protein in PDB format to obtain a system ready to be used as input for an MD simulation. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc1.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Prepare environment for Notebook \"Preparing a protein to run an atomistic Molecular Dynamics simulation\"",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "73d225d1-3590-442b-8a5a-5210ba64af19",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_PreparingAProteinToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master",
+            "initial": true
+          },
+          {
+            "entryname": "Preparing a protein to run an atomistic Molecular Dynamics simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "a49db178-9d3c-41e5-baab-ae819ab80bcf",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/PreparingAProteinToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Small molecule force field parameterization for atomistic Molecular Dynamics simulations",
+        "description": "Generate force field (GAFF) parameters for a small molecule in PDB format to use it in atomistic Molecular Dynamics simulations. Using ACPype, Ambertools and OpenBabel programs, and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc2.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Prepare environment for Notebook \"Small molecule force field parameterization for atomistic Molecular Dynamics simulations\"",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "2202d036-d233-4074-93c6-cf696f28293f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_SmallMoleculeForceFieldParametrizationForAtomisticMolecularDynamicsSimulations.ipynb?ref=master",
+            "initial": true
+          },
+          {
+            "entryname": "Small molecule force field parameterization for atomistic Molecular Dynamics simulations",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "83d4aa1f-a52f-41d3-b786-c751a740c00f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/SmallMoleculeForceFieldParametrizationForAtomisticMolecularDynamicsSimulations.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation",
+        "description": "Running a Molecular Dynamics setup from a protein-ligand complex in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a small molecule. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc3.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Adam Hospital", "email": "adam.hospital@irbbarcelona.org"},
+          {"name": "Pau Andrio", "email": "pau.andrio@bsc.es"},
+          {"name": "Aurélien Luciani", "email": "aurelien.luciani@irbbarcelona.org"},
+          {"name": "Genís Bayarri", "email": "genis.bayarri@irbbarcelona.org"},
+          {"name": "Francesco Colizzi", "email": "francesco.colizzi@irbbarcelona.org"},
+          {"name": "Josep Lluís Gelpí", "email": "gelpi@ub.edu"},
+          {"name": "Modesto Orozco", "email": "modesto.orozco@irbbarcelona.org"}
+        ],
+        "files": [
+          {
+            "entryname": "Prepare environment for Notebook \"Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation\"",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "c11f4dcc-ce53-43f1-8067-fe477f438c76",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Setup_PreparingAProtein-ligandComplexToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master",
+            "initial": true
+          },
+          {
+            "entryname": "Preparing a protein-ligand complex to run an atomistic Molecular Dynamics Simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "524b57a9-7ec1-463d-a40e-6a5af03fcbd7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/PreparingAProtein-ligandComplexToRunAnAtomisticMolecularDynamicsSimulation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Preparing a membrane protein to run an atomistic Molecular Dynamics Simulation",
+        "description": "Running a Molecular Dynamics setup from a membrane protein in PDB format to obtain a system ready to be used as input for an MD simulation. Extending the use case 1 (MD setup) adding a nuclear membrane. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc4.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Membrane-Protein atomistic MD simulation setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Generating small molecule conformations from Replica Exchange Molecular Dynamics (REMD)",
+        "description": "Running a Replica Exchange Molecular Dynamics (REMD) for a small molecule in PDB format to obtain an ensemble of conformations ready to be used as input for docking simulations. Extending the use case 2 notebook. Using GROMACS MD package and the building blocks library from the BioExcel project.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc5.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Small molecule conformations from REMD",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Extracting relevant information from atomistic Molecular Dynamics trajectories of relevant signal transduction proteins using MoDEL_CNS API",
+        "description": "Use case showcasing several useful examples of how to extract, play, store, and visualize information from the atomistic MD trajectories stored in the MoDEL_CNS database.",
+        "experience": ["all", "power"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/IRB_uc6.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "MoDEL_CNS API data mining",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
+        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase and cluster the isoforms by electrostatic similarity.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase, at a specific site on their surfaces, and cluster the isoforms by electrostatic similarity in this region.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase at many sites on their surfaces. The electrostatic similarities at these sites is compared to known isoform-specific regulation patterns for the inhibitory protein , to predict the likely binding sites of regulatory proteins.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      },
+      {
+        "title": "Tools to search and analyze molecules",
+        "description": "Use cases to simulate, analysis and visualize molecules",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": true,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": []
+      }
+    ],
+    "subcellular": [
+      {
+        "title": "KappaNEURON demonstration",
+        "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "David C Sterratt", "email": "david.c.sterratt@ed.ac.uk"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/KappaNEURON.png",
+          "alt": "Thumbnail of KappaNEURON traces"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "file": "781b53e6-6837-40f7-884d-42b8d126831f",
+            "entryname": "demo_ca_pulse",
+            "extension": ".zip",
+            "appid": 175,
+            "contenttype": "application/zip",
+            "justcopy": true
+          },
+          {
+            "entryname": "KappaNEURON Ca Pump",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "9af68102-5471-43ac-bfb9-81975269c291",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/subcellular/KappaNeuron_Ca_Pump.ipynb?ref=master",
+            "initial": true
+          }
+        ]
+      }, {
+        "title": "Subcellular application",
+        "description": "Web based environment for creation and simulation of reaction-diffusion models",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "type": "webapp",
+        "contributors": [
+          {"name": "Pavlo Getta", "email": "pavlo.getta@epfl.ch"},
+          {"name": "Andrii Stepaniuk", "email": "andrii.stepaniuk@epfl.ch"},
+          {"name": "Daniel Keller", "email": "daniel.keller@epfl.ch"},
+          {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
+        ],
+        "external_link": "https://subcellular.humanbrainproject.eu",
+        "next": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/subcellular_app.png",
+          "alt": "Thumbnail of Subcellular Application"
+        }
+      }
+    ],
     "traceanalysis": [
       {
         "title": "Feature extraction",
         "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
+        "contributors": [
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
         "next": "ta_form",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/FeatureExtraction/index.html",
         "files": [
           {
             "entryname": "Feature Extraction GUI",
@@ -30,510 +411,372 @@
       {
         "title": "Synaptic events fitting",
         "description": "Fitting synaptic events using data and model in NeuroInformatics Platform",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFitting/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "6345ec54-7247-488c-bbca-77ff97a31dcb"
+            "file": "6c6c7956-c391-4981-ba7c-e1988e9c7e0c",
+            "initial": true,
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting.ipynb?ref=master"
           },
           {
             "entryname": "Synaptic events fitting with analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "fa3cac2f-7f11-4252-b05c-f9e458ba52e3"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
       },
       {
         "title": "Synaptic events fitting with user model",
         "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
-        "experience": [
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["experts"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFittingWithUserModel/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting with user model",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "4fc8eed8-7f7a-4ca7-a0de-68a304846a62"
+            "initial": true,
+            "file": "edecb7f3-2a14-469a-abb0-40001c4152ab",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20model.ipynb?ref=master"
           },
           {
             "entryname": "Synaptic events fitting with user model analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "fa3cac2f-7f11-4252-b05c-f9e458ba52e3"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
       },
       {
         "title": "Synaptic events fitting with user data",
         "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
-        "experience": [
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["experts"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SynapticEventsFittingWithUserData/index.html",
         "files": [
           {
             "entryname": "Synaptic events fitting with user data",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "90e433c2-8421-42c8-b537-390cea4f8d51"
+            "initial": true,
+            "file": "8ee1a349-fea9-4444-94fd-9d2dda45a828",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20data.ipynb?ref=master"
           },
           {
             "entryname": "Synaptic events fitting with user data analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "fa3cac2f-7f11-4252-b05c-f9e458ba52e3"
+            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
       },
       {
         "title": "Feature registration",
         "description": "Register features of user's traces in NeuroInformatics Platform",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
         "next": "ta_form"
       },
       {
         "title": "Feature comparison",
         "description": "Compare electrophysiological features from NeuroInformatics Platform or uploaded data",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
         },
         "next": "ta_form"
       },
       {
         "title": "Synaptic events fitting registration",
         "description": "Register user's model and synaptic parameters on NeuroInformatics Platform",
-        "experience": [
-          "power",
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["power", "experts"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png",
-          "alt": "Logo of feature Extraction"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/bestfit.png"
         },
         "next": "ta_form"
       }
     ],
     "singlecellmodeling": [
+       {
+        "title": "Hodgkin-Huxley Neuron Builder",
+        "description": "Use the eFEL and BluePyOpt libraries to go through the entire neuron builder pipeline: 1) feature extraction, 2) model optimization, 3) simulation.",
+        "experience": ["power"],
+        "maturity": ["beta"],
+        "access": ["hpc"],
+        "disabled": false,
+        "type": "webapp",
+        "contributors": [
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
+        },
+        "next": "ta_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/HodgkinHuxleyNeuronBuilder/index.html",
+        "files": [
+          {
+            "entryname": "Hodgkin-Huxley Neuron Builder",
+            "appid": 351,
+            "contenttype": "text/html",
+            "extension": ".html"
+          }
+        ]
+      },
       {
         "title": "Rebuild an existing single hippocampal cell model",
         "description": "Use the BluePyOpt to re-run an optimization with your choices for the parameters range",
-        "experience": [
-          "all"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc",
-          "byor"
-        ],
+        "experience": ["all"],
+        "access": ["hpc", "byor"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-          "alt": "Logo of Single hippocampal cell model"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_models",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/RebuildAnExistingSingleHippocampalCellModel/index.html",
         "files": [
           {
             "entryname": "Rebuild Single HippoCell - Config",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "819f50bf-b801-4d5c-94a0-d006d15151bf"
+            "file": "71260306-28bb-4613-b5c8-03554810df05",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Rebuild%20Single%20HippoCell%20-%20Config.ipynb?ref=master"
           },
           {
             "entryname": "Rebuild Single HippoCell - Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "6d63ee71-c2ce-4102-bf7b-91318f296f02"
+            "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Rebuild%20Single%20HippoCell%20-%20Analysis.ipynb?ref=master"
           },
           {
             "entryname": "Rebuild Single HippoCell - NSG Job Manager",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "c51bf9b1-beee-48f5-9f78-c33a5bf2f706"
+            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Rebuild%20Single%20HippoCell%20-%20NSG%20Job%20Manager.ipynb?ref=master"
           }
         ]
       },
       {
         "title": "Build your own single hippocampal cell model using HBP data",
         "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": [
-          "hpc",
-          "byor"
-        ],
+        "experience": ["power"],
+        "maturity": ["beta"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"},
+          {"name": "Roberto Smiriglia", "email": "roberto.smiriglia@pa.ibf.cnr.it"},
+          {"name": "Luca Leonardo Bologna", "email": "lucaleonardo.bologna@cnr.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-          "alt": "Logo of Single hippocampal cell model"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
         },
         "next": "sc_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/BuildYourOwnSingleHippocampalCellModel/index.html",
         "files": [
           {
             "entryname": "BuildOwn Single HippoCell - Config",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "48990742-d0aa-47ac-8e0d-5c7b783eb2ca"
+            "file": "f0889ca5-735d-4857-98e7-fb2e5630d503",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20Config.ipynb?ref=master"
           },
           {
             "entryname": "BuildOwn Single HippoCell - Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "6d63ee71-c2ce-4102-bf7b-91318f296f02"
+            "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20Analysis.ipynb?ref=master"
           },
           {
             "entryname": "BuildOwn Single HippoCell - NSG Job Manager",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "c51bf9b1-beee-48f5-9f78-c33a5bf2f706"
+            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20NSG%20Job%20Manager.ipynb?ref=master"
           }
         ]
       },
       {
-        "title": "Optimize a cerebellar granule cell model composed by a single section",
+        "title": "Mono compartmental Cerebellar Granule cell optimization",
         "description": "Using BluePyOpt to optimize a single compartmental cerebellar granule cell. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc"
-        ],
+        "experience": ["all"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"},
+          {"name": "Martina Rizzi", "email": "martinafrancesca.rizza@unipv.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-          "alt": "cerebellar granule cell"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MonoCompartmentalCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
-            "file": "38e3fae0-cd27-4924-a4bd-2244efb661f6",
-            "entryname": "Granule cell mono compartmental optimization",
+            "entryname": "Mono compartmental Cerebellar Granule cell optimization",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
-            "initial": true
+            "initial": true,
+            "file": "c6f58f6e-6e4e-41f9-8b01-07c22145468b",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Granule%20cell%20mono%20compartmental%20optimization.ipynb?ref=master"
           },
           {
-            "file": "8cf15718-ebdb-48a2-b3ec-ff2b2770ace9",
-            "entryname": "grc_calc",
-            "extension": ".mod",
+            "file": "b4af6b05-2379-440f-9ecd-c3cc3785f6d9",
+            "entryname": "granule_mono",
+            "extension": ".zip",
             "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "5c86d104-c44b-4507-8d5d-5e6e1ddf08e6",
-            "entryname": "grc_ca",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "d211f390-5d18-4715-8c6c-8116fe1c38be",
-            "entryname": "grc_ka",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "efbb3a4a-ce17-403f-9256-8fb13188ff2e",
-            "entryname": "Grc_kca",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "39731a30-4363-488e-ba3b-fda2e322d047",
-            "entryname": "grc_kir",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "63c2bdf6-3efb-47aa-8b1b-e80f29a9965d",
-            "entryname": "grc_lkg1",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8294ca68-baed-4e27-9bbc-8fd8bb0c1e43",
-            "entryname": "Grc_lkg2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "e6beb883-64d2-4859-9e39-5fcd406e2b1e",
-            "entryname": "GrCmorphmono",
-            "extension": ".asc",
-            "appid": 175,
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "49393fbe-2706-4084-af9a-b7fbaee929a0",
-            "entryname": "grc_pna",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "1720d596-fdc1-42d1-aecc-8d8b46c1cdbc",
-            "entryname": "grg_km",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "76f86dce-fa50-43a8-a32c-c91b967bdff1",
-            "entryname": "Grg_kv",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "9b3d8dc3-1408-432e-9410-cc3d904bd9b7",
-            "entryname": "grg_na",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "9f912727-4a27-4183-8670-030eef39d2cd",
-            "entryname": "grg_nar",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
       },
       {
-        "title": "Optimize a cerebellar granule cell multicompartmental model",
+        "title": "Multi compartmental Cerebellar Granule cell optimization",
         "description": "Using BluePyOpt to optimize a multcompartmental cerebellar granule cell composed by four dendrites, soma and a custom multi segmented axon. All the parameters, channels and morphology can be modified. This version runs directly on the collaboratory and it is limited to small optimizations",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc"
-        ],
+        "experience": ["all"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-          "alt": "cerebellar granule cell"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png"
         },
         "next": "sc_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MultiCompartmentalCerebellarGranuleCellOptimization/index.html",
         "files": [
           {
-            "file": "9dea71b0-e091-47ba-8db9-1eaa12ec9c46",
             "appid": 175,
-            "entryname": "Granule cell multi compartmental optimization",
+            "entryname": "Multi compartmental Cerebellar Granule cell optimization",
             "extension": ".ipynb",
+            "contenttype": "application/x-ipynb+json",
+            "justcopy": false,
+            "initial": true,
+            "file": "46586ae0-2e80-43b1-b31f-b5dfa8ad8f1f",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Granule%20cell%20multi%20compartmental%20optimization.ipynb?ref=master"
+          },
+          {
+            "file": "22cc9e5e-e226-49aa-a17b-62db072081c4",
+            "entryname": "granule_multi",
+            "extension": ".zip",
+            "appid": 175,
+            "contenttype": "application/x-compressed",
+            "justcopy": true
+          }
+        ]
+      },
+      {
+        "title": "Custom Axon Cerebellar Granule cell simulation",
+        "description": "The purpose of this usecase it to explain how to setup an axon, built with BluePyOpt, containing an erbitrary number of sections. Afterward to simulate an actual cerebellar granule cell model with an axon composed by over 300 sections.",
+        "experience": ["power"],
+        "access": ["hpc"],
+        "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Granule_2019.png"
+        },
+        "next": "sc_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/CustomAxonCerebellarGranuleCellOptimization/index.html",
+        "files": [
+          {
+            "file": "d1cd767c-bdf0-4874-a2cd-4f737f073859",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/GrC_axon.ipynb?ref=master",
+            "entryname": "Custom Axon Cerebellar Granule cell simulation",
+            "extension": ".ipynb",
+            "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
             "initial": true
           },
           {
-            "file": "639d663f-eedb-4748-8598-8b2fabdecc38",
+            "file": "6ed72287-5f4f-40ad-b7f9-4a770b781bc0",
+            "entryname": "GrC_2019_mod_axon",
+            "extension": ".zip",
             "appid": 175,
-            "entryname": "basic_param",
-            "extension": ".txt",
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "ef117f76-4a5d-4af5-b01a-88be555dc158",
-            "appid": 175,
-            "entryname": "GrC2017",
-            "extension": ".asc",
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "7111aec4-a9d2-48a6-a334-3d1f44f31ae1",
-            "appid": 175,
-            "entryname": "GRC_CALC",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "b332546b-9b53-40b9-9400-97c7f074c1ba",
-            "appid": 175,
-            "entryname": "GRC_CA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "a1fd05c7-22fb-4014-8abb-4febe899ac4a",
-            "appid": 175,
-            "entryname": "GRC_KA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "e1d4e683-b0e4-452d-ac93-b58ea5f9d3a7",
-            "appid": 175,
-            "entryname": "GRC_KCA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "938ae0c1-8648-4dc7-8d9f-5cf13739d4de",
-            "appid": 175,
-            "entryname": "GRC_KIR",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "d1f9ca3b-6b81-415d-a684-8fcd7daf9ecf",
-            "appid": 175,
-            "entryname": "GRC_KM",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "c6b84254-e837-4335-a130-c945fd86f940",
-            "appid": 175,
-            "entryname": "GRC_KV",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "921abef6-0fd7-43c0-9ec5-b4b91f5c7caa",
-            "appid": 175,
-            "entryname": "GRC_LKG1",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8f30654e-e2e5-447d-8bdc-b5112f967c8e",
-            "appid": 175,
-            "entryname": "GRC_LKG2",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "0f562f2e-d36a-4ff7-8478-679db324204d",
-            "appid": 175,
-            "entryname": "GrCmultiopt_conv",
-            "extension": ".py",
-            "contenttype": "text/x-python",
-            "justcopy": true
-          },
-          {
-            "file": "dca7594b-f6e0-46ea-9759-e10896295520",
-            "appid": 175,
-            "entryname": "GRC_NA",
-            "extension": ".mod",
-            "contenttype": "audio/x-mod",
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
@@ -541,238 +784,43 @@
       {
         "title": "Simulation and validation of a mouse Purkinje cell multicompartmental model",
         "description": "Simulation and validation of a mouse Purkinje cell multicompartmental model obtained from BluePyOpt optimizer. The purpose of this usecase it to extract, simulate and validated a series of physiologically correct Purkinje cells. This notebook runs directly on the Collab and does not require HPC resources",
-        "experience": [
-          "power"
-        ],
-        "maturity": null,
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Stefano Masoli", "email": "stefano.masoli@unipv.it"}
+        ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/compartimental_objectives.png",
-          "alt": "Mouse Purkinje cell"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/PC_usecase.png"
         },
         "next": "sc_form",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SimulationAndValidationOfAMousePurkinjeCellMulticompartmentalModel/index.html",
         "files": [
           {
-            "file": "f3d66ad4-d646-42b8-ad5c-b3d6e67508bc",
             "entryname": "Purkinje cell simulation and validation",
             "extension": ".ipynb",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "justcopy": false,
-            "initial": true
+            "initial": true,
+            "file": "3bcf79d3-e666-4772-bc69-3bcff16f9c5b",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Purkinje%20cell%20simulation%20and%20validation.ipynb?ref=master"
           },
           {
-            "file": "fef633e5-f243-410c-b921-db6b2576682d",
-            "entryname": "Cav2_1",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "5c86d104-c44b-4507-8d5d-5e6e1ddf08e6",
-            "entryname": "grc_ca",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "018ac41b-70ba-4b16-be40-fe84fe33a5b9",
-            "entryname": "Cav3_1",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "d8c7f0bf-36b7-47ad-9f46-6ddf1d17eb77",
-            "entryname": "Cav3_2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "2bd8126c-99d1-4a1f-9138-73e09faafa01",
-            "entryname": "Cav3_3",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "f94d9a66-598a-4263-84ea-31c714ad17b9",
-            "entryname": "cdp5",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8294ca68-baed-4e27-9bbc-8fd8bb0c1e43",
-            "entryname": "Grc_lkg2",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "8c55ff4a-231e-4c1d-8d3f-0da3a4eeeb52",
-            "entryname": "final_pop",
-            "extension": ".txt",
-            "appid": 175,
-            "contenttype": "text/plain",
-            "justcopy": true
-          },
-          {
-            "file": "6e21dae0-a99f-4b7e-a31a-036486daff17",
-            "entryname": "HCN1_Angeloetal2007",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "4cc7844e-f72a-43dd-9d01-c10fa17f4af7",
-            "entryname": "Kca11",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "011d64fb-ccbe-4578-9d1c-7f52667ccbf6",
-            "entryname": "Kca22",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "7e2f58c1-6198-42e9-a5d8-ce37d561f38a",
-            "entryname": "Kca31",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "afecd9bd-0121-4d88-909c-c0f4abcb4942",
-            "entryname": "Kir23",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "92b7dc0a-be21-4d3c-8d0d-edc19d3a8169",
-            "entryname": "Kv11",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "b2d4f7f4-20ca-41d4-a02f-05062d233986",
-            "entryname": "Kv15",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "9f67e039-145c-4987-9a8f-bf75c433888e",
-            "entryname": "Kv33",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "770fd1cc-e83f-47df-beca-ce54ad86c8fa",
-            "entryname": "Kv34",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "6d75cac6-11ea-4009-98a8-a0b46686e693",
-            "entryname": "Kv43",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "ca65e1dd-f9de-4770-a0de-d6f0e8ae8f6f",
-            "entryname": "Leak",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "dc01632f-0418-4c7c-bbea-d9c5027d7f10",
-            "entryname": "Nav16",
-            "extension": ".mod",
-            "appid": 175,
-            "contenttype": "audio/x-mod",
-            "justcopy": true
-          },
-          {
-            "file": "47147a18-b1d4-46f7-8afe-2afbbce4062d",
-            "entryname": "Notebook_hbp",
+            "file": "a7f0e6e2-35ae-4490-b949-93889803c5bf",
+            "entryname": "Purkinje_multi",
             "extension": ".zip",
             "appid": 175,
             "contenttype": "application/x-compressed",
             "justcopy": true
           },
           {
-            "file": "4bd306fa-6981-4ef1-90f6-10ce3a892015",
-            "entryname": "purkinje_mouse",
-            "extension": ".swc",
+            "file": "e75582f3-66d5-4ef8-963c-6debbf6cdbfe",
+            "entryname": "Purkinje_res",
+            "extension": ".zip",
             "appid": 175,
-            "contenttype": "text/plain",
-            "justcopy": true
-          }
-        ]
-      },
-      {
-        "title": "Optimise a fast spiking interneuron in the Basal Ganglia",
-        "description": "Optimise parameters for a striatal fast spiking interneuron using BluePyOpt based on experimental data",
-        "experience": [
-          "code"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
-        "disabled": false,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "spiking internuron"
-        },
-        "next": "sc_form",
-        "files": [
-          {
-            "file": "40754030-fe10-47de-ae04-f2bd4a48a8a2",
-            "appid": 175,
-            "entryname": "Optimise a fast spiking interneuron in the Basal Ganglia",
-            "extension": ".ipynb",
-            "contenttype": "application/x-ipynb+json",
-            "justcopy": false
-          },
-          {
-            "file": "1db33b78-df8a-4fa7-aca8-6a751590a921",
-            "appid": 175,
-            "entryname": "FS-use-case.tar",
-            "extension": ".bz2",
-            "contenttype": "application/x-bzip2",
+            "contenttype": "application/x-compressed",
             "justcopy": true
           }
         ]
@@ -780,17 +828,17 @@
       {
         "title": "Optimize a striatal fast-spiking interneuron",
         "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
-        "experience": [
-          "code"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["code"],
+        "maturity": ["experimental"],
         "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Alexander Kozlov", "email": "akozlov@kth.se"},
+          {"name": "Yvonne Johansson", "email": "yvonne.johansson@ki.se"},
+          {"name": "Gilad Silberberg", "email": "gilad.silberberg@ki.se"}
+        ],
         "picture": {
-          "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png",
-          "alt": "spiking internuron"
+          "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
         },
         "next": "sc_striatal_models",
         "files": [
@@ -799,114 +847,108 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "47557ac3-30c4-49d0-9d00-1a89d015e9e4"
+            "file": "47557ac3-30c4-49d0-9d00-1a89d015e9e4",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Optimization%20of%20FS%20cell.ipynb?ref=master"
+          }
+        ],
+        "models": [
+          {
+            "title": "FS_CELL",
+            "modelName": "str-fs-161205_FS1-BE37A-20180212",
+            "description": "Striatal fast-spiking interneuron",
+            "contributors": [
+              {"name": "Alexander Kozlov", "email": "akozlov@kth.se"}
+            ],
+            "img": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
+          }
+        ]
+      },
+      {
+        "title": "Synaptic plasticity",
+        "description": "Configure and test different synaptic plasticity models and protocols",
+        "experience": ["all"],
+        "access": ["byor"],
+        "disabled": false,
+        "type": "ipynb",
+        "contributors": [
+          {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"}
+        ],
+        "picture": {
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "sc_models",
+        "files": [
+          {
+            "entryname": "Synaptic plasticity",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "2ff60e25-30d9-4da6-aa65-e659b46c10d8",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/Synaptic%20plasticity.ipynb?ref=master"
           }
         ]
       },
       {
         "title": "Build your own single hippocampal cell model using HBP and your own data",
         "description": "Use the BluePyOpt to run an optimization choosing/uploading morphology, channel kinetics, features, and parameters.",
-        "experience": [
-          "power",
-          "experts"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc",
-          "byor"
-        ],
+        "experience": ["power", "experts"],
+        "maturity": ["experimental"],
+        "access": ["hpc", "byor"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png",
-          "alt": "Logo of Single hippocampal cell model"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/objectives.png"
+        }
       },
       {
         "title": "Create a single hippocampal cell model",
         "description": "Create your own single hippocampal cell Model with data from NeuroInformatics Platform",
-        "experience": [
-          "experts",
-          "code"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["experts", "code"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       },
       {
         "title": "Release single hippocampal cell",
         "description": "Release your single hippocampal cell model to the NeuroInformatics Platform",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["power"],
+        "maturity": ["experimental"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       },
       {
         "title": "Release single hippocampal cell building process",
         "description": "Release your validated single hippocampal cell building process",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       },
       {
         "title": "Export single hippocampal cell model to NeuroML",
         "description": "Export single hippocampal cell model into NeuroML (Open Souce Brain)",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png",
-          "alt": "Logo of feature Extraction"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/features.png"
+        }
       }
     ],
     "circuitbuilding": [
       {
         "title": "Cells placement",
         "description": "Define the properties and the location of the neurons for a brain region of detailed neuron models",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": null,
+        "experience": ["power"],
+        "maturity": ["experimental"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png",
-          "alt": "Cells Placement"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cellprop1.png"
         },
         "next": "cb_models",
         "models": [
@@ -918,40 +960,96 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "67555a8f-70f6-4b81-9f2b-c343deb0779c"
+                "file": "b0509c3f-3330-435d-87d2-d0940e98766c",
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Cell%20Placement%20Cerebellum.ipynb?ref=master"
               }
-            ]
+            ],
+            "species": "Rat",
+            "brain_structure": "Cerebellum",
+            "cell_soma_location": "volume",
+            "description": "A volume of the cerebellum with detailed neuron models.",
+            "contributors": [
+              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+              {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           },
           {
             "title": "Rat hippocampus CA1",
             "files": [
               {
+                "entryname": "Cell Placement Hippocampus - Setup",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "initial": true,
+                "file": "93cb9a13-3c86-4525-a3bf-2f896529ce09",
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Cell%20Placement%20Hippocampus%20-%20Setup.ipynb?ref=master"
+              },
+              {
                 "entryname": "Cell Placement Hippocampus",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "00b83d98-0172-4825-b386-7671054cc31d"
+                "file": "22c40748-5a84-4fc8-bef4-9cd29a9e90fd",
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Cell%20Placement%20Hippocampus.ipynb?ref=master"
               }
-            ]
+            ],
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1",
+            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
+          },
+          {
+            "title": "Striatum microcircuitry",
+            "files": [
+              {
+                "entryname": "Striatum Microcircuitry",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "initial": true,
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe",
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Striatum%20Microcircuitry.ipynb?ref=master"
+              },
+              {
+                "entryname": "Striatum-scaffold-network-use-case-2018",
+                "appid": 175,
+                "justcopy": true,
+                "contenttype": "x-bzip2",
+                "extension": ".tar.bz2",
+                "file": "713979b4-14f7-48bd-9dcc-f713553f1cad"
+              }
+            ],
+            "species": "Mouse",
+            "brain_structure": "Basal Gangla",
+            "cell_soma_location": "Striatum",
+            "description": "Striatum microcircuitry.",
+            "contributors": [
+              {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
+              {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/striatum_circuit_building.png"
           }
         ]
       },
       {
         "title": "Connectome",
         "description": "Define the connectome for a brain region of detailed neuron models",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "experimental"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "experience": ["power"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/connectome.png",
-          "alt": "Connectome"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/connectome.png"
         },
         "next": "cb_models",
         "models": [
@@ -963,12 +1061,63 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "5f395bc1-7b31-4393-b64f-76d8e76b3851"
+                "file": "85354cea-5f47-4852-8c8f-8cacf5d38333",
+                "file_prod" :"https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Connectome%20Cerebellum.ipynb?ref=master"
               }
-            ]
+            ],
+            "species": "Rat",
+            "brain_structure": "Cerebellum",
+            "cell_soma_location": "volume",
+            "description": "A volume of the cerebellum with detailed neuron models.",
+            "contributors": [
+              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+              {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           },
           {
-            "title": "Rat hippocampus CA1"
+            "title": "Rat hippocampus CA1",
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1",
+            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png",
+            "disabled": true
+          },
+          {
+            "title": "Striatum microcircuitry",
+            "files": [
+              {
+                "entryname": "Striatum Microcircuitry",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "initial": true,
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe"
+              },
+              {
+                "entryname": "Striatum-scaffold-network-use-case-2018",
+                "appid": 175,
+                "justcopy": true,
+                "contenttype": "x-bzip2",
+                "extension": ".tar.bz2",
+                "file": "713979b4-14f7-48bd-9dcc-f713553f1cad"
+              }
+            ],
+            "species": "Mouse",
+            "brain_structure": "Basal Gangla",
+            "cell_soma_location": "Striatum",
+            "description": "Striatum microcircuitry.",
+            "contributors": [
+              {"name": "Johannes Hjorth", "email": "hjorth@kth.se"},
+              {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/striatum_circuit_building.png"
           }
         ]
       }
@@ -977,290 +1126,385 @@
       {
         "title": "Morphology analysis",
         "description": "Performs analysis on a morphology with NeuroM",
-        "experience": [
-          "power"
+        "contributors": [
+          {"name": "Liesbeth Vanherpe"}
         ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["power"],
+        "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png",
-          "alt": "Morphology Analysis "
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology.png"
         },
         "next": "morph_analysis_models",
         "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyAnalysis/index.html",
         "files": [
           {
             "entryname": "Morphology Analysis",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "915417d1-359f-4eab-bcb1-a0881dea8d7d"
+            "file": "26169d21-23a0-4a6a-86f3-b16eedbb3732",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/morphology/Morphology%20Analysis.ipynb?ref=master"
           }
         ]
       },
       {
         "title": "Morphology visualization",
         "description": "Display neuron morphology in 3D",
-        "experience": [
-          "all"
+        "contributors": [
+          {"name": "Liesbeth Vanherpe"}
         ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png",
-          "alt": "Morphology Analysis "
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/morphology_3d.png"
         },
         "next": "morph_viewer_models",
-        "dataprotected": true
+        "dataprotected": true,
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/MorphologyVisualization/index.html"
       }
     ],
     "singlecellinsilicoexperiments": [
       {
-        "title": "Single cell in silico experiments under current/voltage clamp",
+        "title": "Single cell in silico experiments under current clamp",
         "description": "",
-        "experience": [
-          "all"
+        "contributors": [
+          {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
         ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
-          "alt": "single cell in silico under current or voltage clamp"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg"
         },
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/SingleCellInSilicoExperimentsUnderCurrentClamp/index.html",
         "next": "insilico_exp"
       },
       {
         "title": "Single cell in silico experiments with synaptic inputs preconfigured",
         "description": " ",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg",
-          "alt": "single cell in silico experiments with synaptic inputs preconfigured"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/l5pc_release_responses-eps.jpg"
+        }
+      }
+    ],
+    "hbpschool": [
+      {
+        "title": "HBP education school Palermo 2018",
+        "description": "Exercises for HBP education school in Palermo 2018",
+        "experience": ["all"],
+        "disabled": false,
+        "dataprotected": true,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bsp_logo.png"
         },
-        "next": null
+        "next": "hbp_school_form",
+        "files": [
+          {
+            "entryname": "Setup",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/download_circuit.ipynb",
+            "initial": true
+          },
+          {
+            "entryname": "Cell density",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_density_new.ipynb"
+          },
+          {
+            "entryname": "Cell composition",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/cell_composition_new.ipynb"
+          },
+          {
+            "entryname": "Bouton density",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/bouton_density_new.ipynb"
+          },
+          {
+            "entryname": "Nsyns per conn",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/nsyns_per_conn_new.ipynb"
+          },
+          {
+            "entryname": "Simulation",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "https://raw.githubusercontent.com/antonelepfl/HBP_School/master/simulation_new.ipynb"
+          }
+        ]
       }
     ],
     "mooc": [
       {
         "title": "Reconstruction and simulation of neural tissue I: Neurons and Synapses",
-        "description": "",
-        "experience": [
-          "all"
-        ],
-        "maturity": null,
-        "access": null,
+        "description": "Exercises for the EdX MOOC Simulation Neuroscience",
+        "experience": ["all"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif",
-          "alt": "Collab logo"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/mooc1-image.gif"
         },
         "next": "weeks_container",
-        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/weeks_config.json"
+        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-neurons-and-synapses-2017/master/weeks_config.json",
+        "course_url": "https://www.edx.org/course/simulation-neuroscience-epflx-simneurox"
       },
       {
         "title": "In Silico Neuroscience Course 2018",
         "description": "Study of the nervous system using data, analysis, classification, prediction, modelling, simulation, theory and computing technology",
-        "experience": [
-          "all"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["all"],
         "disabled": false,
         "picture": {
-          "src": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/Course_picture.png",
-          "alt": "Collab logo"
+          "src": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/Course_picture.png"
         },
         "next": "weeks_container",
         "config_url": "https://raw.githubusercontent.com/NataliBarros/InSilicoNeuroscienceCourse/master/courseWeeks_config.json"
+      },
+      {
+        "title": "The Multi-scale brain",
+        "description": "Exercises for the Courseware MOOC The Multi-scale brain",
+        "experience": ["all"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/Extra/MultiBrain-MOOC-small.jpg"
+        },
+        "next": "weeks_container",
+        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-the-multiscale-brain/master/weeks_config.json",
+        "course_url": "https://www.edx.org/course/the-multi-scale-brain"
+      },
+      {
+        "title": "Simulation of the Hippocampus: Hippocampal Microcircuits",
+        "description": "Exercises to learn how to simulate, analyze and visualize hippocampal microcircuits",
+        "experience": ["all"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/master/images/course-img.jpg"
+        },
+        "next": "weeks_container",
+        "config_url": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/master/weeks_config.json",
+        "course_url": "https://courseware.epfl.ch/course/course-v1:EPFL+SimNeuro2+2019_2"
       }
     ],
     "smallcircuitinsilicoexperiments": [
       {
         "title": "Configure and run a small circuit using preconfigured HBP model and data",
         "description": "",
-        "experience": [
-          "all",
-          "power"
-        ],
-        "maturity": null,
-        "access": null,
-        "disabled": true,
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "webapp",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/small_circuits.png",
-          "alt": "Configure and run a small circuit using preconfigured HBP model and data"
+          "src": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/pair_recording.png"
         },
-        "next": "small_circuits"
+        "next": "small_circuit_model_container",
+        "models": [
+          {
+            "title": "Mouse O1 - Scaffold Somatosensory Cortex Microcircuit for Mouse",
+            "description": "This model combines specific datasets obtained for mouse somatosensory cortex, models of neuronal electrophysiology constrained to mouse primary visual cortex data from the Allen Cell Types Database, and datasets that were algorithmically transformed from rat to mouse.",
+            "contributors": [
+              {"name": "Michael W. Reimann", "email": "michael.reimann@epfl.ch"},
+              {"name": "Eilif Muller", "email": "eilif.mueller@epfl.ch"},
+              {"name": "Srikanth Ramaswamy", "email": "srikanth.ramaswamy@epfl.ch"}
+            ],
+            "externalLink": "https://bsp-mouse-o1.humanbrainproject.eu",
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/mouse_o1.png"
+          },
+          {
+            "title": "Rat hippocampus CA1",
+            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "contributors": [
+              {"name": "Szabolcs Káli", "email": "kali@koki.hu"},
+              {"name": "Audrey Mercer", "email": "a.mercer@ucl.ac.uk"},
+              {"name": "Michele Migliore", "email": "michele.migliore@yale.edu"},
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Eilif Muller", "email": "eilif.mueller@epfl.ch"}
+            ],
+            "externalLink": "https://bsp-rat-ca1.humanbrainproject.eu",
+            "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/rat-ca1-circuit.png"
+          }
+        ]
       },
       {
         "title": "Configure and run a small circuit using HBP model and data",
         "description": "",
-        "experience": [
-          "power"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["power"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run a small circuit using HBP model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Configure and run your own small circuit using HBP model and data",
         "description": "",
-        "experience": [
-          "power",
-          "experts"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["power", "experts"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run your own small circuit using HBP model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Configure and run your own small circuit using HBP and your own model and data",
         "description": "",
-        "experience": [
-          "experts",
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
+        "experience": ["experts", "code"],
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run your own small circuit using HBP and your own model and data"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       }
     ],
     "brainareacircuitinsilicoexperiments": [
       {
-        "title": "Configure and run a brain region using preconfigured HBP model and data",
+        "title": "Hippocampus",
         "description": "",
-        "experience": [
-          "experts",
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
-        "disabled": true,
+        "experience": ["all", "power"],
+        "isDemo": true,
+        "disabled": false,
+        "type": "webapp",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run a brain region using preconfigured HBP model and data"
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/hippocampusConnections.png"
         },
-        "next": null
+        "next": "brainarea_circuits",
+        "models": [
+          {
+            "title": "Configure and run a rat hippocampus CA1 region using preconfigured HBP model and data",
+            "disabled": false,
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1",
+            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
+            ],
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/hippo_hbp_full_ca1",
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/hippocampusConnections.png"
+          },
+          {
+            "title": "Configure and run a hippocampus microcircuit",
+            "disabled": false,
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1",
+            "description": "A microcircuit of detailed neuron models.",
+            "contributors": [
+              {"name": "Armando Romani", "email": "armando.romani@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
+            ],
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/hippo_hbp_microcircuit",
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ca1_microcircuit.png"
+          },
+          {
+            "title": "Configure and run a rat hippocampus CA1 region using HBP model and data",
+            "description": "",
+            "experience": ["code"],
+            "disabled": true,
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          },
+          {
+            "title": "Build, configure, and run a rat hippocampus CA1 region using HBP model and your own configuration rules",
+            "description": "",
+            "experience": ["code"],
+            "disabled": true,
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+          }
+        ]
       },
       {
-        "title": "Configure and run a brain region using HBP model and data",
+        "title": "Cerebellum",
         "description": "",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
-        "disabled": true,
+        "experience": ["all", "power"],
+        "disabled": false,
+        "type": "ipynb",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Configure and run a brain region using HBP model and data"
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
         },
-        "next": null
-      },
-      {
-        "title": "Build, configure, and run a brain region using HBP model and your own configuration rules",
-        "description": "",
-        "experience": [
-          "code"
-        ],
-        "maturity": null,
-        "access": null,
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Build, configure, and run a brain region using HBP model and your own configuration rules"
-        },
-        "next": null
+        "next": "brainarea_circuits",
+        "models": [
+          {
+            "title": "Functional Simulation with Point Neurons",
+            "files": [
+              {
+                "entryname": "Cerebellum microcircuit",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": "72aab9c8-b894-4220-bf36-85ec84e4d1ed",
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/brainareacircuitinsilicoexperiments/Cerebellum%20microcircuit.ipynb?ref=master"
+              }
+            ],
+            "species": "Rat",
+            "brain_structure": "cerebellum",
+            "cell_soma_location": "cerebellar cortex and DCN",
+            "description": "Cerebellum microcircuit simulation with PyNEST",
+            "contributors": [
+              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"},
+              {"name": "Stefano Casali", "email": "stefano.casali@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+          }
+        ]
       }
     ],
     "analysisandvisualization": [
       {
         "title": "Single cell",
         "description": "",
-        "experience": null,
-        "maturity": null,
-        "access": null,
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Single Cell"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Small circuit",
         "description": "",
-        "experience": null,
-        "maturity": null,
-        "access": null,
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Small Circuit"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       },
       {
         "title": "Region circuit",
         "description": "",
-        "experience": null,
-        "maturity": null,
-        "access": null,
         "disabled": true,
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
-          "alt": "Region Circuit"
-        },
-        "next": null
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        }
       }
     ],
     "highlyintegratedworkflows": [
       {
-        "title": "Hodgkin-Huxley Neuron Builder - CDP2 Product 1",
-        "description": "",
-        "experience": [
-          "power"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": [
-          "hpc"
-        ],
+        "title": "Hodgkin-Huxley Neuron Builder",
+        "description": "Use the eFEL and BluePyOpt libraries to go through the entire neuron builder pipeline: 1) feature extraction, 2) model optimization, 3) simulation.",
+        "experience": ["power"],
+        "maturity": ["beta"],
+        "access": ["hpc"],
         "disabled": false,
+        "type": "webapp",
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png",
-          "alt": "Hodgkin-Huxley Neuron Builder"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/master/src/assets/images/hhnb.png"
         },
         "next": "ta_form",
         "files": [
@@ -1275,49 +1519,138 @@
     ],
     "modelvalidation": [
       {
-        "title": "Basal Ganglia - BluePyOpt Optimized Model Validation - Multiple HOF",
-        "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
+        "title": "Validation Framework Demo (Walkthrough)",
+        "description": "Demonstrates the use of the validation framework",
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
+        "type": "ipynb",
         "picture": {
-          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
-          "alt": "Logo of model validation: BluePyOpt to eFEL"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
         "next": "ta_form",
         "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
+          {"name": "Andrew Davison", "email": "andrew.davison@unic.cnrs-gif.fr"},
+          {"name": "Lungsi Sharma", "email": "lungsi.sharma@unic.cnrs-gif.fr"}
+        ],
         "files": [
           {
-            "entryname": "Optimized BG model validation",
+            "entryname": "Validation Framework Demo",
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81"
+            "file": "06f82f00-8895-4a2f-8d64-1d3208d8b6e1",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Validation_Framework_Demo.ipynb?ref=master"
           }
         ]
       },
       {
-        "title": "Generic - BluePyOpt Optimized Model Validation",
-        "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
-        "experience": [
-          "all"
-        ],
-        "maturity": [
-          "beta"
-        ],
-        "access": null,
-        "disabled": true,
+        "title": "Hippocampus Single Cell Model Validation",
+        "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
         "picture": {
-          "src": "https://raw.githubusercontent.com/appukuttan-shailesh/PyNN_testData/master/logo_vf_bluepyopt_efel.png",
-          "alt": "Logo of model validation: BluePyOpt to eFEL"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
         },
         "next": "ta_form",
-        "dataprotected": true
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Sáray Sára", "email": "saray.sara@koki.mta.hu"},
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "Hippocampus Single Cell Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "acb94529-a85c-4a79-bcf5-920612c17d91",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Hippocampus_Single_Cell_Validation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Basal Ganglia Single Cell Validation",
+        "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "Basal Ganglia Single Cell Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "e62f67fa-7831-496b-8b44-8bd16aaabc81",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Optimized_BG_model_validation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "BluePyOpt Optimized Model Validation",
+        "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "BluePyOpt Optimized Model Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "9b915d4d-c1d0-4d1a-9be9-a614ac305014",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/BluePyOpt_Optimized_model_Validation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Basal Ganglia Morphology Validation",
+        "description": "Validates single cell morphologies of MSN and FS cells",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
+          {"name": "Pedro Garcia", "email": "pedro.garcia@unic.cnrs-gif.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "Basal Ganglia Morphology Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Morphology_Validation.ipynb?ref=master"
+          }
+        ]
       }
     ]
   },
@@ -1360,6 +1693,36 @@
           "name": "BYOR",
           "tooltip": "(Bring Your Own Resources) Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility."
         }
+      },
+      "demo": {
+        "model": {
+          "name": "WIP Circuit",
+          "tooltip": "Warning: model is work in progress"
+        }
+      },
+      "uc-type": {
+        "webapp": {
+          "tooltip": "This use case was implementing using a Web Application"
+        },
+        "ipynb": {
+          "tooltip": "This use case was implementing using Jupyter Notebook"
+        }
+      }
+    }
+  },
+  {
+    "models": {
+      "nmcportal": {
+        "raw": "https://bbp.epfl.ch/public/nmc-models/"
+      },
+      "cerebellum": {
+        "raw" : "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
+      },
+      "hippocampus": {
+        "raw": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
+      },
+      "purkinje": {
+        "raw" : "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/"
       }
     }
   }

@@ -5,24 +5,25 @@
 </template>
 
 <script>
-   import ca1ModelList from 'components/singlecellmodeling/ca1-model-list.vue'
-   import collabAuthentication from 'mixins/collabAuthentication.js'
-   import createCollab from 'mixins/createCollab.js'
-   export default {
-      name: 'modelContainer',
-      components: {
-         'ca1-model-list': ca1ModelList
-      },
-      mixins: [collabAuthentication, createCollab],
-      props: ['list_usecases', 'uc_name'],
-      methods: {
-        touched (modelItem) {
-          this.$router.push({name: 'morph_form_replacing',
-            params: {
-              'folder_name': modelItem.folderName
-            }
-          })
-        }
-      }
-   }
+import ca1ModelList from '@/components/shared/ca1-model-list.vue';
+import createCollab from '@/mixins/createCollab';
+
+export default {
+  name: 'modelContainer',
+  components: {
+    'ca1-model-list': ca1ModelList,
+  },
+  mixins: [createCollab],
+  props: ['list_usecases', 'uc_name'],
+  methods: {
+    touched(modelItem) {
+      this.$router.push({
+        name: 'morph_form_replacing',
+        params: {
+          folder_name: modelItem.folderName,
+        },
+      });
+    },
+  },
+};
 </script>

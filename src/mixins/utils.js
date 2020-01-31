@@ -1,26 +1,92 @@
 
-// let findKey = require('lodash/findKey')
-let findIndex = require('lodash/findIndex')
-let find = require('lodash/find')
-let usecases = require('assets/config_files/usecases.json')[0]
+import findIndex from 'lodash/findIndex';
+import find from 'lodash/find';
+import swal from 'sweetalert2';
+import usecasesFile from '@/assets/config_files/usecases.json';
 
-function getUsecaseInfo (ucName) {
-  let elem = {}
-  find(usecases, function (category) {
-    let index = findIndex(category, function (uc) {
-      return compact(uc.title) === ucName
-    })
-    elem = category[index]
-    return elem
-  })
+const usecases = usecasesFile[0];
+
+function compactString(name) {
+  return name.toLowerCase().replace(/ /g, '');
+}
+
+function getUsecaseInfo(ucName) {
+  let elem = {};
+  find(usecases, (category) => {
+    const index = findIndex(category, uc => compactString(uc.title) === ucName);
+    elem = category[index];
+    return elem;
+  });
   // return the elem otherwise it will return the category
-  return elem
+  return elem;
 }
 
-function compact (name) {
-  return name.toLowerCase().replace(/ /g, '')
+function replaceConfirmation() {
+  return swal({
+    title: 'Replace File(s)?',
+    text: 'File(s) already exists in this Collab',
+    type: 'warning',
+    showCancelButton: true,
+    cancelButtonText: 'Go to Collab',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Replace',
+  }).then(result => result.value);
 }
 
-export default {
-  getUsecaseInfo
+function getDateDashed() {
+  const d = new Date();
+  return `${d.toLocaleDateString().replace(/\//g, '-')} ${d.toLocaleTimeString()}`;
 }
+
+function getContributorFormated(model) {
+  const contributorsList = [];
+  if ((typeof model.contributors === 'string')) {
+    const fullContributor = [];
+    fullContributor.push(model.contributors || '');
+    if (model.email) {
+      fullContributor.push(` - ${model.email}`);
+    }
+    contributorsList.push(fullContributor.join(' '));
+  } else if (Array.isArray(model.contributors)) {
+    model.contributors.forEach((contributor, index) => {
+      const fullContributor = [];
+      fullContributor.push(contributor.name || '');
+      if (contributor.email) {
+        fullContributor.push(` - ${contributor.email}`);
+      }
+      if (index < model.contributors.length - 1) { // has next
+        fullContributor.push('┃');
+      }
+      contributorsList.push(fullContributor.join(' '));
+    });
+  }
+  return contributorsList;
+}
+
+function getUrlWithoutToken(href) {
+  if (href.includes('access_token')) {
+    /* eslint-disable no-console */
+    console.debug('URL has token, removing it ...');
+    /* eslint-enable no-console */
+    let accessTokenIndex = href.indexOf('%2F&access_token');
+    if (accessTokenIndex === -1) {
+      accessTokenIndex = href.indexOf('&access_token');
+      if (accessTokenIndex === -1) {
+        accessTokenIndex = href.indexOf('access_token');
+      }
+    }
+
+    return href.substr(0, accessTokenIndex);
+  }
+  return href;
+}
+
+export {
+  getUsecaseInfo,
+  getContributorFormated,
+  compactString,
+  replaceConfirmation,
+  getDateDashed,
+  getUrlWithoutToken,
+};

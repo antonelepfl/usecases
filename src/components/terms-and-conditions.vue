@@ -1,49 +1,48 @@
 <template>
   <div class="terms-container">
-    <div class="modal-content">
+    <div class="modal-custom-content">
       <div class="text" v-html="termsAndConditions">
       </div>
-      <div class="buttons-container">
-        <button @click="choiceSelected('Yes')" class="button accept">Accept</button>
-        <button @click="choiceSelected('No')" class="button reject">Reject</button>
+      <div class="buttons-custom-container">
+        <button @click="choiceSelected('Yes')" class="custom-button accept">Accept</button>
+        <button @click="choiceSelected('No')" class="custom-button reject">Reject</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import collabAuthentication from 'mixins/createCollab.js'
-  import termsAndConditions from 'assets/config_files/terms_and_conditions.md'
-  import storageManager from 'mixins/storageManager.js'
-  export default {
-    mixins: [collabAuthentication],
-    data () {
-      return {
-        collabAuthentication,
-        termsAndConditions
+import termsAndConditions from '@/assets/config_files/terms_and_conditions.md';
+import storageManager from '@/mixins/storageManager';
+import createCollab from '@/mixins/createCollab';
+
+export default {
+  data() {
+    return {
+      termsAndConditions,
+    };
+  },
+  mixins: [createCollab],
+  methods: {
+    choiceSelected(choice) {
+      this.sendAcceptTerms(choice);
+      if (choice === 'Yes') {
+        const category = this.$route.params.list_usecases;
+        storageManager.saveTermsAccept(category);
+        // go to the page to create / add collabs
+        this.$router.replace({
+          path: `/${this.$route.params.list_usecases}/${this.$route.params.uc_name}`,
+        });
+      } else {
+        this.$router.go(-1);
       }
     },
-    methods: {
-      choiceSelected (choice) {
-        // from mixin collabAuthentication
-        this.sendAcceptTerms(choice)
-        if (choice === 'Yes') {
-          let category = this.$route.params.list_usecases
-          storageManager.saveTermsAccept(category)
-          // go to the page to create / add collabs
-          this.$router.replace({
-            path: `/${this.$route.params.list_usecases}/${this.$route.params.uc_name}`
-          })
-        } else {
-          this.$router.go(-1)
-        }
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style scoped>
-  .modal-content {
+  .modal-custom-content {
     margin: 40px;
     background-color: white;
     border-radius: 40px;
@@ -56,16 +55,16 @@
     width: 100%;
     position: absolute;
   }
-  .buttons-container {
+  .buttons-custom-container {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin: 50px 0;
   }
   .text {
     text-align: center;
     font-size: 20px;
   }
-  .button {
+  .custom-button {
     cursor: pointer;
     border: none;
     color: white;
@@ -75,10 +74,10 @@
     display: inline-block;
     font-size: 16px;
   }
-  .button.accept {
+  .custom-button.accept {
     background-color: #4CAF50; /* Green */
   }
-  .button.reject {
+  .custom-button.reject {
     background-color: #f44336; /* Green */
   }
 </style>

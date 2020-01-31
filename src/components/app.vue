@@ -1,24 +1,31 @@
 <template>
   <div class="startapp">
-    <uc-container key="container"></uc-container>
+    <transition appear name="fade" mode="out-in">
+      <router-view>
+        <h2 class="welcome">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h2>
+      </router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
-import Vue from 'vue'
-import ucContainer from 'components/uc/uc-container.vue'
-
-Vue.use(VueMaterial)
+import { getUrlWithoutToken } from '@/mixins/utils';
 
 export default {
   name: 'startapp',
-  components: {
-    'uc-container': ucContainer
+  watch: {
+    $route() {
+      /*
+       * check if the access_token is in the URL and remove it to avoid
+       * going to another page that consider access_token as param
+       */
+      if (!window.location.href.includes('access_token')) return;
+      window.location.href = getUrlWithoutToken(window.location.href);
+    },
   },
-  props: ['list_usecases']
-}
+};
 </script>
 
 <style>

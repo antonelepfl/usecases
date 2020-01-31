@@ -841,6 +841,7 @@
           "src": "https://user-images.githubusercontent.com/24406041/36156892-bb6e6124-10d8-11e8-9f15-bcde7657d508.png"
         },
         "next": "sc_striatal_models",
+        "tutorial": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/web-resources-bsp/bsp-video-tutorials/OptimiseAStriatalFastSpikingInterneuron/index.html",
         "files": [
           {
             "entryname": "Optimization of FS cell",

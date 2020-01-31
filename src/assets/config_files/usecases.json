@@ -874,7 +874,7 @@
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"}
         ],
         "picture": {
-          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/placeholder.jpg"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Plasticity.png"
         },
         "next": "sc_models",
         "files": [

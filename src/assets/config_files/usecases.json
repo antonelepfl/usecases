@@ -1296,7 +1296,7 @@
         "title": "Simulation of the Hippocampus: Hippocampal Microcircuits",
         "description": "Exercises to learn how to simulate, analyze and visualize hippocampal microcircuits",
         "experience": ["all"],
-        "disabled": true,
+        "disabled": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/BlueBrain/MOOC-hippocampus-network-simulation-2019/master/images/course-img.jpg"
         },

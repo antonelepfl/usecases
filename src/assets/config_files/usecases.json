@@ -433,7 +433,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "6c6c7956-c391-4981-ba7c-e1988e9c7e0c",
+            "file": "36598267-ea4b-411f-8fd0-5789707f6767",
             "initial": true,
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting.ipynb?ref=master"
           },
@@ -442,7 +442,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file": "139286a4-83c1-44bb-ba56-360422367a9a",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
@@ -472,7 +472,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "initial": true,
-            "file": "edecb7f3-2a14-469a-abb0-40001c4152ab",
+            "file": "89efcb3c-6137-449b-b46d-ada9b37f7bec",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20model.ipynb?ref=master"
           },
           {
@@ -480,7 +480,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file": "139286a4-83c1-44bb-ba56-360422367a9a",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]
@@ -510,7 +510,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "initial": true,
-            "file": "8ee1a349-fea9-4444-94fd-9d2dda45a828",
+            "file": "b27ef95d-35ac-4a29-b30b-5d458d66d857",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20user%20data.ipynb?ref=master"
           },
           {
@@ -518,7 +518,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "9f27fc5a-b2c7-4a4a-96c5-aeea52a67f02",
+            "file": "139286a4-83c1-44bb-ba56-360422367a9a",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/traceanalysis/Synaptic%20events%20fitting%20with%20analysis.ipynb?ref=master"
           }
         ]

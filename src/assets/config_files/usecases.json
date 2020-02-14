@@ -1640,7 +1640,7 @@
         "dataprotected": true,
         "contributors": [
           {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
-          {"name": "Pedro Garcia", "email": "pedro.garcia@unic.cnrs-gif.fr"}
+          {"name": "Pedro Garcia-Rodriguez", "email": "pedro.garcia@unic.cnrs-gif.fr"}
         ],
         "files": [
           {
@@ -1650,6 +1650,32 @@
             "extension": ".ipynb",
             "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Morphology_Validation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Basal Ganglia Population Morphology Validation",
+        "description": "Validates population of single cell morphologies of FS cells",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Pedro Garcia-Rodriguez", "email": "pedro.garcia@cnrs.fr"},
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@cnrs.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "Basal Ganglia Population Morphology Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "46cd24d0-04ff-40a9-a070-e478c48847e8"
           }
         ]
       }

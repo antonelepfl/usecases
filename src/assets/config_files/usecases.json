@@ -84,7 +84,7 @@
         "dataprotected": true,
         "files": [
           {
-            "entryname": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+            "entryname": "Compare a region of the electrostatic potentials of a set of protein isoforms.",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
@@ -106,7 +106,7 @@
         "dataprotected": true,
         "files": [
           {
-            "entryname": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
+            "entryname": "Identify potential protein binding sites of a set of protein isoforms",
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",

@@ -1702,7 +1702,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "46cd24d0-04ff-40a9-a070-e478c48847e8"
+            "file": "46cd24d0-04ff-40a9-a070-e478c48847e8",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal Ganglia Population Morphology Validation.ipynb?ref=master"
           }
         ]
       }

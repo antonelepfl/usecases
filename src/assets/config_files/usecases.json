@@ -400,7 +400,7 @@
           {"name": "Daniel Keller", "email": "daniel.keller@epfl.ch"},
           {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
         ],
-        "external_link": "https://subcellular.humanbrainproject.eu",
+        "external_link": "https://subcellular.humanbrainproject.eu/?publicModel=CaM_Ca_spatial",
         "next": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/subcellular_app.png",

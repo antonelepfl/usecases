@@ -50,6 +50,72 @@
         ]
       },
       {
+        "title": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase and cluster the isoforms by electrostatic similarity.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "16efcbd6-ea0b-4d71-8101-55b8e8555cd6",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase, at a specific site on their surfaces, and cluster the isoforms by electrostatic similarity in this region.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Compare a region of the electrostatic potentials of a set of protein isoforms.",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "413917a6-3c87-4b15-abbf-a7842926e6c6",
+            "initial": true
+          }
+        ]
+      },
+      {
+        "title": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
+        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase at many sites on their surfaces. The electrostatic similarities at these sites is compared to known isoform-specific regulation patterns for the inhibitory protein , to predict the likely binding sites of regulatory proteins.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "files": [
+          {
+            "entryname": "Identify potential protein binding sites of a set of protein isoforms",
+            "appid": 175,
+            "contenttype": "x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "87ec9a50-e883-49b1-a403-b2c7a7bb8d3b",
+            "initial": true
+          }
+        ]
+      },
+      {
         "title": "Predict protein interaction surface with the ARDOCK server",
         "description": "In silico analysis of your protein surface using molecular probes to reveal potential interaction sites",
         "experience": ["all"],
@@ -267,45 +333,6 @@
         "disabled": true,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Compare the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
-        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase and cluster the isoforms by electrostatic similarity.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Compare a specific region of the electrostatic potentials surrounding a set of protein isoforms with multipipsa",
-        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase, at a specific site on their surfaces, and cluster the isoforms by electrostatic similarity in this region.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
-      },
-      {
-        "title": "Identify potential protein binding sites by comparing the electrostatic potentials of a set of protein isoforms",
-        "description": "Use the multipipsa package to compare the electrostatic potentials of nine isoforms of the enzyme adenylyl cyclase at many sites on their surfaces. The electrostatic similarities at these sites is compared to known isoform-specific regulation patterns for the inhibitory protein , to predict the likely binding sites of regulatory proteins.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/pipsa.png"
         },
         "next": "ta_form",
         "dataprotected": true,
@@ -1640,7 +1667,7 @@
         "dataprotected": true,
         "contributors": [
           {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@unic.cnrs-gif.fr"},
-          {"name": "Pedro Garcia", "email": "pedro.garcia@unic.cnrs-gif.fr"}
+          {"name": "Pedro Garcia-Rodriguez", "email": "pedro.garcia@unic.cnrs-gif.fr"}
         ],
         "files": [
           {
@@ -1650,6 +1677,32 @@
             "extension": ".ipynb",
             "file": "227f567d-edd6-4ed8-9bc5-9c9e8ea5432c",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Morphology_Validation.ipynb?ref=master"
+          }
+        ]
+      },
+      {
+        "title": "Basal Ganglia Population Morphology Validation",
+        "description": "Validates population of single cell morphologies of FS cells",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/vf_logo.png"
+        },
+        "next": "ta_form",
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Pedro Garcia-Rodriguez", "email": "pedro.garcia@cnrs.fr"},
+          {"name": "Shailesh Appukuttan", "email": "shailesh.appukuttan@cnrs.fr"}
+        ],
+        "files": [
+          {
+            "entryname": "Basal Ganglia Population Morphology Validation",
+            "appid": 175,
+            "contenttype": "application/x-ipynb+json",
+            "extension": ".ipynb",
+            "file": "46cd24d0-04ff-40a9-a070-e478c48847e8"
           }
         ]
       }

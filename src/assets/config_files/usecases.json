@@ -400,7 +400,7 @@
           {"name": "Daniel Keller", "email": "daniel.keller@epfl.ch"},
           {"name": "Jean-Denis Courcol", "email": "jean-denis.courcol@epfl.ch"}
         ],
-        "external_link": "https://subcellular.humanbrainproject.eu",
+        "external_link": "https://subcellular.humanbrainproject.eu/?publicModel=CaM_Ca_spatial",
         "next": false,
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/subcellular_app.png",
@@ -1439,7 +1439,7 @@
               {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"},
               {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"}
             ],
-            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/hippo_hbp_microcircuit",
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/hippo_mooc_sa_microcircuit",
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ca1_microcircuit.png"
           },
           {
@@ -1702,7 +1702,8 @@
             "appid": 175,
             "contenttype": "application/x-ipynb+json",
             "extension": ".ipynb",
-            "file": "46cd24d0-04ff-40a9-a070-e478c48847e8"
+            "file": "46cd24d0-04ff-40a9-a070-e478c48847e8",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/modelvalidation/Basal_Ganglia_Population_Morphology_Validation.ipynb?ref=master"
           }
         ]
       }

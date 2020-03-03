@@ -14,10 +14,14 @@ import sys
 
 MODEL_CATALOG_URL = os.environ['MODELS_URL']
 # MODEL_CATALOG_URL = 'https://validation-v1.brainsimulation.eu/models/'
+REFRESH_TOKEN = os.environ['REFRESH_TOKEN']
+CLIENT_ID = os.environ['CLIENT_ID']
+REFRESH_ENDPOINT = 'https://services.humanbrainproject.eu/oidc/token'
+
 
 FILES_TO_CREATE = {
     'granule_models.json': '?brain_region=cerebellum&cell_type=granule%20cell&model_scope=single%20cell&species=Rattus%20norvegicus&abstraction_level=spiking%20neurons%3A%20biophysical',
-    'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus&owner',
+    'hippocampus_models.json': '?brain_region=hippocampus&organization=HBP-SP6&model_scope=single%20cell&species=Rattus%20norvegicus&collab_id=12027',
     'purkinje_models.json': '?brain_region=cerebellum&cell_type=Purkinje%20cell&model_scope=single%20cell&name=Purkinje%20cell%20-%20Multi%20compartmental',
 }
 
@@ -60,7 +64,7 @@ def filter_meta(model_info):
     fields_to_save = ('name', 'author', 'cell_type', 'brain_region', 'species', 'description')
     x = {k: model_info[k] for k in fields_to_save}
 
-    instance_to_zip = model_info['instances'][0]['source']
+    instance_to_zip = next((inst["source"] for inst in model_info['instances'] if inst["version"] == "2.0"), None)
     x['zip_url'] = instance_to_zip
     return x
 
@@ -90,11 +94,27 @@ def save_model_file(file_name, output_content):
     with open(os.path.join(output, file_name), 'w') as fd:
         fd.write(json.dumps(output_content, indent=2))
 
+def _get_token():
+    data = {
+        'client_id': CLIENT_ID,
+        'refresh_token': REFRESH_TOKEN,
+        'grant_type': 'refresh_token',
+    }
+    headers = {
+        'Content-type': 'application/x-www-form-urlencoded',
+    }
+    final_req = requests.post(REFRESH_ENDPOINT, data=data, headers=headers)
+    return final_req.json()['access_token']
+
 
 def create_meta():
+    headers = {
+        'Authorization': 'Bearer {}'.format(_get_token())
+    }
+
     for file_name, query_string in FILES_TO_CREATE.items():
         logging.info('Fetching %s:', file_name)
-        response = requests.get(MODEL_CATALOG_URL + query_string)
+        response = requests.get(MODEL_CATALOG_URL + query_string, headers=headers)
         if not response.ok:
             logging.error('Failed to fetch data for %s', file_name)
             logging.error(response.text)
@@ -126,5 +146,5 @@ def main():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     main()

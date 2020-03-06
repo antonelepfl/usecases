@@ -12,11 +12,11 @@ import os
 import requests
 import sys
 
-MODEL_CATALOG_URL = os.environ['MODELS_URL']
 # MODEL_CATALOG_URL = 'https://validation-v1.brainsimulation.eu/models/'
+REFRESH_ENDPOINT = 'https://services.humanbrainproject.eu/oidc/token'
+MODEL_CATALOG_URL = os.environ['MODELS_URL']
 REFRESH_TOKEN = os.environ['REFRESH_TOKEN']
 CLIENT_ID = os.environ['CLIENT_ID']
-REFRESH_ENDPOINT = 'https://services.humanbrainproject.eu/oidc/token'
 
 
 FILES_TO_CREATE = {

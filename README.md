@@ -5,6 +5,15 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 
 ### This app is deployed in [HBP Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
+### To run locally using Docker
+
+- Build contaienr `docker build -t usecases-local .`
+
+- Run container `docker run -it -p 8282:8282 usecases-local:latest`
+
+- Open in the browser `http://localhost:8282/#/traceanalysis`
+
+
 ### To run locally
 ``` npm install ``` (install dependencies)
 

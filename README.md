@@ -5,19 +5,21 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
 
 ### This app is deployed in [HBP Collab](https://collab.humanbrainproject.eu/#/collab/1655/nav/66850)
 
-### To run locally using Docker
-
-- Build contaienr `docker build -t usecases-local .`
-
-- Run container `docker run -it -p 8282:8282 usecases-local:latest`
-
-- Open in the browser `http://localhost:8282/#/traceanalysis`
-
-
 ### To run locally
-``` npm install ``` (install dependencies)
-
-``` npm run dev ``` (run dev server)
+- Install [docker](https://docs.docker.com/install/)
+- Clone your fork using: `git clone https://github.com/YOUR_GITHUB_ACCOUNT/usecases.git`
+- Move to the repo `cd usecases`
+- Sync branches:
+  - Add base repo: `git remote add upstream https://github.com/antonelepfl/usecases.git`
+  - Get latest changes: `git fetch --all`
+  - Reset branches:
+    - Go to DEV `git checkout dev`
+    - Replace with original changes `git reset --hard upstream/dev`
+- Make your changes on DEV branch
+- ....
+- Build contaienr `docker build -t usecases-local .`
+- Run container `docker run -it -p 8282:8282 usecases-local:latest`
+- Open in the browser to check your `http://localhost:8282/#/traceanalysis`
 
 ### To deploy in a dev environment:
 * The user make a pull request to the `dev` branch

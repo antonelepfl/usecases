@@ -17,10 +17,10 @@ All the titles, images, descriptions, files, etc are described in [usecases.json
     - Replace with original changes `git reset --hard upstream/dev`
 - Make your changes on DEV branch
 - ....
-- Build contaienr `docker build -t usecases-local .`
-- Run container `docker run -it -p 8282:8282 usecases-local:latest`
-- Open in the browser with `http://localhost:8282/#/.`
-- Select the category of your use case and then reload the page
+- Build container `docker build -t usecases-local .`
+- Run container `docker run -it -p 8282:8282 -v $(pwd):/home usecases-local:latest`
+- Open in the browser with `http://localhost:8282/#/categories`
+- Select the category of your use case
 - The use case will be shown as it is in the Brain Simulation Platform
 
 ### To deploy in a dev environment:

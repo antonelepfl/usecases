@@ -1,8 +1,8 @@
 FROM node:12-buster-slim
 
-ADD . /home/
-
 WORKDIR /home
+
+ADD package.json package-lock.json ./
 
 RUN npm i
 

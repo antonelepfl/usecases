@@ -1372,6 +1372,32 @@
         ]
       },
       {
+        "title": "Configure and run a simplified cortical circuit with the CxSystem2 simulation framework",
+        "description": "",
+        "experience": ["experts"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "webapp",
+        "contributors": [
+          {"name": "Vafa Andalibi", "email": "vafandal@indiana.edu"},
+          {"name": "Henri Hokkanen", "email": "henri.hokkanen@helsinki.fi"},
+          {"name": "Simo Vanni", "email": "simo.vanni@helsinki.fi"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cxsys2.png"
+        },
+        "next": "ta_form",
+        "dataprotected": false,
+        "files": [
+          {
+            "entryname": "CxSystem2",
+            "appid": 440,
+            "contenttype": "text/html",
+            "extension": ".html"
+          }
+        ]
+      },
+      {
         "title": "Configure and run a small circuit using HBP model and data",
         "description": "",
         "experience": ["power"],
@@ -1397,32 +1423,6 @@
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
         }
-      },
-      {
-        "title": "Configure and run a simplified cortical circuit with the CxSystem2 simulation framework",
-        "description": "",
-        "experience": ["experts"],
-        "maturity": ["beta"],
-        "disabled": false,
-        "type": "webapp",
-        "contributors": [
-          {"name": "Vafa Andalibi", "email": "vafandal@indiana.edu"},
-          {"name": "Henri Hokkanen", "email": "henri.hokkanen@helsinki.fi"},
-          {"name": "Simo Vanni", "email": "simo.vanni@helsinki.fi"}
-        ],
-        "picture": {
-          "src": "https://raw.githubusercontent.com/lbologna/usecases/dev/src/assets/images/cxsys2.png"
-        },
-        "next": "ta_form",
-        "dataprotected": false,
-        "files": [
-          {
-            "entryname": "CxSystem2",
-            "appid": 440,
-            "contenttype": "text/html",
-            "extension": ".html"
-          }
-        ]
       }
     ],
     "brainareacircuitinsilicoexperiments": [

@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import ModelItem from './model-item.vue';
 import UcListViewer from '@/components/uc-list-viewer.vue';
 import modelsMixins from '@/mixins/models';
 import createCollab from '@/mixins/createCollab';
 import { compactString } from '@/mixins/utils';
+import ModelItem from './model-item.vue';
 
 export default {
   name: 'ModelContainer',

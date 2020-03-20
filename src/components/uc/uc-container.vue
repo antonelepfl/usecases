@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import ucItem from './uc-item.vue';
 import ucListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import storageManager from '@/mixins/storageManager';
 import commitNumer from '@/components/commit-number.vue';
 import { compactString } from '@/mixins/utils';
 import createCollab from '@/mixins/createCollab';
+import ucItem from './uc-item.vue';
 
 export default {
   name: 'ucContainer',

@@ -1518,6 +1518,29 @@
               {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+          },
+          {
+            "title": "Functional Simulation with Advanced Point Neurons (E-GLIF)",
+            "files": [
+              {
+                "entryname": "Olivo-Cerebellar microcircuit",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": " ",
+                "file_prod": ""
+              }
+            ],
+            "species": "Mouse",
+            "brain_structure": "cerebellum",
+            "cell_soma_location": "cerebellar cortex, Deep Cerebellar Nuclei and Inferior Olive",
+            "description": "Olivo-Cerebellar microcircuit simulation with E-GLIF point neurons in PyNEST",
+            "contributors": [
+              {"name": "Alice Geminiani", "email": "alice.geminiani@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           }
         ]
       }

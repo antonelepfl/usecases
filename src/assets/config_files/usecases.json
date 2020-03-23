@@ -358,7 +358,7 @@
         "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": false,
+        "disabled": true,
         "type": "ipynb",
         "contributors": [
           {"name": "David C Sterratt", "email": "david.c.sterratt@ed.ac.uk"}

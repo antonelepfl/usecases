@@ -358,7 +358,7 @@
         "description": "A simple example use case of how to use KappaNEURON for a calcium pump",
         "experience": ["all"],
         "maturity": ["beta"],
-        "disabled": false,
+        "disabled": true,
         "type": "ipynb",
         "contributors": [
           {"name": "David C Sterratt", "email": "david.c.sterratt@ed.ac.uk"}
@@ -678,7 +678,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "f0889ca5-735d-4857-98e7-fb2e5630d503",
+            "file": "4c689aae-0655-4dda-aa8f-bd5c5e4bfb48",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20Config.ipynb?ref=master"
           },
           {
@@ -686,7 +686,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "66970e4e-8879-4f05-b669-d37c7bb69788",
+            "file": "a6ae229e-1f5d-492d-a4fc-e61fcb4948ad",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20Analysis.ipynb?ref=master"
           },
           {
@@ -694,7 +694,7 @@
             "appid": 175,
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
-            "file": "d4737dd8-1576-4f8d-ba4d-06b9e2c30ef7",
+            "file": "56a85712-7102-4864-86b4-274ced3755e8",
             "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/singlecellmodeling/BuildOwn%20Single%20HippoCell%20-%20NSG%20Job%20Manager.ipynb?ref=master"
           }
         ]
@@ -902,7 +902,7 @@
           {"name": "Carmen Alina Lupascu", "email": "carmen.lupascu@pa.ibf.cnr.it"}
         ],
         "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Plasticity.png"
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/Plasticity2.png"
         },
         "next": "sc_models",
         "files": [
@@ -1368,6 +1368,32 @@
             ],
             "externalLink": "https://bsp-rat-ca1.humanbrainproject.eu",
             "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/rat-ca1-circuit.png"
+          }
+        ]
+      },
+      {
+        "title": "Configure and run a simplified cortical circuit with the CxSystem2 simulation framework",
+        "description": "",
+        "experience": ["experts"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "webapp",
+        "contributors": [
+          {"name": "Vafa Andalibi", "email": "vafandal@indiana.edu"},
+          {"name": "Henri Hokkanen", "email": "henri.hokkanen@helsinki.fi"},
+          {"name": "Simo Vanni", "email": "simo.vanni@helsinki.fi"}
+        ],
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/cxsys2.png"
+        },
+        "next": "ta_form",
+        "dataprotected": false,
+        "files": [
+          {
+            "entryname": "CxSystem2",
+            "appid": 440,
+            "contenttype": "text/html",
+            "extension": ".html"
           }
         ]
       },

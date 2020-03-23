@@ -1,5 +1,5 @@
 <template>
-  <div class="defaultList">
+  <div class="default-list">
     <uc-container key="container"></uc-container>
   </div>
 </template>

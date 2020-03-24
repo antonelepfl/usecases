@@ -1520,7 +1520,7 @@
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
           }
         ]
-      }
+      },
       {
         "title": "Cerebro-Cerebellar loops",
         "description": "This use-case shows a modeling effort of whole brain functionalities by leveraging on the existing cerebellar models. We model and simulate the forward and inverse controller functions of the cerebrocortical-cerebellar loops in a closed-loop setting, emulating error-based learning and action prediction.",
@@ -1541,7 +1541,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "2baba0b8-e798-4882-a833-9d2801211f36",
-                "file_prod": 
+                "file_prod": ""
               },
               {
                 "entryname": "Calibration",
@@ -1549,7 +1549,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "d234f52d-a5a1-43a1-b806-d3cf4897efe2",
-                "file_prod": 
+                "file_prod": ""
               },
               {
                 "entryname": "Simulation",
@@ -1557,7 +1557,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "08420796-68f6-4445-9ff7-5bae0dd5f7d5",
-                "file_prod": 
+                "file_prod": ""
               }
             ],
             "species": "Mouse",
@@ -1565,7 +1565,7 @@
             "cell_soma_location": "cerebellar cortex, Deep Cerebellar Nuclei and Inferior Olive",
             "description": "Cortico-Cerebellum microcircuit simulation with PyNEST",
             "contributors": [
-              {"name": "Alberto Antonietti", "email": "alberto.antonietti@unipv.it"},              
+              {"name": "Alberto Antonietti", "email": "alberto.antonietti@unipv.it"},
               {"name": "Edoardo Negri", "email": "edoardo.negri@unipv.it"},
               {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
               {"name": "Egidio D’Angelo", "email": "egidiougo.dangelo@unipv.it"}

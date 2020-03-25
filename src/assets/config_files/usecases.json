@@ -1536,7 +1536,7 @@
             "title": "Cerebro-cerebellar closed-loop experiment",
             "files": [
               {
-                "entryname": "Preparation of the environment",
+                "entryname": "Step 1 - Preparation of the environment",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
@@ -1544,7 +1544,7 @@
                 "file_prod": ""
               },
               {
-                "entryname": "Calibration",
+                "entryname": "Step 2 - Calibration",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
@@ -1552,7 +1552,7 @@
                 "file_prod": ""
               },
               {
-                "entryname": "Simulation",
+                "entryname": "Step 3 - Simulation",
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",

@@ -1527,14 +1527,14 @@
                 "appid": 175,
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
-                "file": "058751f5-0a00-4bdd-951c-fbaf7ba606b2",
+                "file": "39810378-34f4-4e7f-95a7-b1f347b600c4",
                 "file_prod": ""
               }
             ],
             "species": "Mouse",
             "brain_structure": "cerebellum",
             "cell_soma_location": "cerebellar cortex, Deep Cerebellar Nuclei and Inferior Olive",
-            "description": "Olivo-Cerebellar microcircuit simulation with E-GLIF point neurons in PyNEST",
+            "description": "Olivocerebellar microcircuit simulation with E-GLIF point neurons in PyNEST",
             "contributors": [
               {"name": "Alice Geminiani", "email": "alice.geminiani@unipv.it"},
               {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},

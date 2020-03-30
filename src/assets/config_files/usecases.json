@@ -1518,6 +1518,52 @@
               {"name": "Elisa Marenzi", "email": "elisa.marenzi@unipv.it"}
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+          },
+          {
+            "title": "Functional Simulation with Advanced Point Neurons (E-GLIF)",
+            "files": [
+              {
+                "entryname": "Olivo-Cerebellar microcircuit",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": "39810378-34f4-4e7f-95a7-b1f347b600c4",
+                "file_prod": ""
+              }
+            ],
+            "species": "Mouse",
+            "brain_structure": "cerebellum",
+            "cell_soma_location": "cerebellar cortex, Deep Cerebellar Nuclei and Inferior Olive",
+            "description": "Olivocerebellar microcircuit simulation with E-GLIF point neurons in PyNEST",
+            "contributors": [
+              {"name": "Alice Geminiani", "email": "alice.geminiani@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Egidio d’Angelo", "email": "egidiougo.dangelo@unipv.it"}
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/use_case_olivocereb_icon.jpg"
+          },
+          {
+            "title": "Multicompartmental simulation of the cerebellum",
+            "description": "This usecase models the cerebellum's anisotropic topology through the use of multicompartmental neuron models that are connected to eachother based on spatial intersection of the neurites.",
+            "experience": ["all"],
+            "type": "ipynb",
+            "disabled": false,
+            "dataprotected": false,
+            "next": "brainarea_circuits",
+            "files": [
+              {
+                 "entryname": "Simulation notebook" ,
+                 "appid": 175,
+                 "contenttype": "x-ipynb+json",
+                 "extension": ".ipynb",
+                 "file": "9a820c03-fe7f-41f2-aede-ab8eeae16f5e"
+              }
+            ],
+            "contributors": [
+              {"name": "Robin De Schepper", "email": "robingilbert.deschepper@unipv.it"},
+              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
+              {"name": "Egidio D’Angelo", "email": "egidiougo.dangelo@unipv.it"}
+            ]
           }
         ]
       },
@@ -1572,41 +1618,6 @@
             ],
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebrocerebellar_loop.png"
           }
-        ]
-      },
-      {
-        "title": "Multicompartmental simulation of the cerebellum",
-        "description": "This usecase models the cerebellum's anisotropic topology through the use of multicompartmental neuron models that are connected to eachother based on spatial intersection of the neurites.",
-        "experience": ["all"],
-        "type": "ipynb",
-        "disabled": false,
-        "dataprotected": false,
-        "next": "brainarea_circuits",
-        "files": [
-          {
-             "entryname": "Simulation notebook" ,
-             "appid": 175,
-             "contenttype": "x-ipynb+json",
-             "extension": ".ipynb",
-             "file": "9a820c03-fe7f-41f2-aede-ab8eeae16f5e"
-          }
-        ],
-        "models": [
-          {
-            "title": "Cerebellum with multicompartmental neurons",
-            "modelName": "MulticompCerebellum",
-            "description": "This usecase models the cerebellum's anisotropic topology through the use of multicompartmental neuron models that are connected to eachother based on spatial intersection of the neurites.",
-            "contributors": [
-              {"name": "Robin De Schepper", "email": "robingilbert.deschepper@unipv.it"},
-              {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
-              {"name": "Egidio D’Angelo", "email": "egidiougo.dangelo@unipv.it"}
-            ]
-          }
-        ],
-        "contributors": [
-          {"name": "Robin De Schepper", "email": "robingilbert.deschepper@unipv.it"},
-          {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
-          {"name": "Egidio D’Angelo", "email": "egidiougo.dangelo@unipv.it"}
         ]
       }
     ],

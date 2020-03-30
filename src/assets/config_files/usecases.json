@@ -1574,7 +1574,7 @@
         "disabled": false,
         "type": "ipynb",
         "picture": {
-          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum.png"
+          "src": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebro-cerebellar-loops.png"
         },
         "next": "brainarea_circuits",
         "models": [

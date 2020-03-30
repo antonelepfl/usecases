@@ -67,6 +67,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "16efcbd6-ea0b-4d71-8101-55b8e8555cd6",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Compare_the_electrostatic_potentials_surrounding_a_set_of_protein_isoforms_with_multipipsa.ipynb?ref=master",
             "initial": true
           }
         ]
@@ -89,6 +90,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "413917a6-3c87-4b15-abbf-a7842926e6c6",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Compare_a_region_of_the_electrostatic_potentials_of_a_set_of_protein_isoforms.ipynb?ref=master",
             "initial": true
           }
         ]
@@ -111,6 +113,7 @@
             "contenttype": "x-ipynb+json",
             "extension": ".ipynb",
             "file": "87ec9a50-e883-49b1-a403-b2c7a7bb8d3b",
+            "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/molecular/Identify_potential_protein_binding_sites_of_a_set_of_protein_isoforms.ipynb?ref=master",
             "initial": true
           }
         ]

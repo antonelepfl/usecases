@@ -1129,7 +1129,8 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "initial": true,
-                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe"
+                "file": "4d115880-3edc-437a-a701-f23a0d4b63fe",
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Striatum%20Microcircuitry.ipynb?ref=master"
               },
               {
                 "entryname": "Striatum-scaffold-network-use-case-2018",

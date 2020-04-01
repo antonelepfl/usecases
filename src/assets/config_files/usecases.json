@@ -1552,7 +1552,7 @@
             "next": "brainarea_circuits",
             "files": [
               {
-                 "entryname": "Simulation notebook" ,
+                 "entryname": "Multicompartmental simulation of the cerebellum" ,
                  "appid": 175,
                  "contenttype": "x-ipynb+json",
                  "extension": ".ipynb",
@@ -1563,7 +1563,8 @@
               {"name": "Robin De Schepper", "email": "robingilbert.deschepper@unipv.it"},
               {"name": "Claudia Casellato", "email": "claudia.casellato@unipv.it"},
               {"name": "Egidio D’Angelo", "email": "egidiougo.dangelo@unipv.it"}
-            ]
+            ],
+            "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebellum_multicomp_usecase.png"
           }
         ]
       },

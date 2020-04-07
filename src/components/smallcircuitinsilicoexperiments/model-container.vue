@@ -24,7 +24,6 @@ export default {
   data() {
     return {
       models: [],
-      ucName: 'configureandrunasmallcircuitusingpreconfiguredhbpmodelanddata',
     };
   },
   mixins: [createCollab],
@@ -37,7 +36,7 @@ export default {
     },
   },
   created() {
-    this.models = modelsMixins.getModelByUc(this.ucName);
+    this.models = modelsMixins.getModelByUc(this.$route.params.uc_name);
     document.querySelector('title').innerHTML = 'Small Circuits In Silico Experiments';
   },
 };

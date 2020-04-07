@@ -1338,7 +1338,7 @@
     ],
     "smallcircuitinsilicoexperiments": [
       {
-        "title": "Configure and run a small circuit using preconfigured HBP model and data",
+        "title": "Configure and run a small circuit extracted from the current release of the HBP hippocampus CA1 large-scale detailed model",
         "description": "",
         "experience": ["all"],
         "maturity": ["beta"],

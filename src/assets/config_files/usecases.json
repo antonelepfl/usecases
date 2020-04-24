@@ -1887,10 +1887,10 @@
       },
       "uc-type": {
         "webapp": {
-          "tooltip": "This use case was implementing using a Web Application"
+          "tooltip": "This use case was implemented using a Web Application"
         },
         "ipynb": {
-          "tooltip": "This use case was implementing using Jupyter Notebook"
+          "tooltip": "This use case was implemented using Jupyter Notebook"
         }
       }
     }

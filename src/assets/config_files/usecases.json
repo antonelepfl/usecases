@@ -1638,7 +1638,7 @@
         ]
       },
       {
-        "title": "Somatosensory Cortex",
+        "title": "Neocortex",
         "description": "",
         "experience": ["all"],
         "type": "webapp",
@@ -1652,11 +1652,17 @@
             "disabled": false,
             "species": "Mouse",
             "brain_structure": "Somatosensory Cortex",
-            "description": "A circuit of detailed neuron models based on the Ascoli atlas.",
+            "description": "A draft reconstruction of the mouse somatosensory microcircuit.",
             "contributors": [
-              {"name": "Sood Vishal", "email": "vishal.sood@epfl.ch"},
-              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"},
-              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
+              {"name": "Vishal Sood, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland", "email": "vishal.sood@epfl.ch"},
+              {"name": "Hugo Dictus, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Javier DeFelipe, Instituto Cajal (CSIC) and Universidad Politécnica de Madrid, Spain"},
+              {"name": "Alain Destexhe, UNIC-CNRS, Gif-sur-Yvette, France"},
+              {"name": "Jean-Denis Courcol, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Werner Van Geit, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Daniel Keller, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Michael Gevaert, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland", "email": "michael.gevaert@epfl.ch"},
+              {"name": "Stefano Antonel, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland", "email": "stefano.antonel@epfl.ch"}
             ],
             "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/sscx_hbp_sa_mouse_microcircuit",
             "img": "https://sos-ch-dk-2.exo.io/public-website-production/filer_public/b2/35/b2354478-19db-450a-be40-48b0c92b5402/front_view_1000px.png"

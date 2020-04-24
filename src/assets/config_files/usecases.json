@@ -416,7 +416,7 @@
         "title": "Feature extraction",
         "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
         "experience": ["all"],
-        "maturity": ["beta"],
+        "maturity": [],
         "disabled": false,
         "type": "webapp",
         "contributors": [
@@ -442,7 +442,6 @@
         "title": "Synaptic events fitting",
         "description": "Fitting synaptic events using data and model in NeuroInformatics Platform",
         "experience": ["power"],
-        "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -481,7 +480,6 @@
         "title": "Synaptic events fitting with user model",
         "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
         "experience": ["experts"],
-        "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -519,7 +517,6 @@
         "title": "Synaptic events fitting with user data",
         "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
         "experience": ["experts"],
-        "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -588,11 +585,10 @@
       }
     ],
     "singlecellmodeling": [
-       {
+      {
         "title": "Hodgkin-Huxley Neuron Builder",
         "description": "Use the eFEL and BluePyOpt libraries to go through the entire neuron builder pipeline: 1) feature extraction, 2) model optimization, 3) simulation.",
         "experience": ["power"],
-        "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
         "type": "webapp",
@@ -661,7 +657,6 @@
         "title": "Build your own single hippocampal cell model using HBP data",
         "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
         "experience": ["power"],
-        "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -859,7 +854,6 @@
         "title": "Optimize a striatal fast-spiking interneuron",
         "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
         "experience": ["code"],
-        "maturity": ["experimental"],
         "disabled": false,
         "type": "ipynb",
         "contributors": [
@@ -1162,7 +1156,6 @@
           {"name": "Liesbeth Vanherpe"}
         ],
         "experience": ["power"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1189,7 +1182,6 @@
           {"name": "Liesbeth Vanherpe"}
         ],
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "webapp",
         "picture": {
@@ -1208,7 +1200,6 @@
           {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
         ],
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "webapp",
         "picture": {
@@ -1433,7 +1424,7 @@
       {
         "title": "Hippocampus",
         "description": "",
-        "experience": ["all", "power"],
+        "experience": ["all"],
         "isDemo": true,
         "disabled": false,
         "type": "webapp",
@@ -1491,7 +1482,8 @@
       {
         "title": "Cerebellum",
         "description": "",
-        "experience": ["all", "power"],
+        "experience": ["all"],
+        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1576,6 +1568,7 @@
         "title": "Cerebro-Cerebellar loops",
         "description": "This use-case shows a modeling effort of whole brain functionalities by leveraging on the existing cerebellar models. We model and simulate the forward and inverse controller functions of the cerebrocortical-cerebellar loops in a closed-loop setting, emulating error-based learning and action prediction.",
         "experience": ["experts"],
+        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1680,7 +1673,6 @@
         "title": "Validation Framework Demo (Walkthrough)",
         "description": "Demonstrates the use of the validation framework",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1708,7 +1700,6 @@
         "title": "Hippocampus Single Cell Model Validation",
         "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1735,7 +1726,6 @@
         "title": "Basal Ganglia Single Cell Validation",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1761,7 +1751,6 @@
         "title": "BluePyOpt Optimized Model Validation",
         "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1787,7 +1776,6 @@
         "title": "Basal Ganglia Morphology Validation",
         "description": "Validates single cell morphologies of MSN and FS cells",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1814,7 +1802,6 @@
         "title": "Basal Ganglia Population Morphology Validation",
         "description": "Validates population of single cell morphologies of FS cells",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {

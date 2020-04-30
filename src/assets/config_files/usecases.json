@@ -1475,6 +1475,7 @@
           {
             "title": "Configure and run a rat hippocampus simplified microcircuit using HBP model and data",
             "description": "",
+             "disabled": true,
             "experience": ["code"],
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
             "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/hbp_dynamic_circuit",

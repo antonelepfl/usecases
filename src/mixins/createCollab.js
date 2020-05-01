@@ -103,7 +103,7 @@ export default {
         await this.$http.put(jupyterNotebookUrl, payload, this.header);
       } catch (error) {
         console.error(error);
-        throw new Error(`Error changing the metadata: ${error}`);
+        throw new Error('Error changing the metadata:');
       }
       console.debug('Change metadata file <-> navitem');
     },
@@ -194,7 +194,7 @@ export default {
         response = await this.$http.get(url, newHeader);
       } catch (error) {
         console.error(error);
-        throw new Error(`Error getting collab storage ${error}`);
+        throw new Error('Error getting collab storage');
       }
       console.debug('Collab storage obtained');
       store.setCollabInfo(response.data.results[0]);
@@ -248,19 +248,19 @@ export default {
         const errorMessage = error.response.data[0];
         if (errorMessage && errorMessage.startsWith('File with the same name')) {
           // get the id of the existing file
-          if (!collabId) throw new Error(`No collab information ${error}`);
+          if (!collabId) throw new Error('No collab information');
           let file;
           try {
             file = await this.getFileByName(collabId, name + extension);
           } catch (retrieveError) {
             console.error(retrieveError);
-            throw new Error(`Error retrieving a file by name ${error}`);
+            throw new Error('Error retrieving  a file by name');
           }
           file.exists = true;
           return file;
         }
         console.error(error);
-        throw new Error(`Error creating a file ${error}`);
+        throw new Error('Error creating a file');
       }
       console.debug('File created');
       return response.data;
@@ -310,9 +310,9 @@ export default {
           await this.$http.put(url, null, newHeader);
         } catch (error) {
           console.error('Error copying the file content', error);
-          throw new Error(`Error copying the file: ${originFileId} ${error}`);
+          throw new Error(`Error copying the file: ${originFileId}`);
         }
-        console.debug('File content copied', originFileId);
+        console.debug('File content copied');
       }
       return newFileId;
     },
@@ -436,7 +436,7 @@ export default {
         if (!response) throw new Error('no response data from github');
       } catch (error) {
         console.error(error);
-        throw new Error(`Error getting file content ${error}`);
+        throw new Error('Error getting file content');
       }
       if (response.sha) {
         // production notebooks
@@ -597,7 +597,7 @@ export default {
         response = await this.$http.get(url);
       } catch (error) {
         console.error(error);
-        throw new Error(`Error fetching content from Github ${error}`);
+        throw new Error('Error fetching content from Github');
       }
       if (url.includes('contents/production_notebooks')) {
         let decodedContent = '';
@@ -607,7 +607,7 @@ export default {
           decodedContent = JSON.parse(decoded);
         } catch (error) {
           console.error(error);
-          throw new Error(`Error parsing Github content ${error}`);
+          throw new Error('Error parsing Github content');
         }
         dataObj.content = decodedContent;
         dataObj.sha = response.data.sha;

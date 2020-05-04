@@ -416,7 +416,6 @@
         "title": "Feature extraction",
         "description": "Extracts electrophysiological features; traces can be from NeuroInformatics Platform or uploaded",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "webapp",
         "contributors": [
@@ -442,7 +441,6 @@
         "title": "Synaptic events fitting",
         "description": "Fitting synaptic events using data and model in NeuroInformatics Platform",
         "experience": ["power"],
-        "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -481,7 +479,6 @@
         "title": "Synaptic events fitting with user model",
         "description": "Fitting synaptic events using data in NeuroInformatics Platform and user's model",
         "experience": ["experts"],
-        "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -519,7 +516,6 @@
         "title": "Synaptic events fitting with user data",
         "description": "Fitting user's synaptic events data with model from NeuroInformatics Platform",
         "experience": ["experts"],
-        "maturity": ["experimental"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -588,11 +584,10 @@
       }
     ],
     "singlecellmodeling": [
-       {
+      {
         "title": "Hodgkin-Huxley Neuron Builder",
         "description": "Use the eFEL and BluePyOpt libraries to go through the entire neuron builder pipeline: 1) feature extraction, 2) model optimization, 3) simulation.",
-        "experience": ["power"],
-        "maturity": ["beta"],
+        "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
         "type": "webapp",
@@ -661,7 +656,6 @@
         "title": "Build your own single hippocampal cell model using HBP data",
         "description": "Use the BluePyOpt to run an optimization choosing from HBP data for morphology, channel kinetics, features, and parameters.",
         "experience": ["power"],
-        "maturity": ["beta"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -778,7 +772,7 @@
       {
         "title": "Custom Axon Cerebellar Granule cell simulation",
         "description": "The purpose of this usecase it to explain how to setup an axon, built with BluePyOpt, containing an erbitrary number of sections. Afterward to simulate an actual cerebellar granule cell model with an axon composed by over 300 sections.",
-        "experience": ["power"],
+        "experience": ["all"],
         "access": ["hpc"],
         "disabled": false,
         "type": "ipynb",
@@ -859,7 +853,6 @@
         "title": "Optimize a striatal fast-spiking interneuron",
         "description": "Fit parameters of a striatal fast-spiking interneuron model to the experimental data. Optimization uses BluePyOpt as well as the realistic morphology, channel kinetics and extracted neurophysiological features. This version runs directly on the collaboratory and it is limited to small optimizations.",
         "experience": ["code"],
-        "maturity": ["experimental"],
         "disabled": false,
         "type": "ipynb",
         "contributors": [
@@ -1162,7 +1155,6 @@
           {"name": "Liesbeth Vanherpe"}
         ],
         "experience": ["power"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1189,7 +1181,6 @@
           {"name": "Liesbeth Vanherpe"}
         ],
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "webapp",
         "picture": {
@@ -1208,7 +1199,6 @@
           {"name": "Genrich Ivaska", "email": "genrich.ivaska@epfl.ch"}
         ],
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "webapp",
         "picture": {
@@ -1219,7 +1209,7 @@
       },
       {
         "title": "Single cell in silico experiments with synaptic inputs preconfigured",
-        "description": " ",
+        "description": "",
         "experience": ["all"],
         "maturity": ["beta"],
         "disabled": true,
@@ -1341,7 +1331,6 @@
         "title": "Configure and run a small circuit extracted from the current release of the HBP hippocampus CA1 large-scale detailed model",
         "description": "",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "webapp",
         "picture": {
@@ -1378,8 +1367,7 @@
       {
         "title": "Configure and run a simplified cortical circuit with the CxSystem2 simulation framework",
         "description": "",
-        "experience": ["experts"],
-        "maturity": ["beta"],
+        "experience": ["all"],
         "disabled": false,
         "type": "webapp",
         "contributors": [
@@ -1433,7 +1421,7 @@
       {
         "title": "Hippocampus",
         "description": "",
-        "experience": ["all", "power"],
+        "experience": ["all"],
         "isDemo": true,
         "disabled": false,
         "type": "webapp",
@@ -1473,6 +1461,19 @@
             "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/ca1_microcircuit.png"
           },
           {
+            "title": "Configure and run a rat hippocampus simplified microcircuit using HBP model and data",
+            "description": "",
+             "disabled": true,
+            "experience": ["code"],
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg",
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/hbp_dynamic_circuit",
+            "contributors": [
+              {"name": "Aleksei Sanin", "email": "aleksei.sanin@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
+            ]
+          },
+          {
             "title": "Configure and run a rat hippocampus CA1 region using HBP model and data",
             "description": "",
             "experience": ["code"],
@@ -1491,7 +1492,8 @@
       {
         "title": "Cerebellum",
         "description": "",
-        "experience": ["all", "power"],
+        "experience": ["experts"],
+        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1624,6 +1626,38 @@
             "img": "https://github.com/antonelepfl/usecases/raw/dev/src/assets/images/cerebrocerebellar_loop.png"
           }
         ]
+      },
+      {
+        "title": "Neocortex",
+        "description": "",
+        "experience": ["all"],
+        "type": "webapp",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/placeholder.jpg"
+        },
+        "next": "brainarea_circuits",
+        "models": [
+          {
+            "title": "Configure and run a mouse Somatosensory Cortex microcircuit using preconfigured HBP model and data",
+            "disabled": false,
+            "species": "Mouse",
+            "brain_structure": "Somatosensory Cortex",
+            "description": "A draft reconstruction of the mouse somatosensory microcircuit.",
+            "contributors": [
+              {"name": "Vishal Sood, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland", "email": "vishal.sood@epfl.ch"},
+              {"name": "Hugo Dictus, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Javier DeFelipe, Instituto Cajal (CSIC) and Universidad Politécnica de Madrid, Spain"},
+              {"name": "Alain Destexhe, UNIC-CNRS, Gif-sur-Yvette, France"},
+              {"name": "Jean-Denis Courcol, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Werner Van Geit, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Daniel Keller, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland"},
+              {"name": "Michael Gevaert, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland", "email": "michael.gevaert@epfl.ch"},
+              {"name": "Stefano Antonel, Blue Brain Project, École Polytechnique Fédérale de Lausanne, Switzerland", "email": "stefano.antonel@epfl.ch"}
+            ],
+            "redirect_url": "https://bbp.epfl.ch/public/simulationapp/index.html#/circuits/sscx_hbp_sa_mouse_microcircuit",
+            "img": "https://sos-ch-dk-2.exo.io/public-website-production/filer_public/b2/35/b2354478-19db-450a-be40-48b0c92b5402/front_view_1000px.png"
+          }
+        ]
       }
     ],
     "analysisandvisualization": [
@@ -1680,7 +1714,6 @@
         "title": "Validation Framework Demo (Walkthrough)",
         "description": "Demonstrates the use of the validation framework",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1708,7 +1741,6 @@
         "title": "Hippocampus Single Cell Model Validation",
         "description": "Validates single cell models of Hippocampus optimized via BluePyOpt",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1735,7 +1767,6 @@
         "title": "Basal Ganglia Single Cell Validation",
         "description": "Validates single cell basal ganglia models optimized via BluePyOpt for various features offered by eFEL; models contain multiple hall of fame parameter sets",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1761,7 +1792,6 @@
         "title": "BluePyOpt Optimized Model Validation",
         "description": "Validates models optimized via BluePyOpt for various features offered by eFEL",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1787,7 +1817,6 @@
         "title": "Basal Ganglia Morphology Validation",
         "description": "Validates single cell morphologies of MSN and FS cells",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1814,7 +1843,6 @@
         "title": "Basal Ganglia Population Morphology Validation",
         "description": "Validates population of single cell morphologies of FS cells",
         "experience": ["all"],
-        "maturity": ["beta"],
         "disabled": false,
         "type": "ipynb",
         "picture": {
@@ -1887,10 +1915,10 @@
       },
       "uc-type": {
         "webapp": {
-          "tooltip": "This use case was implementing using a Web Application"
+          "tooltip": "This use case was implemented using a Web Application"
         },
         "ipynb": {
-          "tooltip": "This use case was implementing using Jupyter Notebook"
+          "tooltip": "This use case was implemented using Jupyter Notebook"
         }
       }
     }

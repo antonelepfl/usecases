@@ -2,7 +2,7 @@ f[
   {
     "molecular": [
       {
-        "title": "Calculation of bimolecular association rates with webSDA",
+        "title": "Calculate protein-protein bimolecular association rate constants with webSDA",
         "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
         "experience": ["all"],
         "maturity": ["beta"],
@@ -12,7 +12,13 @@ f[
         },
         "next": "ta_form",
         "dataprotected": true,
-        "files": [
+         "contributors": [
+          {"name": "Stefan Richter", "email": "mcmsoft@h-its.org"},
+          {"name": "Daria Kokh", "email": "mcmsoft@h-its.org"},
+          {"name": "Rebecca Wade", "email": "mcmsoft@h-its.org"},
+	  {"name": "Neil Bruce", "email": "mcmsoft@h-its.org"}
+         ],
+ 	"files": [
           {
            "entryname": "Calculation of bimolecular association rates with webSDA",
            "contentype": "text/html",

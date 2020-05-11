@@ -1534,7 +1534,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "39810378-34f4-4e7f-95a7-b1f347b600c4",
-                "file_prod": ""
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/brainareacircuitinsilicoexperiments/Olivo-Cerebellar_microcircuit.ipynb"
               }
             ],
             "species": "Mouse",
@@ -1562,7 +1562,8 @@
                  "appid": 175,
                  "contenttype": "x-ipynb+json",
                  "extension": ".ipynb",
-                 "file": "9a820c03-fe7f-41f2-aede-ab8eeae16f5e"
+                 "file": "9a820c03-fe7f-41f2-aede-ab8eeae16f5e",
+                 "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/brainareacircuitinsilicoexperiments/Multicompartmental_simulation_cerebellum.ipynb"
               }
             ],
             "contributors": [
@@ -1594,7 +1595,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "2baba0b8-e798-4882-a833-9d2801211f36",
-                "file_prod": ""
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/brainareacircuitinsilicoexperiments/Cerebro_Cerebellar_Step1_Preparation.ipynb"
               },
               {
                 "entryname": "Step 2 - Calibration",
@@ -1602,7 +1603,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "d234f52d-a5a1-43a1-b806-d3cf4897efe2",
-                "file_prod": ""
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/brainareacircuitinsilicoexperiments/Cerebro_Cerebellar_Step2_Calibration.ipynb"
               },
               {
                 "entryname": "Step 3 - Simulation",
@@ -1610,7 +1611,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "08420796-68f6-4445-9ff7-5bae0dd5f7d5",
-                "file_prod": ""
+                "file_prod": "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/brainareacircuitinsilicoexperiments/Cerebro_Cerebellar_Step3_Simulation.ipynb"
               }
             ],
             "species": "Mouse",

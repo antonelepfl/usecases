@@ -10,22 +10,14 @@
         "picture": {
           "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
         },
-        "next": "ta_form",
         "dataprotected": true,
-         "contributors": [
+        "contributors": [
           {"name": "Stefan Richter", "email": "mcmsoft@h-its.org"},
           {"name": "Daria Kokh", "email": "mcmsoft@h-its.org"},
           {"name": "Rebecca Wade", "email": "mcmsoft@h-its.org"},
-	  {"name": "Neil Bruce", "email": "mcmsoft@h-its.org"}
-         ],
- 	"files": [
-          {
-           "entryname": "Calculation of bimolecular association rates with webSDA",
-           "contentype": "text/html",
-           "extension": ".html",
-           "file": "collab/50197/nav/561166"
-          }
-        ]
+          {"name": "Neil Bruce", "email": "mcmsoft@h-its.org"}
+        ],
+        "external_link": "https://websda.h-its.org"
       },
       {
         "title": "Analyse the results of a Brownian dynamics simulation for calculating protein-protein association rate constants",

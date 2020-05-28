@@ -1151,6 +1151,45 @@
             "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/striatum_circuit_building.png"
           }
         ]
+      },
+      {
+        "title": "Network reduction",
+        "experience": ["power"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/reduction.png"
+        },
+        "next": "cb_models",
+        "models": [
+          {
+            "title": "Reduce a hippocampus network model using Amsalem et al 2020",
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1 - O0",
+            "description": "",
+            "contributors": [
+              {"name": "Oren Amsalem", "email": "oren.amsalem1@mail.huji.ac.il"},
+              {"name": "Aleksei Sanin", "email": "aleksei.sanin@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/reduction.png",
+            "disabled": false,
+            "files": [
+              {
+                "entryname": "Circuit reduction",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": "3b26e963-4cd2-40cd-b889-95cffb74d781",
+                "file_prod" :""
+              }
+            ]
+          }
+        ]
       }
     ],
     "morphology": [

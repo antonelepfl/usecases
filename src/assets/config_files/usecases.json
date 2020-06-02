@@ -2,6 +2,25 @@
   {
     "molecular": [
       {
+        "title": "Calculate protein-protein bimolecular association rate constants with webSDA",
+        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
+        "experience": ["all"],
+        "maturity": ["beta"],
+        "disabled": false,
+        "type": "webapp",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
+        },
+        "dataprotected": true,
+        "contributors": [
+          {"name": "Stefan Richter", "email": "mcmsoft@h-its.org"},
+          {"name": "Daria Kokh", "email": "mcmsoft@h-its.org"},
+          {"name": "Rebecca Wade", "email": "mcmsoft@h-its.org"},
+          {"name": "Neil Bruce", "email": "mcmsoft@h-its.org"}
+        ],
+        "external_link": "https://websda.h-its.org"
+      },
+      {
         "title": "Analyse the results of a Brownian dynamics simulation for calculating protein-protein association rate constants",
         "description": "Analyse the results of an SDA Brownian dynamics simulation to calculate the rate constant of Gαolf associating to adenylyl cyclase 5, and estimate the error in this prediction via bootstrapping.",
         "experience": ["all"],
@@ -327,19 +346,6 @@
             "initial": true
           }
         ]
-      },
-      {
-        "title": "Set up a Brownian dynamics simulation for calculating protein-protein association rate constants",
-        "description": "Starting from a structure of the complex formed between adenylyl cyclase 5 and Gαolf obtained from a molecular dynamics simulation, set up all the files required to perform a Brownian dynamics simulation with SDA.",
-        "experience": ["all"],
-        "maturity": ["beta"],
-        "disabled": true,
-        "picture": {
-          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/sda7_large.jpg"
-        },
-        "next": "ta_form",
-        "dataprotected": true,
-        "files": []
       },
       {
         "title": "Tools to search and analyze molecules",
@@ -1143,6 +1149,45 @@
               {"name": "Alexander Kozlov", "email": "kozlov@kth.se"}
             ],
             "img": "https://raw.githubusercontent.com/antonelepfl/testvue/master/imgtest/striatum_circuit_building.png"
+          }
+        ]
+      },
+      {
+        "title": "Network reduction",
+        "experience": ["power"],
+        "maturity": ["experimental"],
+        "access": ["hpc"],
+        "disabled": false,
+        "type": "ipynb",
+        "picture": {
+          "src": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/reduction.png"
+        },
+        "next": "cb_models",
+        "models": [
+          {
+            "title": "Reduce a hippocampus network model using Amsalem et al 2020",
+            "species": "Rat",
+            "brain_structure": "hippocampus",
+            "cell_soma_location": "CA1 - O0",
+            "description": "",
+            "contributors": [
+              {"name": "Oren Amsalem", "email": "oren.amsalem1@mail.huji.ac.il"},
+              {"name": "Aleksei Sanin", "email": "aleksei.sanin@epfl.ch"},
+              {"name": "Michael Gevaert", "email": "michael.gevaert@epfl.ch"},
+              {"name": "Stefano Antonel", "email": "stefano.antonel@epfl.ch"}
+            ],
+            "img": "https://raw.githubusercontent.com/antonelepfl/usecases/dev/src/assets/images/reduction.png",
+            "disabled": false,
+            "files": [
+              {
+                "entryname": "Circuit reduction",
+                "appid": 175,
+                "contenttype": "x-ipynb+json",
+                "extension": ".ipynb",
+                "file": "3b26e963-4cd2-40cd-b889-95cffb74d781",
+                "file_prod" :""
+              }
+            ]
           }
         ]
       }

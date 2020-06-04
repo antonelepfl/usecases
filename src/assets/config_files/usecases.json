@@ -1185,7 +1185,7 @@
                 "contenttype": "x-ipynb+json",
                 "extension": ".ipynb",
                 "file": "3b26e963-4cd2-40cd-b889-95cffb74d781",
-                "file_prod" :""
+                "file_prod" : "https://api.github.com/repos/antonelepfl/usecases/contents/production_notebooks/circuitbuilding/Circuit%20reduction.ipynb?ref=master"
               }
             ]
           }

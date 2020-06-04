@@ -1,0 +1,32 @@
+name: Eslint check
+
+on: [pull_request, push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: show location
+        run: echo $(pwd)
+
+      - name: show content
+        run: ls -l $(pwd)
+
+      - name: install eslint
+        run: npm install eslint
+
+      - name: install eslint for json
+        run: npm install eslint-plugin-json
+
+      - name: set exit flag
+        run: set -e
+      
+      - name: eslint
+        run: npm run lint

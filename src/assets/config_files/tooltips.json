@@ -12,5 +12,5 @@
    "access": {
       "hpc": "Requires high-performance computing resources.",
       "byor": "Services of this type allow you to delegate the execution to resources provided by the user. This is subject to technical compatibility."
-   };
-];
+   }
+}

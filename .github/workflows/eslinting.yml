@@ -1,4 +1,4 @@
-name: Eslint check
+name: Integiry Check
 
 on: [pull_request]
 
@@ -13,15 +13,6 @@ jobs:
         with:
           node-version: '12'
 
-      - name: show location
-        run: echo $(pwd)
-
-      - name: show content
-        run: ls -l $(pwd)
-
-      - name: Ensure Clean Jupyter Notebooks
-        uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
-
       - name: install eslint
         run: npm install eslint
 
@@ -33,3 +24,13 @@ jobs:
       
       - name: eslint
         run: npm run lint
+
+  output-clean:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Ensure Clean Jupyter Notebooks
+        uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
+

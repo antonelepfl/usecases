@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "vue-cli-service serve --port 8282",
     "build": "vue-cli-service build",
-    "lint": "eslint src/assets/config_files/usecases.json && vue-cli-service lint",
+    "lint": "eslint src/**/*.json && vue-cli-service lint",
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {

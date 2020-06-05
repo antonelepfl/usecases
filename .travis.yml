@@ -1,8 +1,0 @@
-language: node_js
-node_js: node
-
-script:
-- npm install eslint
-- npm install eslint-plugin-json
-- set -e
-- npm run lint

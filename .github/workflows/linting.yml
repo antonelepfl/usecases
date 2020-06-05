@@ -25,12 +25,12 @@ jobs:
       - name: eslint
         run: npm run lint
 
-  output-clean:
-    runs-on: ubuntu-latest
+#   output-clean:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+#     steps:
+#       - uses: actions/checkout@v2
 
-      - name: Ensure Clean Jupyter Notebooks
-        uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
+#       - name: Ensure Clean Jupyter Notebooks
+#         uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
 

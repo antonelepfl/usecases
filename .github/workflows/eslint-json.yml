@@ -19,8 +19,8 @@ jobs:
       - name: show content
         run: ls -l $(pwd)
 
-      - name: Flake8 Jupyter Notebook
-        uses: mhitza/flake8-jupyter-notebook@v1
+      - name: Ensure Clean Jupyter Notebooks
+        uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
 
       - name: install eslint
         run: npm install eslint

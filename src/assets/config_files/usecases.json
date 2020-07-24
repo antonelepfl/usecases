@@ -1373,7 +1373,7 @@
     ],
     "smallcircuitinsilicoexperiments": [
       {
-        "title": "Configure and run a small circuit extracted from the current release of the HBP hippocampus CA1 large-scale detailed model",
+        "title": "In silico experiments of a small circuit extracted from large scale detailed network models",
         "description": "",
         "experience": ["all"],
         "disabled": false,

@@ -2,12 +2,12 @@
 /* eslint-disable no-param-reassign */
 
 import uuid from 'uuid4';
-import collabAuthentication from './collabAuthentication';
 import usecases from '@/assets/config_files/usecases.json';
 import { getUsecaseInfo, replaceConfirmation, compactString } from '@/mixins/utils';
 import store from '@/mixins/store';
 import find from 'lodash/find';
 import commonConfig from '@/../production_notebooks/common_header/common-config.json';
+import collabAuthentication from './collabAuthentication';
 
 const SERVICES_BASE = 'https://services.humanbrainproject.eu';
 const COLLAB_API = `${SERVICES_BASE}/collab/v0/`;

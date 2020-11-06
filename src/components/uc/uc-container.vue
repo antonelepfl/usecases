@@ -15,21 +15,21 @@
 
       <!-- if the url is not correct show index of UCs -->
       <div v-if="!usecases">
-         <div v-for="index in indexes" :key="index">
-            <router-link :to="index">{{ index }}</router-link>
+         <div v-for="index in indexes" :key="index" class="category-item">
+            <a @click="reload(index)">{{ index }}</a>
          </div>
       </div>
    </div>
 </template>
 
 <script>
-import ucItem from './uc-item.vue';
 import ucListViewer from '@/components/uc-list-viewer.vue';
 import usecases from '@/assets/config_files/usecases.json';
 import storageManager from '@/mixins/storageManager';
 import commitNumer from '@/components/commit-number.vue';
 import { compactString } from '@/mixins/utils';
 import createCollab from '@/mixins/createCollab';
+import ucItem from './uc-item.vue';
 
 export default {
   name: 'ucContainer',
@@ -76,6 +76,10 @@ export default {
     prettyfy(name) {
       return name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     },
+    reload(newPage) {
+      window.location.href = `${window.location.origin}/#/${newPage}`;
+      window.location.reload();
+    },
   },
   mounted() {
     const ucSelected = this.$route.path.replace(/\//g, '');
@@ -88,3 +92,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .category-item {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+</style>

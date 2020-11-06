@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "vue-cli-service serve --port 8282",
     "build": "vue-cli-service build",
-    "lint": "eslint src/assets/config_files/usecases.json && vue-cli-service lint",
+    "lint": "eslint src/**/*.json && vue-cli-service lint",
     "build_doc": "jsdoc --readme ./README.md src/main.js --destination docs"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "@vue/eslint-config-airbnb": "^4.0.0",
     "axios": "^0.18.1",
     "jso": "^4.1.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "markdown-loader": "^5.1.0",
     "marked": "^0.7.0",
     "sweetalert2": "^7.33.1",

@@ -1,0 +1,36 @@
+name: Integiry Check
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: install eslint
+        run: npm install eslint
+
+      - name: install eslint for json
+        run: npm install eslint-plugin-json
+
+      - name: set exit flag
+        run: set -e
+      
+      - name: eslint
+        run: npm run lint
+
+#   output-clean:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Ensure Clean Jupyter Notebooks
+#         uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
+

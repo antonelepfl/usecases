@@ -12,7 +12,7 @@ import os
 import requests
 import sys
 
-# MODEL_CATALOG_URL = 'https://validation-v1.brainsimulation.eu/models/'
+# MODEL_CATALOG_URL = 'https://validation-v2.brainsimulation.eu/models/'
 REFRESH_ENDPOINT = 'https://services.humanbrainproject.eu/oidc/token'
 MODEL_CATALOG_URL = os.environ['MODELS_URL']
 REFRESH_TOKEN = os.environ['REFRESH_TOKEN']
@@ -119,7 +119,7 @@ def create_meta():
             logging.error('Failed to fetch data for %s', file_name)
             logging.error(response.text)
             continue
-        models_list = response.json()['models']
+        models_list = response.json()
         logging.info('Models found: %s', len(models_list))
         if not _check_models_modification(models_list, file_name):
             continue # avoid creation

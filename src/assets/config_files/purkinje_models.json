@@ -5,8 +5,9 @@
         "name": "Purkinje cell - Multi compartmental",
         "author": [
           {
+            "given_name": "Stefano",
             "family_name": "Masoli",
-            "given_name": "Stefano"
+            "orcid": null
           }
         ],
         "cell_type": "Purkinje cell",

@@ -1,12 +1,76 @@
 [
   {
+    "Granule cell 2019 - Regular firing": {
+      "meta": {
+        "name": "Granule cell 2019 - Regular firing",
+        "author": [
+          {
+            "given_name": "Stefano",
+            "family_name": "Masoli",
+            "orcid": null
+          }
+        ],
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Granule Cell 2019 - Regular firing model. Typical regular response to a steady current injection\n\nTo correctly simulate it: \n1) Temperature = 32\u00b0\n2) Vinit (Vm) = -70\n3) Currents injection used in the paper = 10, 16 and 22pA\n4) Currents injection, 100ms delay, 2000ms injection and 2000ms tstop (length of the simulation)",
+        "zip_url": null
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/01_regular.png",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
+    }
+  },
+  {
+    "Granule cell 2009 modeling Na+ channels to ensure fast spiking and back-propagation (GrC2009Diwakar)": {
+      "meta": {
+        "name": "Granule cell 2009 modeling Na+ channels to ensure fast spiking and back-propagation (GrC2009Diwakar)",
+        "author": [
+          {
+            "given_name": "Shyam Diwakar, Jacopo Magistretti, Mitchell Goldfarb, Giovanni Naldi, Egidio",
+            "family_name": "D'Angelo",
+            "orcid": null
+          }
+        ],
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Diwakar et al. 2009 model of GranuleCell (GrC) and published in <a href=\"https://doi.org/10.1152/jn.90382.2008\">10.1152/jn.90382.2008</a> This is the multi-compartment model. It models the rat granule cells because the model was derived from slices taken from 20 +/- 2 days old rats. This model is the SciUnit wrapped version of the NEURON model in modelDB accession <a href=\"https://senselab.med.yale.edu/modeldb/ShowModel.cshtml?model=116835#tabs-1\">116835</a>.\n\nCode to Model template for <a href=\"https://github.com/cerebunit/cerebmodels/blob/master/models/cells/modelGrC2009Diwakar.py\">GrC2009Diwakar</a>\n\nThis model is the SciUnit wrapped version of the NEURON model for CerebUnit. To run this model:\n\n<code>\nfrom executive import ExecutiveControl as ec\n</code>\n\n<code>\ndesired_model = ec.choose_model( modelscale = \"cells\", modelname = \"GrC2009Diwakar\" )\n</code>\n\nModel description in <a href=\"https://senselab.med.yale.edu/modeldb/ShowModel.cshtml?model=116835#tabs-1\">ModelDB #116835</a>\n\n<q><em><font color=\"blue\">\nA detailed multicompartmental model was used to study neuronal electroresponsiveness of cerebellar granule cells in rats. Here we show that, in cerebellar granule cells, Na+ channels are enriched in the axon, especially in the hillock, but almost absent from soma and dendrites. Numerical simulations indicated that granule cells have a compact electrotonic structure allowing EPSPs to diffuse with little attenuation from dendrites to axon. The spike arose almost simultaneously along the whole axonal ascending branch and invaded the hillock, whose activation promoted spike back-propagation with marginal delay (<200 micros) and attenuation (<20 mV) into the somato-dendritic compartment. For details check the cited article.\n</font></em></q>",
+        "zip_url": null
+      },
+      "responses": null,
+      "morph": null
+    }
+  },
+  {
+    "Granule cell - Mono compartmental": {
+      "meta": {
+        "name": "Granule cell - Mono compartmental",
+        "author": [
+          {
+            "given_name": "Stefano",
+            "family_name": "Masoli",
+            "orcid": null
+          }
+        ],
+        "cell_type": "granule cell",
+        "brain_region": "cerebellum",
+        "species": "Rattus norvegicus",
+        "description": "Cerebellar Granule cell single compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -80\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
+        "zip_url": null
+      },
+      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono_trace.jpg",
+      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono_morfo.jpg"
+    }
+  },
+  {
     "Granule cell 2019 - Mild adapting": {
       "meta": {
         "name": "Granule cell 2019 - Mild adapting",
         "author": [
           {
+            "given_name": "Stefano",
             "family_name": "Masoli",
-            "given_name": "Stefano"
+            "orcid": null
           }
         ],
         "cell_type": "granule cell",
@@ -25,8 +89,9 @@
         "name": "Granule cell 2019 - Strong adapting",
         "author": [
           {
+            "given_name": "Stefano",
             "family_name": "Masoli",
-            "given_name": "Stefano"
+            "orcid": null
           }
         ],
         "cell_type": "granule cell",
@@ -45,8 +110,9 @@
         "name": "Granule cell - Multi compartmental",
         "author": [
           {
+            "given_name": "Stefano",
             "family_name": "Masoli",
-            "given_name": "Stefano"
+            "orcid": null
           }
         ],
         "cell_type": "granule cell",
@@ -60,33 +126,14 @@
     }
   },
   {
-    "Granule cell - Mono compartmental": {
-      "meta": {
-        "name": "Granule cell - Mono compartmental",
-        "author": [
-          {
-            "family_name": "Masoli",
-            "given_name": "Stefano"
-          }
-        ],
-        "cell_type": "granule cell",
-        "brain_region": "cerebellum",
-        "species": "Rattus norvegicus",
-        "description": "Cerebellar Granule cell single compartmental model.\n\nTo correctly simulate it: \n1) Temperature = 30\u00b0\n2) Vinit (Vm) = -80\n3) Current injections physiological range = 0nA to 0.03nA (30pA)",
-        "zip_url": null
-      },
-      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono_trace.jpg",
-      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/grc_mono_morfo.jpg"
-    }
-  },
-  {
     "Granule cell 2019 - Accelerating": {
       "meta": {
         "name": "Granule cell 2019 - Accelerating",
         "author": [
           {
+            "given_name": "Stefano",
             "family_name": "Masoli",
-            "given_name": "Stefano"
+            "orcid": null
           }
         ],
         "cell_type": "granule cell",
@@ -96,26 +143,6 @@
         "zip_url": null
       },
       "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/04_acell.png",
-      "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
-    }
-  },
-  {
-    "Granule cell 2019 - Regular firing": {
-      "meta": {
-        "name": "Granule cell 2019 - Regular firing",
-        "author": [
-          {
-            "family_name": "Masoli",
-            "given_name": "Stefano"
-          }
-        ],
-        "cell_type": "granule cell",
-        "brain_region": "cerebellum",
-        "species": "Rattus norvegicus",
-        "description": "Granule Cell 2019 - Regular firing model. Typical regular response to a steady current injection\n\nTo correctly simulate it: \n1) Temperature = 32\u00b0\n2) Vinit (Vm) = -70\n3) Currents injection used in the paper = 10, 16 and 22pA\n4) Currents injection, 100ms delay, 2000ms injection and 2000ms tstop (length of the simulation)",
-        "zip_url": null
-      },
-      "responses": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/01_regular.png",
       "morph": "https://object.cscs.ch:443/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/cerebellum_circuits/BlueNaaS_models/live_paper_grc/images/morfo.png"
     }
   }

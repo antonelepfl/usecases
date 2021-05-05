@@ -26,7 +26,27 @@
         "name": "Granule cell 2009 modeling Na+ channels to ensure fast spiking and back-propagation (GrC2009Diwakar)",
         "author": [
           {
-            "given_name": "Shyam Diwakar, Jacopo Magistretti, Mitchell Goldfarb, Giovanni Naldi, Egidio",
+            "given_name": "Shyam",
+            "family_name": "Diwakar",
+            "orcid": null
+          },
+          {
+            "given_name": "Jacopo",
+            "family_name": "Magistretti",
+            "orcid": null
+          },
+          {
+            "given_name": "Mitchell",
+            "family_name": "Goldfarb",
+            "orcid": null
+          },
+          {
+            "given_name": "Giovanni",
+            "family_name": "Naldi",
+            "orcid": null
+          },
+          {
+            "given_name": "Egidio",
             "family_name": "D'Angelo",
             "orcid": null
           }
